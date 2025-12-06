@@ -64,7 +64,7 @@ const CourseCard = ({ title, image, description, originalPrice, promoPrice, inst
 const technicalCourses = [
   {
     title: "Curso Técnico de Segurança do Trabalho EAD",
-    image: "https://ecid-storage.nyc3.cdn.digitaloceanspaces.com/p/courses/cover_01K6KS8VRM15DNPN4HAQSK595G.jpg",
+    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&h=400&fit=crop",
     description: "Assuma um papel vital na proteção e bem-estar dos trabalhadores. Formação de qualidade, flexível e reconhecida nacionalmente.",
     originalPrice: "R$ 2.500,00",
     promoPrice: "R$ 1.500,00",
@@ -72,7 +72,7 @@ const technicalCourses = [
   },
   {
     title: "Curso Técnico em Eletrotécnica EAD",
-    image: "https://ecid-storage.nyc3.cdn.digitaloceanspaces.com/p/courses/cover_01K6KSBC760Q5ZQWPZ9JAKM8CJ.jpg",
+    image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=600&h=400&fit=crop",
     description: "Carreira promissora e com alta demanda. Conquiste seu diploma em 6 meses com certificação reconhecida pelo MEC.",
     originalPrice: "R$ 2.500,00",
     promoPrice: "R$ 1.500,00",
@@ -80,7 +80,7 @@ const technicalCourses = [
   },
   {
     title: "Curso Técnico em Mecânica EAD",
-    image: "https://ecid-storage.nyc3.cdn.digitaloceanspaces.com/p/courses/cover_01K6KSCYNA53ABH0G1RZ9E1Y28.jpg",
+    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=400&fit=crop",
     description: "Formação rápida e reconhecida para entrar no mercado de trabalho. Diploma certificado pelo MEC em 6 meses.",
     originalPrice: "R$ 2.500,00",
     promoPrice: "R$ 1.500,00",
@@ -88,7 +88,7 @@ const technicalCourses = [
   },
   {
     title: "Curso Técnico de Administração EAD",
-    image: "https://ecid-storage.nyc3.cdn.digitaloceanspaces.com/p/courses/cover_01K6KSDXT1SHS2T79XHVD2ZKJ3.jpg",
+    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=400&fit=crop",
     description: "Destaque-se no competitivo mundo dos negócios com a flexibilidade que só o ensino a distância pode oferecer.",
     originalPrice: "R$ 1.590,00",
     promoPrice: "R$ 900,00",
@@ -96,7 +96,7 @@ const technicalCourses = [
   },
   {
     title: "Curso Técnico de Edificações EAD",
-    image: "https://ecid-storage.nyc3.cdn.digitaloceanspaces.com/p/courses/cover_01K6KSEVDXTP3SDDSWJ4B6BQ0E.jpg",
+    image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600&h=400&fit=crop",
     description: "Ingresse na promissora indústria da construção civil. Em 6 meses, esteja pronto para atuar em projetos e obras.",
     originalPrice: "R$ 2.500,00",
     promoPrice: "R$ 1.500,00",
@@ -107,7 +107,7 @@ const technicalCourses = [
 const certificationCourses = [
   {
     title: "Certificação Técnica por Competência em Administração",
-    image: "https://ecid-storage.nyc3.cdn.digitaloceanspaces.com/p/courses/cover_01JEVNEK40PA0R7V2TAFMXHNMF.jpg",
+    image: "https://images.unsplash.com/photo-1556761175-4b46a572b786?w=600&h=400&fit=crop",
     description: "Aferição técnica para profissionais com experiência prática. Obtenha diploma e registro profissional.",
     originalPrice: "R$ 3.500,00",
     promoPrice: "R$ 1.599,00",
@@ -115,7 +115,7 @@ const certificationCourses = [
   },
   {
     title: "Certificação Técnica por Competência em Automação Industrial",
-    image: "https://ecid-storage.nyc3.cdn.digitaloceanspaces.com/p/courses/cover_01JFCZ04KYVXJFK9YH9CY5D879.jpg",
+    image: "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=600&h=400&fit=crop",
     description: "Valide suas habilidades e competências na área de automação industrial com diploma reconhecido pelo MEC.",
     originalPrice: "R$ 2.500,00",
     promoPrice: "R$ 1.599,00",
@@ -123,7 +123,7 @@ const certificationCourses = [
   },
   {
     title: "Certificação Técnica por Competência em Edificações",
-    image: "https://ecid-storage.nyc3.cdn.digitaloceanspaces.com/p/courses/cover_01JFCZEQC6SDK52SC6AARG9SEF.jpg",
+    image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=600&h=400&fit=crop",
     description: "Profissionais com experiência prática podem obter diploma técnico com registro profissional no CREA.",
     originalPrice: "R$ 2.500,00",
     promoPrice: "R$ 1.599,00",
@@ -131,7 +131,7 @@ const certificationCourses = [
   },
   {
     title: "Certificação Técnica por Competência em Eletrotécnica",
-    image: "https://ecid-storage.nyc3.cdn.digitaloceanspaces.com/p/courses/cover_01K6KSBC760Q5ZQWPZ9JAKM8CJ.jpg",
+    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop",
     description: "Reconheça suas competências técnicas em eletrotécnica e obtenha registro profissional no CREA.",
     originalPrice: "R$ 2.500,00",
     promoPrice: "R$ 1.599,00",
@@ -139,7 +139,7 @@ const certificationCourses = [
   },
   {
     title: "Certificação Técnica por Competência em Segurança do Trabalho",
-    image: "https://ecid-storage.nyc3.cdn.digitaloceanspaces.com/p/courses/cover_01K6KS8VRM15DNPN4HAQSK595G.jpg",
+    image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=600&h=400&fit=crop",
     description: "Valide sua experiência profissional em segurança do trabalho com certificação reconhecida pelo MEC.",
     originalPrice: "R$ 2.500,00",
     promoPrice: "R$ 1.599,00",
