@@ -84,8 +84,9 @@ const CourseCard = ({ title, image, description, originalPrice, promoPrice, inst
           <p className="text-xs text-muted-foreground">
             <span className="line-through">De {originalPrice}</span>
           </p>
-          <p className="text-xl font-bold text-ecid-red">Por {promoPrice}</p>
-          <p className="text-sm text-muted-foreground">{installment} s/ juros no cartão</p>
+          <p className="text-sm text-muted-foreground">Por {promoPrice}</p>
+          <p className="text-2xl font-bold text-ecid-blue-accent">{installment}</p>
+          <p className="text-xs text-muted-foreground">s/ juros no cartão de crédito</p>
         </div>
 
         <Button className="w-full rounded-lg bg-ecid-red font-semibold text-primary-foreground hover:bg-ecid-red-light">
