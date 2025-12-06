@@ -11,15 +11,51 @@ interface CourseCardProps {
 }
 
 const CourseCard = ({ title, image, description, originalPrice, promoPrice, installment }: CourseCardProps) => {
+  // Extract short name from title for the label
+  const getShortTitle = (fullTitle: string) => {
+    const name = fullTitle
+      .replace("Curso Técnico de ", "")
+      .replace("Curso Técnico em ", "")
+      .replace("Certificação Técnica por Competência em ", "")
+      .replace(" EAD", "")
+      .toUpperCase();
+    return name;
+  };
+
+  const isCompetency = title.includes("Competência");
+
   return (
     <article className="group card-hover flex flex-col overflow-hidden rounded-2xl bg-card shadow-card">
-      {/* Image */}
+      {/* Image with overlay labels */}
       <div className="relative aspect-[16/10] overflow-hidden">
         <img
           src={image}
           alt={title}
           className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
+        {/* Gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-ecid-navy/90 via-ecid-navy/50 to-transparent" />
+        
+        {/* Top label */}
+        <div className="absolute left-0 top-3 bg-ecid-yellow px-3 py-1">
+          <span className="text-[10px] font-bold uppercase tracking-wide text-ecid-navy">
+            {isCompetency ? "Certificação por Competência" : "Curso Técnico EAD"}
+          </span>
+        </div>
+        
+        {/* Course name */}
+        <div className="absolute bottom-8 left-3 right-3">
+          <h4 className="text-sm font-bold uppercase leading-tight text-white drop-shadow-lg">
+            {getShortTitle(title)}
+          </h4>
+        </div>
+        
+        {/* MEC badge */}
+        <div className="absolute bottom-2 left-3">
+          <span className="inline-block border border-white/80 bg-white/10 px-2 py-0.5 text-[9px] font-medium uppercase tracking-wide text-white backdrop-blur-sm">
+            Autorizado pelo MEC
+          </span>
+        </div>
       </div>
 
       {/* Content */}
