@@ -1,10 +1,8 @@
 import Header from "@/components/Header";
 import HeroBanner from "@/components/HeroBanner";
-import AboutSection from "@/components/AboutSection";
+import BenefitsBar from "@/components/BenefitsBar";
 import CoursesSection from "@/components/CoursesSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
-import BlogSection from "@/components/BlogSection";
-import CTASection from "@/components/CTASection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -15,11 +13,9 @@ const Index = () => {
       <Header />
       <main>
         <HeroBanner />
-        <AboutSection />
+        <BenefitsBar />
         <CoursesSection />
         <TestimonialsSection />
-        <BlogSection />
-        <CTASection />
         <ContactSection />
       </main>
       <Footer />

@@ -1,4 +1,4 @@
-import { ArrowRight, Calendar, BadgeCheck } from "lucide-react";
+import { Calendar, BadgeCheck, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 interface CourseCardProps {
@@ -12,59 +12,56 @@ interface CourseCardProps {
 
 const CourseCard = ({ title, image, description, originalPrice, promoPrice, installment }: CourseCardProps) => {
   return (
-    <article className="group card-hover flex flex-col overflow-hidden rounded-2xl bg-card shadow-md">
+    <article className="group card-hover flex flex-col overflow-hidden rounded-2xl bg-card shadow-card">
       {/* Image */}
       <div className="relative aspect-[16/10] overflow-hidden">
         <img
           src={image}
           alt={title}
-          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 via-transparent to-transparent" />
       </div>
 
       {/* Content */}
       <div className="flex flex-1 flex-col p-5">
         {/* Badges */}
         <div className="mb-3 flex flex-wrap gap-2">
-          <span className="inline-flex items-center gap-1 rounded-full bg-accent/10 px-2 py-1 text-xs font-medium text-accent">
+          <span className="inline-flex items-center gap-1 rounded-full bg-muted px-2.5 py-1 text-xs font-medium text-muted-foreground">
             <Calendar className="h-3 w-3" />
             Início imediato
           </span>
-          <span className="inline-flex items-center gap-1 rounded-full bg-primary/10 px-2 py-1 text-xs font-medium text-primary">
+          <span className="inline-flex items-center gap-1 rounded-full bg-ecid-blue-accent/10 px-2.5 py-1 text-xs font-medium text-ecid-blue-accent">
             <BadgeCheck className="h-3 w-3" />
-            Autorizado MEC
+            Autorizado pelo MEC
           </span>
         </div>
 
-        <h3 className="mb-2 line-clamp-2 text-sm font-bold uppercase tracking-wide text-foreground">
+        <h3 className="mb-2 line-clamp-2 text-base font-bold text-foreground">
           {title}
         </h3>
         
-        <p className="mb-4 line-clamp-3 flex-1 text-xs text-muted-foreground">
+        <p className="mb-4 line-clamp-3 flex-1 text-sm text-muted-foreground">
           {description}
         </p>
 
         {/* Pricing */}
-        <div className="mb-4 space-y-1">
-          <p className="text-xs text-muted-foreground line-through">De {originalPrice}</p>
-          <p className="text-lg font-bold text-accent">Por {promoPrice}</p>
-          <p className="text-xs text-muted-foreground">{installment} s/ juros no cartão</p>
+        <div className="mb-4 space-y-1 border-t border-border pt-4">
+          <p className="text-xs text-muted-foreground">
+            <span className="line-through">De {originalPrice}</span>
+          </p>
+          <p className="text-xl font-bold text-ecid-red">Por {promoPrice}</p>
+          <p className="text-sm text-muted-foreground">{installment} s/ juros no cartão</p>
         </div>
 
-        <a
-          href="#"
-          className="inline-flex items-center gap-2 text-sm font-semibold text-accent transition-colors hover:text-faesde-orange-dark"
-        >
+        <Button className="w-full rounded-lg bg-ecid-red font-semibold text-primary-foreground hover:bg-ecid-red-light">
           Quero me matricular
-          <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-        </a>
+        </Button>
       </div>
     </article>
   );
 };
 
-const courses = [
+const technicalCourses = [
   {
     title: "Curso Técnico de Segurança do Trabalho EAD",
     image: "https://ecid-storage.nyc3.cdn.digitaloceanspaces.com/p/courses/cover_01K6KS8VRM15DNPN4HAQSK595G.jpg",
@@ -105,46 +102,9 @@ const courses = [
     promoPrice: "R$ 1.500,00",
     installment: "12x R$ 125,00",
   },
-  {
-    title: "Curso Técnico em Eletromecânica EAD",
-    image: "https://ecid-storage.nyc3.cdn.digitaloceanspaces.com/p/courses/cover_01JETVPMPF5WRDRZT1XSP5ZR3P.jpg",
-    description: "Una o poder da eletricidade com a precisão da mecânica. Profissional completo para os desafios da Indústria 4.0.",
-    originalPrice: "R$ 2.500,00",
-    promoPrice: "R$ 1.500,00",
-    installment: "12x R$ 125,00",
-  },
-  {
-    title: "Curso Técnico em Transações Imobiliárias (TTI) EAD",
-    image: "https://ecid-storage.nyc3.cdn.digitaloceanspaces.com/p/courses/cover_01JERFFZHBMF3S13QWTHWZYPKA.jpg",
-    description: "Carreira promissora com alta remuneração e flexibilidade. Em 6 meses, certificado e pronto para atuar com CRECI.",
-    originalPrice: "R$ 1.750,00",
-    promoPrice: "R$ 900,00",
-    installment: "12x R$ 75,00",
-  },
-  {
-    title: "Curso Técnico em Agropecuária EAD",
-    image: "https://ecid-storage.nyc3.cdn.digitaloceanspaces.com/p/courses/cover_01JEVKVVKP4QJF8NS0QK44G6E1.jpg",
-    description: "Setor essencial e em constante crescimento. Domine técnicas de produção agrícola, pecuária e gestão rural.",
-    originalPrice: "R$ 2.500,00",
-    promoPrice: "R$ 1.500,00",
-    installment: "12x R$ 125,00",
-  },
-  {
-    title: "Curso Técnico em Agricultura EAD",
-    image: "https://ecid-storage.nyc3.cdn.digitaloceanspaces.com/p/courses/cover_01JEVKE7PV0TRXK1FR22Y9YQ6Q.jpg",
-    description: "Transforme sua paixão pelo campo em uma carreira de sucesso. Domine as mais modernas técnicas agrícolas.",
-    originalPrice: "R$ 2.500,00",
-    promoPrice: "R$ 1.500,00",
-    installment: "12x R$ 125,00",
-  },
-  {
-    title: "Curso Técnico em Farmácia EAD",
-    image: "https://ecid-storage.nyc3.cdn.digitaloceanspaces.com/p/courses/cover_01JE91G40RQ577YMBA9NFMBBN7.jpg",
-    description: "Mergulhe no mundo da saúde e faça a diferença na vida das pessoas. Destaque-se no setor farmacêutico.",
-    originalPrice: "R$ 2.500,00",
-    promoPrice: "R$ 1.500,00",
-    installment: "12x R$ 125,00",
-  },
+];
+
+const certificationCourses = [
   {
     title: "Certificação Técnica por Competência em Administração",
     image: "https://ecid-storage.nyc3.cdn.digitaloceanspaces.com/p/courses/cover_01JEVNEK40PA0R7V2TAFMXHNMF.jpg",
@@ -161,32 +121,90 @@ const courses = [
     promoPrice: "R$ 1.599,00",
     installment: "12x R$ 133,25",
   },
+  {
+    title: "Certificação Técnica por Competência em Edificações",
+    image: "https://ecid-storage.nyc3.cdn.digitaloceanspaces.com/p/courses/cover_01JFCZEQC6SDK52SC6AARG9SEF.jpg",
+    description: "Profissionais com experiência prática podem obter diploma técnico com registro profissional no CREA.",
+    originalPrice: "R$ 2.500,00",
+    promoPrice: "R$ 1.599,00",
+    installment: "12x R$ 133,25",
+  },
+  {
+    title: "Certificação Técnica por Competência em Eletrotécnica",
+    image: "https://ecid-storage.nyc3.cdn.digitaloceanspaces.com/p/courses/cover_01K6KSBC760Q5ZQWPZ9JAKM8CJ.jpg",
+    description: "Reconheça suas competências técnicas em eletrotécnica e obtenha registro profissional no CREA.",
+    originalPrice: "R$ 2.500,00",
+    promoPrice: "R$ 1.599,00",
+    installment: "12x R$ 133,25",
+  },
+  {
+    title: "Certificação Técnica por Competência em Segurança do Trabalho",
+    image: "https://ecid-storage.nyc3.cdn.digitaloceanspaces.com/p/courses/cover_01K6KS8VRM15DNPN4HAQSK595G.jpg",
+    description: "Valide sua experiência profissional em segurança do trabalho com certificação reconhecida pelo MEC.",
+    originalPrice: "R$ 2.500,00",
+    promoPrice: "R$ 1.599,00",
+    installment: "12x R$ 133,25",
+  },
 ];
 
 const CoursesSection = () => {
   return (
-    <section id="courses" className="bg-secondary py-16 md:py-24">
+    <section id="courses" className="py-16 md:py-20">
       <div className="container mx-auto">
-        {/* Header */}
-        <div className="mb-12 text-center">
-          <h2 className="mb-4 text-3xl font-bold text-primary md:text-4xl">Nossos Cursos</h2>
-          <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
-            Cursos técnicos EAD autorizados pelo MEC. Estude no seu ritmo e conquiste sua certificação.
-          </p>
+        {/* Technical Courses */}
+        <div className="mb-16">
+          <div className="mb-8 flex items-center justify-between">
+            <h2 className="text-2xl font-bold text-foreground md:text-3xl">
+              Cursos Técnicos <span className="underline decoration-ecid-blue-accent decoration-4 underline-offset-4">EAD</span>
+            </h2>
+            <a
+              href="#"
+              className="hidden items-center gap-1 text-sm font-semibold text-ecid-blue-accent hover:underline sm:flex"
+            >
+              Ver todos
+              <ArrowRight className="h-4 w-4" />
+            </a>
+          </div>
+
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+            {technicalCourses.map((course, index) => (
+              <CourseCard key={index} {...course} />
+            ))}
+          </div>
+
+          <div className="mt-6 text-center sm:hidden">
+            <Button variant="outline" className="rounded-lg font-semibold">
+              Ver todos os cursos
+            </Button>
+          </div>
         </div>
 
-        {/* Courses Grid */}
-        <div className="mb-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {courses.map((course, index) => (
-            <CourseCard key={index} {...course} />
-          ))}
-        </div>
+        {/* Certification Courses */}
+        <div>
+          <div className="mb-8 flex items-center justify-between">
+            <h2 className="text-2xl font-bold text-foreground md:text-3xl">
+              Certificação por <span className="underline decoration-ecid-blue-accent decoration-4 underline-offset-4">Competência</span>
+            </h2>
+            <a
+              href="#"
+              className="hidden items-center gap-1 text-sm font-semibold text-ecid-blue-accent hover:underline sm:flex"
+            >
+              Ver todos
+              <ArrowRight className="h-4 w-4" />
+            </a>
+          </div>
 
-        {/* CTA */}
-        <div className="text-center">
-          <Button className="rounded-full bg-primary px-8 font-semibold text-primary-foreground hover:bg-faesde-blue-dark">
-            VER TODOS OS CURSOS
-          </Button>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+            {certificationCourses.map((course, index) => (
+              <CourseCard key={index} {...course} />
+            ))}
+          </div>
+
+          <div className="mt-6 text-center sm:hidden">
+            <Button variant="outline" className="rounded-lg font-semibold">
+              Ver todos os cursos
+            </Button>
+          </div>
         </div>
       </div>
     </section>

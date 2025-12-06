@@ -2,24 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 210 40% 20%;
+    --background: 0 0% 96%;
+    --foreground: 217 33% 17%;
 
     --card: 0 0% 100%;
-    --card-foreground: 210 40% 20%;
+    --card-foreground: 217 33% 17%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 210 40% 20%;
+    --popover-foreground: 217 33% 17%;
 
-    --primary: 205 65% 25%;
+    --primary: 217 65% 20%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 20% 96%;
-    --secondary-foreground: 210 40% 20%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 217 33% 17%;
 
     --muted: 210 20% 96%;
     --muted-foreground: 210 15% 50%;
@@ -32,30 +32,24 @@
 
     --border: 210 20% 90%;
     --input: 210 20% 90%;
-    --ring: 205 65% 25%;
+    --ring: 217 65% 20%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
-    /* FAESDE Custom Colors */
-    --faesde-blue-dark: 205 65% 22%;
-    --faesde-blue: 205 65% 30%;
-    --faesde-blue-light: 205 80% 95%;
-    --faesde-orange: 24 95% 53%;
-    --faesde-orange-dark: 24 95% 45%;
-    --faesde-red: 0 75% 50%;
-    --faesde-green: 142 70% 45%;
-    --faesde-gray: 210 15% 50%;
-    
-    /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(205 65% 25%) 0%, hsl(24 80% 40%) 100%);
-    --gradient-hero-overlay: linear-gradient(135deg, hsl(205 65% 22% / 0.9) 0%, hsl(24 70% 35% / 0.85) 100%);
-    --gradient-cta: linear-gradient(135deg, hsl(24 95% 53%) 0%, hsl(24 95% 45%) 100%);
+    /* ECID-style Colors */
+    --ecid-navy: 217 65% 20%;
+    --ecid-red: 0 85% 45%;
+    --ecid-red-light: 0 85% 50%;
+    --ecid-yellow: 45 100% 50%;
+    --ecid-blue-accent: 200 100% 50%;
+    --ecid-gray: 210 15% 50%;
+    --ecid-light-gray: 0 0% 96%;
     
     /* Shadows */
-    --shadow-sm: 0 2px 8px -2px hsl(205 65% 25% / 0.1);
-    --shadow-md: 0 4px 16px -4px hsl(205 65% 25% / 0.15);
-    --shadow-lg: 0 8px 32px -8px hsl(205 65% 25% / 0.2);
-    --shadow-orange: 0 4px 20px -4px hsl(24 95% 53% / 0.4);
+    --shadow-sm: 0 2px 8px -2px hsl(217 65% 20% / 0.1);
+    --shadow-md: 0 4px 16px -4px hsl(217 65% 20% / 0.12);
+    --shadow-lg: 0 10px 40px -10px hsl(217 65% 20% / 0.15);
+    --shadow-card: 0 4px 20px -5px hsl(217 65% 20% / 0.1);
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -68,23 +62,23 @@
   }
 
   .dark {
-    --background: 205 65% 8%;
+    --background: 217 65% 8%;
     --foreground: 0 0% 98%;
 
-    --card: 205 50% 12%;
+    --card: 217 50% 12%;
     --card-foreground: 0 0% 98%;
 
-    --popover: 205 50% 12%;
+    --popover: 217 50% 12%;
     --popover-foreground: 0 0% 98%;
 
     --primary: 0 0% 98%;
-    --primary-foreground: 205 65% 25%;
+    --primary-foreground: 217 65% 20%;
 
-    --secondary: 205 40% 18%;
+    --secondary: 217 40% 18%;
     --secondary-foreground: 0 0% 98%;
 
-    --muted: 205 40% 18%;
-    --muted-foreground: 205 20% 65%;
+    --muted: 217 40% 18%;
+    --muted-foreground: 217 20% 65%;
 
     --accent: 24 95% 53%;
     --accent-foreground: 0 0% 100%;
@@ -92,8 +86,8 @@
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 205 40% 18%;
-    --input: 205 40% 18%;
+    --border: 217 40% 18%;
+    --input: 217 40% 18%;
     --ring: 212.7 26.8% 83.9%;
   }
 }
@@ -109,25 +103,23 @@
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'Montserrat', system-ui, sans-serif;
+    font-family: 'Poppins', system-ui, sans-serif;
   }
 }
 
 @layer utilities {
-  .bg-hero-gradient {
-    background: var(--gradient-hero-overlay), 
-                url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1920&q=80');
-    background-size: cover;
-    background-position: center;
+  .bg-hero-red {
+    background: linear-gradient(135deg, hsl(0 85% 45%) 0%, hsl(0 85% 40%) 100%);
   }
 
-  .bg-gradient-cta {
-    background: var(--gradient-cta);
+  .bg-benefits-card {
+    background: linear-gradient(to bottom, hsl(0 0% 100%) 0%, hsl(0 0% 100%) 100%);
+    box-shadow: 0 10px 40px -10px hsl(217 65% 20% / 0.15);
   }
 
-  .text-gradient-orange {
+  .text-gradient-yellow {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, hsl(24 95% 53%) 0%, hsl(24 95% 65%) 100%);
+    background-image: linear-gradient(135deg, hsl(45 100% 50%) 0%, hsl(35 100% 55%) 100%);
   }
 
   .card-hover {
@@ -135,7 +127,7 @@
   }
 
   .card-hover:hover {
-    @apply -translate-y-2;
+    @apply -translate-y-1;
     box-shadow: var(--shadow-lg);
   }
 
