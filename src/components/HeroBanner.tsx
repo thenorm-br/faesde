@@ -27,7 +27,7 @@ const HeroBanner = () => {
           <div className="animate-scale-in relative" style={{ animationDelay: "0.2s" }}>
             <div className="relative flex h-40 w-40 items-center justify-center rounded-full border-4 border-primary-foreground/30 md:h-52 md:w-52">
               <div className="text-center">
-                <span className="text-5xl font-extrabold text-ecid-yellow md:text-6xl">20%</span>
+                <span className="text-5xl font-extrabold text-ecid-yellow md:text-6xl">30%</span>
               </div>
             </div>
             {/* Ornament */}
@@ -47,7 +47,7 @@ const HeroBanner = () => {
             <div className="animate-fade-up mt-4 inline-flex items-center gap-3" style={{ animationDelay: "0.35s" }}>
               <span className="text-sm font-medium text-primary-foreground/80">Utilize o cupom:</span>
               <span className="rounded-lg bg-primary-foreground/20 px-4 py-2 text-lg font-bold text-ecid-yellow">
-                FAESDE20
+                FAESDE30
               </span>
             </div>
           </div>
