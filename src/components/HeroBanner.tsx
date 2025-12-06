@@ -1,50 +1,55 @@
-import { Search } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-
 const HeroBanner = () => {
   return (
-    <section className="relative min-h-[550px] bg-hero-gradient flex items-center justify-center py-20 md:min-h-[600px]">
-      <div className="container relative mx-auto text-center">
-        <div className="mx-auto max-w-3xl space-y-6">
-          {/* Headline */}
-          <h1 className="animate-fade-up text-4xl font-extrabold leading-tight tracking-tight text-primary-foreground md:text-5xl lg:text-6xl">
-            Prepare-se para o futuro!
-          </h1>
-          
-          {/* Subheadline */}
-          <p className="animate-fade-up text-lg text-primary-foreground/80 md:text-xl" style={{ animationDelay: "0.1s" }}>
-            Unir os melhores alunos às melhores instituições de ensino.
-          </p>
+    <section className="relative bg-hero-red py-16 md:py-24 overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+        }} />
+      </div>
 
-          {/* Search Bar */}
-          <div className="animate-fade-up mx-auto max-w-xl pt-4" style={{ animationDelay: "0.2s" }}>
-            <div className="relative flex overflow-hidden rounded-full bg-card shadow-lg">
-              <div className="relative flex-1">
-                <Search className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-muted-foreground" />
-                <Input
-                  type="search"
-                  placeholder="Escreva para iniciar a pesquisa..."
-                  className="h-14 border-0 pl-12 pr-4 text-base focus-visible:ring-0"
-                />
+      <div className="container relative mx-auto">
+        <div className="flex flex-col items-center justify-between gap-8 lg:flex-row">
+          {/* Left Content */}
+          <div className="text-center lg:text-left">
+            <p className="animate-fade-up mb-2 text-lg font-semibold uppercase tracking-wider text-primary-foreground/80">
+              Invista no seu futuro
+            </p>
+            <h1 className="animate-fade-up text-4xl font-extrabold leading-tight text-ecid-yellow md:text-5xl lg:text-6xl" style={{ animationDelay: "0.1s" }}>
+              CURSOS<br />TÉCNICOS
+            </h1>
+            <p className="animate-fade-up mt-2 text-xl font-bold text-primary-foreground md:text-2xl" style={{ animationDelay: "0.15s" }}>
+              AUTORIZADOS PELO MEC
+            </p>
+          </div>
+
+          {/* Center - Discount Badge */}
+          <div className="animate-scale-in relative" style={{ animationDelay: "0.2s" }}>
+            <div className="relative flex h-40 w-40 items-center justify-center rounded-full border-4 border-primary-foreground/30 md:h-52 md:w-52">
+              <div className="text-center">
+                <span className="text-5xl font-extrabold text-ecid-yellow md:text-6xl">20%</span>
               </div>
-              <Button className="m-1.5 h-11 rounded-full bg-accent px-6 font-semibold text-accent-foreground shadow-orange hover:bg-faesde-orange-dark">
-                Pesquisar
-              </Button>
+            </div>
+            {/* Ornament */}
+            <div className="absolute -top-4 left-1/2 -translate-x-1/2">
+              <div className="h-8 w-8 rounded-full border-4 border-primary-foreground/30" />
             </div>
           </div>
 
-          {/* CTAs */}
-          <div className="animate-fade-up flex flex-wrap items-center justify-center gap-4 pt-4" style={{ animationDelay: "0.3s" }}>
-            <Button
-              variant="outline"
-              className="h-12 rounded-full border-2 border-primary-foreground/30 bg-transparent px-8 font-semibold text-primary-foreground backdrop-blur-sm transition-all hover:border-primary-foreground/60 hover:bg-primary-foreground/10"
-            >
-              Ver Cursos
-            </Button>
-            <Button className="h-12 rounded-full bg-accent px-8 font-semibold text-accent-foreground shadow-orange transition-all hover:bg-faesde-orange-dark hover:shadow-lg">
-              Fale Conosco
-            </Button>
+          {/* Right Content */}
+          <div className="text-center lg:text-right">
+            <p className="animate-fade-up text-lg font-semibold uppercase tracking-wider text-primary-foreground/80" style={{ animationDelay: "0.25s" }}>
+              Desconto em todos
+            </p>
+            <h2 className="animate-fade-up text-2xl font-extrabold text-ecid-yellow md:text-3xl" style={{ animationDelay: "0.3s" }}>
+              CURSOS TÉCNICOS EAD
+            </h2>
+            <div className="animate-fade-up mt-4 inline-flex items-center gap-3" style={{ animationDelay: "0.35s" }}>
+              <span className="text-sm font-medium text-primary-foreground/80">Utilize o cupom:</span>
+              <span className="rounded-lg bg-primary-foreground/20 px-4 py-2 text-lg font-bold text-ecid-yellow">
+                FAESDE20
+              </span>
+            </div>
           </div>
         </div>
       </div>

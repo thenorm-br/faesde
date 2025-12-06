@@ -18,7 +18,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["Montserrat", "system-ui", "sans-serif"],
+        sans: ["Poppins", "system-ui", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -54,15 +54,14 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        faesde: {
-          "blue-dark": "hsl(var(--faesde-blue-dark))",
-          blue: "hsl(var(--faesde-blue))",
-          "blue-light": "hsl(var(--faesde-blue-light))",
-          orange: "hsl(var(--faesde-orange))",
-          "orange-dark": "hsl(var(--faesde-orange-dark))",
-          red: "hsl(var(--faesde-red))",
-          green: "hsl(var(--faesde-green))",
-          gray: "hsl(var(--faesde-gray))",
+        ecid: {
+          navy: "hsl(var(--ecid-navy))",
+          red: "hsl(var(--ecid-red))",
+          "red-light": "hsl(var(--ecid-red-light))",
+          yellow: "hsl(var(--ecid-yellow))",
+          "blue-accent": "hsl(var(--ecid-blue-accent))",
+          gray: "hsl(var(--ecid-gray))",
+          "light-gray": "hsl(var(--ecid-light-gray))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
@@ -84,7 +83,7 @@ export default {
         sm: "var(--shadow-sm)",
         md: "var(--shadow-md)",
         lg: "var(--shadow-lg)",
-        orange: "var(--shadow-orange)",
+        card: "var(--shadow-card)",
       },
       keyframes: {
         "accordion-down": {
