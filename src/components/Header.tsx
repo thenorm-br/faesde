@@ -2,6 +2,13 @@ import { Search, ShoppingCart, User, Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -10,21 +17,43 @@ const Header = () => {
     <header className="sticky top-0 z-50 w-full bg-ecid-navy">
       <div className="container mx-auto flex items-center justify-between py-4">
         {/* Logo */}
-        <a href="/" className="flex items-center gap-2">
+        <Link to="/" className="flex items-center gap-2">
           <span className="text-2xl font-extrabold tracking-tight text-primary-foreground">
             FAESDE
           </span>
-        </a>
+        </Link>
 
         {/* Categories Dropdown - Desktop */}
         <div className="hidden items-center gap-2 lg:flex">
-          <Button
-            variant="ghost"
-            className="text-primary-foreground/90 hover:bg-primary-foreground/10 hover:text-primary-foreground"
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button
+                variant="ghost"
+                className="text-primary-foreground/90 hover:bg-primary-foreground/10 hover:text-primary-foreground"
+              >
+                Categorias
+                <ChevronDown className="ml-1 h-4 w-4" />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="w-56">
+              <DropdownMenuItem asChild>
+                <Link to="/cursos?categoria=tecnico">Cursos Técnicos EAD</Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link to="/cursos?categoria=competencia">Certificação por Competência</Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link to="/cursos?categoria=pos-tecnico">Cursos Pós-Técnicos</Link>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+          
+          <Link 
+            to="/faq" 
+            className="rounded-lg px-4 py-2 text-sm font-medium text-primary-foreground/80 transition-colors hover:bg-primary-foreground/10 hover:text-primary-foreground"
           >
-            Categorias
-            <ChevronDown className="ml-1 h-4 w-4" />
-          </Button>
+            FAQ
+          </Link>
         </div>
 
         {/* Search Bar - Desktop */}
@@ -41,11 +70,13 @@ const Header = () => {
 
         {/* Actions */}
         <div className="flex items-center gap-2">
-          <Button
-            className="hidden rounded-lg bg-ecid-blue-accent px-6 font-semibold text-primary-foreground hover:bg-ecid-blue-accent/90 sm:flex"
-          >
-            Fale conosco
-          </Button>
+          <Link to="/#contact">
+            <Button
+              className="hidden rounded-lg bg-ecid-blue-accent px-6 font-semibold text-primary-foreground hover:bg-ecid-blue-accent/90 sm:flex"
+            >
+              Fale conosco
+            </Button>
+          </Link>
           
           <Button
             variant="ghost"
@@ -89,30 +120,39 @@ const Header = () => {
             </div>
           </div>
           <nav className="flex flex-col gap-2">
-            <a
-              href="#courses"
+            <Link
+              to="/cursos"
+              className="rounded-lg px-4 py-2.5 text-sm font-medium text-primary-foreground/80 transition-colors hover:bg-primary-foreground/10 hover:text-primary-foreground"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Todos os Cursos
+            </Link>
+            <Link
+              to="/cursos?categoria=tecnico"
               className="rounded-lg px-4 py-2.5 text-sm font-medium text-primary-foreground/80 transition-colors hover:bg-primary-foreground/10 hover:text-primary-foreground"
               onClick={() => setIsMenuOpen(false)}
             >
               Cursos Técnicos EAD
-            </a>
-            <a
-              href="#courses"
+            </Link>
+            <Link
+              to="/cursos?categoria=competencia"
               className="rounded-lg px-4 py-2.5 text-sm font-medium text-primary-foreground/80 transition-colors hover:bg-primary-foreground/10 hover:text-primary-foreground"
               onClick={() => setIsMenuOpen(false)}
             >
               Certificação por Competência
-            </a>
-            <a
-              href="#contact"
+            </Link>
+            <Link
+              to="/faq"
               className="rounded-lg px-4 py-2.5 text-sm font-medium text-primary-foreground/80 transition-colors hover:bg-primary-foreground/10 hover:text-primary-foreground"
               onClick={() => setIsMenuOpen(false)}
             >
-              Contato
-            </a>
-            <Button className="mt-2 w-full rounded-lg bg-ecid-blue-accent font-semibold text-primary-foreground">
-              Fale conosco
-            </Button>
+              FAQ
+            </Link>
+            <Link to="/#contact" onClick={() => setIsMenuOpen(false)}>
+              <Button className="mt-2 w-full rounded-lg bg-ecid-blue-accent font-semibold text-primary-foreground">
+                Fale conosco
+              </Button>
+            </Link>
           </nav>
         </div>
       )}

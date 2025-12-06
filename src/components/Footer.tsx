@@ -1,4 +1,5 @@
 import { Mail, Phone, MapPin, Facebook, Instagram, Linkedin, Youtube } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -43,11 +44,11 @@ const Footer = () => {
           <div>
             <h3 className="mb-4 font-semibold">Cursos</h3>
             <ul className="space-y-2.5 text-sm text-primary-foreground/70">
-              <li><a href="#" className="hover:text-primary-foreground transition-colors">Cursos Técnicos EAD</a></li>
-              <li><a href="#" className="hover:text-primary-foreground transition-colors">Certificação por Competência</a></li>
-              <li><a href="#" className="hover:text-primary-foreground transition-colors">Segurança do Trabalho</a></li>
-              <li><a href="#" className="hover:text-primary-foreground transition-colors">Eletrotécnica</a></li>
-              <li><a href="#" className="hover:text-primary-foreground transition-colors">Administração</a></li>
+              <li><Link to="/cursos?categoria=tecnico" className="hover:text-primary-foreground transition-colors">Cursos Técnicos EAD</Link></li>
+              <li><Link to="/cursos?categoria=competencia" className="hover:text-primary-foreground transition-colors">Certificação por Competência</Link></li>
+              <li><Link to="/curso/seguranca-trabalho" className="hover:text-primary-foreground transition-colors">Segurança do Trabalho</Link></li>
+              <li><Link to="/curso/eletrotecnica" className="hover:text-primary-foreground transition-colors">Eletrotécnica</Link></li>
+              <li><Link to="/curso/administracao" className="hover:text-primary-foreground transition-colors">Administração</Link></li>
             </ul>
           </div>
 
@@ -57,7 +58,7 @@ const Footer = () => {
             <ul className="space-y-2.5 text-sm text-primary-foreground/70">
               <li><a href="#" className="hover:text-primary-foreground transition-colors">Sobre a FAESDE</a></li>
               <li><a href="#" className="hover:text-primary-foreground transition-colors">Como funciona</a></li>
-              <li><a href="#" className="hover:text-primary-foreground transition-colors">Perguntas frequentes</a></li>
+              <li><Link to="/faq" className="hover:text-primary-foreground transition-colors">Perguntas frequentes</Link></li>
               <li><a href="#" className="hover:text-primary-foreground transition-colors">Política de privacidade</a></li>
               <li><a href="#" className="hover:text-primary-foreground transition-colors">Termos de uso</a></li>
             </ul>
