@@ -1,5 +1,6 @@
 import { Calendar, BadgeCheck, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 interface CourseCardProps {
   title: string;
@@ -8,9 +9,10 @@ interface CourseCardProps {
   originalPrice: string;
   promoPrice: string;
   installment: string;
+  slug?: string;
 }
 
-const CourseCard = ({ title, image, description, originalPrice, promoPrice, installment }: CourseCardProps) => {
+const CourseCard = ({ title, image, description, originalPrice, promoPrice, installment, slug }: CourseCardProps) => {
   const getShortTitle = (fullTitle: string) => {
     const name = fullTitle
       .replace("Curso Técnico de ", "")
@@ -31,72 +33,80 @@ const CourseCard = ({ title, image, description, originalPrice, promoPrice, inst
     return "Curso Técnico EAD";
   };
 
+  const courseSlug = slug || title
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+
   return (
-    <article className="group card-hover flex flex-col overflow-hidden rounded-2xl bg-card shadow-card">
-      <div className="relative aspect-[16/10] overflow-hidden">
-        <img
-          src={image}
-          alt={title}
-          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-ecid-navy/90 via-ecid-navy/50 to-transparent" />
-        
-        <div className="absolute left-0 top-3 bg-ecid-yellow px-3 py-1">
-          <span className="text-[10px] font-bold uppercase tracking-wide text-ecid-navy">
-            {getLabel()}
-          </span>
-        </div>
-        
-        <div className="absolute bottom-8 left-3 right-3">
-          <h4 className="text-sm font-bold uppercase leading-tight text-white drop-shadow-lg">
-            {getShortTitle(title)}
-          </h4>
-        </div>
-        
-        <div className="absolute bottom-2 left-3">
-          <span className="inline-block border border-white/80 bg-white/10 px-2 py-0.5 text-[9px] font-medium uppercase tracking-wide text-white backdrop-blur-sm">
-            Autorizado pelo MEC
-          </span>
-        </div>
-      </div>
-
-      <div className="flex flex-1 flex-col p-5">
-        <div className="mb-3 flex flex-wrap gap-2">
-          <span className="inline-flex items-center gap-1 rounded-full bg-muted px-2.5 py-1 text-xs font-medium text-muted-foreground">
-            <Calendar className="h-3 w-3" />
-            Início imediato
-          </span>
-          <span className="inline-flex items-center gap-1 rounded-full bg-ecid-blue-accent/10 px-2.5 py-1 text-xs font-medium text-ecid-blue-accent">
-            <BadgeCheck className="h-3 w-3" />
-            Autorizado pelo MEC
-          </span>
+    <Link to={`/curso/${courseSlug}`} className="block">
+      <article className="group card-hover flex h-full flex-col overflow-hidden rounded-2xl bg-card shadow-card transition-all hover:shadow-lg">
+        <div className="relative aspect-[16/10] overflow-hidden">
+          <img
+            src={image}
+            alt={title}
+            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-ecid-navy/90 via-ecid-navy/50 to-transparent" />
+          
+          <div className="absolute left-0 top-3 bg-ecid-yellow px-3 py-1">
+            <span className="text-[10px] font-bold uppercase tracking-wide text-ecid-navy">
+              {getLabel()}
+            </span>
+          </div>
+          
+          <div className="absolute bottom-8 left-3 right-3">
+            <h4 className="text-sm font-bold uppercase leading-tight text-white drop-shadow-lg">
+              {getShortTitle(title)}
+            </h4>
+          </div>
+          
+          <div className="absolute bottom-2 left-3">
+            <span className="inline-block border border-white/80 bg-white/10 px-2 py-0.5 text-[9px] font-medium uppercase tracking-wide text-white backdrop-blur-sm">
+              Autorizado pelo MEC
+            </span>
+          </div>
         </div>
 
-        <h3 className="mb-2 line-clamp-2 text-base font-bold text-foreground">
-          {title}
-        </h3>
-        
-        <p className="mb-4 line-clamp-3 flex-1 text-sm text-muted-foreground">
-          {description}
-        </p>
+        <div className="flex flex-1 flex-col p-5">
+          <div className="mb-3 flex flex-wrap gap-2">
+            <span className="inline-flex items-center gap-1 rounded-full bg-muted px-2.5 py-1 text-xs font-medium text-muted-foreground">
+              <Calendar className="h-3 w-3" />
+              Início imediato
+            </span>
+            <span className="inline-flex items-center gap-1 rounded-full bg-ecid-blue-accent/10 px-2.5 py-1 text-xs font-medium text-ecid-blue-accent">
+              <BadgeCheck className="h-3 w-3" />
+              Autorizado pelo MEC
+            </span>
+          </div>
 
-        <div className="mb-4 space-y-1 border-t border-border pt-4">
-          <p className="text-xs text-muted-foreground">
-            <span className="line-through">De {originalPrice}</span>
+          <h3 className="mb-2 line-clamp-2 text-base font-bold text-foreground">
+            {title}
+          </h3>
+          
+          <p className="mb-4 line-clamp-3 flex-1 text-sm text-muted-foreground">
+            {description}
           </p>
-          <p className="text-sm text-muted-foreground">Por {promoPrice}</p>
-          <p className="text-2xl font-bold text-ecid-blue-accent">{installment}</p>
-          <p className="text-xs text-muted-foreground">s/ juros no cartão de crédito</p>
-        </div>
 
-        <Button className="w-full rounded-lg bg-ecid-red font-semibold text-primary-foreground hover:bg-ecid-red-light">
-          Quero me matricular
-        </Button>
-      </div>
-    </article>
+          <div className="mb-4 space-y-1 border-t border-border pt-4">
+            <p className="text-xs text-muted-foreground">
+              <span className="line-through">De {originalPrice}</span>
+            </p>
+            <p className="text-sm text-muted-foreground">Por {promoPrice}</p>
+            <p className="text-2xl font-bold text-ecid-blue-accent">{installment}</p>
+            <p className="text-xs text-muted-foreground">s/ juros no cartão de crédito</p>
+          </div>
+
+          <Button className="w-full rounded-lg bg-ecid-red font-semibold text-primary-foreground hover:bg-ecid-red-light">
+            Quero me matricular
+          </Button>
+        </div>
+      </article>
+    </Link>
   );
 };
-
 const technicalCourses = [
   {
     title: "Curso Técnico de Segurança do Trabalho EAD",
