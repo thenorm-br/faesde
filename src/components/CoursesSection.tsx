@@ -107,6 +107,7 @@ const CourseCard = ({ title, image, description, originalPrice, promoPrice, inst
     </Link>
   );
 };
+
 const technicalCourses = [
   {
     title: "Curso Técnico de Segurança do Trabalho EAD",
