@@ -340,6 +340,9 @@ const CursoDetalhe = () => {
       {/* Course Content Sections */}
       <section className="py-12">
         <div className="container mx-auto px-4">
+          <div className="flex flex-col gap-8 lg:flex-row">
+            {/* Left Content */}
+            <div className="flex-1">
           {/* Sobre o Curso */}
           <div className="mb-12">
             <h2 className="mb-2 text-2xl font-bold text-foreground">
@@ -553,6 +556,74 @@ const CursoDetalhe = () => {
               </Accordion>
             </div>
           )}
+            </div>
+            
+            {/* Sticky Price Card - Right Side */}
+            <div className="hidden lg:block lg:w-96">
+              <div className="sticky top-24">
+                {/* YouTube Video Thumbnail */}
+                <div 
+                  className="relative mb-4 cursor-pointer overflow-hidden rounded-xl"
+                  onClick={() => setShowVideo(true)}
+                >
+                  <img 
+                    src={`https://img.youtube.com/vi/${course.youtubeVideoId}/maxresdefault.jpg`}
+                    alt={course.title}
+                    className="aspect-video w-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                  
+                  {/* Play Button */}
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="flex h-16 w-16 items-center justify-center rounded-full bg-ecid-red">
+                      <Play className="h-8 w-8 fill-white text-white" />
+                    </div>
+                  </div>
+                  
+                  {/* Course Badge */}
+                  <div className="absolute right-3 top-3">
+                    <span className="rounded bg-ecid-blue-accent px-2 py-1 text-xs font-bold text-white">
+                      {course.category}
+                    </span>
+                  </div>
+                  
+                  {/* Course Title Overlay */}
+                  <div className="absolute bottom-3 left-3 right-3">
+                    <h4 className="text-lg font-bold text-white">{course.title.split(' ').slice(2).join(' ')}</h4>
+                    <span className="mt-1 inline-block rounded border border-white/50 px-2 py-0.5 text-xs text-white">
+                      Autorizado pelo MEC
+                    </span>
+                  </div>
+                </div>
+                
+                {/* Price Card */}
+                <div className="rounded-2xl bg-card p-6 shadow-xl">
+                  <div className="mb-4 inline-block rounded-lg bg-ecid-blue-accent px-4 py-2">
+                    <span className="text-sm font-bold text-white">40% de desconto</span>
+                  </div>
+                  
+                  <h3 className="mb-4 text-lg font-bold text-foreground">{course.title}</h3>
+                  
+                  <div className="mb-4 space-y-1">
+                    <p className="text-sm text-muted-foreground">
+                      De <span className="line-through">{course.originalPrice}</span>
+                    </p>
+                    <p className="text-sm text-muted-foreground">Por {course.promoPrice}</p>
+                    <div className="flex items-baseline gap-2">
+                      <span className="text-sm text-muted-foreground">12x</span>
+                      <span className="text-3xl font-bold text-foreground">{course.installment}</span>
+                    </div>
+                    <p className="text-sm text-muted-foreground">s/ juros no cartão de crédito</p>
+                  </div>
+                  
+                  <Button className="w-full gap-2 rounded-lg bg-ecid-blue-accent py-6 text-lg font-semibold text-white hover:bg-ecid-navy">
+                    <BookOpen className="h-5 w-5" />
+                    Matricule-se já
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
