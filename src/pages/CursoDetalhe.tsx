@@ -283,39 +283,6 @@ const CursoDetalhe = () => {
                 </Button>
               )}
             </div>
-            
-            {/* Price Card */}
-            <div className="w-full rounded-2xl bg-card p-6 shadow-xl lg:w-96">
-              <div className="mb-4 rounded-lg bg-ecid-red px-4 py-2 text-center">
-                <span className="text-lg font-bold text-primary-foreground">40% de desconto</span>
-              </div>
-              
-              <h3 className="mb-4 text-lg font-bold text-foreground">{course.title}</h3>
-              
-              <div className="mb-4 space-y-1">
-                <p className="text-sm text-muted-foreground">
-                  De <span className="line-through">{course.originalPrice}</span> Por {course.promoPrice}
-                </p>
-                <p className="text-sm text-muted-foreground">12x</p>
-                <p className="text-3xl font-bold text-ecid-blue-accent">{course.installment}</p>
-                <p className="text-sm text-muted-foreground">s/ juros no cartão de crédito</p>
-              </div>
-              
-              <div className="mb-4 rounded-lg bg-ecid-yellow/10 p-3">
-                <p className="text-center text-sm font-medium text-ecid-navy">
-                  Use o cupom <span className="font-bold">FAESDE30</span> e ganhe 30% OFF adicional!
-                </p>
-              </div>
-              
-              <Button className="mb-3 w-full rounded-lg bg-ecid-red py-6 text-lg font-semibold text-primary-foreground hover:bg-ecid-red-light">
-                Matricule-se já
-              </Button>
-              
-              <Button variant="outline" className="w-full rounded-lg border-green-500 py-6 text-green-600 hover:bg-green-50">
-                <MessageCircle className="mr-2 h-5 w-5" />
-                Falar no WhatsApp
-              </Button>
-            </div>
           </div>
         </div>
       </section>
