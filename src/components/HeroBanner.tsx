@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const HeroBanner = () => {
   return (
     <section className="relative bg-hero-red py-16 md:py-24 overflow-hidden">
@@ -50,6 +52,15 @@ const HeroBanner = () => {
                 FAESDE30
               </span>
             </div>
+            
+            {/* CTA Button */}
+            <Link 
+              to="/curso/seguranca-trabalho"
+              className="mt-6 inline-block animate-fade-up rounded-lg bg-ecid-red-light px-8 py-3 text-lg font-bold text-primary-foreground shadow-lg transition-all hover:scale-105 hover:bg-ecid-yellow hover:text-ecid-navy hover:shadow-xl"
+              style={{ animationDelay: "0.4s" }}
+            >
+              Quero me matricular
+            </Link>
           </div>
         </div>
       </div>
