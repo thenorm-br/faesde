@@ -116,6 +116,7 @@ const technicalCourses = [
     originalPrice: "R$ 2.500,00",
     promoPrice: "R$ 1.500,00",
     installment: "12x R$ 125,00",
+    slug: "seguranca-trabalho",
   },
   {
     title: "Curso Técnico em Eletrotécnica EAD",
@@ -124,6 +125,7 @@ const technicalCourses = [
     originalPrice: "R$ 2.500,00",
     promoPrice: "R$ 1.500,00",
     installment: "12x R$ 125,00",
+    slug: "eletrotecnica",
   },
   {
     title: "Curso Técnico em Mecânica EAD",
@@ -132,6 +134,7 @@ const technicalCourses = [
     originalPrice: "R$ 2.500,00",
     promoPrice: "R$ 1.500,00",
     installment: "12x R$ 125,00",
+    slug: "mecanica",
   },
   {
     title: "Curso Técnico de Administração EAD",
@@ -140,6 +143,7 @@ const technicalCourses = [
     originalPrice: "R$ 1.590,00",
     promoPrice: "R$ 900,00",
     installment: "12x R$ 75,00",
+    slug: "administracao",
   },
   {
     title: "Curso Técnico de Edificações EAD",
@@ -148,6 +152,7 @@ const technicalCourses = [
     originalPrice: "R$ 2.500,00",
     promoPrice: "R$ 1.500,00",
     installment: "12x R$ 125,00",
+    slug: "edificacoes",
   },
   {
     title: "Curso Técnico em Eletromecânica EAD",
@@ -156,6 +161,7 @@ const technicalCourses = [
     originalPrice: "R$ 2.500,00",
     promoPrice: "R$ 1.500,00",
     installment: "12x R$ 125,00",
+    slug: "eletromecanica",
   },
   {
     title: "Curso Técnico em Transações Imobiliárias (TTI) EAD",
@@ -164,6 +170,7 @@ const technicalCourses = [
     originalPrice: "R$ 1.750,00",
     promoPrice: "R$ 900,00",
     installment: "12x R$ 75,00",
+    slug: "tti",
   },
   {
     title: "Curso Técnico em Agropecuária EAD",
@@ -172,6 +179,7 @@ const technicalCourses = [
     originalPrice: "R$ 2.500,00",
     promoPrice: "R$ 1.500,00",
     installment: "12x R$ 125,00",
+    slug: "agropecuaria",
   },
   {
     title: "Curso Técnico em Farmácia EAD",
@@ -180,6 +188,7 @@ const technicalCourses = [
     originalPrice: "R$ 2.500,00",
     promoPrice: "R$ 1.500,00",
     installment: "12x R$ 125,00",
+    slug: "farmacia",
   },
   {
     title: "Curso Técnico em Agricultura EAD",
@@ -188,6 +197,7 @@ const technicalCourses = [
     originalPrice: "R$ 2.500,00",
     promoPrice: "R$ 1.500,00",
     installment: "12x R$ 125,00",
+    slug: "agricultura",
   },
 ];
 
@@ -199,6 +209,7 @@ const certificationCourses = [
     originalPrice: "R$ 3.500,00",
     promoPrice: "R$ 1.599,00",
     installment: "12x R$ 133,25",
+    slug: "certificacao-administracao",
   },
   {
     title: "Certificação Técnica por Competência em Automação Industrial",
@@ -207,6 +218,7 @@ const certificationCourses = [
     originalPrice: "R$ 2.500,00",
     promoPrice: "R$ 1.599,00",
     installment: "12x R$ 133,25",
+    slug: "certificacao-automacao-industrial",
   },
   {
     title: "Certificação Técnica por Competência em Edificações",
@@ -215,6 +227,7 @@ const certificationCourses = [
     originalPrice: "R$ 2.500,00",
     promoPrice: "R$ 1.599,00",
     installment: "12x R$ 133,25",
+    slug: "certificacao-edificacoes",
   },
   {
     title: "Certificação Técnica por Competência em Eletrotécnica",
@@ -223,6 +236,7 @@ const certificationCourses = [
     originalPrice: "R$ 2.500,00",
     promoPrice: "R$ 1.599,00",
     installment: "12x R$ 133,25",
+    slug: "certificacao-eletrotecnica",
   },
   {
     title: "Certificação Técnica por Competência em Segurança do Trabalho",
@@ -231,6 +245,7 @@ const certificationCourses = [
     originalPrice: "R$ 2.500,00",
     promoPrice: "R$ 1.599,00",
     installment: "12x R$ 133,25",
+    slug: "certificacao-seguranca-trabalho",
   },
   {
     title: "Certificação Técnica por Competência em Agricultura",
@@ -239,6 +254,7 @@ const certificationCourses = [
     originalPrice: "R$ 2.500,00",
     promoPrice: "R$ 1.599,00",
     installment: "12x R$ 133,25",
+    slug: "certificacao-agricultura",
   },
   {
     title: "Certificação Técnica por Competência em Agropecuária",
@@ -247,6 +263,7 @@ const certificationCourses = [
     originalPrice: "R$ 2.500,00",
     promoPrice: "R$ 1.599,00",
     installment: "12x R$ 133,25",
+    slug: "certificacao-agropecuaria",
   },
   {
     title: "Certificação Técnica por Competência em Análises Clínicas",
@@ -255,6 +272,7 @@ const certificationCourses = [
     originalPrice: "R$ 2.500,00",
     promoPrice: "R$ 1.599,00",
     installment: "12x R$ 133,25",
+    slug: "certificacao-analises-clinicas",
   },
   {
     title: "Certificação Técnica por Competência em Eletroeletrônica",
@@ -263,6 +281,7 @@ const certificationCourses = [
     originalPrice: "R$ 3.500,00",
     promoPrice: "R$ 1.599,00",
     installment: "12x R$ 133,25",
+    slug: "certificacao-eletroeletronica",
   },
   {
     title: "Certificação Técnica por Competência em Mecânica",
@@ -271,6 +290,7 @@ const certificationCourses = [
     originalPrice: "R$ 2.500,00",
     promoPrice: "R$ 1.599,00",
     installment: "12x R$ 133,25",
+    slug: "certificacao-mecanica",
   },
 ];
 
