@@ -148,6 +148,397 @@ const coursesData: Record<string, CourseData> = {
       { question: "É seguro comprar pelo site?", answer: "Sim, nosso site possui certificado SSL e todas as transações são processadas de forma segura." },
       { question: "Os cursos são autorizados pelo MEC?", answer: "Sim, todos os nossos cursos técnicos são devidamente autorizados pelo Ministério da Educação (MEC)." }
     ]
+  },
+  "eletrotecnica": {
+    title: "Curso Técnico em Eletrotécnica EAD",
+    subtitle: "Formação completa em sistemas elétricos com certificação reconhecida pelo MEC e registro no CREA",
+    image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1200&h=600&fit=crop",
+    bannerImage: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1920&h=400&fit=crop",
+    description: "O Curso Técnico em Eletrotécnica EAD prepara você para atuar em projetos, instalação, operação e manutenção de sistemas elétricos industriais e prediais. Com formação reconhecida pelo MEC, você estará apto a trabalhar em indústrias, empresas de energia e como profissional autônomo.",
+    originalPrice: "R$ 2.500,00",
+    promoPrice: "R$ 1.500,00",
+    installment: "R$ 125,00",
+    hours: 1200,
+    durationRange: "6 a 12 meses",
+    certification: "Registro no CREA",
+    rating: 5.0,
+    youtubeVideoId: "pn97Z1-ssFI",
+    category: "Curso Técnico EAD",
+    registration: {
+      portaria: "SEE-PRC-2021/12171",
+      parecer: "219/2021",
+      approvedDate: "07/10/2021",
+      registerWith: "Registro no CREA"
+    },
+    aboutCourse: "O Técnico em Eletrotécnica é o profissional que planeja, instala, opera e mantém sistemas elétricos industriais e prediais, garantindo segurança e eficiência energética. Este curso forma profissionais capacitados para atuar em diversos setores da economia.",
+    howItWorks: [
+      "O curso aborda desde os fundamentos da eletricidade até sistemas complexos de automação e controle.",
+      "Você aprenderá sobre instalações elétricas, comandos elétricos, eletrônica de potência e muito mais.",
+      "A metodologia EAD permite flexibilidade nos estudos com todo o suporte necessário."
+    ],
+    profession: "O Técnico em Eletrotécnica pode atuar em indústrias, concessionárias de energia, empresas de manutenção, construção civil e como autônomo. É responsável por projetos elétricos, instalações, manutenção preventiva e corretiva de sistemas elétricos.",
+    market: "O mercado para técnicos em eletrotécnica é amplo e aquecido. Com a crescente demanda por energia e automação industrial, profissionais qualificados são cada vez mais requisitados em diversos setores da economia.",
+    methodology: {
+      materials: ["Video-aulas", "Apostilas", "Artigos", "Biblioteca digital"],
+      services: ["Requerimento de declarações", "Histórico", "Estágio", "Matriz curricular"],
+      responseTime: "Chamados respondidos dentro de 48 horas."
+    },
+    requirements: ["Cópia do RG e do CPF", "Comprovante de Residência", "Certificado de Conclusão do Ensino Médio"],
+    tutoring: "Acompanhamento completo do tutor durante todo o curso.",
+    tutorAttributes: ["Apoiar os alunos na plataforma", "Orientar durante as atividades", "Esclarecer dúvidas técnicas"],
+    modules: [
+      { name: "Módulo 01", subjects: [{ name: "Introdução ao EAD", hours: 80 }, { name: "Eletricidade Básica", hours: 80 }, { name: "Matemática Aplicada", hours: 60 }, { name: "Desenho Técnico", hours: 60 }] },
+      { name: "Módulo 02", subjects: [{ name: "Circuitos Elétricos", hours: 80 }, { name: "Comandos Elétricos", hours: 80 }, { name: "Instalações Elétricas", hours: 80 }] },
+      { name: "Módulo 03", subjects: [{ name: "Eletrônica Básica", hours: 60 }, { name: "Eletrônica de Potência", hours: 80 }, { name: "Automação Industrial", hours: 80 }] },
+      { name: "Módulo 04", subjects: [{ name: "Máquinas Elétricas", hours: 80 }, { name: "Normas e Legislação", hours: 60 }, { name: "Estágio Supervisionado", hours: 240 }] }
+    ],
+    access: [
+      { title: "Video Aulas", description: "Estude onde e quando quiser." },
+      { title: "Tutoria", description: "Tire suas dúvidas." },
+      { title: "Diploma", description: "Autorizado pelo MEC." }
+    ],
+    faq: [
+      { question: "Quais as formas de pagamento?", answer: "Aceitamos cartão de crédito em até 12x sem juros, boleto bancário e PIX." },
+      { question: "O curso tem registro no CREA?", answer: "Sim, após a conclusão você pode solicitar registro no CREA como técnico." }
+    ]
+  },
+  "mecanica": {
+    title: "Curso Técnico em Mecânica EAD",
+    subtitle: "Torne-se um profissional qualificado em mecânica com certificação reconhecida pelo MEC",
+    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1200&h=600&fit=crop",
+    bannerImage: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1920&h=400&fit=crop",
+    description: "O Curso Técnico em Mecânica EAD forma profissionais para atuar em projetos, fabricação, montagem e manutenção de sistemas mecânicos. Com alta demanda no mercado industrial, este curso oferece formação completa e reconhecida nacionalmente.",
+    originalPrice: "R$ 2.500,00",
+    promoPrice: "R$ 1.500,00",
+    installment: "R$ 125,00",
+    hours: 1200,
+    durationRange: "6 a 12 meses",
+    certification: "Registro no CREA",
+    rating: 5.0,
+    youtubeVideoId: "pn97Z1-ssFI",
+    category: "Curso Técnico EAD",
+    registration: {
+      portaria: "SEE-PRC-2021/12172",
+      parecer: "220/2021",
+      approvedDate: "07/10/2021",
+      registerWith: "Registro no CREA"
+    },
+    aboutCourse: "O Técnico em Mecânica é essencial para a indústria brasileira, atuando no desenvolvimento, fabricação e manutenção de máquinas e equipamentos mecânicos.",
+    howItWorks: [
+      "Formação completa em mecânica com foco em aplicações industriais.",
+      "Metodologia EAD que permite estudar no seu ritmo com suporte completo."
+    ],
+    profession: "Atue em indústrias automobilísticas, metalúrgicas, petroquímicas e de manufatura em geral.",
+    market: "O setor industrial brasileiro demanda constantemente técnicos em mecânica qualificados.",
+    methodology: {
+      materials: ["Video-aulas", "Apostilas", "Biblioteca digital"],
+      services: ["Requerimento de declarações", "Histórico", "Estágio"],
+      responseTime: "Chamados respondidos dentro de 48 horas."
+    },
+    requirements: ["Cópia do RG e do CPF", "Comprovante de Residência", "Certificado de Conclusão do Ensino Médio"],
+    tutoring: "Acompanhamento do tutor pelo portal do aluno.",
+    tutorAttributes: ["Apoiar os alunos na plataforma", "Orientar durante as atividades"],
+    modules: [
+      { name: "Módulo 01", subjects: [{ name: "Introdução ao EAD", hours: 80 }, { name: "Desenho Técnico Mecânico", hours: 80 }, { name: "Matemática Aplicada", hours: 60 }] },
+      { name: "Módulo 02", subjects: [{ name: "Tecnologia dos Materiais", hours: 80 }, { name: "Metrologia", hours: 60 }, { name: "Resistência dos Materiais", hours: 80 }] },
+      { name: "Módulo 03", subjects: [{ name: "Elementos de Máquinas", hours: 80 }, { name: "Usinagem", hours: 80 }, { name: "Manutenção Mecânica", hours: 80 }] },
+      { name: "Módulo 04", subjects: [{ name: "Hidráulica e Pneumática", hours: 80 }, { name: "Gestão da Qualidade", hours: 60 }, { name: "Estágio Supervisionado", hours: 240 }] }
+    ],
+    access: [{ title: "Video Aulas", description: "Estude onde e quando quiser." }, { title: "Tutoria", description: "Tire suas dúvidas." }, { title: "Diploma", description: "Autorizado pelo MEC." }],
+    faq: [{ question: "Quais as formas de pagamento?", answer: "Aceitamos cartão de crédito em até 12x sem juros, boleto bancário e PIX." }]
+  },
+  "administracao": {
+    title: "Curso Técnico de Administração EAD",
+    subtitle: "Desenvolva habilidades em gestão empresarial e destaque-se no mundo dos negócios",
+    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200&h=600&fit=crop",
+    bannerImage: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1920&h=400&fit=crop",
+    description: "O Curso Técnico de Administração EAD prepara você para atuar em todas as áreas administrativas de uma empresa, desde recursos humanos até finanças e logística. Formação completa para quem deseja construir uma carreira sólida no mundo corporativo.",
+    originalPrice: "R$ 1.590,00",
+    promoPrice: "R$ 900,00",
+    installment: "R$ 75,00",
+    hours: 1000,
+    durationRange: "6 a 12 meses",
+    certification: "Certificação válida",
+    rating: 5.0,
+    youtubeVideoId: "pn97Z1-ssFI",
+    category: "Curso Técnico EAD",
+    registration: {
+      portaria: "SEE-PRC-2021/12173",
+      parecer: "221/2021",
+      approvedDate: "07/10/2021",
+      registerWith: "Registro Profissional"
+    },
+    aboutCourse: "O Técnico em Administração é fundamental para o funcionamento de qualquer organização, atuando em planejamento, organização, direção e controle de processos empresariais.",
+    howItWorks: ["Formação abrangente em gestão empresarial.", "Metodologia EAD flexível com suporte completo."],
+    profession: "Atue em empresas de todos os portes e segmentos, em áreas como RH, finanças, marketing e operações.",
+    market: "O mercado de trabalho para técnicos em administração é amplo e diversificado.",
+    methodology: {
+      materials: ["Video-aulas", "Apostilas", "Biblioteca digital"],
+      services: ["Requerimento de declarações", "Histórico", "Matriz curricular"],
+      responseTime: "Chamados respondidos dentro de 48 horas."
+    },
+    requirements: ["Cópia do RG e do CPF", "Comprovante de Residência", "Certificado de Conclusão do Ensino Médio"],
+    tutoring: "Acompanhamento do tutor pelo portal do aluno.",
+    tutorAttributes: ["Apoiar os alunos na plataforma", "Orientar durante as atividades"],
+    modules: [
+      { name: "Módulo 01", subjects: [{ name: "Introdução ao EAD", hours: 80 }, { name: "Fundamentos da Administração", hours: 80 }, { name: "Comunicação Empresarial", hours: 60 }] },
+      { name: "Módulo 02", subjects: [{ name: "Gestão de Pessoas", hours: 80 }, { name: "Matemática Financeira", hours: 60 }, { name: "Contabilidade Básica", hours: 80 }] },
+      { name: "Módulo 03", subjects: [{ name: "Marketing", hours: 60 }, { name: "Logística", hours: 80 }, { name: "Gestão da Qualidade", hours: 60 }] },
+      { name: "Módulo 04", subjects: [{ name: "Empreendedorismo", hours: 60 }, { name: "Direito Empresarial", hours: 60 }, { name: "Estágio Supervisionado", hours: 200 }] }
+    ],
+    access: [{ title: "Video Aulas", description: "Estude onde e quando quiser." }, { title: "Tutoria", description: "Tire suas dúvidas." }, { title: "Diploma", description: "Autorizado pelo MEC." }],
+    faq: [{ question: "Quais as formas de pagamento?", answer: "Aceitamos cartão de crédito em até 12x sem juros, boleto bancário e PIX." }]
+  },
+  "edificacoes": {
+    title: "Curso Técnico de Edificações EAD",
+    subtitle: "Ingresse na promissora indústria da construção civil com certificação reconhecida pelo MEC e CREA",
+    image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1200&h=600&fit=crop",
+    bannerImage: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1920&h=400&fit=crop",
+    description: "O Curso Técnico de Edificações EAD forma profissionais para atuar em projetos, execução e fiscalização de obras civis. Com registro no CREA, você poderá trabalhar em construtoras, escritórios de arquitetura e engenharia.",
+    originalPrice: "R$ 2.500,00",
+    promoPrice: "R$ 1.500,00",
+    installment: "R$ 125,00",
+    hours: 1200,
+    durationRange: "6 a 12 meses",
+    certification: "Registro no CREA",
+    rating: 5.0,
+    youtubeVideoId: "pn97Z1-ssFI",
+    category: "Curso Técnico EAD",
+    registration: {
+      portaria: "SEE-PRC-2021/12174",
+      parecer: "222/2021",
+      approvedDate: "07/10/2021",
+      registerWith: "Registro no CREA"
+    },
+    aboutCourse: "O Técnico em Edificações é essencial para o setor da construção civil, atuando no planejamento, execução e controle de obras.",
+    howItWorks: ["Formação completa em construção civil.", "Metodologia EAD com suporte de tutores especializados."],
+    profession: "Atue em construtoras, escritórios de engenharia e arquitetura, órgãos públicos e como autônomo.",
+    market: "A construção civil é um dos setores que mais emprega no Brasil, com demanda constante por profissionais qualificados.",
+    methodology: {
+      materials: ["Video-aulas", "Apostilas", "Biblioteca digital"],
+      services: ["Requerimento de declarações", "Histórico", "Estágio"],
+      responseTime: "Chamados respondidos dentro de 48 horas."
+    },
+    requirements: ["Cópia do RG e do CPF", "Comprovante de Residência", "Certificado de Conclusão do Ensino Médio"],
+    tutoring: "Acompanhamento do tutor pelo portal do aluno.",
+    tutorAttributes: ["Apoiar os alunos na plataforma", "Orientar durante as atividades"],
+    modules: [
+      { name: "Módulo 01", subjects: [{ name: "Introdução ao EAD", hours: 80 }, { name: "Desenho Técnico", hours: 80 }, { name: "Topografia", hours: 80 }] },
+      { name: "Módulo 02", subjects: [{ name: "Materiais de Construção", hours: 80 }, { name: "Mecânica dos Solos", hours: 60 }, { name: "Estruturas", hours: 80 }] },
+      { name: "Módulo 03", subjects: [{ name: "Instalações Hidráulicas", hours: 80 }, { name: "Instalações Elétricas", hours: 80 }, { name: "Orçamento de Obras", hours: 60 }] },
+      { name: "Módulo 04", subjects: [{ name: "Planejamento de Obras", hours: 80 }, { name: "Segurança do Trabalho", hours: 60 }, { name: "Estágio Supervisionado", hours: 240 }] }
+    ],
+    access: [{ title: "Video Aulas", description: "Estude onde e quando quiser." }, { title: "Tutoria", description: "Tire suas dúvidas." }, { title: "Diploma", description: "Autorizado pelo MEC." }],
+    faq: [{ question: "O curso tem registro no CREA?", answer: "Sim, após a conclusão você pode solicitar registro no CREA." }]
+  },
+  "eletromecanica": {
+    title: "Curso Técnico em Eletromecânica EAD",
+    subtitle: "Especialize-se em eletricidade e mecânica com formação reconhecida pelo MEC",
+    image: "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=1200&h=600&fit=crop",
+    bannerImage: "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=1920&h=400&fit=crop",
+    description: "O Curso Técnico em Eletromecânica EAD combina conhecimentos de elétrica e mecânica, formando profissionais versáteis para atuar na manutenção e operação de equipamentos industriais.",
+    originalPrice: "R$ 2.500,00",
+    promoPrice: "R$ 1.500,00",
+    installment: "R$ 125,00",
+    hours: 1200,
+    durationRange: "6 a 12 meses",
+    certification: "Registro no CREA",
+    rating: 5.0,
+    youtubeVideoId: "pn97Z1-ssFI",
+    category: "Curso Técnico EAD",
+    registration: {
+      portaria: "SEE-PRC-2021/12175",
+      parecer: "223/2021",
+      approvedDate: "07/10/2021",
+      registerWith: "Registro no CREA"
+    },
+    aboutCourse: "O Técnico em Eletromecânica é um profissional completo, capaz de atuar tanto em sistemas elétricos quanto mecânicos.",
+    howItWorks: ["Formação integrada em elétrica e mecânica.", "Metodologia EAD flexível."],
+    profession: "Atue em indústrias de diversos setores, empresas de manutenção e como autônomo.",
+    market: "A demanda por profissionais com conhecimento integrado em elétrica e mecânica é crescente.",
+    methodology: {
+      materials: ["Video-aulas", "Apostilas", "Biblioteca digital"],
+      services: ["Requerimento de declarações", "Histórico", "Estágio"],
+      responseTime: "Chamados respondidos dentro de 48 horas."
+    },
+    requirements: ["Cópia do RG e do CPF", "Comprovante de Residência", "Certificado de Conclusão do Ensino Médio"],
+    tutoring: "Acompanhamento do tutor pelo portal do aluno.",
+    tutorAttributes: ["Apoiar os alunos na plataforma", "Orientar durante as atividades"],
+    modules: [
+      { name: "Módulo 01", subjects: [{ name: "Introdução ao EAD", hours: 80 }, { name: "Eletricidade Básica", hours: 80 }, { name: "Mecânica Básica", hours: 80 }] },
+      { name: "Módulo 02", subjects: [{ name: "Circuitos Elétricos", hours: 80 }, { name: "Elementos de Máquinas", hours: 80 }, { name: "Metrologia", hours: 60 }] },
+      { name: "Módulo 03", subjects: [{ name: "Comandos Elétricos", hours: 80 }, { name: "Manutenção Industrial", hours: 80 }, { name: "Automação", hours: 80 }] },
+      { name: "Módulo 04", subjects: [{ name: "Hidráulica e Pneumática", hours: 80 }, { name: "Segurança do Trabalho", hours: 60 }, { name: "Estágio Supervisionado", hours: 240 }] }
+    ],
+    access: [{ title: "Video Aulas", description: "Estude onde e quando quiser." }, { title: "Tutoria", description: "Tire suas dúvidas." }, { title: "Diploma", description: "Autorizado pelo MEC." }],
+    faq: [{ question: "Quais as formas de pagamento?", answer: "Aceitamos cartão de crédito em até 12x sem juros, boleto bancário e PIX." }]
+  },
+  "tti": {
+    title: "Curso Técnico em Transações Imobiliárias (TTI) EAD",
+    subtitle: "Torne-se corretor de imóveis com respaldo do CRECI",
+    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1200&h=600&fit=crop",
+    bannerImage: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1920&h=400&fit=crop",
+    description: "O Curso Técnico em Transações Imobiliárias (TTI) EAD prepara você para atuar como corretor de imóveis, com registro no CRECI. Uma carreira com excelentes oportunidades de ganhos e flexibilidade.",
+    originalPrice: "R$ 1.750,00",
+    promoPrice: "R$ 900,00",
+    installment: "R$ 75,00",
+    hours: 800,
+    durationRange: "4 a 8 meses",
+    certification: "Registro no CRECI",
+    rating: 5.0,
+    youtubeVideoId: "pn97Z1-ssFI",
+    category: "Curso Técnico EAD",
+    registration: {
+      portaria: "SEE-PRC-2021/12176",
+      parecer: "224/2021",
+      approvedDate: "07/10/2021",
+      registerWith: "Registro no CRECI"
+    },
+    aboutCourse: "O corretor de imóveis é o profissional responsável por intermediar negócios imobiliários de compra, venda e locação.",
+    howItWorks: ["Formação completa para atuar no mercado imobiliário.", "Metodologia EAD com suporte especializado."],
+    profession: "Atue em imobiliárias, construtoras ou como corretor autônomo.",
+    market: "O mercado imobiliário oferece excelentes oportunidades de ganhos para profissionais qualificados.",
+    methodology: {
+      materials: ["Video-aulas", "Apostilas", "Biblioteca digital"],
+      services: ["Requerimento de declarações", "Histórico", "Estágio"],
+      responseTime: "Chamados respondidos dentro de 48 horas."
+    },
+    requirements: ["Cópia do RG e do CPF", "Comprovante de Residência", "Certificado de Conclusão do Ensino Médio"],
+    tutoring: "Acompanhamento do tutor pelo portal do aluno.",
+    tutorAttributes: ["Apoiar os alunos na plataforma", "Orientar durante as atividades"],
+    modules: [
+      { name: "Módulo 01", subjects: [{ name: "Introdução ao EAD", hours: 60 }, { name: "Operações Imobiliárias", hours: 80 }, { name: "Direito Imobiliário", hours: 80 }] },
+      { name: "Módulo 02", subjects: [{ name: "Economia e Mercado", hours: 60 }, { name: "Matemática Financeira", hours: 60 }, { name: "Marketing Imobiliário", hours: 60 }] },
+      { name: "Módulo 03", subjects: [{ name: "Desenho Arquitetônico", hours: 60 }, { name: "Organização Técnica Comercial", hours: 60 }, { name: "Estágio Supervisionado", hours: 180 }] }
+    ],
+    access: [{ title: "Video Aulas", description: "Estude onde e quando quiser." }, { title: "Tutoria", description: "Tire suas dúvidas." }, { title: "Diploma", description: "Autorizado pelo MEC." }],
+    faq: [{ question: "Posso atuar como corretor após o curso?", answer: "Sim, com o diploma você pode solicitar registro no CRECI e atuar legalmente." }]
+  },
+  "agropecuaria": {
+    title: "Curso Técnico em Agropecuária EAD",
+    subtitle: "Domine técnicas de produção agrícola e pecuária com certificação reconhecida pelo MEC",
+    image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1200&h=600&fit=crop",
+    bannerImage: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1920&h=400&fit=crop",
+    description: "O Curso Técnico em Agropecuária EAD forma profissionais para atuar na gestão de propriedades rurais, produção agrícola e criação de animais. O agronegócio é um dos setores mais fortes da economia brasileira.",
+    originalPrice: "R$ 2.500,00",
+    promoPrice: "R$ 1.500,00",
+    installment: "R$ 125,00",
+    hours: 1200,
+    durationRange: "6 a 12 meses",
+    certification: "Certificação válida",
+    rating: 5.0,
+    youtubeVideoId: "pn97Z1-ssFI",
+    category: "Curso Técnico EAD",
+    registration: {
+      portaria: "SEE-PRC-2021/12177",
+      parecer: "225/2021",
+      approvedDate: "07/10/2021",
+      registerWith: "Registro Profissional"
+    },
+    aboutCourse: "O Técnico em Agropecuária é essencial para o desenvolvimento do agronegócio brasileiro.",
+    howItWorks: ["Formação completa em agricultura e pecuária.", "Metodologia EAD com suporte especializado."],
+    profession: "Atue em fazendas, cooperativas, empresas de insumos agrícolas e órgãos públicos.",
+    market: "O agronegócio brasileiro é um dos mais importantes do mundo, com demanda constante por profissionais qualificados.",
+    methodology: {
+      materials: ["Video-aulas", "Apostilas", "Biblioteca digital"],
+      services: ["Requerimento de declarações", "Histórico", "Estágio"],
+      responseTime: "Chamados respondidos dentro de 48 horas."
+    },
+    requirements: ["Cópia do RG e do CPF", "Comprovante de Residência", "Certificado de Conclusão do Ensino Médio"],
+    tutoring: "Acompanhamento do tutor pelo portal do aluno.",
+    tutorAttributes: ["Apoiar os alunos na plataforma", "Orientar durante as atividades"],
+    modules: [
+      { name: "Módulo 01", subjects: [{ name: "Introdução ao EAD", hours: 80 }, { name: "Fundamentos da Agropecuária", hours: 80 }, { name: "Solos e Nutrição de Plantas", hours: 80 }] },
+      { name: "Módulo 02", subjects: [{ name: "Culturas Anuais", hours: 80 }, { name: "Fruticultura", hours: 80 }, { name: "Olericultura", hours: 60 }] },
+      { name: "Módulo 03", subjects: [{ name: "Zootecnia Geral", hours: 80 }, { name: "Bovinocultura", hours: 80 }, { name: "Avicultura e Suinocultura", hours: 60 }] },
+      { name: "Módulo 04", subjects: [{ name: "Mecanização Agrícola", hours: 60 }, { name: "Gestão Rural", hours: 80 }, { name: "Estágio Supervisionado", hours: 240 }] }
+    ],
+    access: [{ title: "Video Aulas", description: "Estude onde e quando quiser." }, { title: "Tutoria", description: "Tire suas dúvidas." }, { title: "Diploma", description: "Autorizado pelo MEC." }],
+    faq: [{ question: "Quais as formas de pagamento?", answer: "Aceitamos cartão de crédito em até 12x sem juros, boleto bancário e PIX." }]
+  },
+  "farmacia": {
+    title: "Curso Técnico em Farmácia EAD",
+    subtitle: "Mergulhe no mundo da saúde e faça a diferença com certificação reconhecida pelo MEC",
+    image: "https://images.unsplash.com/photo-1585435557343-3b092031a831?w=1200&h=600&fit=crop",
+    bannerImage: "https://images.unsplash.com/photo-1585435557343-3b092031a831?w=1920&h=400&fit=crop",
+    description: "O Curso Técnico em Farmácia EAD forma profissionais para atuar em farmácias, drogarias, hospitais e indústrias farmacêuticas. Uma área da saúde com amplo mercado de trabalho.",
+    originalPrice: "R$ 2.500,00",
+    promoPrice: "R$ 1.500,00",
+    installment: "R$ 125,00",
+    hours: 1200,
+    durationRange: "6 a 12 meses",
+    certification: "Certificação válida",
+    rating: 5.0,
+    youtubeVideoId: "pn97Z1-ssFI",
+    category: "Curso Técnico EAD",
+    registration: {
+      portaria: "SEE-PRC-2021/12178",
+      parecer: "226/2021",
+      approvedDate: "07/10/2021",
+      registerWith: "Registro no CRF"
+    },
+    aboutCourse: "O Técnico em Farmácia auxilia na dispensação de medicamentos, manipulação farmacêutica e orientação ao paciente.",
+    howItWorks: ["Formação completa na área farmacêutica.", "Metodologia EAD com suporte especializado."],
+    profession: "Atue em farmácias, drogarias, hospitais, laboratórios e indústrias farmacêuticas.",
+    market: "O setor farmacêutico está em constante crescimento, com demanda por profissionais qualificados.",
+    methodology: {
+      materials: ["Video-aulas", "Apostilas", "Biblioteca digital"],
+      services: ["Requerimento de declarações", "Histórico", "Estágio"],
+      responseTime: "Chamados respondidos dentro de 48 horas."
+    },
+    requirements: ["Cópia do RG e do CPF", "Comprovante de Residência", "Certificado de Conclusão do Ensino Médio"],
+    tutoring: "Acompanhamento do tutor pelo portal do aluno.",
+    tutorAttributes: ["Apoiar os alunos na plataforma", "Orientar durante as atividades"],
+    modules: [
+      { name: "Módulo 01", subjects: [{ name: "Introdução ao EAD", hours: 80 }, { name: "Anatomia e Fisiologia", hours: 80 }, { name: "Farmacologia Básica", hours: 80 }] },
+      { name: "Módulo 02", subjects: [{ name: "Farmacotécnica", hours: 80 }, { name: "Dispensação de Medicamentos", hours: 80 }, { name: "Cosmetologia", hours: 60 }] },
+      { name: "Módulo 03", subjects: [{ name: "Farmácia Hospitalar", hours: 80 }, { name: "Legislação Farmacêutica", hours: 60 }, { name: "Atenção Farmacêutica", hours: 80 }] },
+      { name: "Módulo 04", subjects: [{ name: "Controle de Qualidade", hours: 60 }, { name: "Gestão em Farmácia", hours: 60 }, { name: "Estágio Supervisionado", hours: 240 }] }
+    ],
+    access: [{ title: "Video Aulas", description: "Estude onde e quando quiser." }, { title: "Tutoria", description: "Tire suas dúvidas." }, { title: "Diploma", description: "Autorizado pelo MEC." }],
+    faq: [{ question: "Quais as formas de pagamento?", answer: "Aceitamos cartão de crédito em até 12x sem juros, boleto bancário e PIX." }]
+  },
+  "agricultura": {
+    title: "Curso Técnico em Agricultura EAD",
+    subtitle: "Transforme sua paixão pelo campo em carreira de sucesso",
+    image: "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=1200&h=600&fit=crop",
+    bannerImage: "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=1920&h=400&fit=crop",
+    description: "O Curso Técnico em Agricultura EAD forma profissionais para atuar no planejamento, execução e acompanhamento da produção agrícola. O Brasil é uma potência agrícola mundial.",
+    originalPrice: "R$ 2.500,00",
+    promoPrice: "R$ 1.500,00",
+    installment: "R$ 125,00",
+    hours: 1200,
+    durationRange: "6 a 12 meses",
+    certification: "Certificação válida",
+    rating: 5.0,
+    youtubeVideoId: "pn97Z1-ssFI",
+    category: "Curso Técnico EAD",
+    registration: {
+      portaria: "SEE-PRC-2021/12179",
+      parecer: "227/2021",
+      approvedDate: "07/10/2021",
+      registerWith: "Registro Profissional"
+    },
+    aboutCourse: "O Técnico em Agricultura é fundamental para o desenvolvimento do setor agrícola brasileiro.",
+    howItWorks: ["Formação completa em produção agrícola.", "Metodologia EAD com suporte especializado."],
+    profession: "Atue em propriedades rurais, cooperativas, empresas de insumos e assistência técnica.",
+    market: "O setor agrícola brasileiro oferece inúmeras oportunidades para profissionais qualificados.",
+    methodology: {
+      materials: ["Video-aulas", "Apostilas", "Biblioteca digital"],
+      services: ["Requerimento de declarações", "Histórico", "Estágio"],
+      responseTime: "Chamados respondidos dentro de 48 horas."
+    },
+    requirements: ["Cópia do RG e do CPF", "Comprovante de Residência", "Certificado de Conclusão do Ensino Médio"],
+    tutoring: "Acompanhamento do tutor pelo portal do aluno.",
+    tutorAttributes: ["Apoiar os alunos na plataforma", "Orientar durante as atividades"],
+    modules: [
+      { name: "Módulo 01", subjects: [{ name: "Introdução ao EAD", hours: 80 }, { name: "Solos e Adubação", hours: 80 }, { name: "Irrigação e Drenagem", hours: 80 }] },
+      { name: "Módulo 02", subjects: [{ name: "Grandes Culturas", hours: 80 }, { name: "Fruticultura", hours: 80 }, { name: "Olericultura", hours: 80 }] },
+      { name: "Módulo 03", subjects: [{ name: "Fitossanidade", hours: 80 }, { name: "Mecanização Agrícola", hours: 80 }, { name: "Agricultura de Precisão", hours: 60 }] },
+      { name: "Módulo 04", subjects: [{ name: "Administração Rural", hours: 80 }, { name: "Comercialização Agrícola", hours: 60 }, { name: "Estágio Supervisionado", hours: 240 }] }
+    ],
+    access: [{ title: "Video Aulas", description: "Estude onde e quando quiser." }, { title: "Tutoria", description: "Tire suas dúvidas." }, { title: "Diploma", description: "Autorizado pelo MEC." }],
+    faq: [{ question: "Quais as formas de pagamento?", answer: "Aceitamos cartão de crédito em até 12x sem juros, boleto bancário e PIX." }]
   }
 };
 
