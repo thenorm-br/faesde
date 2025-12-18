@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import logo from "@/assets/logo.webp";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -17,10 +18,8 @@ const Header = () => {
     <header className="sticky top-0 z-50 w-full bg-ecid-navy">
       <div className="container mx-auto flex items-center justify-between py-4">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-2">
-          <span className="text-2xl font-extrabold tracking-tight text-primary-foreground">
-            FAESDE
-          </span>
+        <Link to="/" className="flex items-center">
+          <img src={logo} alt="FAESDE" className="h-10" />
         </Link>
 
         {/* Categories Dropdown - Desktop */}
