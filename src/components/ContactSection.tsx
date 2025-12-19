@@ -136,16 +136,16 @@ const ContactSection = () => {
               autoComplete="off"
               role="form"
               method="post"
-              action="http://mautic.faesde.com.br/form/submit?formId=1"
-              id="mauticform_cursotecnicoonlinecom"
-              data-mautic-form="cursotecnicoonlinecom"
+              action="http://mautic.faesde.com.br/form/submit?formId=2"
+              id="mauticform_faesdecombr"
+              data-mautic-form="faesdecombr"
               encType="multipart/form-data"
               onSubmit={handleSubmit}
               className="space-y-4"
             >
-              <input type="hidden" name="mauticform[formId]" value="1" />
+              <input type="hidden" name="mauticform[formId]" value="2" />
               <input type="hidden" name="mauticform[return]" value="" />
-              <input type="hidden" name="mauticform[formName]" value="cursotecnicoonlinecom" />
+              <input type="hidden" name="mauticform[formName]" value="faesdecombr" />
 
               <div className="grid gap-4 sm:grid-cols-2">
                 <div>
