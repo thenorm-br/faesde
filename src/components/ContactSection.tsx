@@ -79,9 +79,7 @@ const ContactSection = () => {
     }
   };
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     // Validate all fields
     const emailValid = validateEmail(formData.email);
     const nameValid = validateName(formData.nome_completo);
@@ -93,24 +91,12 @@ const ContactSection = () => {
       telefone1: phoneValid ? "" : "Telefone deve ter 11 dígitos",
     });
     
-    if (emailValid && nameValid && phoneValid) {
-      // Submit form via fetch
-      const form = e.currentTarget;
-      const formDataObj = new FormData(form);
-      
-      try {
-        await fetch(form.action, {
-          method: "POST",
-          body: formDataObj,
-          mode: "no-cors",
-        });
-        
-        // Redirect to WhatsApp after successful submission
-        window.location.href = "https://mensagem.faesde.com.br/";
-      } catch (error) {
-        console.error("Erro ao enviar formulário:", error);
-      }
+    // If validation fails, prevent form submission
+    if (!emailValid || !nameValid || !phoneValid) {
+      e.preventDefault();
     }
+    // If validation passes, let the form submit naturally (no e.preventDefault())
+    // The form will submit to Mautic and redirect based on the return URL
   };
 
   return (
@@ -144,7 +130,7 @@ const ContactSection = () => {
               className="space-y-4"
             >
               <input type="hidden" name="mauticform[formId]" id="mauticform_faesdecombr_id" value="2" />
-              <input type="hidden" name="mauticform[return]" id="mauticform_faesdecombr_return" value="" />
+              <input type="hidden" name="mauticform[return]" id="mauticform_faesdecombr_return" value="https://mensagem.faesde.com.br/" />
               <input type="hidden" name="mauticform[formName]" id="mauticform_faesdecombr_name" value="faesdecombr" />
 
               <div className="grid gap-4 sm:grid-cols-2">
