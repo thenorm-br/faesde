@@ -2,53 +2,77 @@ import { Link } from "react-router-dom";
 
 const HeroBanner = () => {
   return (
-    <section className="relative bg-hero-red py-16 md:py-24 overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+    <section className="relative bg-hero-red py-12 md:py-20 overflow-hidden">
+      {/* Christmas Background with Snowflakes */}
+      <div className="absolute inset-0">
+        {/* Snowflake pattern */}
+        <div className="absolute inset-0 opacity-20" style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Ctext x='50' y='50' font-size='20' text-anchor='middle' fill='white'%3E❄%3C/text%3E%3Ctext x='25' y='25' font-size='12' text-anchor='middle' fill='white'%3E❄%3C/text%3E%3Ctext x='75' y='75' font-size='12' text-anchor='middle' fill='white'%3E❄%3C/text%3E%3Ctext x='85' y='20' font-size='8' text-anchor='middle' fill='white'%3E✦%3C/text%3E%3Ctext x='15' y='80' font-size='8' text-anchor='middle' fill='white'%3E✦%3C/text%3E%3C/svg%3E")`,
         }} />
+        {/* Gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-hero-red via-ecid-red to-ecid-red-light opacity-80" />
       </div>
 
       <div className="container relative mx-auto">
-        <div className="flex flex-col items-center justify-between gap-8 lg:flex-row">
-          {/* Left Content */}
-          <div className="text-center lg:text-left">
-            <p className="animate-fade-up mb-2 text-lg font-semibold uppercase tracking-wider text-primary-foreground/80">
+        <div className="flex flex-col items-center gap-6 text-center">
+          {/* Christmas Ribbon */}
+          <div className="animate-fade-up inline-flex items-center gap-2 rounded-full bg-ecid-yellow/20 px-4 py-2 backdrop-blur-sm">
+            <span className="text-lg">🎄</span>
+            <span className="text-sm font-semibold uppercase tracking-wider text-ecid-yellow">Promoção de Natal</span>
+            <span className="text-lg">🎄</span>
+          </div>
+
+          {/* Main Content - Centered */}
+          <div className="flex flex-col items-center">
+            <p className="animate-fade-up text-lg font-semibold uppercase tracking-wider text-primary-foreground/90" style={{ animationDelay: "0.05s" }}>
               Invista no seu futuro
             </p>
-            <h1 className="animate-fade-up text-4xl font-extrabold leading-tight text-ecid-yellow md:text-5xl lg:text-6xl" style={{ animationDelay: "0.1s" }}>
-              CURSOS<br />TÉCNICOS
+            <h1 className="animate-fade-up mt-1 text-4xl font-extrabold leading-tight text-ecid-yellow md:text-5xl lg:text-6xl" style={{ animationDelay: "0.1s" }}>
+              CURSOS TÉCNICOS
             </h1>
-            <p className="animate-fade-up mt-2 text-xl font-bold text-primary-foreground md:text-2xl" style={{ animationDelay: "0.15s" }}>
+            <p className="animate-fade-up mt-1 text-xl font-bold text-primary-foreground md:text-2xl" style={{ animationDelay: "0.15s" }}>
               AUTORIZADOS PELO MEC
             </p>
           </div>
 
-          {/* Center - Discount Badge */}
-          <div className="animate-scale-in relative" style={{ animationDelay: "0.2s" }}>
-            <div className="relative flex h-40 w-40 items-center justify-center rounded-full border-4 border-primary-foreground/30 md:h-52 md:w-52">
-              <div className="text-center">
-                <span className="text-5xl font-extrabold text-ecid-yellow md:text-6xl">30%</span>
+          {/* Centered Discount Badge */}
+          <div className="animate-scale-in relative my-4" style={{ animationDelay: "0.2s" }}>
+            {/* Christmas ornament style badge */}
+            <div className="relative">
+              {/* Ornament top hook */}
+              <div className="absolute -top-6 left-1/2 -translate-x-1/2">
+                <div className="h-6 w-1 rounded-full bg-ecid-yellow/60" />
+                <div className="absolute -top-2 left-1/2 -translate-x-1/2">
+                  <div className="h-4 w-4 rounded-full border-2 border-ecid-yellow/60" />
+                </div>
               </div>
-            </div>
-            {/* Ornament */}
-            <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-              <div className="h-8 w-8 rounded-full border-4 border-primary-foreground/30" />
+              
+              {/* Main badge */}
+              <div className="relative flex h-44 w-44 items-center justify-center rounded-full border-4 border-ecid-yellow/40 bg-gradient-to-br from-ecid-red-light/50 to-hero-red/50 shadow-2xl md:h-56 md:w-56">
+                {/* Inner glow ring */}
+                <div className="absolute inset-2 rounded-full border-2 border-ecid-yellow/20" />
+                
+                <div className="text-center">
+                  <span className="block text-6xl font-extrabold text-ecid-yellow drop-shadow-lg md:text-7xl">30%</span>
+                  <span className="block text-sm font-bold uppercase tracking-wider text-primary-foreground">de desconto</span>
+                </div>
+              </div>
+              
+              {/* Decorative stars */}
+              <span className="absolute -left-4 top-1/2 -translate-y-1/2 text-2xl animate-pulse">✨</span>
+              <span className="absolute -right-4 top-1/2 -translate-y-1/2 text-2xl animate-pulse" style={{ animationDelay: "0.5s" }}>✨</span>
             </div>
           </div>
 
-          {/* Right Content */}
-          <div className="text-center lg:text-right">
-            <p className="animate-fade-up text-lg font-semibold uppercase tracking-wider text-primary-foreground/80" style={{ animationDelay: "0.25s" }}>
-              Desconto em todos
+          {/* Bottom Content */}
+          <div className="flex flex-col items-center gap-4">
+            <p className="animate-fade-up text-lg font-semibold uppercase tracking-wider text-primary-foreground/90" style={{ animationDelay: "0.25s" }}>
+              Em todos os cursos técnicos EAD
             </p>
-            <h2 className="animate-fade-up text-2xl font-extrabold text-ecid-yellow md:text-3xl" style={{ animationDelay: "0.3s" }}>
-              CURSOS TÉCNICOS EAD
-            </h2>
-            <div className="animate-fade-up mt-4 inline-flex items-center gap-3" style={{ animationDelay: "0.35s" }}>
-              <span className="text-sm font-medium text-primary-foreground/80">Utilize o cupom:</span>
-              <span className="rounded-lg bg-primary-foreground/20 px-4 py-2 text-lg font-bold text-ecid-yellow">
+            
+            <div className="animate-fade-up flex items-center gap-3 rounded-xl bg-primary-foreground/10 px-5 py-3 backdrop-blur-sm" style={{ animationDelay: "0.3s" }}>
+              <span className="text-sm font-medium text-primary-foreground">Utilize o cupom:</span>
+              <span className="rounded-lg bg-ecid-yellow px-4 py-2 text-lg font-bold text-ecid-navy shadow-lg">
                 FAESDE30
               </span>
             </div>
@@ -56,10 +80,10 @@ const HeroBanner = () => {
             {/* CTA Button */}
             <Link 
               to="/curso/seguranca-trabalho"
-              className="mt-6 inline-block animate-fade-up rounded-lg bg-ecid-red-light px-8 py-3 text-lg font-bold text-primary-foreground shadow-lg transition-all hover:scale-105 hover:bg-ecid-yellow hover:text-ecid-navy hover:shadow-xl"
-              style={{ animationDelay: "0.4s" }}
+              className="mt-2 inline-flex animate-fade-up items-center gap-2 rounded-xl bg-ecid-yellow px-8 py-4 text-lg font-bold text-ecid-navy shadow-xl transition-all hover:scale-105 hover:bg-primary-foreground hover:shadow-2xl"
+              style={{ animationDelay: "0.35s" }}
             >
-              Quero me matricular
+              🎁 Quero me matricular
             </Link>
           </div>
         </div>
