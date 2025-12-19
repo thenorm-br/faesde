@@ -2,20 +2,15 @@ import { useState } from "react";
 import { Phone, Mail, MapPin, Clock, Send, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+import { Textarea } from "@/components/ui/textarea";
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
-    email: "",
     nome: "",
+    email: "",
     telefone: "",
     curso: "",
+    mensagem: "",
   });
   const [errors, setErrors] = useState({
     email: "",
@@ -84,7 +79,7 @@ const ContactSection = () => {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     
     // Validate all fields
@@ -99,9 +94,22 @@ const ContactSection = () => {
     });
     
     if (emailValid && nameValid && phoneValid) {
-      // Submit to Mautic form
-      const form = e.target as HTMLFormElement;
-      form.submit();
+      // Submit form via fetch
+      const form = e.currentTarget;
+      const formDataObj = new FormData(form);
+      
+      try {
+        await fetch(form.action, {
+          method: "POST",
+          body: formDataObj,
+          mode: "no-cors",
+        });
+        
+        // Redirect to WhatsApp after successful submission
+        window.location.href = "https://mensagem.faesde.com.br/";
+      } catch (error) {
+        console.error("Erro ao enviar formulário:", error);
+      }
     }
   };
 
@@ -125,107 +133,100 @@ const ContactSection = () => {
               Envie sua mensagem
             </h3>
             <form
-              autoComplete="false"
+              autoComplete="off"
               role="form"
               method="post"
-              action="https://mautic.faesde.com.br/form/submit?formId=1"
-              id="mauticform_formulariodecontato"
-              data-mautic-form="formulariodecontato"
+              action="http://mautic.faesde.com.br/form/submit?formId=1"
+              id="mauticform_cursotecnicoonlinecom"
+              data-mautic-form="cursotecnicoonlinecom"
               encType="multipart/form-data"
               onSubmit={handleSubmit}
               className="space-y-4"
             >
-              <input type="hidden" name="mauticform[formId]" id="mauticform_formulariodecontato_id" value="1" />
-              <input type="hidden" name="mauticform[return]" id="mauticform_formulariodecontato_return" value="" />
-              <input type="hidden" name="mauticform[formName]" id="mauticform_formulariodecontato_name" value="formulariodecontato" />
+              <input type="hidden" name="mauticform[formId]" value="1" />
+              <input type="hidden" name="mauticform[return]" value="" />
+              <input type="hidden" name="mauticform[formName]" value="cursotecnicoonlinecom" />
 
-              <div>
-                <label className="mb-1.5 block text-sm font-medium text-foreground">
-                  E-mail *
-                </label>
-                <Input
-                  type="email"
-                  name="mauticform[email]"
-                  id="mauticform_input_formulariodecontato_email"
-                  value={formData.email}
-                  onChange={handleEmailChange}
-                  placeholder="seu@email.com"
-                  className={`h-11 ${errors.email ? "border-destructive" : ""}`}
-                  required
-                />
-                {errors.email && (
-                  <p className="mt-1 text-sm text-destructive">{errors.email}</p>
-                )}
+              <div className="grid gap-4 sm:grid-cols-2">
+                <div>
+                  <label className="mb-1.5 block text-sm font-medium text-foreground">
+                    Nome *
+                  </label>
+                  <Input
+                    type="text"
+                    name="mauticform[nome]"
+                    value={formData.nome}
+                    onChange={handleNameChange}
+                    placeholder="Seu nome"
+                    className={`h-11 ${errors.nome ? "border-destructive" : ""}`}
+                    required
+                  />
+                  {errors.nome && (
+                    <p className="mt-1 text-sm text-destructive">{errors.nome}</p>
+                  )}
+                </div>
+                <div>
+                  <label className="mb-1.5 block text-sm font-medium text-foreground">
+                    Email *
+                  </label>
+                  <Input
+                    type="email"
+                    name="mauticform[email]"
+                    value={formData.email}
+                    onChange={handleEmailChange}
+                    placeholder="seu@email.com"
+                    className={`h-11 ${errors.email ? "border-destructive" : ""}`}
+                    required
+                  />
+                  {errors.email && (
+                    <p className="mt-1 text-sm text-destructive">{errors.email}</p>
+                  )}
+                </div>
+              </div>
+
+              <div className="grid gap-4 sm:grid-cols-2">
+                <div>
+                  <label className="mb-1.5 block text-sm font-medium text-foreground">
+                    Telefone
+                  </label>
+                  <Input
+                    type="tel"
+                    name="mauticform[telefone]"
+                    value={formData.telefone}
+                    onChange={handlePhoneChange}
+                    placeholder="(00) 00000-0000"
+                    className={`h-11 ${errors.telefone ? "border-destructive" : ""}`}
+                  />
+                  {errors.telefone && (
+                    <p className="mt-1 text-sm text-destructive">{errors.telefone}</p>
+                  )}
+                </div>
+                <div>
+                  <label className="mb-1.5 block text-sm font-medium text-foreground">
+                    Curso de interesse
+                  </label>
+                  <Input
+                    type="text"
+                    name="mauticform[curso]"
+                    value={formData.curso}
+                    onChange={(e) => setFormData(prev => ({ ...prev, curso: e.target.value }))}
+                    placeholder="Ex: Segurança do Trabalho"
+                    className="h-11"
+                  />
+                </div>
               </div>
 
               <div>
                 <label className="mb-1.5 block text-sm font-medium text-foreground">
-                  Nome Completo *
+                  Mensagem *
                 </label>
-                <Input
-                  type="text"
-                  name="mauticform[nome_completo]"
-                  id="mauticform_input_formulariodecontato_nome_completo"
-                  value={formData.nome}
-                  onChange={handleNameChange}
-                  placeholder="Seu nome completo"
-                  className={`h-11 ${errors.nome ? "border-destructive" : ""}`}
+                <Textarea
+                  name="mauticform[mensagem]"
+                  value={formData.mensagem}
+                  onChange={(e) => setFormData(prev => ({ ...prev, mensagem: e.target.value }))}
+                  placeholder="Escreva sua mensagem..."
+                  className="min-h-[100px]"
                   required
-                />
-                {errors.nome && (
-                  <p className="mt-1 text-sm text-destructive">{errors.nome}</p>
-                )}
-              </div>
-
-              <div>
-                <label className="mb-1.5 block text-sm font-medium text-foreground">
-                  Telefone *
-                </label>
-                <Input
-                  type="tel"
-                  name="mauticform[telefone]"
-                  id="mauticform_input_formulariodecontato_telefone"
-                  value={formData.telefone}
-                  onChange={handlePhoneChange}
-                  placeholder="(00) 00000-0000"
-                  className={`h-11 ${errors.telefone ? "border-destructive" : ""}`}
-                  required
-                />
-                {errors.telefone && (
-                  <p className="mt-1 text-sm text-destructive">{errors.telefone}</p>
-                )}
-              </div>
-
-              <div>
-                <label className="mb-1.5 block text-sm font-medium text-foreground">
-                  Curso de Interesse *
-                </label>
-                <Select
-                  name="mauticform[curso_de_interesse]"
-                  value={formData.curso}
-                  onValueChange={(value) => setFormData(prev => ({ ...prev, curso: value }))}
-                  required
-                >
-                  <SelectTrigger className="h-11">
-                    <SelectValue placeholder="Selecione um curso" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="Segurança do Trabalho">Segurança do Trabalho</SelectItem>
-                    <SelectItem value="Enfermagem">Enfermagem</SelectItem>
-                    <SelectItem value="Estética">Estética</SelectItem>
-                    <SelectItem value="Radiologia">Radiologia</SelectItem>
-                    <SelectItem value="Recursos Humanos">Recursos Humanos</SelectItem>
-                    <SelectItem value="Administração">Administração</SelectItem>
-                    <SelectItem value="Logística">Logística</SelectItem>
-                    <SelectItem value="Outro">Outro</SelectItem>
-                  </SelectContent>
-                </Select>
-                {/* Hidden input for Mautic form submission */}
-                <input
-                  type="hidden"
-                  name="mauticform[curso_de_interesse]"
-                  id="mauticform_input_formulariodecontato_curso_de_interesse"
-                  value={formData.curso}
                 />
               </div>
 
@@ -234,7 +235,7 @@ const ContactSection = () => {
                 className="h-11 w-full rounded-lg bg-ecid-red font-semibold text-primary-foreground hover:bg-ecid-red-light"
               >
                 <Send className="mr-2 h-4 w-4" />
-                Enviar
+                Enviar Mensagem
               </Button>
             </form>
           </div>
