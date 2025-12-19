@@ -122,7 +122,7 @@ const ContactSection = () => {
               autoComplete="off"
               role="form"
               method="post"
-              action="http://mautic.faesde.com.br/form/submit?formId=2"
+              action="https://mautic.faesde.com.br/form/submit?formId=2"
               id="mauticform_faesdecombr"
               data-mautic-form="faesdecombr"
               encType="multipart/form-data"
