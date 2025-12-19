@@ -1,7 +1,7 @@
 const WhatsAppButton = () => {
   return (
     <a
-      href="mensagem.faesde.com.br"
+      href="https://mensagem.faesde.com.br/"
       target="_blank"
       rel="noopener noreferrer"
       className="fixed bottom-6 right-6 z-50 flex h-16 w-16 items-center justify-center rounded-full bg-[#25D366] shadow-lg shadow-green-500/30 transition-all hover:scale-110 hover:shadow-xl hover:shadow-green-500/40 animate-[pulse_2s_cubic-bezier(0.4,0,0.6,1)_infinite]"
