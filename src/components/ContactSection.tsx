@@ -93,7 +93,12 @@ const ContactSection = () => {
           {/* Contact Info */}
           <div className="space-y-4">
             {/* WhatsApp Card */}
-            <div className="rounded-2xl bg-green-600 p-6 text-primary-foreground">
+            <a
+              href="https://mensagem.faesde.com.br/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block rounded-2xl bg-green-600 p-6 text-primary-foreground transition-transform hover:scale-[1.02]"
+            >
               <div className="flex items-center gap-4">
                 <MessageCircle className="h-10 w-10" />
                 <div className="flex-1">
@@ -104,7 +109,7 @@ const ContactSection = () => {
                   Iniciar conversa
                 </Button>
               </div>
-            </div>
+            </a>
 
             {/* Contact Cards */}
             <div className="grid gap-4 sm:grid-cols-2">
