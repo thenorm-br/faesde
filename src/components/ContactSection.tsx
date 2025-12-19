@@ -6,16 +6,16 @@ import { Textarea } from "@/components/ui/textarea";
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
-    nome: "",
     email: "",
-    telefone: "",
-    curso: "",
+    nome_completo: "",
+    curso_de_interesse: "",
+    telefone1: "",
     mensagem: "",
   });
   const [errors, setErrors] = useState({
     email: "",
-    nome: "",
-    telefone: "",
+    nome_completo: "",
+    telefone1: "",
   });
 
   // Format phone number as (00) 00000-0000
@@ -48,12 +48,12 @@ const ContactSection = () => {
 
   const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const formatted = formatPhone(e.target.value);
-    setFormData(prev => ({ ...prev, telefone: formatted }));
+    setFormData(prev => ({ ...prev, telefone1: formatted }));
     
     if (formatted && !validatePhone(formatted)) {
-      setErrors(prev => ({ ...prev, telefone: "Telefone deve ter 11 dígitos" }));
+      setErrors(prev => ({ ...prev, telefone1: "Telefone deve ter 11 dígitos" }));
     } else {
-      setErrors(prev => ({ ...prev, telefone: "" }));
+      setErrors(prev => ({ ...prev, telefone1: "" }));
     }
   };
 
@@ -70,12 +70,12 @@ const ContactSection = () => {
 
   const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
-    setFormData(prev => ({ ...prev, nome: value }));
+    setFormData(prev => ({ ...prev, nome_completo: value }));
     
     if (value && !validateName(value)) {
-      setErrors(prev => ({ ...prev, nome: "Informe nome e sobrenome" }));
+      setErrors(prev => ({ ...prev, nome_completo: "Informe nome e sobrenome" }));
     } else {
-      setErrors(prev => ({ ...prev, nome: "" }));
+      setErrors(prev => ({ ...prev, nome_completo: "" }));
     }
   };
 
@@ -84,13 +84,13 @@ const ContactSection = () => {
     
     // Validate all fields
     const emailValid = validateEmail(formData.email);
-    const nameValid = validateName(formData.nome);
-    const phoneValid = !formData.telefone || validatePhone(formData.telefone);
+    const nameValid = validateName(formData.nome_completo);
+    const phoneValid = !formData.telefone1 || validatePhone(formData.telefone1);
     
     setErrors({
       email: emailValid ? "" : "Email inválido (deve conter @ e domínio)",
-      nome: nameValid ? "" : "Informe nome e sobrenome",
-      telefone: phoneValid ? "" : "Telefone deve ter 11 dígitos",
+      nome_completo: nameValid ? "" : "Informe nome e sobrenome",
+      telefone1: phoneValid ? "" : "Telefone deve ter 11 dígitos",
     });
     
     if (emailValid && nameValid && phoneValid) {
@@ -143,35 +143,45 @@ const ContactSection = () => {
               onSubmit={handleSubmit}
               className="space-y-4"
             >
-              <input type="hidden" name="mauticform[formId]" value="2" />
-              <input type="hidden" name="mauticform[return]" value="" />
-              <input type="hidden" name="mauticform[formName]" value="faesdecombr" />
+              <input type="hidden" name="mauticform[formId]" id="mauticform_faesdecombr_id" value="2" />
+              <input type="hidden" name="mauticform[return]" id="mauticform_faesdecombr_return" value="" />
+              <input type="hidden" name="mauticform[formName]" id="mauticform_faesdecombr_name" value="faesdecombr" />
 
               <div className="grid gap-4 sm:grid-cols-2">
                 <div>
-                  <label className="mb-1.5 block text-sm font-medium text-foreground">
+                  <label 
+                    id="mauticform_label_faesdecombr_nome_completo"
+                    htmlFor="mauticform_input_faesdecombr_nome_completo"
+                    className="mb-1.5 block text-sm font-medium text-foreground"
+                  >
                     Nome *
                   </label>
                   <Input
                     type="text"
-                    name="mauticform[nome]"
-                    value={formData.nome}
+                    name="mauticform[nome_completo]"
+                    id="mauticform_input_faesdecombr_nome_completo"
+                    value={formData.nome_completo}
                     onChange={handleNameChange}
                     placeholder="Seu nome"
-                    className={`h-11 ${errors.nome ? "border-destructive" : ""}`}
+                    className={`h-11 ${errors.nome_completo ? "border-destructive" : ""}`}
                     required
                   />
-                  {errors.nome && (
-                    <p className="mt-1 text-sm text-destructive">{errors.nome}</p>
+                  {errors.nome_completo && (
+                    <p className="mt-1 text-sm text-destructive">{errors.nome_completo}</p>
                   )}
                 </div>
                 <div>
-                  <label className="mb-1.5 block text-sm font-medium text-foreground">
+                  <label 
+                    id="mauticform_label_faesdecombr_email"
+                    htmlFor="mauticform_input_faesdecombr_email"
+                    className="mb-1.5 block text-sm font-medium text-foreground"
+                  >
                     Email *
                   </label>
                   <Input
                     type="email"
                     name="mauticform[email]"
+                    id="mauticform_input_faesdecombr_email"
                     value={formData.email}
                     onChange={handleEmailChange}
                     placeholder="seu@email.com"
@@ -186,30 +196,40 @@ const ContactSection = () => {
 
               <div className="grid gap-4 sm:grid-cols-2">
                 <div>
-                  <label className="mb-1.5 block text-sm font-medium text-foreground">
+                  <label 
+                    id="mauticform_label_faesdecombr_telefone1"
+                    htmlFor="mauticform_input_faesdecombr_telefone1"
+                    className="mb-1.5 block text-sm font-medium text-foreground"
+                  >
                     Telefone
                   </label>
                   <Input
                     type="tel"
-                    name="mauticform[telefone]"
-                    value={formData.telefone}
+                    name="mauticform[telefone1]"
+                    id="mauticform_input_faesdecombr_telefone1"
+                    value={formData.telefone1}
                     onChange={handlePhoneChange}
                     placeholder="(00) 00000-0000"
-                    className={`h-11 ${errors.telefone ? "border-destructive" : ""}`}
+                    className={`h-11 ${errors.telefone1 ? "border-destructive" : ""}`}
                   />
-                  {errors.telefone && (
-                    <p className="mt-1 text-sm text-destructive">{errors.telefone}</p>
+                  {errors.telefone1 && (
+                    <p className="mt-1 text-sm text-destructive">{errors.telefone1}</p>
                   )}
                 </div>
                 <div>
-                  <label className="mb-1.5 block text-sm font-medium text-foreground">
+                  <label 
+                    id="mauticform_label_faesdecombr_curso_de_interesse"
+                    htmlFor="mauticform_input_faesdecombr_curso_de_interesse"
+                    className="mb-1.5 block text-sm font-medium text-foreground"
+                  >
                     Curso de interesse
                   </label>
                   <Input
                     type="text"
-                    name="mauticform[curso]"
-                    value={formData.curso}
-                    onChange={(e) => setFormData(prev => ({ ...prev, curso: e.target.value }))}
+                    name="mauticform[curso_de_interesse]"
+                    id="mauticform_input_faesdecombr_curso_de_interesse"
+                    value={formData.curso_de_interesse}
+                    onChange={(e) => setFormData(prev => ({ ...prev, curso_de_interesse: e.target.value }))}
                     placeholder="Ex: Segurança do Trabalho"
                     className="h-11"
                   />
@@ -217,11 +237,16 @@ const ContactSection = () => {
               </div>
 
               <div>
-                <label className="mb-1.5 block text-sm font-medium text-foreground">
+                <label 
+                  id="mauticform_label_faesdecombr_mensagem"
+                  htmlFor="mauticform_input_faesdecombr_mensagem"
+                  className="mb-1.5 block text-sm font-medium text-foreground"
+                >
                   Mensagem *
                 </label>
                 <Textarea
                   name="mauticform[mensagem]"
+                  id="mauticform_input_faesdecombr_mensagem"
                   value={formData.mensagem}
                   onChange={(e) => setFormData(prev => ({ ...prev, mensagem: e.target.value }))}
                   placeholder="Escreva sua mensagem..."
@@ -232,6 +257,9 @@ const ContactSection = () => {
 
               <Button
                 type="submit"
+                name="mauticform[submit]"
+                id="mauticform_input_faesdecombr_submit"
+                value="1"
                 className="h-11 w-full rounded-lg bg-ecid-red font-semibold text-primary-foreground hover:bg-ecid-red-light"
               >
                 <Send className="mr-2 h-4 w-4" />
