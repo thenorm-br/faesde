@@ -1,8 +1,8 @@
-import { Search, ShoppingCart, User, Menu, X, ChevronDown } from "lucide-react";
+import { Search, User, Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import logo from "@/assets/logo.webp";
 import {
   DropdownMenu,
@@ -13,6 +13,19 @@ import {
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const scrollToContact = () => {
+    if (location.pathname !== "/") {
+      navigate("/");
+      setTimeout(() => {
+        document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    } else {
+      document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <header className="sticky top-0 z-50 w-full bg-ecid-navy">
@@ -69,29 +82,26 @@ const Header = () => {
 
         {/* Actions */}
         <div className="flex items-center gap-2">
-          <Link to="/#contact">
+          <Button
+            onClick={scrollToContact}
+            className="hidden rounded-lg bg-ecid-blue-accent px-6 font-semibold text-primary-foreground hover:bg-ecid-blue-accent/90 sm:flex"
+          >
+            Fale conosco
+          </Button>
+          
+          <a
+            href="http://faesde.eadplataforma.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Button
-              className="hidden rounded-lg bg-ecid-blue-accent px-6 font-semibold text-primary-foreground hover:bg-ecid-blue-accent/90 sm:flex"
+              variant="ghost"
+              size="icon"
+              className="text-primary-foreground/80 hover:bg-primary-foreground/10 hover:text-primary-foreground"
             >
-              Fale conosco
+              <User className="h-5 w-5" />
             </Button>
-          </Link>
-          
-          <Button
-            variant="ghost"
-            size="icon"
-            className="text-primary-foreground/80 hover:bg-primary-foreground/10 hover:text-primary-foreground"
-          >
-            <ShoppingCart className="h-5 w-5" />
-          </Button>
-          
-          <Button
-            variant="ghost"
-            size="icon"
-            className="text-primary-foreground/80 hover:bg-primary-foreground/10 hover:text-primary-foreground"
-          >
-            <User className="h-5 w-5" />
-          </Button>
+          </a>
 
           {/* Mobile Menu Toggle */}
           <Button
@@ -147,11 +157,15 @@ const Header = () => {
             >
               FAQ
             </Link>
-            <Link to="/#contact" onClick={() => setIsMenuOpen(false)}>
-              <Button className="mt-2 w-full rounded-lg bg-ecid-blue-accent font-semibold text-primary-foreground">
-                Fale conosco
-              </Button>
-            </Link>
+            <Button 
+              onClick={() => {
+                setIsMenuOpen(false);
+                scrollToContact();
+              }}
+              className="mt-2 w-full rounded-lg bg-ecid-blue-accent font-semibold text-primary-foreground"
+            >
+              Fale conosco
+            </Button>
           </nav>
         </div>
       )}
