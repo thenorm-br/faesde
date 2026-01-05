@@ -768,18 +768,18 @@ const coursesData: Record<string, CourseData> = {
     access: [{ title: "Material Técnico", description: "Conteúdos especializados em SST e Normas Regulamentadoras." }, { title: "Orientação Técnica", description: "Acompanhamento por profissionais experientes em segurança do trabalho." }, { title: "Diploma + MTE", description: "Certificação pelo MEC com direito a registro no Ministério do Trabalho." }],
     faq: [{ question: "Posso me registrar no MTE?", answer: "Sim, após a certificação você pode solicitar registro no MTE como Técnico em Segurança do Trabalho." }, { question: "Preciso conhecer todas as NRs?", answer: "Você deve ter conhecimento sólido das principais NRs aplicáveis à sua área de atuação. O processo avalia sua capacidade de aplicá-las no ambiente de trabalho." }, { question: "Posso atuar em qualquer empresa?", answer: "Sim, com registro no MTE você pode atuar como Técnico em Segurança do Trabalho em empresas de qualquer porte e segmento." }]
   },
-  "certificacao-agricultura": {
+  "certificacao-tecnica-competencia-agricultura-producao-rural": {
     title: "Certificação Técnica por Competência em Agricultura",
-    subtitle: "Formalize sua experiência no campo com diploma técnico",
+    subtitle: "Transforme sua experiência no campo em diploma técnico reconhecido pelo MEC",
     image: "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=1200&h=600&fit=crop",
     bannerImage: "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=1920&h=400&fit=crop",
-    description: "A Certificação por Competência em Agricultura reconhece sua experiência prática no setor agrícola. Obtenha diploma técnico para atuar formalmente no agronegócio.",
+    description: "A Certificação Técnica por Competência em Agricultura é destinada a profissionais que já atuam no setor agrícola e desejam formalizar sua experiência com diploma técnico. Se você trabalha há anos com cultivo de lavouras, manejo de solo, irrigação, aplicação de defensivos, operação de máquinas agrícolas ou gestão de propriedades rurais, esta certificação reconhece formalmente sua expertise e permite atuação profissional com registro.",
     originalPrice: "R$ 2.500,00",
     promoPrice: "R$ 1.599,00",
     installment: "R$ 133,25",
     hours: 800,
     durationRange: "3 a 6 meses",
-    certification: "Certificação válida",
+    certification: "Registro Profissional",
     rating: 5.0,
     youtubeVideoId: "pn97Z1-ssFI",
     category: "Certificação por Competência",
@@ -789,36 +789,42 @@ const coursesData: Record<string, CourseData> = {
       approvedDate: "07/10/2021",
       registerWith: "Registro Profissional"
     },
-    aboutCourse: "Valide seus conhecimentos em produção agrícola através da aferição de competências.",
-    howItWorks: ["Avaliação das competências técnicas em agricultura.", "Processo acelerado para profissionais experientes."],
-    profession: "Atue formalmente como técnico em agricultura com diploma reconhecido.",
-    market: "O agronegócio valoriza profissionais com formação técnica comprovada.",
-    methodology: {
-      materials: ["Material de apoio", "Orientações para avaliação", "Biblioteca digital"],
-      services: ["Requerimento de declarações", "Histórico", "Matriz curricular"],
-      responseTime: "Chamados respondidos dentro de 48 horas."
-    },
-    requirements: ["Cópia do RG e do CPF", "Comprovante de Residência", "Comprovação de experiência na agricultura"],
-    tutoring: "Orientação durante o processo de certificação.",
-    tutorAttributes: ["Apoiar na preparação", "Esclarecer dúvidas técnicas"],
-    modules: [
-      { name: "Avaliação de Competências", subjects: [{ name: "Culturas e Manejo", hours: 100 }, { name: "Solos e Nutrição", hours: 80 }, { name: "Fitossanidade", hours: 80 }, { name: "Mecanização Agrícola", hours: 80 }] }
+    aboutCourse: "O programa de Certificação por Competência em Agricultura avalia suas habilidades em planejamento e execução de culturas agrícolas, análise e correção de solos, sistemas de irrigação, controle fitossanitário, aplicação de defensivos e fertilizantes, operação e manutenção de máquinas agrícolas, colheita e pós-colheita, e gestão de propriedades rurais. É ideal para trabalhadores rurais, capatazes, encarregados de lavoura, operadores de máquinas agrícolas e produtores rurais que desejam obter diploma técnico oficial.",
+    howItWorks: [
+      "O processo de certificação avalia suas competências através de provas teóricas sobre culturas agrícolas, manejo de solo, fitossanidade, irrigação e gestão rural, além de análise prática de situações de campo.",
+      "Você apresentará seu portfólio de experiência no campo, comprovantes de atuação em propriedades rurais, certificados de cursos como aplicação de defensivos (NR-31) e operação de máquinas agrícolas.",
+      "Após aprovação, você receberá o diploma técnico em Agricultura reconhecido pelo MEC, que formaliza sua atuação profissional e amplia suas oportunidades no agronegócio."
     ],
-    access: [{ title: "Material de Apoio", description: "Prepare-se para as avaliações." }, { title: "Orientação", description: "Acompanhamento especializado." }, { title: "Diploma", description: "Autorizado pelo MEC." }],
-    faq: [{ question: "Preciso de experiência prévia?", answer: "Sim, é necessário comprovar experiência na área agrícola." }]
+    profession: "O Técnico em Agricultura certificado pode atuar como responsável técnico em propriedades rurais, supervisor de lavouras, consultor agrícola, vendedor técnico de insumos agrícolas, representante de empresas do agronegócio e em cargos de gestão em fazendas e cooperativas. Com o diploma técnico, você terá reconhecimento formal para crescer na carreira do agronegócio.",
+    market: "O agronegócio brasileiro é um dos maiores do mundo e demanda constantemente profissionais qualificados com formação técnica comprovada. Com a modernização da agricultura e adoção de novas tecnologias (agricultura de precisão, drones, sensoriamento), técnicos certificados são cada vez mais valorizados em fazendas, cooperativas, empresas de insumos e consultorias agrícolas.",
+    methodology: {
+      materials: ["Material de apoio em culturas agrícolas", "Guia de manejo de solo e nutrição", "Documentação sobre fitossanidade", "Biblioteca digital especializada", "Simulados de avaliação"],
+      services: ["Requerimento de declarações", "Histórico escolar", "Matriz curricular", "Orientação para registro profissional"],
+      responseTime: "Chamados respondidos dentro de 48 horas por nossa equipe técnica."
+    },
+    requirements: ["Cópia do RG e do CPF", "Comprovante de Residência", "Certificado de Conclusão do Ensino Médio", "Comprovação de experiência profissional na agricultura (mínimo 2 anos)", "Certificados de cursos complementares como NR-31 (desejável)"],
+    tutoring: "Tutores com experiência no agronegócio acompanham você durante todo o processo, orientando sobre culturas, manejo, fitossanidade e preparação para as avaliações.",
+    tutorAttributes: ["Orientar sobre técnicas de cultivo e manejo", "Esclarecer dúvidas sobre fitossanidade e controle de pragas", "Auxiliar na elaboração do portfólio profissional", "Fornecer feedback sobre gestão agrícola"],
+    modules: [
+      { name: "Produção Vegetal", subjects: [{ name: "Culturas Anuais e Perenes", hours: 120 }, { name: "Manejo e Correção de Solos", hours: 80 }, { name: "Sistemas de Irrigação", hours: 60 }] },
+      { name: "Proteção de Culturas", subjects: [{ name: "Fitossanidade e Controle de Pragas", hours: 100 }, { name: "Aplicação de Defensivos e NR-31", hours: 60 }, { name: "Nutrição e Adubação de Plantas", hours: 80 }] },
+      { name: "Mecanização e Gestão", subjects: [{ name: "Máquinas e Implementos Agrícolas", hours: 80 }, { name: "Colheita e Pós-Colheita", hours: 60 }, { name: "Gestão de Propriedades Rurais", hours: 80 }, { name: "Agricultura de Precisão", hours: 60 }] }
+    ],
+    access: [{ title: "Material Técnico", description: "Conteúdos especializados em agricultura e produção vegetal." }, { title: "Orientação Técnica", description: "Acompanhamento por profissionais experientes do agronegócio." }, { title: "Diploma Técnico", description: "Certificação pelo MEC para atuação profissional formal." }],
+    faq: [{ question: "Preciso de experiência prévia?", answer: "Sim, é necessário comprovar no mínimo 2 anos de experiência na área agrícola através de declaração de empregador ou comprovante de atuação em propriedade rural." }, { question: "Posso trabalhar em cooperativas?", answer: "Sim, com o diploma técnico você terá maior reconhecimento para atuar em cooperativas, empresas de insumos e consultorias agrícolas." }, { question: "O curso aborda agricultura de precisão?", answer: "Sim, o programa inclui conteúdos sobre tecnologias modernas como GPS, drones e sensoriamento remoto aplicados à agricultura." }]
   },
-  "certificacao-agropecuaria": {
+  "certificacao-tecnica-competencia-agropecuaria-producao-animal-vegetal": {
     title: "Certificação Técnica por Competência em Agropecuária",
-    subtitle: "Valide sua experiência em agricultura e pecuária",
+    subtitle: "Formalize sua experiência em produção agrícola e pecuária com diploma técnico reconhecido pelo MEC",
     image: "https://images.unsplash.com/photo-1516253593875-bd7ba052fbc5?w=1200&h=600&fit=crop",
     bannerImage: "https://images.unsplash.com/photo-1516253593875-bd7ba052fbc5?w=1920&h=400&fit=crop",
-    description: "A Certificação por Competência em Agropecuária é destinada a profissionais com experiência prática em produção agrícola e pecuária. Obtenha diploma técnico reconhecido.",
+    description: "A Certificação Técnica por Competência em Agropecuária é destinada a profissionais que atuam tanto na produção agrícola quanto na pecuária. Se você trabalha há anos em propriedades rurais com cultivo de lavouras e criação de animais, gestão de fazendas, manejo de pastagens, nutrição animal e reprodução de rebanhos, esta certificação reconhece formalmente sua experiência completa no setor agropecuário brasileiro.",
     originalPrice: "R$ 2.500,00",
     promoPrice: "R$ 1.599,00",
     installment: "R$ 133,25",
     hours: 800,
     durationRange: "3 a 6 meses",
-    certification: "Certificação válida",
+    certification: "Registro Profissional",
     rating: 5.0,
     youtubeVideoId: "pn97Z1-ssFI",
     category: "Certificação por Competência",
@@ -828,36 +834,42 @@ const coursesData: Record<string, CourseData> = {
       approvedDate: "07/10/2021",
       registerWith: "Registro Profissional"
     },
-    aboutCourse: "Formalize seus conhecimentos em agropecuária através da certificação por competência.",
-    howItWorks: ["Avaliação das competências em agricultura e pecuária.", "Processo direcionado para profissionais do campo."],
-    profession: "Atue como técnico em agropecuária com diploma reconhecido pelo MEC.",
-    market: "O setor agropecuário demanda profissionais qualificados e certificados.",
-    methodology: {
-      materials: ["Material de apoio", "Orientações para avaliação", "Biblioteca digital"],
-      services: ["Requerimento de declarações", "Histórico", "Matriz curricular"],
-      responseTime: "Chamados respondidos dentro de 48 horas."
-    },
-    requirements: ["Cópia do RG e do CPF", "Comprovante de Residência", "Comprovação de experiência em agropecuária"],
-    tutoring: "Orientação durante todo o processo.",
-    tutorAttributes: ["Apoiar na preparação", "Esclarecer dúvidas técnicas"],
-    modules: [
-      { name: "Avaliação de Competências", subjects: [{ name: "Produção Agrícola", hours: 100 }, { name: "Produção Pecuária", hours: 100 }, { name: "Gestão Rural", hours: 80 }, { name: "Sustentabilidade", hours: 60 }] }
+    aboutCourse: "O programa de Certificação por Competência em Agropecuária avalia suas habilidades integradas em produção vegetal (culturas, pastagens, forragens) e produção animal (bovinos, suínos, aves, equinos), incluindo manejo de rebanhos, nutrição animal, sanidade, reprodução, gestão de propriedades rurais e sustentabilidade ambiental. É ideal para administradores de fazendas, capatazes, vaqueiros experientes, tratadores de animais e trabalhadores rurais que atuam de forma integrada na agricultura e pecuária.",
+    howItWorks: [
+      "O processo de certificação avalia suas competências através de provas teóricas sobre produção agrícola, criação de animais, manejo de pastagens, sanidade animal e gestão rural, além de análise prática de situações do campo.",
+      "Você apresentará seu portfólio de experiência em propriedades agropecuárias, comprovantes de atuação com rebanhos e lavouras, e certificados de cursos complementares em sanidade animal e manejo de pastagens.",
+      "Após aprovação, você receberá o diploma técnico em Agropecuária reconhecido pelo MEC, que formaliza sua atuação profissional integrada no setor agropecuário."
     ],
-    access: [{ title: "Material de Apoio", description: "Prepare-se para as avaliações." }, { title: "Orientação", description: "Acompanhamento especializado." }, { title: "Diploma", description: "Autorizado pelo MEC." }],
-    faq: [{ question: "Preciso de experiência prévia?", answer: "Sim, é necessário comprovar experiência na área agropecuária." }]
+    profession: "O Técnico em Agropecuária certificado pode atuar como administrador de propriedades rurais, responsável técnico em fazendas mistas, supervisor de produção animal e vegetal, consultor agropecuário, representante de empresas de insumos agropecuários e em cargos de gestão em cooperativas e agroindústrias. É a formação ideal para quem atua de forma integrada no campo.",
+    market: "O setor agropecuário brasileiro é referência mundial e demanda profissionais com visão integrada de produção animal e vegetal. Com a intensificação da produção e adoção de sistemas integrados (ILPF - Integração Lavoura-Pecuária-Floresta), técnicos com formação completa em agropecuária são cada vez mais valorizados em fazendas, cooperativas, empresas de insumos e órgãos de extensão rural.",
+    methodology: {
+      materials: ["Material de apoio em produção animal e vegetal", "Guia de manejo de pastagens e rebanhos", "Documentação sobre sanidade animal", "Biblioteca digital especializada", "Simulados de avaliação"],
+      services: ["Requerimento de declarações", "Histórico escolar", "Matriz curricular", "Orientação para registro profissional"],
+      responseTime: "Chamados respondidos dentro de 48 horas por nossa equipe técnica."
+    },
+    requirements: ["Cópia do RG e do CPF", "Comprovante de Residência", "Certificado de Conclusão do Ensino Médio", "Comprovação de experiência profissional em agropecuária (mínimo 2 anos)", "Experiência comprovada em produção animal e vegetal"],
+    tutoring: "Tutores com experiência em fazendas mistas acompanham você durante todo o processo, orientando sobre produção animal, vegetal, gestão rural e preparação para as avaliações.",
+    tutorAttributes: ["Orientar sobre manejo de rebanhos e culturas", "Esclarecer dúvidas sobre sanidade animal e vegetal", "Auxiliar na elaboração do portfólio profissional", "Fornecer feedback sobre gestão agropecuária integrada"],
+    modules: [
+      { name: "Produção Vegetal", subjects: [{ name: "Culturas Agrícolas e Forrageiras", hours: 100 }, { name: "Manejo de Pastagens", hours: 60 }, { name: "Solos e Nutrição de Plantas", hours: 60 }] },
+      { name: "Produção Animal", subjects: [{ name: "Bovinocultura de Corte e Leite", hours: 100 }, { name: "Suinocultura e Avicultura", hours: 60 }, { name: "Nutrição e Reprodução Animal", hours: 80 }, { name: "Sanidade Animal", hours: 60 }] },
+      { name: "Gestão e Sustentabilidade", subjects: [{ name: "Gestão de Propriedades Rurais", hours: 80 }, { name: "Sistemas Integrados (ILPF)", hours: 60 }, { name: "Legislação Ambiental e Sustentabilidade", hours: 60 }, { name: "Comercialização e Mercados Agropecuários", hours: 60 }] }
+    ],
+    access: [{ title: "Material Técnico", description: "Conteúdos especializados em produção animal e vegetal integrada." }, { title: "Orientação Técnica", description: "Acompanhamento por profissionais experientes em agropecuária." }, { title: "Diploma Técnico", description: "Certificação pelo MEC para atuação profissional formal." }],
+    faq: [{ question: "Preciso ter experiência em agricultura E pecuária?", answer: "Sim, a certificação em agropecuária exige experiência comprovada em ambas as áreas, pois avalia competências integradas de produção animal e vegetal." }, { question: "Qual a diferença para a certificação em Agricultura?", answer: "A certificação em Agricultura foca apenas na produção vegetal, enquanto a Agropecuária abrange também a produção animal e sistemas integrados." }, { question: "Posso atuar como responsável técnico em fazendas?", answer: "Sim, com o diploma técnico você poderá atuar como responsável técnico em propriedades rurais que desenvolvem atividades agropecuárias." }]
   },
-  "certificacao-analises-clinicas": {
+  "certificacao-tecnica-competencia-analises-clinicas-laboratorio": {
     title: "Certificação Técnica por Competência em Análises Clínicas",
-    subtitle: "Valide sua experiência em laboratório com diploma técnico",
+    subtitle: "Formalize sua experiência em laboratório com diploma técnico reconhecido pelo MEC",
     image: "https://images.unsplash.com/photo-1579165466949-3180a3d056d5?w=1200&h=600&fit=crop",
     bannerImage: "https://images.unsplash.com/photo-1579165466949-3180a3d056d5?w=1920&h=400&fit=crop",
-    description: "A Certificação por Competência em Análises Clínicas reconhece sua experiência prática em laboratórios. Obtenha diploma técnico reconhecido pelo MEC.",
+    description: "A Certificação Técnica por Competência em Análises Clínicas é destinada a profissionais que já atuam em laboratórios de análises clínicas, hospitais e clínicas. Se você trabalha há anos com coleta de amostras biológicas, processamento de exames, operação de equipamentos laboratoriais, técnicas de bioquímica, hematologia, microbiologia e biossegurança, esta certificação reconhece formalmente sua expertise e formaliza sua atuação profissional.",
     originalPrice: "R$ 2.500,00",
     promoPrice: "R$ 1.599,00",
     installment: "R$ 133,25",
     hours: 800,
     durationRange: "3 a 6 meses",
-    certification: "Certificação válida",
+    certification: "Registro Profissional",
     rating: 5.0,
     youtubeVideoId: "pn97Z1-ssFI",
     category: "Certificação por Competência",
@@ -867,30 +879,36 @@ const coursesData: Record<string, CourseData> = {
       approvedDate: "07/10/2021",
       registerWith: "Registro Profissional"
     },
-    aboutCourse: "Formalize sua experiência em análises laboratoriais através da certificação por competência.",
-    howItWorks: ["Avaliação das competências em técnicas laboratoriais.", "Processo otimizado para profissionais experientes."],
-    profession: "Atue formalmente como técnico em análises clínicas.",
-    market: "Laboratórios e hospitais valorizam profissionais com formação técnica comprovada.",
-    methodology: {
-      materials: ["Material de apoio", "Orientações para avaliação", "Biblioteca digital"],
-      services: ["Requerimento de declarações", "Histórico", "Matriz curricular"],
-      responseTime: "Chamados respondidos dentro de 48 horas."
-    },
-    requirements: ["Cópia do RG e do CPF", "Comprovante de Residência", "Comprovação de experiência em laboratório"],
-    tutoring: "Orientação durante o processo de certificação.",
-    tutorAttributes: ["Apoiar na preparação", "Esclarecer dúvidas técnicas"],
-    modules: [
-      { name: "Avaliação de Competências", subjects: [{ name: "Bioquímica Clínica", hours: 100 }, { name: "Hematologia", hours: 100 }, { name: "Microbiologia", hours: 80 }, { name: "Biossegurança", hours: 60 }] }
+    aboutCourse: "O programa de Certificação por Competência em Análises Clínicas avalia suas habilidades em coleta e processamento de amostras biológicas (sangue, urina, fezes, secreções), técnicas de bioquímica clínica, hematologia, uroanálise, parasitologia, microbiologia, imunologia, controle de qualidade laboratorial e biossegurança. É ideal para auxiliares de laboratório, coletadores, técnicos de bancada e profissionais que atuam há anos na área laboratorial mas não possuem diploma técnico formal.",
+    howItWorks: [
+      "O processo de certificação avalia suas competências através de provas teóricas sobre técnicas laboratoriais, bioquímica, hematologia, microbiologia e biossegurança, além de análise prática de procedimentos de coleta e processamento.",
+      "Você apresentará seu portfólio de experiência em laboratórios, comprovantes de atuação na área de análises clínicas, e certificados de cursos complementares em biossegurança e coleta de amostras.",
+      "Após aprovação, você receberá o diploma técnico em Análises Clínicas reconhecido pelo MEC, que formaliza sua atuação profissional em laboratórios, hospitais e clínicas."
     ],
-    access: [{ title: "Material de Apoio", description: "Prepare-se para as avaliações." }, { title: "Orientação", description: "Acompanhamento especializado." }, { title: "Diploma", description: "Autorizado pelo MEC." }],
-    faq: [{ question: "Preciso de experiência prévia?", answer: "Sim, é necessário comprovar experiência em laboratório de análises clínicas." }]
+    profession: "O Técnico em Análises Clínicas certificado pode atuar em laboratórios de análises clínicas, hospitais, clínicas, bancos de sangue, indústrias farmacêuticas e em postos de coleta. As funções incluem coleta de amostras biológicas, processamento de exames, operação de equipamentos automatizados, controle de qualidade e liberação de resultados sob supervisão.",
+    market: "O setor de saúde brasileiro está em constante expansão, com crescimento significativo de laboratórios de análises clínicas. A demanda por profissionais técnicos qualificados é alta, especialmente após a pandemia que evidenciou a importância dos diagnósticos laboratoriais. Profissionais com diploma técnico têm melhores oportunidades em redes de laboratórios, hospitais e clínicas particulares.",
+    methodology: {
+      materials: ["Material de apoio em técnicas laboratoriais", "Guia de biossegurança e NR-32", "Procedimentos de coleta e processamento", "Biblioteca digital especializada", "Simulados de avaliação"],
+      services: ["Requerimento de declarações", "Histórico escolar", "Matriz curricular", "Orientação para registro profissional"],
+      responseTime: "Chamados respondidos dentro de 48 horas por nossa equipe técnica."
+    },
+    requirements: ["Cópia do RG e do CPF", "Comprovante de Residência", "Certificado de Conclusão do Ensino Médio", "Comprovação de experiência profissional em laboratório (mínimo 2 anos)", "Certificados de cursos em biossegurança e coleta (desejável)"],
+    tutoring: "Tutores com experiência em laboratórios de análises clínicas acompanham você durante todo o processo, orientando sobre técnicas laboratoriais, biossegurança e preparação para as avaliações.",
+    tutorAttributes: ["Orientar sobre técnicas de bioquímica e hematologia", "Esclarecer dúvidas sobre biossegurança e NR-32", "Auxiliar na elaboração do portfólio profissional", "Fornecer feedback sobre procedimentos laboratoriais"],
+    modules: [
+      { name: "Técnicas Laboratoriais", subjects: [{ name: "Coleta e Processamento de Amostras", hours: 100 }, { name: "Bioquímica Clínica", hours: 100 }, { name: "Hematologia e Coagulação", hours: 80 }] },
+      { name: "Diagnóstico Laboratorial", subjects: [{ name: "Uroanálise e Parasitologia", hours: 80 }, { name: "Microbiologia Clínica", hours: 80 }, { name: "Imunologia e Sorologia", hours: 60 }] },
+      { name: "Qualidade e Segurança", subjects: [{ name: "Biossegurança e NR-32", hours: 80 }, { name: "Controle de Qualidade Laboratorial", hours: 60 }, { name: "Equipamentos e Automação Laboratorial", hours: 60 }, { name: "Ética e Legislação em Saúde", hours: 60 }] }
+    ],
+    access: [{ title: "Material Técnico", description: "Conteúdos especializados em análises clínicas e técnicas laboratoriais." }, { title: "Orientação Técnica", description: "Acompanhamento por profissionais experientes em laboratórios." }, { title: "Diploma Técnico", description: "Certificação pelo MEC para atuação profissional formal." }],
+    faq: [{ question: "Preciso de experiência prévia?", answer: "Sim, é necessário comprovar no mínimo 2 anos de experiência em laboratório de análises clínicas através de carteira de trabalho ou declaração de empregador." }, { question: "Posso trabalhar em hospitais?", answer: "Sim, com o diploma técnico você poderá atuar em laboratórios de hospitais, clínicas, postos de coleta e laboratórios particulares." }, { question: "O curso aborda automação laboratorial?", answer: "Sim, o programa inclui conteúdos sobre operação de equipamentos automatizados utilizados em laboratórios modernos." }]
   },
-  "certificacao-eletroeletronica": {
+  "certificacao-tecnica-competencia-eletroeletronica-circuitos-microcontroladores": {
     title: "Certificação Técnica por Competência em Eletroeletrônica",
-    subtitle: "Valide suas habilidades em eletroeletrônica com registro no CREA",
+    subtitle: "Formalize sua experiência em eletrônica analógica, digital e microcontroladores com registro no CREA",
     image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&h=600&fit=crop",
     bannerImage: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1920&h=400&fit=crop",
-    description: "A Certificação por Competência em Eletroeletrônica reconhece sua experiência em sistemas eletrônicos e elétricos. Obtenha diploma técnico com registro no CREA.",
+    description: "A Certificação Técnica por Competência em Eletroeletrônica é destinada a profissionais que já atuam com circuitos eletrônicos analógicos e digitais, sistemas de potência, microcontroladores, instrumentação e manutenção de equipamentos eletroeletrônicos. Se você trabalha há anos com reparo de placas, soldagem SMD, programação de microcontroladores ou manutenção de equipamentos industriais, esta certificação reconhece sua expertise e permite registro no CREA.",
     originalPrice: "R$ 3.500,00",
     promoPrice: "R$ 1.599,00",
     installment: "R$ 133,25",
@@ -906,30 +924,36 @@ const coursesData: Record<string, CourseData> = {
       approvedDate: "07/10/2021",
       registerWith: "Registro no CREA"
     },
-    aboutCourse: "Formalize seus conhecimentos em eletroeletrônica através da aferição de competências.",
-    howItWorks: ["Avaliação teórica e prática das competências.", "Processo direcionado para profissionais experientes."],
-    profession: "Atue como técnico em eletroeletrônica com registro no CREA.",
-    market: "O setor de eletrônica demanda profissionais certificados e habilitados.",
-    methodology: {
-      materials: ["Material de apoio", "Orientações para avaliação", "Biblioteca digital"],
-      services: ["Requerimento de declarações", "Histórico", "Matriz curricular"],
-      responseTime: "Chamados respondidos dentro de 48 horas."
-    },
-    requirements: ["Cópia do RG e do CPF", "Comprovante de Residência", "Comprovação de experiência na área"],
-    tutoring: "Orientação especializada durante o processo.",
-    tutorAttributes: ["Apoiar na preparação", "Esclarecer dúvidas técnicas"],
-    modules: [
-      { name: "Avaliação de Competências", subjects: [{ name: "Eletrônica Analógica e Digital", hours: 120 }, { name: "Sistemas de Potência", hours: 80 }, { name: "Microcontroladores", hours: 80 }, { name: "Instrumentação", hours: 80 }] }
+    aboutCourse: "O programa de Certificação por Competência em Eletroeletrônica avalia suas habilidades em eletrônica analógica (amplificadores, fontes, osciladores), eletrônica digital (portas lógicas, flip-flops, contadores), sistemas de potência, microcontroladores (Arduino, PIC, ESP), instrumentação eletrônica, manutenção de equipamentos e técnicas de soldagem SMD. É ideal para técnicos de manutenção eletrônica, reparadores de equipamentos, montadores de placas e profissionais que atuam com desenvolvimento de projetos eletrônicos.",
+    howItWorks: [
+      "O processo de certificação avalia suas competências através de provas teóricas sobre eletrônica analógica e digital, sistemas de potência, microcontroladores e instrumentação, além de análise prática de circuitos e projetos eletrônicos.",
+      "Você apresentará seu portfólio de trabalhos em eletrônica, projetos desenvolvidos, equipamentos reparados e certificados de cursos complementares em eletrônica e microcontroladores.",
+      "Após aprovação, você receberá o diploma técnico em Eletroeletrônica reconhecido pelo MEC, que permite solicitar registro no CREA como técnico de nível médio, habilitando-se a assinar projetos e laudos técnicos."
     ],
-    access: [{ title: "Material de Apoio", description: "Prepare-se para as avaliações." }, { title: "Orientação", description: "Acompanhamento especializado." }, { title: "Diploma", description: "Autorizado pelo MEC." }],
-    faq: [{ question: "Posso me registrar no CREA?", answer: "Sim, após a certificação você pode solicitar registro no CREA." }]
+    profession: "O Técnico em Eletroeletrônica certificado pode atuar como técnico de manutenção eletrônica, reparador de equipamentos eletroeletrônicos, projetista de circuitos, técnico em instrumentação, montador de placas eletrônicas, técnico de campo em telecomunicações e em cargos de supervisão em indústrias de eletrônicos. Com registro no CREA, você terá autonomia para assinar projetos e laudos técnicos.",
+    market: "O mercado de eletroeletrônica está em constante evolução com a expansão da IoT (Internet das Coisas), automação residencial, veículos elétricos e equipamentos médicos. Profissionais com diploma técnico e registro no CREA são valorizados em indústrias de eletroeletrônicos, empresas de manutenção, telecomunicações, automação e no mercado de assistência técnica especializada.",
+    methodology: {
+      materials: ["Material de apoio em eletrônica", "Guia de microcontroladores e programação", "Documentação sobre instrumentação", "Biblioteca digital especializada", "Simulados de avaliação"],
+      services: ["Requerimento de declarações", "Histórico escolar", "Matriz curricular", "Orientação para registro no CREA"],
+      responseTime: "Chamados respondidos dentro de 48 horas por nossa equipe técnica."
+    },
+    requirements: ["Cópia do RG e do CPF", "Comprovante de Residência", "Certificado de Conclusão do Ensino Médio", "Comprovação de experiência profissional em eletroeletrônica (mínimo 2 anos)", "Portfólio de projetos e trabalhos realizados (desejável)"],
+    tutoring: "Tutores com experiência em eletrônica acompanham você durante todo o processo, orientando sobre circuitos, microcontroladores, instrumentação e preparação para as avaliações.",
+    tutorAttributes: ["Orientar sobre eletrônica analógica e digital", "Esclarecer dúvidas sobre microcontroladores e programação", "Auxiliar na elaboração do portfólio técnico", "Fornecer feedback sobre projetos eletrônicos"],
+    modules: [
+      { name: "Eletrônica Fundamental", subjects: [{ name: "Eletrônica Analógica (Amplificadores, Fontes)", hours: 120 }, { name: "Eletrônica Digital (Lógica, Contadores)", hours: 80 }, { name: "Componentes e Dispositivos Eletrônicos", hours: 60 }] },
+      { name: "Sistemas e Controle", subjects: [{ name: "Sistemas de Potência e Conversores", hours: 100 }, { name: "Microcontroladores e Programação", hours: 100 }, { name: "Instrumentação e Medidas Eletrônicas", hours: 60 }] },
+      { name: "Aplicações Práticas", subjects: [{ name: "Técnicas de Soldagem e Montagem SMD", hours: 60 }, { name: "Manutenção de Equipamentos Eletrônicos", hours: 80 }, { name: "Projetos e Prototipagem", hours: 60 }, { name: "Normas Técnicas e Segurança", hours: 60 }] }
+    ],
+    access: [{ title: "Material Técnico", description: "Conteúdos especializados em eletrônica analógica, digital e microcontroladores." }, { title: "Orientação Técnica", description: "Acompanhamento por profissionais experientes em eletroeletrônica." }, { title: "Diploma + CREA", description: "Certificação pelo MEC com direito a registro no CREA." }],
+    faq: [{ question: "Posso me registrar no CREA?", answer: "Sim, após a certificação você pode solicitar registro no CREA como técnico em Eletroeletrônica." }, { question: "Preciso saber programar microcontroladores?", answer: "Conhecimento em programação de microcontroladores (Arduino, PIC, etc.) é valorizado, mas não obrigatório. A avaliação considera seu perfil profissional completo." }, { question: "Qual a diferença para Eletrotécnica?", answer: "Eletroeletrônica foca em circuitos eletrônicos, componentes e microcontroladores. Eletrotécnica foca em instalações elétricas, máquinas elétricas e sistemas de potência em alta escala." }]
   },
-  "certificacao-mecanica": {
+  "certificacao-tecnica-competencia-mecanica-industrial-manutencao": {
     title: "Certificação Técnica por Competência em Mecânica",
-    subtitle: "Formalize sua experiência em mecânica com registro no CREA",
+    subtitle: "Formalize sua experiência em mecânica industrial, manutenção e processos de fabricação com registro no CREA",
     image: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1200&h=600&fit=crop",
     bannerImage: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1920&h=400&fit=crop",
-    description: "A Certificação por Competência em Mecânica é destinada a profissionais com experiência prática em sistemas mecânicos. Obtenha diploma técnico com registro no CREA.",
+    description: "A Certificação Técnica por Competência em Mecânica é destinada a profissionais que já atuam com manutenção mecânica industrial, processos de fabricação, usinagem, montagem de máquinas e equipamentos. Se você trabalha há anos como mecânico industrial, torneiro, fresador, ajustador, montador ou supervisor de manutenção mecânica, esta certificação reconhece formalmente sua expertise e permite registro no CREA para assinar laudos e projetos técnicos.",
     originalPrice: "R$ 2.500,00",
     promoPrice: "R$ 1.599,00",
     installment: "R$ 133,25",
@@ -945,23 +969,29 @@ const coursesData: Record<string, CourseData> = {
       approvedDate: "07/10/2021",
       registerWith: "Registro no CREA"
     },
-    aboutCourse: "Valide sua experiência em mecânica através da certificação por competência.",
-    howItWorks: ["Avaliação das competências técnicas em mecânica.", "Processo acelerado para profissionais experientes."],
-    profession: "Atue como técnico em mecânica com registro profissional no CREA.",
-    market: "A indústria valoriza profissionais certificados e habilitados.",
-    methodology: {
-      materials: ["Material de apoio", "Orientações para avaliação", "Biblioteca digital"],
-      services: ["Requerimento de declarações", "Histórico", "Matriz curricular"],
-      responseTime: "Chamados respondidos dentro de 48 horas."
-    },
-    requirements: ["Cópia do RG e do CPF", "Comprovante de Residência", "Comprovação de experiência em mecânica"],
-    tutoring: "Orientação durante todo o processo.",
-    tutorAttributes: ["Apoiar na preparação", "Esclarecer dúvidas técnicas"],
-    modules: [
-      { name: "Avaliação de Competências", subjects: [{ name: "Elementos de Máquinas", hours: 100 }, { name: "Manutenção Mecânica", hours: 100 }, { name: "Processos de Fabricação", hours: 80 }, { name: "Metrologia", hours: 60 }] }
+    aboutCourse: "O programa de Certificação por Competência em Mecânica avalia suas habilidades em elementos de máquinas (engrenagens, rolamentos, correias, correntes), manutenção mecânica preventiva e corretiva, processos de fabricação (usinagem, soldagem, conformação), metrologia e instrumentos de medição, desenho técnico mecânico, hidráulica e pneumática industrial. É ideal para mecânicos industriais, torneiros mecânicos, fresadores, ajustadores, montadores de máquinas e supervisores de manutenção que desejam obter diploma técnico oficial.",
+    howItWorks: [
+      "O processo de certificação avalia suas competências através de provas teóricas sobre elementos de máquinas, processos de fabricação, manutenção e metrologia, além de análise prática de situações de manutenção e fabricação.",
+      "Você apresentará seu portfólio de trabalhos em mecânica, comprovantes de experiência em indústrias, certificados de cursos complementares em soldagem, NR-12 e operação de máquinas.",
+      "Após aprovação, você receberá o diploma técnico em Mecânica reconhecido pelo MEC, que permite solicitar registro no CREA como técnico de nível médio, habilitando-se a assinar laudos de máquinas e projetos mecânicos."
     ],
-    access: [{ title: "Material de Apoio", description: "Prepare-se para as avaliações." }, { title: "Orientação", description: "Acompanhamento especializado." }, { title: "Diploma", description: "Autorizado pelo MEC." }],
-    faq: [{ question: "Posso me registrar no CREA?", answer: "Sim, após a certificação você pode solicitar registro no CREA." }]
+    profession: "O Técnico em Mecânica certificado pode atuar como mecânico industrial, técnico de manutenção, supervisor de produção mecânica, projetista mecânico, torneiro, fresador, retificador, ajustador mecânico e em cargos de coordenação em indústrias de manufatura. Com registro no CREA, você terá autonomia para assinar laudos técnicos de máquinas e equipamentos conforme NR-12.",
+    market: "A indústria brasileira demanda constantemente técnicos em mecânica qualificados para manutenção e operação de máquinas e equipamentos. Com a Indústria 4.0 e a necessidade de manutenção preditiva, profissionais com diploma técnico e registro no CREA são cada vez mais valorizados em indústrias automobilísticas, metalúrgicas, petroquímicas, alimentícias e de manufatura em geral.",
+    methodology: {
+      materials: ["Material de apoio em mecânica industrial", "Guia de elementos de máquinas", "Documentação sobre processos de fabricação", "Biblioteca digital especializada", "Simulados de avaliação"],
+      services: ["Requerimento de declarações", "Histórico escolar", "Matriz curricular", "Orientação para registro no CREA"],
+      responseTime: "Chamados respondidos dentro de 48 horas por nossa equipe técnica."
+    },
+    requirements: ["Cópia do RG e do CPF", "Comprovante de Residência", "Certificado de Conclusão do Ensino Médio", "Comprovação de experiência profissional em mecânica (mínimo 2 anos)", "Certificados de cursos NR-12, soldagem ou operação de máquinas (desejável)"],
+    tutoring: "Tutores com experiência em mecânica industrial acompanham você durante todo o processo, orientando sobre elementos de máquinas, processos de fabricação, manutenção e preparação para as avaliações.",
+    tutorAttributes: ["Orientar sobre elementos de máquinas e manutenção", "Esclarecer dúvidas sobre processos de fabricação", "Auxiliar na elaboração do portfólio profissional", "Fornecer feedback sobre metrologia e instrumentação"],
+    modules: [
+      { name: "Elementos de Máquinas", subjects: [{ name: "Engrenagens, Rolamentos e Mancais", hours: 100 }, { name: "Transmissões Mecânicas", hours: 60 }, { name: "Desenho Técnico Mecânico", hours: 80 }] },
+      { name: "Processos e Fabricação", subjects: [{ name: "Usinagem (Torno, Fresa, Retífica)", hours: 120 }, { name: "Soldagem e Processos de União", hours: 60 }, { name: "Metrologia e Instrumentos de Medição", hours: 80 }] },
+      { name: "Manutenção e Segurança", subjects: [{ name: "Manutenção Mecânica Industrial", hours: 100 }, { name: "Hidráulica e Pneumática", hours: 80 }, { name: "NR-12 - Segurança em Máquinas", hours: 60 }, { name: "Lubrificação Industrial", hours: 40 }] }
+    ],
+    access: [{ title: "Material Técnico", description: "Conteúdos especializados em mecânica industrial e processos de fabricação." }, { title: "Orientação Técnica", description: "Acompanhamento por profissionais experientes em mecânica." }, { title: "Diploma + CREA", description: "Certificação pelo MEC com direito a registro no CREA." }],
+    faq: [{ question: "Posso me registrar no CREA?", answer: "Sim, após a certificação você pode solicitar registro no CREA como técnico em Mecânica." }, { question: "Posso assinar laudos de máquinas NR-12?", answer: "Sim, com registro no CREA você pode elaborar e assinar laudos técnicos de máquinas e equipamentos conforme as atribuições definidas pelo conselho." }, { question: "Preciso saber operar torno e fresa?", answer: "Experiência em usinagem é valorizada, mas não obrigatória. A avaliação considera seu perfil profissional completo em mecânica." }]
   },
   // Cursos Pós-Técnicos (Especializações)
   "pos-administracao-producao": {
