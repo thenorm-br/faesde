@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Search, ArrowLeft, Calendar, BadgeCheck } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Link } from "react-router-dom";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Link, useSearchParams } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -311,8 +311,29 @@ const CourseCard = ({ course }: { course: Course }) => {
 };
 
 const Cursos = () => {
-  const [searchTerm, setSearchTerm] = useState("");
-  const [activeTab, setActiveTab] = useState("todos");
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchTerm, setSearchTerm] = useState(searchParams.get("q") || "");
+  const [activeTab, setActiveTab] = useState(searchParams.get("categoria") || "todos");
+
+  // Sync URL params with state
+  useEffect(() => {
+    const categoria = searchParams.get("categoria");
+    const q = searchParams.get("q");
+    if (categoria) setActiveTab(categoria);
+    if (q) setSearchTerm(q);
+  }, [searchParams]);
+
+  // Update URL when tab changes
+  const handleTabChange = (value: string) => {
+    setActiveTab(value);
+    const newParams = new URLSearchParams(searchParams);
+    if (value === "todos") {
+      newParams.delete("categoria");
+    } else {
+      newParams.set("categoria", value);
+    }
+    setSearchParams(newParams);
+  };
 
   const filteredCourses = allCourses.filter((course) => {
     const matchesSearch = course.title.toLowerCase().includes(searchTerm.toLowerCase());
@@ -356,7 +377,7 @@ const Cursos = () => {
               />
             </div>
 
-            <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full md:w-auto">
+            <Tabs value={activeTab} onValueChange={handleTabChange} className="w-full md:w-auto">
               <TabsList className="grid w-full grid-cols-4 md:w-auto">
                 <TabsTrigger value="todos">Todos</TabsTrigger>
                 <TabsTrigger value="tecnico">Técnicos</TabsTrigger>
