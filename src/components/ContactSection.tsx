@@ -100,7 +100,7 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-16 md:py-20">
+    <section id="contato" className="py-16 md:py-20">
       <div className="container mx-auto">
         {/* Header */}
         <div className="mb-12 text-center">

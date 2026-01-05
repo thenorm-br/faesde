@@ -83,13 +83,13 @@ const HeroBanner = () => {
             </div>
             
             {/* CTA Button */}
-            <Link 
-              to="/curso/seguranca-trabalho"
+            <a 
+              href="#contato"
               className="mt-2 inline-flex animate-fade-up items-center gap-2 rounded-xl bg-ecid-yellow px-8 py-4 text-lg font-bold text-ecid-navy shadow-xl transition-all hover:scale-105 hover:bg-primary-foreground hover:shadow-2xl"
               style={{ animationDelay: "0.35s" }}
             >
               🎉 Quero me matricular
-            </Link>
+            </a>
           </div>
         </div>
       </div>
