@@ -1,7 +1,7 @@
 import { Search, User, Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { useState } from "react";
+import { useState, FormEvent } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import logo from "@/assets/logo.webp";
 import {
@@ -13,8 +13,17 @@ import {
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
   const location = useLocation();
   const navigate = useNavigate();
+
+  const handleSearch = (e: FormEvent) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      navigate(`/cursos?q=${encodeURIComponent(searchQuery.trim())}`);
+      setIsMenuOpen(false);
+    }
+  };
 
   const scrollToContact = () => {
     if (location.pathname !== "/") {
@@ -49,6 +58,9 @@ const Header = () => {
             </DropdownMenuTrigger>
             <DropdownMenuContent className="w-56">
               <DropdownMenuItem asChild>
+                <Link to="/cursos">Todos os Cursos</Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
                 <Link to="/cursos?categoria=tecnico">Cursos Técnicos EAD</Link>
               </DropdownMenuItem>
               <DropdownMenuItem asChild>
@@ -69,16 +81,18 @@ const Header = () => {
         </div>
 
         {/* Search Bar - Desktop */}
-        <div className="hidden flex-1 max-w-md mx-8 lg:flex">
+        <form onSubmit={handleSearch} className="hidden flex-1 max-w-md mx-8 lg:flex">
           <div className="relative w-full">
             <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
             <Input
               type="search"
               placeholder="Buscar cursos..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
               className="h-10 w-full rounded-lg border-0 bg-card pl-10 pr-4 text-sm"
             />
           </div>
-        </div>
+        </form>
 
         {/* Actions */}
         <div className="flex items-center gap-2">
@@ -118,16 +132,18 @@ const Header = () => {
       {/* Mobile Menu */}
       {isMenuOpen && (
         <div className="border-t border-primary-foreground/10 bg-ecid-navy p-4 lg:hidden">
-          <div className="mb-4">
+          <form onSubmit={handleSearch} className="mb-4">
             <div className="relative">
               <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
               <Input
                 type="search"
                 placeholder="Buscar cursos..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
                 className="h-10 w-full rounded-lg border-0 bg-card pl-10 pr-4 text-sm"
               />
             </div>
-          </div>
+          </form>
           <nav className="flex flex-col gap-2">
             <Link
               to="/cursos"
