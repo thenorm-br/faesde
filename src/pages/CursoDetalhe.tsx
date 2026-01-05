@@ -1,7 +1,9 @@
 import { useParams, Link } from "react-router-dom";
-import { ArrowLeft, Clock, Calendar, Award, Star, Play, CheckCircle, MessageCircle, BookOpen, Users, ChevronDown } from "lucide-react";
+import { ArrowLeft, Clock, Calendar, Award, Star, Play, CheckCircle, MessageCircle, BookOpen, Users, ChevronDown, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -539,6 +541,397 @@ const coursesData: Record<string, CourseData> = {
     ],
     access: [{ title: "Video Aulas", description: "Estude onde e quando quiser." }, { title: "Tutoria", description: "Tire suas dúvidas." }, { title: "Diploma", description: "Autorizado pelo MEC." }],
     faq: [{ question: "Quais as formas de pagamento?", answer: "Aceitamos cartão de crédito em até 12x sem juros, boleto bancário e PIX." }]
+  },
+  // Cursos de Certificação por Competência
+  "certificacao-administracao": {
+    title: "Certificação Técnica por Competência em Administração",
+    subtitle: "Valide sua experiência profissional e obtenha diploma técnico reconhecido pelo MEC",
+    image: "https://images.unsplash.com/photo-1556761175-4b46a572b786?w=1200&h=600&fit=crop",
+    bannerImage: "https://images.unsplash.com/photo-1556761175-4b46a572b786?w=1920&h=400&fit=crop",
+    description: "A Certificação Técnica por Competência em Administração é destinada a profissionais com experiência prática na área administrativa. Através da aferição de habilidades e competências, você pode obter seu diploma técnico e registro profissional.",
+    originalPrice: "R$ 3.500,00",
+    promoPrice: "R$ 1.599,00",
+    installment: "R$ 133,25",
+    hours: 800,
+    durationRange: "3 a 6 meses",
+    certification: "Certificação válida",
+    rating: 5.0,
+    youtubeVideoId: "pn97Z1-ssFI",
+    category: "Certificação por Competência",
+    registration: {
+      portaria: "SEE-PRC-2021/12180",
+      parecer: "228/2021",
+      approvedDate: "07/10/2021",
+      registerWith: "Registro Profissional"
+    },
+    aboutCourse: "A certificação por competência reconhece formalmente os conhecimentos e habilidades adquiridos ao longo da sua trajetória profissional na área de administração.",
+    howItWorks: ["Avaliação das competências técnicas através de provas e portfólio.", "Processo mais rápido para quem já possui experiência prática."],
+    profession: "Atue formalmente em cargos administrativos com diploma técnico reconhecido.",
+    market: "Obtenha reconhecimento formal para crescer na carreira administrativa.",
+    methodology: {
+      materials: ["Material de apoio", "Orientações para avaliação", "Biblioteca digital"],
+      services: ["Requerimento de declarações", "Histórico", "Matriz curricular"],
+      responseTime: "Chamados respondidos dentro de 48 horas."
+    },
+    requirements: ["Cópia do RG e do CPF", "Comprovante de Residência", "Comprovação de experiência profissional na área"],
+    tutoring: "Acompanhamento durante todo o processo de certificação.",
+    tutorAttributes: ["Orientar sobre o processo de avaliação", "Esclarecer dúvidas sobre competências"],
+    modules: [
+      { name: "Avaliação de Competências", subjects: [{ name: "Fundamentos da Administração", hours: 80 }, { name: "Gestão de Pessoas", hours: 80 }, { name: "Gestão Financeira", hours: 80 }, { name: "Processos Organizacionais", hours: 80 }] }
+    ],
+    access: [{ title: "Material de Apoio", description: "Prepare-se para as avaliações." }, { title: "Orientação", description: "Acompanhamento especializado." }, { title: "Diploma", description: "Autorizado pelo MEC." }],
+    faq: [{ question: "Preciso de experiência prévia?", answer: "Sim, é necessário comprovar experiência profissional na área de administração." }]
+  },
+  "certificacao-automacao-industrial": {
+    title: "Certificação Técnica por Competência em Automação Industrial",
+    subtitle: "Valide suas habilidades em automação e obtenha registro no CREA",
+    image: "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=1200&h=600&fit=crop",
+    bannerImage: "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=1920&h=400&fit=crop",
+    description: "A Certificação Técnica por Competência em Automação Industrial reconhece suas habilidades práticas em sistemas automatizados, CLPs, sensores e atuadores. Obtenha diploma técnico com registro no CREA.",
+    originalPrice: "R$ 2.500,00",
+    promoPrice: "R$ 1.599,00",
+    installment: "R$ 133,25",
+    hours: 800,
+    durationRange: "3 a 6 meses",
+    certification: "Registro no CREA",
+    rating: 5.0,
+    youtubeVideoId: "pn97Z1-ssFI",
+    category: "Certificação por Competência",
+    registration: {
+      portaria: "SEE-PRC-2021/12181",
+      parecer: "229/2021",
+      approvedDate: "07/10/2021",
+      registerWith: "Registro no CREA"
+    },
+    aboutCourse: "Certificação destinada a profissionais com experiência em automação industrial que desejam formalizar seus conhecimentos.",
+    howItWorks: ["Avaliação prática e teórica das competências.", "Processo otimizado para profissionais experientes."],
+    profession: "Atue legalmente como técnico em automação industrial com registro no CREA.",
+    market: "A Indústria 4.0 demanda profissionais qualificados e certificados em automação.",
+    methodology: {
+      materials: ["Material de apoio", "Orientações para avaliação", "Biblioteca digital"],
+      services: ["Requerimento de declarações", "Histórico", "Matriz curricular"],
+      responseTime: "Chamados respondidos dentro de 48 horas."
+    },
+    requirements: ["Cópia do RG e do CPF", "Comprovante de Residência", "Comprovação de experiência na área"],
+    tutoring: "Orientação especializada durante o processo.",
+    tutorAttributes: ["Apoiar na preparação para avaliação", "Esclarecer dúvidas técnicas"],
+    modules: [
+      { name: "Avaliação de Competências", subjects: [{ name: "CLPs e Programação", hours: 100 }, { name: "Sensores e Atuadores", hours: 80 }, { name: "Redes Industriais", hours: 80 }, { name: "Sistemas Supervisórios", hours: 80 }] }
+    ],
+    access: [{ title: "Material de Apoio", description: "Prepare-se para as avaliações." }, { title: "Orientação", description: "Acompanhamento especializado." }, { title: "Diploma", description: "Autorizado pelo MEC." }],
+    faq: [{ question: "Posso me registrar no CREA?", answer: "Sim, após a certificação você pode solicitar registro no CREA." }]
+  },
+  "certificacao-edificacoes": {
+    title: "Certificação Técnica por Competência em Edificações",
+    subtitle: "Formalize sua experiência na construção civil com registro no CREA",
+    image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1200&h=600&fit=crop",
+    bannerImage: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1920&h=400&fit=crop",
+    description: "A Certificação por Competência em Edificações é ideal para profissionais da construção civil com experiência prática. Obtenha diploma técnico reconhecido e registro no CREA.",
+    originalPrice: "R$ 2.500,00",
+    promoPrice: "R$ 1.599,00",
+    installment: "R$ 133,25",
+    hours: 800,
+    durationRange: "3 a 6 meses",
+    certification: "Registro no CREA",
+    rating: 5.0,
+    youtubeVideoId: "pn97Z1-ssFI",
+    category: "Certificação por Competência",
+    registration: {
+      portaria: "SEE-PRC-2021/12182",
+      parecer: "230/2021",
+      approvedDate: "07/10/2021",
+      registerWith: "Registro no CREA"
+    },
+    aboutCourse: "Reconheça formalmente sua experiência em obras e projetos de edificações.",
+    howItWorks: ["Avaliação de competências técnicas em construção civil.", "Processo acelerado para profissionais experientes."],
+    profession: "Atue legalmente como técnico em edificações com respaldo do CREA.",
+    market: "A construção civil valoriza profissionais certificados e regularizados.",
+    methodology: {
+      materials: ["Material de apoio", "Orientações para avaliação", "Biblioteca digital"],
+      services: ["Requerimento de declarações", "Histórico", "Matriz curricular"],
+      responseTime: "Chamados respondidos dentro de 48 horas."
+    },
+    requirements: ["Cópia do RG e do CPF", "Comprovante de Residência", "Comprovação de experiência na construção civil"],
+    tutoring: "Orientação durante todo o processo de certificação.",
+    tutorAttributes: ["Apoiar na preparação", "Esclarecer dúvidas técnicas"],
+    modules: [
+      { name: "Avaliação de Competências", subjects: [{ name: "Projetos e Desenho Técnico", hours: 100 }, { name: "Materiais e Técnicas Construtivas", hours: 100 }, { name: "Orçamento e Planejamento", hours: 80 }, { name: "Normas e Segurança", hours: 80 }] }
+    ],
+    access: [{ title: "Material de Apoio", description: "Prepare-se para as avaliações." }, { title: "Orientação", description: "Acompanhamento especializado." }, { title: "Diploma", description: "Autorizado pelo MEC." }],
+    faq: [{ question: "Posso me registrar no CREA?", answer: "Sim, após a certificação você pode solicitar registro no CREA." }]
+  },
+  "certificacao-eletrotecnica": {
+    title: "Certificação Técnica por Competência em Eletrotécnica",
+    subtitle: "Valide suas competências em sistemas elétricos com registro no CREA",
+    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&h=600&fit=crop",
+    bannerImage: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&h=400&fit=crop",
+    description: "A Certificação por Competência em Eletrotécnica reconhece sua experiência prática em instalações e sistemas elétricos. Obtenha diploma técnico e registro no CREA.",
+    originalPrice: "R$ 2.500,00",
+    promoPrice: "R$ 1.599,00",
+    installment: "R$ 133,25",
+    hours: 800,
+    durationRange: "3 a 6 meses",
+    certification: "Registro no CREA",
+    rating: 5.0,
+    youtubeVideoId: "pn97Z1-ssFI",
+    category: "Certificação por Competência",
+    registration: {
+      portaria: "SEE-PRC-2021/12183",
+      parecer: "231/2021",
+      approvedDate: "07/10/2021",
+      registerWith: "Registro no CREA"
+    },
+    aboutCourse: "Formalize seus conhecimentos em eletrotécnica através da aferição de competências.",
+    howItWorks: ["Avaliação teórica e prática das competências elétricas.", "Processo direcionado para profissionais experientes."],
+    profession: "Atue como técnico em eletrotécnica com registro profissional no CREA.",
+    market: "O setor elétrico demanda profissionais certificados e habilitados.",
+    methodology: {
+      materials: ["Material de apoio", "Orientações para avaliação", "Biblioteca digital"],
+      services: ["Requerimento de declarações", "Histórico", "Matriz curricular"],
+      responseTime: "Chamados respondidos dentro de 48 horas."
+    },
+    requirements: ["Cópia do RG e do CPF", "Comprovante de Residência", "Comprovação de experiência na área elétrica"],
+    tutoring: "Orientação especializada durante o processo.",
+    tutorAttributes: ["Apoiar na preparação", "Esclarecer dúvidas técnicas"],
+    modules: [
+      { name: "Avaliação de Competências", subjects: [{ name: "Instalações Elétricas", hours: 100 }, { name: "Comandos Elétricos", hours: 80 }, { name: "Máquinas Elétricas", hours: 80 }, { name: "Normas e Segurança", hours: 80 }] }
+    ],
+    access: [{ title: "Material de Apoio", description: "Prepare-se para as avaliações." }, { title: "Orientação", description: "Acompanhamento especializado." }, { title: "Diploma", description: "Autorizado pelo MEC." }],
+    faq: [{ question: "Posso me registrar no CREA?", answer: "Sim, após a certificação você pode solicitar registro no CREA." }]
+  },
+  "certificacao-seguranca-trabalho": {
+    title: "Certificação Técnica por Competência em Segurança do Trabalho",
+    subtitle: "Valide sua experiência em SST e obtenha registro no MTE",
+    image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1200&h=600&fit=crop",
+    bannerImage: "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1920&h=400&fit=crop",
+    description: "A Certificação por Competência em Segurança do Trabalho reconhece sua experiência prática em SST. Obtenha diploma técnico e registro no MTE para atuar legalmente.",
+    originalPrice: "R$ 2.500,00",
+    promoPrice: "R$ 1.599,00",
+    installment: "R$ 133,25",
+    hours: 800,
+    durationRange: "3 a 6 meses",
+    certification: "Registro no MTE",
+    rating: 5.0,
+    youtubeVideoId: "pn97Z1-ssFI",
+    category: "Certificação por Competência",
+    registration: {
+      portaria: "SEE-PRC-2021/12184",
+      parecer: "232/2021",
+      approvedDate: "07/10/2021",
+      registerWith: "Registro no MTE"
+    },
+    aboutCourse: "Formalize sua atuação em segurança do trabalho através da certificação por competência.",
+    howItWorks: ["Avaliação das competências em prevenção e segurança.", "Processo otimizado para profissionais com experiência."],
+    profession: "Atue como técnico em segurança do trabalho com registro no MTE.",
+    market: "Empresas buscam profissionais certificados para suas equipes de SST.",
+    methodology: {
+      materials: ["Material de apoio", "Orientações para avaliação", "Biblioteca digital"],
+      services: ["Requerimento de declarações", "Histórico", "Matriz curricular"],
+      responseTime: "Chamados respondidos dentro de 48 horas."
+    },
+    requirements: ["Cópia do RG e do CPF", "Comprovante de Residência", "Comprovação de experiência em SST"],
+    tutoring: "Orientação durante todo o processo.",
+    tutorAttributes: ["Apoiar na preparação", "Esclarecer dúvidas sobre normas"],
+    modules: [
+      { name: "Avaliação de Competências", subjects: [{ name: "Normas Regulamentadoras", hours: 120 }, { name: "Prevenção de Acidentes", hours: 100 }, { name: "Higiene Ocupacional", hours: 80 }, { name: "Gestão de Riscos", hours: 80 }] }
+    ],
+    access: [{ title: "Material de Apoio", description: "Prepare-se para as avaliações." }, { title: "Orientação", description: "Acompanhamento especializado." }, { title: "Diploma", description: "Autorizado pelo MEC." }],
+    faq: [{ question: "Posso me registrar no MTE?", answer: "Sim, após a certificação você pode solicitar registro no MTE." }]
+  },
+  "certificacao-agricultura": {
+    title: "Certificação Técnica por Competência em Agricultura",
+    subtitle: "Formalize sua experiência no campo com diploma técnico",
+    image: "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=1200&h=600&fit=crop",
+    bannerImage: "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=1920&h=400&fit=crop",
+    description: "A Certificação por Competência em Agricultura reconhece sua experiência prática no setor agrícola. Obtenha diploma técnico para atuar formalmente no agronegócio.",
+    originalPrice: "R$ 2.500,00",
+    promoPrice: "R$ 1.599,00",
+    installment: "R$ 133,25",
+    hours: 800,
+    durationRange: "3 a 6 meses",
+    certification: "Certificação válida",
+    rating: 5.0,
+    youtubeVideoId: "pn97Z1-ssFI",
+    category: "Certificação por Competência",
+    registration: {
+      portaria: "SEE-PRC-2021/12185",
+      parecer: "233/2021",
+      approvedDate: "07/10/2021",
+      registerWith: "Registro Profissional"
+    },
+    aboutCourse: "Valide seus conhecimentos em produção agrícola através da aferição de competências.",
+    howItWorks: ["Avaliação das competências técnicas em agricultura.", "Processo acelerado para profissionais experientes."],
+    profession: "Atue formalmente como técnico em agricultura com diploma reconhecido.",
+    market: "O agronegócio valoriza profissionais com formação técnica comprovada.",
+    methodology: {
+      materials: ["Material de apoio", "Orientações para avaliação", "Biblioteca digital"],
+      services: ["Requerimento de declarações", "Histórico", "Matriz curricular"],
+      responseTime: "Chamados respondidos dentro de 48 horas."
+    },
+    requirements: ["Cópia do RG e do CPF", "Comprovante de Residência", "Comprovação de experiência na agricultura"],
+    tutoring: "Orientação durante o processo de certificação.",
+    tutorAttributes: ["Apoiar na preparação", "Esclarecer dúvidas técnicas"],
+    modules: [
+      { name: "Avaliação de Competências", subjects: [{ name: "Culturas e Manejo", hours: 100 }, { name: "Solos e Nutrição", hours: 80 }, { name: "Fitossanidade", hours: 80 }, { name: "Mecanização Agrícola", hours: 80 }] }
+    ],
+    access: [{ title: "Material de Apoio", description: "Prepare-se para as avaliações." }, { title: "Orientação", description: "Acompanhamento especializado." }, { title: "Diploma", description: "Autorizado pelo MEC." }],
+    faq: [{ question: "Preciso de experiência prévia?", answer: "Sim, é necessário comprovar experiência na área agrícola." }]
+  },
+  "certificacao-agropecuaria": {
+    title: "Certificação Técnica por Competência em Agropecuária",
+    subtitle: "Valide sua experiência em agricultura e pecuária",
+    image: "https://images.unsplash.com/photo-1516253593875-bd7ba052fbc5?w=1200&h=600&fit=crop",
+    bannerImage: "https://images.unsplash.com/photo-1516253593875-bd7ba052fbc5?w=1920&h=400&fit=crop",
+    description: "A Certificação por Competência em Agropecuária é destinada a profissionais com experiência prática em produção agrícola e pecuária. Obtenha diploma técnico reconhecido.",
+    originalPrice: "R$ 2.500,00",
+    promoPrice: "R$ 1.599,00",
+    installment: "R$ 133,25",
+    hours: 800,
+    durationRange: "3 a 6 meses",
+    certification: "Certificação válida",
+    rating: 5.0,
+    youtubeVideoId: "pn97Z1-ssFI",
+    category: "Certificação por Competência",
+    registration: {
+      portaria: "SEE-PRC-2021/12186",
+      parecer: "234/2021",
+      approvedDate: "07/10/2021",
+      registerWith: "Registro Profissional"
+    },
+    aboutCourse: "Formalize seus conhecimentos em agropecuária através da certificação por competência.",
+    howItWorks: ["Avaliação das competências em agricultura e pecuária.", "Processo direcionado para profissionais do campo."],
+    profession: "Atue como técnico em agropecuária com diploma reconhecido pelo MEC.",
+    market: "O setor agropecuário demanda profissionais qualificados e certificados.",
+    methodology: {
+      materials: ["Material de apoio", "Orientações para avaliação", "Biblioteca digital"],
+      services: ["Requerimento de declarações", "Histórico", "Matriz curricular"],
+      responseTime: "Chamados respondidos dentro de 48 horas."
+    },
+    requirements: ["Cópia do RG e do CPF", "Comprovante de Residência", "Comprovação de experiência em agropecuária"],
+    tutoring: "Orientação durante todo o processo.",
+    tutorAttributes: ["Apoiar na preparação", "Esclarecer dúvidas técnicas"],
+    modules: [
+      { name: "Avaliação de Competências", subjects: [{ name: "Produção Agrícola", hours: 100 }, { name: "Produção Pecuária", hours: 100 }, { name: "Gestão Rural", hours: 80 }, { name: "Sustentabilidade", hours: 60 }] }
+    ],
+    access: [{ title: "Material de Apoio", description: "Prepare-se para as avaliações." }, { title: "Orientação", description: "Acompanhamento especializado." }, { title: "Diploma", description: "Autorizado pelo MEC." }],
+    faq: [{ question: "Preciso de experiência prévia?", answer: "Sim, é necessário comprovar experiência na área agropecuária." }]
+  },
+  "certificacao-analises-clinicas": {
+    title: "Certificação Técnica por Competência em Análises Clínicas",
+    subtitle: "Valide sua experiência em laboratório com diploma técnico",
+    image: "https://images.unsplash.com/photo-1579165466949-3180a3d056d5?w=1200&h=600&fit=crop",
+    bannerImage: "https://images.unsplash.com/photo-1579165466949-3180a3d056d5?w=1920&h=400&fit=crop",
+    description: "A Certificação por Competência em Análises Clínicas reconhece sua experiência prática em laboratórios. Obtenha diploma técnico reconhecido pelo MEC.",
+    originalPrice: "R$ 2.500,00",
+    promoPrice: "R$ 1.599,00",
+    installment: "R$ 133,25",
+    hours: 800,
+    durationRange: "3 a 6 meses",
+    certification: "Certificação válida",
+    rating: 5.0,
+    youtubeVideoId: "pn97Z1-ssFI",
+    category: "Certificação por Competência",
+    registration: {
+      portaria: "SEE-PRC-2021/12187",
+      parecer: "235/2021",
+      approvedDate: "07/10/2021",
+      registerWith: "Registro Profissional"
+    },
+    aboutCourse: "Formalize sua experiência em análises laboratoriais através da certificação por competência.",
+    howItWorks: ["Avaliação das competências em técnicas laboratoriais.", "Processo otimizado para profissionais experientes."],
+    profession: "Atue formalmente como técnico em análises clínicas.",
+    market: "Laboratórios e hospitais valorizam profissionais com formação técnica comprovada.",
+    methodology: {
+      materials: ["Material de apoio", "Orientações para avaliação", "Biblioteca digital"],
+      services: ["Requerimento de declarações", "Histórico", "Matriz curricular"],
+      responseTime: "Chamados respondidos dentro de 48 horas."
+    },
+    requirements: ["Cópia do RG e do CPF", "Comprovante de Residência", "Comprovação de experiência em laboratório"],
+    tutoring: "Orientação durante o processo de certificação.",
+    tutorAttributes: ["Apoiar na preparação", "Esclarecer dúvidas técnicas"],
+    modules: [
+      { name: "Avaliação de Competências", subjects: [{ name: "Bioquímica Clínica", hours: 100 }, { name: "Hematologia", hours: 100 }, { name: "Microbiologia", hours: 80 }, { name: "Biossegurança", hours: 60 }] }
+    ],
+    access: [{ title: "Material de Apoio", description: "Prepare-se para as avaliações." }, { title: "Orientação", description: "Acompanhamento especializado." }, { title: "Diploma", description: "Autorizado pelo MEC." }],
+    faq: [{ question: "Preciso de experiência prévia?", answer: "Sim, é necessário comprovar experiência em laboratório de análises clínicas." }]
+  },
+  "certificacao-eletroeletronica": {
+    title: "Certificação Técnica por Competência em Eletroeletrônica",
+    subtitle: "Valide suas habilidades em eletroeletrônica com registro no CREA",
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&h=600&fit=crop",
+    bannerImage: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1920&h=400&fit=crop",
+    description: "A Certificação por Competência em Eletroeletrônica reconhece sua experiência em sistemas eletrônicos e elétricos. Obtenha diploma técnico com registro no CREA.",
+    originalPrice: "R$ 3.500,00",
+    promoPrice: "R$ 1.599,00",
+    installment: "R$ 133,25",
+    hours: 800,
+    durationRange: "3 a 6 meses",
+    certification: "Registro no CREA",
+    rating: 5.0,
+    youtubeVideoId: "pn97Z1-ssFI",
+    category: "Certificação por Competência",
+    registration: {
+      portaria: "SEE-PRC-2021/12188",
+      parecer: "236/2021",
+      approvedDate: "07/10/2021",
+      registerWith: "Registro no CREA"
+    },
+    aboutCourse: "Formalize seus conhecimentos em eletroeletrônica através da aferição de competências.",
+    howItWorks: ["Avaliação teórica e prática das competências.", "Processo direcionado para profissionais experientes."],
+    profession: "Atue como técnico em eletroeletrônica com registro no CREA.",
+    market: "O setor de eletrônica demanda profissionais certificados e habilitados.",
+    methodology: {
+      materials: ["Material de apoio", "Orientações para avaliação", "Biblioteca digital"],
+      services: ["Requerimento de declarações", "Histórico", "Matriz curricular"],
+      responseTime: "Chamados respondidos dentro de 48 horas."
+    },
+    requirements: ["Cópia do RG e do CPF", "Comprovante de Residência", "Comprovação de experiência na área"],
+    tutoring: "Orientação especializada durante o processo.",
+    tutorAttributes: ["Apoiar na preparação", "Esclarecer dúvidas técnicas"],
+    modules: [
+      { name: "Avaliação de Competências", subjects: [{ name: "Eletrônica Analógica e Digital", hours: 120 }, { name: "Sistemas de Potência", hours: 80 }, { name: "Microcontroladores", hours: 80 }, { name: "Instrumentação", hours: 80 }] }
+    ],
+    access: [{ title: "Material de Apoio", description: "Prepare-se para as avaliações." }, { title: "Orientação", description: "Acompanhamento especializado." }, { title: "Diploma", description: "Autorizado pelo MEC." }],
+    faq: [{ question: "Posso me registrar no CREA?", answer: "Sim, após a certificação você pode solicitar registro no CREA." }]
+  },
+  "certificacao-mecanica": {
+    title: "Certificação Técnica por Competência em Mecânica",
+    subtitle: "Formalize sua experiência em mecânica com registro no CREA",
+    image: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1200&h=600&fit=crop",
+    bannerImage: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1920&h=400&fit=crop",
+    description: "A Certificação por Competência em Mecânica é destinada a profissionais com experiência prática em sistemas mecânicos. Obtenha diploma técnico com registro no CREA.",
+    originalPrice: "R$ 2.500,00",
+    promoPrice: "R$ 1.599,00",
+    installment: "R$ 133,25",
+    hours: 800,
+    durationRange: "3 a 6 meses",
+    certification: "Registro no CREA",
+    rating: 5.0,
+    youtubeVideoId: "pn97Z1-ssFI",
+    category: "Certificação por Competência",
+    registration: {
+      portaria: "SEE-PRC-2021/12189",
+      parecer: "237/2021",
+      approvedDate: "07/10/2021",
+      registerWith: "Registro no CREA"
+    },
+    aboutCourse: "Valide sua experiência em mecânica através da certificação por competência.",
+    howItWorks: ["Avaliação das competências técnicas em mecânica.", "Processo acelerado para profissionais experientes."],
+    profession: "Atue como técnico em mecânica com registro profissional no CREA.",
+    market: "A indústria valoriza profissionais certificados e habilitados.",
+    methodology: {
+      materials: ["Material de apoio", "Orientações para avaliação", "Biblioteca digital"],
+      services: ["Requerimento de declarações", "Histórico", "Matriz curricular"],
+      responseTime: "Chamados respondidos dentro de 48 horas."
+    },
+    requirements: ["Cópia do RG e do CPF", "Comprovante de Residência", "Comprovação de experiência em mecânica"],
+    tutoring: "Orientação durante todo o processo.",
+    tutorAttributes: ["Apoiar na preparação", "Esclarecer dúvidas técnicas"],
+    modules: [
+      { name: "Avaliação de Competências", subjects: [{ name: "Elementos de Máquinas", hours: 100 }, { name: "Manutenção Mecânica", hours: 100 }, { name: "Processos de Fabricação", hours: 80 }, { name: "Metrologia", hours: 60 }] }
+    ],
+    access: [{ title: "Material de Apoio", description: "Prepare-se para as avaliações." }, { title: "Orientação", description: "Acompanhamento especializado." }, { title: "Diploma", description: "Autorizado pelo MEC." }],
+    faq: [{ question: "Posso me registrar no CREA?", answer: "Sim, após a certificação você pode solicitar registro no CREA." }]
   }
 };
 
@@ -606,6 +999,70 @@ const CursoDetalhe = () => {
   const { id } = useParams();
   const course = coursesData[id || ""] || defaultCourse;
   const [showVideo, setShowVideo] = useState(false);
+  
+  // Form state for enrollment
+  const [formData, setFormData] = useState({
+    email: "",
+    nome_completo: "",
+    curso_de_interesse: course.title,
+    telefone1: "",
+    mensagem: `Olá! Gostaria de me matricular no curso: ${course.title}`,
+  });
+  const [errors, setErrors] = useState({
+    email: "",
+    nome_completo: "",
+    telefone1: "",
+  });
+
+  const formatPhone = (value: string) => {
+    const numbers = value.replace(/\D/g, "").slice(0, 11);
+    if (numbers.length === 0) return "";
+    if (numbers.length <= 2) return `(${numbers}`;
+    if (numbers.length <= 7) return `(${numbers.slice(0, 2)}) ${numbers.slice(2)}`;
+    return `(${numbers.slice(0, 2)}) ${numbers.slice(2, 7)}-${numbers.slice(7)}`;
+  };
+
+  const validateEmail = (email: string) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
+  const validateName = (name: string) => name.trim().split(/\s+/).filter(word => word.length > 0).length >= 2;
+  const validatePhone = (phone: string) => phone.replace(/\D/g, "").length === 11;
+
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const formatted = formatPhone(e.target.value);
+    setFormData(prev => ({ ...prev, telefone1: formatted }));
+    setErrors(prev => ({ ...prev, telefone1: formatted && !validatePhone(formatted) ? "Telefone deve ter 11 dígitos" : "" }));
+  };
+
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setFormData(prev => ({ ...prev, email: value }));
+    setErrors(prev => ({ ...prev, email: value && !validateEmail(value) ? "Email inválido" : "" }));
+  };
+
+  const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setFormData(prev => ({ ...prev, nome_completo: value }));
+    setErrors(prev => ({ ...prev, nome_completo: value && !validateName(value) ? "Informe nome e sobrenome" : "" }));
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    const emailValid = validateEmail(formData.email);
+    const nameValid = validateName(formData.nome_completo);
+    const phoneValid = !formData.telefone1 || validatePhone(formData.telefone1);
+    
+    setErrors({
+      email: emailValid ? "" : "Email inválido",
+      nome_completo: nameValid ? "" : "Informe nome e sobrenome",
+      telefone1: phoneValid ? "" : "Telefone deve ter 11 dígitos",
+    });
+    
+    if (!emailValid || !nameValid || !phoneValid) {
+      e.preventDefault();
+    }
+  };
+
+  const scrollToForm = () => {
+    document.getElementById("matricula-form")?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -974,12 +1431,150 @@ const CursoDetalhe = () => {
                     <p className="text-sm text-muted-foreground">s/ juros no cartão de crédito</p>
                   </div>
                   
-                  <Button className="w-full gap-2 rounded-lg bg-ecid-blue-accent py-6 text-lg font-semibold text-white hover:bg-ecid-navy">
+                  <Button 
+                    onClick={scrollToForm}
+                    className="w-full gap-2 rounded-lg bg-ecid-blue-accent py-6 text-lg font-semibold text-white hover:bg-ecid-navy"
+                  >
                     <BookOpen className="h-5 w-5" />
                     Matricule-se já
                   </Button>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Enrollment Form Section */}
+      <section id="matricula-form" className="bg-muted/50 py-16">
+        <div className="container mx-auto px-4">
+          <div className="mx-auto max-w-2xl">
+            <div className="mb-8 text-center">
+              <h2 className="mb-4 text-2xl font-bold text-foreground md:text-3xl">
+                Matricule-se agora <span className="text-ecid-red">_</span>
+              </h2>
+              <p className="text-muted-foreground">
+                Preencha o formulário abaixo e nossa equipe entrará em contato para finalizar sua matrícula.
+              </p>
+            </div>
+
+            <div className="rounded-2xl bg-card p-6 shadow-card md:p-8">
+              <div className="mb-6 rounded-lg bg-ecid-blue-accent/10 p-4">
+                <p className="text-sm font-medium text-ecid-blue-accent">
+                  Curso selecionado: <span className="font-bold">{course.title}</span>
+                </p>
+              </div>
+
+              <form
+                autoComplete="off"
+                role="form"
+                method="post"
+                action="https://mautic.faesde.com.br/form/submit?formId=2"
+                id="mauticform_matricula"
+                data-mautic-form="faesdecombr"
+                encType="multipart/form-data"
+                onSubmit={handleSubmit}
+                className="space-y-4"
+              >
+                <input type="hidden" name="mauticform[formId]" value="2" />
+                <input type="hidden" name="mauticform[return]" value="https://mensagem.faesde.com.br/" />
+                <input type="hidden" name="mauticform[formName]" value="faesdecombr" />
+
+                <div className="grid gap-4 sm:grid-cols-2">
+                  <div>
+                    <label className="mb-1.5 block text-sm font-medium text-foreground">
+                      Nome completo *
+                    </label>
+                    <Input
+                      type="text"
+                      name="mauticform[nome_completo]"
+                      value={formData.nome_completo}
+                      onChange={handleNameChange}
+                      placeholder="Seu nome completo"
+                      className={`h-11 ${errors.nome_completo ? "border-destructive" : ""}`}
+                      required
+                    />
+                    {errors.nome_completo && (
+                      <p className="mt-1 text-sm text-destructive">{errors.nome_completo}</p>
+                    )}
+                  </div>
+                  <div>
+                    <label className="mb-1.5 block text-sm font-medium text-foreground">
+                      Email *
+                    </label>
+                    <Input
+                      type="email"
+                      name="mauticform[email]"
+                      value={formData.email}
+                      onChange={handleEmailChange}
+                      placeholder="seu@email.com"
+                      className={`h-11 ${errors.email ? "border-destructive" : ""}`}
+                      required
+                    />
+                    {errors.email && (
+                      <p className="mt-1 text-sm text-destructive">{errors.email}</p>
+                    )}
+                  </div>
+                </div>
+
+                <div className="grid gap-4 sm:grid-cols-2">
+                  <div>
+                    <label className="mb-1.5 block text-sm font-medium text-foreground">
+                      Telefone
+                    </label>
+                    <Input
+                      type="tel"
+                      name="mauticform[telefone1]"
+                      value={formData.telefone1}
+                      onChange={handlePhoneChange}
+                      placeholder="(00) 00000-0000"
+                      className={`h-11 ${errors.telefone1 ? "border-destructive" : ""}`}
+                    />
+                    {errors.telefone1 && (
+                      <p className="mt-1 text-sm text-destructive">{errors.telefone1}</p>
+                    )}
+                  </div>
+                  <div>
+                    <label className="mb-1.5 block text-sm font-medium text-foreground">
+                      Curso de interesse
+                    </label>
+                    <Input
+                      type="text"
+                      name="mauticform[curso_de_interesse]"
+                      value={formData.curso_de_interesse}
+                      readOnly
+                      className="h-11 bg-muted"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label className="mb-1.5 block text-sm font-medium text-foreground">
+                    Mensagem
+                  </label>
+                  <Textarea
+                    name="mauticform[mensagem]"
+                    value={formData.mensagem}
+                    onChange={(e) => setFormData(prev => ({ ...prev, mensagem: e.target.value }))}
+                    placeholder="Escreva uma mensagem..."
+                    className="min-h-[100px]"
+                  />
+                </div>
+
+                <Button
+                  type="submit"
+                  name="mauticform[submit]"
+                  value="1"
+                  className="h-12 w-full rounded-lg bg-ecid-red font-semibold text-primary-foreground hover:bg-ecid-red-light"
+                >
+                  <Send className="mr-2 h-4 w-4" />
+                  Quero me matricular
+                </Button>
+
+                <p className="text-center text-xs text-muted-foreground">
+                  Ao enviar, você concorda com nossa política de privacidade.
+                </p>
+              </form>
             </div>
           </div>
         </div>
