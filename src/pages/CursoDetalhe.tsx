@@ -932,6 +932,232 @@ const coursesData: Record<string, CourseData> = {
     ],
     access: [{ title: "Material de Apoio", description: "Prepare-se para as avaliações." }, { title: "Orientação", description: "Acompanhamento especializado." }, { title: "Diploma", description: "Autorizado pelo MEC." }],
     faq: [{ question: "Posso me registrar no CREA?", answer: "Sim, após a certificação você pode solicitar registro no CREA." }]
+  },
+  // Cursos Pós-Técnicos (Especializações)
+  "pos-administracao-producao": {
+    title: "Especialização Técnica em Administração da Produção EAD",
+    subtitle: "Aprofunde seus conhecimentos em gestão de processos produtivos",
+    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1200&h=600&fit=crop",
+    bannerImage: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1920&h=400&fit=crop",
+    description: "A Especialização Técnica em Administração da Produção EAD é voltada para profissionais técnicos que desejam aprofundar conhecimentos em gestão de processos produtivos, planejamento, controle da produção, qualidade e melhoria contínua. Ideal para quem busca crescimento na carreira industrial.",
+    originalPrice: "R$ 1.500,00",
+    promoPrice: "R$ 850,00",
+    installment: "R$ 70,83",
+    hours: 400,
+    durationRange: "4 a 8 meses",
+    certification: "Certificação válida",
+    rating: 5.0,
+    youtubeVideoId: "pn97Z1-ssFI",
+    category: "Pós-Técnico EAD",
+    registration: {
+      portaria: "SEE-PRC-2021/12190",
+      parecer: "238/2021",
+      approvedDate: "07/10/2021",
+      registerWith: "Certificado de Especialização"
+    },
+    aboutCourse: "A Especialização em Administração da Produção capacita profissionais técnicos para atuar na gestão de processos produtivos, aplicando conceitos de lean manufacturing, gestão da qualidade, planejamento e controle da produção. Um diferencial competitivo para sua carreira na indústria.",
+    howItWorks: [
+      "Curso 100% EAD com videoaulas, materiais complementares e avaliações online.",
+      "Focado em aplicação prática dos conceitos de gestão da produção.",
+      "Ideal para técnicos que desejam assumir cargos de liderança na indústria."
+    ],
+    profession: "Atue como supervisor de produção, analista de processos, coordenador de qualidade ou gestor industrial.",
+    market: "A indústria brasileira valoriza profissionais com especialização em gestão da produção. Com a Indústria 4.0, a demanda por profissionais qualificados aumenta constantemente.",
+    methodology: {
+      materials: ["Video-aulas", "Apostilas", "Estudos de caso", "Biblioteca digital"],
+      services: ["Requerimento de declarações", "Histórico", "Certificado"],
+      responseTime: "Chamados respondidos dentro de 48 horas."
+    },
+    requirements: ["Diploma de Curso Técnico na área ou áreas correlatas", "Cópia do RG e CPF", "Comprovante de Residência"],
+    tutoring: "Acompanhamento do tutor especializado em gestão industrial.",
+    tutorAttributes: ["Apoiar nos estudos de caso", "Orientar aplicações práticas", "Esclarecer dúvidas técnicas"],
+    modules: [
+      { name: "Módulo 01 - Fundamentos", subjects: [{ name: "Introdução à Gestão da Produção", hours: 40 }, { name: "Planejamento e Controle da Produção (PCP)", hours: 60 }, { name: "Layout Industrial", hours: 40 }] },
+      { name: "Módulo 02 - Qualidade", subjects: [{ name: "Gestão da Qualidade Total", hours: 60 }, { name: "Ferramentas da Qualidade", hours: 40 }, { name: "Indicadores de Desempenho", hours: 40 }] },
+      { name: "Módulo 03 - Melhoria Contínua", subjects: [{ name: "Lean Manufacturing", hours: 60 }, { name: "Kaizen e 5S", hours: 40 }, { name: "Six Sigma", hours: 60 }] }
+    ],
+    access: [{ title: "Video Aulas", description: "Conteúdo atualizado e prático." }, { title: "Tutoria", description: "Suporte especializado." }, { title: "Certificado", description: "Especialização reconhecida." }],
+    faq: [{ question: "Preciso ter curso técnico?", answer: "Sim, é necessário ter diploma de curso técnico para ingressar na especialização." }]
+  },
+  "pos-materiais": {
+    title: "Especialização Técnica em Administração de Materiais EAD",
+    subtitle: "Domine a gestão de estoques, compras e logística",
+    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&h=600&fit=crop",
+    bannerImage: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1920&h=400&fit=crop",
+    description: "A Especialização Técnica em Administração de Materiais EAD forma profissionais para atuar na gestão de estoques, compras, almoxarifado, logística e controle de suprimentos. Essencial para quem deseja se destacar na área de supply chain.",
+    originalPrice: "R$ 1.500,00",
+    promoPrice: "R$ 850,00",
+    installment: "R$ 70,83",
+    hours: 400,
+    durationRange: "4 a 8 meses",
+    certification: "Certificação válida",
+    rating: 5.0,
+    youtubeVideoId: "pn97Z1-ssFI",
+    category: "Pós-Técnico EAD",
+    registration: {
+      portaria: "SEE-PRC-2021/12191",
+      parecer: "239/2021",
+      approvedDate: "07/10/2021",
+      registerWith: "Certificado de Especialização"
+    },
+    aboutCourse: "A especialização em Administração de Materiais prepara você para gerenciar toda a cadeia de suprimentos, desde a aquisição até a distribuição. Aprenda técnicas modernas de gestão de estoques, negociação com fornecedores e logística integrada.",
+    howItWorks: [
+      "Metodologia EAD com foco em casos práticos de gestão de materiais.",
+      "Conteúdo alinhado com as melhores práticas do mercado.",
+      "Flexibilidade para estudar no seu ritmo."
+    ],
+    profession: "Atue como gestor de estoques, comprador, analista de supply chain, coordenador de almoxarifado ou gerente de logística.",
+    market: "A gestão eficiente de materiais é crucial para a competitividade das empresas. Profissionais especializados são muito valorizados em todos os setores.",
+    methodology: {
+      materials: ["Video-aulas", "Apostilas", "Simulações", "Biblioteca digital"],
+      services: ["Requerimento de declarações", "Histórico", "Certificado"],
+      responseTime: "Chamados respondidos dentro de 48 horas."
+    },
+    requirements: ["Diploma de Curso Técnico na área ou áreas correlatas", "Cópia do RG e CPF", "Comprovante de Residência"],
+    tutoring: "Acompanhamento de tutor especializado em logística e supply chain.",
+    tutorAttributes: ["Orientar sobre gestão de estoques", "Apoiar em estudos de caso", "Esclarecer dúvidas"],
+    modules: [
+      { name: "Módulo 01 - Gestão de Estoques", subjects: [{ name: "Fundamentos de Administração de Materiais", hours: 40 }, { name: "Gestão de Estoques", hours: 60 }, { name: "Curva ABC e Classificação", hours: 40 }] },
+      { name: "Módulo 02 - Compras e Fornecedores", subjects: [{ name: "Gestão de Compras", hours: 60 }, { name: "Negociação com Fornecedores", hours: 40 }, { name: "Contratos e Parcerias", hours: 40 }] },
+      { name: "Módulo 03 - Logística", subjects: [{ name: "Logística e Distribuição", hours: 60 }, { name: "Armazenagem e Movimentação", hours: 40 }, { name: "Sistemas de Gestão (WMS/ERP)", hours: 60 }] }
+    ],
+    access: [{ title: "Video Aulas", description: "Conteúdo atualizado." }, { title: "Tutoria", description: "Suporte especializado." }, { title: "Certificado", description: "Especialização reconhecida." }],
+    faq: [{ question: "Preciso ter experiência na área?", answer: "Não é obrigatório, mas é recomendável ter conhecimentos básicos em administração." }]
+  },
+  "pos-farmacia-hospitalar": {
+    title: "Especialização Técnica em Farmácia Hospitalar EAD",
+    subtitle: "Especialize-se na gestão de medicamentos em ambiente hospitalar",
+    image: "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=1200&h=600&fit=crop",
+    bannerImage: "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=1920&h=400&fit=crop",
+    description: "A Especialização Técnica em Farmácia Hospitalar EAD capacita profissionais para atuar na gestão e controle de medicamentos, materiais e insumos em ambientes hospitalares e clínicos. Uma formação essencial para técnicos em farmácia que desejam atuar em hospitais.",
+    originalPrice: "R$ 1.500,00",
+    promoPrice: "R$ 850,00",
+    installment: "R$ 70,83",
+    hours: 400,
+    durationRange: "4 a 8 meses",
+    certification: "Certificação válida",
+    rating: 5.0,
+    youtubeVideoId: "pn97Z1-ssFI",
+    category: "Pós-Técnico EAD",
+    registration: {
+      portaria: "SEE-PRC-2021/12192",
+      parecer: "240/2021",
+      approvedDate: "07/10/2021",
+      registerWith: "Certificado de Especialização"
+    },
+    aboutCourse: "A farmácia hospitalar é uma área estratégica dentro das instituições de saúde. Esta especialização prepara você para gerenciar medicamentos, garantir a qualidade e segurança no uso de fármacos e atuar em equipes multiprofissionais.",
+    howItWorks: [
+      "Curso EAD focado nas especificidades da farmácia hospitalar.",
+      "Conteúdo baseado em protocolos e normas vigentes.",
+      "Estudos de caso de situações reais em hospitais."
+    ],
+    profession: "Atue em farmácias hospitalares, clínicas, unidades de pronto atendimento e centros de distribuição de medicamentos.",
+    market: "O setor de saúde demanda profissionais especializados em farmácia hospitalar. A segurança do paciente depende de uma gestão farmacêutica qualificada.",
+    methodology: {
+      materials: ["Video-aulas", "Apostilas", "Protocolos", "Biblioteca digital"],
+      services: ["Requerimento de declarações", "Histórico", "Certificado"],
+      responseTime: "Chamados respondidos dentro de 48 horas."
+    },
+    requirements: ["Diploma de Técnico em Farmácia", "Cópia do RG e CPF", "Comprovante de Residência"],
+    tutoring: "Acompanhamento de tutor especializado em farmácia hospitalar.",
+    tutorAttributes: ["Orientar sobre protocolos hospitalares", "Apoiar em estudos de caso", "Esclarecer dúvidas técnicas"],
+    modules: [
+      { name: "Módulo 01 - Farmácia Hospitalar", subjects: [{ name: "Introdução à Farmácia Hospitalar", hours: 40 }, { name: "Legislação e Normas", hours: 40 }, { name: "Estrutura e Organização", hours: 40 }] },
+      { name: "Módulo 02 - Gestão de Medicamentos", subjects: [{ name: "Seleção e Padronização", hours: 60 }, { name: "Armazenamento e Distribuição", hours: 60 }, { name: "Controle de Estoque", hours: 40 }] },
+      { name: "Módulo 03 - Segurança do Paciente", subjects: [{ name: "Farmacovigilância", hours: 60 }, { name: "Interações Medicamentosas", hours: 40 }, { name: "Rastreabilidade", hours: 40 }] }
+    ],
+    access: [{ title: "Video Aulas", description: "Conteúdo especializado." }, { title: "Tutoria", description: "Suporte de especialistas." }, { title: "Certificado", description: "Especialização reconhecida." }],
+    faq: [{ question: "Preciso ser técnico em farmácia?", answer: "Sim, é necessário ter diploma de técnico em farmácia ou área correlata da saúde." }]
+  },
+  "pos-saude-publica": {
+    title: "Especialização Técnica em Saúde Pública EAD",
+    subtitle: "Atue na promoção da saúde coletiva e vigilância sanitária",
+    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1200&h=600&fit=crop",
+    bannerImage: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1920&h=400&fit=crop",
+    description: "A Especialização Técnica em Saúde Pública EAD forma profissionais para atuar em políticas públicas, vigilância em saúde, prevenção de doenças e promoção da saúde coletiva no Sistema Único de Saúde (SUS). Essencial para técnicos da área da saúde.",
+    originalPrice: "R$ 1.500,00",
+    promoPrice: "R$ 850,00",
+    installment: "R$ 70,83",
+    hours: 400,
+    durationRange: "4 a 8 meses",
+    certification: "Certificação válida",
+    rating: 5.0,
+    youtubeVideoId: "pn97Z1-ssFI",
+    category: "Pós-Técnico EAD",
+    registration: {
+      portaria: "SEE-PRC-2021/12193",
+      parecer: "241/2021",
+      approvedDate: "07/10/2021",
+      registerWith: "Certificado de Especialização"
+    },
+    aboutCourse: "A saúde pública é fundamental para o bem-estar da população. Esta especialização prepara você para atuar em unidades básicas de saúde, vigilância sanitária e epidemiológica, e programas de promoção da saúde.",
+    howItWorks: [
+      "Curso EAD com foco nas políticas de saúde do SUS.",
+      "Conteúdo atualizado com as diretrizes do Ministério da Saúde.",
+      "Estudos de caso e situações práticas de saúde coletiva."
+    ],
+    profession: "Atue em unidades básicas de saúde, secretarias de saúde, vigilância sanitária, epidemiológica e ambiental.",
+    market: "O SUS é o maior sistema público de saúde do mundo e demanda constantemente profissionais qualificados em saúde pública.",
+    methodology: {
+      materials: ["Video-aulas", "Apostilas", "Diretrizes do SUS", "Biblioteca digital"],
+      services: ["Requerimento de declarações", "Histórico", "Certificado"],
+      responseTime: "Chamados respondidos dentro de 48 horas."
+    },
+    requirements: ["Diploma de Curso Técnico na área da saúde", "Cópia do RG e CPF", "Comprovante de Residência"],
+    tutoring: "Acompanhamento de tutor especializado em saúde pública.",
+    tutorAttributes: ["Orientar sobre políticas do SUS", "Apoiar em estudos de caso", "Esclarecer dúvidas"],
+    modules: [
+      { name: "Módulo 01 - Sistema de Saúde", subjects: [{ name: "História e Organização do SUS", hours: 60 }, { name: "Políticas Públicas de Saúde", hours: 60 }, { name: "Gestão em Saúde", hours: 40 }] },
+      { name: "Módulo 02 - Vigilância em Saúde", subjects: [{ name: "Vigilância Epidemiológica", hours: 60 }, { name: "Vigilância Sanitária", hours: 40 }, { name: "Vigilância Ambiental", hours: 40 }] },
+      { name: "Módulo 03 - Promoção da Saúde", subjects: [{ name: "Educação em Saúde", hours: 40 }, { name: "Programas de Prevenção", hours: 40 }, { name: "Saúde da Família", hours: 60 }] }
+    ],
+    access: [{ title: "Video Aulas", description: "Conteúdo do SUS." }, { title: "Tutoria", description: "Suporte especializado." }, { title: "Certificado", description: "Especialização reconhecida." }],
+    faq: [{ question: "Posso atuar em concursos públicos?", answer: "Sim, a especialização pode ser um diferencial em concursos na área da saúde." }]
+  },
+  "pos-oncologia": {
+    title: "Especialização Técnica em Oncologia EAD",
+    subtitle: "Especialize-se no cuidado de pacientes oncológicos",
+    image: "https://images.unsplash.com/photo-1559757175-5700dde675bc?w=1200&h=600&fit=crop",
+    bannerImage: "https://images.unsplash.com/photo-1559757175-5700dde675bc?w=1920&h=400&fit=crop",
+    description: "A Especialização Técnica em Oncologia EAD capacita profissionais para atuar no cuidado e tratamento de pacientes com câncer. Aprenda a trabalhar de forma qualificada e humanizada em equipes multiprofissionais de oncologia.",
+    originalPrice: "R$ 1.500,00",
+    promoPrice: "R$ 850,00",
+    installment: "R$ 70,83",
+    hours: 400,
+    durationRange: "4 a 8 meses",
+    certification: "Certificação válida",
+    rating: 5.0,
+    youtubeVideoId: "pn97Z1-ssFI",
+    category: "Pós-Técnico EAD",
+    registration: {
+      portaria: "SEE-PRC-2021/12194",
+      parecer: "242/2021",
+      approvedDate: "07/10/2021",
+      registerWith: "Certificado de Especialização"
+    },
+    aboutCourse: "A oncologia é uma área que exige conhecimento técnico e sensibilidade no cuidado ao paciente. Esta especialização prepara você para atuar em hospitais oncológicos, clínicas e centros de tratamento do câncer.",
+    howItWorks: [
+      "Curso EAD com foco no cuidado integral ao paciente oncológico.",
+      "Conteúdo baseado em protocolos nacionais e internacionais.",
+      "Abordagem humanizada e centrada no paciente."
+    ],
+    profession: "Atue em hospitais oncológicos, clínicas de quimioterapia, centros de radioterapia e unidades de cuidados paliativos.",
+    market: "A oncologia é uma das áreas da saúde que mais cresce. Profissionais especializados são essenciais para o tratamento adequado dos pacientes.",
+    methodology: {
+      materials: ["Video-aulas", "Apostilas", "Protocolos", "Biblioteca digital"],
+      services: ["Requerimento de declarações", "Histórico", "Certificado"],
+      responseTime: "Chamados respondidos dentro de 48 horas."
+    },
+    requirements: ["Diploma de Curso Técnico na área da saúde", "Cópia do RG e CPF", "Comprovante de Residência"],
+    tutoring: "Acompanhamento de tutor especializado em oncologia.",
+    tutorAttributes: ["Orientar sobre protocolos oncológicos", "Apoiar em estudos de caso", "Esclarecer dúvidas"],
+    modules: [
+      { name: "Módulo 01 - Fundamentos", subjects: [{ name: "Introdução à Oncologia", hours: 60 }, { name: "Biologia do Câncer", hours: 40 }, { name: "Tipos de Câncer", hours: 60 }] },
+      { name: "Módulo 02 - Tratamentos", subjects: [{ name: "Quimioterapia", hours: 60 }, { name: "Radioterapia", hours: 40 }, { name: "Imunoterapia e Novas Terapias", hours: 40 }] },
+      { name: "Módulo 03 - Cuidado ao Paciente", subjects: [{ name: "Cuidados de Enfermagem em Oncologia", hours: 60 }, { name: "Cuidados Paliativos", hours: 40 }, { name: "Aspectos Psicológicos", hours: 40 }] }
+    ],
+    access: [{ title: "Video Aulas", description: "Conteúdo especializado." }, { title: "Tutoria", description: "Suporte de especialistas." }, { title: "Certificado", description: "Especialização reconhecida." }],
+    faq: [{ question: "Preciso ser técnico de enfermagem?", answer: "É recomendável ser técnico de enfermagem ou outra área da saúde, mas técnicos de outras áreas também podem se inscrever." }]
   }
 };
 

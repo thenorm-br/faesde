@@ -302,6 +302,7 @@ const postTechnicalCourses = [
     originalPrice: "R$ 1.500,00",
     promoPrice: "R$ 850,00",
     installment: "12x R$ 70,83",
+    slug: "pos-administracao-producao",
   },
   {
     title: "Especialização Técnica em Administração de Materiais EAD",
@@ -310,6 +311,7 @@ const postTechnicalCourses = [
     originalPrice: "R$ 1.500,00",
     promoPrice: "R$ 850,00",
     installment: "12x R$ 70,83",
+    slug: "pos-materiais",
   },
   {
     title: "Especialização Técnica em Farmácia Hospitalar EAD",
@@ -318,6 +320,7 @@ const postTechnicalCourses = [
     originalPrice: "R$ 1.500,00",
     promoPrice: "R$ 850,00",
     installment: "12x R$ 70,83",
+    slug: "pos-farmacia-hospitalar",
   },
   {
     title: "Especialização Técnica em Saúde Pública EAD",
@@ -326,6 +329,7 @@ const postTechnicalCourses = [
     originalPrice: "R$ 1.500,00",
     promoPrice: "R$ 850,00",
     installment: "12x R$ 70,83",
+    slug: "pos-saude-publica",
   },
   {
     title: "Especialização Técnica em Oncologia EAD",
@@ -334,6 +338,7 @@ const postTechnicalCourses = [
     originalPrice: "R$ 1.500,00",
     promoPrice: "R$ 850,00",
     installment: "12x R$ 70,83",
+    slug: "pos-oncologia",
   },
 ];
 
