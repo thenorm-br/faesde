@@ -129,7 +129,7 @@ const ExitIntentPopup = () => {
         <div className="bg-hero-red p-6 text-center">
           <DialogHeader>
             <DialogTitle className="text-2xl font-bold text-ecid-yellow">
-              Espere! 🎄
+              Espere! 🎭🎉
             </DialogTitle>
           </DialogHeader>
           <p className="mt-2 text-primary-foreground">
