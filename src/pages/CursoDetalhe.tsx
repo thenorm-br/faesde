@@ -543,18 +543,18 @@ const coursesData: Record<string, CourseData> = {
     faq: [{ question: "Quais as formas de pagamento?", answer: "Aceitamos cartão de crédito em até 12x sem juros, boleto bancário e PIX." }]
   },
   // Cursos de Certificação por Competência
-  "certificacao-administracao": {
+  "certificacao-tecnica-competencia-administracao-empresarial": {
     title: "Certificação Técnica por Competência em Administração",
-    subtitle: "Valide sua experiência profissional e obtenha diploma técnico reconhecido pelo MEC",
+    subtitle: "Transforme sua experiência em gestão empresarial em diploma técnico reconhecido pelo MEC",
     image: "https://images.unsplash.com/photo-1556761175-4b46a572b786?w=1200&h=600&fit=crop",
     bannerImage: "https://images.unsplash.com/photo-1556761175-4b46a572b786?w=1920&h=400&fit=crop",
-    description: "A Certificação Técnica por Competência em Administração é destinada a profissionais com experiência prática na área administrativa. Através da aferição de habilidades e competências, você pode obter seu diploma técnico e registro profissional.",
+    description: "A Certificação Técnica por Competência em Administração é a oportunidade ideal para profissionais que já atuam na área administrativa e desejam formalizar seus conhecimentos com um diploma técnico. Através de um processo de avaliação que reconhece sua experiência prática em gestão de empresas, recursos humanos, finanças e processos organizacionais, você pode obter seu diploma técnico em Administração reconhecido pelo MEC.",
     originalPrice: "R$ 3.500,00",
     promoPrice: "R$ 1.599,00",
     installment: "R$ 133,25",
     hours: 800,
     durationRange: "3 a 6 meses",
-    certification: "Certificação válida",
+    certification: "Registro no CRA",
     rating: 5.0,
     youtubeVideoId: "pn97Z1-ssFI",
     category: "Certificação por Competência",
@@ -562,32 +562,38 @@ const coursesData: Record<string, CourseData> = {
       portaria: "SEE-PRC-2021/12180",
       parecer: "228/2021",
       approvedDate: "07/10/2021",
-      registerWith: "Registro Profissional"
+      registerWith: "Registro no CRA"
     },
-    aboutCourse: "A certificação por competência reconhece formalmente os conhecimentos e habilidades adquiridos ao longo da sua trajetória profissional na área de administração.",
-    howItWorks: ["Avaliação das competências técnicas através de provas e portfólio.", "Processo mais rápido para quem já possui experiência prática."],
-    profession: "Atue formalmente em cargos administrativos com diploma técnico reconhecido.",
-    market: "Obtenha reconhecimento formal para crescer na carreira administrativa.",
-    methodology: {
-      materials: ["Material de apoio", "Orientações para avaliação", "Biblioteca digital"],
-      services: ["Requerimento de declarações", "Histórico", "Matriz curricular"],
-      responseTime: "Chamados respondidos dentro de 48 horas."
-    },
-    requirements: ["Cópia do RG e do CPF", "Comprovante de Residência", "Comprovação de experiência profissional na área"],
-    tutoring: "Acompanhamento durante todo o processo de certificação.",
-    tutorAttributes: ["Orientar sobre o processo de avaliação", "Esclarecer dúvidas sobre competências"],
-    modules: [
-      { name: "Avaliação de Competências", subjects: [{ name: "Fundamentos da Administração", hours: 80 }, { name: "Gestão de Pessoas", hours: 80 }, { name: "Gestão Financeira", hours: 80 }, { name: "Processos Organizacionais", hours: 80 }] }
+    aboutCourse: "O Curso de Certificação Técnica por Competência em Administração foi desenvolvido para profissionais que já possuem experiência prática na área administrativa e desejam obter reconhecimento formal de suas habilidades. Este programa avalia suas competências em gestão empresarial, planejamento estratégico, gestão de pessoas, finanças corporativas, marketing e processos organizacionais. Ideal para assistentes administrativos, secretários executivos, auxiliares de escritório, supervisores e coordenadores que atuam há anos na área mas não possuem formação técnica oficial.",
+    howItWorks: [
+      "A certificação por competência é um processo que reconhece formalmente os conhecimentos adquiridos através da experiência profissional. Você passará por avaliações teóricas e práticas que verificarão suas habilidades em gestão, finanças, recursos humanos e processos administrativos.",
+      "O processo inclui análise de portfólio profissional, provas de conhecimentos específicos e avaliação de competências práticas. Nossa equipe pedagógica acompanha você em cada etapa, garantindo suporte completo para sua certificação.",
+      "Ao final do processo, você receberá seu diploma técnico em Administração, reconhecido pelo MEC, que possibilita registro no Conselho Regional de Administração (CRA) e amplia suas oportunidades no mercado de trabalho."
     ],
-    access: [{ title: "Material de Apoio", description: "Prepare-se para as avaliações." }, { title: "Orientação", description: "Acompanhamento especializado." }, { title: "Diploma", description: "Autorizado pelo MEC." }],
-    faq: [{ question: "Preciso de experiência prévia?", answer: "Sim, é necessário comprovar experiência profissional na área de administração." }]
+    profession: "O Técnico em Administração certificado pode atuar em empresas de todos os portes e segmentos, ocupando cargos como assistente administrativo, auxiliar de recursos humanos, auxiliar financeiro, secretário executivo, supervisor administrativo e coordenador de departamentos. Com o diploma técnico, você terá reconhecimento formal para crescer na carreira e assumir posições de maior responsabilidade.",
+    market: "O mercado de trabalho para técnicos em administração é amplo e diversificado. Com a formalização do diploma técnico, você terá acesso a melhores oportunidades de emprego, promoções e aumentos salariais. Empresas valorizam profissionais com formação reconhecida pelo MEC, especialmente aqueles que comprovam experiência prática aliada ao conhecimento teórico.",
+    methodology: {
+      materials: ["Material de apoio para estudo", "Guia de competências técnicas", "Simulados de avaliação", "Biblioteca digital", "Orientações para portfólio"],
+      services: ["Requerimento de declarações", "Histórico escolar", "Matriz curricular", "Suporte pedagógico especializado"],
+      responseTime: "Chamados respondidos dentro de 48 horas por nossa equipe de suporte."
+    },
+    requirements: ["Cópia do RG e do CPF", "Comprovante de Residência", "Certificado de Conclusão do Ensino Médio", "Comprovação de experiência profissional na área administrativa (mínimo 2 anos)", "Carteira de trabalho ou declaração de empregador"],
+    tutoring: "Durante todo o processo de certificação, você terá acompanhamento de tutores especializados em administração. Eles irão orientá-lo sobre os conteúdos avaliados, ajudar na preparação do portfólio profissional e esclarecer todas as suas dúvidas sobre o processo de certificação.",
+    tutorAttributes: ["Orientar sobre competências avaliadas", "Auxiliar na preparação do portfólio profissional", "Esclarecer dúvidas sobre gestão empresarial", "Fornecer feedback sobre simulados"],
+    modules: [
+      { name: "Competências em Gestão", subjects: [{ name: "Fundamentos da Administração", hours: 100 }, { name: "Planejamento Estratégico", hours: 80 }, { name: "Gestão de Processos Organizacionais", hours: 80 }] },
+      { name: "Competências em Pessoas e Finanças", subjects: [{ name: "Gestão de Recursos Humanos", hours: 100 }, { name: "Gestão Financeira e Orçamentária", hours: 100 }, { name: "Contabilidade Básica", hours: 80 }] },
+      { name: "Competências Complementares", subjects: [{ name: "Marketing e Vendas", hours: 80 }, { name: "Legislação Empresarial", hours: 60 }, { name: "Empreendedorismo", hours: 60 }, { name: "Informática Aplicada", hours: 60 }] }
+    ],
+    access: [{ title: "Material de Apoio", description: "Conteúdos preparatórios para as avaliações de competências." }, { title: "Orientação Pedagógica", description: "Acompanhamento especializado durante todo o processo." }, { title: "Diploma Técnico", description: "Certificação reconhecida pelo MEC com possibilidade de registro no CRA." }],
+    faq: [{ question: "Preciso de experiência prévia?", answer: "Sim, é necessário comprovar no mínimo 2 anos de experiência profissional na área administrativa através de carteira de trabalho ou declaração de empregador." }, { question: "Posso me registrar no CRA?", answer: "Sim, após obter o diploma técnico você pode solicitar registro no Conselho Regional de Administração." }, { question: "Quanto tempo leva o processo?", answer: "O processo de certificação leva em média 3 a 6 meses, dependendo do seu desempenho nas avaliações." }]
   },
-  "certificacao-automacao-industrial": {
+  "certificacao-tecnica-competencia-automacao-industrial-clp-sensores": {
     title: "Certificação Técnica por Competência em Automação Industrial",
-    subtitle: "Valide suas habilidades em automação e obtenha registro no CREA",
+    subtitle: "Formalize sua experiência com CLPs, sensores e sistemas automatizados com registro no CREA",
     image: "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=1200&h=600&fit=crop",
     bannerImage: "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=1920&h=400&fit=crop",
-    description: "A Certificação Técnica por Competência em Automação Industrial reconhece suas habilidades práticas em sistemas automatizados, CLPs, sensores e atuadores. Obtenha diploma técnico com registro no CREA.",
+    description: "A Certificação Técnica por Competência em Automação Industrial é destinada a profissionais que já atuam com sistemas automatizados, CLPs (Controladores Lógicos Programáveis), sensores, atuadores, redes industriais e sistemas supervisórios. Se você trabalha na indústria há anos programando CLPs, configurando sistemas de automação e mantendo linhas de produção automatizadas, esta certificação reconhece formalmente sua expertise e permite registro no CREA.",
     originalPrice: "R$ 2.500,00",
     promoPrice: "R$ 1.599,00",
     installment: "R$ 133,25",
@@ -603,30 +609,36 @@ const coursesData: Record<string, CourseData> = {
       approvedDate: "07/10/2021",
       registerWith: "Registro no CREA"
     },
-    aboutCourse: "Certificação destinada a profissionais com experiência em automação industrial que desejam formalizar seus conhecimentos.",
-    howItWorks: ["Avaliação prática e teórica das competências.", "Processo otimizado para profissionais experientes."],
-    profession: "Atue legalmente como técnico em automação industrial com registro no CREA.",
-    market: "A Indústria 4.0 demanda profissionais qualificados e certificados em automação.",
-    methodology: {
-      materials: ["Material de apoio", "Orientações para avaliação", "Biblioteca digital"],
-      services: ["Requerimento de declarações", "Histórico", "Matriz curricular"],
-      responseTime: "Chamados respondidos dentro de 48 horas."
-    },
-    requirements: ["Cópia do RG e do CPF", "Comprovante de Residência", "Comprovação de experiência na área"],
-    tutoring: "Orientação especializada durante o processo.",
-    tutorAttributes: ["Apoiar na preparação para avaliação", "Esclarecer dúvidas técnicas"],
-    modules: [
-      { name: "Avaliação de Competências", subjects: [{ name: "CLPs e Programação", hours: 100 }, { name: "Sensores e Atuadores", hours: 80 }, { name: "Redes Industriais", hours: 80 }, { name: "Sistemas Supervisórios", hours: 80 }] }
+    aboutCourse: "O programa de Certificação por Competência em Automação Industrial avalia e reconhece suas habilidades práticas em programação de CLPs (Siemens, Allen-Bradley, WEG, Schneider), configuração de sensores e atuadores, implementação de redes industriais (Profibus, Profinet, Modbus, Ethernet/IP), desenvolvimento de sistemas supervisórios (SCADA) e manutenção de sistemas automatizados. É a oportunidade perfeita para técnicos de manutenção industrial, programadores de CLP, integradores de sistemas e operadores de automação que desejam obter diploma técnico oficial.",
+    howItWorks: [
+      "O processo de certificação avalia suas competências em automação industrial através de provas teóricas sobre conceitos de automação, redes industriais e normas técnicas, além de avaliações práticas de programação de CLPs e configuração de sistemas.",
+      "Você poderá apresentar seu portfólio de projetos de automação realizados, certificações de fabricantes (Siemens, Rockwell, WEG, etc.) e comprovantes de experiência profissional para complementar sua avaliação.",
+      "Com a aprovação, você receberá o diploma técnico em Automação Industrial reconhecido pelo MEC, que permite solicitar registro no CREA como técnico de nível médio, habilitando-se a assinar projetos e laudos técnicos."
     ],
-    access: [{ title: "Material de Apoio", description: "Prepare-se para as avaliações." }, { title: "Orientação", description: "Acompanhamento especializado." }, { title: "Diploma", description: "Autorizado pelo MEC." }],
-    faq: [{ question: "Posso me registrar no CREA?", answer: "Sim, após a certificação você pode solicitar registro no CREA." }]
+    profession: "O Técnico em Automação Industrial certificado pode atuar como programador de CLP, técnico de automação, integrador de sistemas industriais, técnico de manutenção em automação, supervisor de produção automatizada e consultor em automação industrial. Com registro no CREA, você poderá assinar projetos de automação e assumir responsabilidade técnica por sistemas industriais.",
+    market: "A Indústria 4.0 está transformando o setor produtivo brasileiro, gerando altíssima demanda por profissionais qualificados em automação industrial. Empresas dos setores automotivo, alimentício, farmacêutico, petroquímico e de manufatura em geral buscam técnicos certificados e registrados no CREA para suas equipes de automação e manutenção industrial.",
+    methodology: {
+      materials: ["Material de apoio técnico em automação", "Guia de programação de CLPs", "Documentação sobre redes industriais", "Biblioteca digital especializada", "Simulados de avaliação"],
+      services: ["Requerimento de declarações", "Histórico escolar", "Matriz curricular", "Orientação para registro no CREA"],
+      responseTime: "Chamados respondidos dentro de 48 horas por nossa equipe técnica especializada."
+    },
+    requirements: ["Cópia do RG e do CPF", "Comprovante de Residência", "Certificado de Conclusão do Ensino Médio", "Comprovação de experiência profissional em automação industrial (mínimo 2 anos)", "Portfólio de projetos ou certificações de fabricantes (desejável)"],
+    tutoring: "Tutores com experiência prática em automação industrial acompanham você durante todo o processo, orientando sobre programação de CLPs, redes industriais e preparação para as avaliações técnicas.",
+    tutorAttributes: ["Orientar sobre programação de CLPs de diferentes fabricantes", "Esclarecer dúvidas sobre redes industriais e protocolos", "Auxiliar na preparação do portfólio técnico", "Fornecer feedback sobre conhecimentos em automação"],
+    modules: [
+      { name: "Sistemas de Controle", subjects: [{ name: "Programação de CLPs (Ladder, FBD, ST)", hours: 120 }, { name: "Controladores e Interfaces HMI", hours: 80 }, { name: "Instrumentação Industrial", hours: 80 }] },
+      { name: "Redes e Integração", subjects: [{ name: "Redes Industriais (Profibus, Profinet, Modbus)", hours: 100 }, { name: "Sistemas Supervisórios SCADA", hours: 80 }, { name: "Integração de Sistemas", hours: 80 }] },
+      { name: "Aplicações e Normas", subjects: [{ name: "Sensores, Transdutores e Atuadores", hours: 80 }, { name: "Robótica Industrial Básica", hours: 60 }, { name: "Normas NR-12 e Segurança em Automação", hours: 60 }, { name: "Manutenção de Sistemas Automatizados", hours: 60 }] }
+    ],
+    access: [{ title: "Material Técnico", description: "Conteúdos especializados em CLPs, redes e sistemas de automação." }, { title: "Orientação Técnica", description: "Acompanhamento por profissionais experientes em automação industrial." }, { title: "Diploma + CREA", description: "Certificação pelo MEC com direito a registro no CREA." }],
+    faq: [{ question: "Posso me registrar no CREA?", answer: "Sim, após a certificação você pode solicitar registro no CREA como técnico em Automação Industrial." }, { question: "Preciso saber programar CLP?", answer: "Sim, é esperado que você tenha experiência prática com programação de CLPs em pelo menos uma linguagem (Ladder, FBD ou Texto Estruturado)." }, { question: "Certificações de fabricantes são consideradas?", answer: "Sim, certificações Siemens, Rockwell, WEG e outros fabricantes podem complementar sua avaliação de competências." }]
   },
-  "certificacao-edificacoes": {
+  "certificacao-tecnica-competencia-edificacoes-construcao-civil": {
     title: "Certificação Técnica por Competência em Edificações",
-    subtitle: "Formalize sua experiência na construção civil com registro no CREA",
+    subtitle: "Transforme sua experiência em obras e projetos de construção civil em diploma técnico com registro no CREA",
     image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1200&h=600&fit=crop",
     bannerImage: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1920&h=400&fit=crop",
-    description: "A Certificação por Competência em Edificações é ideal para profissionais da construção civil com experiência prática. Obtenha diploma técnico reconhecido e registro no CREA.",
+    description: "A Certificação Técnica por Competência em Edificações é o caminho para profissionais da construção civil que já atuam em obras, projetos, orçamentos e fiscalização e desejam formalizar sua experiência com diploma técnico. Se você trabalha como mestre de obras, encarregado de construção, desenhista projetista, orçamentista ou auxiliar de engenharia, esta certificação reconhece seus conhecimentos práticos e permite registro no CREA para assinar projetos e laudos técnicos.",
     originalPrice: "R$ 2.500,00",
     promoPrice: "R$ 1.599,00",
     installment: "R$ 133,25",
@@ -642,30 +654,36 @@ const coursesData: Record<string, CourseData> = {
       approvedDate: "07/10/2021",
       registerWith: "Registro no CREA"
     },
-    aboutCourse: "Reconheça formalmente sua experiência em obras e projetos de edificações.",
-    howItWorks: ["Avaliação de competências técnicas em construção civil.", "Processo acelerado para profissionais experientes."],
-    profession: "Atue legalmente como técnico em edificações com respaldo do CREA.",
-    market: "A construção civil valoriza profissionais certificados e regularizados.",
-    methodology: {
-      materials: ["Material de apoio", "Orientações para avaliação", "Biblioteca digital"],
-      services: ["Requerimento de declarações", "Histórico", "Matriz curricular"],
-      responseTime: "Chamados respondidos dentro de 48 horas."
-    },
-    requirements: ["Cópia do RG e do CPF", "Comprovante de Residência", "Comprovação de experiência na construção civil"],
-    tutoring: "Orientação durante todo o processo de certificação.",
-    tutorAttributes: ["Apoiar na preparação", "Esclarecer dúvidas técnicas"],
-    modules: [
-      { name: "Avaliação de Competências", subjects: [{ name: "Projetos e Desenho Técnico", hours: 100 }, { name: "Materiais e Técnicas Construtivas", hours: 100 }, { name: "Orçamento e Planejamento", hours: 80 }, { name: "Normas e Segurança", hours: 80 }] }
+    aboutCourse: "O programa de Certificação por Competência em Edificações avalia suas habilidades em leitura e interpretação de projetos arquitetônicos e estruturais, técnicas construtivas, orçamento de obras, planejamento de cronogramas, fiscalização de serviços, conhecimento de materiais de construção e aplicação de normas técnicas da ABNT. É ideal para mestres de obras, encarregados, desenhistas, orçamentistas e profissionais que atuam há anos na construção civil mas não possuem diploma técnico formal.",
+    howItWorks: [
+      "O processo de certificação avalia suas competências através de provas teóricas sobre técnicas construtivas, materiais de construção, leitura de projetos e normas técnicas, além de análise prática de orçamentos e planejamento de obras.",
+      "Você apresentará seu portfólio de obras e projetos realizados, comprovantes de experiência profissional e eventuais cursos complementares na área de construção civil.",
+      "Após aprovação, você receberá o diploma técnico em Edificações reconhecido pelo MEC, que permite solicitar registro no CREA como técnico de nível médio, habilitando-se a assinar projetos residenciais, laudos de vistoria e assumir responsabilidade técnica em obras."
     ],
-    access: [{ title: "Material de Apoio", description: "Prepare-se para as avaliações." }, { title: "Orientação", description: "Acompanhamento especializado." }, { title: "Diploma", description: "Autorizado pelo MEC." }],
-    faq: [{ question: "Posso me registrar no CREA?", answer: "Sim, após a certificação você pode solicitar registro no CREA." }]
+    profession: "O Técnico em Edificações certificado pode atuar como desenhista projetista, orçamentista de obras, fiscal de obras, auxiliar de engenharia, supervisor de construção, mestre de obras com registro profissional, e em cargos de coordenação em construtoras e incorporadoras. Com registro no CREA, você terá autonomia para assinar projetos de edificações de até determinadas dimensões conforme regulamentação.",
+    market: "A construção civil brasileira é um dos maiores empregadores do país e valoriza profissionais com formação técnica comprovada. Com o diploma técnico e registro no CREA, você terá acesso a melhores oportunidades em construtoras, incorporadoras, órgãos públicos, empresas de projetos e poderá atuar como profissional autônomo com responsabilidade técnica.",
+    methodology: {
+      materials: ["Material de apoio em técnicas construtivas", "Guia de leitura de projetos", "Modelos de orçamento e cronograma", "Biblioteca digital com normas ABNT", "Simulados de avaliação"],
+      services: ["Requerimento de declarações", "Histórico escolar", "Matriz curricular", "Orientação para registro no CREA"],
+      responseTime: "Chamados respondidos dentro de 48 horas por nossa equipe técnica."
+    },
+    requirements: ["Cópia do RG e do CPF", "Comprovante de Residência", "Certificado de Conclusão do Ensino Médio", "Comprovação de experiência profissional na construção civil (mínimo 2 anos)", "Portfólio de obras ou projetos realizados (desejável)"],
+    tutoring: "Tutores com experiência em construção civil acompanham você durante todo o processo, orientando sobre técnicas construtivas, leitura de projetos, orçamentação e preparação para as avaliações.",
+    tutorAttributes: ["Orientar sobre leitura e interpretação de projetos", "Esclarecer dúvidas sobre técnicas construtivas e materiais", "Auxiliar na elaboração do portfólio profissional", "Fornecer feedback sobre orçamentos e planejamento"],
+    modules: [
+      { name: "Projetos e Desenho Técnico", subjects: [{ name: "Leitura e Interpretação de Projetos", hours: 100 }, { name: "Desenho Técnico e CAD", hours: 80 }, { name: "Projetos Arquitetônicos e Complementares", hours: 80 }] },
+      { name: "Técnicas Construtivas", subjects: [{ name: "Materiais de Construção", hours: 100 }, { name: "Técnicas de Fundação e Estruturas", hours: 80 }, { name: "Instalações Hidrossanitárias e Elétricas", hours: 80 }] },
+      { name: "Gestão de Obras", subjects: [{ name: "Orçamento e Planejamento de Obras", hours: 100 }, { name: "Fiscalização e Controle de Qualidade", hours: 60 }, { name: "Segurança do Trabalho na Construção (NR-18)", hours: 60 }, { name: "Normas Técnicas ABNT", hours: 60 }] }
+    ],
+    access: [{ title: "Material Técnico", description: "Conteúdos especializados em construção civil e edificações." }, { title: "Orientação Técnica", description: "Acompanhamento por profissionais experientes em obras." }, { title: "Diploma + CREA", description: "Certificação pelo MEC com direito a registro no CREA." }],
+    faq: [{ question: "Posso me registrar no CREA?", answer: "Sim, após a certificação você pode solicitar registro no CREA como técnico em Edificações." }, { question: "Que tipo de obras posso assinar?", answer: "Com registro no CREA, você pode assumir responsabilidade técnica por edificações residenciais de acordo com as atribuições definidas pelo conselho." }, { question: "Preciso saber usar AutoCAD?", answer: "Conhecimento em CAD é desejável, mas não obrigatório. A avaliação foca em leitura e interpretação de projetos e conhecimentos práticos de construção." }]
   },
-  "certificacao-eletrotecnica": {
+  "certificacao-tecnica-competencia-eletrotecnica-instalacoes-eletricas": {
     title: "Certificação Técnica por Competência em Eletrotécnica",
-    subtitle: "Valide suas competências em sistemas elétricos com registro no CREA",
+    subtitle: "Formalize sua experiência em instalações elétricas, comandos e máquinas elétricas com registro no CREA",
     image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&h=600&fit=crop",
     bannerImage: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&h=400&fit=crop",
-    description: "A Certificação por Competência em Eletrotécnica reconhece sua experiência prática em instalações e sistemas elétricos. Obtenha diploma técnico e registro no CREA.",
+    description: "A Certificação Técnica por Competência em Eletrotécnica é destinada a eletricistas, instaladores, mantenedores e técnicos que já atuam com sistemas elétricos industriais e prediais. Se você trabalha há anos com instalações elétricas, comandos elétricos, quadros de distribuição, máquinas elétricas e manutenção elétrica, esta certificação reconhece formalmente sua expertise e permite registro no CREA para assinar projetos elétricos e laudos técnicos.",
     originalPrice: "R$ 2.500,00",
     promoPrice: "R$ 1.599,00",
     installment: "R$ 133,25",
@@ -681,30 +699,36 @@ const coursesData: Record<string, CourseData> = {
       approvedDate: "07/10/2021",
       registerWith: "Registro no CREA"
     },
-    aboutCourse: "Formalize seus conhecimentos em eletrotécnica através da aferição de competências.",
-    howItWorks: ["Avaliação teórica e prática das competências elétricas.", "Processo direcionado para profissionais experientes."],
-    profession: "Atue como técnico em eletrotécnica com registro profissional no CREA.",
-    market: "O setor elétrico demanda profissionais certificados e habilitados.",
-    methodology: {
-      materials: ["Material de apoio", "Orientações para avaliação", "Biblioteca digital"],
-      services: ["Requerimento de declarações", "Histórico", "Matriz curricular"],
-      responseTime: "Chamados respondidos dentro de 48 horas."
-    },
-    requirements: ["Cópia do RG e do CPF", "Comprovante de Residência", "Comprovação de experiência na área elétrica"],
-    tutoring: "Orientação especializada durante o processo.",
-    tutorAttributes: ["Apoiar na preparação", "Esclarecer dúvidas técnicas"],
-    modules: [
-      { name: "Avaliação de Competências", subjects: [{ name: "Instalações Elétricas", hours: 100 }, { name: "Comandos Elétricos", hours: 80 }, { name: "Máquinas Elétricas", hours: 80 }, { name: "Normas e Segurança", hours: 80 }] }
+    aboutCourse: "O programa de Certificação por Competência em Eletrotécnica avalia suas habilidades em instalações elétricas de baixa e média tensão, dimensionamento de circuitos, montagem de quadros de distribuição, comandos elétricos, partida de motores, manutenção de máquinas elétricas, leitura de diagramas unifilares e aplicação das normas NR-10 e NBR 5410. É ideal para eletricistas industriais e prediais, técnicos de manutenção elétrica, instaladores e profissionais que atuam há anos na área mas não possuem diploma técnico formal.",
+    howItWorks: [
+      "O processo de certificação avalia suas competências através de provas teóricas sobre eletricidade, instalações elétricas, comandos e normas técnicas, além de avaliações práticas sobre dimensionamento de circuitos e análise de diagramas.",
+      "Você apresentará seu portfólio de trabalhos realizados, certificados de cursos NR-10, SEP e outros complementares, além de comprovantes de experiência profissional na área elétrica.",
+      "Após aprovação, você receberá o diploma técnico em Eletrotécnica reconhecido pelo MEC, que permite solicitar registro no CREA como técnico de nível médio, habilitando-se a assinar projetos elétricos e laudos técnicos."
     ],
-    access: [{ title: "Material de Apoio", description: "Prepare-se para as avaliações." }, { title: "Orientação", description: "Acompanhamento especializado." }, { title: "Diploma", description: "Autorizado pelo MEC." }],
-    faq: [{ question: "Posso me registrar no CREA?", answer: "Sim, após a certificação você pode solicitar registro no CREA." }]
+    profession: "O Técnico em Eletrotécnica certificado pode atuar como eletricista industrial, técnico de manutenção elétrica, projetista de instalações elétricas, supervisor de equipes elétricas, técnico em subestações e em cargos de coordenação em empresas de energia, indústrias e construtoras. Com registro no CREA, você terá autonomia para assinar projetos elétricos e assumir responsabilidade técnica.",
+    market: "O setor elétrico brasileiro está em constante crescimento com a expansão da infraestrutura e investimentos em energias renováveis. Profissionais com diploma técnico e registro no CREA são altamente valorizados em concessionárias de energia, indústrias, construtoras, empresas de manutenção e no mercado de trabalho autônomo para projetos elétricos residenciais e comerciais.",
+    methodology: {
+      materials: ["Material de apoio em instalações elétricas", "Guia de normas NR-10 e NBR 5410", "Exemplos de diagramas e projetos", "Biblioteca digital especializada", "Simulados de avaliação"],
+      services: ["Requerimento de declarações", "Histórico escolar", "Matriz curricular", "Orientação para registro no CREA"],
+      responseTime: "Chamados respondidos dentro de 48 horas por nossa equipe técnica especializada."
+    },
+    requirements: ["Cópia do RG e do CPF", "Comprovante de Residência", "Certificado de Conclusão do Ensino Médio", "Comprovação de experiência profissional na área elétrica (mínimo 2 anos)", "Certificado NR-10 atualizado (desejável)", "Portfólio de trabalhos realizados (desejável)"],
+    tutoring: "Tutores com experiência prática em sistemas elétricos acompanham você durante todo o processo, orientando sobre instalações, comandos, normas técnicas e preparação para as avaliações.",
+    tutorAttributes: ["Orientar sobre instalações elétricas e comandos", "Esclarecer dúvidas sobre normas NR-10 e NBR 5410", "Auxiliar na análise de diagramas e projetos", "Fornecer feedback sobre dimensionamento de circuitos"],
+    modules: [
+      { name: "Instalações Elétricas", subjects: [{ name: "Instalações Elétricas de Baixa Tensão", hours: 120 }, { name: "Dimensionamento de Circuitos e Proteções", hours: 80 }, { name: "Quadros de Distribuição e Subestações", hours: 80 }] },
+      { name: "Comandos e Máquinas", subjects: [{ name: "Comandos Elétricos e Partida de Motores", hours: 100 }, { name: "Máquinas Elétricas (Motores e Transformadores)", hours: 80 }, { name: "Acionamentos Elétricos", hours: 80 }] },
+      { name: "Normas e Segurança", subjects: [{ name: "NR-10 - Segurança em Instalações Elétricas", hours: 60 }, { name: "NBR 5410 e Normas Técnicas", hours: 60 }, { name: "Leitura de Diagramas e Projetos Elétricos", hours: 60 }, { name: "Manutenção Elétrica Preventiva e Corretiva", hours: 80 }] }
+    ],
+    access: [{ title: "Material Técnico", description: "Conteúdos especializados em instalações e sistemas elétricos." }, { title: "Orientação Técnica", description: "Acompanhamento por profissionais experientes em eletrotécnica." }, { title: "Diploma + CREA", description: "Certificação pelo MEC com direito a registro no CREA." }],
+    faq: [{ question: "Posso me registrar no CREA?", answer: "Sim, após a certificação você pode solicitar registro no CREA como técnico em Eletrotécnica." }, { question: "Preciso ter certificado NR-10?", answer: "O certificado NR-10 não é obrigatório para a certificação, mas é desejável e será considerado na avaliação de competências." }, { question: "Que tipo de projetos posso assinar?", answer: "Com registro no CREA, você pode assinar projetos de instalações elétricas de acordo com as atribuições definidas pelo conselho para técnicos de nível médio." }]
   },
-  "certificacao-seguranca-trabalho": {
+  "certificacao-tecnica-competencia-seguranca-trabalho-sst-nr": {
     title: "Certificação Técnica por Competência em Segurança do Trabalho",
-    subtitle: "Valide sua experiência em SST e obtenha registro no MTE",
+    subtitle: "Formalize sua experiência em SST, Normas Regulamentadoras e prevenção de acidentes com registro no MTE",
     image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1200&h=600&fit=crop",
     bannerImage: "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1920&h=400&fit=crop",
-    description: "A Certificação por Competência em Segurança do Trabalho reconhece sua experiência prática em SST. Obtenha diploma técnico e registro no MTE para atuar legalmente.",
+    description: "A Certificação Técnica por Competência em Segurança do Trabalho é destinada a profissionais que já atuam na área de SST (Saúde e Segurança do Trabalho) e desejam formalizar sua experiência com diploma técnico reconhecido pelo MEC. Se você trabalha há anos com prevenção de acidentes, análise de riscos, treinamentos de NRs, inspeções de segurança e elaboração de documentos como PPRA, PCMSO e AET, esta certificação reconhece formalmente sua expertise e permite registro no MTE.",
     originalPrice: "R$ 2.500,00",
     promoPrice: "R$ 1.599,00",
     installment: "R$ 133,25",
@@ -720,23 +744,29 @@ const coursesData: Record<string, CourseData> = {
       approvedDate: "07/10/2021",
       registerWith: "Registro no MTE"
     },
-    aboutCourse: "Formalize sua atuação em segurança do trabalho através da certificação por competência.",
-    howItWorks: ["Avaliação das competências em prevenção e segurança.", "Processo otimizado para profissionais com experiência."],
-    profession: "Atue como técnico em segurança do trabalho com registro no MTE.",
-    market: "Empresas buscam profissionais certificados para suas equipes de SST.",
-    methodology: {
-      materials: ["Material de apoio", "Orientações para avaliação", "Biblioteca digital"],
-      services: ["Requerimento de declarações", "Histórico", "Matriz curricular"],
-      responseTime: "Chamados respondidos dentro de 48 horas."
-    },
-    requirements: ["Cópia do RG e do CPF", "Comprovante de Residência", "Comprovação de experiência em SST"],
-    tutoring: "Orientação durante todo o processo.",
-    tutorAttributes: ["Apoiar na preparação", "Esclarecer dúvidas sobre normas"],
-    modules: [
-      { name: "Avaliação de Competências", subjects: [{ name: "Normas Regulamentadoras", hours: 120 }, { name: "Prevenção de Acidentes", hours: 100 }, { name: "Higiene Ocupacional", hours: 80 }, { name: "Gestão de Riscos", hours: 80 }] }
+    aboutCourse: "O programa de Certificação por Competência em Segurança do Trabalho avalia suas habilidades em aplicação das Normas Regulamentadoras (NRs), identificação e análise de riscos ocupacionais, elaboração de programas de segurança (PGR, PCMSO, AET), realização de inspeções e auditorias de segurança, investigação de acidentes, treinamentos obrigatórios e gestão de EPIs. É ideal para auxiliares de segurança do trabalho, instrutores de treinamentos NR, membros de CIPA e profissionais que atuam na área há anos mas não possuem diploma técnico formal.",
+    howItWorks: [
+      "O processo de certificação avalia suas competências através de provas teóricas sobre Normas Regulamentadoras, higiene ocupacional, ergonomia, prevenção de incêndios e gestão de riscos, além de análise prática de situações de trabalho.",
+      "Você apresentará seu portfólio de trabalhos em SST, certificados de cursos de NRs, relatórios de inspeções realizadas e comprovantes de experiência profissional na área de segurança do trabalho.",
+      "Após aprovação, você receberá o diploma técnico em Segurança do Trabalho reconhecido pelo MEC, que permite solicitar registro no MTE (Ministério do Trabalho e Emprego) para atuar legalmente como Técnico em Segurança do Trabalho."
     ],
-    access: [{ title: "Material de Apoio", description: "Prepare-se para as avaliações." }, { title: "Orientação", description: "Acompanhamento especializado." }, { title: "Diploma", description: "Autorizado pelo MEC." }],
-    faq: [{ question: "Posso me registrar no MTE?", answer: "Sim, após a certificação você pode solicitar registro no MTE." }]
+    profession: "O Técnico em Segurança do Trabalho certificado pode atuar em empresas de todos os portes como responsável pela segurança ocupacional, realizando inspeções, treinamentos, elaborando programas de prevenção e representando a empresa junto aos órgãos fiscalizadores. Com registro no MTE, você terá todas as atribuições legais do técnico em segurança do trabalho conforme a CLT.",
+    market: "A legislação brasileira exige que empresas de determinados portes e riscos mantenham profissionais de segurança do trabalho em seus quadros. Com o aumento da fiscalização e conscientização sobre a importância da SST, profissionais certificados e registrados no MTE são cada vez mais valorizados em indústrias, construção civil, hospitais, empresas de consultoria e em todos os setores econômicos.",
+    methodology: {
+      materials: ["Material de apoio em Normas Regulamentadoras", "Guia de elaboração de documentos SST", "Modelos de relatórios e programas", "Biblioteca digital especializada", "Simulados de avaliação"],
+      services: ["Requerimento de declarações", "Histórico escolar", "Matriz curricular", "Orientação para registro no MTE"],
+      responseTime: "Chamados respondidos dentro de 48 horas por nossa equipe especializada em SST."
+    },
+    requirements: ["Cópia do RG e do CPF", "Comprovante de Residência", "Certificado de Conclusão do Ensino Médio", "Comprovação de experiência profissional em SST (mínimo 2 anos)", "Certificados de cursos de NRs realizados (desejável)", "Portfólio de trabalhos em segurança do trabalho (desejável)"],
+    tutoring: "Tutores especializados em segurança do trabalho acompanham você durante todo o processo, orientando sobre Normas Regulamentadoras, elaboração de documentos SST e preparação para as avaliações.",
+    tutorAttributes: ["Orientar sobre aplicação das Normas Regulamentadoras", "Esclarecer dúvidas sobre elaboração de PGR, PCMSO e AET", "Auxiliar na análise de riscos ocupacionais", "Fornecer feedback sobre relatórios e programas de SST"],
+    modules: [
+      { name: "Normas e Legislação", subjects: [{ name: "Normas Regulamentadoras (NR-01 a NR-38)", hours: 140 }, { name: "Legislação Trabalhista e Previdenciária", hours: 60 }, { name: "Responsabilidades Legais em SST", hours: 60 }] },
+      { name: "Programas e Documentos", subjects: [{ name: "PGR - Programa de Gerenciamento de Riscos", hours: 80 }, { name: "PCMSO e Saúde Ocupacional", hours: 60 }, { name: "AET - Análise Ergonômica do Trabalho", hours: 60 }, { name: "PPP e Documentos Previdenciários", hours: 60 }] },
+      { name: "Práticas de Prevenção", subjects: [{ name: "Prevenção e Combate a Incêndios", hours: 80 }, { name: "Inspeções e Auditorias de Segurança", hours: 60 }, { name: "Investigação de Acidentes e Incidentes", hours: 60 }, { name: "Treinamentos Obrigatórios e CIPA", hours: 60 }] }
+    ],
+    access: [{ title: "Material Técnico", description: "Conteúdos especializados em SST e Normas Regulamentadoras." }, { title: "Orientação Técnica", description: "Acompanhamento por profissionais experientes em segurança do trabalho." }, { title: "Diploma + MTE", description: "Certificação pelo MEC com direito a registro no Ministério do Trabalho." }],
+    faq: [{ question: "Posso me registrar no MTE?", answer: "Sim, após a certificação você pode solicitar registro no MTE como Técnico em Segurança do Trabalho." }, { question: "Preciso conhecer todas as NRs?", answer: "Você deve ter conhecimento sólido das principais NRs aplicáveis à sua área de atuação. O processo avalia sua capacidade de aplicá-las no ambiente de trabalho." }, { question: "Posso atuar em qualquer empresa?", answer: "Sim, com registro no MTE você pode atuar como Técnico em Segurança do Trabalho em empresas de qualquer porte e segmento." }]
   },
   "certificacao-agricultura": {
     title: "Certificação Técnica por Competência em Agricultura",
