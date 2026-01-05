@@ -29,10 +29,10 @@ const Header = () => {
     if (location.pathname !== "/") {
       navigate("/");
       setTimeout(() => {
-        document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+        document.getElementById("contato")?.scrollIntoView({ behavior: "smooth" });
       }, 100);
     } else {
-      document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+      document.getElementById("contato")?.scrollIntoView({ behavior: "smooth" });
     }
   };
 
