@@ -2500,7 +2500,7 @@ const StarRating = ({ rating }: { rating: number }) => {
 const CursoDetalhe = () => {
   const { id } = useParams();
   const course = coursesData[id || ""] || defaultCourse;
-  const [showVideo, setShowVideo] = useState(false);
+  
   
   // Form state for enrollment
   const [formData, setFormData] = useState({
@@ -2621,38 +2621,16 @@ const CursoDetalhe = () => {
                 </div>
               </div>
               
-              {/* Video Button */}
-              {course.youtubeVideoId && (
-                <Button 
-                  variant="outline" 
-                  className="gap-2 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10"
-                  onClick={() => setShowVideo(true)}
-                >
-                  <Play className="h-4 w-4" />
-                  Ver vídeo
-                </Button>
-              )}
+              {/* Video - Em Breve */}
+              <div className="flex items-center gap-2 rounded-md border border-primary-foreground/30 px-4 py-2 text-primary-foreground/60">
+                <Play className="h-4 w-4" />
+                <span className="text-sm font-medium">Vídeo em breve</span>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Video Modal */}
-      {showVideo && course.youtubeVideoId && (
-        <div 
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4"
-          onClick={() => setShowVideo(false)}
-        >
-          <div className="relative aspect-video w-full max-w-4xl">
-            <iframe
-              src={`https://www.youtube.com/embed/${course.youtubeVideoId}?autoplay=1`}
-              className="h-full w-full rounded-lg"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
-          </div>
-        </div>
-      )}
 
       {/* Course Content Sections */}
       <section className="py-12">
@@ -2878,37 +2856,19 @@ const CursoDetalhe = () => {
             {/* Sticky Price Card - Right Side */}
             <div className="hidden lg:block lg:w-96">
               <div className="sticky top-24">
-                {/* YouTube Video Thumbnail */}
-                <div 
-                  className="relative mb-4 cursor-pointer overflow-hidden rounded-xl"
-                  onClick={() => setShowVideo(true)}
-                >
-                  <img 
-                    src={`https://img.youtube.com/vi/${course.youtubeVideoId}/maxresdefault.jpg`}
-                    alt={course.title}
-                    className="aspect-video w-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                  
-                  {/* Play Button */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="flex h-16 w-16 items-center justify-center rounded-full bg-ecid-red">
-                      <Play className="h-8 w-8 fill-white text-white" />
+                {/* Video Em Breve */}
+                <div className="relative mb-4 overflow-hidden rounded-xl bg-muted">
+                  <div className="flex aspect-video w-full flex-col items-center justify-center gap-3">
+                    <div className="flex h-16 w-16 items-center justify-center rounded-full bg-muted-foreground/20">
+                      <Play className="h-8 w-8 text-muted-foreground/50" />
                     </div>
+                    <span className="text-sm font-medium text-muted-foreground">Vídeo em breve</span>
                   </div>
                   
                   {/* Course Badge */}
                   <div className="absolute right-3 top-3">
                     <span className="rounded bg-ecid-blue-accent px-2 py-1 text-xs font-bold text-white">
                       {course.category}
-                    </span>
-                  </div>
-                  
-                  {/* Course Title Overlay */}
-                  <div className="absolute bottom-3 left-3 right-3">
-                    <h4 className="text-lg font-bold text-white">{course.title.split(' ').slice(2).join(' ')}</h4>
-                    <span className="mt-1 inline-block rounded border border-white/50 px-2 py-0.5 text-xs text-white">
-                      Autorizado pelo MEC
                     </span>
                   </div>
                 </div>
