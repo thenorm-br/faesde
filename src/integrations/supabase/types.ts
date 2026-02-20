@@ -14,16 +14,156 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      courses: {
+        Row: {
+          about_course: string | null
+          access_items: Json | null
+          banner_image_url: string | null
+          category: string
+          certification: string | null
+          created_at: string
+          description: string | null
+          duration_range: string | null
+          faq: Json | null
+          hours: number | null
+          how_it_works: string[] | null
+          id: string
+          image_url: string | null
+          installment: string | null
+          is_active: boolean
+          market: string | null
+          methodology_materials: string[] | null
+          methodology_response_time: string | null
+          methodology_services: string[] | null
+          modules: Json | null
+          original_price: string | null
+          profession: string | null
+          promo_price: string | null
+          rating: number | null
+          registration_approved_date: string | null
+          registration_parecer: string | null
+          registration_portaria: string | null
+          registration_register_with: string | null
+          requirements: string[] | null
+          slug: string
+          subtitle: string | null
+          title: string
+          tutor_attributes: string[] | null
+          tutoring: string | null
+          updated_at: string
+          youtube_video_id: string | null
+        }
+        Insert: {
+          about_course?: string | null
+          access_items?: Json | null
+          banner_image_url?: string | null
+          category?: string
+          certification?: string | null
+          created_at?: string
+          description?: string | null
+          duration_range?: string | null
+          faq?: Json | null
+          hours?: number | null
+          how_it_works?: string[] | null
+          id?: string
+          image_url?: string | null
+          installment?: string | null
+          is_active?: boolean
+          market?: string | null
+          methodology_materials?: string[] | null
+          methodology_response_time?: string | null
+          methodology_services?: string[] | null
+          modules?: Json | null
+          original_price?: string | null
+          profession?: string | null
+          promo_price?: string | null
+          rating?: number | null
+          registration_approved_date?: string | null
+          registration_parecer?: string | null
+          registration_portaria?: string | null
+          registration_register_with?: string | null
+          requirements?: string[] | null
+          slug: string
+          subtitle?: string | null
+          title: string
+          tutor_attributes?: string[] | null
+          tutoring?: string | null
+          updated_at?: string
+          youtube_video_id?: string | null
+        }
+        Update: {
+          about_course?: string | null
+          access_items?: Json | null
+          banner_image_url?: string | null
+          category?: string
+          certification?: string | null
+          created_at?: string
+          description?: string | null
+          duration_range?: string | null
+          faq?: Json | null
+          hours?: number | null
+          how_it_works?: string[] | null
+          id?: string
+          image_url?: string | null
+          installment?: string | null
+          is_active?: boolean
+          market?: string | null
+          methodology_materials?: string[] | null
+          methodology_response_time?: string | null
+          methodology_services?: string[] | null
+          modules?: Json | null
+          original_price?: string | null
+          profession?: string | null
+          promo_price?: string | null
+          rating?: number | null
+          registration_approved_date?: string | null
+          registration_parecer?: string | null
+          registration_portaria?: string | null
+          registration_register_with?: string | null
+          requirements?: string[] | null
+          slug?: string
+          subtitle?: string | null
+          title?: string
+          tutor_attributes?: string[] | null
+          tutoring?: string | null
+          updated_at?: string
+          youtube_video_id?: string | null
+        }
+        Relationships: []
+      }
+      user_roles: {
+        Row: {
+          id: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Insert: {
+          id?: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Update: {
+          id?: string
+          role?: Database["public"]["Enums"]["app_role"]
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      has_role: {
+        Args: {
+          _role: Database["public"]["Enums"]["app_role"]
+          _user_id: string
+        }
+        Returns: boolean
+      }
     }
     Enums: {
-      [_ in never]: never
+      app_role: "admin" | "user"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -150,6 +290,8 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      app_role: ["admin", "user"],
+    },
   },
 } as const
