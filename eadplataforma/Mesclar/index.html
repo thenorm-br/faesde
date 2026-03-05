@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8" />
+<title>Unificador de Aulas (Audio + Video)</title>
+
+<style>
+    body {
+        font-family: Arial;
+        background: #151515;
+        color: white;
+        padding: 20px;
+    }
+    .box {
+        background: #222;
+        padding: 15px;
+        margin-top: 10px;
+        border-radius: 5px;
+    }
+    button {
+        padding: 8px 12px;
+        margin-top: 10px;
+        cursor: pointer;
+        background: #3b82f6;
+        border: none;
+        color: white;
+        border-radius: 4px;
+        font-size: 14px;
+    }
+    .pair {
+        margin: 10px 0;
+        padding: 10px;
+        background: #333;
+        border-radius: 5px;
+    }
+</style>
+</head>
+<body>
+
+<h2>Mesclar Aulas (Áudio + Vídeo)</h2>
+
+<input type="file" id="files" multiple accept=".mp4">
+
+<div id="pairs" class="box"></div>
+
+<button id="mergeAll" style="display:none;">Mesclar e Baixar TODOS</button>
+
+<!-- FFmpeg CORRETO -->
+<script src="https://cdn.jsdelivr.net/npm/@ffmpeg/ffmpeg@0.10.1/dist/ffmpeg.min.js"></script>
+
+<script>
+    const { createFFmpeg, fetchFile } = FFmpeg;
+    const ffmpeg = createFFmpeg({ log: false });
+
+    const fileInput = document.getElementById("files");
+    const pairsDiv = document.getElementById("pairs");
+    const mergeAllBtn = document.getElementById("mergeAll");
+
+    let pairs = {};
+
+    fileInput.onchange = async () => {
+        pairs = {};
+        pairsDiv.innerHTML = "";
+        mergeAllBtn.style.display = "none";
+
+        const files = [...fileInput.files];
+
+        // ORGANIZA arquivos por número
+        files.forEach(f => {
+            const nome = f.name;
+            const match = nome.match(/(\d+)/);
+            if (!match) return;
+
+            const num = match[1];
+            if (!pairs[num]) pairs[num] = {};
+
+            if (nome.toLowerCase().includes("(audio)")) pairs[num].audio = f;
+            if (nome.toLowerCase().includes("(video)")) pairs[num].video = f;
+        });
+
+        // Mostra pares encontrados
+        Object.entries(pairs).forEach(([num, obj]) => {
+            if (!obj.audio || !obj.video) return;
+
+            const div = document.createElement("div");
+            div.className = "pair";
+            div.innerHTML = `
+                <b>AULA ${num}</b><br>
+                Audio: ${obj.audio.name}<br>
+                Video: ${obj.video.name}<br>
+                <button onclick="mergeSingle('${num}')">Mesclar e Baixar</button>
+            `;
+            pairsDiv.appendChild(div);
+        });
+
+        mergeAllBtn.style.display = "inline-block";
+    };
+
+
+    async function loadFFmpeg() {
+        if (!ffmpeg.isLoaded()) {
+            await ffmpeg.load();
+        }
+    }
+
+
+    async function mergeSingle(num) {
+        const { audio, video } = pairs[num];
+        await loadFFmpeg();
+
+        // Adiciona arquivos ao sistema virtual
+        ffmpeg.FS('writeFile', 'audio.mp4', await fetchFile(audio));
+        ffmpeg.FS('writeFile', 'video.mp4', await fetchFile(video));
+
+        // Comando FFmpeg para unir
+        await ffmpeg.run(
+            '-i', 'video.mp4',
+            '-i', 'audio.mp4',
+            '-c:v', 'copy',
+            '-c:a', 'aac',
+            'output.mp4'
+        );
+
+        // Lê o arquivo final
+        const data = ffmpeg.FS('readFile', 'output.mp4');
+        baixarBlob(data, `AULA_${num}_unificado.mp4`);
+
+        // Remove temporários
+        ffmpeg.FS('unlink', 'audio.mp4');
+        ffmpeg.FS('unlink', 'video.mp4');
+        ffmpeg.FS('unlink', 'output.mp4');
+    }
+
+
+    mergeAllBtn.onclick = async () => {
+        for (const num of Object.keys(pairs)) {
+            if (pairs[num].audio && pairs[num].video) {
+                await mergeSingle(num);
+            }
+        }
+    };
+
+
+    // Baixar arquivo
+    function baixarBlob(data, nome) {
+        const blob = new Blob([data.buffer], { type: "video/mp4" });
+        const url = URL.createObjectURL(blob);
+
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = nome;
+
+        document.body.appendChild(a);
+        setTimeout(() => {
+            a.click();
+            a.remove();
+        }, 300);
+    }
+
+</script>
+</body>
+</html>

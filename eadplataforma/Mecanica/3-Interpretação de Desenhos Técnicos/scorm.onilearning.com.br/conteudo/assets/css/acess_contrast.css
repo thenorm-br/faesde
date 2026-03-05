@@ -1,0 +1,123 @@
+:root.contrast, main.contrast{
+    background: black !important;
+    color: white !important;
+}
+
+.contrast,
+.contrast nav,
+.contrast div,
+.contrast li,
+.contrast ol,
+.contrast header,
+.contrast footer,
+.contrast section,
+.contrast main,
+.contrast aside,
+.contrast article {
+    background: black !important;
+    color: white !important;
+}
+
+.contrast h1,
+.contrast h2,
+.contrast h3,
+.contrast h4,
+.contrast h5,
+.contrast h6,
+.contrast p,
+.contrast label,
+.contrast strong,
+.contrast em,
+.contrast cite,
+.contrast q,
+.contrast i,
+.contrast b,
+.contrast u,
+.contrast span {
+    color: white !important;
+}
+
+.contrast aaa {
+    background: white;
+    border-color: white;
+    color: white !important;
+}
+
+a.contrast{
+    color: yellow !important;
+}
+
+.contrast button,
+.contrast input[type=button],
+.contrast input[type=reset],
+.contrast input[type=submit] {
+    background: black !important;
+    color: yellow !important;
+    border: none !important;
+}
+
+/* contrast img.on-contrast-force-gray {
+    filter: grayscale(100%) contrast(120%);
+}
+
+.contrast img.on-contrast-force-white {
+    filter: brightness(0) invert(1);
+} */
+
+.contrast input[type=text],
+.contrast input[type=password],
+.contrast input[type=url],
+.contrast input[type=search],
+.contrast input[type=email],
+.contrast input[type=tel],
+.contrast input[type=date],
+.contrast input[type=month],
+.contrast input[type=week],
+.contrast input[type=datetime],
+.contrast input[type=datetime-local],
+.contrast textarea,
+.contrast input[type=number] {
+    background: black !important;
+    border: 1px solid white !important;
+    color: white !important;
+}
+
+button.contrast, sup.contrast, .bi.contrast, a.linkExpandir.contrast::after, .ph.constrast, i.contrast{
+  color: yellow !important;
+}
+
+h1.CPT1.contrast{
+  filter: grayscale(100%) contrast(130%) !important;
+}
+
+nav.acess-bar .retAcess-bar.contrast{
+  background-color: black !important;
+}
+
+li.inline-start.li.contrast {
+  border-left: 4px solid black;
+}
+
+li.inline-start.li.act.contrast {
+  border-left: 4px solid yellow;
+}
+
+.ms-progress-bar.contrast::before {
+  background-color: yellow;
+}
+
+/* .img-legenda{
+  background: black !important;
+} */
+
+.cor-amarelo.contrast, .cor-azul.contrast, .cor-laranja.contrast, .cor-roxo.contrast, .cor-verde.contrast, .cor-sugestao.contrast {
+  background-color: #34495E !important;
+}
+
+img.contrast, h1.contrast, iframe.contrast{
+    filter: grayscale(100%) contrast(130%);
+}
+
+button.btn-service i.contrast {
+  color: yellow !important;
+}

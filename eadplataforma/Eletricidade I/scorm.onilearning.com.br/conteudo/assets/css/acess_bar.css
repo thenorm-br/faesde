@@ -1,0 +1,68 @@
+div.btn-acess{
+    position: fixed;
+    right: 32px;
+    top: 24px;
+    height: fit-content;
+    width: 50px !important;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    align-items: stretch;
+    background: #197CC1;
+    border-radius: 8px;
+    padding: 0 !important; 
+    z-index: 9999;
+}
+
+.acess-expand{
+    height: 0;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+
+div.acess-expand sup{
+    font-size: 10px;
+    vertical-align: text-top;
+}
+
+.acess-expand button, button.acess{
+    border: none;
+    background: transparent;
+    color: #FEFEFE !important;
+    font-size: 16px;
+    padding: 16px;
+    margin: 0 !important;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+div.acess-expand button:hover, button.acess:hover{
+    background: #166296;        
+} 
+
+div.acess-expand button:first-child:hover{
+    border-radius: 0;
+}
+
+div.acess-expand button:last-child:hover{
+    border-radius: 0 0 8px 8px;
+}
+
+button.acess:hover{
+    border-radius:  8px;
+}
+
+.btn-acess i{
+    color: #fff !important;
+    font-size: 16px;
+}
+
+@media(max-width: 900px){
+    div.btn-acess{
+        top: 16px;
+        right: 16px;
+    }
+}

@@ -1,0 +1,4 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+scorm.onilearning.com.br	TRUE	/	FALSE	1999999999	PHPSESSID	anvlm3oriv4lescjb9a5b25br3
+
