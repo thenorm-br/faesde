@@ -35,7 +35,7 @@ const AdminLogin = () => {
       }
 
       toast({ title: "Login realizado com sucesso!" });
-      navigate("/faesde-administration/dashboard");
+      navigate("/admin");
     } catch (error: any) {
       toast({
         title: "Erro no login",
