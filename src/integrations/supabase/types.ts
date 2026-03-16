@@ -155,6 +155,66 @@ export type Database = {
         }
         Relationships: []
       }
+      promotional_themes: {
+        Row: {
+          banner_cta_emoji: string | null
+          banner_cta_text: string | null
+          banner_emoji: string | null
+          banner_subtitle: string | null
+          banner_title: string | null
+          coupon_code: string | null
+          created_at: string
+          discount_percentage: number
+          exit_popup_subtitle: string | null
+          exit_popup_title: string | null
+          id: string
+          is_active: boolean
+          name: string
+          scheduled_months: number[] | null
+          slug: string
+          theme_style: string
+          updated_at: string
+        }
+        Insert: {
+          banner_cta_emoji?: string | null
+          banner_cta_text?: string | null
+          banner_emoji?: string | null
+          banner_subtitle?: string | null
+          banner_title?: string | null
+          coupon_code?: string | null
+          created_at?: string
+          discount_percentage?: number
+          exit_popup_subtitle?: string | null
+          exit_popup_title?: string | null
+          id?: string
+          is_active?: boolean
+          name: string
+          scheduled_months?: number[] | null
+          slug: string
+          theme_style?: string
+          updated_at?: string
+        }
+        Update: {
+          banner_cta_emoji?: string | null
+          banner_cta_text?: string | null
+          banner_emoji?: string | null
+          banner_subtitle?: string | null
+          banner_title?: string | null
+          coupon_code?: string | null
+          created_at?: string
+          discount_percentage?: number
+          exit_popup_subtitle?: string | null
+          exit_popup_title?: string | null
+          id?: string
+          is_active?: boolean
+          name?: string
+          scheduled_months?: number[] | null
+          slug?: string
+          theme_style?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       user_roles: {
         Row: {
           id: string
