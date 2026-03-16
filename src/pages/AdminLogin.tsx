@@ -91,14 +91,11 @@ const AdminLogin = () => {
                 type="text"
                 value={identifier}
                 onChange={(e) => setIdentifier(e.target.value)}
-                placeholder="admin ou marketing@faesde.com"
+                placeholder="Usuário ou e-mail"
                 className="pl-10"
                 required
               />
             </div>
-            <p className="text-xs text-muted-foreground">
-              Use "admin" ou o e-mail cadastrado
-            </p>
           </div>
           <div className="space-y-2">
             <Label htmlFor="password">Senha</Label>
