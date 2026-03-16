@@ -5,20 +5,43 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
-import { Lock } from "lucide-react";
+import { Lock, User } from "lucide-react";
 
 const AdminLogin = () => {
-  const [email, setEmail] = useState("");
+  const [identifier, setIdentifier] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const { toast } = useToast();
+
+  const resolveEmail = async (input: string): Promise<string> => {
+    // Se o input contém @, assume que é email
+    if (input.includes("@")) {
+      return input;
+    }
+    
+    // Caso contrário, busca o email pelo username
+    const { data, error } = await supabase
+      .rpc("get_email_by_username", { _username: input });
+    
+    if (error || !data) {
+      // Fallback: se username for "admin", retorna o email conhecido
+      if (input.toLowerCase() === "admin") {
+        return "marketing@faesde.com";
+      }
+      throw new Error("Usuário não encontrado.");
+    }
+    
+    return data;
+  };
 
   const handleLogin = async (e: FormEvent) => {
     e.preventDefault();
     setLoading(true);
 
     try {
+      const email = await resolveEmail(identifier);
+      
       const { data, error } = await supabase.auth.signInWithPassword({ email, password });
       if (error) throw error;
 
@@ -60,15 +83,22 @@ const AdminLogin = () => {
 
         <form onSubmit={handleLogin} className="space-y-6">
           <div className="space-y-2">
-            <Label htmlFor="email">E-mail</Label>
-            <Input
-              id="email"
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="admin@faesde.com"
-              required
-            />
+            <Label htmlFor="identifier">Usuário ou E-mail</Label>
+            <div className="relative">
+              <User className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+              <Input
+                id="identifier"
+                type="text"
+                value={identifier}
+                onChange={(e) => setIdentifier(e.target.value)}
+                placeholder="admin ou marketing@faesde.com"
+                className="pl-10"
+                required
+              />
+            </div>
+            <p className="text-xs text-muted-foreground">
+              Use "admin" ou o e-mail cadastrado
+            </p>
           </div>
           <div className="space-y-2">
             <Label htmlFor="password">Senha</Label>
