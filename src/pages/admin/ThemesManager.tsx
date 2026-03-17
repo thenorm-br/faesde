@@ -128,13 +128,22 @@ const ThemesManager = () => {
                   )}
                 </div>
                 <div className="flex items-center gap-2">
-                  {!theme.is_active && (
+                  {!theme.is_active ? (
                     <Button
                       size="sm"
                       onClick={() => activateTheme(theme.id)}
                       disabled={saving === theme.id}
                     >
                       Ativar tema
+                    </Button>
+                  ) : (
+                    <Button
+                      size="sm"
+                      variant="destructive"
+                      onClick={() => deactivateTheme(theme.id)}
+                      disabled={saving === theme.id}
+                    >
+                      Desativar
                     </Button>
                   )}
                   <Button
