@@ -150,7 +150,7 @@ const HeroBanner = () => {
           {/* Bottom Content */}
           <div className="flex flex-col items-center gap-4">
             <p className="animate-fade-up text-lg font-semibold uppercase tracking-wider text-primary-foreground/90" style={{ animationDelay: "0.25s" }}>
-              Em todos os cursos técnicos EAD
+              {theme?.banner_bottom_text || "Em todos os cursos técnicos EAD"}
             </p>
 
             {hasDiscount && (

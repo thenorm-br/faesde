@@ -106,6 +106,7 @@ const ThemesManager = () => {
         banner_cta_emoji: theme.banner_cta_emoji,
         exit_popup_title: theme.exit_popup_title,
         exit_popup_subtitle: theme.exit_popup_subtitle,
+        banner_bottom_text: (theme as any).banner_bottom_text,
       })
       .eq("id", theme.id);
     if (error) {
