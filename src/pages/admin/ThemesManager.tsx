@@ -61,7 +61,22 @@ const ThemesManager = () => {
     setSaving(null);
   };
 
-  const updateField = (id: string, field: keyof PromotionalTheme, value: any) => {
+  const deactivateTheme = async (themeId: string) => {
+    setSaving(themeId);
+    const { error } = await supabase
+      .from("promotional_themes")
+      .update({ is_active: false })
+      .eq("id", themeId);
+    if (error) {
+      toast({ title: "Erro", description: error.message, variant: "destructive" });
+    } else {
+      toast({ title: "Tema desativado!" });
+    }
+    await fetchThemes();
+    setSaving(null);
+  };
+
+
     setThemes(prev => prev.map(t => t.id === id ? { ...t, [field]: value } : t));
   };
 
