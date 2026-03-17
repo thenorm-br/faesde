@@ -81,17 +81,17 @@ const HeroBanner = () => {
               <div className="relative">
                 {/* Christmas ornament hook and string */}
                 {style === "natal" && (
-                  <div className="absolute left-1/2 -translate-x-1/2 -top-14 flex flex-col items-center z-10">
+                  <div className="absolute left-1/2 -translate-x-1/2 -top-8 flex flex-col items-center z-10">
                     {/* Hook */}
-                    <svg width="24" height="18" viewBox="0 0 24 18" className="mb-0">
-                      <path d="M12 18 C12 10, 20 8, 20 2 C20 0, 18 -1, 16 0" fill="none" stroke="#DAA520" strokeWidth="2.5" strokeLinecap="round"/>
+                    <svg width="20" height="14" viewBox="0 0 20 14">
+                      <path d="M10 14 C10 8, 16 6, 16 2 C16 0, 14 -1, 13 0" fill="none" stroke="#DAA520" strokeWidth="2" strokeLinecap="round"/>
                     </svg>
-                    {/* Crown cap: circle on top of rectangle */}
-                    <div className="flex flex-col items-center -mt-1">
-                      {/* Small flattened circle (top of cap) */}
-                      <div className="w-5 h-2 rounded-full bg-gradient-to-b from-yellow-200 via-yellow-400 to-yellow-600 border border-yellow-700 z-10" />
-                      {/* Rectangle base of cap */}
-                      <div className="w-8 h-3 -mt-0.5 bg-gradient-to-b from-yellow-500 to-yellow-700 border border-yellow-800 rounded-b-sm" style={{ borderTop: "none" }} />
+                    {/* Crown cap: rounded cylinder + circle centered on top */}
+                    <div className="relative -mt-0.5" style={{ width: 28, height: 14 }}>
+                      {/* Rectangle base */}
+                      <div className="absolute inset-0 rounded-sm bg-gradient-to-b from-yellow-400 to-yellow-700 border border-yellow-800" />
+                      {/* Circle centered on top edge of rectangle, same width */}
+                      <div className="absolute left-0 right-0 bg-gradient-to-b from-yellow-200 via-yellow-400 to-yellow-600 border border-yellow-700 rounded-full" style={{ width: 28, height: 10, top: -5 }} />
                     </div>
                   </div>
                 )}
