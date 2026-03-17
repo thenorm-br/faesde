@@ -1,0 +1,1 @@
+ALTER TABLE public.promotional_themes ADD COLUMN IF NOT EXISTS banner_bottom_text text DEFAULT 'Em todos os cursos técnicos EAD';

@@ -157,6 +157,7 @@ export type Database = {
       }
       promotional_themes: {
         Row: {
+          banner_bottom_text: string | null
           banner_cta_emoji: string | null
           banner_cta_text: string | null
           banner_emoji: string | null
@@ -176,6 +177,7 @@ export type Database = {
           updated_at: string
         }
         Insert: {
+          banner_bottom_text?: string | null
           banner_cta_emoji?: string | null
           banner_cta_text?: string | null
           banner_emoji?: string | null
@@ -195,6 +197,7 @@ export type Database = {
           updated_at?: string
         }
         Update: {
+          banner_bottom_text?: string | null
           banner_cta_emoji?: string | null
           banner_cta_text?: string | null
           banner_emoji?: string | null

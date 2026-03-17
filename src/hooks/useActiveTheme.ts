@@ -17,6 +17,7 @@ export interface PromotionalTheme {
   banner_cta_emoji: string | null;
   exit_popup_title: string | null;
   exit_popup_subtitle: string | null;
+  banner_bottom_text: string | null;
 }
 
 export const useActiveTheme = () => {
@@ -32,8 +33,10 @@ export const useActiveTheme = () => {
         .eq("is_active", true)
         .limit(1);
 
+      let selectedTheme: PromotionalTheme | null = null;
+
       if (data && data.length > 0) {
-        setTheme(data[0] as PromotionalTheme);
+        selectedTheme = data[0] as PromotionalTheme;
       } else {
         // Fallback: find by current month schedule
         const currentMonth = new Date().getMonth() + 1;
@@ -44,19 +47,23 @@ export const useActiveTheme = () => {
           .limit(1);
 
         if (scheduled && scheduled.length > 0) {
-          setTheme(scheduled[0] as PromotionalTheme);
-        } else {
-          // Fallback to default
-          const { data: defaultTheme } = await supabase
-            .from("promotional_themes")
-            .select("*")
-            .eq("slug", "padrao")
-            .limit(1);
-          if (defaultTheme && defaultTheme.length > 0) {
-            setTheme(defaultTheme[0] as PromotionalTheme);
-          }
+          selectedTheme = scheduled[0] as PromotionalTheme;
         }
       }
+
+      // Always fallback to default theme if nothing found
+      if (!selectedTheme) {
+        const { data: defaultTheme } = await supabase
+          .from("promotional_themes")
+          .select("*")
+          .eq("slug", "padrao")
+          .limit(1);
+        if (defaultTheme && defaultTheme.length > 0) {
+          selectedTheme = defaultTheme[0] as PromotionalTheme;
+        }
+      }
+
+      setTheme(selectedTheme);
       setLoading(false);
     };
     fetchTheme();
