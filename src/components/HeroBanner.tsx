@@ -81,13 +81,18 @@ const HeroBanner = () => {
               <div className="relative">
                 {/* Christmas ornament hook and string */}
                 {style === "natal" && (
-                  <div className="absolute left-1/2 -translate-x-1/2 -top-12 flex flex-col items-center z-10">
-                    {/* Metal cap */}
-                    <div className="w-6 h-3 rounded-t-full bg-gradient-to-b from-yellow-300 to-yellow-600 border border-yellow-700" />
+                  <div className="absolute left-1/2 -translate-x-1/2 -top-14 flex flex-col items-center z-10">
                     {/* Hook */}
-                    <svg width="24" height="20" viewBox="0 0 24 20" className="-mt-1">
-                      <path d="M12 20 C12 10, 20 8, 20 2 C20 0, 18 -1, 16 0" fill="none" stroke="#DAA520" strokeWidth="2.5" strokeLinecap="round"/>
+                    <svg width="24" height="18" viewBox="0 0 24 18" className="mb-0">
+                      <path d="M12 18 C12 10, 20 8, 20 2 C20 0, 18 -1, 16 0" fill="none" stroke="#DAA520" strokeWidth="2.5" strokeLinecap="round"/>
                     </svg>
+                    {/* Crown cap: circle on top of rectangle */}
+                    <div className="flex flex-col items-center -mt-1">
+                      {/* Small flattened circle (top of cap) */}
+                      <div className="w-5 h-2 rounded-full bg-gradient-to-b from-yellow-200 via-yellow-400 to-yellow-600 border border-yellow-700 z-10" />
+                      {/* Rectangle base of cap */}
+                      <div className="w-8 h-3 -mt-0.5 bg-gradient-to-b from-yellow-500 to-yellow-700 border border-yellow-800 rounded-b-sm" style={{ borderTop: "none" }} />
+                    </div>
                   </div>
                 )}
                 {/* Non-natal top emoji */}
