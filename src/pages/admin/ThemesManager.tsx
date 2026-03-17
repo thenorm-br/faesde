@@ -42,8 +42,11 @@ const ThemesManager = () => {
 
   const activateTheme = async (themeId: string) => {
     setSaving(themeId);
-    // Deactivate all first
-    await supabase.from("promotional_themes").update({ is_active: false }).neq("id", "");
+    // Deactivate all other themes first
+    const otherIds = themes.filter(t => t.id !== themeId).map(t => t.id);
+    for (const otherId of otherIds) {
+      await supabase.from("promotional_themes").update({ is_active: false }).eq("id", otherId);
+    }
     // Activate selected
     const { error } = await supabase
       .from("promotional_themes")
