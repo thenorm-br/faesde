@@ -42,8 +42,11 @@ const ThemesManager = () => {
 
   const activateTheme = async (themeId: string) => {
     setSaving(themeId);
-    // Deactivate all first
-    await supabase.from("promotional_themes").update({ is_active: false }).neq("id", "");
+    // Deactivate all other themes first
+    const otherIds = themes.filter(t => t.id !== themeId).map(t => t.id);
+    for (const otherId of otherIds) {
+      await supabase.from("promotional_themes").update({ is_active: false }).eq("id", otherId);
+    }
     // Activate selected
     const { error } = await supabase
       .from("promotional_themes")
@@ -53,6 +56,21 @@ const ThemesManager = () => {
       toast({ title: "Erro", description: error.message, variant: "destructive" });
     } else {
       toast({ title: "Tema ativado com sucesso!" });
+    }
+    await fetchThemes();
+    setSaving(null);
+  };
+
+  const deactivateTheme = async (themeId: string) => {
+    setSaving(themeId);
+    const { error } = await supabase
+      .from("promotional_themes")
+      .update({ is_active: false })
+      .eq("id", themeId);
+    if (error) {
+      toast({ title: "Erro", description: error.message, variant: "destructive" });
+    } else {
+      toast({ title: "Tema desativado!" });
     }
     await fetchThemes();
     setSaving(null);
@@ -125,13 +143,22 @@ const ThemesManager = () => {
                   )}
                 </div>
                 <div className="flex items-center gap-2">
-                  {!theme.is_active && (
+                  {!theme.is_active ? (
                     <Button
                       size="sm"
                       onClick={() => activateTheme(theme.id)}
                       disabled={saving === theme.id}
                     >
                       Ativar tema
+                    </Button>
+                  ) : (
+                    <Button
+                      size="sm"
+                      variant="destructive"
+                      onClick={() => deactivateTheme(theme.id)}
+                      disabled={saving === theme.id}
+                    >
+                      Desativar
                     </Button>
                   )}
                   <Button
