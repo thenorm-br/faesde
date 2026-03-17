@@ -243,6 +243,18 @@ const ThemesManager = () => {
                 </div>
               </div>
 
+              {/* Bottom Text */}
+              <div className="grid grid-cols-1 gap-4">
+                <div>
+                  <Label className="mb-1.5 block">Texto inferior do Banner</Label>
+                  <Input
+                    value={(theme as any).banner_bottom_text || ""}
+                    onChange={e => updateField(theme.id, "banner_bottom_text" as any, e.target.value)}
+                    placeholder="Ex: Em todos os cursos técnicos EAD"
+                  />
+                </div>
+              </div>
+
               {/* Exit Popup Fields */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
