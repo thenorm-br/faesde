@@ -17,6 +17,7 @@ export interface PromotionalTheme {
   banner_cta_emoji: string | null;
   exit_popup_title: string | null;
   exit_popup_subtitle: string | null;
+  banner_bottom_text: string | null;
 }
 
 export const useActiveTheme = () => {
