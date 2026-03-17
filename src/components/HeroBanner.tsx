@@ -79,26 +79,64 @@ const HeroBanner = () => {
           {hasDiscount && (
             <div className="animate-scale-in relative my-4" style={{ animationDelay: "0.2s" }}>
               <div className="relative">
-                {badgeDecoEmojis.top && (
+                {/* Christmas ornament hook and string */}
+                {style === "natal" && (
+                  <div className="absolute left-1/2 -translate-x-1/2 -top-12 flex flex-col items-center z-10">
+                    {/* Metal cap */}
+                    <div className="w-6 h-3 rounded-t-full bg-gradient-to-b from-yellow-300 to-yellow-600 border border-yellow-700" />
+                    {/* Hook */}
+                    <svg width="24" height="20" viewBox="0 0 24 20" className="-mt-1">
+                      <path d="M12 20 C12 10, 20 8, 20 2 C20 0, 18 -1, 16 0" fill="none" stroke="#DAA520" strokeWidth="2.5" strokeLinecap="round"/>
+                    </svg>
+                  </div>
+                )}
+                {/* Non-natal top emoji */}
+                {style !== "natal" && badgeDecoEmojis.top && (
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2">
                     <span className="text-3xl">{badgeDecoEmojis.top}</span>
                   </div>
                 )}
                 <div
-                  className={`relative flex h-44 w-44 items-center justify-center rounded-full bg-gradient-to-br ${badgeGradient} shadow-2xl md:h-56 md:w-56`}
-                  style={{ border: "4px solid transparent", backgroundClip: "padding-box", boxShadow: badgeShadow }}
-                >
-                  <div className="absolute inset-2 rounded-full" style={{
+                  className={`relative flex items-center justify-center rounded-full shadow-2xl ${
+                    style === "natal"
+                      ? "h-48 w-48 md:h-60 md:w-60"
+                      : "h-44 w-44 md:h-56 md:w-56"
+                  }`}
+                  style={{
                     background: style === "natal"
-                      ? "linear-gradient(135deg, rgba(255,0,0,0.2), rgba(0,128,0,0.2), rgba(255,215,0,0.2))"
-                      : style === "carnaval"
-                      ? "linear-gradient(135deg, rgba(255,0,255,0.2), rgba(0,255,255,0.2), rgba(255,215,0,0.2))"
-                      : "linear-gradient(135deg, rgba(200,0,0,0.2), rgba(255,215,0,0.2))",
-                    border: "2px dashed rgba(255, 215, 0, 0.4)"
-                  }} />
-                  <div className="text-center">
-                    <span className="block text-6xl font-extrabold text-ecid-yellow drop-shadow-lg md:text-7xl">{discount}%</span>
-                    <span className="block text-sm font-bold uppercase tracking-wider text-primary-foreground">de desconto</span>
+                      ? "radial-gradient(circle at 35% 30%, rgba(255,100,100,0.9), rgba(180,0,0,0.95) 60%, rgba(100,0,0,1))"
+                      : undefined,
+                    border: style === "natal" ? "none" : "4px solid transparent",
+                    backgroundClip: style === "natal" ? undefined : "padding-box",
+                    boxShadow: style === "natal"
+                      ? "0 8px 32px rgba(0,0,0,0.4), inset 0 -8px 20px rgba(0,0,0,0.3), inset 0 8px 20px rgba(255,255,255,0.15), 0 0 60px rgba(255,0,0,0.3)"
+                      : badgeShadow,
+                  }}
+                >
+                  {/* Glossy reflection for Christmas ornament */}
+                  {style === "natal" && (
+                    <>
+                      <div className="absolute top-4 left-6 w-10 h-16 rounded-full bg-white/20 rotate-[-30deg] blur-sm" />
+                      <div className="absolute top-3 left-8 w-4 h-8 rounded-full bg-white/30 rotate-[-30deg]" />
+                      {/* Snowflake decorations on the ball */}
+                      <span className="absolute top-6 right-6 text-white/30 text-lg">❄</span>
+                      <span className="absolute bottom-8 left-8 text-white/20 text-sm">❄</span>
+                      <span className="absolute bottom-12 right-10 text-white/25 text-xs">✦</span>
+                    </>
+                  )}
+                  {/* Inner ring for non-natal */}
+                  {style !== "natal" && (
+                    <div className={`absolute inset-2 rounded-full bg-gradient-to-br ${badgeGradient}`} style={{
+                      border: "2px dashed rgba(255, 215, 0, 0.4)"
+                    }} />
+                  )}
+                  <div className="text-center relative z-10">
+                    <span className={`block font-extrabold drop-shadow-lg ${
+                      style === "natal" ? "text-white text-6xl md:text-7xl" : "text-ecid-yellow text-6xl md:text-7xl"
+                    }`}>{discount}%</span>
+                    <span className={`block text-sm font-bold uppercase tracking-wider ${
+                      style === "natal" ? "text-white/90" : "text-primary-foreground"
+                    }`}>de desconto</span>
                   </div>
                 </div>
                 {badgeDecoEmojis.topLeft && <span className="absolute -left-6 top-1/4 text-2xl animate-bounce">{badgeDecoEmojis.topLeft}</span>}
