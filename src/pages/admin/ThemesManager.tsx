@@ -76,7 +76,7 @@ const ThemesManager = () => {
     setSaving(null);
   };
 
-
+  const updateField = (id: string, field: keyof PromotionalTheme, value: any) => {
     setThemes(prev => prev.map(t => t.id === id ? { ...t, [field]: value } : t));
   };
 
