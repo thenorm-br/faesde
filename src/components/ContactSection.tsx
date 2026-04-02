@@ -122,16 +122,16 @@ const ContactSection = () => {
               autoComplete="off"
               role="form"
               method="post"
-              action="https://mautic.faesde.com.br/form/submit?formId=2"
-              id="mauticform_faesdecombr"
-              data-mautic-form="faesdecombr"
+              action="https://mautic2.faesde.com.br/form/submit?formId=3"
+              id="mauticform_formulariofaesdecombr"
+              data-mautic-form="formulariofaesdecombr"
               encType="multipart/form-data"
               onSubmit={handleSubmit}
               className="space-y-4"
             >
-              <input type="hidden" name="mauticform[formId]" id="mauticform_faesdecombr_id" value="2" />
-              <input type="hidden" name="mauticform[return]" id="mauticform_faesdecombr_return" value="https://mensagem.faesde.com.br/" />
-              <input type="hidden" name="mauticform[formName]" id="mauticform_faesdecombr_name" value="faesdecombr" />
+              <input type="hidden" name="mauticform[formId]" id="mauticform_formulariofaesdecombr_id" value="3" />
+              <input type="hidden" name="mauticform[return]" id="mauticform_formulariofaesdecombr_return" value="https://mensagem.faesde.com.br/" />
+              <input type="hidden" name="mauticform[formName]" id="mauticform_formulariofaesdecombr_name" value="formulariofaesdecombr" />
 
               <div className="grid gap-4 sm:grid-cols-2">
                 <div>
