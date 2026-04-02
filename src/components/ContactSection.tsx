@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Phone, Mail, MapPin, Clock, Send, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -10,7 +9,6 @@ const ContactSection = () => {
     nome_completo: "",
     curso_de_interesse: "",
     telefone1: "",
-    mensagem: "",
   });
   const [errors, setErrors] = useState({
     email: "",
@@ -80,10 +78,9 @@ const ContactSection = () => {
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    // Validate all fields
     const emailValid = validateEmail(formData.email);
     const nameValid = validateName(formData.nome_completo);
-    const phoneValid = !formData.telefone1 || validatePhone(formData.telefone1);
+    const phoneValid = validatePhone(formData.telefone1);
     
     setErrors({
       email: emailValid ? "" : "Email inválido (deve conter @ e domínio)",
@@ -91,12 +88,9 @@ const ContactSection = () => {
       telefone1: phoneValid ? "" : "Telefone deve ter 11 dígitos",
     });
     
-    // If validation fails, prevent form submission
     if (!emailValid || !nameValid || !phoneValid) {
       e.preventDefault();
     }
-    // If validation passes, let the form submit naturally (no e.preventDefault())
-    // The form will submit to Mautic and redirect based on the return URL
   };
 
   return (
@@ -122,14 +116,14 @@ const ContactSection = () => {
               autoComplete="off"
               role="form"
               method="post"
-              action="https://mautic2.faesde.com.br/form/submit?formId=2"
+              action="https://mautic2.faesde.com.br/form/submit?formId=3"
               id="mauticform_formulariofaesdecombr"
               data-mautic-form="formulariofaesdecombr"
               encType="multipart/form-data"
               onSubmit={handleSubmit}
               className="space-y-4"
             >
-              <input type="hidden" name="mauticform[formId]" id="mauticform_formulariofaesdecombr_id" value="2" />
+              <input type="hidden" name="mauticform[formId]" id="mauticform_formulariofaesdecombr_id" value="3" />
               <input type="hidden" name="mauticform[return]" id="mauticform_formulariofaesdecombr_return" value="https://mensagem.faesde.com.br/" />
               <input type="hidden" name="mauticform[formName]" id="mauticform_formulariofaesdecombr_name" value="formulariofaesdecombr" />
 
@@ -187,7 +181,7 @@ const ContactSection = () => {
                     htmlFor="mauticform_input_faesdecombr_telefone1"
                     className="mb-1.5 block text-sm font-medium text-foreground"
                   >
-                    Telefone
+                    Telefone *
                   </label>
                   <Input
                     type="tel"
@@ -197,6 +191,7 @@ const ContactSection = () => {
                     onChange={handlePhoneChange}
                     placeholder="(00) 00000-0000"
                     className={`h-11 ${errors.telefone1 ? "border-destructive" : ""}`}
+                    required
                   />
                   {errors.telefone1 && (
                     <p className="mt-1 text-sm text-destructive">{errors.telefone1}</p>
@@ -222,25 +217,6 @@ const ContactSection = () => {
                 </div>
               </div>
 
-              <div>
-                <label 
-                  id="mauticform_label_faesdecombr_mensagem"
-                  htmlFor="mauticform_input_faesdecombr_mensagem"
-                  className="mb-1.5 block text-sm font-medium text-foreground"
-                >
-                  Mensagem *
-                </label>
-                <Textarea
-                  name="mauticform[mensagem]"
-                  id="mauticform_input_faesdecombr_mensagem"
-                  value={formData.mensagem}
-                  onChange={(e) => setFormData(prev => ({ ...prev, mensagem: e.target.value }))}
-                  placeholder="Escreva sua mensagem..."
-                  className="min-h-[100px]"
-                  required
-                />
-              </div>
-
               <Button
                 type="submit"
                 name="mauticform[submit]"
@@ -249,7 +225,7 @@ const ContactSection = () => {
                 className="h-11 w-full rounded-lg bg-ecid-red font-semibold text-primary-foreground hover:bg-ecid-red-light"
               >
                 <Send className="mr-2 h-4 w-4" />
-                Enviar Mensagem
+                Enviar Inscrição
               </Button>
             </form>
           </div>
