@@ -118,10 +118,10 @@ const CoursesSection = () => {
     const fetchCourses = async () => {
       const { data, error } = await supabase
         .from("courses")
-        .select("id, slug, title, image_url, description, original_price, promo_price, installment, category")
+        .select("id, slug, title, image_url, description, original_price, promo_price, installment, category, hours, duration_range, certification")
         .eq("is_active", true)
         .order("title");
-      if (!error && data) setCourses(data);
+      if (!error && data) setCourses(data as Course[]);
       setLoading(false);
     };
     fetchCourses();
