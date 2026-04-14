@@ -251,15 +251,41 @@ const CursoDetalhe = () => {
           <div className="flex flex-col gap-8 lg:flex-row">
             <div className="flex-1">
               {/* Sobre o Curso */}
-              {course.about_course && (
-                <div className="mb-12">
-                  <h2 className="mb-2 text-2xl font-bold text-foreground">
-                    Sobre o curso <span className="text-ecid-red">_</span>
-                  </h2>
-                  <h3 className="mb-6 text-xl text-muted-foreground">Conheça um pouco mais sobre o curso.</h3>
-                  <p className="leading-relaxed text-muted-foreground">{course.about_course}</p>
+              <div className="mb-12">
+                <h2 className="mb-2 text-2xl font-bold text-foreground">
+                  Sobre o curso <span className="text-ecid-red">_</span>
+                </h2>
+                <h3 className="mb-6 text-xl text-muted-foreground">Conheça um pouco mais sobre o curso.</h3>
+                <p className="leading-relaxed text-muted-foreground">
+                  {course.about_course || `O ${course.title} é um programa de formação profissional autorizado pelo MEC, com carga horária de ${course.hours || 1440} horas e duração de ${course.duration_range || "6 a 18 meses"}. Este curso oferece uma formação completa e reconhecida nacionalmente, preparando o aluno para atuar com excelência no mercado de trabalho. Ao concluir o curso, o aluno receberá um diploma com validade nacional, podendo realizar o registro profissional no órgão competente.`}
+                </p>
+              </div>
+
+              {/* Por que cursar */}
+              <div className="mb-12">
+                <h2 className="mb-2 text-2xl font-bold text-foreground">
+                  Por que cursar? <span className="text-ecid-red">_</span>
+                </h2>
+                <h3 className="mb-6 text-xl text-muted-foreground">Veja os motivos para escolher este curso.</h3>
+                <div className="grid gap-4 sm:grid-cols-2">
+                  {[
+                    { icon: "🎓", title: "Autorizado pelo MEC", desc: "Formação reconhecida em todo o território nacional com validade do diploma garantida." },
+                    { icon: "⏰", title: `${course.hours || 1440}h de carga horária`, desc: `Conclua em ${course.duration_range || "6 a 18 meses"} estudando no seu próprio ritmo, 100% online.` },
+                    { icon: "📋", title: course.certification || "Certificação válida", desc: "Ao concluir, registre-se no órgão competente e atue profissionalmente em todo o Brasil." },
+                    { icon: "💻", title: "100% EAD", desc: "Estude de qualquer lugar, com acesso à plataforma digital, materiais interativos e suporte de tutores." },
+                    { icon: "📈", title: "Alta empregabilidade", desc: "Área com grande demanda no mercado de trabalho e diversas oportunidades de carreira." },
+                    { icon: "💰", title: "Investimento acessível", desc: course.installment ? `Parcelas a partir de ${course.installment} sem juros no cartão.` : "Condições facilitadas de pagamento com parcelas sem juros." },
+                  ].map((item, i) => (
+                    <div key={i} className="flex gap-3 rounded-xl bg-card p-4 shadow-card">
+                      <span className="text-2xl">{item.icon}</span>
+                      <div>
+                        <h4 className="font-bold text-foreground">{item.title}</h4>
+                        <p className="text-sm text-muted-foreground">{item.desc}</p>
+                      </div>
+                    </div>
+                  ))}
                 </div>
-              )}
+              </div>
 
               {/* O que você terá acesso */}
               {accessItems.length > 0 && (
