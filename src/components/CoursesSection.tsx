@@ -68,13 +68,21 @@ const CourseCard = ({ course }: { course: Course }) => {
 
         <div className="flex flex-1 flex-col p-5">
           <div className="mb-3 flex flex-wrap gap-2">
-            <span className="inline-flex items-center gap-1 rounded-full bg-muted px-2.5 py-1 text-xs font-medium text-muted-foreground">
-              <Calendar className="h-3 w-3" />
-              Início imediato
-            </span>
+            {course.hours && (
+              <span className="inline-flex items-center gap-1 rounded-full bg-muted px-2.5 py-1 text-xs font-medium text-muted-foreground">
+                <Clock className="h-3 w-3" />
+                {course.hours}h
+              </span>
+            )}
+            {course.duration_range && (
+              <span className="inline-flex items-center gap-1 rounded-full bg-muted px-2.5 py-1 text-xs font-medium text-muted-foreground">
+                <Calendar className="h-3 w-3" />
+                {course.duration_range}
+              </span>
+            )}
             <span className="inline-flex items-center gap-1 rounded-full bg-ecid-blue-accent/10 px-2.5 py-1 text-xs font-medium text-ecid-blue-accent">
               <BadgeCheck className="h-3 w-3" />
-              Autorizado pelo MEC
+              {course.certification || "Autorizado pelo MEC"}
             </span>
           </div>
 
