@@ -14,6 +14,9 @@ interface Course {
   promo_price: string | null;
   installment: string | null;
   category: string;
+  hours: number | null;
+  duration_range: string | null;
+  certification: string | null;
 }
 
 const CourseCard = ({ course }: { course: Course }) => {
