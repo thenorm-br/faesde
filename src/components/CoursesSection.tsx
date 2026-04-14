@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Calendar, BadgeCheck, ArrowRight, Loader2 } from "lucide-react";
+import { Calendar, BadgeCheck, ArrowRight, Loader2, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
