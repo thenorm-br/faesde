@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Calendar, BadgeCheck, ArrowRight, Loader2 } from "lucide-react";
+import { Calendar, BadgeCheck, ArrowRight, Loader2, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
@@ -14,6 +14,9 @@ interface Course {
   promo_price: string | null;
   installment: string | null;
   category: string;
+  hours: number | null;
+  duration_range: string | null;
+  certification: string | null;
 }
 
 const CourseCard = ({ course }: { course: Course }) => {
@@ -65,13 +68,21 @@ const CourseCard = ({ course }: { course: Course }) => {
 
         <div className="flex flex-1 flex-col p-5">
           <div className="mb-3 flex flex-wrap gap-2">
-            <span className="inline-flex items-center gap-1 rounded-full bg-muted px-2.5 py-1 text-xs font-medium text-muted-foreground">
-              <Calendar className="h-3 w-3" />
-              Início imediato
-            </span>
+            {course.hours && (
+              <span className="inline-flex items-center gap-1 rounded-full bg-muted px-2.5 py-1 text-xs font-medium text-muted-foreground">
+                <Clock className="h-3 w-3" />
+                {course.hours}h
+              </span>
+            )}
+            {course.duration_range && (
+              <span className="inline-flex items-center gap-1 rounded-full bg-muted px-2.5 py-1 text-xs font-medium text-muted-foreground">
+                <Calendar className="h-3 w-3" />
+                {course.duration_range}
+              </span>
+            )}
             <span className="inline-flex items-center gap-1 rounded-full bg-ecid-blue-accent/10 px-2.5 py-1 text-xs font-medium text-ecid-blue-accent">
               <BadgeCheck className="h-3 w-3" />
-              Autorizado pelo MEC
+              {course.certification || "Autorizado pelo MEC"}
             </span>
           </div>
 
@@ -115,10 +126,10 @@ const CoursesSection = () => {
     const fetchCourses = async () => {
       const { data, error } = await supabase
         .from("courses")
-        .select("id, slug, title, image_url, description, original_price, promo_price, installment, category")
+        .select("id, slug, title, image_url, description, original_price, promo_price, installment, category, hours, duration_range, certification")
         .eq("is_active", true)
         .order("title");
-      if (!error && data) setCourses(data);
+      if (!error && data) setCourses(data as Course[]);
       setLoading(false);
     };
     fetchCourses();
