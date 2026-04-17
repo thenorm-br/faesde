@@ -35,6 +35,7 @@ const CourseCard = ({ course }: { course: Course }) => {
   const getLabel = () => {
     if (course.category === "competencia") return "Certificação por Competência";
     if (course.category === "pos-tecnico") return "Pós-Técnico EAD";
+    if (course.category === "encceja") return "ENCCEJA - Ensino Médio";
     return "Curso Técnico EAD";
   };
 
@@ -190,11 +191,12 @@ const Cursos = () => {
             </div>
 
             <Tabs value={activeTab} onValueChange={handleTabChange} className="w-full md:w-auto">
-              <TabsList className="grid w-full grid-cols-4 md:w-auto">
+              <TabsList className="grid w-full grid-cols-5 md:w-auto">
                 <TabsTrigger value="todos">Todos</TabsTrigger>
                 <TabsTrigger value="extensao">Extensão</TabsTrigger>
                 <TabsTrigger value="competencia">Competência</TabsTrigger>
                 <TabsTrigger value="pos-tecnico">Pós-Técnico</TabsTrigger>
+                <TabsTrigger value="encceja">ENCCEJA</TabsTrigger>
               </TabsList>
             </Tabs>
           </div>
