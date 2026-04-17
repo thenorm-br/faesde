@@ -38,6 +38,42 @@ export type Database = {
         }
         Relationships: []
       }
+      course_audit_log: {
+        Row: {
+          action: string
+          changed_fields: Json | null
+          course_id: string
+          created_at: string
+          id: string
+          new_values: Json | null
+          old_values: Json | null
+          user_email: string | null
+          user_id: string | null
+        }
+        Insert: {
+          action: string
+          changed_fields?: Json | null
+          course_id: string
+          created_at?: string
+          id?: string
+          new_values?: Json | null
+          old_values?: Json | null
+          user_email?: string | null
+          user_id?: string | null
+        }
+        Update: {
+          action?: string
+          changed_fields?: Json | null
+          course_id?: string
+          created_at?: string
+          id?: string
+          new_values?: Json | null
+          old_values?: Json | null
+          user_email?: string | null
+          user_id?: string | null
+        }
+        Relationships: []
+      }
       courses: {
         Row: {
           about_course: string | null
