@@ -69,6 +69,9 @@ const Header = () => {
               <DropdownMenuItem asChild>
                 <Link to="/cursos?categoria=pos-tecnico">Cursos Pós-Técnicos</Link>
               </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link to="/cursos?categoria=encceja">ENCCEJA - Ensino Médio</Link>
+              </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
           
