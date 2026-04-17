@@ -70,7 +70,7 @@ const Header = () => {
                 <Link to="/cursos?categoria=pos-tecnico">Cursos Pós-Técnicos</Link>
               </DropdownMenuItem>
               <DropdownMenuItem asChild>
-                <Link to="/cursos?categoria=encceja">ENCCEJA - Ensino Médio</Link>
+                <Link to="/cursos?categoria=segundo-grau">Segundo Grau (EJA)</Link>
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>

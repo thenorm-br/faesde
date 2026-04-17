@@ -33,7 +33,7 @@ const CourseCard = ({ course }: { course: Course }) => {
   const getLabel = () => {
     if (course.category === "competencia") return "Certificação por Competência";
     if (course.category === "pos-tecnico") return "Pós-Técnico EAD";
-    if (course.category === "encceja") return "ENCCEJA - Ensino Médio";
+    if (course.category === "segundo-grau") return "EJA - Ensino Médio";
     return "Curso por Extensão EAD";
   };
 
