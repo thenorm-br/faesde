@@ -33,7 +33,7 @@ const CourseCard = ({ course }: { course: Course }) => {
   const getLabel = () => {
     if (course.category === "competencia") return "Certificação por Competência";
     if (course.category === "pos-tecnico") return "Pós-Técnico EAD";
-    return "Curso Técnico EAD";
+    return "Curso por Extensão EAD";
   };
 
   return (
@@ -135,7 +135,7 @@ const CoursesSection = () => {
     fetchCourses();
   }, []);
 
-  const technicalCourses = courses.filter(c => c.category === "tecnico");
+  const technicalCourses = courses.filter(c => c.category === "extensao");
   const certificationCourses = courses.filter(c => c.category === "competencia");
   const postTechnicalCourses = courses.filter(c => c.category === "pos-tecnico");
 
@@ -157,10 +157,10 @@ const CoursesSection = () => {
           <div className="mb-16">
             <div className="mb-8 flex items-center justify-between">
               <h2 className="text-2xl font-bold text-foreground md:text-3xl">
-                Cursos Técnicos <span className="underline decoration-ecid-blue-accent decoration-4 underline-offset-4">EAD</span>
+                Cursos por <span className="underline decoration-ecid-blue-accent decoration-4 underline-offset-4">Extensão</span> EAD
               </h2>
               <Link
-                to="/cursos?categoria=tecnico"
+                to="/cursos?categoria=extensao"
                 className="hidden items-center gap-1 text-sm font-semibold text-ecid-blue-accent hover:underline sm:flex"
               >
                 Ver todos
@@ -175,7 +175,7 @@ const CoursesSection = () => {
             </div>
 
             <div className="mt-6 text-center sm:hidden">
-              <Link to="/cursos?categoria=tecnico">
+              <Link to="/cursos?categoria=extensao">
                 <Button variant="outline" className="rounded-lg font-semibold">
                   Ver todos os cursos
                 </Button>
