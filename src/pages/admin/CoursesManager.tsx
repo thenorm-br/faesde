@@ -370,7 +370,7 @@ const CoursesManager = () => {
                       <option value="extensao">Curso por Extensão</option>
                       <option value="competencia">Certificação por Competência</option>
                       <option value="pos-tecnico">Pós-Técnico</option>
-                      <option value="encceja">ENCCEJA - Ensino Médio</option>
+                      <option value="segundo-grau">Segundo Grau (EJA)</option>
                     </select>
                   </div>
                 </div>
