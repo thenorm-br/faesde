@@ -192,7 +192,7 @@ const Cursos = () => {
             <Tabs value={activeTab} onValueChange={handleTabChange} className="w-full md:w-auto">
               <TabsList className="grid w-full grid-cols-4 md:w-auto">
                 <TabsTrigger value="todos">Todos</TabsTrigger>
-                <TabsTrigger value="tecnico">Técnicos</TabsTrigger>
+                <TabsTrigger value="extensao">Extensão</TabsTrigger>
                 <TabsTrigger value="competencia">Competência</TabsTrigger>
                 <TabsTrigger value="pos-tecnico">Pós-Técnico</TabsTrigger>
               </TabsList>

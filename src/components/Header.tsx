@@ -61,7 +61,7 @@ const Header = () => {
                 <Link to="/cursos">Todos os Cursos</Link>
               </DropdownMenuItem>
               <DropdownMenuItem asChild>
-                <Link to="/cursos?categoria=tecnico">Cursos Técnicos EAD</Link>
+                <Link to="/cursos?categoria=extensao">Cursos por Extensão EAD</Link>
               </DropdownMenuItem>
               <DropdownMenuItem asChild>
                 <Link to="/cursos?categoria=competencia">Certificação por Competência</Link>
@@ -153,7 +153,7 @@ const Header = () => {
               Todos os Cursos
             </Link>
             <Link
-              to="/cursos?categoria=tecnico"
+              to="/cursos?categoria=extensao"
               className="rounded-lg px-4 py-2.5 text-sm font-medium text-primary-foreground/80 transition-colors hover:bg-primary-foreground/10 hover:text-primary-foreground"
               onClick={() => setIsMenuOpen(false)}
             >

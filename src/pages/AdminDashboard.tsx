@@ -49,7 +49,7 @@ const emptyCourse = {
   title: "",
   subtitle: "",
   description: "",
-  category: "tecnico",
+  category: "extensao",
   original_price: "",
   promo_price: "",
   installment: "",
@@ -321,7 +321,7 @@ const AdminDashboard = () => {
                     value={editingCourse.category}
                     onChange={(e) => setEditingCourse({ ...editingCourse, category: e.target.value })}
                   >
-                    <option value="tecnico">Curso Técnico</option>
+                    <option value="extensao">Curso por Extensão</option>
                     <option value="competencia">Certificação por Competência</option>
                     <option value="pos-tecnico">Pós-Técnico</option>
                   </select>
