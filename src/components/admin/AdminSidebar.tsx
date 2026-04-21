@@ -5,6 +5,7 @@ import {
   GraduationCap,
   FolderOpen,
   Palette,
+  FolderTree,
   Settings,
   LogOut,
 } from "lucide-react";
@@ -28,6 +29,7 @@ const menuItems = [
   { title: "Cursos", url: "/admin/cursos", icon: GraduationCap },
   { title: "Categorias", url: "/admin/categorias", icon: FolderOpen },
   { title: "Temas", url: "/admin/temas", icon: Palette },
+  { title: "Arquivos EAD", url: "/admin/arquivos", icon: FolderTree },
   { title: "Configurações", url: "/admin/configuracoes", icon: Settings },
 ];
 

@@ -13,6 +13,7 @@ import Dashboard from "./pages/admin/Dashboard";
 import CoursesManager from "./pages/admin/CoursesManager";
 import CategoriesManager from "./pages/admin/CategoriesManager";
 import ThemesManager from "./pages/admin/ThemesManager";
+import FilesManager from "./pages/admin/FilesManager";
 import SettingsPage from "./pages/admin/SettingsPage";
 import NotFound from "./pages/NotFound";
 
@@ -35,6 +36,7 @@ const App = () => (
             <Route path="cursos" element={<CoursesManager />} />
             <Route path="categorias" element={<CategoriesManager />} />
             <Route path="temas" element={<ThemesManager />} />
+            <Route path="arquivos" element={<FilesManager />} />
             <Route path="configuracoes" element={<SettingsPage />} />
           </Route>
           {/* Redirect old admin routes */}
