@@ -483,25 +483,36 @@ const CoursesManager = () => {
                 </div>
 
                 <div className="grid grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <Label>URL da Imagem</Label>
-                    <Input value={editingCourse.image_url || ""} onChange={(e) => setEditingCourse({ ...editingCourse, image_url: e.target.value })} />
-                    {editingCourse.image_url && (
-                      <img src={editingCourse.image_url} alt="Preview" className="mt-2 h-20 w-32 rounded object-cover" />
-                    )}
-                  </div>
-                  <div className="space-y-2">
-                    <Label>URL do Banner</Label>
-                    <Input value={editingCourse.banner_image_url || ""} onChange={(e) => setEditingCourse({ ...editingCourse, banner_image_url: e.target.value })} />
-                    {editingCourse.banner_image_url && (
-                      <img src={editingCourse.banner_image_url} alt="Preview" className="mt-2 h-20 w-32 rounded object-cover" />
-                    )}
-                  </div>
+                  <ImageUrlField
+                    label="URL da Imagem"
+                    value={editingCourse.image_url || ""}
+                    onChange={(v) => setEditingCourse({ ...editingCourse, image_url: v })}
+                    pathPrefix="thumbnails"
+                  />
+                  <ImageUrlField
+                    label="URL do Banner"
+                    value={editingCourse.banner_image_url || ""}
+                    onChange={(v) => setEditingCourse({ ...editingCourse, banner_image_url: v })}
+                    pathPrefix="banners"
+                  />
                 </div>
 
                 <div className="space-y-2">
                   <Label>YouTube Video ID</Label>
                   <Input value={editingCourse.youtube_video_id || ""} onChange={(e) => setEditingCourse({ ...editingCourse, youtube_video_id: e.target.value })} />
+                </div>
+
+                <div className="space-y-2">
+                  <Label>Sobre o Curso</Label>
+                  <Textarea
+                    value={editingCourse.about_course || ""}
+                    onChange={(e) => setEditingCourse({ ...editingCourse, about_course: e.target.value })}
+                    rows={8}
+                    placeholder="Texto exibido na seção 'Sobre o Curso' da página pública. Use linhas em branco para separar parágrafos."
+                  />
+                  <p className="text-xs text-muted-foreground">
+                    Parágrafos separados por linha em branco. Suporte a formatação rica pode ser adicionado futuramente.
+                  </p>
                 </div>
 
                 <div className="flex items-center gap-2">
