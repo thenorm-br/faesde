@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import { Search, ArrowLeft, Calendar, BadgeCheck, Loader2 } from "lucide-react";
+import { useState, useEffect, useMemo } from "react";
+import { Search, ArrowLeft, Calendar, BadgeCheck, Loader2, X } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -8,6 +8,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { supabase } from "@/integrations/supabase/client";
+import { scoreCourse, getRelatedKeywords } from "@/lib/courseSearch";
 
 interface Course {
   id: string;
@@ -151,11 +152,20 @@ const Cursos = () => {
     setSearchParams(newParams);
   };
 
-  const filteredCourses = courses.filter((course) => {
-    const matchesSearch = course.title.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesCategory = activeTab === "todos" || course.category === activeTab;
-    return matchesSearch && matchesCategory;
-  });
+  const filteredCourses = useMemo(() => {
+    const byCategory = courses.filter(
+      (c) => activeTab === "todos" || c.category === activeTab
+    );
+    const q = searchTerm.trim();
+    if (!q) return byCategory;
+    return byCategory
+      .map((c) => ({ c, s: scoreCourse(c, q) }))
+      .filter((x) => x.s > 0)
+      .sort((a, b) => b.s - a.s)
+      .map((x) => x.c);
+  }, [courses, activeTab, searchTerm]);
+
+  const relatedKeywords = useMemo(() => getRelatedKeywords(searchTerm), [searchTerm]);
 
   return (
     <div className="min-h-screen bg-background">
@@ -188,6 +198,16 @@ const Cursos = () => {
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="h-12 w-full rounded-xl border-border bg-card pl-12 pr-4 text-base shadow-sm"
               />
+              {searchTerm && (
+                <button
+                  type="button"
+                  onClick={() => setSearchTerm("")}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full p-1 text-muted-foreground hover:bg-muted"
+                  aria-label="Limpar busca"
+                >
+                  <X className="h-4 w-4" />
+                </button>
+              )}
             </div>
 
             <Tabs value={activeTab} onValueChange={handleTabChange} className="w-full md:w-auto">
@@ -207,6 +227,29 @@ const Cursos = () => {
             </div>
           ) : (
             <>
+              {searchTerm && (
+                <p className="mb-4 text-sm text-muted-foreground">
+                  {filteredCourses.length} resultado{filteredCourses.length === 1 ? "" : "s"} para{" "}
+                  <span className="font-semibold text-foreground">"{searchTerm}"</span>
+                </p>
+              )}
+
+              {searchTerm && relatedKeywords.length > 0 && (
+                <div className="mb-6 flex flex-wrap items-center gap-2">
+                  <span className="text-sm text-muted-foreground">Relacionados:</span>
+                  {relatedKeywords.map((kw) => (
+                    <button
+                      key={kw}
+                      type="button"
+                      onClick={() => setSearchTerm(kw)}
+                      className="rounded-full border border-border bg-card px-3 py-1 text-xs font-medium text-foreground transition-colors hover:bg-ecid-blue-accent hover:text-primary-foreground"
+                    >
+                      {kw}
+                    </button>
+                  ))}
+                </div>
+              )}
+
               <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                 {filteredCourses.map((course) => (
                   <CourseCard key={course.id} course={course} />
@@ -215,8 +258,11 @@ const Cursos = () => {
 
               {filteredCourses.length === 0 && (
                 <div className="py-12 text-center">
-                  <p className="text-muted-foreground">
+                  <p className="mb-2 text-muted-foreground">
                     Nenhum curso encontrado para "{searchTerm}"
+                  </p>
+                  <p className="text-sm text-muted-foreground">
+                    Tente termos como: enfermagem, estética, informática, segurança, gastronomia
                   </p>
                 </div>
               )}
