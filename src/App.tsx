@@ -41,6 +41,7 @@ const App = () => (
             <Route path="temas" element={<ThemesManager />} />
             <Route path="arquivos" element={<FilesManager />} />
             <Route path="configuracoes" element={<SettingsPage />} />
+            <Route path="certificados" element={<CertificatesManager />} />
           </Route>
           {/* Redirect old admin routes */}
           <Route path="/faesde-administration" element={<Navigate to="/admin/login" replace />} />
