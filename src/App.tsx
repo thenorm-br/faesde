@@ -32,6 +32,7 @@ const App = () => (
           <Route path="/faq" element={<FAQ />} />
           <Route path="/cursos" element={<Cursos />} />
           <Route path="/curso/:id" element={<CursoDetalhe />} />
+          <Route path="/certificados/:code" element={<CertificadoPublico />} />
           <Route path="/admin/login" element={<AdminLogin />} />
           <Route path="/admin" element={<AdminLayout />}>
             <Route index element={<Dashboard />} />
