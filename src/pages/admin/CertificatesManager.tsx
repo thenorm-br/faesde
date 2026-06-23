@@ -59,7 +59,7 @@ const generateCode = () => {
 };
 
 const buildCertUrl = (code: string) =>
-  `${window.location.origin}/certificados/${code}`;
+  `https://www.faesde.com.br/certificados/${code}`;
 
 const CertificatesManager = () => {
   const [list, setList] = useState<Certificate[]>([]);
