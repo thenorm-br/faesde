@@ -15,6 +15,8 @@ import CategoriesManager from "./pages/admin/CategoriesManager";
 import ThemesManager from "./pages/admin/ThemesManager";
 import FilesManager from "./pages/admin/FilesManager";
 import SettingsPage from "./pages/admin/SettingsPage";
+import CertificatesManager from "./pages/admin/CertificatesManager";
+import CertificadoPublico from "./pages/CertificadoPublico";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -30,6 +32,7 @@ const App = () => (
           <Route path="/faq" element={<FAQ />} />
           <Route path="/cursos" element={<Cursos />} />
           <Route path="/curso/:id" element={<CursoDetalhe />} />
+          <Route path="/certificados/:code" element={<CertificadoPublico />} />
           <Route path="/admin/login" element={<AdminLogin />} />
           <Route path="/admin" element={<AdminLayout />}>
             <Route index element={<Dashboard />} />
@@ -38,6 +41,7 @@ const App = () => (
             <Route path="temas" element={<ThemesManager />} />
             <Route path="arquivos" element={<FilesManager />} />
             <Route path="configuracoes" element={<SettingsPage />} />
+            <Route path="certificados" element={<CertificatesManager />} />
           </Route>
           {/* Redirect old admin routes */}
           <Route path="/faesde-administration" element={<Navigate to="/admin/login" replace />} />

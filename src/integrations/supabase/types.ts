@@ -38,6 +38,57 @@ export type Database = {
         }
         Relationships: []
       }
+      certificates: {
+        Row: {
+          book_number: string | null
+          code: string
+          completion_date: string
+          course_name: string
+          course_slug: string | null
+          cpf: string | null
+          created_at: string
+          hours: number
+          id: string
+          institution: string | null
+          is_active: boolean
+          page_number: string | null
+          student_name: string
+          updated_at: string
+        }
+        Insert: {
+          book_number?: string | null
+          code: string
+          completion_date?: string
+          course_name: string
+          course_slug?: string | null
+          cpf?: string | null
+          created_at?: string
+          hours?: number
+          id?: string
+          institution?: string | null
+          is_active?: boolean
+          page_number?: string | null
+          student_name: string
+          updated_at?: string
+        }
+        Update: {
+          book_number?: string | null
+          code?: string
+          completion_date?: string
+          course_name?: string
+          course_slug?: string | null
+          cpf?: string | null
+          created_at?: string
+          hours?: number
+          id?: string
+          institution?: string | null
+          is_active?: boolean
+          page_number?: string | null
+          student_name?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       course_audit_log: {
         Row: {
           action: string
