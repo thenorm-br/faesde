@@ -15,6 +15,8 @@ import CategoriesManager from "./pages/admin/CategoriesManager";
 import ThemesManager from "./pages/admin/ThemesManager";
 import FilesManager from "./pages/admin/FilesManager";
 import SettingsPage from "./pages/admin/SettingsPage";
+import CertificatesManager from "./pages/admin/CertificatesManager";
+import CertificadoPublico from "./pages/CertificadoPublico";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
