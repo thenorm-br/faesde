@@ -22,7 +22,7 @@ import {
 } from "@/components/ui/table";
 import { toast } from "sonner";
 import { Plus, Copy, QrCode, Pencil, Trash2, ExternalLink, Download, RefreshCw, FileDown } from "lucide-react";
-import { emitCertificateDocx } from "@/lib/certificateEmitter";
+import { emitCertificatePdf } from "@/lib/certificatePdf";
 
 interface Certificate {
   id: string;
