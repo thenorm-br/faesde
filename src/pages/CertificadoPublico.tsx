@@ -67,12 +67,24 @@ const CertificadoPublico = () => {
           </div>
         ) : (
           <div className="bg-card rounded-lg p-8 md:p-10 border shadow-sm">
-            <h1 className="text-3xl md:text-4xl font-extrabold uppercase">
-              Certificado de {cert.student_name}
-            </h1>
-            <p className="text-muted-foreground mt-2">
-              Consulta realizada em {consultaStr}
-            </p>
+            <div className="flex items-start justify-between gap-4 flex-wrap">
+              <div>
+                <h1 className="text-3xl md:text-4xl font-extrabold uppercase">
+                  Certificado de {cert.student_name}
+                </h1>
+                <p className="text-muted-foreground mt-2">
+                  Consulta realizada em {consultaStr}
+                </p>
+              </div>
+              <Button
+                onClick={async () => {
+                  try { await emitCertificatePdf(cert as any); toast.success("PDF gerado"); }
+                  catch (e: any) { toast.error(e?.message || "Erro ao gerar PDF"); }
+                }}
+              >
+                <Download className="mr-2 h-4 w-4" /> Baixar PDF
+              </Button>
+            </div>
 
             <div className="my-6 space-y-2 text-base">
               <p className="flex items-center gap-2">
