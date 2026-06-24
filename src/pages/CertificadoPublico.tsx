@@ -3,7 +3,11 @@ import { useParams, Link } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { GraduationCap, Monitor, Barcode, Loader2 } from "lucide-react";
+import { GraduationCap, Monitor, Barcode, Loader2, Download } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { emitCertificatePdf } from "@/lib/certificatePdf";
+import { toast } from "sonner";
+import { useState as useDlState } from "react";
 
 interface Certificate {
   code: string;
