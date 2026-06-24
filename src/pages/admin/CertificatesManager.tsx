@@ -22,7 +22,7 @@ import {
 } from "@/components/ui/table";
 import { toast } from "sonner";
 import { Plus, Copy, QrCode, Pencil, Trash2, ExternalLink, Download, RefreshCw, FileDown } from "lucide-react";
-import { emitCertificateDocx } from "@/lib/certificateEmitter";
+import { emitCertificatePdf } from "@/lib/certificatePdf";
 
 interface Certificate {
   id: string;
@@ -226,9 +226,9 @@ const CertificatesManager = () => {
                     <Button size="icon" variant="ghost" title="Abrir página" onClick={() => window.open(buildCertUrl(c.code), "_blank")}>
                       <ExternalLink className="h-4 w-4" />
                     </Button>
-                    <Button size="icon" variant="ghost" title="Baixar .docx" onClick={async () => {
-                      try { await emitCertificateDocx(c); toast.success("Certificado gerado"); }
-                      catch (e: any) { toast.error(e?.message || "Erro ao gerar"); }
+                    <Button size="icon" variant="ghost" title="Baixar PDF" onClick={async () => {
+                      try { await emitCertificatePdf(c); toast.success("PDF gerado"); }
+                      catch (e: any) { toast.error(e?.message || "Erro ao gerar PDF"); }
                     }}>
                       <FileDown className="h-4 w-4" />
                     </Button>
