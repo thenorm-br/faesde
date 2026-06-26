@@ -281,8 +281,8 @@ export async function emitCertificatePdf(c: CertificatePdfData) {
   pdf.setFont("helvetica", "bold");
   if (c.cpf) pdf.text(`CPF: ${c.cpf}`, aluX, 253, { align: "center" });
 
-  // QR Code (bottom-left) — ~x=12, y=263, size 28mm
-  pdf.addImage(qrDataUrl, "PNG", 12, 263, 28, 28);
+  // QR Code (bottom-left, matching original position) ~x=15, y=245, size 22mm
+  pdf.addImage(qrDataUrl, "PNG", 15, 245, 22, 22);
 
   // -------- PAGE 2 --------
   pdf.addPage();
