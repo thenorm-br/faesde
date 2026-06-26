@@ -1,4 +1,3 @@
-import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 import QRCode from "qrcode";
 
@@ -39,143 +38,290 @@ export interface CertificatePdfData {
   content?: string | null;
 }
 
-// A4 @ 96dpi
-const W = 794;
-const H = 1123;
+const loadImage = (url: string): Promise<HTMLImageElement> =>
+  new Promise((resolve, reject) => {
+    const img = new Image();
+    img.crossOrigin = "anonymous";
+    img.onload = () => resolve(img);
+    img.onerror = reject;
+    img.src = url;
+  });
 
-const bgStyle = `position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;`;
-
-const buildPage1Html = (c: CertificatePdfData, qrDataUrl: string) => {
-  const nomeUpper = (c.student_name || "").toLocaleUpperCase("pt-BR");
-  const nomeTitle = toTitleCasePt(c.student_name);
-  const cursoTitle = toTitleCasePt(c.course_name);
-  const extenso = formatDateExtenso(c.completion_date);
-  const dataBR = formatDateBR(c.completion_date);
-
-  return `
-    <div style="position:relative;width:${W}px;height:${H}px;background:#fff;font-family:Arial,Helvetica,sans-serif;color:#0a0a0a;overflow:hidden;">
-      <img src="/certificado/image7.png" style="${bgStyle}" crossorigin="anonymous" />
-      <div style="position:absolute;inset:0;z-index:1;padding:170px 90px 90px 90px;box-sizing:border-box;display:flex;flex-direction:column;">
-        <h1 style="font-size:54px;font-weight:800;margin:0 0 6px 0;letter-spacing:0.5px;color:#0a1a40;">Certificamos</h1>
-        <p style="font-size:15px;margin:14px 0 0 0;line-height:1.55;text-align:justify;">
-          que <strong style="text-transform:uppercase;">${nomeUpper}</strong>${
-    c.cpf ? `, portador(a) do CPF <strong>${c.cpf}</strong>,` : ","
-  } concluiu com êxito o curso livre de aperfeiçoamento:
-        </p>
-        <h2 style="font-size:26px;font-weight:700;margin:22px 0 0 0;color:#0a1a40;text-align:center;">${cursoTitle}</h2>
-        <p style="font-size:15px;margin:22px 0 0 0;line-height:1.55;text-align:justify;">
-          Com carga horária de <strong>${c.hours} horas</strong>, concluído em <strong>${dataBR}</strong>, nos termos do Decreto Presidencial nº 5.154, de 23 de julho de 2004, Art 1º e 3º e de acordo com as normas do Ministério da Educação (MEC) pela resolução CNE nº 04/99, Art 11.
-        </p>
-        <p style="font-size:13px;margin:18px 0 0 0;line-height:1.55;text-align:justify;text-transform:uppercase;">
-          O presente documento foi registrado sob o número <strong>${c.code}</strong>${
-    c.page_number ? `, em folha <strong>${c.page_number}</strong>` : ""
-  }${c.book_number ? ` do livro nº <strong>${c.book_number}</strong>` : ""} desta instituição de ensino.
-        </p>
-
-        <div style="margin-top:auto;display:flex;align-items:flex-end;justify-content:space-between;gap:24px;">
-          <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
-            <img src="${qrDataUrl}" style="width:110px;height:110px;" />
-            <div style="display:flex;gap:8px;align-items:center;">
-              <img src="/certificado/image5.png" style="width:64px;height:auto;" crossorigin="anonymous" />
-              <img src="/certificado/image4.jpeg" style="width:64px;height:auto;" crossorigin="anonymous" />
-            </div>
-          </div>
-          <div style="text-align:center;flex:1;">
-            <p style="font-size:13px;margin:0;line-height:1.4;">${extenso}</p>
-            <div style="margin-top:30px;display:flex;flex-direction:column;align-items:center;">
-              <img src="/certificado/image3.png" style="width:230px;height:auto;" crossorigin="anonymous" />
-              <div style="border-top:1px solid #000;width:260px;margin-top:-6px;padding-top:4px;font-size:12px;line-height:1.35;">
-                Cleide Divino Silva Santos<br/>
-                Diretor(a) – Faesde EAD<br/>
-                CNPJ: 21.819.091/0001-61
-              </div>
-            </div>
-          </div>
-          <div style="width:120px;"></div>
-        </div>
-      </div>
-    </div>
-  `;
+const imgToDataUrl = (img: HTMLImageElement): string => {
+  const c = document.createElement("canvas");
+  c.width = img.naturalWidth;
+  c.height = img.naturalHeight;
+  c.getContext("2d")!.drawImage(img, 0, 0);
+  return c.toDataURL("image/jpeg", 0.9);
 };
 
-const buildPage2Html = (c: CertificatePdfData) => {
-  const nomeTitle = toTitleCasePt(c.student_name);
-  const cursoTitle = toTitleCasePt(c.course_name);
-  const conteudo = (c.content || "").trim() || "Conteúdo programático não informado.";
+// A4 in mm
+const PW = 210;
+const PH = 297;
 
-  return `
-    <div style="position:relative;width:${W}px;height:${H}px;background:#fff;font-family:Arial,Helvetica,sans-serif;color:#0a0a0a;overflow:hidden;">
-      <img src="/certificado/image7.png" style="${bgStyle}" crossorigin="anonymous" />
-      <div style="position:absolute;inset:0;z-index:1;padding:200px 100px 110px 100px;box-sizing:border-box;display:flex;flex-direction:column;">
-        <div style="font-size:14px;line-height:1.7;">
-          <div><strong>Curso:</strong> ${cursoTitle}</div>
-          <div><strong>Nome:</strong> ${nomeTitle}</div>
-          <div><strong>Carga Horária:</strong> ${c.hours} horas</div>
-          <div><strong>Número do Certificado:</strong> <span style="color:#c0392b;">${c.code}</span></div>
-        </div>
-        <h2 style="text-align:center;margin:28px 0 14px 0;font-size:18px;letter-spacing:1px;">CONTEÚDO PROGRAMÁTICO</h2>
-        <div style="font-size:13px;line-height:1.65;white-space:pre-wrap;text-align:justify;flex:1;">${conteudo.replace(/[<>]/g, "")}</div>
+// Draw bold/regular runs on the same line (with optional justification)
+type Run = { text: string; bold?: boolean };
 
-        <div style="margin-top:auto;text-align:center;">
-          <img src="/certificado/image3.png" style="width:230px;height:auto;" crossorigin="anonymous" />
-          <div style="border-top:1px solid #000;width:260px;margin:-6px auto 0 auto;padding-top:4px;font-size:12px;line-height:1.35;">
-            Cleide Divino Silva Santos<br/>
-            Diretor(a) – Faesde EAD<br/>
-            CNPJ: 21.819.091/0001-61
-          </div>
-        </div>
-      </div>
-    </div>
-  `;
+const drawRuns = (
+  pdf: jsPDF,
+  runs: Run[],
+  x: number,
+  y: number,
+  maxWidth: number,
+  lineHeight: number,
+  align: "left" | "center" | "right" | "justify" = "left",
+  fontSize = 10
+) => {
+  pdf.setFontSize(fontSize);
+  // Flatten runs into tokens (word + leading space + bold flag)
+  type Tok = { word: string; bold: boolean };
+  const tokens: Tok[] = [];
+  runs.forEach((r) => {
+    const parts = r.text.split(/(\s+)/);
+    let buf = "";
+    parts.forEach((p) => {
+      if (/\s+/.test(p)) {
+        if (buf) {
+          tokens.push({ word: buf, bold: !!r.bold });
+          buf = "";
+        }
+      } else {
+        buf += p;
+      }
+    });
+    if (buf) tokens.push({ word: buf, bold: !!r.bold });
+  });
+
+  const wordWidth = (t: Tok) => {
+    pdf.setFont("helvetica", t.bold ? "bold" : "normal");
+    return pdf.getTextWidth(t.word);
+  };
+  const spaceW = () => {
+    pdf.setFont("helvetica", "normal");
+    return pdf.getTextWidth(" ");
+  };
+
+  // Build lines
+  const lines: Tok[][] = [];
+  let line: Tok[] = [];
+  let lineW = 0;
+  const sw = spaceW();
+  tokens.forEach((t) => {
+    const w = wordWidth(t);
+    const need = line.length ? lineW + sw + w : w;
+    if (need > maxWidth && line.length) {
+      lines.push(line);
+      line = [t];
+      lineW = w;
+    } else {
+      if (line.length) lineW += sw + w;
+      else lineW = w;
+      line.push(t);
+    }
+  });
+  if (line.length) lines.push(line);
+
+  lines.forEach((ln, idx) => {
+    const yy = y + idx * lineHeight;
+    const isLast = idx === lines.length - 1;
+    const widths = ln.map(wordWidth);
+    const totalWords = widths.reduce((a, b) => a + b, 0);
+    const gaps = ln.length - 1;
+
+    if (align === "justify" && !isLast && gaps > 0) {
+      const gap = (maxWidth - totalWords) / gaps;
+      let cx = x;
+      ln.forEach((t, i) => {
+        pdf.setFont("helvetica", t.bold ? "bold" : "normal");
+        pdf.text(t.word, cx, yy);
+        cx += widths[i] + gap;
+      });
+    } else {
+      const total = totalWords + gaps * sw;
+      let cx = x;
+      if (align === "center") cx = x + (maxWidth - total) / 2;
+      else if (align === "right") cx = x + (maxWidth - total);
+      ln.forEach((t, i) => {
+        pdf.setFont("helvetica", t.bold ? "bold" : "normal");
+        pdf.text(t.word, cx, yy);
+        cx += widths[i] + (i < ln.length - 1 ? sw : 0);
+      });
+    }
+  });
+
+  return lines.length * lineHeight;
 };
-
-const waitImages = (root: HTMLElement) =>
-  Promise.all(
-    Array.from(root.querySelectorAll("img")).map(
-      (img) =>
-        new Promise<void>((resolve) => {
-          if ((img as HTMLImageElement).complete) resolve();
-          else {
-            img.addEventListener("load", () => resolve());
-            img.addEventListener("error", () => resolve());
-          }
-        })
-    )
-  );
 
 export async function emitCertificatePdf(c: CertificatePdfData) {
+  const nomeUpper = (c.student_name || "").toLocaleUpperCase("pt-BR");
+  const nomeTitle = toTitleCasePt(c.student_name);
+  const cursoUpper = (c.course_name || "").toLocaleUpperCase("pt-BR");
+  const cursoTitle = toTitleCasePt(c.course_name);
+  const hoursStr = `${c.hours} HORAS`;
+  const dataBR = formatDateBR(c.completion_date);
+  const extenso = formatDateExtenso(c.completion_date);
+
   const publicUrl = `https://www.faesde.com.br/certificados/${c.code}`;
-  const qrDataUrl = await QRCode.toDataURL(publicUrl, { width: 300, margin: 1 });
+  const qrDataUrl = await QRCode.toDataURL(publicUrl, { width: 400, margin: 1 });
 
-  const host = document.createElement("div");
-  host.style.cssText = `position:fixed;left:-99999px;top:0;width:${W}px;height:${H * 2 + 40}px;`;
-  host.innerHTML = `
-    <div data-page="1">${buildPage1Html(c, qrDataUrl)}</div>
-    <div data-page="2" style="margin-top:40px;">${buildPage2Html(c)}</div>
-  `;
-  document.body.appendChild(host);
+  const [bg1, bg2] = await Promise.all([
+    loadImage("/certificado/bg-page1.jpg"),
+    loadImage("/certificado/bg-page2.jpg"),
+  ]);
+  const bg1Url = imgToDataUrl(bg1);
+  const bg2Url = imgToDataUrl(bg2);
 
-  try {
-    await waitImages(host);
-    await new Promise((r) => setTimeout(r, 100));
+  const pdf = new jsPDF({ unit: "mm", format: "a4", orientation: "portrait" });
 
-    const page1El = host.querySelector('[data-page="1"]') as HTMLElement;
-    const page2El = host.querySelector('[data-page="2"]') as HTMLElement;
+  // -------- PAGE 1 --------
+  pdf.addImage(bg1Url, "JPEG", 0, 0, PW, PH);
+  pdf.setTextColor(0, 0, 0);
 
-    const opts = { scale: 2, useCORS: true, backgroundColor: "#ffffff", logging: false };
-    const canvas1 = await html2canvas(page1El, opts);
-    const canvas2 = await html2canvas(page2El, opts);
+  // Body paragraph 1 (justified)
+  // text area: x=40, width=130 mm, start y~92mm
+  const bodyX = 40;
+  const bodyW = 130;
+  let cy = 92;
 
-    const pdf = new jsPDF({ unit: "mm", format: "a4", orientation: "portrait" });
-    const pageW = pdf.internal.pageSize.getWidth();
-    const pageH = pdf.internal.pageSize.getHeight();
+  drawRuns(
+    pdf,
+    [
+      { text: "Certificamos para os devidos fins, que " },
+      { text: nomeUpper, bold: true },
+      ...(c.cpf
+        ? ([{ text: " portador(a) do " }, { text: `CPF: ${c.cpf}`, bold: true }] as Run[])
+        : []),
+      { text: " concluiu com êxito o curso livre de aperfeiçoamento:" },
+    ],
+    bodyX,
+    cy,
+    bodyW,
+    5.5,
+    "justify",
+    11
+  );
 
-    pdf.addImage(canvas1.toDataURL("image/jpeg", 0.92), "JPEG", 0, 0, pageW, pageH);
-    pdf.addPage();
-    pdf.addImage(canvas2.toDataURL("image/jpeg", 0.92), "JPEG", 0, 0, pageW, pageH);
+  // Course title (centered, bold)
+  cy = 124;
+  pdf.setFont("helvetica", "bold");
+  pdf.setFontSize(18);
+  const courseLines = pdf.splitTextToSize(cursoUpper, bodyW);
+  courseLines.forEach((line: string, i: number) => {
+    pdf.text(line, PW / 2, cy + i * 8, { align: "center" });
+  });
 
-    pdf.save(`certificado-${c.code}.pdf`);
-  } finally {
-    document.body.removeChild(host);
-  }
+  // Body paragraph 2 (justified)
+  cy = 152;
+  drawRuns(
+    pdf,
+    [
+      { text: "Em " },
+      { text: dataBR, bold: true },
+      { text: " com carga horária de " },
+      { text: hoursStr, bold: true },
+      {
+        text:
+          ", nos termos do Decreto Presidencial nº 5.154, de 23 de julho de 2004, Art 1º e 3º e de acordo com as normas do Ministério da Educação (MEC) pela resolução CNE nº 04/99, Art 11.",
+      },
+    ],
+    bodyX,
+    cy,
+    bodyW,
+    5.5,
+    "justify",
+    11
+  );
+
+  // "Aracruz, ..." right-aligned bold
+  pdf.setFont("helvetica", "bold");
+  pdf.setFontSize(11);
+  pdf.text(extenso, bodyX + bodyW, 188, { align: "right" });
+
+  // Registry paragraph (centered, smaller)
+  drawRuns(
+    pdf,
+    [
+      { text: "O presente documento foi registrado sob o número " },
+      { text: c.code, bold: true },
+      ...(c.page_number
+        ? ([{ text: ", em folha " }, { text: c.page_number, bold: true }] as Run[])
+        : []),
+      ...(c.book_number
+        ? ([{ text: " do livro nº " }, { text: c.book_number, bold: true }] as Run[])
+        : []),
+      { text: " desta instituição de ensino listagem publicada no diário eletrônico no site FAESDE" },
+    ],
+    bodyX + 10,
+    200,
+    bodyW - 20,
+    5,
+    "center",
+    9.5
+  );
+  // Override code color to red by re-drawing it in red (find approx; instead redraw whole paragraph w/red code)
+  // Simpler: draw red code line atop
+  // (kept as-is; code stays black for reliability)
+
+  // Aluno block (above Cleide signature) — centered ~ x=97.5, y=243-252
+  pdf.setFont("helvetica", "normal");
+  pdf.setFontSize(10);
+  const aluX = 97.5;
+  pdf.text(nomeTitle, aluX, 243, { align: "center" });
+  pdf.text("Aluno – Faesde EAD", aluX, 248, { align: "center" });
+  pdf.setFont("helvetica", "bold");
+  if (c.cpf) pdf.text(`CPF: ${c.cpf}`, aluX, 253, { align: "center" });
+
+  // QR Code (bottom-left) — ~x=12, y=263, size 28mm
+  pdf.addImage(qrDataUrl, "PNG", 12, 263, 28, 28);
+
+  // -------- PAGE 2 --------
+  pdf.addPage();
+  pdf.addImage(bg2Url, "JPEG", 0, 0, PW, PH);
+  pdf.setTextColor(0, 0, 0);
+
+  // Header block centered
+  pdf.setFontSize(11);
+  let y2 = 90;
+  const lineH2 = 6;
+  const block: Array<[string, string]> = [
+    ["Curso: ", cursoTitle],
+    ["Nome: ", nomeTitle],
+    ["Carga Horária ", `${c.hours} horas`],
+    ["Número do Certificado: ", c.code],
+  ];
+  block.forEach(([label, value], i) => {
+    pdf.setFont("helvetica", "normal");
+    const lw = pdf.getTextWidth(label);
+    pdf.setFont("helvetica", i === 3 ? "normal" : "normal");
+    const vw = pdf.getTextWidth(value);
+    const total = lw + vw;
+    const startX = (PW - total) / 2;
+    pdf.setFont("helvetica", "normal");
+    pdf.text(label, startX, y2 + i * lineH2);
+    if (i === 3) pdf.setTextColor(192, 57, 43);
+    pdf.text(value, startX + lw, y2 + i * lineH2);
+    pdf.setTextColor(0, 0, 0);
+  });
+
+  // Title "CONTEÚDO PROGRAMÁTICO"
+  pdf.setFont("helvetica", "bold");
+  pdf.setFontSize(13);
+  pdf.text("CONTEÚDO PROGRAMÁTICO", PW / 2, 128, { align: "center" });
+
+  // Content list (centered lines)
+  pdf.setFont("helvetica", "normal");
+  pdf.setFontSize(10.5);
+  const content = (c.content || "Conteúdo programático não informado.").trim();
+  const items = content.split(/\r?\n/).filter((l) => l.trim().length > 0);
+  let cy2 = 138;
+  const maxItemW = 160;
+  items.forEach((item) => {
+    const lines = pdf.splitTextToSize(item.trim(), maxItemW);
+    lines.forEach((ln: string) => {
+      pdf.text(ln, PW / 2, cy2, { align: "center" });
+      cy2 += 5.2;
+    });
+  });
+
+  pdf.save(`certificado-${c.code}.pdf`);
 }
