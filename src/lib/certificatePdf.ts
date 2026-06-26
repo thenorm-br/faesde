@@ -164,17 +164,27 @@ export async function emitCertificatePdf(c: CertificatePdfData) {
   const publicUrl = `https://www.faesde.com.br/certificados/${c.code}`;
   const qrDataUrl = await QRCode.toDataURL(publicUrl, { width: 400, margin: 1 });
 
-  const [bg1, bg2] = await Promise.all([
+  const [bg1, bg2, mecSeal] = await Promise.all([
     loadImage("/certificado/bg-page1.jpg"),
     loadImage("/certificado/bg-page2.jpg"),
+    loadImage("/certificado/image5.png"),
   ]);
   const bg1Url = imgToDataUrl(bg1);
   const bg2Url = imgToDataUrl(bg2);
+  const mecUrl = (() => {
+    const c2 = document.createElement("canvas");
+    c2.width = mecSeal.naturalWidth;
+    c2.height = mecSeal.naturalHeight;
+    c2.getContext("2d")!.drawImage(mecSeal, 0, 0);
+    return c2.toDataURL("image/png");
+  })();
 
   const pdf = new jsPDF({ unit: "mm", format: "a4", orientation: "portrait" });
 
   // -------- PAGE 1 --------
   pdf.addImage(bg1Url, "JPEG", 0, 0, PW, PH);
+  // MEC seal (bottom-left)
+  pdf.addImage(mecUrl, "PNG", 14, 218, 24, 24);
   pdf.setTextColor(0, 0, 0);
 
   // Body paragraph 1 (justified)
@@ -271,8 +281,8 @@ export async function emitCertificatePdf(c: CertificatePdfData) {
   pdf.setFont("helvetica", "bold");
   if (c.cpf) pdf.text(`CPF: ${c.cpf}`, aluX, 253, { align: "center" });
 
-  // QR Code (bottom-left) — ~x=12, y=263, size 28mm
-  pdf.addImage(qrDataUrl, "PNG", 12, 263, 28, 28);
+  // QR Code (bottom-left, matching original position) ~x=15, y=245, size 22mm
+  pdf.addImage(qrDataUrl, "PNG", 15, 245, 22, 22);
 
   // -------- PAGE 2 --------
   pdf.addPage();
