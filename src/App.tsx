@@ -42,6 +42,7 @@ const App = () => (
             <Route path="temas" element={<ThemesManager />} />
             <Route path="arquivos" element={<FilesManager />} />
             <Route path="conexoes" element={<ConnectionsManager />} />
+            <Route path="conexoes/oauth/callback" element={<ConnectionsManager />} />
             <Route path="configuracoes" element={<SettingsPage />} />
             <Route path="certificados" element={<CertificatesManager />} />
           </Route>

@@ -1,8 +1,8 @@
 # FAESDE Drive/GitHub sync
 
-The admin route `/admin/conexoes` validates the Google Drive and GitHub connections through server-side API endpoints.
+The admin route `/admin/conexoes` connects Google Drive and GitHub through OAuth.
 
-SQL redundancy is intentionally postponed. Do not add database sync logic here until that second stage is approved.
+SQL redundancy is still postponed. The migration in this stage only stores OAuth app settings, temporary OAuth states, and connected admin accounts.
 
 ## Runtime
 
@@ -12,40 +12,83 @@ Production must run the Node server:
 npm run start
 ```
 
-The server serves `dist/` and exposes the sync API under `/api/sync/*`.
+The server serves `dist/` and exposes the sync API under `/api/*`.
 
-## Required backend secrets
+## OAuth flow
 
-Never expose these values in React, Vite, or any public bundle.
+1. Open `/admin/conexoes`.
+2. Go to `Configurar OAuth`.
+3. Copy the callback URL shown by the panel.
+4. Create or update OAuth apps in Google/GitHub using that callback URL.
+5. Save `Client ID` and `Client Secret` in the admin panel.
+6. Click `Conectar conta` and authorize the provider account.
 
-- `GOOGLE_SERVICE_ACCOUNT_JSON`: Google service account JSON with access to the Drive folder.
-- `GOOGLE_SERVICE_ACCOUNT_JSON_BASE64`: optional alternative to the JSON string above.
-- `GOOGLE_DRIVE_ROOT_FOLDER_ID`: root Drive folder id for EAD content.
-- `GITHUB_TOKEN`: GitHub token with repository content write access.
-- `GITHUB_REPO`: repository in `owner/name` format, default `thenorm-br/faesde`.
-- `GITHUB_BRANCH`: branch used by Coolify, default `main`.
-- `EAD_GITHUB_MAX_FILE_MB`: max size for GitHub-cacheable files, default `25`.
-- `GOOGLE_DRIVE_SCAN_LIMIT`: max Drive items per scan, default `5000`.
+The callback returns to `/admin/conexoes/oauth/callback`. The React admin page sends the received `code` and `state` to the Node server together with the Supabase admin session. This lets the server exchange the code without exposing secrets in the browser bundle.
+
+## Database tables
+
+`supabase/migrations/20260721201500_add_sync_oauth_connections.sql` creates:
+
+- `sync_oauth_app_settings`: OAuth app client IDs/secrets and scopes.
+- `sync_oauth_states`: short-lived state tokens for CSRF protection.
+- `sync_oauth_connections`: connected account tokens and metadata.
+
+All tables use RLS and require `public.has_role(auth.uid(), 'admin')`.
 
 ## API endpoints
 
 - `GET /api/health`
   - Public health check for the Node server.
 
+- `GET /api/oauth/status`
+  - Requires Supabase admin session bearer token.
+  - Returns redacted OAuth settings, connected account labels, and sync provider states.
+
+- `POST /api/oauth/settings`
+  - Requires Supabase admin session bearer token.
+  - Body: `{ "provider": "google_drive" | "github", "clientId": "...", "clientSecret": "...", "scopes": "...", "redirectUri": "..." }`
+  - Saves OAuth app settings in Supabase.
+
+- `POST /api/oauth/start`
+  - Requires Supabase admin session bearer token.
+  - Body: `{ "provider": "google_drive" | "github" }`
+  - Creates a short-lived OAuth state and returns an authorization URL.
+
+- `POST /api/oauth/callback`
+  - Requires Supabase admin session bearer token.
+  - Body: `{ "code": "...", "state": "..." }`
+  - Exchanges the code and saves the connected account.
+
+- `POST /api/oauth/disconnect`
+  - Requires Supabase admin session bearer token.
+  - Body: `{ "provider": "google_drive" | "github" }`
+  - Deletes the connected account token.
+
 - `GET /api/sync/status`
-  - Public status endpoint. It returns only provider states and secret names, never secret values.
-  - Returns configured providers and required secret names.
+  - Public fallback status. If an admin bearer token is present, returns the richer OAuth-aware status.
 
 - `POST /api/sync/connect`
   - Requires Supabase admin session bearer token.
   - Body: `{ "provider": "google_drive" | "github" }`
-  - Validates the provider against Google Drive or GitHub.
+  - Validates the connected provider account or server fallback.
 
 - `POST /api/sync/run`
   - Requires Supabase admin session bearer token.
   - Body: `{ "mode": "drive_scan" | "drive_to_github_manifest" }`
   - `drive_scan` reads Drive and returns counts.
   - `drive_to_github_manifest` writes `public/eadplataforma-drive-manifest.json` to GitHub.
+
+## Optional server fallbacks
+
+The OAuth panel is the preferred path. These environment variables are still supported as fallback only:
+
+- `GOOGLE_SERVICE_ACCOUNT_JSON` or `GOOGLE_SERVICE_ACCOUNT_JSON_BASE64`
+- `GOOGLE_DRIVE_ROOT_FOLDER_ID`
+- `GITHUB_TOKEN`
+- `GITHUB_REPO`
+- `GITHUB_BRANCH`
+- `EAD_GITHUB_MAX_FILE_MB`
+- `GOOGLE_DRIVE_SCAN_LIMIT`
 
 ## Storage strategy
 

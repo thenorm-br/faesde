@@ -1,17 +1,23 @@
 import { useEffect, useMemo, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import {
   AlertTriangle,
   CheckCircle2,
   Cloud,
+  Copy,
   Database,
   ExternalLink,
   Files,
   Github,
   HardDrive,
+  KeyRound,
   Loader2,
+  LogOut,
   Play,
   RefreshCw,
+  Save,
   Server,
+  Settings2,
   ShieldCheck,
 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client.ts";
@@ -19,13 +25,17 @@ import { Alert, AlertDescription } from "@/components/ui/alert.tsx";
 import { Badge } from "@/components/ui/badge.tsx";
 import { Button } from "@/components/ui/button.tsx";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card.tsx";
+import { Input } from "@/components/ui/input.tsx";
+import { Label } from "@/components/ui/label.tsx";
 import { Progress } from "@/components/ui/progress.tsx";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs.tsx";
+import { Textarea } from "@/components/ui/textarea.tsx";
 import { useToast } from "@/hooks/use-toast.ts";
 
 type ProviderKey = "google_drive" | "github";
 type ProviderStatus = "not_configured" | "ready" | "connected" | "read_only" | "error";
 type SyncMode = "drive_scan" | "drive_to_github_manifest";
+type TabKey = "providers" | "sync" | "settings" | "environment";
 
 type EadNode =
   | { name: string; type: "folder"; path: string; children: EadNode[] }
@@ -50,6 +60,31 @@ interface ProviderState {
     scan?: boolean;
   };
   details?: Record<string, unknown>;
+  source?: "oauth" | "service_account" | "server_token" | "public";
+}
+
+interface OAuthProviderStatus {
+  settings: {
+    configured: boolean;
+    clientId: string;
+    hasClientSecret: boolean;
+    scopes: string[];
+    redirectUri: string;
+    updatedAt: string | null;
+  };
+  connection: {
+    connected: boolean;
+    accountId: string;
+    accountLabel: string;
+    status: string;
+    scope: string;
+    expiresAt: string | null;
+    connectedAt: string | null;
+    lastCheckedAt: string | null;
+    lastSyncAt: string | null;
+    metadata?: Record<string, unknown>;
+  };
+  defaultScopes: string[];
 }
 
 interface ApiStatus {
@@ -64,6 +99,10 @@ interface ApiStatus {
     scanLimit: number;
   };
   providers: Record<ProviderKey, ProviderState>;
+  oauth?: {
+    redirectUri: string;
+    providers: Record<ProviderKey, OAuthProviderStatus>;
+  };
   sql: {
     enabled: boolean;
     message: string;
@@ -100,22 +139,36 @@ interface LocalStats {
   driveOnly: number;
 }
 
-const PROVIDER_META: Record<ProviderKey, { icon: typeof Cloud; title: string; description: string }> = {
+interface SettingsDraft {
+  clientId: string;
+  clientSecret: string;
+  scopes: string;
+  redirectUri: string;
+}
+
+const PROVIDER_META: Record<
+  ProviderKey,
+  { icon: typeof Cloud; title: string; description: string; appLabel: string; appUrl: string }
+> = {
   google_drive: {
     icon: Cloud,
     title: "Google Drive",
+    appLabel: "Google Cloud Console",
+    appUrl: "https://console.cloud.google.com/apis/credentials",
     description: "Fonte principal dos arquivos EAD, apostilas HTML e videos pesados.",
   },
   github: {
     icon: Github,
     title: "GitHub",
+    appLabel: "GitHub OAuth Apps",
+    appUrl: "https://github.com/settings/developers",
     description: "Cache versionado dos arquivos leves e manifesto para o deploy no Coolify.",
   },
 };
 
 const STATUS_LABELS: Record<ProviderStatus, string> = {
-  not_configured: "Configurar segredo",
-  ready: "Pronto para testar",
+  not_configured: "Configurar OAuth",
+  ready: "Pronto para conectar",
   connected: "Conectado",
   read_only: "Leitura ok",
   error: "Erro",
@@ -127,6 +180,26 @@ const STATUS_CLASSES: Record<ProviderStatus, string> = {
   connected: "border-green-200 bg-green-100 text-green-900",
   read_only: "border-cyan-200 bg-cyan-100 text-cyan-900",
   error: "border-red-200 bg-red-100 text-red-900",
+};
+
+const DEFAULT_SCOPES: Record<ProviderKey, string[]> = {
+  google_drive: ["openid", "email", "profile", "https://www.googleapis.com/auth/drive"],
+  github: ["repo"],
+};
+
+const DEFAULT_DRAFTS: Record<ProviderKey, SettingsDraft> = {
+  google_drive: {
+    clientId: "",
+    clientSecret: "",
+    scopes: DEFAULT_SCOPES.google_drive.join("\n"),
+    redirectUri: "",
+  },
+  github: {
+    clientId: "",
+    clientSecret: "",
+    scopes: DEFAULT_SCOPES.github.join("\n"),
+    redirectUri: "",
+  },
 };
 
 const FALLBACK_STATUS: ApiStatus = {
@@ -145,24 +218,73 @@ const FALLBACK_STATUS: ApiStatus = {
       provider: "google_drive",
       label: "Google Drive",
       status: "not_configured",
-      message: "Clique em Validar conexao para testar a API e ver exatamente o que falta configurar.",
+      message: "Cadastre o OAuth no painel para conectar a conta Google sem mexer no Coolify.",
       externalId: "1jYFYbdJdJHT-f7BpzFX9t1mQLD6xwgbd",
-      requiredSecrets: ["GOOGLE_SERVICE_ACCOUNT_JSON"],
       capabilities: { read: false, write: false, scan: false },
+      source: "oauth",
     },
     github: {
       provider: "github",
       label: "GitHub",
-      status: "ready",
-      message: "Clique em Validar conexao para testar o repositorio. Para escrita, configure GITHUB_TOKEN no Coolify.",
+      status: "not_configured",
+      message: "Cadastre o OAuth no painel para conectar a conta GitHub sem token manual.",
       externalId: "thenorm-br/faesde@main",
-      requiredSecrets: ["GITHUB_TOKEN"],
-      capabilities: { read: true, write: false, scan: false },
+      capabilities: { read: false, write: false, scan: false },
+      source: "oauth",
+    },
+  },
+  oauth: {
+    redirectUri: "",
+    providers: {
+      google_drive: {
+        settings: {
+          configured: false,
+          clientId: "",
+          hasClientSecret: false,
+          scopes: DEFAULT_SCOPES.google_drive,
+          redirectUri: "",
+          updatedAt: null,
+        },
+        connection: {
+          connected: false,
+          accountId: "",
+          accountLabel: "",
+          status: "not_connected",
+          scope: "",
+          expiresAt: null,
+          connectedAt: null,
+          lastCheckedAt: null,
+          lastSyncAt: null,
+        },
+        defaultScopes: DEFAULT_SCOPES.google_drive,
+      },
+      github: {
+        settings: {
+          configured: false,
+          clientId: "",
+          hasClientSecret: false,
+          scopes: DEFAULT_SCOPES.github,
+          redirectUri: "",
+          updatedAt: null,
+        },
+        connection: {
+          connected: false,
+          accountId: "",
+          accountLabel: "",
+          status: "not_connected",
+          scope: "",
+          expiresAt: null,
+          connectedAt: null,
+          lastCheckedAt: null,
+          lastSyncAt: null,
+        },
+        defaultScopes: DEFAULT_SCOPES.github,
+      },
     },
   },
   sql: {
-    enabled: false,
-    message: "SQL ficou para uma etapa futura de redundancia.",
+    enabled: true,
+    message: "Tabelas OAuth usadas apenas para guardar conexoes admin.",
   },
 };
 
@@ -215,15 +337,57 @@ function collectStats(nodes: EadNode[], maxGithubBytes: number): LocalStats {
   return stats;
 }
 
+function draftFromStatus(
+  status: ApiStatus,
+  currentDrafts: Record<ProviderKey, SettingsDraft>,
+): Record<ProviderKey, SettingsDraft> {
+  const redirectUri =
+    status.oauth?.redirectUri || `${window.location.origin}/admin/conexoes/oauth/callback`;
+
+  return {
+    google_drive: {
+      clientId: status.oauth?.providers.google_drive.settings.clientId || currentDrafts.google_drive.clientId,
+      clientSecret: currentDrafts.google_drive.clientSecret,
+      scopes:
+        status.oauth?.providers.google_drive.settings.scopes?.join("\n") ||
+        currentDrafts.google_drive.scopes ||
+        DEFAULT_SCOPES.google_drive.join("\n"),
+      redirectUri:
+        status.oauth?.providers.google_drive.settings.redirectUri ||
+        currentDrafts.google_drive.redirectUri ||
+        redirectUri,
+    },
+    github: {
+      clientId: status.oauth?.providers.github.settings.clientId || currentDrafts.github.clientId,
+      clientSecret: currentDrafts.github.clientSecret,
+      scopes:
+        status.oauth?.providers.github.settings.scopes?.join("\n") ||
+        currentDrafts.github.scopes ||
+        DEFAULT_SCOPES.github.join("\n"),
+      redirectUri:
+        status.oauth?.providers.github.settings.redirectUri ||
+        currentDrafts.github.redirectUri ||
+        redirectUri,
+    },
+  };
+}
+
 const ConnectionsManager = () => {
   const [apiStatus, setApiStatus] = useState<ApiStatus | null>(null);
   const [indexData, setIndexData] = useState<IndexFile | null>(null);
   const [loading, setLoading] = useState(true);
   const [apiError, setApiError] = useState<string | null>(null);
   const [runningProvider, setRunningProvider] = useState<ProviderKey | null>(null);
+  const [savingProvider, setSavingProvider] = useState<ProviderKey | null>(null);
+  const [disconnectingProvider, setDisconnectingProvider] = useState<ProviderKey | null>(null);
   const [runningMode, setRunningMode] = useState<SyncMode | null>(null);
   const [lastRun, setLastRun] = useState<RunResult | null>(null);
+  const [activeTab, setActiveTab] = useState<TabKey>("providers");
+  const [settingsDrafts, setSettingsDrafts] = useState<Record<ProviderKey, SettingsDraft>>(DEFAULT_DRAFTS);
+  const [handlingCallback, setHandlingCallback] = useState(false);
   const { toast } = useToast();
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const maxGithubBytes = (apiStatus?.config.maxGithubFileMb || 25) * 1024 * 1024;
   const localStats = useMemo(() => {
@@ -282,8 +446,9 @@ const ConnectionsManager = () => {
 
   const loadStatus = async () => {
     setApiError(null);
-    const status = await fetchWithSession<ApiStatus>("/api/sync/status", { method: "GET" });
+    const status = await fetchWithSession<ApiStatus>("/api/oauth/status", { method: "GET" });
     setApiStatus(status);
+    setSettingsDrafts((current) => draftFromStatus(status, current));
   };
 
   const refreshAll = async () => {
@@ -292,7 +457,15 @@ const ConnectionsManager = () => {
     try {
       await loadStatus();
     } catch (error) {
-      setApiStatus(FALLBACK_STATUS);
+      const fallback = {
+        ...FALLBACK_STATUS,
+        oauth: {
+          ...FALLBACK_STATUS.oauth,
+          redirectUri: `${window.location.origin}/admin/conexoes/oauth/callback`,
+        },
+      };
+      setApiStatus(fallback);
+      setSettingsDrafts((current) => draftFromStatus(fallback, current));
       setApiError(error instanceof Error ? error.message : "Nao foi possivel acessar a API de sync.");
     } finally {
       setLoading(false);
@@ -305,7 +478,116 @@ const ConnectionsManager = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const connectProvider = async (provider: ProviderKey) => {
+  useEffect(() => {
+    const isCallback = location.pathname.endsWith("/oauth/callback");
+    if (!isCallback || handlingCallback) return;
+
+    const params = new URLSearchParams(location.search);
+    const error = params.get("error");
+    const code = params.get("code");
+    const state = params.get("state");
+
+    if (error) {
+      toast({
+        title: "Login cancelado",
+        description: params.get("error_description") || error,
+        variant: "destructive",
+      });
+      navigate("/admin/conexoes", { replace: true });
+      return;
+    }
+
+    if (!code || !state) return;
+
+    const finishCallback = async () => {
+      setHandlingCallback(true);
+      try {
+        const result = await fetchWithSession<{ provider: ProviderState; status: ApiStatus; returnTo?: string }>(
+          "/api/oauth/callback",
+          {
+            method: "POST",
+            body: JSON.stringify({ code, state }),
+          },
+        );
+        setApiStatus(result.status);
+        setSettingsDrafts((current) => draftFromStatus(result.status, current));
+        toast({ title: "Conta conectada", description: result.provider.message });
+        navigate(result.returnTo || "/admin/conexoes", { replace: true });
+      } catch (callbackError) {
+        toast({
+          title: "Erro ao concluir conexao",
+          description: callbackError instanceof Error ? callbackError.message : "Falha inesperada.",
+          variant: "destructive",
+        });
+        navigate("/admin/conexoes", { replace: true });
+      } finally {
+        setHandlingCallback(false);
+      }
+    };
+
+    finishCallback();
+    // Callback should run only once for the received query string.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [location.pathname, location.search]);
+
+  const saveOAuthSettings = async (provider: ProviderKey) => {
+    setSavingProvider(provider);
+    try {
+      const draft = settingsDrafts[provider];
+      const result = await fetchWithSession<{ message: string; status: ApiStatus }>("/api/oauth/settings", {
+        method: "POST",
+        body: JSON.stringify({
+          provider,
+          clientId: draft.clientId,
+          clientSecret: draft.clientSecret,
+          scopes: draft.scopes,
+          redirectUri: draft.redirectUri,
+        }),
+      });
+
+      setApiStatus(result.status);
+      setSettingsDrafts((current) => draftFromStatus(result.status, current));
+      toast({ title: "OAuth salvo", description: result.message });
+    } catch (error) {
+      toast({
+        title: "Erro ao salvar OAuth",
+        description: error instanceof Error ? error.message : "Falha inesperada.",
+        variant: "destructive",
+      });
+    } finally {
+      setSavingProvider(null);
+    }
+  };
+
+  const startOAuthConnection = async (provider: ProviderKey) => {
+    const providerOauth = apiStatus?.oauth?.providers[provider];
+    if (!providerOauth?.settings.configured) {
+      setActiveTab("settings");
+      toast({
+        title: "Cadastre o OAuth primeiro",
+        description: "Salve Client ID e Client Secret antes de abrir o login.",
+      });
+      return;
+    }
+
+    setRunningProvider(provider);
+    try {
+      const result = await fetchWithSession<{ authorizationUrl: string }>("/api/oauth/start", {
+        method: "POST",
+        body: JSON.stringify({ provider, returnTo: "/admin/conexoes" }),
+      });
+      window.location.assign(result.authorizationUrl);
+    } catch (error) {
+      toast({
+        title: "Erro ao iniciar login",
+        description: error instanceof Error ? error.message : "Falha inesperada.",
+        variant: "destructive",
+      });
+      setRunningProvider(null);
+    }
+  };
+
+  const validateProvider = async (provider: ProviderKey) => {
     setRunningProvider(provider);
     try {
       const result = await fetchWithSession<{ provider: ProviderState }>("/api/sync/connect", {
@@ -326,18 +608,42 @@ const ConnectionsManager = () => {
       );
 
       toast({
-        title: result.provider.status === "connected" || result.provider.status === "read_only" ? "Conexao validada" : "Configurar conexao",
+        title:
+          result.provider.status === "connected" || result.provider.status === "read_only"
+            ? "Conexao validada"
+            : "Configurar conexao",
         description: result.provider.message,
       });
     } catch (error) {
       await loadStatus().catch(() => null);
       toast({
-        title: "Erro ao conectar",
+        title: "Erro ao validar",
         description: error instanceof Error ? error.message : "Falha inesperada.",
         variant: "destructive",
       });
     } finally {
       setRunningProvider(null);
+    }
+  };
+
+  const disconnectProvider = async (provider: ProviderKey) => {
+    setDisconnectingProvider(provider);
+    try {
+      const result = await fetchWithSession<{ message: string; status: ApiStatus }>("/api/oauth/disconnect", {
+        method: "POST",
+        body: JSON.stringify({ provider }),
+      });
+      setApiStatus(result.status);
+      setSettingsDrafts((current) => draftFromStatus(result.status, current));
+      toast({ title: "Conta desconectada", description: result.message });
+    } catch (error) {
+      toast({
+        title: "Erro ao desconectar",
+        description: error instanceof Error ? error.message : "Falha inesperada.",
+        variant: "destructive",
+      });
+    } finally {
+      setDisconnectingProvider(null);
     }
   };
 
@@ -362,13 +668,34 @@ const ConnectionsManager = () => {
     }
   };
 
+  const updateDraft = (provider: ProviderKey, field: keyof SettingsDraft, value: string) => {
+    setSettingsDrafts((current) => ({
+      ...current,
+      [provider]: {
+        ...current[provider],
+        [field]: value,
+      },
+    }));
+  };
+
+  const copyRedirectUri = async () => {
+    const redirectUri = apiStatus?.oauth?.redirectUri || `${window.location.origin}/admin/conexoes/oauth/callback`;
+    await navigator.clipboard.writeText(redirectUri);
+    toast({ title: "URL copiada", description: "Cole essa URL no app OAuth do Google e do GitHub." });
+  };
+
   const connectedProviders = apiStatus
     ? Object.values(apiStatus.providers).filter((provider) => ["connected", "read_only"].includes(provider.status)).length
     : 0;
   const progress = apiStatus ? Math.round((connectedProviders / 2) * 100) : 0;
+  const redirectUri = apiStatus?.oauth?.redirectUri || `${window.location.origin}/admin/conexoes/oauth/callback`;
 
-  if (loading) {
-    return <p className="text-center text-muted-foreground py-8">Carregando conexoes...</p>;
+  if (loading || handlingCallback) {
+    return (
+      <p className="text-center text-muted-foreground py-8">
+        {handlingCallback ? "Concluindo conexao OAuth..." : "Carregando conexoes..."}
+      </p>
+    );
   }
 
   return (
@@ -377,7 +704,7 @@ const ConnectionsManager = () => {
         <div>
           <h2 className="text-2xl font-bold text-foreground">Conexoes</h2>
           <p className="text-sm text-muted-foreground mt-1">
-            Conecte Google Drive e GitHub para preparar a sincronizacao da EADPlataforma.
+            Conecte Google Drive e GitHub pelo painel para sincronizar a EADPlataforma.
           </p>
         </div>
         <div className="flex flex-wrap gap-2">
@@ -396,16 +723,17 @@ const ConnectionsManager = () => {
         <Alert variant="destructive">
           <AlertTriangle className="h-4 w-4" />
           <AlertDescription>
-            A API de sincronizacao respondeu com alerta: {apiError}. Os botoes continuam ativos para testar novamente
-            e mostrar o erro real da conexao.
+            A API respondeu com alerta: {apiError}. Se isso aparecer apos o deploy, provavelmente a migration das
+            tabelas OAuth ainda nao foi aplicada.
           </AlertDescription>
         </Alert>
       )}
 
       <Alert>
-        <Database className="h-4 w-4" />
+        <KeyRound className="h-4 w-4" />
         <AlertDescription>
-          SQL ficou para uma segunda etapa. Esta versao cuida somente de Drive, GitHub e manifesto de arquivos.
+          Agora a conexao e feita por OAuth: voce cadastra o app uma vez, clica em Conectar e faz login na conta
+          Google/GitHub pelo navegador.
         </AlertDescription>
       </Alert>
 
@@ -480,20 +808,21 @@ const ConnectionsManager = () => {
               <ShieldCheck className="h-5 w-5 text-primary" />
               Seguranca
             </CardTitle>
-            <CardDescription>Segredos ficam so no servidor.</CardDescription>
+            <CardDescription>Tokens ficam no backend/Supabase.</CardDescription>
           </CardHeader>
           <CardContent className="space-y-2 text-sm text-muted-foreground">
             <p>O navegador envia apenas o token de sessao admin.</p>
-            <p>Drive usa service account no Coolify.</p>
-            <p>GitHub usa token server-side para escrita.</p>
+            <p>O callback OAuth volta para o painel admin.</p>
+            <p>O servidor usa as conexoes salvas para escanear e publicar.</p>
           </CardContent>
         </Card>
       </div>
 
-      <Tabs defaultValue="providers" className="space-y-4">
+      <Tabs value={activeTab} onValueChange={(value) => setActiveTab(value as TabKey)} className="space-y-4">
         <TabsList className="flex h-auto flex-wrap justify-start">
           <TabsTrigger value="providers">Conectar</TabsTrigger>
           <TabsTrigger value="sync">Sincronizar</TabsTrigger>
+          <TabsTrigger value="settings">Configurar OAuth</TabsTrigger>
           <TabsTrigger value="environment">Ambiente</TabsTrigger>
         </TabsList>
 
@@ -503,8 +832,11 @@ const ConnectionsManager = () => {
               const meta = PROVIDER_META[providerKey];
               const Icon = meta.icon;
               const provider = apiStatus?.providers[providerKey];
+              const oauth = apiStatus?.oauth?.providers[providerKey];
               const status = provider?.status || "not_configured";
               const isBusy = runningProvider === providerKey;
+              const isDisconnecting = disconnectingProvider === providerKey;
+              const isConnected = oauth?.connection.connected || status === "connected";
 
               return (
                 <Card key={providerKey}>
@@ -527,42 +859,49 @@ const ConnectionsManager = () => {
                         <p className="font-mono text-xs break-all">{provider?.externalId || "Nao configurado"}</p>
                       </div>
                       <div>
+                        <p className="text-xs text-muted-foreground">Conta conectada</p>
+                        <p>{oauth?.connection.accountLabel || "Nenhuma conta conectada"}</p>
+                      </div>
+                      <div>
                         <p className="text-xs text-muted-foreground">Ultima checagem</p>
-                        <p>{formatDate(provider?.lastCheckedAt)}</p>
+                        <p>{formatDate(oauth?.connection.lastCheckedAt || provider?.lastCheckedAt)}</p>
                       </div>
                       <p className="rounded-md bg-muted/50 p-3 text-sm">{provider?.message || "Aguardando API de sync."}</p>
                     </div>
 
-                    {provider?.requiredSecrets && provider.requiredSecrets.length > 0 && (
-                      <div className="rounded-lg border border-dashed p-3">
-                        <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-                          Secrets necessarios no Coolify
-                        </p>
-                        <div className="flex flex-wrap gap-2">
-                          {provider.requiredSecrets.map((secret) => (
-                            <Badge key={secret} variant="secondary" className="font-mono">
-                              {secret}
-                            </Badge>
-                          ))}
-                        </div>
-                      </div>
-                    )}
-
                     <div className="grid grid-cols-2 gap-2 text-xs text-muted-foreground">
                       <div className="rounded-md bg-muted/40 p-2">
-                        <p>Leitura</p>
-                        <p className="font-semibold text-foreground">{provider?.capabilities?.read ? "Ativa" : "Pendente"}</p>
+                        <p>OAuth app</p>
+                        <p className="font-semibold text-foreground">{oauth?.settings.configured ? "Salvo" : "Pendente"}</p>
                       </div>
                       <div className="rounded-md bg-muted/40 p-2">
-                        <p>Escrita</p>
-                        <p className="font-semibold text-foreground">{provider?.capabilities?.write ? "Ativa" : "Pendente"}</p>
+                        <p>Permissao</p>
+                        <p className="font-semibold text-foreground">{isConnected ? "Autorizada" : "Pendente"}</p>
                       </div>
                     </div>
 
-                    <Button className="w-full" onClick={() => connectProvider(providerKey)} disabled={!!runningProvider}>
-                      {isBusy ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <CheckCircle2 className="mr-2 h-4 w-4" />}
-                      Validar conexao
-                    </Button>
+                    <div className="grid gap-2 sm:grid-cols-2">
+                      <Button onClick={() => startOAuthConnection(providerKey)} disabled={!!runningProvider}>
+                        {isBusy ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <KeyRound className="mr-2 h-4 w-4" />}
+                        {isConnected ? "Reconectar" : "Conectar conta"}
+                      </Button>
+                      <Button variant="outline" onClick={() => validateProvider(providerKey)} disabled={!!runningProvider}>
+                        {isBusy ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <CheckCircle2 className="mr-2 h-4 w-4" />}
+                        Validar
+                      </Button>
+                    </div>
+
+                    {isConnected && (
+                      <Button
+                        variant="destructive"
+                        className="w-full"
+                        onClick={() => disconnectProvider(providerKey)}
+                        disabled={!!disconnectingProvider}
+                      >
+                        {isDisconnecting ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <LogOut className="mr-2 h-4 w-4" />}
+                        Desconectar
+                      </Button>
+                    )}
                   </CardContent>
                 </Card>
               );
@@ -588,7 +927,7 @@ const ConnectionsManager = () => {
                   Escanear agora
                 </Button>
                 <p className="text-xs text-muted-foreground">
-                  Esse passo nao altera arquivos. Ele so confirma se o Drive esta acessivel pelo servidor.
+                  Esse passo nao altera arquivos. Ele so confirma se o Drive esta acessivel pela conta conectada.
                 </p>
               </CardContent>
             </Card>
@@ -617,7 +956,7 @@ const ConnectionsManager = () => {
                   Sincronizar manifesto
                 </Button>
                 <p className="text-xs text-muted-foreground">
-                  Essa etapa exige `GITHUB_TOKEN` com permissao de escrita no repositorio.
+                  Essa etapa usa a conta GitHub conectada para criar um commit no repositorio.
                 </p>
               </CardContent>
             </Card>
@@ -665,11 +1004,116 @@ const ConnectionsManager = () => {
           )}
         </TabsContent>
 
+        <TabsContent value="settings" className="space-y-4">
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <Settings2 className="h-5 w-5 text-primary" />
+                URL de callback
+              </CardTitle>
+              <CardDescription>
+                Use exatamente esta URL nos apps OAuth do Google e do GitHub.
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="flex flex-col gap-3 md:flex-row md:items-center">
+              <Input value={redirectUri} readOnly className="font-mono text-xs" />
+              <Button variant="outline" onClick={copyRedirectUri}>
+                <Copy className="mr-2 h-4 w-4" />
+                Copiar
+              </Button>
+            </CardContent>
+          </Card>
+
+          <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
+            {(Object.keys(PROVIDER_META) as ProviderKey[]).map((providerKey) => {
+              const meta = PROVIDER_META[providerKey];
+              const Icon = meta.icon;
+              const draft = settingsDrafts[providerKey];
+              const oauth = apiStatus?.oauth?.providers[providerKey];
+              const isSaving = savingProvider === providerKey;
+
+              return (
+                <Card key={providerKey}>
+                  <CardHeader>
+                    <CardTitle className="flex items-center gap-2">
+                      <Icon className="h-5 w-5 text-primary" />
+                      OAuth {meta.title}
+                    </CardTitle>
+                    <CardDescription>
+                      Cadastre o Client ID e Client Secret uma vez. Depois o botao Conectar abre o login.
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    <div className="flex flex-wrap gap-2">
+                      <Badge variant={oauth?.settings.configured ? "default" : "secondary"}>
+                        {oauth?.settings.configured ? "OAuth salvo" : "OAuth pendente"}
+                      </Badge>
+                      {oauth?.settings.hasClientSecret && <Badge variant="outline">Secret guardado</Badge>}
+                      <Button variant="outline" size="sm" asChild>
+                        <a href={meta.appUrl} target="_blank" rel="noopener noreferrer">
+                          <ExternalLink className="mr-2 h-4 w-4" />
+                          Abrir {meta.appLabel}
+                        </a>
+                      </Button>
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor={`${providerKey}-client-id`}>Client ID</Label>
+                      <Input
+                        id={`${providerKey}-client-id`}
+                        value={draft.clientId}
+                        onChange={(event) => updateDraft(providerKey, "clientId", event.target.value)}
+                        placeholder={providerKey === "google_drive" ? "xxxxx.apps.googleusercontent.com" : "GitHub Client ID"}
+                      />
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor={`${providerKey}-client-secret`}>Client Secret</Label>
+                      <Input
+                        id={`${providerKey}-client-secret`}
+                        type="password"
+                        value={draft.clientSecret}
+                        onChange={(event) => updateDraft(providerKey, "clientSecret", event.target.value)}
+                        placeholder={oauth?.settings.hasClientSecret ? "Ja salvo. Preencha so para trocar." : "Cole o secret aqui"}
+                      />
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor={`${providerKey}-redirect-uri`}>Redirect URI</Label>
+                      <Input
+                        id={`${providerKey}-redirect-uri`}
+                        value={draft.redirectUri}
+                        onChange={(event) => updateDraft(providerKey, "redirectUri", event.target.value)}
+                        placeholder={redirectUri}
+                      />
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor={`${providerKey}-scopes`}>Escopos</Label>
+                      <Textarea
+                        id={`${providerKey}-scopes`}
+                        value={draft.scopes}
+                        onChange={(event) => updateDraft(providerKey, "scopes", event.target.value)}
+                        className="min-h-24 font-mono text-xs"
+                      />
+                    </div>
+
+                    <Button onClick={() => saveOAuthSettings(providerKey)} disabled={!!savingProvider} className="w-full">
+                      {isSaving ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <Save className="mr-2 h-4 w-4" />}
+                      Salvar OAuth {meta.title}
+                    </Button>
+                  </CardContent>
+                </Card>
+              );
+            })}
+          </div>
+        </TabsContent>
+
         <TabsContent value="environment" className="space-y-4">
           <Card>
             <CardHeader>
               <CardTitle>Configuracao do servidor</CardTitle>
-              <CardDescription>Valores lidos pelo backend. Segredos aparecem apenas como nomes esperados.</CardDescription>
+              <CardDescription>Valores lidos pelo backend. Tokens e secrets nao sao exibidos.</CardDescription>
             </CardHeader>
             <CardContent className="grid gap-4 md:grid-cols-2">
               <div className="rounded-lg border p-3">
@@ -694,6 +1138,10 @@ const ConnectionsManager = () => {
                 <p className="text-xs text-muted-foreground">API server time</p>
                 <p className="font-mono text-xs">{apiStatus?.serverTime || "-"}</p>
               </div>
+              <Alert className="md:col-span-2">
+                <Database className="h-4 w-4" />
+                <AlertDescription>{apiStatus?.sql.message || "Conexoes OAuth protegidas por RLS admin."}</AlertDescription>
+              </Alert>
               <Button variant="outline" asChild className="md:col-span-2">
                 <a
                   href={`https://github.com/${apiStatus?.config.githubRepo || "thenorm-br/faesde"}`}
