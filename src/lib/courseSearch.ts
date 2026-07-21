@@ -1,4 +1,5 @@
 // Course search utility: accent-insensitive, multi-token, synonym-aware, scored.
+import { getCourseCategoryMeta } from "@/lib/courseCategories.ts";
 
 export const normalize = (s: string): string =>
   (s || "")
@@ -59,18 +60,8 @@ const expandQuery = (token: string): string[] => {
 };
 
 const categoryLabel = (c: string): string => {
-  switch (c) {
-    case "competencia":
-      return "certificacao por competencia";
-    case "pos-tecnico":
-      return "pos tecnico especializacao";
-    case "segundo-grau":
-      return "segundo grau eja ensino medio";
-    case "extensao":
-      return "extensao tecnico ead";
-    default:
-      return c;
-  }
+  const meta = getCourseCategoryMeta(c);
+  return [meta.label, meta.cardLabel, meta.sectionTitle, meta.description, c].join(" ");
 };
 
 export interface SearchableCourse {

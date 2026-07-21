@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useMemo, useRef } from "react";
 import { supabase } from "@/integrations/supabase/client.ts";
 import { Button } from "@/components/ui/button.tsx";
 import { Input } from "@/components/ui/input.tsx";
@@ -14,6 +14,11 @@ import {
 import { Switch } from "@/components/ui/switch.tsx";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip.tsx";
 import { Plus, Pencil, Trash2, Search, History, Upload } from "lucide-react";
+import {
+  buildCategoryMetas,
+  DEFAULT_COURSE_CATEGORIES,
+  getCourseCategoryLabel,
+} from "@/lib/courseCategories.ts";
 
 const ImageUrlField = ({
   label,
@@ -269,6 +274,18 @@ const CoursesManager = () => {
       c.slug.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
+  const categoryOptions = useMemo(
+    () =>
+      buildCategoryMetas(
+        [
+          ...DEFAULT_COURSE_CATEGORIES.map((category) => category.slug),
+          ...courses.map((course) => course.category),
+          editingCourse?.category,
+        ].filter(Boolean) as string[],
+      ),
+    [courses, editingCourse?.category],
+  );
+
   const renderInlineCell = (course: Course, field: "promo_price" | "installment" | "original_price") => {
     const isEditing = inlineEdit?.id === course.id && inlineEdit?.field === field;
     if (isEditing) {
@@ -367,7 +384,9 @@ const CoursesManager = () => {
                       </div>
                     </TableCell>
                     <TableCell className="hidden md:table-cell">
-                      <span className="rounded-full bg-muted px-2.5 py-1 text-xs font-medium">{course.category}</span>
+                      <span className="rounded-full bg-muted px-2.5 py-1 text-xs font-medium">
+                        {getCourseCategoryLabel(course.category)}
+                      </span>
                     </TableCell>
                     <TableCell className="hidden md:table-cell">{renderInlineCell(course, "promo_price")}</TableCell>
                     <TableCell className="hidden md:table-cell">{renderInlineCell(course, "installment")}</TableCell>
@@ -434,10 +453,11 @@ const CoursesManager = () => {
                       value={editingCourse.category}
                       onChange={(e) => setEditingCourse({ ...editingCourse, category: e.target.value })}
                     >
-                      <option value="extensao">Curso por Extensão</option>
-                      <option value="competencia">Certificação por Competência</option>
-                      <option value="pos-tecnico">Pós-Técnico</option>
-                      <option value="segundo-grau">Segundo Grau (EJA)</option>
+                      {categoryOptions.map((category) => (
+                        <option key={category.slug} value={category.slug}>
+                          {category.label}
+                        </option>
+                      ))}
                     </select>
                   </div>
                 </div>

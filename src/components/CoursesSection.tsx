@@ -1,8 +1,13 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { Calendar, BadgeCheck, ArrowRight, Loader2, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button.tsx";
 import { Link } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client.ts";
+import {
+  buildCategoryMetas,
+  getCourseCardLabel,
+  type CourseCategoryMeta,
+} from "@/lib/courseCategories.ts";
 
 interface Course {
   id: string;
@@ -30,13 +35,6 @@ const CourseCard = ({ course }: { course: Course }) => {
       .toUpperCase();
   };
 
-  const getLabel = () => {
-    if (course.category === "competencia") return "Certificação por Competência";
-    if (course.category === "pos-tecnico") return "Pós-Técnico EAD";
-    if (course.category === "segundo-grau") return "EJA - Ensino Médio";
-    return "Curso por Extensão EAD";
-  };
-
   return (
     <Link to={`/curso/${course.slug}`} className="block">
       <article className="group card-hover flex h-full flex-col overflow-hidden rounded-2xl bg-card shadow-card transition-all hover:shadow-lg">
@@ -50,7 +48,7 @@ const CourseCard = ({ course }: { course: Course }) => {
           
           <div className="absolute left-0 top-3 bg-ecid-yellow px-3 py-1">
             <span className="text-[10px] font-bold uppercase tracking-wide text-ecid-navy">
-              {getLabel()}
+              {getCourseCardLabel(course.category)}
             </span>
           </div>
           
@@ -119,6 +117,26 @@ const CourseCard = ({ course }: { course: Course }) => {
   );
 };
 
+const HighlightedCategoryTitle = ({ meta }: { meta: CourseCategoryMeta }) => {
+  const highlightIndex = meta.sectionTitle.toLowerCase().indexOf(meta.sectionHighlight.toLowerCase());
+
+  if (highlightIndex < 0) {
+    return <>{meta.sectionTitle}</>;
+  }
+
+  const before = meta.sectionTitle.slice(0, highlightIndex);
+  const highlighted = meta.sectionTitle.slice(highlightIndex, highlightIndex + meta.sectionHighlight.length);
+  const after = meta.sectionTitle.slice(highlightIndex + meta.sectionHighlight.length);
+
+  return (
+    <>
+      {before}
+      <span className="underline decoration-ecid-blue-accent decoration-4 underline-offset-4">{highlighted}</span>
+      {after}
+    </>
+  );
+};
+
 const CoursesSection = () => {
   const [courses, setCourses] = useState<Course[]>([]);
   const [loading, setLoading] = useState(true);
@@ -136,9 +154,16 @@ const CoursesSection = () => {
     fetchCourses();
   }, []);
 
-  const technicalCourses = courses.filter(c => c.category === "extensao");
-  const certificationCourses = courses.filter(c => c.category === "competencia");
-  const postTechnicalCourses = courses.filter(c => c.category === "pos-tecnico");
+  const categoryGroups = useMemo(
+    () =>
+      buildCategoryMetas(courses.map((course) => course.category))
+        .map((meta) => ({
+          meta,
+          courses: courses.filter((course) => course.category === meta.slug),
+        }))
+        .filter((group) => group.courses.length > 0),
+    [courses],
+  );
 
   if (loading) {
     return (
@@ -153,15 +178,14 @@ const CoursesSection = () => {
   return (
     <section id="courses" className="py-16 md:py-20">
       <div className="container mx-auto">
-        {/* Technical Courses */}
-        {technicalCourses.length > 0 && (
-          <div className="mb-16">
+        {categoryGroups.map((group, index) => (
+          <div key={group.meta.slug} className={index < categoryGroups.length - 1 ? "mb-16" : undefined}>
             <div className="mb-8 flex items-center justify-between">
               <h2 className="text-2xl font-bold text-foreground md:text-3xl">
-                Cursos por <span className="underline decoration-ecid-blue-accent decoration-4 underline-offset-4">Extensão</span> EAD
+                <HighlightedCategoryTitle meta={group.meta} />
               </h2>
               <Link
-                to="/cursos?categoria=extensao"
+                to={`/cursos?categoria=${group.meta.slug}`}
                 className="hidden items-center gap-1 text-sm font-semibold text-ecid-blue-accent hover:underline sm:flex"
               >
                 Ver todos
@@ -170,84 +194,20 @@ const CoursesSection = () => {
             </div>
 
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
-              {technicalCourses.slice(0, 5).map((course) => (
+              {group.courses.slice(0, 5).map((course) => (
                 <CourseCard key={course.id} course={course} />
               ))}
             </div>
 
             <div className="mt-6 text-center sm:hidden">
-              <Link to="/cursos?categoria=extensao">
+              <Link to={`/cursos?categoria=${group.meta.slug}`}>
                 <Button variant="outline" className="rounded-lg font-semibold">
                   Ver todos os cursos
                 </Button>
               </Link>
             </div>
           </div>
-        )}
-
-        {/* Certification Courses */}
-        {certificationCourses.length > 0 && (
-          <div className="mb-16">
-            <div className="mb-8 flex items-center justify-between">
-              <h2 className="text-2xl font-bold text-foreground md:text-3xl">
-                Certificação por <span className="underline decoration-ecid-blue-accent decoration-4 underline-offset-4">Competência</span>
-              </h2>
-              <Link
-                to="/cursos?categoria=competencia"
-                className="hidden items-center gap-1 text-sm font-semibold text-ecid-blue-accent hover:underline sm:flex"
-              >
-                Ver todos
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-            </div>
-
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
-              {certificationCourses.slice(0, 5).map((course) => (
-                <CourseCard key={course.id} course={course} />
-              ))}
-            </div>
-
-            <div className="mt-6 text-center sm:hidden">
-              <Link to="/cursos?categoria=competencia">
-                <Button variant="outline" className="rounded-lg font-semibold">
-                  Ver todos os cursos
-                </Button>
-              </Link>
-            </div>
-          </div>
-        )}
-
-        {/* Post-Technical Courses */}
-        {postTechnicalCourses.length > 0 && (
-          <div>
-            <div className="mb-8 flex items-center justify-between">
-              <h2 className="text-2xl font-bold text-foreground md:text-3xl">
-                Cursos <span className="underline decoration-ecid-blue-accent decoration-4 underline-offset-4">Pós-Técnicos</span> EAD
-              </h2>
-              <Link
-                to="/cursos?categoria=pos-tecnico"
-                className="hidden items-center gap-1 text-sm font-semibold text-ecid-blue-accent hover:underline sm:flex"
-              >
-                Ver todos
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-            </div>
-
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
-              {postTechnicalCourses.slice(0, 5).map((course) => (
-                <CourseCard key={course.id} course={course} />
-              ))}
-            </div>
-
-            <div className="mt-6 text-center sm:hidden">
-              <Link to="/cursos?categoria=pos-tecnico">
-                <Button variant="outline" className="rounded-lg font-semibold">
-                  Ver todos os cursos
-                </Button>
-              </Link>
-            </div>
-          </div>
-        )}
+        ))}
       </div>
     </section>
   );

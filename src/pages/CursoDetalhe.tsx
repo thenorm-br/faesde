@@ -10,6 +10,7 @@ import WhatsAppButton from "@/components/WhatsAppButton.tsx";
 import { useState, useEffect } from "react";
 import { supabase } from "@/integrations/supabase/client.ts";
 import type { Json } from "@/integrations/supabase/types.ts";
+import { getCourseCategoryLabel } from "@/lib/courseCategories.ts";
 
 interface CourseModule {
   name: string;
@@ -538,7 +539,7 @@ const CursoDetalhe = () => {
                   </div>
                   <div className="absolute right-3 top-3">
                     <span className="rounded bg-ecid-blue-accent px-2 py-1 text-xs font-bold text-white">
-                      {course.category}
+                      {getCourseCategoryLabel(course.category)}
                     </span>
                   </div>
                 </div>

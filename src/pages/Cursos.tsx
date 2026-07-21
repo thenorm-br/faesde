@@ -9,6 +9,7 @@ import Footer from "@/components/Footer.tsx";
 import WhatsAppButton from "@/components/WhatsAppButton.tsx";
 import { supabase } from "@/integrations/supabase/client.ts";
 import { scoreCourse, getRelatedKeywords } from "@/lib/courseSearch.ts";
+import { buildCategoryMetas, getCourseCardLabel } from "@/lib/courseCategories.ts";
 
 interface Course {
   id: string;
@@ -33,13 +34,6 @@ const CourseCard = ({ course }: { course: Course }) => {
       .toUpperCase();
   };
 
-  const getLabel = () => {
-    if (course.category === "competencia") return "Certificação por Competência";
-    if (course.category === "pos-tecnico") return "Pós-Técnico EAD";
-    if (course.category === "segundo-grau") return "EJA - Ensino Médio";
-    return "Curso Técnico EAD";
-  };
-
   return (
     <Link to={`/curso/${course.slug}`}>
       <article className="group card-hover flex flex-col overflow-hidden rounded-2xl bg-card shadow-card">
@@ -53,7 +47,7 @@ const CourseCard = ({ course }: { course: Course }) => {
           
           <div className="absolute left-0 top-3 bg-ecid-yellow px-3 py-1">
             <span className="text-[10px] font-bold uppercase tracking-wide text-ecid-navy">
-              {getLabel()}
+              {getCourseCardLabel(course.category)}
             </span>
           </div>
           
@@ -165,6 +159,11 @@ const Cursos = () => {
       .map((x) => x.c);
   }, [courses, activeTab, searchTerm]);
 
+  const categoryTabs = useMemo(
+    () => buildCategoryMetas(courses.map((course) => course.category)),
+    [courses],
+  );
+
   const relatedKeywords = useMemo(() => getRelatedKeywords(searchTerm), [searchTerm]);
 
   return (
@@ -211,12 +210,19 @@ const Cursos = () => {
             </div>
 
             <Tabs value={activeTab} onValueChange={handleTabChange} className="w-full md:w-auto">
-              <TabsList className="grid w-full grid-cols-5 md:w-auto">
-                <TabsTrigger value="todos">Todos</TabsTrigger>
-                <TabsTrigger value="extensao">Extensão</TabsTrigger>
-                <TabsTrigger value="competencia">Competência</TabsTrigger>
-                <TabsTrigger value="pos-tecnico">Pós-Técnico</TabsTrigger>
-                <TabsTrigger value="segundo-grau">Segundo Grau</TabsTrigger>
+              <TabsList className="flex h-auto w-full flex-wrap justify-start gap-2 bg-transparent p-0 md:w-auto">
+                <TabsTrigger value="todos" className="rounded-lg border border-border bg-card px-4">
+                  Todos
+                </TabsTrigger>
+                {categoryTabs.map((category) => (
+                  <TabsTrigger
+                    key={category.slug}
+                    value={category.slug}
+                    className="rounded-lg border border-border bg-card px-4"
+                  >
+                    {category.label}
+                  </TabsTrigger>
+                ))}
               </TabsList>
             </Tabs>
           </div>

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client.ts";
 import { GraduationCap, CheckCircle, XCircle, FolderOpen, Palette, ArrowRight, Cloud } from "lucide-react";
+import { getCourseCategoryLabel } from "@/lib/courseCategories.ts";
 
 interface Stats {
   total: number;
@@ -97,7 +98,7 @@ const Dashboard = () => {
               key={cat}
               className="rounded-full bg-muted px-3 py-1.5 text-sm font-medium text-muted-foreground"
             >
-              {cat}
+              {getCourseCategoryLabel(cat)}
             </span>
           ))}
         </div>
