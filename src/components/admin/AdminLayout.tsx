@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { useNavigate, Outlet } from "react-router-dom";
-import { supabase } from "@/integrations/supabase/client";
-import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
-import AdminSidebar from "./AdminSidebar";
+import { supabase } from "@/integrations/supabase/client.ts";
+import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar.tsx";
+import AdminSidebar from "./AdminSidebar.tsx";
 
 const AdminLayout = () => {
   const [authorized, setAuthorized] = useState(false);

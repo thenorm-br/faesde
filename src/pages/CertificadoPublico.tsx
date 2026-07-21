@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import { supabase } from "@/integrations/supabase/client";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import { supabase } from "@/integrations/supabase/client.ts";
+import Header from "@/components/Header.tsx";
+import Footer from "@/components/Footer.tsx";
 import { GraduationCap, Monitor, Barcode, Loader2, Download } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { emitCertificatePdf } from "@/lib/certificatePdf";
+import { Button } from "@/components/ui/button.tsx";
+import { emitCertificatePdf } from "@/lib/certificatePdf.ts";
 import { toast } from "sonner";
 
 interface Certificate {
@@ -19,6 +19,7 @@ interface Certificate {
   book_number: string | null;
   page_number: string | null;
   institution: string | null;
+  content: string | null;
 }
 
 const formatDate = (d: string) => {
@@ -78,7 +79,7 @@ const CertificadoPublico = () => {
               </div>
               <Button
                 onClick={async () => {
-                  try { await emitCertificatePdf(cert as any); toast.success("PDF gerado"); }
+                  try { await emitCertificatePdf(cert); toast.success("PDF gerado"); }
                   catch (e: any) { toast.error(e?.message || "Erro ao gerar PDF"); }
                 }}
               >

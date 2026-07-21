@@ -1,15 +1,14 @@
 import { Search, User, Menu, X, ChevronDown } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button.tsx";
+import { Input } from "@/components/ui/input.tsx";
 import { useState, FormEvent } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import logo from "@/assets/logo.webp";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+} from "@/components/ui/dropdown-menu.tsx";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -41,7 +40,7 @@ const Header = () => {
       <div className="container mx-auto flex items-center justify-between py-4">
         {/* Logo */}
         <Link to="/" className="flex items-center">
-          <img src={logo} alt="FAESDE" className="h-10" />
+          <img src="/logo.png" alt="FAESDE" className="h-10" />
         </Link>
 
         {/* Categories Dropdown - Desktop */}

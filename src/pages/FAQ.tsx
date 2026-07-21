@@ -1,15 +1,15 @@
 import { useState } from "react";
 import { Search, ChevronDown, ArrowLeft } from "lucide-react";
-import { Input } from "@/components/ui/input";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import WhatsAppButton from "@/components/WhatsAppButton";
+import { Input } from "@/components/ui/input.tsx";
+import Header from "@/components/Header.tsx";
+import Footer from "@/components/Footer.tsx";
+import WhatsAppButton from "@/components/WhatsAppButton.tsx";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/accordion";
+} from "@/components/ui/accordion.tsx";
 
 const faqData = [
   {

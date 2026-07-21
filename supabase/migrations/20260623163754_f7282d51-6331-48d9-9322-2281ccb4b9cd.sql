@@ -6,6 +6,7 @@ CREATE TABLE public.certificates (
   cpf TEXT,
   course_name TEXT NOT NULL,
   course_slug TEXT,
+  content TEXT,
   hours INTEGER NOT NULL DEFAULT 0,
   completion_date DATE NOT NULL DEFAULT CURRENT_DATE,
   book_number TEXT,

@@ -1,15 +1,15 @@
 import { useState, useEffect } from "react";
 import { Send } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
+import { Button } from "@/components/ui/button.tsx";
+import { Input } from "@/components/ui/input.tsx";
+import { Textarea } from "@/components/ui/textarea.tsx";
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
-} from "@/components/ui/dialog";
-import { useActiveTheme } from "@/hooks/useActiveTheme";
+} from "@/components/ui/dialog.tsx";
+import { useActiveTheme } from "@/hooks/useActiveTheme.ts";
 
 const ExitIntentPopup = () => {
   const [isOpen, setIsOpen] = useState(false);

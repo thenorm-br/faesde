@@ -1,5 +1,5 @@
 import { useLocation, useNavigate } from "react-router-dom";
-import { supabase } from "@/integrations/supabase/client";
+import { supabase } from "@/integrations/supabase/client.ts";
 import {
   LayoutDashboard,
   GraduationCap,
@@ -21,9 +21,9 @@ import {
   SidebarMenuItem,
   SidebarFooter,
   useSidebar,
-} from "@/components/ui/sidebar";
-import { NavLink } from "@/components/NavLink";
-import { Button } from "@/components/ui/button";
+} from "@/components/ui/sidebar.tsx";
+import { NavLink } from "@/components/NavLink.tsx";
+import { Button } from "@/components/ui/button.tsx";
 
 const menuItems = [
   { title: "Dashboard", url: "/admin", icon: LayoutDashboard },

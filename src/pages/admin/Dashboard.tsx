@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { supabase } from "@/integrations/supabase/client";
+import { supabase } from "@/integrations/supabase/client.ts";
 import { GraduationCap, CheckCircle, XCircle, FolderOpen, Palette, ArrowRight } from "lucide-react";
 
 interface Stats {

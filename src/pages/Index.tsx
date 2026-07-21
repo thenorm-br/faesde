@@ -1,12 +1,12 @@
-import Header from "@/components/Header";
-import HeroBanner from "@/components/HeroBanner";
-import BenefitsBar from "@/components/BenefitsBar";
-import CoursesSection from "@/components/CoursesSection";
-import TestimonialsSection from "@/components/TestimonialsSection";
-import ContactSection from "@/components/ContactSection";
-import Footer from "@/components/Footer";
-import WhatsAppButton from "@/components/WhatsAppButton";
-import ExitIntentPopup from "@/components/ExitIntentPopup";
+import Header from "@/components/Header.tsx";
+import HeroBanner from "@/components/HeroBanner.tsx";
+import BenefitsBar from "@/components/BenefitsBar.tsx";
+import CoursesSection from "@/components/CoursesSection.tsx";
+import TestimonialsSection from "@/components/TestimonialsSection.tsx";
+import ContactSection from "@/components/ContactSection.tsx";
+import Footer from "@/components/Footer.tsx";
+import WhatsAppButton from "@/components/WhatsAppButton.tsx";
+import ExitIntentPopup from "@/components/ExitIntentPopup.tsx";
 
 const Index = () => {
   return (

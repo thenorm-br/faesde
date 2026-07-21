@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useActiveTheme } from "@/hooks/useActiveTheme";
+import { useActiveTheme } from "@/hooks/useActiveTheme.ts";
 
 const HeroBanner = () => {
   const { theme, loading } = useActiveTheme();

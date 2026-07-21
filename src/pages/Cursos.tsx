@@ -1,14 +1,14 @@
 import { useState, useEffect, useMemo } from "react";
 import { Search, ArrowLeft, Calendar, BadgeCheck, Loader2, X } from "lucide-react";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
-import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Input } from "@/components/ui/input.tsx";
+import { Button } from "@/components/ui/button.tsx";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs.tsx";
 import { Link, useSearchParams } from "react-router-dom";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import WhatsAppButton from "@/components/WhatsAppButton";
-import { supabase } from "@/integrations/supabase/client";
-import { scoreCourse, getRelatedKeywords } from "@/lib/courseSearch";
+import Header from "@/components/Header.tsx";
+import Footer from "@/components/Footer.tsx";
+import WhatsAppButton from "@/components/WhatsAppButton.tsx";
+import { supabase } from "@/integrations/supabase/client.ts";
+import { scoreCourse, getRelatedKeywords } from "@/lib/courseSearch.ts";
 
 interface Course {
   id: string;

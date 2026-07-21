@@ -1,17 +1,18 @@
 import { useEffect, useState } from "react";
 import QRCode from "qrcode";
-import { supabase } from "@/integrations/supabase/client";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Switch } from "@/components/ui/switch";
+import { supabase } from "@/integrations/supabase/client.ts";
+import { Button } from "@/components/ui/button.tsx";
+import { Input } from "@/components/ui/input.tsx";
+import { Label } from "@/components/ui/label.tsx";
+import { Switch } from "@/components/ui/switch.tsx";
+import { Textarea } from "@/components/ui/textarea.tsx";
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
   DialogFooter,
-} from "@/components/ui/dialog";
+} from "@/components/ui/dialog.tsx";
 import {
   Table,
   TableBody,
@@ -19,10 +20,10 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table";
+} from "@/components/ui/table.tsx";
 import { toast } from "sonner";
 import { Plus, Copy, QrCode, Pencil, Trash2, ExternalLink, Download, RefreshCw, FileDown } from "lucide-react";
-import { emitCertificatePdf } from "@/lib/certificatePdf";
+import { emitCertificatePdf, resolveRegistryNumbers } from "@/lib/certificatePdf.ts";
 
 interface Certificate {
   id: string;
@@ -37,6 +38,7 @@ interface Certificate {
   page_number: string | null;
   institution: string | null;
   is_active: boolean;
+  content: string | null;
 }
 
 const emptyForm = {
@@ -49,6 +51,7 @@ const emptyForm = {
   completion_date: new Date().toISOString().slice(0, 10),
   book_number: "",
   page_number: "",
+  content: "",
   institution: "FAESDE",
   is_active: true,
 };
@@ -97,8 +100,25 @@ const CertificatesManager = () => {
   }, [qrOpen]);
 
   const openCreate = () => {
+    const code = generateCode();
+    const completion_date = new Date().toISOString().slice(0, 10);
+    const registry = resolveRegistryNumbers({
+      code,
+      student_name: "",
+      course_name: "",
+      completion_date,
+      book_number: "",
+      page_number: "",
+    });
     setEditing(null);
-    setForm({ ...emptyForm, code: generateCode() });
+    setForm({
+      ...emptyForm,
+      code,
+      completion_date,
+      book_number: registry.book_number,
+      page_number: registry.page_number,
+      content: "",
+    });
     setDialogOpen(true);
   };
 
@@ -114,6 +134,7 @@ const CertificatesManager = () => {
       completion_date: c.completion_date,
       book_number: c.book_number || "",
       page_number: c.page_number || "",
+      content: c.content || "",
       institution: c.institution || "FAESDE",
       is_active: c.is_active,
     });
@@ -129,12 +150,21 @@ const CertificatesManager = () => {
       toast.error("Preencha nome do aluno e do curso.");
       return;
     }
+    const registry = resolveRegistryNumbers({
+      code: form.code,
+      student_name: form.student_name,
+      course_name: form.course_name,
+      completion_date: form.completion_date,
+      book_number: form.book_number,
+      page_number: form.page_number,
+    });
     const payload = {
       ...form,
       cpf: form.cpf || null,
       course_slug: form.course_slug || null,
-      book_number: form.book_number || null,
-      page_number: form.page_number || null,
+      content: form.content || null,
+      book_number: registry.book_number,
+      page_number: registry.page_number,
     };
     const { error } = editing
       ? await supabase.from("certificates").update(payload).eq("id", editing.id)
@@ -292,6 +322,18 @@ const CertificatesManager = () => {
             <div>
               <Label>Slug do curso (opcional, para link)</Label>
               <Input value={form.course_slug} onChange={(e) => setForm({ ...form, course_slug: e.target.value })} placeholder="ex: tecnico-em-radiologia" />
+            </div>
+            <div>
+              <Label>Conteúdo programático</Label>
+              <Textarea
+                value={form.content}
+                onChange={(e) => setForm({ ...form, content: e.target.value })}
+                placeholder={`13.1 Objetivo e Campo de Aplicação\n13.2 Disposições Gerais\n13.3 Disposições Gerais para Caldeiras, Vasos de Pressão, Tubulações e Tanques`}
+                rows={10}
+              />
+              <p className="mt-2 text-xs text-muted-foreground">
+                Use uma linha por tópico para o PDF quebrar o conteúdo de forma organizada.
+              </p>
             </div>
             <div className="grid grid-cols-3 gap-4">
               <div>
