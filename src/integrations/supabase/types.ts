@@ -43,6 +43,7 @@ export type Database = {
           book_number: string | null
           code: string
           completion_date: string
+          content: string | null
           course_name: string
           course_slug: string | null
           cpf: string | null
@@ -59,6 +60,7 @@ export type Database = {
           book_number?: string | null
           code: string
           completion_date?: string
+          content?: string | null
           course_name: string
           course_slug?: string | null
           cpf?: string | null
@@ -75,6 +77,7 @@ export type Database = {
           book_number?: string | null
           code?: string
           completion_date?: string
+          content?: string | null
           course_name?: string
           course_slug?: string | null
           cpf?: string | null
