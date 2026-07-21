@@ -33,7 +33,7 @@ Never expose these values in React, Vite, or any public bundle.
   - Public health check for the Node server.
 
 - `GET /api/sync/status`
-  - Requires Supabase admin session bearer token.
+  - Public status endpoint. It returns only provider states and secret names, never secret values.
   - Returns configured providers and required secret names.
 
 - `POST /api/sync/connect`

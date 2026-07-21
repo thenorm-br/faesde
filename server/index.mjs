@@ -504,8 +504,6 @@ async function handleApi(req, res, url) {
   }
 
   try {
-    await requireAdmin(req);
-
     if (req.method === "GET" && url.pathname === "/api/sync/status") {
       const githubReady = Boolean(GITHUB_REPO && GITHUB_BRANCH);
       const googleConfigured = Boolean(getGoogleCredentials());
@@ -536,6 +534,8 @@ async function handleApi(req, res, url) {
         },
       });
     }
+
+    await requireAdmin(req);
 
     if (req.method === "POST" && url.pathname === "/api/sync/connect") {
       const body = await readJsonBody(req);

@@ -129,6 +129,43 @@ const STATUS_CLASSES: Record<ProviderStatus, string> = {
   error: "border-red-200 bg-red-100 text-red-900",
 };
 
+const FALLBACK_STATUS: ApiStatus = {
+  ok: false,
+  serverTime: "",
+  config: {
+    driveRootFolderId: "1jYFYbdJdJHT-f7BpzFX9t1mQLD6xwgbd",
+    githubRepo: "thenorm-br/faesde",
+    githubBranch: "main",
+    publicBasePath: "/eadplataforma",
+    maxGithubFileMb: 25,
+    scanLimit: 5000,
+  },
+  providers: {
+    google_drive: {
+      provider: "google_drive",
+      label: "Google Drive",
+      status: "not_configured",
+      message: "Clique em Validar conexao para testar a API e ver exatamente o que falta configurar.",
+      externalId: "1jYFYbdJdJHT-f7BpzFX9t1mQLD6xwgbd",
+      requiredSecrets: ["GOOGLE_SERVICE_ACCOUNT_JSON"],
+      capabilities: { read: false, write: false, scan: false },
+    },
+    github: {
+      provider: "github",
+      label: "GitHub",
+      status: "ready",
+      message: "Clique em Validar conexao para testar o repositorio. Para escrita, configure GITHUB_TOKEN no Coolify.",
+      externalId: "thenorm-br/faesde@main",
+      requiredSecrets: ["GITHUB_TOKEN"],
+      capabilities: { read: true, write: false, scan: false },
+    },
+  },
+  sql: {
+    enabled: false,
+    message: "SQL ficou para uma etapa futura de redundancia.",
+  },
+};
+
 function formatSize(bytes = 0) {
   if (bytes < 1024) return `${bytes} B`;
   if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(1)} KB`;
@@ -255,7 +292,7 @@ const ConnectionsManager = () => {
     try {
       await loadStatus();
     } catch (error) {
-      setApiStatus(null);
+      setApiStatus(FALLBACK_STATUS);
       setApiError(error instanceof Error ? error.message : "Nao foi possivel acessar a API de sync.");
     } finally {
       setLoading(false);
@@ -293,6 +330,7 @@ const ConnectionsManager = () => {
         description: result.provider.message,
       });
     } catch (error) {
+      await loadStatus().catch(() => null);
       toast({
         title: "Erro ao conectar",
         description: error instanceof Error ? error.message : "Falha inesperada.",
@@ -347,7 +385,7 @@ const ConnectionsManager = () => {
             <RefreshCw className="mr-2 h-4 w-4" />
             Atualizar
           </Button>
-          <Button onClick={() => runSync("drive_scan")} disabled={!apiStatus || !!runningMode}>
+          <Button onClick={() => runSync("drive_scan")} disabled={!!runningMode}>
             {runningMode === "drive_scan" ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <Play className="mr-2 h-4 w-4" />}
             Escanear Drive
           </Button>
@@ -358,8 +396,8 @@ const ConnectionsManager = () => {
         <Alert variant="destructive">
           <AlertTriangle className="h-4 w-4" />
           <AlertDescription>
-            A API de sincronizacao ainda nao respondeu: {apiError}. Depois do redeploy com servidor Node, esta area
-            passa a validar as conexoes de verdade.
+            A API de sincronizacao respondeu com alerta: {apiError}. Os botoes continuam ativos para testar novamente
+            e mostrar o erro real da conexao.
           </AlertDescription>
         </Alert>
       )}
@@ -521,7 +559,7 @@ const ConnectionsManager = () => {
                       </div>
                     </div>
 
-                    <Button className="w-full" onClick={() => connectProvider(providerKey)} disabled={!apiStatus || !!runningProvider}>
+                    <Button className="w-full" onClick={() => connectProvider(providerKey)} disabled={!!runningProvider}>
                       {isBusy ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <CheckCircle2 className="mr-2 h-4 w-4" />}
                       Validar conexao
                     </Button>
@@ -545,7 +583,7 @@ const ConnectionsManager = () => {
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
-                <Button onClick={() => runSync("drive_scan")} disabled={!apiStatus || !!runningMode} className="w-full">
+                <Button onClick={() => runSync("drive_scan")} disabled={!!runningMode} className="w-full">
                   {runningMode === "drive_scan" ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <Cloud className="mr-2 h-4 w-4" />}
                   Escanear agora
                 </Button>
@@ -568,7 +606,7 @@ const ConnectionsManager = () => {
               <CardContent className="space-y-4">
                 <Button
                   onClick={() => runSync("drive_to_github_manifest")}
-                  disabled={!apiStatus || !!runningMode}
+                  disabled={!!runningMode}
                   className="w-full"
                 >
                   {runningMode === "drive_to_github_manifest" ? (
