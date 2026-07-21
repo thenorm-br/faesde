@@ -74,9 +74,10 @@ All tables use RLS and require `public.has_role(auth.uid(), 'admin')`.
 
 - `POST /api/sync/run`
   - Requires Supabase admin session bearer token.
-  - Body: `{ "mode": "drive_scan" | "drive_to_github_manifest" }`
+  - Body: `{ "mode": "drive_scan" | "drive_to_github_manifest" | "drive_to_github_files" }`
   - `drive_scan` reads Drive and returns counts.
   - `drive_to_github_manifest` writes `public/eadplataforma-drive-manifest.json` to GitHub.
+  - `drive_to_github_files` downloads GitHub-eligible Drive files and commits them under `public/eadplataforma/`, also updating the manifest.
 
 ## Optional server fallbacks
 
@@ -89,6 +90,7 @@ The OAuth panel is the preferred path. These environment variables are still sup
 - `GITHUB_BRANCH`
 - `EAD_GITHUB_MAX_FILE_MB`
 - `GOOGLE_DRIVE_SCAN_LIMIT`
+- `EAD_GITHUB_SYNC_BATCH_SIZE`
 
 ## Storage strategy
 

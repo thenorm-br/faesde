@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import {
   AlertTriangle,
@@ -34,7 +34,7 @@ import { useToast } from "@/hooks/use-toast.ts";
 
 type ProviderKey = "google_drive" | "github";
 type ProviderStatus = "not_configured" | "ready" | "connected" | "read_only" | "error";
-type SyncMode = "drive_scan" | "drive_to_github_manifest";
+type SyncMode = "drive_scan" | "drive_to_github_manifest" | "drive_to_github_files";
 type TabKey = "providers" | "sync" | "settings" | "environment";
 
 type EadNode =
@@ -97,6 +97,7 @@ interface ApiStatus {
     publicBasePath: string;
     maxGithubFileMb: number;
     scanLimit: number;
+    syncBatchSize?: number;
   };
   providers: Record<ProviderKey, ProviderState>;
   oauth?: {
@@ -126,7 +127,13 @@ interface RunResult {
     htmlFiles: number;
     videos: number;
     truncated: boolean;
+    syncedFiles?: number;
+    skippedFiles?: number;
+    pendingFiles?: number;
+    failedFiles?: number;
+    batchLimit?: number;
   };
+  failures?: Array<{ path: string; message: string }>;
 }
 
 interface LocalStats {
@@ -212,6 +219,7 @@ const FALLBACK_STATUS: ApiStatus = {
     publicBasePath: "/eadplataforma",
     maxGithubFileMb: 25,
     scanLimit: 5000,
+    syncBatchSize: 150,
   },
   providers: {
     google_drive: {
@@ -385,6 +393,10 @@ const ConnectionsManager = () => {
   const [activeTab, setActiveTab] = useState<TabKey>("providers");
   const [settingsDrafts, setSettingsDrafts] = useState<Record<ProviderKey, SettingsDraft>>(DEFAULT_DRAFTS);
   const [handlingCallback, setHandlingCallback] = useState(false);
+  const [autoSyncMessage, setAutoSyncMessage] = useState("Aguardando conexoes.");
+  const [autoSyncStarted, setAutoSyncStarted] = useState(false);
+  const autoSyncRunsRef = useRef(0);
+  const autoSyncTimerRef = useRef<number | null>(null);
   const { toast } = useToast();
   const location = useLocation();
   const navigate = useNavigate();
@@ -476,6 +488,14 @@ const ConnectionsManager = () => {
     refreshAll();
     // Initial load only. Manual refresh is handled by the Atualizar button.
     // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
+    return () => {
+      if (autoSyncTimerRef.current) {
+        window.clearTimeout(autoSyncTimerRef.current);
+      }
+    };
   }, []);
 
   useEffect(() => {
@@ -647,26 +667,76 @@ const ConnectionsManager = () => {
     }
   };
 
-  const runSync = async (mode: SyncMode) => {
+  const runSync = async (mode: SyncMode, options: { automatic?: boolean } = {}) => {
+    const isAutomatic = Boolean(options.automatic);
     setRunningMode(mode);
     try {
       const result = await fetchWithSession<RunResult>("/api/sync/run", {
         method: "POST",
-        body: JSON.stringify({ mode }),
+        body: JSON.stringify({
+          mode,
+          batchSize: mode === "drive_to_github_files" ? apiStatus?.config.syncBatchSize : undefined,
+        }),
       });
       setLastRun(result);
-      toast({ title: "Acao concluida", description: result.message });
+
+      if (isAutomatic) {
+        const pendingFiles = result.stats?.pendingFiles || 0;
+        const syncedFiles = result.stats?.syncedFiles || 0;
+        setAutoSyncMessage(
+          pendingFiles > 0
+            ? `Sincronizacao automatica: ${syncedFiles} arquivo(s) enviados, ${pendingFiles} pendente(s).`
+            : "Sincronizacao automatica em dia.",
+        );
+
+        if (pendingFiles > 0 && autoSyncRunsRef.current < 20) {
+          autoSyncRunsRef.current += 1;
+          autoSyncTimerRef.current = window.setTimeout(() => {
+            runSync("drive_to_github_files", { automatic: true });
+          }, 60000);
+        }
+      } else {
+        toast({ title: "Acao concluida", description: result.message });
+      }
     } catch (error) {
-      toast({
-        title: "Erro na sincronizacao",
-        description: error instanceof Error ? error.message : "Falha inesperada.",
-        variant: "destructive",
-      });
+      const message = error instanceof Error ? error.message : "Falha inesperada.";
+      if (isAutomatic) {
+        setAutoSyncMessage(`Auto-sync pausado: ${message}`);
+      } else {
+        toast({
+          title: "Erro na sincronizacao",
+          description: message,
+          variant: "destructive",
+        });
+      }
     } finally {
       setRunningMode(null);
       loadStatus().catch(() => null);
     }
   };
+
+  const googleConnected = apiStatus?.providers.google_drive.status === "connected";
+  const githubConnected = apiStatus?.providers.github.status === "connected";
+
+  useEffect(() => {
+    if (loading || handlingCallback) return;
+
+    if (!googleConnected || !githubConnected) {
+      setAutoSyncMessage("Aguardando Google Drive e GitHub conectados.");
+      setAutoSyncStarted(false);
+      autoSyncRunsRef.current = 0;
+      return;
+    }
+
+    if (autoSyncStarted || runningMode) return;
+
+    setAutoSyncStarted(true);
+    autoSyncRunsRef.current = 1;
+    setAutoSyncMessage("Sincronizacao automatica iniciada.");
+    runSync("drive_to_github_files", { automatic: true });
+    // runSync intentionally stays out of deps to avoid restarting the automation on each render.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [autoSyncStarted, githubConnected, googleConnected, handlingCallback, loading, runningMode]);
 
   const updateDraft = (provider: ProviderKey, field: keyof SettingsDraft, value: string) => {
     setSettingsDrafts((current) => ({
@@ -712,9 +782,9 @@ const ConnectionsManager = () => {
             <RefreshCw className="mr-2 h-4 w-4" />
             Atualizar
           </Button>
-          <Button onClick={() => runSync("drive_scan")} disabled={!!runningMode}>
-            {runningMode === "drive_scan" ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <Play className="mr-2 h-4 w-4" />}
-            Escanear Drive
+          <Button onClick={() => runSync("drive_to_github_files")} disabled={!!runningMode}>
+            {runningMode === "drive_to_github_files" ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <Play className="mr-2 h-4 w-4" />}
+            Sincronizar EAD
           </Button>
         </div>
       </div>
@@ -728,14 +798,6 @@ const ConnectionsManager = () => {
           </AlertDescription>
         </Alert>
       )}
-
-      <Alert>
-        <KeyRound className="h-4 w-4" />
-        <AlertDescription>
-          Agora a conexao e feita por OAuth: voce cadastra o app uma vez, clica em Conectar e faz login na conta
-          Google/GitHub pelo navegador.
-        </AlertDescription>
-      </Alert>
 
       <div className="grid grid-cols-1 gap-4 lg:grid-cols-4">
         <Card className="lg:col-span-2">
@@ -774,6 +836,7 @@ const ConnectionsManager = () => {
               <p className="text-xs text-muted-foreground">
                 Indice local gerado em {formatDate(indexData?.generatedAt)}. Volume publicado: {formatSize(localStats.bytes)}.
               </p>
+              <p className="text-xs font-medium text-foreground">{autoSyncMessage}</p>
             </div>
           </CardContent>
         </Card>
@@ -936,27 +999,27 @@ const ConnectionsManager = () => {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Github className="h-5 w-5 text-primary" />
-                  Gerar manifesto no GitHub
+                  Sincronizar arquivos EAD
                 </CardTitle>
                 <CardDescription>
-                  Cria ou atualiza `public/eadplataforma-drive-manifest.json` com os caminhos do Drive.
+                  Envia arquivos leves para `public/eadplataforma/` e atualiza o manifesto dos itens pesados.
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 <Button
-                  onClick={() => runSync("drive_to_github_manifest")}
+                  onClick={() => runSync("drive_to_github_files")}
                   disabled={!!runningMode}
                   className="w-full"
                 >
-                  {runningMode === "drive_to_github_manifest" ? (
+                  {runningMode === "drive_to_github_files" ? (
                     <Loader2 className="mr-2 h-4 w-4 animate-spin" />
                   ) : (
                     <Github className="mr-2 h-4 w-4" />
                   )}
-                  Sincronizar manifesto
+                  Sincronizar arquivos
                 </Button>
                 <p className="text-xs text-muted-foreground">
-                  Essa etapa usa a conta GitHub conectada para criar um commit no repositorio.
+                  O sync roda em lotes de {apiStatus?.config.syncBatchSize || 150} arquivo(s) para evitar travas.
                 </p>
               </CardContent>
             </Card>
@@ -988,6 +1051,26 @@ const ConnectionsManager = () => {
                     <div className="rounded-lg border p-3">
                       <p className="text-xs text-muted-foreground">Somente Drive</p>
                       <p className="text-2xl font-bold">{lastRun.stats.driveOnlyFiles}</p>
+                    </div>
+                  </div>
+                )}
+                {lastRun.stats && lastRun.stats.syncedFiles !== undefined && (
+                  <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
+                    <div className="rounded-lg border p-3">
+                      <p className="text-xs text-muted-foreground">Enviados</p>
+                      <p className="text-2xl font-bold">{lastRun.stats.syncedFiles}</p>
+                    </div>
+                    <div className="rounded-lg border p-3">
+                      <p className="text-xs text-muted-foreground">Ignorados</p>
+                      <p className="text-2xl font-bold">{lastRun.stats.skippedFiles || 0}</p>
+                    </div>
+                    <div className="rounded-lg border p-3">
+                      <p className="text-xs text-muted-foreground">Pendentes</p>
+                      <p className="text-2xl font-bold">{lastRun.stats.pendingFiles || 0}</p>
+                    </div>
+                    <div className="rounded-lg border p-3">
+                      <p className="text-xs text-muted-foreground">Falhas</p>
+                      <p className="text-2xl font-bold">{lastRun.stats.failedFiles || 0}</p>
                     </div>
                   </div>
                 )}

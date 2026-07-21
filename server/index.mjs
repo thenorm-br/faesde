@@ -14,6 +14,7 @@ const PUBLIC_BASE_PATH = process.env.EAD_PUBLIC_BASE_PATH || "/eadplataforma";
 const MAX_GITHUB_FILE_MB = Number(process.env.EAD_GITHUB_MAX_FILE_MB || 25);
 const MAX_GITHUB_BYTES = MAX_GITHUB_FILE_MB * 1024 * 1024;
 const DRIVE_SCAN_LIMIT = Number(process.env.GOOGLE_DRIVE_SCAN_LIMIT || 5000);
+const GITHUB_SYNC_BATCH_SIZE = Number(process.env.EAD_GITHUB_SYNC_BATCH_SIZE || 150);
 const MANIFEST_PATH = process.env.EAD_DRIVE_MANIFEST_PATH || "public/eadplataforma-drive-manifest.json";
 
 const PROVIDERS = ["google_drive", "github"];
@@ -168,6 +169,7 @@ function getConfig() {
     publicBasePath: PUBLIC_BASE_PATH,
     maxGithubFileMb: MAX_GITHUB_FILE_MB,
     scanLimit: DRIVE_SCAN_LIMIT,
+    syncBatchSize: GITHUB_SYNC_BATCH_SIZE,
   };
 }
 
@@ -735,6 +737,30 @@ async function driveRequest(pathname, params = {}, context) {
   return { payload, source: auth.source };
 }
 
+async function driveDownloadFile(fileId, context) {
+  const auth = await getGoogleAccessToken(context);
+  const url = new URL(`https://www.googleapis.com/drive/v3/files/${encodeURIComponent(fileId)}`);
+  url.searchParams.set("alt", "media");
+  url.searchParams.set("supportsAllDrives", "true");
+
+  const response = await fetch(url, {
+    headers: { Authorization: `Bearer ${auth.token}` },
+  });
+
+  if (!response.ok) {
+    let message = "Falha ao baixar arquivo do Google Drive.";
+    try {
+      const payload = await response.json();
+      message = payload.error?.message || message;
+    } catch {
+      // The Drive media endpoint may return plain text/HTML on some failures.
+    }
+    throw createHttpError(message, response.status);
+  }
+
+  return Buffer.from(await response.arrayBuffer());
+}
+
 async function getGitHubAuth(context) {
   const oauthToken = await getGitHubOAuthAccessToken(context);
   if (oauthToken) return { token: oauthToken, source: "oauth" };
@@ -905,7 +931,8 @@ async function buildDriveManifest(context) {
         const size = Number(file.size || 0);
         const ext = file.name.includes(".") ? file.name.split(".").pop().toLowerCase() : "";
         const isVideo = ["mp4", "webm", "mov", "avi", "mkv"].includes(ext);
-        const driveOnly = isVideo || size > MAX_GITHUB_BYTES;
+        const isGoogleWorkspaceFile = String(file.mimeType || "").startsWith("application/vnd.google-apps.");
+        const driveOnly = isGoogleWorkspaceFile || isVideo || size > MAX_GITHUB_BYTES;
 
         stats.files += 1;
         stats.bytes += size;
@@ -994,6 +1021,269 @@ async function writeManifestToGitHub(manifest, context) {
   );
 
   return result.payload.commit?.sha;
+}
+
+function githubTreePath(pathname) {
+  return pathname
+    .replace(/\\/g, "/")
+    .split("/")
+    .map((part) => part.trim())
+    .filter(Boolean)
+    .join("/");
+}
+
+async function readExistingDriveManifest(context) {
+  const encodedPath = MANIFEST_PATH.split("/").map(encodeURIComponent).join("/");
+
+  try {
+    const { payload } = await githubRequest(
+      `/repos/${GITHUB_REPO}/contents/${encodedPath}?ref=${encodeURIComponent(GITHUB_BRANCH)}`,
+      {},
+      context,
+    );
+    const content = String(payload.content || "").replace(/\s/g, "");
+    if (!content) return null;
+    return JSON.parse(Buffer.from(content, "base64").toString("utf8"));
+  } catch {
+    return null;
+  }
+}
+
+function manifestItemKey(item) {
+  return [
+    item.path,
+    item.type,
+    item.size || 0,
+    item.md5Checksum || "",
+    item.modifiedTime || "",
+    item.storageTarget || "",
+    item.githubCached ? "cached" : "pending",
+  ].join("|");
+}
+
+function manifestSignature(manifest) {
+  return (manifest?.items || []).map(manifestItemKey).sort().join("\n");
+}
+
+function prepareManifestForGithubSync(manifest, existingManifest, batchFiles) {
+  const batchPaths = new Set(batchFiles.map((file) => file.path));
+  const existingByPath = new Map((existingManifest?.items || []).map((item) => [item.path, item]));
+  const syncedAt = new Date().toISOString();
+
+  return {
+    ...manifest,
+    sync: {
+      mode: "drive_to_github_files",
+      syncedAt,
+      batchSize: batchFiles.length,
+      batchLimit: GITHUB_SYNC_BATCH_SIZE,
+    },
+    items: manifest.items.map((item) => {
+      if (item.type !== "file" || item.storageTarget !== "github_cache") {
+        return {
+          ...item,
+          githubCached: false,
+        };
+      }
+
+      const existing = existingByPath.get(item.path);
+      const wasAlreadyCached =
+        existing?.githubCached === true &&
+        existing?.md5Checksum === item.md5Checksum &&
+        Number(existing?.size || 0) === Number(item.size || 0) &&
+        existing?.modifiedTime === item.modifiedTime;
+
+      const cachedNow = batchPaths.has(item.path) || wasAlreadyCached;
+
+      return {
+        ...item,
+        githubCached: cachedNow,
+        githubCachedAt: cachedNow ? existing?.githubCachedAt || syncedAt : null,
+        publicPath: cachedNow ? `${PUBLIC_BASE_PATH}/${item.path}` : null,
+      };
+    }),
+  };
+}
+
+function getGithubSyncPlan(manifest, existingManifest, requestedBatchSize) {
+  const existingByPath = new Map((existingManifest?.items || []).map((item) => [item.path, item]));
+  const batchSize = Math.max(1, Math.min(Number(requestedBatchSize || GITHUB_SYNC_BATCH_SIZE), 500));
+  const eligibleFiles = manifest.items.filter(
+    (item) => item.type === "file" && item.storageTarget === "github_cache",
+  );
+
+  const changedFiles = eligibleFiles.filter((item) => {
+    const existing = existingByPath.get(item.path);
+    return !(
+      existing?.githubCached === true &&
+      existing?.md5Checksum === item.md5Checksum &&
+      Number(existing?.size || 0) === Number(item.size || 0) &&
+      existing?.modifiedTime === item.modifiedTime
+    );
+  });
+
+  return {
+    batchSize,
+    eligibleFiles,
+    changedFiles,
+    batchFiles: changedFiles.slice(0, batchSize),
+  };
+}
+
+async function createGithubBlob(buffer, context) {
+  const { payload } = await githubRequest(
+    `/repos/${GITHUB_REPO}/git/blobs`,
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        content: buffer.toString("base64"),
+        encoding: "base64",
+      }),
+    },
+    context,
+  );
+
+  return payload.sha;
+}
+
+async function createGithubTreeCommit(treeEntries, message, context) {
+  if (treeEntries.length === 0) return null;
+
+  const { payload: branchRef } = await githubRequest(
+    `/repos/${GITHUB_REPO}/git/ref/heads/${encodeURIComponent(GITHUB_BRANCH)}`,
+    {},
+    context,
+  );
+  const latestCommitSha = branchRef.object?.sha;
+  if (!latestCommitSha) throw createHttpError("Nao foi possivel ler o HEAD do GitHub.", 500);
+
+  const { payload: latestCommit } = await githubRequest(
+    `/repos/${GITHUB_REPO}/git/commits/${latestCommitSha}`,
+    {},
+    context,
+  );
+  const baseTreeSha = latestCommit.tree?.sha;
+  if (!baseTreeSha) throw createHttpError("Nao foi possivel ler a tree base do GitHub.", 500);
+
+  const { payload: tree } = await githubRequest(
+    `/repos/${GITHUB_REPO}/git/trees`,
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        base_tree: baseTreeSha,
+        tree: treeEntries,
+      }),
+    },
+    context,
+  );
+
+  const { payload: commit } = await githubRequest(
+    `/repos/${GITHUB_REPO}/git/commits`,
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        message,
+        tree: tree.sha,
+        parents: [latestCommitSha],
+      }),
+    },
+    context,
+  );
+
+  await githubRequest(
+    `/repos/${GITHUB_REPO}/git/refs/heads/${encodeURIComponent(GITHUB_BRANCH)}`,
+    {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        sha: commit.sha,
+        force: false,
+      }),
+    },
+    context,
+  );
+
+  return commit.sha;
+}
+
+async function syncDriveFilesToGitHub(manifest, context, options = {}) {
+  const auth = await getGitHubAuth(context);
+  if (!auth.token) {
+    throw createHttpError("Conecte o GitHub pelo painel para sincronizar arquivos EAD.", 400);
+  }
+
+  const existingManifest = await readExistingDriveManifest(context);
+  const plan = getGithubSyncPlan(manifest, existingManifest, options.batchSize);
+  const previewManifest = prepareManifestForGithubSync(manifest, existingManifest, []);
+  const shouldWriteManifest =
+    plan.batchFiles.length > 0 || manifestSignature(existingManifest) !== manifestSignature(previewManifest);
+
+  if (!shouldWriteManifest) {
+    return {
+      githubCommitSha: null,
+      syncedFiles: 0,
+      skippedFiles: plan.eligibleFiles.length,
+      pendingFiles: 0,
+      failedFiles: 0,
+      batchLimit: plan.batchSize,
+      manifest,
+    };
+  }
+
+  const treeEntries = [];
+  const failures = [];
+  const syncedFiles = [];
+
+  for (const item of plan.batchFiles) {
+    try {
+      const buffer = await driveDownloadFile(item.driveFileId, context);
+      const blobSha = await createGithubBlob(buffer, context);
+      treeEntries.push({
+        path: githubTreePath(`public${PUBLIC_BASE_PATH}/${item.path}`),
+        mode: "100644",
+        type: "blob",
+        sha: blobSha,
+      });
+      syncedFiles.push(item);
+    } catch (error) {
+      failures.push({
+        path: item.path,
+        message: error.message || "Falha ao sincronizar arquivo.",
+      });
+    }
+  }
+
+  const syncedManifest = prepareManifestForGithubSync(manifest, existingManifest, syncedFiles);
+  const manifestBlobSha = await createGithubBlob(
+    Buffer.from(JSON.stringify(syncedManifest, null, 2), "utf8"),
+    context,
+  );
+  treeEntries.push({
+    path: githubTreePath(MANIFEST_PATH),
+    mode: "100644",
+    type: "blob",
+    sha: manifestBlobSha,
+  });
+
+  const commitSha = await createGithubTreeCommit(
+    treeEntries,
+    `Sincroniza arquivos EAD do Drive (${syncedFiles.length}/${plan.changedFiles.length})`,
+    context,
+  );
+
+  return {
+    githubCommitSha: commitSha,
+    syncedFiles: syncedFiles.length,
+    skippedFiles: plan.eligibleFiles.length - plan.changedFiles.length,
+    pendingFiles: Math.max(plan.changedFiles.length - plan.batchFiles.length + failures.length, 0),
+    failedFiles: failures.length,
+    failures,
+    batchLimit: plan.batchSize,
+    manifest: syncedManifest,
+  };
 }
 
 async function markProviderChecked(context, provider, patch = {}) {
@@ -1313,18 +1603,31 @@ async function handleApi(req, res, url) {
       const mode = body.mode;
       const startedAt = new Date().toISOString();
 
-      if (mode !== "drive_scan" && mode !== "drive_to_github_manifest") {
+      const validModes = ["drive_scan", "drive_to_github_manifest", "drive_to_github_files"];
+      if (!validModes.includes(mode)) {
         return jsonResponse(res, 400, { message: "Modo de sincronizacao invalido." });
       }
 
       const manifest = await buildDriveManifest(context);
       let githubCommitSha;
+      let fileSync;
       let message = `Drive escaneado: ${manifest.stats.files} arquivos em ${manifest.stats.folders} pastas.`;
 
       if (mode === "drive_to_github_manifest") {
         githubCommitSha = await writeManifestToGitHub(manifest, context);
         await markProviderChecked(context, "github", { last_sync_at: new Date().toISOString() });
         message = `Manifesto do Drive sincronizado no GitHub com ${manifest.stats.files} arquivos.`;
+      }
+
+      if (mode === "drive_to_github_files") {
+        fileSync = await syncDriveFilesToGitHub(manifest, context, {
+          batchSize: body.batchSize,
+        });
+        githubCommitSha = fileSync.githubCommitSha;
+        await markProviderChecked(context, "github", { last_sync_at: new Date().toISOString() });
+        message = githubCommitSha
+          ? `Arquivos EAD sincronizados: ${fileSync.syncedFiles} arquivo(s), ${fileSync.pendingFiles} pendente(s).`
+          : "Arquivos EAD ja estavam sincronizados.";
       }
 
       await markProviderChecked(context, "google_drive", { last_sync_at: new Date().toISOString() });
@@ -1335,9 +1638,21 @@ async function handleApi(req, res, url) {
         message,
         startedAt,
         finishedAt: new Date().toISOString(),
-        manifestPath: mode === "drive_to_github_manifest" ? MANIFEST_PATH : undefined,
+        manifestPath: mode !== "drive_scan" ? MANIFEST_PATH : undefined,
         githubCommitSha,
-        stats: manifest.stats,
+        stats: {
+          ...manifest.stats,
+          ...(fileSync
+            ? {
+                syncedFiles: fileSync.syncedFiles,
+                skippedFiles: fileSync.skippedFiles,
+                pendingFiles: fileSync.pendingFiles,
+                failedFiles: fileSync.failedFiles,
+                batchLimit: fileSync.batchLimit,
+              }
+            : {}),
+        },
+        failures: fileSync?.failures,
       });
     }
 

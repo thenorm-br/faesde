@@ -13,7 +13,6 @@ import {
   Download,
   ExternalLink,
   Home,
-  Info,
 } from "lucide-react";
 import { Input } from "@/components/ui/input.tsx";
 import { Button } from "@/components/ui/button.tsx";
@@ -161,7 +160,7 @@ const FilesManager = () => {
         <div>
           <h2 className="text-2xl font-bold text-foreground">Arquivos EAD</h2>
           <p className="text-sm text-muted-foreground mt-1">
-            Navegação read-only de <code className="text-xs bg-muted px-1.5 py-0.5 rounded">/eadplataforma/</code>
+            Navegacao de <code className="text-xs bg-muted px-1.5 py-0.5 rounded">/eadplataforma/</code>
           </p>
         </div>
         <div className="text-right text-sm text-muted-foreground">
@@ -169,16 +168,6 @@ const FilesManager = () => {
           <div>{formatSize(totalStats.size)} no total</div>
         </div>
       </div>
-
-      <Alert>
-        <Info className="h-4 w-4" />
-        <AlertDescription className="text-sm">
-          <span className="block">
-            Este painel e <strong>somente leitura</strong>. Upload, Drive, GitHub e status de sincronizacao
-            agora ficam na aba <strong>Conexoes</strong>, separada desta navegacao de arquivos.
-          </span>
-        </AlertDescription>
-      </Alert>
 
       {/* Search */}
       <div className="relative">
