@@ -22,6 +22,7 @@ function walk(dir) {
         name,
         type: "folder",
         path: relative(ROOT, full).replace(/\\/g, "/"),
+        modifiedAt: st.mtime.toISOString(),
         children: walk(full),
       });
     } else {
@@ -31,6 +32,7 @@ function walk(dir) {
         path: relative(ROOT, full).replace(/\\/g, "/"),
         size: st.size,
         ext: name.includes(".") ? name.split(".").pop().toLowerCase() : "",
+        modifiedAt: st.mtime.toISOString(),
       });
     }
   }

@@ -863,6 +863,31 @@ async function checkGitHub(context) {
   });
 }
 
+async function listGithubSyncHistory(context) {
+  const query = new URLSearchParams({
+    sha: GITHUB_BRANCH,
+    path: MANIFEST_PATH,
+    per_page: "30",
+  });
+
+  const { payload } = await githubRequest(`/repos/${GITHUB_REPO}/commits?${query.toString()}`, {}, context);
+  const commits = Array.isArray(payload) ? payload : [];
+
+  return commits
+    .map((entry) => {
+      const message = String(entry.commit?.message || "").split("\n")[0];
+      return {
+        sha: entry.sha,
+        shortSha: String(entry.sha || "").slice(0, 7),
+        message,
+        date: entry.commit?.author?.date || entry.commit?.committer?.date || null,
+        author: entry.commit?.author?.name || entry.commit?.committer?.name || "GitHub",
+        url: entry.html_url,
+      };
+    })
+    .filter((entry) => /sincroniza arquivos ead|atualiza manifesto ead/i.test(entry.message));
+}
+
 async function buildDriveManifest(context) {
   const { payload: root } = await driveRequest(
     `files/${encodeURIComponent(DRIVE_FOLDER_ID)}`,
@@ -1032,6 +1057,10 @@ function githubTreePath(pathname) {
     .join("/");
 }
 
+function parseJsonDocument(text) {
+  return JSON.parse(String(text || "").replace(/^\uFEFF/, ""));
+}
+
 async function readExistingDriveManifest(context) {
   const encodedPath = MANIFEST_PATH.split("/").map(encodeURIComponent).join("/");
 
@@ -1042,8 +1071,32 @@ async function readExistingDriveManifest(context) {
       context,
     );
     const content = String(payload.content || "").replace(/\s/g, "");
-    if (!content) return null;
-    return JSON.parse(Buffer.from(content, "base64").toString("utf8"));
+    if (content) {
+      return parseJsonDocument(Buffer.from(content, "base64").toString("utf8"));
+    }
+
+    if (payload.sha) {
+      const { payload: blob } = await githubRequest(
+        `/repos/${GITHUB_REPO}/git/blobs/${encodeURIComponent(payload.sha)}`,
+        {},
+        context,
+      );
+      const blobContent = String(blob.content || "").replace(/\s/g, "");
+      if (blobContent) {
+        return parseJsonDocument(Buffer.from(blobContent, "base64").toString("utf8"));
+      }
+    }
+
+    if (payload.download_url) {
+      const response = await fetch(payload.download_url, {
+        headers: { Accept: "application/json", "User-Agent": "faesde-sync" },
+      });
+      if (response.ok) {
+        return parseJsonDocument(await response.text());
+      }
+    }
+
+    return null;
   } catch {
     return null;
   }
@@ -1582,6 +1635,11 @@ async function handleApi(req, res, url) {
     }
 
     const context = await requireAdmin(req);
+
+    if (req.method === "GET" && url.pathname === "/api/sync/history") {
+      const history = await listGithubSyncHistory(context);
+      return jsonResponse(res, 200, { history });
+    }
 
     if (req.method === "POST" && url.pathname === "/api/sync/connect") {
       const body = await readJsonBody(req);

@@ -35,7 +35,7 @@ import { useToast } from "@/hooks/use-toast.ts";
 type ProviderKey = "google_drive" | "github";
 type ProviderStatus = "not_configured" | "ready" | "connected" | "read_only" | "error";
 type SyncMode = "drive_scan" | "drive_to_github_manifest" | "drive_to_github_files";
-type TabKey = "providers" | "sync" | "settings" | "environment";
+type TabKey = "providers" | "settings";
 
 type EadNode =
   | { name: string; type: "folder"; path: string; children: EadNode[] }
@@ -134,6 +134,15 @@ interface RunResult {
     batchLimit?: number;
   };
   failures?: Array<{ path: string; message: string }>;
+}
+
+interface SyncHistoryEntry {
+  sha: string;
+  shortSha: string;
+  message: string;
+  date: string | null;
+  author: string;
+  url: string;
 }
 
 interface LocalStats {
@@ -390,6 +399,7 @@ const ConnectionsManager = () => {
   const [disconnectingProvider, setDisconnectingProvider] = useState<ProviderKey | null>(null);
   const [runningMode, setRunningMode] = useState<SyncMode | null>(null);
   const [lastRun, setLastRun] = useState<RunResult | null>(null);
+  const [syncHistory, setSyncHistory] = useState<SyncHistoryEntry[]>([]);
   const [activeTab, setActiveTab] = useState<TabKey>("providers");
   const [settingsDrafts, setSettingsDrafts] = useState<Record<ProviderKey, SettingsDraft>>(DEFAULT_DRAFTS);
   const [handlingCallback, setHandlingCallback] = useState(false);
@@ -463,11 +473,17 @@ const ConnectionsManager = () => {
     setSettingsDrafts((current) => draftFromStatus(status, current));
   };
 
+  const loadSyncHistory = async () => {
+    const result = await fetchWithSession<{ history: SyncHistoryEntry[] }>("/api/sync/history", { method: "GET" });
+    setSyncHistory(result.history || []);
+  };
+
   const refreshAll = async () => {
     setLoading(true);
     await loadIndex();
     try {
       await loadStatus();
+      await loadSyncHistory().catch(() => setSyncHistory([]));
     } catch (error) {
       const fallback = {
         ...FALLBACK_STATUS,
@@ -712,6 +728,7 @@ const ConnectionsManager = () => {
     } finally {
       setRunningMode(null);
       loadStatus().catch(() => null);
+      loadSyncHistory().catch(() => null);
     }
   };
 
@@ -883,13 +900,131 @@ const ConnectionsManager = () => {
 
       <Tabs value={activeTab} onValueChange={(value) => setActiveTab(value as TabKey)} className="space-y-4">
         <TabsList className="flex h-auto flex-wrap justify-start">
-          <TabsTrigger value="providers">Conectar</TabsTrigger>
-          <TabsTrigger value="sync">Sincronizar</TabsTrigger>
-          <TabsTrigger value="settings">Configurar OAuth</TabsTrigger>
-          <TabsTrigger value="environment">Ambiente</TabsTrigger>
+          <TabsTrigger value="providers">Conectar e sincronizar</TabsTrigger>
+          <TabsTrigger value="settings">Configuracao</TabsTrigger>
         </TabsList>
 
         <TabsContent value="providers" className="space-y-4">
+          <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <Files className="h-5 w-5 text-primary" />
+                  Escanear Google Drive
+                </CardTitle>
+                <CardDescription>
+                  Confere a pasta do Drive e atualiza a contagem antes de enviar arquivos para o GitHub.
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <Button onClick={() => runSync("drive_scan")} disabled={!!runningMode} className="w-full">
+                  {runningMode === "drive_scan" ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <Cloud className="mr-2 h-4 w-4" />}
+                  Escanear agora
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <Github className="h-5 w-5 text-primary" />
+                  Sincronizar arquivos EAD
+                </CardTitle>
+                <CardDescription>
+                  Envia mais um lote de arquivos leves para `public/eadplataforma/` e atualiza o manifesto.
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <Button
+                  onClick={() => runSync("drive_to_github_files")}
+                  disabled={!!runningMode}
+                  className="w-full"
+                >
+                  {runningMode === "drive_to_github_files" ? (
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                  ) : (
+                    <Github className="mr-2 h-4 w-4" />
+                  )}
+                  Sincronizar proximo lote
+                </Button>
+                <p className="text-xs text-muted-foreground">
+                  Lote atual: {apiStatus?.config.syncBatchSize || 150} arquivo(s). O Coolify publica depois que o GitHub recebe o commit.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+
+          {(lastRun || syncHistory.length > 0) && (
+            <Card>
+              <CardHeader>
+                <CardTitle>Historico de sincronizacao</CardTitle>
+                <CardDescription>
+                  Registro baseado na ultima acao do painel e nos commits EAD salvos no GitHub.
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                {lastRun && (
+                  <div className="rounded-lg border bg-muted/30 p-3 text-sm">
+                    <p className="font-medium text-foreground">Ultima acao do painel</p>
+                    <p className="text-muted-foreground">
+                      {lastRun.message} Finalizado em {formatDate(lastRun.finishedAt)}.
+                    </p>
+                    {lastRun.stats?.syncedFiles !== undefined && (
+                      <div className="mt-3 grid grid-cols-2 gap-2 md:grid-cols-4">
+                        <div className="rounded-md bg-background p-2">
+                          <p className="text-xs text-muted-foreground">Enviados</p>
+                          <p className="text-xl font-bold">{lastRun.stats.syncedFiles}</p>
+                        </div>
+                        <div className="rounded-md bg-background p-2">
+                          <p className="text-xs text-muted-foreground">Pendentes</p>
+                          <p className="text-xl font-bold">{lastRun.stats.pendingFiles || 0}</p>
+                        </div>
+                        <div className="rounded-md bg-background p-2">
+                          <p className="text-xs text-muted-foreground">Ignorados</p>
+                          <p className="text-xl font-bold">{lastRun.stats.skippedFiles || 0}</p>
+                        </div>
+                        <div className="rounded-md bg-background p-2">
+                          <p className="text-xs text-muted-foreground">Falhas</p>
+                          <p className="text-xl font-bold">{lastRun.stats.failedFiles || 0}</p>
+                        </div>
+                      </div>
+                    )}
+                    {lastRun.githubCommitSha && (
+                      <p className="mt-2 font-mono text-xs text-muted-foreground">
+                        Commit: {lastRun.githubCommitSha.slice(0, 7)}
+                      </p>
+                    )}
+                  </div>
+                )}
+
+                <div className="space-y-2">
+                  {syncHistory.map((entry) => (
+                    <a
+                      key={entry.sha}
+                      href={entry.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex flex-col gap-1 rounded-lg border p-3 text-sm transition-colors hover:bg-muted/40 sm:flex-row sm:items-center sm:justify-between"
+                    >
+                      <span>
+                        <span className="font-medium text-foreground">{entry.message}</span>
+                        <span className="ml-2 font-mono text-xs text-muted-foreground">{entry.shortSha}</span>
+                      </span>
+                      <span className="text-xs text-muted-foreground">
+                        {formatDate(entry.date)} por {entry.author}
+                      </span>
+                    </a>
+                  ))}
+                  {syncHistory.length === 0 && (
+                    <p className="rounded-lg border p-3 text-sm text-muted-foreground">
+                      Nenhum commit de sincronizacao encontrado ainda.
+                    </p>
+                  )}
+                </div>
+              </CardContent>
+            </Card>
+          )}
+
           <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
             {(Object.keys(PROVIDER_META) as ProviderKey[]).map((providerKey) => {
               const meta = PROVIDER_META[providerKey];
@@ -970,121 +1105,6 @@ const ConnectionsManager = () => {
               );
             })}
           </div>
-        </TabsContent>
-
-        <TabsContent value="sync" className="space-y-4">
-          <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Files className="h-5 w-5 text-primary" />
-                  Escanear Google Drive
-                </CardTitle>
-                <CardDescription>
-                  Lista a pasta raiz do Drive, conta arquivos, identifica videos e separa o que pode ir para o GitHub.
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <Button onClick={() => runSync("drive_scan")} disabled={!!runningMode} className="w-full">
-                  {runningMode === "drive_scan" ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <Cloud className="mr-2 h-4 w-4" />}
-                  Escanear agora
-                </Button>
-                <p className="text-xs text-muted-foreground">
-                  Esse passo nao altera arquivos. Ele so confirma se o Drive esta acessivel pela conta conectada.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Github className="h-5 w-5 text-primary" />
-                  Sincronizar arquivos EAD
-                </CardTitle>
-                <CardDescription>
-                  Envia arquivos leves para `public/eadplataforma/` e atualiza o manifesto dos itens pesados.
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <Button
-                  onClick={() => runSync("drive_to_github_files")}
-                  disabled={!!runningMode}
-                  className="w-full"
-                >
-                  {runningMode === "drive_to_github_files" ? (
-                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                  ) : (
-                    <Github className="mr-2 h-4 w-4" />
-                  )}
-                  Sincronizar arquivos
-                </Button>
-                <p className="text-xs text-muted-foreground">
-                  O sync roda em lotes de {apiStatus?.config.syncBatchSize || 150} arquivo(s) para evitar travas.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-
-          {lastRun && (
-            <Card>
-              <CardHeader>
-                <CardTitle>Ultima acao</CardTitle>
-                <CardDescription>
-                  {lastRun.message} Finalizado em {formatDate(lastRun.finishedAt)}.
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                {lastRun.stats && (
-                  <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
-                    <div className="rounded-lg border p-3">
-                      <p className="text-xs text-muted-foreground">Pastas Drive</p>
-                      <p className="text-2xl font-bold">{lastRun.stats.folders}</p>
-                    </div>
-                    <div className="rounded-lg border p-3">
-                      <p className="text-xs text-muted-foreground">Arquivos Drive</p>
-                      <p className="text-2xl font-bold">{lastRun.stats.files}</p>
-                    </div>
-                    <div className="rounded-lg border p-3">
-                      <p className="text-xs text-muted-foreground">Elegiveis GitHub</p>
-                      <p className="text-2xl font-bold">{lastRun.stats.githubEligibleFiles}</p>
-                    </div>
-                    <div className="rounded-lg border p-3">
-                      <p className="text-xs text-muted-foreground">Somente Drive</p>
-                      <p className="text-2xl font-bold">{lastRun.stats.driveOnlyFiles}</p>
-                    </div>
-                  </div>
-                )}
-                {lastRun.stats && lastRun.stats.syncedFiles !== undefined && (
-                  <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
-                    <div className="rounded-lg border p-3">
-                      <p className="text-xs text-muted-foreground">Enviados</p>
-                      <p className="text-2xl font-bold">{lastRun.stats.syncedFiles}</p>
-                    </div>
-                    <div className="rounded-lg border p-3">
-                      <p className="text-xs text-muted-foreground">Ignorados</p>
-                      <p className="text-2xl font-bold">{lastRun.stats.skippedFiles || 0}</p>
-                    </div>
-                    <div className="rounded-lg border p-3">
-                      <p className="text-xs text-muted-foreground">Pendentes</p>
-                      <p className="text-2xl font-bold">{lastRun.stats.pendingFiles || 0}</p>
-                    </div>
-                    <div className="rounded-lg border p-3">
-                      <p className="text-xs text-muted-foreground">Falhas</p>
-                      <p className="text-2xl font-bold">{lastRun.stats.failedFiles || 0}</p>
-                    </div>
-                  </div>
-                )}
-                <div className="rounded-lg bg-muted/40 p-3 text-sm">
-                  <p>
-                    Manifesto: <span className="font-mono text-xs">{lastRun.manifestPath || "Nao gerado"}</span>
-                  </p>
-                  <p>
-                    Commit GitHub: <span className="font-mono text-xs">{lastRun.githubCommitSha || "Nao houve commit"}</span>
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
-          )}
         </TabsContent>
 
         <TabsContent value="settings" className="space-y-4">
@@ -1190,12 +1210,10 @@ const ConnectionsManager = () => {
               );
             })}
           </div>
-        </TabsContent>
 
-        <TabsContent value="environment" className="space-y-4">
           <Card>
             <CardHeader>
-              <CardTitle>Configuracao do servidor</CardTitle>
+              <CardTitle>Ambiente do servidor</CardTitle>
               <CardDescription>Valores lidos pelo backend. Tokens e secrets nao sao exibidos.</CardDescription>
             </CardHeader>
             <CardContent className="grid gap-4 md:grid-cols-2">
@@ -1214,8 +1232,8 @@ const ConnectionsManager = () => {
                 <p className="font-semibold">{apiStatus?.config.maxGithubFileMb || 25} MB por arquivo</p>
               </div>
               <div className="rounded-lg border p-3">
-                <p className="text-xs text-muted-foreground">Limite scan</p>
-                <p className="font-semibold">{apiStatus?.config.scanLimit || 0} itens por execucao</p>
+                <p className="text-xs text-muted-foreground">Lote por sync</p>
+                <p className="font-semibold">{apiStatus?.config.syncBatchSize || 150} arquivos</p>
               </div>
               <div className="rounded-lg border p-3 md:col-span-2">
                 <p className="text-xs text-muted-foreground">API server time</p>
@@ -1238,6 +1256,7 @@ const ConnectionsManager = () => {
             </CardContent>
           </Card>
         </TabsContent>
+
       </Tabs>
     </div>
   );
