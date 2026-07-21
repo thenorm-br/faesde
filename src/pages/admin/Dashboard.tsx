@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client.ts";
-import { GraduationCap, CheckCircle, XCircle, FolderOpen, Palette, ArrowRight } from "lucide-react";
+import { GraduationCap, CheckCircle, XCircle, FolderOpen, Palette, ArrowRight, Cloud } from "lucide-react";
 
 interface Stats {
   total: number;
@@ -42,6 +42,7 @@ const Dashboard = () => {
     { label: "Gerenciar Cursos", to: "/admin/cursos", icon: GraduationCap },
     { label: "Categorias", to: "/admin/categorias", icon: FolderOpen },
     { label: "Temas Promocionais", to: "/admin/temas", icon: Palette },
+    { label: "Conexoes e Sync", to: "/admin/conexoes", icon: Cloud },
   ];
 
   if (loading) {
@@ -70,7 +71,7 @@ const Dashboard = () => {
       {/* Quick Links */}
       <div>
         <h3 className="mb-3 text-lg font-semibold text-foreground">Acesso Rápido</h3>
-        <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {quickLinks.map((link) => (
             <Link
               key={link.to}

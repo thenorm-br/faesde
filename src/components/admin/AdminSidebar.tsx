@@ -7,6 +7,7 @@ import {
   Palette,
   FolderTree,
   Award,
+  Cloud,
   Settings,
   LogOut,
 } from "lucide-react";
@@ -32,6 +33,7 @@ const menuItems = [
   { title: "Temas", url: "/admin/temas", icon: Palette },
   { title: "Certificados", url: "/admin/certificados", icon: Award },
   { title: "Arquivos EAD", url: "/admin/arquivos", icon: FolderTree },
+  { title: "Conexoes", url: "/admin/conexoes", icon: Cloud },
   { title: "Configurações", url: "/admin/configuracoes", icon: Settings },
 ];
 

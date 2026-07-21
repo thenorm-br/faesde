@@ -14,6 +14,7 @@ import CoursesManager from "./pages/admin/CoursesManager.tsx";
 import CategoriesManager from "./pages/admin/CategoriesManager.tsx";
 import ThemesManager from "./pages/admin/ThemesManager.tsx";
 import FilesManager from "./pages/admin/FilesManager.tsx";
+import ConnectionsManager from "./pages/admin/ConnectionsManager.tsx";
 import SettingsPage from "./pages/admin/SettingsPage.tsx";
 import CertificatesManager from "./pages/admin/CertificatesManager.tsx";
 import CertificadoPublico from "./pages/CertificadoPublico.tsx";
@@ -40,6 +41,7 @@ const App = () => (
             <Route path="categorias" element={<CategoriesManager />} />
             <Route path="temas" element={<ThemesManager />} />
             <Route path="arquivos" element={<FilesManager />} />
+            <Route path="conexoes" element={<ConnectionsManager />} />
             <Route path="configuracoes" element={<SettingsPage />} />
             <Route path="certificados" element={<CertificatesManager />} />
           </Route>

@@ -173,9 +173,10 @@ const FilesManager = () => {
       <Alert>
         <Info className="h-4 w-4" />
         <AlertDescription className="text-sm">
-          Este painel é <strong>somente leitura</strong>. Para upload e exclusão, será necessário
-          migrar os arquivos para Lovable Cloud Storage ou conectar a GitHub API. Avise quando
-          quiser habilitar.
+          <span className="block">
+            Este painel e <strong>somente leitura</strong>. Upload, Drive, GitHub e status de sincronizacao
+            agora ficam na aba <strong>Conexoes</strong>, separada desta navegacao de arquivos.
+          </span>
         </AlertDescription>
       </Alert>
 
