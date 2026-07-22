@@ -19,6 +19,129 @@ const MANIFEST_PATH = process.env.EAD_DRIVE_MANIFEST_PATH || "public/eadplatafor
 const RUNTIME_CACHE_ROOT = resolve(process.env.EAD_RUNTIME_CACHE_ROOT || join(process.cwd(), ".ead-runtime-cache"));
 const MAX_UPLOAD_MB = Number(process.env.EAD_UPLOAD_MAX_MB || 512);
 const MAX_UPLOAD_BYTES = MAX_UPLOAD_MB * 1024 * 1024;
+const SITE_URL = (process.env.PUBLIC_SITE_URL || "https://faesde.com.br").replace(/\/$/, "");
+const SEO_CACHE_MS = Number(process.env.SEO_CACHE_MS || 5 * 60 * 1000);
+const SEO_IMAGE_URL = `${SITE_URL}/logo.png`;
+
+const DEFAULT_SEO_KEYWORDS = [
+  "FAESDE",
+  "cursos técnicos EAD",
+  "certificação por competência",
+  "cursos pós-técnicos",
+  "EJA ensino médio",
+  "curso técnico online",
+  "curso profissionalizante EAD",
+  "técnico em segurança do trabalho",
+  "técnico em administração",
+  "técnico em eletrotécnica",
+  "técnico em enfermagem",
+  "técnico em logística",
+  "técnico em mecânica",
+  "técnico em radiologia",
+  "técnico em farmácia",
+  "NR 10",
+  "NR 13",
+];
+
+const SEO_CATEGORY_META = {
+  extensao: {
+    label: "Cursos Técnicos EAD",
+    description:
+      "Cursos técnicos EAD FAESDE para formação profissional online, com início imediato e atendimento personalizado.",
+  },
+  competencia: {
+    label: "Certificação por Competência",
+    description:
+      "Certificação técnica por competência FAESDE para quem já possui experiência profissional e busca validação da formação.",
+  },
+  "pos-tecnico": {
+    label: "Cursos Pós-Técnicos",
+    description:
+      "Especializações técnicas e cursos pós-técnicos EAD para ampliar oportunidades profissionais.",
+  },
+  "segundo-grau": {
+    label: "EJA e Ensino Médio",
+    description:
+      "Certificação de ensino médio EJA com suporte FAESDE para quem busca concluir os estudos.",
+  },
+};
+
+const LEGACY_COMMERCE_PATHS = new Set([
+  "/loja",
+  "/shop",
+  "/carrinho",
+  "/cart",
+  "/checkout",
+  "/finalizar-compra",
+  "/minha-conta",
+  "/my-account",
+]);
+
+const LEGACY_CATEGORY_PREFIXES = new Set([
+  "categoria-produto",
+  "product-category",
+  "categoria",
+  "category",
+]);
+
+const LEGACY_CONTENT_PREFIXES = new Set([
+  "produto",
+  "blog",
+  "noticia",
+  "noticias",
+  "artigo",
+  "artigos",
+  "post",
+]);
+
+const LEGACY_TAG_PREFIXES = new Set(["produto-tag", "tag"]);
+
+const LEGACY_COURSE_ALIASES = {
+  "tecnico-em-seguranca-do-trabalho": "seguranca-trabalho",
+  "curso-tecnico-em-seguranca-do-trabalho": "seguranca-trabalho",
+  "seguranca-do-trabalho": "seguranca-trabalho",
+  sst: "seguranca-trabalho",
+  "tecnico-em-administracao": "administracao",
+  "curso-tecnico-em-administracao": "administracao",
+  administracao: "administracao",
+  "tecnico-em-eletrotecnica": "eletrotecnica",
+  "curso-tecnico-em-eletrotecnica": "eletrotecnica",
+  eletrotecnica: "eletrotecnica",
+  "tecnico-em-eletromecanica": "eletromecanica",
+  eletromecanica: "eletromecanica",
+  "tecnico-em-eletroeletronica": "eletroeletronica",
+  eletroeletronica: "eletroeletronica",
+  "tecnico-em-enfermagem": "certificacao-tecnica-competencia-enfermagem",
+  enfermagem: "certificacao-tecnica-competencia-enfermagem",
+  "tecnico-em-farmacia": "farmacia",
+  farmacia: "farmacia",
+  "tecnico-em-radiologia": "certificacao-tecnica-competencia-radiologia",
+  radiologia: "certificacao-tecnica-competencia-radiologia",
+  "tecnico-em-logistica": "logistica",
+  logistica: "logistica",
+  "tecnico-em-mecanica": "mecanica",
+  mecanica: "mecanica",
+  "tecnico-em-mineracao": "mineracao",
+  mineracao: "mineracao",
+  "tecnico-em-contabilidade": "contabilidade",
+  contabilidade: "contabilidade",
+  "tecnico-em-marketing": "marketing",
+  marketing: "marketing",
+  "tecnico-em-recursos-humanos": "recursos-humanos",
+  "recursos-humanos": "recursos-humanos",
+  "tecnico-em-transacoes-imobiliarias": "tti",
+  "transacoes-imobiliarias": "tti",
+  tti: "tti",
+  "tecnico-em-refrigeracao-e-climatizacao": "refrigeracao",
+  "refrigeracao-e-climatizacao": "refrigeracao",
+  refrigeracao: "refrigeracao",
+  "tecnico-em-petroleo-e-gas": "petroleo-gas",
+  "petroleo-e-gas": "petroleo-gas",
+  "petroleo-gas": "petroleo-gas",
+  "tecnico-em-desenvolvimento-de-sistemas": "certificacao-tecnica-competencia-desenvolvimento-sistemas",
+  "desenvolvimento-de-sistemas": "certificacao-tecnica-competencia-desenvolvimento-sistemas",
+  "desenvolvimento-sistemas": "certificacao-tecnica-competencia-desenvolvimento-sistemas",
+};
 
 const PROVIDERS = ["google_drive", "github"];
 const DEFAULT_SCOPES = {
@@ -52,18 +175,50 @@ const MIME_TYPES = {
 };
 
 let googleServiceAccountTokenCache = null;
+let publicCoursesCache = { fetchedAt: 0, courses: [] };
+
+function securityHeaders(headers = {}, options = {}) {
+  return {
+    "X-Content-Type-Options": "nosniff",
+    ...(options.allowFrame ? {} : { "X-Frame-Options": "SAMEORIGIN" }),
+    "Referrer-Policy": "strict-origin-when-cross-origin",
+    "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+    ...(options.noindex ? { "X-Robots-Tag": "noindex, nofollow" } : {}),
+    ...headers,
+  };
+}
 
 function jsonResponse(res, statusCode, payload) {
-  res.writeHead(statusCode, {
-    "Content-Type": "application/json; charset=utf-8",
-    "Cache-Control": "no-store",
-  });
+  res.writeHead(
+    statusCode,
+    securityHeaders({
+      "Content-Type": "application/json; charset=utf-8",
+      "Cache-Control": "no-store",
+    }),
+  );
   res.end(JSON.stringify(payload, null, 2));
 }
 
 function textResponse(res, statusCode, message) {
-  res.writeHead(statusCode, { "Content-Type": "text/plain; charset=utf-8" });
+  res.writeHead(
+    statusCode,
+    securityHeaders({
+      "Content-Type": "text/plain; charset=utf-8",
+      "Cache-Control": "no-store",
+    }),
+  );
   res.end(message);
+}
+
+function redirectResponse(res, location, statusCode = 301) {
+  res.writeHead(
+    statusCode,
+    securityHeaders({
+      Location: location,
+      "Cache-Control": "public, max-age=3600",
+    }),
+  );
+  res.end();
 }
 
 function createHttpError(message, statusCode = 500) {
@@ -953,6 +1108,593 @@ async function driveUploadResumable({ folderId, name, mimeType, buffer }, contex
   }
 
   return payload;
+}
+
+async function publicSupabaseRest(path, options = {}) {
+  const { supabaseUrl, anonKey } = getSupabaseConfig();
+  const response = await fetch(`${supabaseUrl}/rest/v1/${path}`, {
+    ...options,
+    headers: {
+      apikey: anonKey,
+      Authorization: `Bearer ${anonKey}`,
+      "Content-Type": "application/json",
+      ...(options.headers || {}),
+    },
+  });
+  const text = await response.text();
+  const payload = text ? JSON.parse(text) : null;
+
+  if (!response.ok) {
+    const message = payload?.message || payload?.error || `Supabase HTTP ${response.status}`;
+    throw createHttpError(message, response.status);
+  }
+
+  return payload;
+}
+
+function escapeHtml(value) {
+  return String(value || "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+function escapeXml(value) {
+  return escapeHtml(value);
+}
+
+function normalizeText(value) {
+  return String(value || "")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function slugify(value) {
+  return normalizeText(value).replace(/\s+/g, "-");
+}
+
+function canonicalPath(pathname) {
+  if (!pathname || pathname === "/") return "/";
+  return pathname.replace(/\/+$/, "") || "/";
+}
+
+function absoluteUrl(pathname = "/", search = "") {
+  const cleanPath = pathname.startsWith("/") ? pathname : `/${pathname}`;
+  return `${SITE_URL}${canonicalPath(cleanPath)}${search || ""}`;
+}
+
+function truncateDescription(value, fallback) {
+  const normalized = String(value || fallback || "")
+    .replace(/\s+/g, " ")
+    .trim();
+  if (normalized.length <= 156) return normalized;
+  return `${normalized.slice(0, 153).replace(/\s+\S*$/, "")}...`;
+}
+
+function courseImageUrl(course) {
+  const image = course?.banner_image_url || course?.image_url || SEO_IMAGE_URL;
+  if (!image) return SEO_IMAGE_URL;
+  if (/^https?:\/\//i.test(image)) return image;
+  return absoluteUrl(image.startsWith("/") ? image : `/${image}`);
+}
+
+async function getPublicCourses() {
+  if (Date.now() - publicCoursesCache.fetchedAt < SEO_CACHE_MS) {
+    return publicCoursesCache.courses;
+  }
+
+  try {
+    const courses = await publicSupabaseRest(
+      [
+        "courses?select=slug,title,subtitle,description,category,hours,duration_range,certification,image_url,banner_image_url,updated_at",
+        "is_active=eq.true",
+        "order=title.asc",
+      ].join("&"),
+    );
+    publicCoursesCache = {
+      fetchedAt: Date.now(),
+      courses: Array.isArray(courses) ? courses : [],
+    };
+  } catch (error) {
+    console.warn(`[seo] Failed to load public courses: ${error.message}`);
+    publicCoursesCache = {
+      fetchedAt: Date.now(),
+      courses: publicCoursesCache.courses || [],
+    };
+  }
+
+  return publicCoursesCache.courses;
+}
+
+function findCourseBySlug(courses, slug) {
+  const cleanSlug = slugify(slug);
+  return courses.find((course) => slugify(course.slug) === cleanSlug) || null;
+}
+
+function legacyCandidateFromParts(parts) {
+  return parts
+    .filter(Boolean)
+    .filter((part) => !LEGACY_CONTENT_PREFIXES.has(part))
+    .filter((part) => !LEGACY_CATEGORY_PREFIXES.has(part))
+    .filter((part) => !LEGACY_TAG_PREFIXES.has(part))
+    .join("-");
+}
+
+function stopwordToken(token) {
+  return [
+    "a",
+    "o",
+    "as",
+    "os",
+    "de",
+    "da",
+    "do",
+    "das",
+    "dos",
+    "em",
+    "no",
+    "na",
+    "com",
+    "para",
+    "por",
+    "curso",
+    "cursos",
+    "tecnico",
+    "tecnicos",
+    "tecnica",
+    "ead",
+    "online",
+    "comprar",
+    "certificacao",
+    "certificado",
+    "competencia",
+    "profissional",
+  ].includes(token);
+}
+
+function matchCourseFromLegacyCandidate(courses, candidate) {
+  const cleanCandidate = slugify(candidate);
+  if (!cleanCandidate) return null;
+
+  const aliasTarget = LEGACY_COURSE_ALIASES[cleanCandidate];
+  if (aliasTarget) {
+    const aliasCourse = findCourseBySlug(courses, aliasTarget);
+    if (aliasCourse) return aliasCourse;
+  }
+
+  const exact = findCourseBySlug(courses, cleanCandidate);
+  if (exact) return exact;
+
+  const candidateTokens = normalizeText(cleanCandidate)
+    .split(" ")
+    .filter((token) => token.length > 2 && !stopwordToken(token));
+
+  if (candidateTokens.length === 0) return null;
+
+  let best = { course: null, score: 0 };
+  for (const course of courses) {
+    const courseSlug = slugify(course.slug);
+    const courseTitle = normalizeText(course.title);
+    const courseHaystack = `${courseSlug.replace(/-/g, " ")} ${courseTitle}`;
+    let score = 0;
+
+    if (courseSlug.includes(cleanCandidate) || cleanCandidate.includes(courseSlug)) score += 10;
+    for (const token of candidateTokens) {
+      if (courseSlug.split("-").includes(token)) score += 3;
+      if (courseTitle.split(" ").includes(token)) score += 2;
+      if (courseHaystack.includes(token)) score += 1;
+    }
+
+    if (score > best.score) best = { course, score };
+  }
+
+  return best.score >= 6 ? best.course : null;
+}
+
+function categoryRedirectFromSlug(slug) {
+  const clean = slugify(slug);
+  const categoryAliases = {
+    "cursos-tecnicos": "/cursos?categoria=extensao",
+    "curso-tecnico": "/cursos?categoria=extensao",
+    "cursos-tecnicos-ead": "/cursos?categoria=extensao",
+    "cursos-de-extensao-ead": "/cursos?categoria=extensao",
+    "extensao": "/cursos?categoria=extensao",
+    "certificacao-por-competencia": "/cursos?categoria=competencia",
+    "certificacao-tecnica-por-competencia": "/cursos?categoria=competencia",
+    "cursos-de-certificacao-por-competencia-ead": "/cursos?categoria=competencia",
+    "competencia": "/cursos?categoria=competencia",
+    "pos-tecnico": "/cursos?categoria=pos-tecnico",
+    "pos-tecnicos": "/cursos?categoria=pos-tecnico",
+    "cursos-pos-tecnicos": "/cursos?categoria=pos-tecnico",
+    "especializacao-tecnica": "/cursos?categoria=pos-tecnico",
+    "eja": "/cursos?categoria=segundo-grau",
+    "ensino-medio": "/cursos?categoria=segundo-grau",
+    "segundo-grau": "/cursos?categoria=segundo-grau",
+  };
+  return categoryAliases[clean] || null;
+}
+
+async function getLegacyRedirect(url) {
+  const path = canonicalPath(url.pathname);
+  if (path === "/index.html") return { destination: "/", reason: "canonical-home" };
+  if (LEGACY_COMMERCE_PATHS.has(path)) return { destination: "/cursos", reason: "legacy-commerce" };
+
+  const parts = path.split("/").filter(Boolean).map(slugify);
+  const [prefix] = parts;
+  if (!prefix) return null;
+
+  if (LEGACY_TAG_PREFIXES.has(prefix)) {
+    const courses = await getPublicCourses();
+    const candidate = legacyCandidateFromParts(parts.slice(1));
+    const course = matchCourseFromLegacyCandidate(courses, candidate);
+    return {
+      destination: course ? `/curso/${course.slug}` : "/cursos",
+      reason: course ? "legacy-tag-course" : "legacy-tag",
+    };
+  }
+
+  if (LEGACY_CATEGORY_PREFIXES.has(prefix)) {
+    const candidate = legacyCandidateFromParts(parts.slice(1));
+    const categoryDestination = categoryRedirectFromSlug(candidate);
+    if (categoryDestination) {
+      return { destination: categoryDestination, reason: "legacy-category" };
+    }
+
+    const courses = await getPublicCourses();
+    const course = matchCourseFromLegacyCandidate(courses, candidate);
+    return {
+      destination: course ? `/curso/${course.slug}` : "/cursos",
+      reason: course ? "legacy-category-course" : "legacy-category-fallback",
+    };
+  }
+
+  if (LEGACY_CONTENT_PREFIXES.has(prefix)) {
+    const courses = await getPublicCourses();
+    const candidate = legacyCandidateFromParts(parts.slice(1));
+    const course = matchCourseFromLegacyCandidate(courses, candidate);
+    return {
+      destination: course ? `/curso/${course.slug}` : "/cursos",
+      reason: course ? "legacy-content-course" : "legacy-content-fallback",
+    };
+  }
+
+  return null;
+}
+
+function buildJsonLd(items) {
+  const graphs = items.filter(Boolean);
+  if (graphs.length === 0) return "";
+  return JSON.stringify(graphs.length === 1 ? graphs[0] : { "@context": "https://schema.org", "@graph": graphs });
+}
+
+function organizationSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    name: "FAESDE",
+    url: SITE_URL,
+    logo: SEO_IMAGE_URL,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Rua dos Ipês, 212, Coqueiral",
+      addressLocality: "Aracruz",
+      addressRegion: "ES",
+      addressCountry: "BR",
+    },
+    telephone: "+55 27 2237-8054",
+    email: "contato@faesde.com",
+  };
+}
+
+function websiteSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "FAESDE",
+    url: SITE_URL,
+    potentialAction: {
+      "@type": "SearchAction",
+      target: `${SITE_URL}/cursos?q={search_term_string}`,
+      "query-input": "required name=search_term_string",
+    },
+  };
+}
+
+function breadcrumbSchema(items) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      item: absoluteUrl(item.path),
+    })),
+  };
+}
+
+function courseSchema(course) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    name: course.title,
+    description: truncateDescription(
+      course.description || course.subtitle,
+      `Curso ${course.title} na FAESDE com metodologia EAD e suporte ao aluno.`,
+    ),
+    provider: {
+      "@type": "EducationalOrganization",
+      name: "FAESDE",
+      sameAs: SITE_URL,
+    },
+    url: absoluteUrl(`/curso/${course.slug}`),
+    image: courseImageUrl(course),
+    educationalCredentialAwarded: course.certification || "Certificado FAESDE",
+    timeRequired: course.hours ? `PT${course.hours}H` : undefined,
+  };
+}
+
+function buildSeoForRoute(url, courses) {
+  const path = canonicalPath(url.pathname);
+  const parts = path.split("/").filter(Boolean);
+  const keywords = DEFAULT_SEO_KEYWORDS.join(", ");
+  const base = {
+    title: "FAESDE | Cursos Técnicos EAD, Certificação por Competência e Pós-Técnicos",
+    description:
+      "Cursos técnicos EAD, certificação por competência, pós-técnicos e EJA com atendimento FAESDE. Estude online e prepare-se para novas oportunidades profissionais.",
+    keywords,
+    canonical: absoluteUrl(path, url.search),
+    image: SEO_IMAGE_URL,
+    type: "website",
+    robots: "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+    jsonLd: buildJsonLd([organizationSchema(), websiteSchema()]),
+  };
+
+  if (path === "/") return { ...base, canonical: SITE_URL };
+
+  if (path === "/cursos") {
+    const category = url.searchParams.get("categoria") || "";
+    const categoryMeta = SEO_CATEGORY_META[category];
+    if (categoryMeta) {
+      return {
+        ...base,
+        title: `${categoryMeta.label} | FAESDE`,
+        description: categoryMeta.description,
+        canonical: absoluteUrl("/cursos", `?categoria=${encodeURIComponent(category)}`),
+        jsonLd: buildJsonLd([
+          organizationSchema(),
+          breadcrumbSchema([
+            { name: "Início", path: "/" },
+            { name: "Cursos", path: "/cursos" },
+          ]),
+        ]),
+      };
+    }
+
+    return {
+      ...base,
+      title: "Cursos Técnicos EAD e Certificações | FAESDE",
+      description:
+        "Confira cursos técnicos EAD, certificação por competência, pós-técnicos e EJA da FAESDE. Busque por área profissional e fale com nossa equipe.",
+      canonical: absoluteUrl("/cursos"),
+      jsonLd: buildJsonLd([
+        organizationSchema(),
+        breadcrumbSchema([
+          { name: "Início", path: "/" },
+          { name: "Cursos", path: "/cursos" },
+        ]),
+      ]),
+    };
+  }
+
+  if (parts[0] === "curso" && parts[1]) {
+    const course = findCourseBySlug(courses, parts[1]);
+    if (course) {
+      const title = `${course.title} | FAESDE`;
+      const description = truncateDescription(
+        course.description || course.subtitle,
+        `${course.title}: curso EAD FAESDE com atendimento ao aluno, conteúdo profissionalizante e certificado.`,
+      );
+      const courseKeywords = [
+        course.title,
+        `${course.title} EAD`,
+        `${course.title} online`,
+        "curso técnico EAD FAESDE",
+        "certificação por competência FAESDE",
+        ...DEFAULT_SEO_KEYWORDS,
+      ].join(", ");
+
+      return {
+        ...base,
+        title,
+        description,
+        keywords: courseKeywords,
+        canonical: absoluteUrl(`/curso/${course.slug}`),
+        image: courseImageUrl(course),
+        type: "article",
+        jsonLd: buildJsonLd([
+          courseSchema(course),
+          breadcrumbSchema([
+            { name: "Início", path: "/" },
+            { name: "Cursos", path: "/cursos" },
+            { name: course.title, path: `/curso/${course.slug}` },
+          ]),
+        ]),
+      };
+    }
+  }
+
+  if (path === "/faq") {
+    return {
+      ...base,
+      title: "Perguntas Frequentes sobre Cursos Técnicos EAD | FAESDE",
+      description:
+        "Tire dúvidas sobre cursos técnicos EAD, certificação por competência, matrícula, certificado, suporte ao aluno e metodologia FAESDE.",
+      canonical: absoluteUrl("/faq"),
+      jsonLd: buildJsonLd([
+        organizationSchema(),
+        breadcrumbSchema([
+          { name: "Início", path: "/" },
+          { name: "FAQ", path: "/faq" },
+        ]),
+      ]),
+    };
+  }
+
+  if (path.startsWith("/admin") || path.startsWith("/certificados")) {
+    return {
+      ...base,
+      title: "Área Restrita | FAESDE",
+      description: "Área restrita FAESDE.",
+      robots: "noindex,nofollow",
+      canonical: absoluteUrl(path),
+      jsonLd: "",
+    };
+  }
+
+  return {
+    ...base,
+    title: "Página não encontrada | FAESDE",
+    description: "A página solicitada não foi encontrada. Acesse a lista de cursos técnicos EAD da FAESDE.",
+    robots: "noindex,follow",
+    canonical: absoluteUrl(path),
+    jsonLd: "",
+  };
+}
+
+function seoMetaBlock(seo) {
+  const jsonLd = seo.jsonLd
+    ? `\n    <script type="application/ld+json" data-seo="route">${seo.jsonLd.replace(/</g, "\\u003c")}</script>`
+    : "";
+
+  return [
+    `<title>${escapeHtml(seo.title)}</title>`,
+    `<meta name="description" content="${escapeHtml(seo.description)}" />`,
+    `<meta name="author" content="FAESDE" />`,
+    `<meta name="keywords" content="${escapeHtml(seo.keywords)}" />`,
+    `<meta name="robots" content="${escapeHtml(seo.robots)}" />`,
+    `<meta name="theme-color" content="#123567" />`,
+    `<meta property="og:title" content="${escapeHtml(seo.title)}" />`,
+    `<meta property="og:description" content="${escapeHtml(seo.description)}" />`,
+    `<meta property="og:type" content="${escapeHtml(seo.type)}" />`,
+    `<meta property="og:url" content="${escapeHtml(seo.canonical)}" />`,
+    `<meta property="og:image" content="${escapeHtml(seo.image)}" />`,
+    `<meta property="og:locale" content="pt_BR" />`,
+    `<meta name="twitter:card" content="summary_large_image" />`,
+    `<meta name="twitter:title" content="${escapeHtml(seo.title)}" />`,
+    `<meta name="twitter:description" content="${escapeHtml(seo.description)}" />`,
+    `<meta name="twitter:image" content="${escapeHtml(seo.image)}" />`,
+    `<link rel="canonical" href="${escapeHtml(seo.canonical)}" />${jsonLd}`,
+  ].join("\n    ");
+}
+
+function injectSeo(html, seo) {
+  let output = html
+    .replace(/<title>[\s\S]*?<\/title>\s*/i, "")
+    .replace(/\s*<meta\s+name=["'](?:description|author|keywords|robots|theme-color)["'][^>]*>\s*/gi, "\n")
+    .replace(/\s*<meta\s+property=["']og:[^"']+["'][^>]*>\s*/gi, "\n")
+    .replace(/\s*<meta\s+name=["']twitter:[^"']+["'][^>]*>\s*/gi, "\n")
+    .replace(/\s*<link\s+rel=["']canonical["'][^>]*>\s*/gi, "\n")
+    .replace(/\s*<script\s+type=["']application\/ld\+json["']\s+data-seo=["']route["'][\s\S]*?<\/script>\s*/gi, "\n");
+
+  const block = seoMetaBlock(seo);
+  if (/<meta\s+name=["']viewport["'][^>]*>/i.test(output)) {
+    return output.replace(/(<meta\s+name=["']viewport["'][^>]*>)/i, `$1\n    ${block}`);
+  }
+  return output.replace(/<head>/i, `<head>\n    ${block}`);
+}
+
+async function serveAppHtml(req, res, indexPath, url) {
+  const courses = await getPublicCourses();
+  const seo = buildSeoForRoute(url, courses);
+  const html = injectSeo(readFileSync(indexPath, "utf8"), seo);
+  const body = Buffer.from(html, "utf8");
+  const noindex = seo.robots.includes("noindex");
+  res.writeHead(
+    200,
+    securityHeaders(
+      {
+        "Content-Type": "text/html; charset=utf-8",
+        "Content-Length": body.length,
+        "Cache-Control": noindex ? "no-store" : "no-cache",
+      },
+      { noindex },
+    ),
+  );
+  if (req.method === "HEAD") {
+    res.end();
+    return;
+  }
+  res.end(body);
+}
+
+async function serveRobotsTxt(res) {
+  const body = [
+    "User-agent: *",
+    "Allow: /",
+    "# /eadplataforma fica rastreavel para o Google ler o header X-Robots-Tag: noindex.",
+    "Allow: /eadplataforma/",
+    "Disallow: /admin/",
+    "Disallow: /api/",
+    "Disallow: /certificados/",
+    "",
+    `Sitemap: ${SITE_URL}/sitemap.xml`,
+    "",
+  ].join("\n");
+  res.writeHead(
+    200,
+    securityHeaders({
+      "Content-Type": "text/plain; charset=utf-8",
+      "Cache-Control": "public, max-age=3600",
+    }),
+  );
+  res.end(body);
+}
+
+async function serveSitemapXml(res) {
+  const courses = await getPublicCourses();
+  const now = new Date().toISOString().slice(0, 10);
+  const urls = [
+    { loc: SITE_URL, priority: "1.0", changefreq: "weekly", lastmod: now },
+    { loc: absoluteUrl("/cursos"), priority: "0.9", changefreq: "weekly", lastmod: now },
+    { loc: absoluteUrl("/cursos", "?categoria=extensao"), priority: "0.8", changefreq: "weekly", lastmod: now },
+    { loc: absoluteUrl("/cursos", "?categoria=competencia"), priority: "0.8", changefreq: "weekly", lastmod: now },
+    { loc: absoluteUrl("/cursos", "?categoria=pos-tecnico"), priority: "0.7", changefreq: "weekly", lastmod: now },
+    { loc: absoluteUrl("/cursos", "?categoria=segundo-grau"), priority: "0.7", changefreq: "weekly", lastmod: now },
+    { loc: absoluteUrl("/faq"), priority: "0.5", changefreq: "monthly", lastmod: now },
+    ...courses.map((course) => ({
+      loc: absoluteUrl(`/curso/${course.slug}`),
+      priority: course.category === "extensao" ? "0.8" : "0.7",
+      changefreq: "monthly",
+      lastmod: (course.updated_at || now).slice(0, 10),
+    })),
+  ];
+
+  const body = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls
+    .map(
+      (item) => `  <url>
+    <loc>${escapeXml(item.loc)}</loc>
+    <lastmod>${escapeXml(item.lastmod)}</lastmod>
+    <changefreq>${escapeXml(item.changefreq)}</changefreq>
+    <priority>${escapeXml(item.priority)}</priority>
+  </url>`,
+    )
+    .join("\n")}\n</urlset>\n`;
+
+  res.writeHead(
+    200,
+    securityHeaders({
+      "Content-Type": "application/xml; charset=utf-8",
+      "Cache-Control": "public, max-age=3600",
+    }),
+  );
+  res.end(body);
 }
 
 async function findDriveChildByName(parentId, name, context) {
@@ -2301,6 +3043,8 @@ function serveFile(req, res, filePath) {
   const ext = extname(filePath).toLowerCase();
   const contentType = MIME_TYPES[ext] || "application/octet-stream";
   const range = req.headers.range;
+  const requestPath = new URL(req.url || "/", "http://localhost").pathname;
+  const noindex = requestPath.startsWith(PUBLIC_BASE_PATH);
 
   if (range) {
     const match = range.match(/^bytes=(\d*)-(\d*)$/);
@@ -2309,30 +3053,55 @@ function serveFile(req, res, filePath) {
       const end = match[2] ? Number(match[2]) : stat.size - 1;
 
       if (start <= end && end < stat.size) {
-        res.writeHead(206, {
-          "Content-Type": contentType,
-          "Content-Length": end - start + 1,
-          "Accept-Ranges": "bytes",
-          "Content-Range": `bytes ${start}-${end}/${stat.size}`,
-        });
+        res.writeHead(
+          206,
+          securityHeaders(
+            {
+              "Content-Type": contentType,
+              "Content-Length": end - start + 1,
+              "Accept-Ranges": "bytes",
+              "Content-Range": `bytes ${start}-${end}/${stat.size}`,
+              "Cache-Control": "public, max-age=31536000, immutable",
+            },
+            { noindex, allowFrame: requestPath.startsWith(PUBLIC_BASE_PATH) },
+          ),
+        );
         createReadStream(filePath, { start, end }).pipe(res);
         return;
       }
     }
   }
 
-  res.writeHead(200, {
-    "Content-Type": contentType,
-    "Content-Length": stat.size,
-    "Accept-Ranges": "bytes",
-    "Cache-Control": ext === ".html" ? "no-cache" : "public, max-age=31536000, immutable",
-  });
+  res.writeHead(
+    200,
+    securityHeaders(
+      {
+        "Content-Type": contentType,
+        "Content-Length": stat.size,
+        "Accept-Ranges": "bytes",
+        "Cache-Control": ext === ".html" ? "no-cache" : "public, max-age=31536000, immutable",
+      },
+      { noindex, allowFrame: requestPath.startsWith(PUBLIC_BASE_PATH) },
+    ),
+  );
   createReadStream(filePath).pipe(res);
 }
 
-function serveStatic(req, res, url) {
-  const pathname = url.pathname === "/" ? "/index.html" : url.pathname;
+async function serveStatic(req, res, url) {
+  const pathname = canonicalPath(url.pathname);
   const root = existsSync(STATIC_ROOT) ? STATIC_ROOT : PUBLIC_ROOT;
+
+  if (url.pathname === "/index.html") {
+    return redirectResponse(res, "/");
+  }
+
+  if (url.pathname === "/robots.txt") {
+    return serveRobotsTxt(res);
+  }
+
+  if (url.pathname === "/sitemap.xml") {
+    return serveSitemapXml(res);
+  }
 
   if (pathname.startsWith(`${PUBLIC_BASE_PATH}/`)) {
     const relativePath = pathname.slice(PUBLIC_BASE_PATH.length + 1);
@@ -2350,6 +3119,11 @@ function serveStatic(req, res, url) {
     }
   }
 
+  if (pathname === "/") {
+    const indexPath = join(root, "index.html");
+    if (existsSync(indexPath)) return serveAppHtml(req, res, indexPath, url);
+  }
+
   let filePath = safeFilePath(root, pathname);
 
   if (filePath && existsSync(filePath) && statSync(filePath).isDirectory()) {
@@ -2362,10 +3136,23 @@ function serveStatic(req, res, url) {
 
   if (!pathname.startsWith(PUBLIC_BASE_PATH) && !pathname.includes(".")) {
     const indexPath = join(root, "index.html");
-    if (existsSync(indexPath)) return serveFile(req, res, indexPath);
+    if (existsSync(indexPath)) return serveAppHtml(req, res, indexPath, url);
   }
 
   return textResponse(res, 404, "Not found");
+}
+
+async function handleWebRequest(req, res, url) {
+  if (!["GET", "HEAD"].includes(req.method || "GET")) {
+    return textResponse(res, 405, "Method not allowed");
+  }
+
+  const legacyRedirect = await getLegacyRedirect(url);
+  if (legacyRedirect) {
+    return redirectResponse(res, legacyRedirect.destination, 301);
+  }
+
+  return serveStatic(req, res, url);
 }
 
 const server = createServer((req, res) => {
@@ -2376,7 +3163,10 @@ const server = createServer((req, res) => {
     return;
   }
 
-  serveStatic(req, res, url);
+  handleWebRequest(req, res, url).catch((error) => {
+    console.error(error);
+    textResponse(res, error.statusCode || 500, error.message || "Erro inesperado.");
+  });
 });
 
 server.listen(PORT, () => {

@@ -1,0 +1,102 @@
+FAESDE - mapa de redirecionamentos SEO
+Data: 2026-07-22
+
+Objetivo:
+Redirecionar URLs antigas do WordPress/WooCommerce e posts antigos para a pagina de curso mais provavel, evitando paginas fantasma com status 200 e metadados duplicados.
+
+URLs antigas conferidas antes do ajuste:
+https://faesde.com.br/produto-tag/faesde/ -> https://faesde.com.br/cursos
+https://faesde.com.br/blog/ -> https://faesde.com.br/cursos
+https://faesde.com.br/produto/tecnico-em-seguranca-do-trabalho/ -> https://faesde.com.br/curso/seguranca-trabalho
+https://faesde.com.br/categoria-produto/cursos-tecnicos/ -> https://faesde.com.br/cursos?categoria=extensao
+
+Regras implantadas no servidor:
+/index.html -> /
+/loja -> /cursos
+/shop -> /cursos
+/carrinho -> /cursos
+/cart -> /cursos
+/checkout -> /cursos
+/finalizar-compra -> /cursos
+/minha-conta -> /cursos
+/my-account -> /cursos
+/produto-tag/{termo} -> /curso/{curso-provavel} ou /cursos
+/tag/{termo} -> /curso/{curso-provavel} ou /cursos
+/categoria-produto/{termo} -> /cursos?categoria={categoria-provavel} ou /curso/{curso-provavel} ou /cursos
+/product-category/{termo} -> /cursos?categoria={categoria-provavel} ou /curso/{curso-provavel} ou /cursos
+/categoria/{termo} -> /cursos?categoria={categoria-provavel} ou /curso/{curso-provavel} ou /cursos
+/category/{termo} -> /cursos?categoria={categoria-provavel} ou /curso/{curso-provavel} ou /cursos
+/produto/{termo} -> /curso/{curso-provavel} ou /cursos
+/blog/{termo} -> /curso/{curso-provavel} ou /cursos
+/noticia/{termo} -> /curso/{curso-provavel} ou /cursos
+/noticias/{termo} -> /curso/{curso-provavel} ou /cursos
+/artigo/{termo} -> /curso/{curso-provavel} ou /cursos
+/artigos/{termo} -> /curso/{curso-provavel} ou /cursos
+/post/{termo} -> /curso/{curso-provavel} ou /cursos
+
+Categorias antigas mapeadas:
+cursos-tecnicos -> /cursos?categoria=extensao
+curso-tecnico -> /cursos?categoria=extensao
+cursos-tecnicos-ead -> /cursos?categoria=extensao
+cursos-de-extensao-ead -> /cursos?categoria=extensao
+extensao -> /cursos?categoria=extensao
+certificacao-por-competencia -> /cursos?categoria=competencia
+certificacao-tecnica-por-competencia -> /cursos?categoria=competencia
+cursos-de-certificacao-por-competencia-ead -> /cursos?categoria=competencia
+competencia -> /cursos?categoria=competencia
+pos-tecnico -> /cursos?categoria=pos-tecnico
+pos-tecnicos -> /cursos?categoria=pos-tecnico
+cursos-pos-tecnicos -> /cursos?categoria=pos-tecnico
+especializacao-tecnica -> /cursos?categoria=pos-tecnico
+eja -> /cursos?categoria=segundo-grau
+ensino-medio -> /cursos?categoria=segundo-grau
+segundo-grau -> /cursos?categoria=segundo-grau
+
+Aliases de curso implantados:
+tecnico-em-seguranca-do-trabalho -> /curso/seguranca-trabalho
+curso-tecnico-em-seguranca-do-trabalho -> /curso/seguranca-trabalho
+seguranca-do-trabalho -> /curso/seguranca-trabalho
+sst -> /curso/seguranca-trabalho
+tecnico-em-administracao -> /curso/administracao
+curso-tecnico-em-administracao -> /curso/administracao
+administracao -> /curso/administracao
+tecnico-em-eletrotecnica -> /curso/eletrotecnica
+curso-tecnico-em-eletrotecnica -> /curso/eletrotecnica
+eletrotecnica -> /curso/eletrotecnica
+tecnico-em-eletromecanica -> /curso/eletromecanica
+eletromecanica -> /curso/eletromecanica
+tecnico-em-eletroeletronica -> /curso/eletroeletronica
+eletroeletronica -> /curso/eletroeletronica
+tecnico-em-enfermagem -> /curso/certificacao-tecnica-competencia-enfermagem
+enfermagem -> /curso/certificacao-tecnica-competencia-enfermagem
+tecnico-em-farmacia -> /curso/farmacia
+farmacia -> /curso/farmacia
+tecnico-em-radiologia -> /curso/certificacao-tecnica-competencia-radiologia
+radiologia -> /curso/certificacao-tecnica-competencia-radiologia
+tecnico-em-logistica -> /curso/logistica
+logistica -> /curso/logistica
+tecnico-em-mecanica -> /curso/mecanica
+mecanica -> /curso/mecanica
+tecnico-em-mineracao -> /curso/mineracao
+mineracao -> /curso/mineracao
+tecnico-em-contabilidade -> /curso/contabilidade
+contabilidade -> /curso/contabilidade
+tecnico-em-marketing -> /curso/marketing
+marketing -> /curso/marketing
+tecnico-em-recursos-humanos -> /curso/recursos-humanos
+recursos-humanos -> /curso/recursos-humanos
+tecnico-em-transacoes-imobiliarias -> /curso/tti
+transacoes-imobiliarias -> /curso/tti
+tti -> /curso/tti
+tecnico-em-refrigeracao-e-climatizacao -> /curso/refrigeracao
+refrigeracao-e-climatizacao -> /curso/refrigeracao
+refrigeracao -> /curso/refrigeracao
+tecnico-em-petroleo-e-gas -> /curso/petroleo-gas
+petroleo-e-gas -> /curso/petroleo-gas
+petroleo-gas -> /curso/petroleo-gas
+tecnico-em-desenvolvimento-de-sistemas -> /curso/certificacao-tecnica-competencia-desenvolvimento-sistemas
+desenvolvimento-de-sistemas -> /curso/certificacao-tecnica-competencia-desenvolvimento-sistemas
+desenvolvimento-sistemas -> /curso/certificacao-tecnica-competencia-desenvolvimento-sistemas
+
+Observacao:
+Quando o termo antigo nao corresponde a uma categoria ou curso com confianca suficiente, o destino seguro e /cursos para preservar a intencao comercial sem criar pagina 404 desnecessaria.

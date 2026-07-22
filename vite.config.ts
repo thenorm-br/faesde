@@ -2,7 +2,7 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
-// @ts-ignore - JS module without types
+// @ts-expect-error - JS module without types
 import { generateIndex } from "./scripts/generate-eadplataforma-index.mjs";
 
 // Vite plugin: regenerates the eadplataforma index on server start and before build
@@ -40,6 +40,28 @@ export default defineConfig(({ mode }) => ({
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
+    },
+  },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          react: ["react", "react-dom", "react-router-dom"],
+          supabase: ["@supabase/supabase-js"],
+          ui: [
+            "@radix-ui/react-accordion",
+            "@radix-ui/react-alert-dialog",
+            "@radix-ui/react-dialog",
+            "@radix-ui/react-dropdown-menu",
+            "@radix-ui/react-popover",
+            "@radix-ui/react-select",
+            "@radix-ui/react-tabs",
+            "@radix-ui/react-toast",
+            "@tanstack/react-query",
+          ],
+          certificates: ["jspdf", "html2canvas", "qrcode", "file-saver"],
+        },
+      },
     },
   },
 }));

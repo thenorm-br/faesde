@@ -1,14 +1,9 @@
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: Twitterbot
-Allow: /
-
-User-agent: facebookexternalhit
-Allow: /
-
 User-agent: *
 Allow: /
+# /eadplataforma fica rastreavel para o Google ler o header X-Robots-Tag: noindex.
+Allow: /eadplataforma/
+Disallow: /admin/
+Disallow: /api/
+Disallow: /certificados/
+
+Sitemap: https://faesde.com.br/sitemap.xml
