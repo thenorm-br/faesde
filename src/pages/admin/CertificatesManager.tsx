@@ -126,6 +126,7 @@ const CertificatesManager = () => {
   const [list, setList] = useState<Certificate[]>([]);
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
+  const [externalSchemaReady, setExternalSchemaReady] = useState(true);
   const [dialogOpen, setDialogOpen] = useState(false);
   const [qrOpen, setQrOpen] = useState<Certificate | null>(null);
   const [qrDataUrl, setQrDataUrl] = useState("");
@@ -144,8 +145,18 @@ const CertificatesManager = () => {
     setLoading(false);
   };
 
+  const checkExternalSchema = async () => {
+    const { error } = await supabase
+      .from("certificates")
+      .select("source_type,external_file_path")
+      .limit(1);
+
+    setExternalSchemaReady(!error);
+  };
+
   useEffect(() => {
     load();
+    checkExternalSchema();
   }, []);
 
   useEffect(() => {
@@ -278,6 +289,10 @@ const CertificatesManager = () => {
       toast.error("Envie o PDF do certificado externo.");
       return;
     }
+    if (form.source_type === "external_pdf" && !externalSchemaReady) {
+      toast.error("A migration de certificados externos ainda precisa ser aplicada no banco.");
+      return;
+    }
 
     setSaving(true);
     let uploadedPath: string | null = null;
@@ -298,7 +313,7 @@ const CertificatesManager = () => {
           : { path: null, name: null, size: null, mimeType: null, uploadedPath: null };
       uploadedPath = external.uploadedPath;
 
-      const payload = {
+      const legacyPayload = {
         code: form.code,
         student_name: form.student_name,
         cpf: form.cpf || null,
@@ -311,12 +326,16 @@ const CertificatesManager = () => {
         page_number: registry.page_number,
         institution: form.institution || (form.source_type === "generated" ? "FAESDE" : null),
         is_active: form.is_active,
+      };
+
+      const payload = externalSchemaReady ? {
+        ...legacyPayload,
         source_type: form.source_type,
         external_file_path: external.path,
         external_file_name: external.name,
         external_file_size: external.size,
         external_file_mime_type: external.mimeType,
-      };
+      } : legacyPayload;
 
       const { error } = editing
         ? await supabase.from("certificates").update(payload).eq("id", editing.id)
@@ -376,7 +395,7 @@ const CertificatesManager = () => {
           </p>
         </div>
         <div className="flex flex-wrap gap-2">
-          <Button variant="outline" onClick={() => openCreate("external_pdf")}>
+          <Button variant="outline" onClick={() => openCreate("external_pdf")} disabled={!externalSchemaReady}>
             <Upload className="mr-2 h-4 w-4" /> Upload PDF externo
           </Button>
           <Button onClick={() => openCreate("generated")}>
@@ -384,6 +403,14 @@ const CertificatesManager = () => {
           </Button>
         </div>
       </div>
+
+      {!externalSchemaReady && (
+        <div className="rounded-lg border border-amber-200 bg-amber-50 p-4 text-sm text-amber-950">
+          A migration de certificados externos ainda nao foi aplicada no banco. Enquanto isso, certificados FAESDE
+          continuam funcionando; o upload de PDF externo sera liberado assim que o SQL criar as colunas e o bucket
+          <strong> certificate-files</strong>.
+        </div>
+      )}
 
       <div className="border rounded-lg bg-card">
         <Table>
