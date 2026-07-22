@@ -1641,6 +1641,19 @@ async function handleApi(req, res, url) {
       return jsonResponse(res, 200, { history });
     }
 
+    if (req.method === "GET" && url.pathname === "/api/sync/manifest") {
+      const manifest = await readExistingDriveManifest(context);
+      if (!manifest) {
+        return jsonResponse(res, 404, { message: "Manifesto EAD ainda nao encontrado no GitHub." });
+      }
+
+      return jsonResponse(res, 200, {
+        manifest,
+        source: "github",
+        serverTime: new Date().toISOString(),
+      });
+    }
+
     if (req.method === "POST" && url.pathname === "/api/sync/connect") {
       const body = await readJsonBody(req);
       if (body.provider === "google_drive") {

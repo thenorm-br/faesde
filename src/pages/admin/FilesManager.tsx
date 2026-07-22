@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import {
   ChevronRight,
   Download,
@@ -10,8 +10,12 @@ import {
   FileVideo,
   Folder,
   Home,
+  Loader2,
+  Play,
+  RefreshCw,
   Search,
 } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client.ts";
 import { Alert, AlertDescription } from "@/components/ui/alert.tsx";
 import { Badge } from "@/components/ui/badge.tsx";
 import { Button } from "@/components/ui/button.tsx";
@@ -55,6 +59,25 @@ interface DriveManifest {
   items: DriveManifestItem[];
 }
 
+interface LiveManifestResponse {
+  manifest: DriveManifest;
+  source: "github";
+  serverTime: string;
+}
+
+interface SyncRunResult {
+  ok: boolean;
+  message: string;
+  finishedAt: string;
+  githubCommitSha?: string | null;
+  stats?: {
+    syncedFiles?: number;
+    pendingFiles?: number;
+    failedFiles?: number;
+    batchLimit?: number;
+  };
+}
+
 interface TotalStats {
   files: number;
   folders: number;
@@ -63,6 +86,33 @@ interface TotalStats {
 }
 
 const BASE_URL = "/eadplataforma";
+
+async function fetchWithAdminSession<T>(path: string, options: RequestInit = {}): Promise<T> {
+  const {
+    data: { session },
+  } = await supabase.auth.getSession();
+
+  if (!session?.access_token) {
+    throw new Error("Sessao admin expirada. Entre novamente no painel.");
+  }
+
+  const response = await fetch(path, {
+    ...options,
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${session.access_token}`,
+      ...(options.headers || {}),
+    },
+  });
+  const text = await response.text();
+  const payload = text ? JSON.parse(text) : {};
+
+  if (!response.ok) {
+    throw new Error(payload.message || payload.error || `HTTP ${response.status}`);
+  }
+
+  return payload as T;
+}
 
 function formatSize(bytes: number) {
   if (bytes < 1024) return `${bytes} B`;
@@ -173,6 +223,60 @@ const FilesManager = () => {
   const [error, setError] = useState<string | null>(null);
   const [currentPath, setCurrentPath] = useState<string>("");
   const [search, setSearch] = useState("");
+  const [liveSource, setLiveSource] = useState<"static" | "github">("static");
+  const [liveLoading, setLiveLoading] = useState(false);
+  const [liveError, setLiveError] = useState<string | null>(null);
+  const [lastLiveUpdate, setLastLiveUpdate] = useState<string | null>(null);
+  const [syncRunning, setSyncRunning] = useState(false);
+  const [syncMessage, setSyncMessage] = useState("Aguardando status ao vivo do GitHub.");
+  const syncRunningRef = useRef(false);
+
+  const loadLiveManifest = async (silent = false) => {
+    if (!silent) setLiveLoading(true);
+    try {
+      const result = await fetchWithAdminSession<LiveManifestResponse>("/api/sync/manifest", { method: "GET" });
+      setDriveManifest(result.manifest);
+      setLiveSource("github");
+      setLiveError(null);
+      setLastLiveUpdate(result.serverTime || new Date().toISOString());
+    } catch (loadError) {
+      setLiveError(loadError instanceof Error ? loadError.message : "Nao foi possivel carregar o manifesto ao vivo.");
+    } finally {
+      if (!silent) setLiveLoading(false);
+    }
+  };
+
+  const runNextBatch = async (automatic = false) => {
+    if (syncRunningRef.current) return;
+
+    syncRunningRef.current = true;
+    setSyncRunning(true);
+    setSyncMessage(automatic ? "Auto-sync enviando proximo lote..." : "Enviando proximo lote para o GitHub...");
+
+    try {
+      const result = await fetchWithAdminSession<SyncRunResult>("/api/sync/run", {
+        method: "POST",
+        body: JSON.stringify({ mode: "drive_to_github_files" }),
+      });
+      const synced = result.stats?.syncedFiles || 0;
+      const pending = result.stats?.pendingFiles || 0;
+      const failed = result.stats?.failedFiles || 0;
+
+      setSyncMessage(
+        pending > 0
+          ? `Ultimo lote: ${synced} arquivo(s) enviados, ${pending} pendente(s), ${failed} falha(s).`
+          : `Sincronizacao em dia: ${synced} arquivo(s) enviados no ultimo lote, ${failed} falha(s).`,
+      );
+      await loadLiveManifest(true);
+    } catch (syncError) {
+      setSyncMessage(
+        `Auto-sync pausado: ${syncError instanceof Error ? syncError.message : "falha inesperada na sincronizacao."}`,
+      );
+    } finally {
+      syncRunningRef.current = false;
+      setSyncRunning(false);
+    }
+  };
 
   useEffect(() => {
     let cancelled = false;
@@ -205,9 +309,14 @@ const FilesManager = () => {
     };
 
     loadFiles();
+    loadLiveManifest(true);
+    const liveTimer = window.setInterval(() => {
+      loadLiveManifest(true);
+    }, 30000);
 
     return () => {
       cancelled = true;
+      window.clearInterval(liveTimer);
     };
   }, []);
 
@@ -289,6 +398,25 @@ const FilesManager = () => {
     };
   }, [driveManifest]);
 
+  useEffect(() => {
+    if (loading || !driveManifest) return;
+
+    if (driveSyncStats.pending <= 0) {
+      setSyncMessage("Sincronizacao em dia. Nenhum arquivo leve pendente no GitHub.");
+      return;
+    }
+
+    if (syncRunningRef.current) return;
+
+    const timer = window.setTimeout(() => {
+      runNextBatch(true);
+    }, 15000);
+
+    return () => window.clearTimeout(timer);
+    // Auto-sync follows the manifest counters; helper functions are intentionally not deps.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [driveManifest, driveSyncStats.pending, loading]);
+
   const getDisplayModifiedAt = (node: Node) => {
     return driveItemsByPath.get(node.path)?.modifiedTime || node.modifiedAt || null;
   };
@@ -352,9 +480,33 @@ const FilesManager = () => {
                   {driveSyncStats.cached} de {driveSyncStats.githubEligible} arquivos leves ja estao cacheados no GitHub.
                 </p>
               </div>
-              <Badge variant="outline">{driveSyncStats.percent}% concluido</Badge>
+              <div className="flex flex-wrap items-center gap-2">
+                <Badge variant="outline">{driveSyncStats.percent}% concluido</Badge>
+                <Badge
+                  variant="outline"
+                  className={
+                    liveSource === "github"
+                      ? "border-green-200 bg-green-100 text-green-900"
+                      : "border-amber-200 bg-amber-100 text-amber-900"
+                  }
+                >
+                  {liveSource === "github" ? "GitHub ao vivo" : "Deploy estatico"}
+                </Badge>
+              </div>
             </div>
             <Progress value={driveSyncStats.percent} />
+            <div className="flex flex-wrap items-center gap-2">
+              <Button variant="outline" size="sm" onClick={() => loadLiveManifest()} disabled={liveLoading}>
+                {liveLoading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <RefreshCw className="mr-2 h-4 w-4" />}
+                Atualizar status
+              </Button>
+              <Button size="sm" onClick={() => runNextBatch(false)} disabled={syncRunning || driveSyncStats.pending <= 0}>
+                {syncRunning ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <Play className="mr-2 h-4 w-4" />}
+                Sincronizar lote agora
+              </Button>
+              <span className="text-xs text-muted-foreground">{syncMessage}</span>
+            </div>
+            {liveError && <p className="text-xs text-amber-700">Status ao vivo indisponivel: {liveError}</p>}
           </div>
           <div className="grid grid-cols-2 gap-2 text-xs text-muted-foreground sm:grid-cols-4 lg:grid-cols-2">
             <div className="rounded-lg bg-muted/50 p-2">
@@ -372,6 +524,10 @@ const FilesManager = () => {
             <div className="rounded-lg bg-muted/50 p-2">
               <p>Drive alterado</p>
               <p className="font-medium text-foreground">{formatRelativeDate(driveSyncStats.latestDriveModifiedAt)}</p>
+            </div>
+            <div className="rounded-lg bg-muted/50 p-2 sm:col-span-2 lg:col-span-2">
+              <p>Status ao vivo</p>
+              <p className="font-medium text-foreground">{formatRelativeDate(lastLiveUpdate)}</p>
             </div>
           </div>
         </div>
