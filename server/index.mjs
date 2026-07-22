@@ -1,6 +1,6 @@
-import { createReadStream, existsSync, statSync } from "node:fs";
+import { createReadStream, existsSync, mkdirSync, readFileSync, rmSync, statSync, writeFileSync } from "node:fs";
 import { createServer } from "node:http";
-import { extname, join, normalize, resolve, sep } from "node:path";
+import { dirname, extname, join, normalize, resolve, sep } from "node:path";
 import { createHash, createSign, randomBytes } from "node:crypto";
 
 const PORT = Number(process.env.PORT || 3000);
@@ -16,6 +16,9 @@ const MAX_GITHUB_BYTES = MAX_GITHUB_FILE_MB * 1024 * 1024;
 const DRIVE_SCAN_LIMIT = Number(process.env.GOOGLE_DRIVE_SCAN_LIMIT || 5000);
 const GITHUB_SYNC_BATCH_SIZE = Number(process.env.EAD_GITHUB_SYNC_BATCH_SIZE || 150);
 const MANIFEST_PATH = process.env.EAD_DRIVE_MANIFEST_PATH || "public/eadplataforma-drive-manifest.json";
+const RUNTIME_CACHE_ROOT = resolve(process.env.EAD_RUNTIME_CACHE_ROOT || join(process.cwd(), ".ead-runtime-cache"));
+const MAX_UPLOAD_MB = Number(process.env.EAD_UPLOAD_MAX_MB || 512);
+const MAX_UPLOAD_BYTES = MAX_UPLOAD_MB * 1024 * 1024;
 
 const PROVIDERS = ["google_drive", "github"];
 const DEFAULT_SCOPES = {
@@ -275,6 +278,123 @@ async function readJsonBody(req) {
 
   if (chunks.length === 0) return {};
   return JSON.parse(Buffer.concat(chunks).toString("utf8"));
+}
+
+async function readRequestBuffer(req, maxBytes = MAX_UPLOAD_BYTES) {
+  const chunks = [];
+  let size = 0;
+
+  for await (const chunk of req) {
+    size += chunk.length;
+    if (size > maxBytes) throw createHttpError(`Upload maior que ${MAX_UPLOAD_MB} MB.`, 413);
+    chunks.push(chunk);
+  }
+
+  return Buffer.concat(chunks);
+}
+
+function parseContentDisposition(value = "") {
+  const result = {};
+  for (const part of value.split(";")) {
+    const [rawKey, ...rawValue] = part.trim().split("=");
+    if (!rawKey || rawValue.length === 0) continue;
+    result[rawKey.toLowerCase()] = rawValue.join("=").trim().replace(/^"|"$/g, "");
+  }
+  return result;
+}
+
+async function readMultipartBody(req) {
+  const contentType = String(req.headers["content-type"] || "");
+  const boundaryMatch = contentType.match(/boundary=(?:"([^"]+)"|([^;]+))/i);
+  if (!boundaryMatch) throw createHttpError("Formulario de upload invalido.", 400);
+
+  const boundary = boundaryMatch[1] || boundaryMatch[2];
+  const raw = (await readRequestBuffer(req)).toString("latin1");
+  const parts = raw.split(`--${boundary}`).slice(1, -1);
+  const fields = {};
+  const files = {};
+
+  for (const rawPart of parts) {
+    const part = rawPart.replace(/^\r\n/, "").replace(/\r\n$/, "");
+    const separatorIndex = part.indexOf("\r\n\r\n");
+    if (separatorIndex === -1) continue;
+
+    const rawHeaders = part.slice(0, separatorIndex);
+    const rawContent = part.slice(separatorIndex + 4);
+    const headers = Object.fromEntries(
+      rawHeaders.split("\r\n").map((line) => {
+        const index = line.indexOf(":");
+        return [line.slice(0, index).trim().toLowerCase(), line.slice(index + 1).trim()];
+      }),
+    );
+    const disposition = parseContentDisposition(headers["content-disposition"]);
+    const name = disposition.name;
+    if (!name) continue;
+
+    const content = Buffer.from(rawContent, "latin1");
+    if (disposition.filename) {
+      files[name] = {
+        filename: disposition.filename,
+        contentType: headers["content-type"] || "application/octet-stream",
+        buffer: content,
+      };
+    } else {
+      fields[name] = content.toString("utf8");
+    }
+  }
+
+  return { fields, files };
+}
+
+function normalizeRelativePath(pathname = "") {
+  const normalized = String(pathname || "")
+    .replace(/\\/g, "/")
+    .split("/")
+    .map((part) => part.trim())
+    .filter(Boolean)
+    .join("/");
+
+  if (normalized.split("/").some((part) => part === "." || part === "..")) {
+    throw createHttpError("Caminho invalido.", 400);
+  }
+
+  return normalized;
+}
+
+function joinRelativePath(parentPath, name) {
+  const parent = normalizeRelativePath(parentPath);
+  const cleanName = sanitizeDriveName(name);
+  return parent ? `${parent}/${cleanName}` : cleanName;
+}
+
+function pathName(pathname) {
+  const normalized = normalizeRelativePath(pathname);
+  return normalized.split("/").pop() || "";
+}
+
+function parentPath(pathname) {
+  const normalized = normalizeRelativePath(pathname);
+  const parts = normalized.split("/").filter(Boolean);
+  parts.pop();
+  return parts.join("/");
+}
+
+function isSameOrChildPath(pathname, basePath) {
+  const cleanPath = normalizeRelativePath(pathname);
+  const cleanBase = normalizeRelativePath(basePath);
+  return cleanPath === cleanBase || cleanPath.startsWith(`${cleanBase}/`);
+}
+
+function sanitizeDriveName(name) {
+  const cleanName = String(name || "").trim().replace(/[\\/]/g, "-");
+  if (!cleanName || cleanName === "." || cleanName === "..") {
+    throw createHttpError("Nome invalido.", 400);
+  }
+  return cleanName;
+}
+
+function escapeDriveQuery(value) {
+  return String(value || "").replace(/\\/g, "\\\\").replace(/'/g, "\\'");
 }
 
 async function getOAuthSettings(accessToken, provider) {
@@ -761,6 +881,202 @@ async function driveDownloadFile(fileId, context) {
   return Buffer.from(await response.arrayBuffer());
 }
 
+async function driveJsonRequest(pathname, options = {}, context) {
+  const auth = await getGoogleAccessToken(context);
+  const url = new URL(`https://www.googleapis.com/drive/v3/${pathname}`);
+  Object.entries(options.params || {}).forEach(([key, value]) => {
+    if (value !== undefined && value !== null) url.searchParams.set(key, String(value));
+  });
+
+  const response = await fetch(url, {
+    method: options.method || "GET",
+    headers: {
+      Authorization: `Bearer ${auth.token}`,
+      "Content-Type": "application/json; charset=utf-8",
+      ...(options.headers || {}),
+    },
+    body: options.body ? JSON.stringify(options.body) : undefined,
+  });
+  const text = await response.text();
+  const payload = text ? JSON.parse(text) : {};
+
+  if (!response.ok) {
+    throw createHttpError(payload.error?.message || "Falha ao alterar Google Drive.", response.status);
+  }
+
+  return { payload, source: auth.source };
+}
+
+async function driveUploadResumable({ folderId, name, mimeType, buffer }, context) {
+  const auth = await getGoogleAccessToken(context);
+  const startUrl = new URL("https://www.googleapis.com/upload/drive/v3/files");
+  startUrl.searchParams.set("uploadType", "resumable");
+  startUrl.searchParams.set("supportsAllDrives", "true");
+  startUrl.searchParams.set("fields", "id,name,mimeType,size,modifiedTime,md5Checksum,webViewLink,webContentLink");
+
+  const startResponse = await fetch(startUrl, {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${auth.token}`,
+      "Content-Type": "application/json; charset=utf-8",
+      "X-Upload-Content-Type": mimeType || "application/octet-stream",
+      "X-Upload-Content-Length": String(buffer.length),
+    },
+    body: JSON.stringify({
+      name,
+      parents: [folderId],
+      mimeType: mimeType || "application/octet-stream",
+    }),
+  });
+
+  if (!startResponse.ok) {
+    const payload = await startResponse.json().catch(() => ({}));
+    throw createHttpError(payload.error?.message || "Falha ao iniciar upload no Google Drive.", startResponse.status);
+  }
+
+  const uploadUrl = startResponse.headers.get("location");
+  if (!uploadUrl) throw createHttpError("Google Drive nao retornou URL de upload.", 500);
+
+  const uploadResponse = await fetch(uploadUrl, {
+    method: "PUT",
+    headers: {
+      "Content-Type": mimeType || "application/octet-stream",
+      "Content-Length": String(buffer.length),
+    },
+    body: buffer,
+  });
+  const text = await uploadResponse.text();
+  const payload = text ? JSON.parse(text) : {};
+
+  if (!uploadResponse.ok) {
+    throw createHttpError(payload.error?.message || "Falha ao enviar arquivo para o Google Drive.", uploadResponse.status);
+  }
+
+  return payload;
+}
+
+async function findDriveChildByName(parentId, name, context) {
+  const { payload } = await driveRequest(
+    "files",
+    {
+      q: `'${escapeDriveQuery(parentId)}' in parents and name='${escapeDriveQuery(name)}' and trashed=false`,
+      fields: "files(id,name,mimeType,parents)",
+      pageSize: "10",
+      supportsAllDrives: "true",
+      includeItemsFromAllDrives: "true",
+    },
+    context,
+  );
+
+  return payload.files || [];
+}
+
+function runtimeCacheFilePath(relativePath) {
+  const normalized = normalizeRelativePath(relativePath);
+  const filePath = resolve(join(RUNTIME_CACHE_ROOT, normalized));
+  const rootWithSep = RUNTIME_CACHE_ROOT.endsWith(sep) ? RUNTIME_CACHE_ROOT : `${RUNTIME_CACHE_ROOT}${sep}`;
+
+  if (filePath !== RUNTIME_CACHE_ROOT && !filePath.startsWith(rootWithSep)) {
+    throw createHttpError("Caminho de cache invalido.", 400);
+  }
+
+  return filePath;
+}
+
+function runtimeStateFilePath(name) {
+  mkdirSync(RUNTIME_CACHE_ROOT, { recursive: true });
+  return join(RUNTIME_CACHE_ROOT, name);
+}
+
+function readRuntimeJson(name, fallback) {
+  try {
+    return parseJsonDocument(readFileSync(runtimeStateFilePath(name), "utf8"));
+  } catch {
+    return fallback;
+  }
+}
+
+function writeRuntimeJson(name, value) {
+  writeFileSync(runtimeStateFilePath(name), JSON.stringify(value, null, 2), "utf8");
+}
+
+function readRuntimeTombstones() {
+  const tombstones = readRuntimeJson("deleted-paths.json", []);
+  return Array.isArray(tombstones) ? tombstones : [];
+}
+
+function writeRuntimeTombstones(tombstones) {
+  writeRuntimeJson("deleted-paths.json", Array.from(new Set(tombstones.map(normalizeRelativePath))).sort());
+}
+
+function addRuntimeTombstone(pathname) {
+  const normalized = normalizeRelativePath(pathname);
+  if (!normalized) return;
+  writeRuntimeTombstones([...readRuntimeTombstones(), normalized]);
+}
+
+function isRuntimeTombstoned(pathname) {
+  const normalized = normalizeRelativePath(pathname);
+  return readRuntimeTombstones().some((deletedPath) => isSameOrChildPath(normalized, deletedPath));
+}
+
+function removeRuntimeCachePath(pathname) {
+  const normalized = normalizeRelativePath(pathname);
+  if (!normalized) return;
+  const filePath = runtimeCacheFilePath(normalized);
+  if (existsSync(filePath)) rmSync(filePath, { recursive: true, force: true });
+  addRuntimeTombstone(normalized);
+}
+
+function writeRuntimeCacheFile(relativePath, buffer) {
+  const filePath = runtimeCacheFilePath(relativePath);
+  mkdirSync(dirname(filePath), { recursive: true });
+  writeFileSync(filePath, buffer);
+}
+
+function getRuntimeCacheStats(manifest) {
+  const eligible = (manifest?.items || []).filter(
+    (item) => item.type === "file" && item.storageTarget === "github_cache" && item.githubCached,
+  );
+  const cached = eligible.filter((item) => existsSync(runtimeCacheFilePath(item.path)));
+
+  return {
+    root: RUNTIME_CACHE_ROOT,
+    eligible: eligible.length,
+    cached: cached.length,
+    pending: Math.max(eligible.length - cached.length, 0),
+  };
+}
+
+async function hydrateRuntimeCache(manifest, context, options = {}) {
+  const batchSize = Math.max(1, Math.min(Number(options.batchSize || GITHUB_SYNC_BATCH_SIZE), 500));
+  const eligible = (manifest?.items || []).filter(
+    (item) => item.type === "file" && item.storageTarget === "github_cache" && item.githubCached,
+  );
+  const missing = eligible.filter((item) => !existsSync(runtimeCacheFilePath(item.path))).slice(0, batchSize);
+  const failures = [];
+  let cached = 0;
+
+  for (const item of missing) {
+    try {
+      const buffer = await driveDownloadFile(item.driveFileId, context);
+      writeRuntimeCacheFile(item.path, buffer);
+      cached += 1;
+    } catch (error) {
+      failures.push({ path: item.path, message: error.message || "Falha ao baixar cache local." });
+    }
+  }
+
+  const stats = getRuntimeCacheStats(manifest);
+  return {
+    cached,
+    attempted: missing.length,
+    pending: stats.pending,
+    failures,
+    stats,
+  };
+}
+
 async function getGitHubAuth(context) {
   const oauthToken = await getGitHubOAuthAccessToken(context);
   if (oauthToken) return { token: oauthToken, source: "oauth" };
@@ -1158,7 +1474,7 @@ function prepareManifestForGithubSync(manifest, existingManifest, batchFiles) {
   };
 }
 
-function getGithubSyncPlan(manifest, existingManifest, requestedBatchSize) {
+function getGithubSyncPlan(manifest, existingManifest, requestedBatchSize, priorityPathList = []) {
   const existingByPath = new Map((existingManifest?.items || []).map((item) => [item.path, item]));
   const batchSize = Math.max(1, Math.min(Number(requestedBatchSize || GITHUB_SYNC_BATCH_SIZE), 500));
   const eligibleFiles = manifest.items.filter(
@@ -1174,13 +1490,186 @@ function getGithubSyncPlan(manifest, existingManifest, requestedBatchSize) {
       existing?.modifiedTime === item.modifiedTime
     );
   });
+  const priorityPaths = new Set(priorityPathList.map(normalizeRelativePath));
+  const priorityFiles = changedFiles.filter((item) =>
+    Array.from(priorityPaths).some((priorityPath) => isSameOrChildPath(item.path, priorityPath)),
+  );
+  const normalFiles = changedFiles.filter((item) => !priorityFiles.includes(item));
 
   return {
     batchSize,
     eligibleFiles,
-    changedFiles,
-    batchFiles: changedFiles.slice(0, batchSize),
+    changedFiles: [...priorityFiles, ...normalFiles],
+    batchFiles: [...priorityFiles, ...normalFiles].slice(0, batchSize),
   };
+}
+
+function findManifestItem(manifest, pathname) {
+  const normalized = normalizeRelativePath(pathname);
+  return (manifest?.items || []).find((item) => item.path === normalized) || null;
+}
+
+function folderDriveIdFromManifest(manifest, folderPath) {
+  const normalized = normalizeRelativePath(folderPath);
+  if (!normalized) return DRIVE_FOLDER_ID;
+  const item = findManifestItem(manifest, normalized);
+  if (!item || item.type !== "folder") throw createHttpError("Pasta de destino nao encontrada no Drive.", 404);
+  return item.driveFileId;
+}
+
+function githubDeleteEntriesFromManifest(existingManifest, oldPath) {
+  const normalized = normalizeRelativePath(oldPath);
+  return (existingManifest?.items || [])
+    .filter((item) => item.type === "file" && item.githubCached && isSameOrChildPath(item.path, normalized))
+    .map((item) => ({
+      path: githubTreePath(`public${PUBLIC_BASE_PATH}/${item.path}`),
+      mode: "100644",
+      type: "blob",
+      sha: null,
+    }));
+}
+
+async function reconcileDriveMutation(context, options = {}) {
+  const oldPath = normalizeRelativePath(options.oldPath || "");
+  const priorityPaths = (options.priorityPaths || []).map(normalizeRelativePath);
+  const existingManifest = await readExistingDriveManifest(context);
+  const manifest = await buildDriveManifest(context);
+  const extraTreeEntries = oldPath ? githubDeleteEntriesFromManifest(existingManifest, oldPath) : [];
+
+  if (oldPath) removeRuntimeCachePath(oldPath);
+
+  const fileSync = await syncDriveFilesToGitHub(manifest, context, {
+    batchSize: options.batchSize || GITHUB_SYNC_BATCH_SIZE,
+    priorityPaths,
+    extraTreeEntries,
+    message: options.message,
+  });
+
+  return {
+    manifest: fileSync.manifest,
+    fileSync,
+    cache: getRuntimeCacheStats(fileSync.manifest),
+  };
+}
+
+async function renameDrivePath(context, { path, newName }) {
+  const normalizedPath = normalizeRelativePath(path);
+  const cleanName = sanitizeDriveName(newName);
+  const currentName = pathName(normalizedPath);
+  if (cleanName === currentName) throw createHttpError("O novo nome e igual ao atual.", 400);
+
+  const manifest = await buildDriveManifest(context);
+  const item = findManifestItem(manifest, normalizedPath);
+  if (!item) throw createHttpError("Item nao encontrado no Drive.", 404);
+
+  const parentFolderPath = parentPath(normalizedPath);
+  const parentId = folderDriveIdFromManifest(manifest, parentFolderPath);
+  const conflicts = await findDriveChildByName(parentId, cleanName, context);
+  if (conflicts.some((conflict) => conflict.id !== item.driveFileId)) {
+    throw createHttpError("Ja existe um item com esse nome na pasta de destino.", 409);
+  }
+
+  await driveJsonRequest(
+    `files/${encodeURIComponent(item.driveFileId)}`,
+    {
+      method: "PATCH",
+      params: {
+        fields: "id,name,mimeType,modifiedTime",
+        supportsAllDrives: "true",
+      },
+      body: { name: cleanName },
+    },
+    context,
+  );
+
+  const newPath = joinRelativePath(parentFolderPath, cleanName);
+  return reconcileDriveMutation(context, {
+    oldPath: normalizedPath,
+    priorityPaths: [newPath],
+    message: `Renomeia arquivo EAD: ${normalizedPath} -> ${newPath}`,
+  });
+}
+
+async function moveDrivePath(context, { path, targetFolderPath }) {
+  const normalizedPath = normalizeRelativePath(path);
+  const destinationPath = normalizeRelativePath(targetFolderPath);
+
+  if (destinationPath && isSameOrChildPath(destinationPath, normalizedPath)) {
+    throw createHttpError("Nao e possivel mover uma pasta para dentro dela mesma.", 400);
+  }
+
+  const manifest = await buildDriveManifest(context);
+  const item = findManifestItem(manifest, normalizedPath);
+  if (!item) throw createHttpError("Item nao encontrado no Drive.", 404);
+  if (destinationPath === parentPath(normalizedPath)) {
+    throw createHttpError("O item ja esta nessa pasta.", 400);
+  }
+
+  const destinationId = folderDriveIdFromManifest(manifest, destinationPath);
+  const itemName = pathName(normalizedPath);
+  const conflicts = await findDriveChildByName(destinationId, itemName, context);
+  if (conflicts.some((conflict) => conflict.id !== item.driveFileId)) {
+    throw createHttpError("Ja existe um item com esse nome na pasta de destino.", 409);
+  }
+
+  const { payload: driveFile } = await driveRequest(
+    `files/${encodeURIComponent(item.driveFileId)}`,
+    {
+      fields: "id,parents",
+      supportsAllDrives: "true",
+    },
+    context,
+  );
+
+  await driveJsonRequest(
+    `files/${encodeURIComponent(item.driveFileId)}`,
+    {
+      method: "PATCH",
+      params: {
+        addParents: destinationId,
+        removeParents: (driveFile.parents || []).join(","),
+        fields: "id,name,parents,modifiedTime",
+        supportsAllDrives: "true",
+      },
+      body: {},
+    },
+    context,
+  );
+
+  const newPath = joinRelativePath(destinationPath, itemName);
+  return reconcileDriveMutation(context, {
+    oldPath: normalizedPath,
+    priorityPaths: [newPath],
+    message: `Move arquivo EAD: ${normalizedPath} -> ${newPath}`,
+  });
+}
+
+async function uploadDrivePath(context, { targetFolderPath, file }) {
+  const manifest = await buildDriveManifest(context);
+  const destinationPath = normalizeRelativePath(targetFolderPath);
+  const destinationId = folderDriveIdFromManifest(manifest, destinationPath);
+  const cleanName = sanitizeDriveName(file.filename);
+
+  const conflicts = await findDriveChildByName(destinationId, cleanName, context);
+  if (conflicts.length > 0) {
+    throw createHttpError("Ja existe um arquivo ou pasta com esse nome no destino.", 409);
+  }
+
+  await driveUploadResumable(
+    {
+      folderId: destinationId,
+      name: cleanName,
+      mimeType: file.contentType,
+      buffer: file.buffer,
+    },
+    context,
+  );
+
+  const uploadedPath = joinRelativePath(destinationPath, cleanName);
+  return reconcileDriveMutation(context, {
+    priorityPaths: [uploadedPath],
+    message: `Envia arquivo EAD: ${uploadedPath}`,
+  });
 }
 
 async function createGithubBlob(buffer, context) {
@@ -1269,10 +1758,13 @@ async function syncDriveFilesToGitHub(manifest, context, options = {}) {
   }
 
   const existingManifest = await readExistingDriveManifest(context);
-  const plan = getGithubSyncPlan(manifest, existingManifest, options.batchSize);
+  const plan = getGithubSyncPlan(manifest, existingManifest, options.batchSize, options.priorityPaths || []);
   const previewManifest = prepareManifestForGithubSync(manifest, existingManifest, []);
+  const extraTreeEntries = options.extraTreeEntries || [];
   const shouldWriteManifest =
-    plan.batchFiles.length > 0 || manifestSignature(existingManifest) !== manifestSignature(previewManifest);
+    extraTreeEntries.length > 0 ||
+    plan.batchFiles.length > 0 ||
+    manifestSignature(existingManifest) !== manifestSignature(previewManifest);
 
   if (!shouldWriteManifest) {
     return {
@@ -1286,7 +1778,7 @@ async function syncDriveFilesToGitHub(manifest, context, options = {}) {
     };
   }
 
-  const treeEntries = [];
+  const treeEntries = [...extraTreeEntries];
   const failures = [];
   const syncedFiles = [];
 
@@ -1300,6 +1792,7 @@ async function syncDriveFilesToGitHub(manifest, context, options = {}) {
         type: "blob",
         sha: blobSha,
       });
+      writeRuntimeCacheFile(item.path, buffer);
       syncedFiles.push(item);
     } catch (error) {
       failures.push({
@@ -1323,7 +1816,7 @@ async function syncDriveFilesToGitHub(manifest, context, options = {}) {
 
   const commitSha = await createGithubTreeCommit(
     treeEntries,
-    `Sincroniza arquivos EAD do Drive (${syncedFiles.length}/${plan.changedFiles.length})`,
+    options.message || `Sincroniza arquivos EAD do Drive (${syncedFiles.length}/${plan.changedFiles.length})`,
     context,
   );
 
@@ -1649,8 +2142,60 @@ async function handleApi(req, res, url) {
 
       return jsonResponse(res, 200, {
         manifest,
+        cache: getRuntimeCacheStats(manifest),
         source: "github",
         serverTime: new Date().toISOString(),
+      });
+    }
+
+    if (req.method === "POST" && url.pathname === "/api/sync/cache") {
+      const body = await readJsonBody(req);
+      const manifest = await readExistingDriveManifest(context);
+      if (!manifest) {
+        return jsonResponse(res, 404, { message: "Manifesto EAD ainda nao encontrado no GitHub." });
+      }
+
+      const result = await hydrateRuntimeCache(manifest, context, { batchSize: body.batchSize });
+      return jsonResponse(res, 200, {
+        ok: true,
+        message: `Cache local atualizado: ${result.cached} arquivo(s), ${result.pending} pendente(s).`,
+        manifest,
+        ...result,
+      });
+    }
+
+    if (req.method === "POST" && url.pathname === "/api/ead/files/rename") {
+      const body = await readJsonBody(req);
+      const result = await renameDrivePath(context, body);
+      return jsonResponse(res, 200, {
+        ok: true,
+        message: "Item renomeado no Drive, GitHub e cache local.",
+        ...result,
+      });
+    }
+
+    if (req.method === "POST" && url.pathname === "/api/ead/files/move") {
+      const body = await readJsonBody(req);
+      const result = await moveDrivePath(context, body);
+      return jsonResponse(res, 200, {
+        ok: true,
+        message: "Item movido no Drive, GitHub e cache local.",
+        ...result,
+      });
+    }
+
+    if (req.method === "POST" && url.pathname === "/api/ead/files/upload") {
+      const { fields, files } = await readMultipartBody(req);
+      if (!files.file) throw createHttpError("Arquivo nao enviado.", 400);
+
+      const result = await uploadDrivePath(context, {
+        targetFolderPath: fields.targetFolderPath || "",
+        file: files.file,
+      });
+      return jsonResponse(res, 200, {
+        ok: true,
+        message: "Arquivo enviado ao Drive, GitHub e cache local.",
+        ...result,
       });
     }
 
@@ -1713,6 +2258,7 @@ async function handleApi(req, res, url) {
         githubCommitSha,
         stats: {
           ...manifest.stats,
+          cache: fileSync ? getRuntimeCacheStats(fileSync.manifest) : undefined,
           ...(fileSync
             ? {
                 syncedFiles: fileSync.syncedFiles,
@@ -1787,6 +2333,23 @@ function serveFile(req, res, filePath) {
 function serveStatic(req, res, url) {
   const pathname = url.pathname === "/" ? "/index.html" : url.pathname;
   const root = existsSync(STATIC_ROOT) ? STATIC_ROOT : PUBLIC_ROOT;
+
+  if (pathname.startsWith(`${PUBLIC_BASE_PATH}/`)) {
+    const relativePath = pathname.slice(PUBLIC_BASE_PATH.length + 1);
+    try {
+      if (isRuntimeTombstoned(relativePath)) {
+        return textResponse(res, 404, "Not found");
+      }
+
+      const cachePath = runtimeCacheFilePath(relativePath);
+      if (existsSync(cachePath) && statSync(cachePath).isFile()) {
+        return serveFile(req, res, cachePath);
+      }
+    } catch {
+      return textResponse(res, 404, "Not found");
+    }
+  }
+
   let filePath = safeFilePath(root, pathname);
 
   if (filePath && existsSync(filePath) && statSync(filePath).isDirectory()) {

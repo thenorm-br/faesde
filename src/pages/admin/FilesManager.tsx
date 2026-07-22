@@ -11,9 +11,12 @@ import {
   Folder,
   Home,
   Loader2,
+  MoveRight,
+  Pencil,
   Play,
   RefreshCw,
   Search,
+  Upload,
 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client.ts";
 import { Alert, AlertDescription } from "@/components/ui/alert.tsx";
@@ -23,8 +26,8 @@ import { Input } from "@/components/ui/input.tsx";
 import { Progress } from "@/components/ui/progress.tsx";
 
 type Node =
-  | { name: string; type: "folder"; path: string; modifiedAt?: string; children: Node[] }
-  | { name: string; type: "file"; path: string; size: number; ext: string; modifiedAt?: string };
+  | { name: string; type: "folder"; path: string; driveFileId?: string; modifiedAt?: string; children: Node[] }
+  | { name: string; type: "file"; path: string; driveFileId?: string; size: number; ext: string; modifiedAt?: string };
 
 interface IndexFile {
   generatedAt: string;
@@ -34,7 +37,9 @@ interface IndexFile {
 interface DriveManifestItem {
   type: "folder" | "file";
   path: string;
+  driveFileId?: string;
   size?: number;
+  extension?: string;
   modifiedTime?: string;
   storageTarget?: "github_cache" | "drive_proxy";
   githubCached?: boolean;
@@ -61,8 +66,25 @@ interface DriveManifest {
 
 interface LiveManifestResponse {
   manifest: DriveManifest;
+  cache?: RuntimeCacheStats;
   source: "github";
   serverTime: string;
+}
+
+interface RuntimeCacheStats {
+  eligible: number;
+  cached: number;
+  pending: number;
+}
+
+interface CacheHydrateResult {
+  ok: boolean;
+  message: string;
+  manifest: DriveManifest;
+  cached: number;
+  attempted: number;
+  pending: number;
+  stats: RuntimeCacheStats;
 }
 
 interface SyncRunResult {
@@ -75,6 +97,20 @@ interface SyncRunResult {
     pendingFiles?: number;
     failedFiles?: number;
     batchLimit?: number;
+    cache?: RuntimeCacheStats;
+  };
+}
+
+interface FileActionResult {
+  ok: boolean;
+  message: string;
+  manifest: DriveManifest;
+  cache?: RuntimeCacheStats;
+  fileSync?: {
+    syncedFiles?: number;
+    pendingFiles?: number;
+    failedFiles?: number;
+    githubCommitSha?: string | null;
   };
 }
 
@@ -96,11 +132,12 @@ async function fetchWithAdminSession<T>(path: string, options: RequestInit = {})
     throw new Error("Sessao admin expirada. Entre novamente no painel.");
   }
 
+  const isFormData = typeof FormData !== "undefined" && options.body instanceof FormData;
   const response = await fetch(path, {
     ...options,
     headers: {
-      "Content-Type": "application/json",
       Authorization: `Bearer ${session.access_token}`,
+      ...(isFormData ? {} : { "Content-Type": "application/json" }),
       ...(options.headers || {}),
     },
   });
@@ -187,6 +224,94 @@ function flattenForSearch(nodes: Node[], acc: Node[] = []): Node[] {
   return acc;
 }
 
+function buildTreeFromManifest(manifest: DriveManifest | null): Node[] {
+  if (!manifest?.items?.length) return [];
+
+  const root: Node[] = [];
+  const folders = new Map<string, Extract<Node, { type: "folder" }>>();
+
+  const ensureFolder = (folderPath: string): Extract<Node, { type: "folder" }> => {
+    const parts = folderPath.split("/").filter(Boolean);
+    let currentList = root;
+    let currentPath = "";
+    let folder: Extract<Node, { type: "folder" }> | null = null;
+
+    for (const part of parts) {
+      currentPath = currentPath ? `${currentPath}/${part}` : part;
+      folder = folders.get(currentPath) || null;
+
+      if (!folder) {
+        folder = {
+          name: part,
+          type: "folder",
+          path: currentPath,
+          modifiedAt: undefined,
+          children: [],
+        };
+        folders.set(currentPath, folder);
+        currentList.push(folder);
+      }
+
+      currentList = folder.children;
+    }
+
+    if (!folder) throw new Error("Pasta raiz nao possui node proprio.");
+    return folder;
+  };
+
+  const sortedItems = [...manifest.items].sort((a, b) => {
+    if (a.type !== b.type) return a.type === "folder" ? -1 : 1;
+    return a.path.localeCompare(b.path, "pt-BR");
+  });
+
+  for (const item of sortedItems) {
+    const parts = item.path.split("/").filter(Boolean);
+    const name = parts.pop();
+    if (!name) continue;
+
+    const parent = parts.length ? ensureFolder(parts.join("/")).children : root;
+
+    if (item.type === "folder") {
+      const folder = folders.get(item.path) || {
+        name,
+        type: "folder" as const,
+        path: item.path,
+        driveFileId: item.driveFileId,
+        modifiedAt: item.modifiedTime,
+        children: [],
+      };
+      folder.driveFileId = item.driveFileId;
+      folder.modifiedAt = item.modifiedTime;
+      folders.set(item.path, folder);
+      if (!parent.some((node) => node.path === folder.path)) parent.push(folder);
+      continue;
+    }
+
+    parent.push({
+      name,
+      type: "file",
+      path: item.path,
+      driveFileId: item.driveFileId,
+      size: Number(item.size || 0),
+      ext: item.extension || (name.includes(".") ? name.split(".").pop()?.toLowerCase() || "" : ""),
+      modifiedAt: item.modifiedTime,
+    });
+  }
+
+  const sortNodes = (nodes: Node[]) => {
+    nodes.sort((a, b) => {
+      if (a.type !== b.type) return a.type === "folder" ? -1 : 1;
+      return a.name.localeCompare(b.name, "pt-BR");
+    });
+    nodes.forEach((node) => {
+      if (node.type === "folder") sortNodes(node.children);
+    });
+  };
+
+  sortNodes(root);
+  return root;
+}
+
 function countContents(node: Node): TotalStats {
   if (node.type === "file") {
     return {
@@ -229,13 +354,21 @@ const FilesManager = () => {
   const [lastLiveUpdate, setLastLiveUpdate] = useState<string | null>(null);
   const [syncRunning, setSyncRunning] = useState(false);
   const [syncMessage, setSyncMessage] = useState("Aguardando status ao vivo do GitHub.");
+  const [runtimeCache, setRuntimeCache] = useState<RuntimeCacheStats | null>(null);
+  const [cacheRunning, setCacheRunning] = useState(false);
+  const [cacheMessage, setCacheMessage] = useState("Cache local aguardando manifesto ao vivo.");
+  const [fileActionRunning, setFileActionRunning] = useState<string | null>(null);
+  const [actionMessage, setActionMessage] = useState<string | null>(null);
   const syncRunningRef = useRef(false);
+  const cacheRunningRef = useRef(false);
+  const uploadInputRef = useRef<HTMLInputElement | null>(null);
 
   const loadLiveManifest = async (silent = false) => {
     if (!silent) setLiveLoading(true);
     try {
       const result = await fetchWithAdminSession<LiveManifestResponse>("/api/sync/manifest", { method: "GET" });
       setDriveManifest(result.manifest);
+      setRuntimeCache(result.cache || null);
       setLiveSource("github");
       setLiveError(null);
       setLastLiveUpdate(result.serverTime || new Date().toISOString());
@@ -243,6 +376,36 @@ const FilesManager = () => {
       setLiveError(loadError instanceof Error ? loadError.message : "Nao foi possivel carregar o manifesto ao vivo.");
     } finally {
       if (!silent) setLiveLoading(false);
+    }
+  };
+
+  const hydrateLocalCache = async (automatic = false) => {
+    if (cacheRunningRef.current) return;
+
+    cacheRunningRef.current = true;
+    setCacheRunning(true);
+    setCacheMessage(automatic ? "Baixando cache local no servidor..." : "Atualizando cache local do servidor...");
+
+    try {
+      const result = await fetchWithAdminSession<CacheHydrateResult>("/api/sync/cache", {
+        method: "POST",
+        body: JSON.stringify({ batchSize: 150 }),
+      });
+      setDriveManifest(result.manifest);
+      setRuntimeCache(result.stats);
+      setCacheMessage(
+        result.pending > 0
+          ? `Cache local: ${result.cached} arquivo(s) baixados agora, ${result.pending} pendente(s).`
+          : "Cache local alinhado com o GitHub.",
+      );
+      setLastLiveUpdate(new Date().toISOString());
+    } catch (cacheError) {
+      setCacheMessage(
+        `Cache local pausado: ${cacheError instanceof Error ? cacheError.message : "falha inesperada."}`,
+      );
+    } finally {
+      cacheRunningRef.current = false;
+      setCacheRunning(false);
     }
   };
 
@@ -261,6 +424,7 @@ const FilesManager = () => {
       const synced = result.stats?.syncedFiles || 0;
       const pending = result.stats?.pendingFiles || 0;
       const failed = result.stats?.failedFiles || 0;
+      if (result.stats?.cache) setRuntimeCache(result.stats.cache);
 
       setSyncMessage(
         pending > 0
@@ -275,6 +439,78 @@ const FilesManager = () => {
     } finally {
       syncRunningRef.current = false;
       setSyncRunning(false);
+    }
+  };
+
+  const applyActionResult = (result: FileActionResult) => {
+    setDriveManifest(result.manifest);
+    if (result.cache) setRuntimeCache(result.cache);
+    setLiveSource("github");
+    setLastLiveUpdate(new Date().toISOString());
+    setActionMessage(result.message);
+  };
+
+  const renameNode = async (node: Node) => {
+    const newName = window.prompt("Novo nome:", node.name)?.trim();
+    if (!newName || newName === node.name) return;
+    if (!window.confirm(`Renomear "${node.path}" para "${newName}"? O link antigo vai parar de funcionar.`)) return;
+
+    setFileActionRunning(`rename:${node.path}`);
+    try {
+      const result = await fetchWithAdminSession<FileActionResult>("/api/ead/files/rename", {
+        method: "POST",
+        body: JSON.stringify({ path: node.path, newName }),
+      });
+      applyActionResult(result);
+    } catch (actionError) {
+      setActionMessage(actionError instanceof Error ? actionError.message : "Falha ao renomear item.");
+    } finally {
+      setFileActionRunning(null);
+    }
+  };
+
+  const moveNode = async (node: Node) => {
+    const targetFolderPath = window.prompt(
+      "Mover para qual pasta? Use caminho dentro de eadplataforma. Deixe vazio para raiz.",
+      currentPath,
+    );
+    if (targetFolderPath === null) return;
+    if (!window.confirm(`Mover "${node.path}" para "${targetFolderPath || "raiz"}"? O link antigo vai parar de funcionar.`)) {
+      return;
+    }
+
+    setFileActionRunning(`move:${node.path}`);
+    try {
+      const result = await fetchWithAdminSession<FileActionResult>("/api/ead/files/move", {
+        method: "POST",
+        body: JSON.stringify({ path: node.path, targetFolderPath }),
+      });
+      applyActionResult(result);
+    } catch (actionError) {
+      setActionMessage(actionError instanceof Error ? actionError.message : "Falha ao mover item.");
+    } finally {
+      setFileActionRunning(null);
+    }
+  };
+
+  const uploadFile = async (file: File) => {
+    const formData = new FormData();
+    formData.set("targetFolderPath", currentPath);
+    formData.set("file", file);
+
+    setFileActionRunning("upload");
+    setActionMessage(`Enviando "${file.name}" para ${currentPath || "raiz"}...`);
+    try {
+      const result = await fetchWithAdminSession<FileActionResult>("/api/ead/files/upload", {
+        method: "POST",
+        body: formData,
+      });
+      applyActionResult(result);
+    } catch (actionError) {
+      setActionMessage(actionError instanceof Error ? actionError.message : "Falha ao enviar arquivo.");
+    } finally {
+      setFileActionRunning(null);
+      if (uploadInputRef.current) uploadInputRef.current.value = "";
     }
   };
 
@@ -324,13 +560,18 @@ const FilesManager = () => {
     return new Map((driveManifest?.items || []).map((item) => [item.path, item]));
   }, [driveManifest]);
 
+  const sourceTree = useMemo(() => {
+    const liveTree = buildTreeFromManifest(driveManifest);
+    return liveTree.length > 0 ? liveTree : data?.tree || [];
+  }, [data, driveManifest]);
+
   const currentNodes: Node[] = useMemo(() => {
-    if (!data) return [];
-    if (!currentPath) return data.tree;
-    const node = findNodeByPath(data.tree, currentPath);
+    if (!sourceTree.length) return [];
+    if (!currentPath) return sourceTree;
+    const node = findNodeByPath(sourceTree, currentPath);
     if (node && node.type === "folder") return node.children;
     return [];
-  }, [data, currentPath]);
+  }, [currentPath, sourceTree]);
 
   const breadcrumbs = useMemo(() => {
     if (!currentPath) return [];
@@ -342,27 +583,27 @@ const FilesManager = () => {
   }, [currentPath]);
 
   const searchResults = useMemo(() => {
-    if (!data || !search.trim()) return null;
+    if (!sourceTree.length || !search.trim()) return null;
     const query = search.trim().toLowerCase();
-    return flattenForSearch(data.tree)
+    return flattenForSearch(sourceTree)
       .filter((node) => {
         const driveItem = driveItemsByPath.get(node.path);
         return [node.name, node.path, driveItem?.storageTarget || ""].join(" ").toLowerCase().includes(query);
       })
       .slice(0, 200);
-  }, [data, driveItemsByPath, search]);
+  }, [driveItemsByPath, search, sourceTree]);
 
   const displayNodes = searchResults ?? currentNodes;
 
   const totalStats = useMemo<TotalStats>(() => {
-    if (!data) return { files: 0, folders: 0, size: 0, latestModifiedAt: null };
+    if (!sourceTree.length) return { files: 0, folders: 0, size: 0, latestModifiedAt: null };
 
     let files = 0;
     let folders = 0;
     let size = 0;
     let latestModifiedAt: string | null = null;
 
-    for (const node of data.tree) {
+    for (const node of sourceTree) {
       const nodeStats = countContents(node);
       files += nodeStats.files;
       folders += nodeStats.folders + (node.type === "folder" ? 1 : 0);
@@ -374,7 +615,7 @@ const FilesManager = () => {
     }
 
     return { files, folders, size, latestModifiedAt };
-  }, [data]);
+  }, [sourceTree]);
 
   const driveSyncStats = useMemo(() => {
     const items = driveManifest?.items || [];
@@ -413,9 +654,24 @@ const FilesManager = () => {
     }, 15000);
 
     return () => window.clearTimeout(timer);
-    // Auto-sync follows the manifest counters; helper functions are intentionally not deps.
+    // Auto-sync follows the manifest counters; runNextBatch is intentionally not a trigger.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [driveManifest, driveSyncStats.pending, loading]);
+
+  useEffect(() => {
+    if (loading || !driveManifest || !runtimeCache) return;
+    if (runtimeCache.pending <= 0) {
+      setCacheMessage("Cache local alinhado com o GitHub.");
+      return;
+    }
+    if (cacheRunningRef.current) return;
+
+    const timer = window.setTimeout(() => {
+      hydrateLocalCache(true);
+    }, 20000);
+
+    return () => window.clearTimeout(timer);
+  }, [driveManifest, loading, runtimeCache]);
 
   const getDisplayModifiedAt = (node: Node) => {
     return driveItemsByPath.get(node.path)?.modifiedTime || node.modifiedAt || null;
@@ -460,6 +716,7 @@ const FilesManager = () => {
           <p className="mt-1 text-sm text-muted-foreground">
             Navegacao de <code className="rounded bg-muted px-1.5 py-0.5 text-xs">/eadplataforma/</code>
           </p>
+          {actionMessage && <p className="mt-2 text-sm font-medium text-foreground">{actionMessage}</p>}
         </div>
         <div className="text-right text-sm text-muted-foreground">
           <div>
@@ -468,6 +725,29 @@ const FilesManager = () => {
           <div>{formatSize(totalStats.size)} no total</div>
           <div>Mais recente: {formatRelativeDate(totalStats.latestModifiedAt)}</div>
         </div>
+      </div>
+
+      <div className="flex flex-wrap items-center gap-2 rounded-xl border bg-card p-3">
+        <input
+          ref={uploadInputRef}
+          type="file"
+          className="hidden"
+          onChange={(event) => {
+            const file = event.target.files?.[0];
+            if (file) uploadFile(file);
+          }}
+        />
+        <Button onClick={() => uploadInputRef.current?.click()} disabled={!!fileActionRunning}>
+          {fileActionRunning === "upload" ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <Upload className="mr-2 h-4 w-4" />}
+          Upload nesta pasta
+        </Button>
+        <Button variant="outline" onClick={() => hydrateLocalCache(false)} disabled={cacheRunning || !runtimeCache}>
+          {cacheRunning ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <Download className="mr-2 h-4 w-4" />}
+          Atualizar cache local
+        </Button>
+        <span className="text-xs text-muted-foreground">
+          Pasta atual: <span className="font-mono">{currentPath || "raiz"}</span>
+        </span>
       </div>
 
       {driveManifest && (
@@ -506,6 +786,7 @@ const FilesManager = () => {
               </Button>
               <span className="text-xs text-muted-foreground">{syncMessage}</span>
             </div>
+            <p className="text-xs text-muted-foreground">{cacheMessage}</p>
             {liveError && <p className="text-xs text-amber-700">Status ao vivo indisponivel: {liveError}</p>}
           </div>
           <div className="grid grid-cols-2 gap-2 text-xs text-muted-foreground sm:grid-cols-4 lg:grid-cols-2">
@@ -528,6 +809,12 @@ const FilesManager = () => {
             <div className="rounded-lg bg-muted/50 p-2 sm:col-span-2 lg:col-span-2">
               <p>Status ao vivo</p>
               <p className="font-medium text-foreground">{formatRelativeDate(lastLiveUpdate)}</p>
+            </div>
+            <div className="rounded-lg bg-muted/50 p-2 sm:col-span-2 lg:col-span-2">
+              <p>Cache local servidor</p>
+              <p className="font-medium text-foreground">
+                {runtimeCache ? `${runtimeCache.cached}/${runtimeCache.eligible}` : "Sem leitura"}
+              </p>
             </div>
           </div>
         </div>
@@ -586,13 +873,13 @@ const FilesManager = () => {
               if (node.type === "folder") {
                 const stats = countContents(node);
                 return (
-                  <li key={node.path}>
+                  <li key={node.path} className="flex items-center gap-2 px-4 py-3 transition-colors hover:bg-muted/50">
                     <button
                       onClick={() => {
                         setSearch("");
                         setCurrentPath(node.path);
                       }}
-                      className="flex w-full items-center gap-3 px-4 py-3 text-left transition-colors hover:bg-muted/50"
+                      className="flex min-w-0 flex-1 items-center gap-3 text-left"
                     >
                       <Folder className="h-5 w-5 shrink-0 text-primary" />
                       <div className="min-w-0 flex-1">
@@ -610,6 +897,32 @@ const FilesManager = () => {
                       </div>
                       <ChevronRight className="h-4 w-4 shrink-0 text-muted-foreground" />
                     </button>
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      onClick={() => renameNode(node)}
+                      disabled={!!fileActionRunning}
+                      title="Renomear"
+                    >
+                      {fileActionRunning === `rename:${node.path}` ? (
+                        <Loader2 className="h-4 w-4 animate-spin" />
+                      ) : (
+                        <Pencil className="h-4 w-4" />
+                      )}
+                    </Button>
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      onClick={() => moveNode(node)}
+                      disabled={!!fileActionRunning}
+                      title="Mover"
+                    >
+                      {fileActionRunning === `move:${node.path}` ? (
+                        <Loader2 className="h-4 w-4 animate-spin" />
+                      ) : (
+                        <MoveRight className="h-4 w-4" />
+                      )}
+                    </Button>
                   </li>
                 );
               }
@@ -637,6 +950,32 @@ const FilesManager = () => {
                       {storageBadge.label}
                     </Badge>
                   )}
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={() => renameNode(node)}
+                    disabled={!!fileActionRunning}
+                    title="Renomear"
+                  >
+                    {fileActionRunning === `rename:${node.path}` ? (
+                      <Loader2 className="h-4 w-4 animate-spin" />
+                    ) : (
+                      <Pencil className="h-4 w-4" />
+                    )}
+                  </Button>
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={() => moveNode(node)}
+                    disabled={!!fileActionRunning}
+                    title="Mover"
+                  >
+                    {fileActionRunning === `move:${node.path}` ? (
+                      <Loader2 className="h-4 w-4 animate-spin" />
+                    ) : (
+                      <MoveRight className="h-4 w-4" />
+                    )}
+                  </Button>
                   <a
                     href={url}
                     target="_blank"
