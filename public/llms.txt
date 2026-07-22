@@ -6,6 +6,10 @@ A FAESDE oferece cursos técnicos EAD, certificação por competência, pós-té
 
 - Página inicial: https://faesde.com.br/
 - Cursos: https://faesde.com.br/cursos
+- Cursos Técnicos EAD: https://faesde.com.br/cursos/tecnicos-ead
+- Certificação por Competência: https://faesde.com.br/cursos/certificacao-por-competencia
+- Pós-Técnicos EAD: https://faesde.com.br/cursos/pos-tecnicos
+- EJA e Ensino Médio: https://faesde.com.br/cursos/eja-ensino-medio
 - FAQ: https://faesde.com.br/faq
 - Sitemap XML: https://faesde.com.br/sitemap.xml
 

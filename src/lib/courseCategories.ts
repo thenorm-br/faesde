@@ -1,5 +1,6 @@
 export interface CourseCategoryMeta {
   slug: string;
+  routeSegment: string;
   label: string;
   cardLabel: string;
   sectionTitle: string;
@@ -11,6 +12,7 @@ export interface CourseCategoryMeta {
 export const DEFAULT_COURSE_CATEGORIES: CourseCategoryMeta[] = [
   {
     slug: "extensao",
+    routeSegment: "tecnicos-ead",
     label: "Extensão",
     cardLabel: "Curso por Extensão EAD",
     sectionTitle: "Cursos por Extensão EAD",
@@ -20,6 +22,7 @@ export const DEFAULT_COURSE_CATEGORIES: CourseCategoryMeta[] = [
   },
   {
     slug: "competencia",
+    routeSegment: "certificacao-por-competencia",
     label: "Competência",
     cardLabel: "Certificação por Competência",
     sectionTitle: "Certificação por Competência",
@@ -29,6 +32,7 @@ export const DEFAULT_COURSE_CATEGORIES: CourseCategoryMeta[] = [
   },
   {
     slug: "pos-tecnico",
+    routeSegment: "pos-tecnicos",
     label: "Pós-Técnico",
     cardLabel: "Pós-Técnico EAD",
     sectionTitle: "Cursos Pós-Técnicos EAD",
@@ -38,6 +42,7 @@ export const DEFAULT_COURSE_CATEGORIES: CourseCategoryMeta[] = [
   },
   {
     slug: "segundo-grau",
+    routeSegment: "eja-ensino-medio",
     label: "Segundo Grau",
     cardLabel: "EJA - Ensino Medio",
     sectionTitle: "Segundo Grau e EJA",
@@ -48,6 +53,7 @@ export const DEFAULT_COURSE_CATEGORIES: CourseCategoryMeta[] = [
 ];
 
 const DEFAULT_META_BY_SLUG = new Map(DEFAULT_COURSE_CATEGORIES.map((category) => [category.slug, category]));
+const DEFAULT_META_BY_ROUTE = new Map(DEFAULT_COURSE_CATEGORIES.map((category) => [category.routeSegment, category]));
 
 export function slugifyCategory(value: string) {
   return value
@@ -74,6 +80,7 @@ export function getCourseCategoryMeta(slug: string): CourseCategoryMeta {
   const label = humanizeCategorySlug(slug || "sem-categoria");
   return {
     slug,
+    routeSegment: slugifyCategory(slug),
     label,
     cardLabel: label,
     sectionTitle: label,
@@ -81,6 +88,19 @@ export function getCourseCategoryMeta(slug: string): CourseCategoryMeta {
     description: "Categoria personalizada criada no painel admin.",
     order: 1000,
   };
+}
+
+export function getCategoryRouteSegment(slug: string) {
+  return getCourseCategoryMeta(slug).routeSegment;
+}
+
+export function getCategorySlugFromRoute(segment: string) {
+  const cleanSegment = slugifyCategory(segment);
+  return DEFAULT_META_BY_ROUTE.get(cleanSegment)?.slug || cleanSegment;
+}
+
+export function getCategoryPath(slug: string) {
+  return `/cursos/${getCategoryRouteSegment(slug)}`;
 }
 
 export function getCourseCategoryLabel(slug: string) {

@@ -60,6 +60,7 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/faq" element={<FAQ />} />
             <Route path="/cursos" element={<Cursos />} />
+            <Route path="/cursos/:categorySlug" element={<Cursos />} />
             <Route path="/curso/:id" element={<CursoDetalhe />} />
             <Route path="/certificados/:code" element={<CertificadoPublico />} />
             <Route path="/admin/login" element={<AdminLogin />} />

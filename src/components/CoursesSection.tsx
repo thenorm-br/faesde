@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client.ts";
 import {
   buildCategoryMetas,
+  getCategoryPath,
   getCourseCardLabel,
   type CourseCategoryMeta,
 } from "@/lib/courseCategories.ts";
@@ -185,7 +186,7 @@ const CoursesSection = () => {
                 <HighlightedCategoryTitle meta={group.meta} />
               </h2>
               <Link
-                to={`/cursos?categoria=${group.meta.slug}`}
+                to={getCategoryPath(group.meta.slug)}
                 className="hidden items-center gap-1 text-sm font-semibold text-ecid-blue-accent hover:underline sm:flex"
               >
                 Ver todos
@@ -200,7 +201,7 @@ const CoursesSection = () => {
             </div>
 
             <div className="mt-6 text-center sm:hidden">
-              <Link to={`/cursos?categoria=${group.meta.slug}`}>
+              <Link to={getCategoryPath(group.meta.slug)}>
                 <Button variant="outline" className="rounded-lg font-semibold">
                   Ver todos os cursos
                 </Button>

@@ -60,16 +60,16 @@ const Header = () => {
                 <Link to="/cursos">Todos os Cursos</Link>
               </DropdownMenuItem>
               <DropdownMenuItem asChild>
-                <Link to="/cursos?categoria=extensao">Cursos por Extensão EAD</Link>
+                <Link to="/cursos/tecnicos-ead">Cursos Técnicos EAD</Link>
               </DropdownMenuItem>
               <DropdownMenuItem asChild>
-                <Link to="/cursos?categoria=competencia">Certificação por Competência</Link>
+                <Link to="/cursos/certificacao-por-competencia">Certificação por Competência</Link>
               </DropdownMenuItem>
               <DropdownMenuItem asChild>
-                <Link to="/cursos?categoria=pos-tecnico">Cursos Pós-Técnicos</Link>
+                <Link to="/cursos/pos-tecnicos">Cursos Pós-Técnicos</Link>
               </DropdownMenuItem>
               <DropdownMenuItem asChild>
-                <Link to="/cursos?categoria=segundo-grau">Segundo Grau (EJA)</Link>
+                <Link to="/cursos/eja-ensino-medio">Segundo Grau (EJA)</Link>
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
@@ -155,14 +155,14 @@ const Header = () => {
               Todos os Cursos
             </Link>
             <Link
-              to="/cursos?categoria=extensao"
+              to="/cursos/tecnicos-ead"
               className="rounded-lg px-4 py-2.5 text-sm font-medium text-primary-foreground/80 transition-colors hover:bg-primary-foreground/10 hover:text-primary-foreground"
               onClick={() => setIsMenuOpen(false)}
             >
               Cursos Técnicos EAD
             </Link>
             <Link
-              to="/cursos?categoria=competencia"
+              to="/cursos/certificacao-por-competencia"
               className="rounded-lg px-4 py-2.5 text-sm font-medium text-primary-foreground/80 transition-colors hover:bg-primary-foreground/10 hover:text-primary-foreground"
               onClick={() => setIsMenuOpen(false)}
             >

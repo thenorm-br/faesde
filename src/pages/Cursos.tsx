@@ -1,15 +1,21 @@
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo, useDeferredValue } from "react";
 import { Search, ArrowLeft, Calendar, BadgeCheck, Loader2, X } from "lucide-react";
 import { Input } from "@/components/ui/input.tsx";
 import { Button } from "@/components/ui/button.tsx";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs.tsx";
-import { Link, useSearchParams } from "react-router-dom";
+import { Link, useNavigate, useParams, useSearchParams } from "react-router-dom";
 import Header from "@/components/Header.tsx";
 import Footer from "@/components/Footer.tsx";
 import WhatsAppButton from "@/components/WhatsAppButton.tsx";
 import { supabase } from "@/integrations/supabase/client.ts";
 import { scoreCourse, getRelatedKeywords } from "@/lib/courseSearch.ts";
-import { buildCategoryMetas, getCourseCardLabel } from "@/lib/courseCategories.ts";
+import {
+  buildCategoryMetas,
+  getCategoryPath,
+  getCategorySlugFromRoute,
+  getCourseCardLabel,
+  getCourseCategoryMeta,
+} from "@/lib/courseCategories.ts";
 
 interface Course {
   id: string;
@@ -109,9 +115,14 @@ const CourseCard = ({ course }: { course: Course }) => {
 };
 
 const Cursos = () => {
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchParams] = useSearchParams();
+  const { categorySlug } = useParams<{ categorySlug?: string }>();
+  const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState(searchParams.get("q") || "");
-  const [activeTab, setActiveTab] = useState(searchParams.get("categoria") || "todos");
+  const [activeTab, setActiveTab] = useState(
+    categorySlug ? getCategorySlugFromRoute(categorySlug) : searchParams.get("categoria") || "todos",
+  );
+  const deferredSearchTerm = useDeferredValue(searchTerm);
   const [courses, setCourses] = useState<Course[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -129,35 +140,38 @@ const Cursos = () => {
   }, []);
 
   useEffect(() => {
-    const categoria = searchParams.get("categoria");
+    const categoria = categorySlug ? getCategorySlugFromRoute(categorySlug) : searchParams.get("categoria");
     const q = searchParams.get("q");
-    if (categoria) setActiveTab(categoria);
-    if (q) setSearchTerm(q);
-  }, [searchParams]);
+    setActiveTab(categoria || "todos");
+    setSearchTerm(q || "");
+  }, [categorySlug, searchParams]);
 
   const handleTabChange = (value: string) => {
     setActiveTab(value);
     const newParams = new URLSearchParams(searchParams);
-    if (value === "todos") {
-      newParams.delete("categoria");
+    newParams.delete("categoria");
+    if (searchTerm.trim()) {
+      newParams.set("q", searchTerm.trim());
     } else {
-      newParams.set("categoria", value);
+      newParams.delete("q");
     }
-    setSearchParams(newParams);
+    const query = newParams.toString();
+    const targetPath = value === "todos" ? "/cursos" : getCategoryPath(value);
+    navigate(`${targetPath}${query ? `?${query}` : ""}`);
   };
 
   const filteredCourses = useMemo(() => {
     const byCategory = courses.filter(
       (c) => activeTab === "todos" || c.category === activeTab
     );
-    const q = searchTerm.trim();
+    const q = deferredSearchTerm.trim();
     if (!q) return byCategory;
     return byCategory
       .map((c) => ({ c, s: scoreCourse(c, q) }))
       .filter((x) => x.s > 0)
       .sort((a, b) => b.s - a.s)
       .map((x) => x.c);
-  }, [courses, activeTab, searchTerm]);
+  }, [courses, activeTab, deferredSearchTerm]);
 
   const categoryTabs = useMemo(
     () => buildCategoryMetas(courses.map((course) => course.category)),
@@ -165,6 +179,7 @@ const Cursos = () => {
   );
 
   const relatedKeywords = useMemo(() => getRelatedKeywords(searchTerm), [searchTerm]);
+  const activeCategoryMeta = activeTab === "todos" ? null : getCourseCategoryMeta(activeTab);
 
   return (
     <div className="min-h-screen bg-background">
@@ -180,8 +195,17 @@ const Cursos = () => {
             Voltar
           </Link>
           <h1 className="text-3xl font-bold text-primary-foreground md:text-4xl">
-            Todos os <span className="underline decoration-ecid-blue-accent decoration-4 underline-offset-4">Cursos</span>
+            {activeCategoryMeta ? (
+              <>{activeCategoryMeta.sectionTitle}</>
+            ) : (
+              <>Todos os <span className="underline decoration-ecid-blue-accent decoration-4 underline-offset-4">Cursos</span></>
+            )}
           </h1>
+          <p className="mt-3 max-w-3xl text-sm leading-6 text-primary-foreground/80 md:text-base">
+            {activeCategoryMeta
+              ? `${activeCategoryMeta.description} Encontre formações FAESDE para estudar online, validar competências profissionais e ampliar oportunidades em concursos, processos seletivos e mercado de trabalho.`
+              : "Busque cursos técnicos EAD, certificação por competência, pós-técnicos e EJA para estudar online, obter certificação e melhorar sua preparação profissional."}
+          </p>
         </div>
       </section>
 

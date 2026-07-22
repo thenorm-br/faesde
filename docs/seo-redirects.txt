@@ -8,7 +8,11 @@ URLs antigas conferidas antes do ajuste:
 https://faesde.com.br/produto-tag/faesde/ -> https://faesde.com.br/cursos
 https://faesde.com.br/blog/ -> https://faesde.com.br/cursos
 https://faesde.com.br/produto/tecnico-em-seguranca-do-trabalho/ -> https://faesde.com.br/curso/seguranca-trabalho
-https://faesde.com.br/categoria-produto/cursos-tecnicos/ -> https://faesde.com.br/cursos?categoria=extensao
+https://faesde.com.br/categoria-produto/cursos-tecnicos/ -> https://faesde.com.br/cursos/tecnicos-ead
+https://faesde.com.br/cursos?categoria=extensao -> https://faesde.com.br/cursos/tecnicos-ead
+https://faesde.com.br/cursos?categoria=competencia -> https://faesde.com.br/cursos/certificacao-por-competencia
+https://faesde.com.br/cursos?categoria=pos-tecnico -> https://faesde.com.br/cursos/pos-tecnicos
+https://faesde.com.br/cursos?categoria=segundo-grau -> https://faesde.com.br/cursos/eja-ensino-medio
 
 Regras implantadas no servidor:
 /index.html -> /
@@ -22,10 +26,10 @@ Regras implantadas no servidor:
 /my-account -> /cursos
 /produto-tag/{termo} -> /curso/{curso-provavel} ou /cursos
 /tag/{termo} -> /curso/{curso-provavel} ou /cursos
-/categoria-produto/{termo} -> /cursos?categoria={categoria-provavel} ou /curso/{curso-provavel} ou /cursos
-/product-category/{termo} -> /cursos?categoria={categoria-provavel} ou /curso/{curso-provavel} ou /cursos
-/categoria/{termo} -> /cursos?categoria={categoria-provavel} ou /curso/{curso-provavel} ou /cursos
-/category/{termo} -> /cursos?categoria={categoria-provavel} ou /curso/{curso-provavel} ou /cursos
+/categoria-produto/{termo} -> /cursos/{categoria-canonica} ou /curso/{curso-provavel} ou /cursos
+/product-category/{termo} -> /cursos/{categoria-canonica} ou /curso/{curso-provavel} ou /cursos
+/categoria/{termo} -> /cursos/{categoria-canonica} ou /curso/{curso-provavel} ou /cursos
+/category/{termo} -> /cursos/{categoria-canonica} ou /curso/{curso-provavel} ou /cursos
 /produto/{termo} -> /curso/{curso-provavel} ou /cursos
 /blog/{termo} -> /curso/{curso-provavel} ou /cursos
 /noticia/{termo} -> /curso/{curso-provavel} ou /cursos
@@ -35,22 +39,23 @@ Regras implantadas no servidor:
 /post/{termo} -> /curso/{curso-provavel} ou /cursos
 
 Categorias antigas mapeadas:
-cursos-tecnicos -> /cursos?categoria=extensao
-curso-tecnico -> /cursos?categoria=extensao
-cursos-tecnicos-ead -> /cursos?categoria=extensao
-cursos-de-extensao-ead -> /cursos?categoria=extensao
-extensao -> /cursos?categoria=extensao
-certificacao-por-competencia -> /cursos?categoria=competencia
-certificacao-tecnica-por-competencia -> /cursos?categoria=competencia
-cursos-de-certificacao-por-competencia-ead -> /cursos?categoria=competencia
-competencia -> /cursos?categoria=competencia
-pos-tecnico -> /cursos?categoria=pos-tecnico
-pos-tecnicos -> /cursos?categoria=pos-tecnico
-cursos-pos-tecnicos -> /cursos?categoria=pos-tecnico
-especializacao-tecnica -> /cursos?categoria=pos-tecnico
-eja -> /cursos?categoria=segundo-grau
-ensino-medio -> /cursos?categoria=segundo-grau
-segundo-grau -> /cursos?categoria=segundo-grau
+cursos-tecnicos -> /cursos/tecnicos-ead
+curso-tecnico -> /cursos/tecnicos-ead
+cursos-tecnicos-ead -> /cursos/tecnicos-ead
+cursos-de-extensao-ead -> /cursos/tecnicos-ead
+extensao -> /cursos/tecnicos-ead
+certificacao-por-competencia -> /cursos/certificacao-por-competencia
+certificacao-tecnica-por-competencia -> /cursos/certificacao-por-competencia
+cursos-de-certificacao-por-competencia-ead -> /cursos/certificacao-por-competencia
+competencia -> /cursos/certificacao-por-competencia
+pos-tecnico -> /cursos/pos-tecnicos
+pos-tecnicos -> /cursos/pos-tecnicos
+cursos-pos-tecnicos -> /cursos/pos-tecnicos
+especializacao-tecnica -> /cursos/pos-tecnicos
+eja -> /cursos/eja-ensino-medio
+ensino-medio -> /cursos/eja-ensino-medio
+segundo-grau -> /cursos/eja-ensino-medio
+eja-ensino-medio -> /cursos/eja-ensino-medio
 
 Aliases de curso implantados:
 tecnico-em-seguranca-do-trabalho -> /curso/seguranca-trabalho

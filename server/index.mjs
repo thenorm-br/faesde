@@ -66,6 +66,38 @@ const SEO_CATEGORY_META = {
   },
 };
 
+const SEO_CATEGORY_ROUTES = {
+  extensao: {
+    path: "/cursos/tecnicos-ead",
+    aliases: ["cursos-tecnicos", "curso-tecnico", "cursos-tecnicos-ead", "cursos-de-extensao-ead", "extensao"],
+  },
+  competencia: {
+    path: "/cursos/certificacao-por-competencia",
+    aliases: [
+      "certificacao-por-competencia",
+      "certificacao-tecnica-por-competencia",
+      "cursos-de-certificacao-por-competencia-ead",
+      "competencia",
+    ],
+  },
+  "pos-tecnico": {
+    path: "/cursos/pos-tecnicos",
+    aliases: ["pos-tecnico", "pos-tecnicos", "cursos-pos-tecnicos", "especializacao-tecnica"],
+  },
+  "segundo-grau": {
+    path: "/cursos/eja-ensino-medio",
+    aliases: ["eja", "ensino-medio", "segundo-grau", "eja-ensino-medio"],
+  },
+};
+
+const SEO_CATEGORY_ROUTE_TO_SLUG = new Map(
+  Object.entries(SEO_CATEGORY_ROUTES).flatMap(([slug, route]) => [
+    [slug, slug],
+    [slugify(route.path.split("/").pop()), slug],
+    ...route.aliases.map((alias) => [slugify(alias), slug]),
+  ]),
+);
+
 const LEGACY_COMMERCE_PATHS = new Set([
   "/loja",
   "/shop",
@@ -1169,12 +1201,37 @@ function absoluteUrl(pathname = "/", search = "") {
   return `${SITE_URL}${canonicalPath(cleanPath)}${search || ""}`;
 }
 
+function categoryPathFromSlug(slug) {
+  return SEO_CATEGORY_ROUTES[slug]?.path || `/cursos/${slugify(slug)}`;
+}
+
+function categorySlugFromRoute(value) {
+  const clean = slugify(value);
+  return SEO_CATEGORY_ROUTE_TO_SLUG.get(clean) || clean;
+}
+
+function categoryForUrl(url, path, parts) {
+  if (path === "/cursos") return url.searchParams.get("categoria") || "";
+  if (parts[0] === "cursos" && parts[1]) return categorySlugFromRoute(parts[1]);
+  return "";
+}
+
 function truncateDescription(value, fallback) {
   const normalized = String(value || fallback || "")
     .replace(/\s+/g, " ")
     .trim();
   if (normalized.length <= 156) return normalized;
   return `${normalized.slice(0, 153).replace(/\s+\S*$/, "")}...`;
+}
+
+function parsePrice(value) {
+  const clean = String(value || "")
+    .replace(/[^\d,.-]/g, "")
+    .replace(/\.(?=\d{3}(?:\D|$))/g, "")
+    .replace(",", ".")
+    .trim();
+  const numeric = Number(clean);
+  return Number.isFinite(numeric) && numeric > 0 ? numeric.toFixed(2) : undefined;
 }
 
 function courseImageUrl(course) {
@@ -1377,7 +1434,7 @@ async function getPublicCourses() {
   try {
     const courses = await publicSupabaseRest(
       [
-        "courses?select=slug,title,subtitle,description,category,hours,duration_range,certification,image_url,banner_image_url,updated_at",
+        "courses?select=slug,title,subtitle,description,category,hours,duration_range,certification,image_url,banner_image_url,original_price,promo_price,updated_at",
         "is_active=eq.true",
         "order=title.asc",
       ].join("&"),
@@ -1485,22 +1542,23 @@ function matchCourseFromLegacyCandidate(courses, candidate) {
 function categoryRedirectFromSlug(slug) {
   const clean = slugify(slug);
   const categoryAliases = {
-    "cursos-tecnicos": "/cursos?categoria=extensao",
-    "curso-tecnico": "/cursos?categoria=extensao",
-    "cursos-tecnicos-ead": "/cursos?categoria=extensao",
-    "cursos-de-extensao-ead": "/cursos?categoria=extensao",
-    "extensao": "/cursos?categoria=extensao",
-    "certificacao-por-competencia": "/cursos?categoria=competencia",
-    "certificacao-tecnica-por-competencia": "/cursos?categoria=competencia",
-    "cursos-de-certificacao-por-competencia-ead": "/cursos?categoria=competencia",
-    "competencia": "/cursos?categoria=competencia",
-    "pos-tecnico": "/cursos?categoria=pos-tecnico",
-    "pos-tecnicos": "/cursos?categoria=pos-tecnico",
-    "cursos-pos-tecnicos": "/cursos?categoria=pos-tecnico",
-    "especializacao-tecnica": "/cursos?categoria=pos-tecnico",
-    "eja": "/cursos?categoria=segundo-grau",
-    "ensino-medio": "/cursos?categoria=segundo-grau",
-    "segundo-grau": "/cursos?categoria=segundo-grau",
+    "cursos-tecnicos": categoryPathFromSlug("extensao"),
+    "curso-tecnico": categoryPathFromSlug("extensao"),
+    "cursos-tecnicos-ead": categoryPathFromSlug("extensao"),
+    "cursos-de-extensao-ead": categoryPathFromSlug("extensao"),
+    "extensao": categoryPathFromSlug("extensao"),
+    "certificacao-por-competencia": categoryPathFromSlug("competencia"),
+    "certificacao-tecnica-por-competencia": categoryPathFromSlug("competencia"),
+    "cursos-de-certificacao-por-competencia-ead": categoryPathFromSlug("competencia"),
+    "competencia": categoryPathFromSlug("competencia"),
+    "pos-tecnico": categoryPathFromSlug("pos-tecnico"),
+    "pos-tecnicos": categoryPathFromSlug("pos-tecnico"),
+    "cursos-pos-tecnicos": categoryPathFromSlug("pos-tecnico"),
+    "especializacao-tecnica": categoryPathFromSlug("pos-tecnico"),
+    "eja": categoryPathFromSlug("segundo-grau"),
+    "ensino-medio": categoryPathFromSlug("segundo-grau"),
+    "segundo-grau": categoryPathFromSlug("segundo-grau"),
+    "eja-ensino-medio": categoryPathFromSlug("segundo-grau"),
   };
   return categoryAliases[clean] || null;
 }
@@ -1510,9 +1568,30 @@ async function getLegacyRedirect(url) {
   if (path === "/index.html") return { destination: "/", reason: "canonical-home" };
   if (LEGACY_COMMERCE_PATHS.has(path)) return { destination: "/cursos", reason: "legacy-commerce" };
 
+  if (path === "/cursos" && url.searchParams.has("categoria")) {
+    const category = categorySlugFromRoute(url.searchParams.get("categoria") || "");
+    if (SEO_CATEGORY_META[category]) {
+      const params = new URLSearchParams(url.searchParams);
+      params.delete("categoria");
+      const query = params.toString();
+      return {
+        destination: `${categoryPathFromSlug(category)}${query ? `?${query}` : ""}`,
+        reason: "canonical-category",
+      };
+    }
+  }
+
   const parts = path.split("/").filter(Boolean).map(slugify);
   const [prefix] = parts;
   if (!prefix) return null;
+
+  if (prefix === "cursos" && parts[1]) {
+    const category = categorySlugFromRoute(parts[1]);
+    const canonicalCategoryPath = categoryPathFromSlug(category);
+    if (SEO_CATEGORY_META[category] && path !== canonicalCategoryPath) {
+      return { destination: canonicalCategoryPath, reason: "canonical-category-path" };
+    }
+  }
 
   if (LEGACY_TAG_PREFIXES.has(prefix)) {
     const courses = await getPublicCourses();
@@ -1547,6 +1626,20 @@ async function getLegacyRedirect(url) {
       destination: course ? `/curso/${course.slug}` : "/cursos",
       reason: course ? "legacy-content-course" : "legacy-content-fallback",
     };
+  }
+
+  const directCategoryDestination = parts.length === 1 ? categoryRedirectFromSlug(parts[0]) : null;
+  if (directCategoryDestination) {
+    return { destination: directCategoryDestination, reason: "direct-category-alias" };
+  }
+
+  if (prefix === "curso" || parts.length === 1) {
+    const courses = await getPublicCourses();
+    const candidate = prefix === "curso" ? parts.slice(1).join("-") : parts.join("-");
+    const course = matchCourseFromLegacyCandidate(courses, candidate);
+    if (course && path !== `/curso/${course.slug}`) {
+      return { destination: `/curso/${course.slug}`, reason: "direct-course-alias" };
+    }
   }
 
   return null;
@@ -1606,6 +1699,16 @@ function breadcrumbSchema(items) {
 
 function courseSchema(course) {
   const keywords = courseSpecificKeywords(course);
+  const categoryMeta = SEO_CATEGORY_META[course.category];
+  const price = parsePrice(course.promo_price || course.original_price);
+  const offer = {
+    "@type": "Offer",
+    url: absoluteUrl(`/curso/${course.slug}`),
+    availability: "https://schema.org/InStock",
+    category: categoryMeta?.label || "Curso FAESDE",
+    ...(price ? { price, priceCurrency: "BRL" } : {}),
+  };
+
   return {
     "@context": "https://schema.org",
     "@type": "Course",
@@ -1621,10 +1724,18 @@ function courseSchema(course) {
     },
     url: absoluteUrl(`/curso/${course.slug}`),
     image: courseImageUrl(course),
+    dateModified: course.updated_at ? String(course.updated_at).slice(0, 10) : undefined,
     keywords,
     teaches: keywords.slice(0, 12),
     inLanguage: "pt-BR",
     isAccessibleForFree: false,
+    courseMode: "online",
+    hasCourseInstance: {
+      "@type": "CourseInstance",
+      courseMode: "online",
+      courseWorkload: course.hours ? `PT${course.hours}H` : undefined,
+    },
+    offers: offer,
     audience: {
       "@type": "EducationalAudience",
       educationalRole: "student",
@@ -1633,6 +1744,77 @@ function courseSchema(course) {
     occupationalCategory: courseAreaName(course),
     educationalCredentialAwarded: course.certification || "Certificado FAESDE",
     timeRequired: course.hours ? `PT${course.hours}H` : undefined,
+  };
+}
+
+function courseListSchema(courses, { name, description, path, category } = {}) {
+  const filteredCourses = category ? courses.filter((course) => course.category === category) : courses;
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: name || "Cursos FAESDE",
+    description:
+      description || "Lista de cursos técnicos EAD, certificações por competência, pós-técnicos e EJA da FAESDE.",
+    url: absoluteUrl(path || "/cursos"),
+    numberOfItems: filteredCourses.length,
+    itemListElement: filteredCourses.slice(0, 120).map((course, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      url: absoluteUrl(`/curso/${course.slug}`),
+      item: {
+        "@type": "Course",
+        name: course.title,
+        description: truncateDescription(
+          course.description || course.subtitle,
+          `${course.title}: curso FAESDE com atendimento ao aluno e certificado.`,
+        ),
+        url: absoluteUrl(`/curso/${course.slug}`),
+        image: courseImageUrl(course),
+        provider: {
+          "@type": "EducationalOrganization",
+          name: "FAESDE",
+          sameAs: SITE_URL,
+        },
+      },
+    })),
+  };
+}
+
+function faqPageSchema() {
+  const questions = [
+    {
+      name: "O diploma de um curso técnico a distância tem a mesma validade de um curso presencial?",
+      text:
+        "Sim. Os cursos técnicos autorizados possuem validade nacional e podem apoiar atuação profissional, registro em conselho de classe quando aplicável e participação em processos seletivos.",
+    },
+    {
+      name: "Posso acessar o curso em qualquer lugar e a qualquer momento?",
+      text:
+        "Sim. Os cursos EAD permitem estudar online com acesso por computador, tablet ou smartphone, conforme disponibilidade do aluno.",
+    },
+    {
+      name: "É necessário formar turma para iniciar os estudos?",
+      text:
+        "Não. O início é imediato após a matrícula e liberação do acesso, sem necessidade de aguardar formação de turma.",
+    },
+    {
+      name: "Como funciona o suporte ao aluno?",
+      text:
+        "A FAESDE oferece atendimento por canais digitais e orientação para dúvidas acadêmicas e administrativas durante o curso.",
+    },
+  ];
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: questions.map((question) => ({
+      "@type": "Question",
+      name: question.name,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: question.text,
+      },
+    })),
   };
 }
 
@@ -1652,24 +1834,71 @@ function buildSeoForRoute(url, courses) {
     jsonLd: buildJsonLd([organizationSchema(), websiteSchema()]),
   };
 
-  if (path === "/") return { ...base, canonical: SITE_URL };
+  if (path === "/") {
+    return {
+      ...base,
+      canonical: SITE_URL,
+      jsonLd: buildJsonLd([
+        organizationSchema(),
+        websiteSchema(),
+        courseListSchema(courses, {
+          name: "Cursos técnicos, certificações e formações FAESDE",
+          description:
+            "Cursos técnicos EAD, certificações por competência, pós-técnicos e EJA disponíveis na FAESDE.",
+          path: "/",
+        }),
+      ]),
+    };
+  }
 
-  if (path === "/cursos") {
-    const category = url.searchParams.get("categoria") || "";
+  if (path === "/cursos" || parts[0] === "cursos") {
+    const category = categoryForUrl(url, path, parts);
     const categoryMeta = SEO_CATEGORY_META[category];
     if (categoryMeta) {
+      const categoryPath = categoryPathFromSlug(category);
+      const categoryCourses = courses.filter((course) => course.category === category);
+      const categoryKeywords = uniqueList([
+        categoryMeta.label,
+        `${categoryMeta.label} FAESDE`,
+        `${categoryMeta.label} EAD`,
+        "curso online com certificado",
+        "formação técnica para concurso público",
+        "curso técnico para edital",
+        ...categoryCourses.flatMap((course) => courseSpecificKeywords(course).slice(0, 8)),
+      ]).join(", ");
+
       return {
         ...base,
         title: `${categoryMeta.label} | FAESDE`,
         description: categoryMeta.description,
-        canonical: absoluteUrl("/cursos", `?categoria=${encodeURIComponent(category)}`),
+        keywords: categoryKeywords,
+        canonical: absoluteUrl(categoryPath),
         jsonLd: buildJsonLd([
           organizationSchema(),
+          websiteSchema(),
+          courseListSchema(courses, {
+            name: `${categoryMeta.label} FAESDE`,
+            description: categoryMeta.description,
+            path: categoryPath,
+            category,
+          }),
           breadcrumbSchema([
             { name: "Início", path: "/" },
             { name: "Cursos", path: "/cursos" },
+            { name: categoryMeta.label, path: categoryPath },
           ]),
         ]),
+      };
+    }
+
+    if (path !== "/cursos") {
+      return {
+        ...base,
+        title: "Categoria de cursos não encontrada | FAESDE",
+        description: "A categoria solicitada não foi encontrada. Acesse a lista completa de cursos da FAESDE.",
+        robots: "noindex,follow",
+        canonical: absoluteUrl(path),
+        jsonLd: "",
       };
     }
 
@@ -1681,6 +1910,13 @@ function buildSeoForRoute(url, courses) {
       canonical: absoluteUrl("/cursos"),
       jsonLd: buildJsonLd([
         organizationSchema(),
+        websiteSchema(),
+        courseListSchema(courses, {
+          name: "Cursos técnicos EAD e certificações FAESDE",
+          description:
+            "Lista de cursos técnicos EAD, certificações por competência, pós-técnicos e EJA da FAESDE.",
+          path: "/cursos",
+        }),
         breadcrumbSchema([
           { name: "Início", path: "/" },
           { name: "Cursos", path: "/cursos" },
@@ -1733,6 +1969,7 @@ function buildSeoForRoute(url, courses) {
       canonical: absoluteUrl("/faq"),
       jsonLd: buildJsonLd([
         organizationSchema(),
+        faqPageSchema(),
         breadcrumbSchema([
           { name: "Início", path: "/" },
           { name: "FAQ", path: "/faq" },
@@ -1784,7 +2021,9 @@ function seoMetaBlock(seo) {
     `<meta name="twitter:title" content="${escapeHtml(seo.title)}" />`,
     `<meta name="twitter:description" content="${escapeHtml(seo.description)}" />`,
     `<meta name="twitter:image" content="${escapeHtml(seo.image)}" />`,
-    `<link rel="canonical" href="${escapeHtml(seo.canonical)}" />${jsonLd}`,
+    `<link rel="canonical" href="${escapeHtml(seo.canonical)}" />`,
+    `<link rel="alternate" hreflang="pt-BR" href="${escapeHtml(seo.canonical)}" />`,
+    `<link rel="alternate" hreflang="x-default" href="${escapeHtml(seo.canonical)}" />${jsonLd}`,
   ].join("\n    ");
 }
 
@@ -1795,6 +2034,7 @@ function injectSeo(html, seo) {
     .replace(/\s*<meta\s+property=["']og:[^"']+["'][^>]*>\s*/gi, "\n")
     .replace(/\s*<meta\s+name=["']twitter:[^"']+["'][^>]*>\s*/gi, "\n")
     .replace(/\s*<link\s+rel=["']canonical["'][^>]*>\s*/gi, "\n")
+    .replace(/\s*<link\s+rel=["']alternate["'][^>]*>\s*/gi, "\n")
     .replace(/\s*<script\s+type=["']application\/ld\+json["']\s+data-seo=["']route["'][\s\S]*?<\/script>\s*/gi, "\n");
 
   const block = seoMetaBlock(seo);
@@ -1816,6 +2056,7 @@ async function serveAppHtml(req, res, indexPath, url) {
       {
         "Content-Type": "text/html; charset=utf-8",
         "Content-Length": body.length,
+        "Content-Language": "pt-BR",
         "Cache-Control": noindex ? "no-store" : "no-cache",
       },
       { noindex },
@@ -1878,6 +2119,10 @@ async function serveLlmsTxt(res) {
     "",
     `- Página inicial: ${SITE_URL}/`,
     `- Cursos: ${absoluteUrl("/cursos")}`,
+    `- Cursos Técnicos EAD: ${absoluteUrl(categoryPathFromSlug("extensao"))}`,
+    `- Certificação por Competência: ${absoluteUrl(categoryPathFromSlug("competencia"))}`,
+    `- Pós-Técnicos EAD: ${absoluteUrl(categoryPathFromSlug("pos-tecnico"))}`,
+    `- EJA e Ensino Médio: ${absoluteUrl(categoryPathFromSlug("segundo-grau"))}`,
     `- FAQ: ${absoluteUrl("/faq")}`,
     `- Sitemap XML: ${absoluteUrl("/sitemap.xml")}`,
     "",
@@ -1909,10 +2154,10 @@ async function serveSitemapXml(res) {
   const urls = [
     { loc: SITE_URL, priority: "1.0", changefreq: "weekly", lastmod: now },
     { loc: absoluteUrl("/cursos"), priority: "0.9", changefreq: "weekly", lastmod: now },
-    { loc: absoluteUrl("/cursos", "?categoria=extensao"), priority: "0.8", changefreq: "weekly", lastmod: now },
-    { loc: absoluteUrl("/cursos", "?categoria=competencia"), priority: "0.8", changefreq: "weekly", lastmod: now },
-    { loc: absoluteUrl("/cursos", "?categoria=pos-tecnico"), priority: "0.7", changefreq: "weekly", lastmod: now },
-    { loc: absoluteUrl("/cursos", "?categoria=segundo-grau"), priority: "0.7", changefreq: "weekly", lastmod: now },
+    { loc: absoluteUrl(categoryPathFromSlug("extensao")), priority: "0.8", changefreq: "weekly", lastmod: now },
+    { loc: absoluteUrl(categoryPathFromSlug("competencia")), priority: "0.8", changefreq: "weekly", lastmod: now },
+    { loc: absoluteUrl(categoryPathFromSlug("pos-tecnico")), priority: "0.7", changefreq: "weekly", lastmod: now },
+    { loc: absoluteUrl(categoryPathFromSlug("segundo-grau")), priority: "0.7", changefreq: "weekly", lastmod: now },
     { loc: absoluteUrl("/faq"), priority: "0.5", changefreq: "monthly", lastmod: now },
     ...courses.map((course) => ({
       loc: absoluteUrl(`/curso/${course.slug}`),
