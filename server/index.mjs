@@ -2,6 +2,7 @@ import { createReadStream, existsSync, mkdirSync, readFileSync, rmSync, statSync
 import { createServer } from "node:http";
 import { dirname, extname, join, normalize, resolve, sep } from "node:path";
 import { createHash, createSign, randomBytes } from "node:crypto";
+import nodemailer from "nodemailer";
 
 const PORT = Number(process.env.PORT || 3000);
 const STATIC_ROOT = resolve(process.env.STATIC_ROOT || join(process.cwd(), "dist"));
@@ -17,9 +18,17 @@ const DRIVE_SCAN_LIMIT = Number(process.env.GOOGLE_DRIVE_SCAN_LIMIT || 5000);
 const GITHUB_SYNC_BATCH_SIZE = Number(process.env.EAD_GITHUB_SYNC_BATCH_SIZE || 150);
 const MANIFEST_PATH = process.env.EAD_DRIVE_MANIFEST_PATH || "public/eadplataforma-drive-manifest.json";
 const RUNTIME_CACHE_ROOT = resolve(process.env.EAD_RUNTIME_CACHE_ROOT || join(process.cwd(), ".ead-runtime-cache"));
+const EMAIL_SETTINGS_FILE = process.env.EMAIL_SETTINGS_FILE || "email-smtp-settings.json";
 const MAX_UPLOAD_MB = Number(process.env.EAD_UPLOAD_MAX_MB || 512);
 const MAX_UPLOAD_BYTES = MAX_UPLOAD_MB * 1024 * 1024;
 const SITE_URL = (process.env.PUBLIC_SITE_URL || "https://faesde.com.br").replace(/\/$/, "");
+const CERTIFICATE_REQUEST_RECIPIENT = process.env.CERTIFICATE_REQUEST_RECIPIENT || "secretaria@faesde.com";
+const CERTIFICATE_MESSAGE_BASE_URL =
+  process.env.CERTIFICATE_MESSAGE_BASE_URL || "https://mensagem.faesde.com.br/send";
+const CERTIFICATE_REQUEST_RATE_LIMIT_WINDOW_MS = Number(
+  process.env.CERTIFICATE_REQUEST_RATE_LIMIT_WINDOW_MS || 15 * 60 * 1000,
+);
+const CERTIFICATE_REQUEST_RATE_LIMIT_MAX = Number(process.env.CERTIFICATE_REQUEST_RATE_LIMIT_MAX || 5);
 const SEO_CACHE_MS = Number(process.env.SEO_CACHE_MS || 5 * 60 * 1000);
 const SEO_IMAGE_URL = `${SITE_URL}/logo.png`;
 
@@ -208,6 +217,7 @@ const MIME_TYPES = {
 
 let googleServiceAccountTokenCache = null;
 let publicCoursesCache = { fetchedAt: 0, courses: [] };
+const certificateRequestRateLimit = new Map();
 
 function securityHeaders(headers = {}, options = {}) {
   return {
@@ -634,6 +644,337 @@ function redactOAuthConnection(row) {
     lastSyncAt: row?.last_sync_at || null,
     metadata: row?.metadata || {},
   };
+}
+
+function cleanText(value, maxLength = 500) {
+  return String(value || "").trim().slice(0, maxLength);
+}
+
+function normalizeEmailSettings(payload = {}, existing = {}) {
+  const secure =
+    typeof payload.secure === "boolean"
+      ? payload.secure
+      : typeof payload.secure === "string"
+        ? payload.secure === "true"
+        : Boolean(existing.secure);
+  const port = Number(payload.port ?? existing.port ?? (secure ? 465 : 587));
+  const passwordInput =
+    typeof payload.password === "string"
+      ? payload.password
+      : typeof payload.smtp_password === "string"
+        ? payload.smtp_password
+        : "";
+
+  return {
+    host: cleanText(payload.host ?? payload.smtp_host ?? existing.host, 255),
+    port: Number.isFinite(port) && port > 0 ? port : secure ? 465 : 587,
+    secure,
+    username: cleanText(payload.username ?? payload.smtp_user ?? existing.username, 255),
+    password: passwordInput || existing.password || "",
+    fromName: cleanText(payload.fromName ?? payload.from_name ?? existing.fromName, 120) || "FAESDE",
+    fromEmail: cleanText(payload.fromEmail ?? payload.from_email ?? existing.fromEmail, 255),
+    recipientEmail:
+      cleanText(payload.recipientEmail ?? payload.recipient_email ?? existing.recipientEmail, 255) ||
+      CERTIFICATE_REQUEST_RECIPIENT,
+    replyTo: cleanText(payload.replyTo ?? payload.reply_to ?? existing.replyTo, 255),
+    isActive:
+      typeof payload.isActive === "boolean"
+        ? payload.isActive
+        : typeof payload.is_active === "boolean"
+          ? payload.is_active
+          : Boolean(existing.isActive),
+    updatedAt: payload.updatedAt || payload.updated_at || existing.updatedAt || null,
+    source: payload.source || existing.source || "panel",
+  };
+}
+
+function emailSettingsFromDbRow(row) {
+  if (!row) return null;
+  return normalizeEmailSettings(
+    {
+      host: row.host,
+      port: row.port,
+      secure: row.secure,
+      username: row.username,
+      password: row.password,
+      fromName: row.from_name,
+      fromEmail: row.from_email,
+      recipientEmail: row.recipient_email,
+      replyTo: row.reply_to,
+      isActive: row.is_active,
+      updatedAt: row.updated_at,
+      source: "database",
+    },
+    {},
+  );
+}
+
+function emailSettingsToDbRow(settings, context) {
+  return {
+    id: "default",
+    host: settings.host,
+    port: settings.port,
+    secure: settings.secure,
+    username: settings.username || null,
+    password: settings.password || null,
+    from_name: settings.fromName || "FAESDE",
+    from_email: settings.fromEmail || null,
+    recipient_email: settings.recipientEmail || CERTIFICATE_REQUEST_RECIPIENT,
+    reply_to: settings.replyTo || null,
+    is_active: Boolean(settings.isActive),
+    updated_by: context.id === "local-dev" ? null : context.id,
+  };
+}
+
+function getRuntimeEmailSettings() {
+  const saved = readRuntimeJson(EMAIL_SETTINGS_FILE, null);
+  if (!saved || typeof saved !== "object") return null;
+  return normalizeEmailSettings({ ...saved, source: "panel" }, {});
+}
+
+function writeRuntimeEmailSettings(settings) {
+  writeRuntimeJson(EMAIL_SETTINGS_FILE, settings);
+}
+
+function getEnvEmailSettings() {
+  const secureValue = process.env.SMTP_SECURE || process.env.EMAIL_SMTP_SECURE || "";
+  const secure = ["true", "1", "yes"].includes(secureValue.toLowerCase());
+  const host = process.env.SMTP_HOST || process.env.EMAIL_SMTP_HOST || "";
+  const port = Number(process.env.SMTP_PORT || process.env.EMAIL_SMTP_PORT || (secure ? 465 : 587));
+  const username = process.env.SMTP_USER || process.env.EMAIL_SMTP_USER || "";
+  const password = process.env.SMTP_PASSWORD || process.env.EMAIL_SMTP_PASSWORD || "";
+  const fromEmail = process.env.SMTP_FROM_EMAIL || process.env.EMAIL_FROM || username;
+
+  if (!host && !fromEmail && !username) return null;
+
+  return normalizeEmailSettings(
+    {
+      host,
+      port,
+      secure,
+      username,
+      password,
+      fromName: process.env.SMTP_FROM_NAME || process.env.EMAIL_FROM_NAME || "FAESDE",
+      fromEmail,
+      recipientEmail: process.env.CERTIFICATE_REQUEST_RECIPIENT || CERTIFICATE_REQUEST_RECIPIENT,
+      replyTo: process.env.SMTP_REPLY_TO || process.env.EMAIL_REPLY_TO || "",
+      isActive: true,
+      source: "environment",
+    },
+    {},
+  );
+}
+
+function isEmailSettingsReady(settings) {
+  if (!settings?.isActive || !settings.host || !settings.port || !settings.recipientEmail) return false;
+  if (!settings.fromEmail && !settings.username) return false;
+  if (settings.username && !settings.password) return false;
+  return true;
+}
+
+function redactEmailSettings(settings, source = "not_configured", dbError = null) {
+  const normalized = settings ? normalizeEmailSettings(settings, {}) : null;
+  return {
+    configured: isEmailSettingsReady(normalized),
+    source,
+    host: normalized?.host || "",
+    port: normalized?.port || 587,
+    secure: Boolean(normalized?.secure),
+    username: normalized?.username || "",
+    hasPassword: Boolean(normalized?.password),
+    fromName: normalized?.fromName || "FAESDE",
+    fromEmail: normalized?.fromEmail || "",
+    recipientEmail: normalized?.recipientEmail || CERTIFICATE_REQUEST_RECIPIENT,
+    replyTo: normalized?.replyTo || "",
+    isActive: Boolean(normalized?.isActive),
+    updatedAt: normalized?.updatedAt || null,
+    dbError,
+    message: isEmailSettingsReady(normalized)
+      ? "Servidor SMTP configurado para solicitacoes de certificados."
+      : "Cadastre o SMTP para enviar e-mail automatico. Sem SMTP, o aluno ainda sera redirecionado com a mensagem pronta.",
+  };
+}
+
+async function getEmailSettingsFromDb(accessToken) {
+  if (!accessToken || accessToken === "local-dev") return null;
+  const rows = await supabaseRest(accessToken, "email_smtp_settings?select=*&id=eq.default&limit=1");
+  return Array.isArray(rows) && rows.length > 0 ? emailSettingsFromDbRow(rows[0]) : null;
+}
+
+async function upsertEmailSettingsToDb(context, settings) {
+  if (!context?.accessToken || context.accessToken === "local-dev") return null;
+  const rows = await supabaseRest(context.accessToken, "email_smtp_settings?on_conflict=id", {
+    method: "POST",
+    headers: { Prefer: "resolution=merge-duplicates,return=representation" },
+    body: JSON.stringify(emailSettingsToDbRow(settings, context)),
+  });
+  return Array.isArray(rows) ? emailSettingsFromDbRow(rows[0]) : settings;
+}
+
+async function buildEmailStatus(context = null) {
+  const runtimeSettings = getRuntimeEmailSettings();
+  let dbSettings = null;
+  let dbError = null;
+
+  if (context?.accessToken && context.accessToken !== "local-dev") {
+    try {
+      dbSettings = await getEmailSettingsFromDb(context.accessToken);
+    } catch (error) {
+      dbError = error.message || "Tabela de e-mail indisponivel.";
+    }
+  }
+
+  const envSettings = getEnvEmailSettings();
+  const selected = runtimeSettings || dbSettings || envSettings;
+  const source = selected?.source || (envSettings ? "environment" : "not_configured");
+
+  return redactEmailSettings(selected, source, dbError);
+}
+
+async function getActiveEmailSettings(context = null) {
+  const runtimeSettings = getRuntimeEmailSettings();
+  if (isEmailSettingsReady(runtimeSettings)) return runtimeSettings;
+
+  if (context?.accessToken && context.accessToken !== "local-dev") {
+    try {
+      const dbSettings = await getEmailSettingsFromDb(context.accessToken);
+      if (isEmailSettingsReady(dbSettings)) return dbSettings;
+    } catch {
+      // Runtime/env settings still allow the request flow to continue.
+    }
+  }
+
+  const envSettings = getEnvEmailSettings();
+  return isEmailSettingsReady(envSettings) ? envSettings : null;
+}
+
+async function sendEmailMessage(settings, { subject, text, replyTo }) {
+  const auth =
+    settings.username && settings.password
+      ? {
+          user: settings.username,
+          pass: settings.password,
+        }
+      : undefined;
+  const transporter = nodemailer.createTransport({
+    host: settings.host,
+    port: settings.port,
+    secure: settings.secure,
+    auth,
+  });
+
+  await transporter.sendMail({
+    from: {
+      name: settings.fromName || "FAESDE",
+      address: settings.fromEmail || settings.username,
+    },
+    to: settings.recipientEmail || CERTIFICATE_REQUEST_RECIPIENT,
+    replyTo: replyTo || settings.replyTo || undefined,
+    subject,
+    text,
+  });
+}
+
+function normalizeCpf(value) {
+  return String(value || "").replace(/\D/g, "").slice(0, 11);
+}
+
+function formatCpf(value) {
+  const digits = normalizeCpf(value);
+  if (digits.length !== 11) return digits;
+  return digits.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, "$1.$2.$3-$4");
+}
+
+function getClientIp(req) {
+  return (
+    String(req.headers["cf-connecting-ip"] || "").split(",")[0].trim() ||
+    String(req.headers["x-forwarded-for"] || "").split(",")[0].trim() ||
+    req.socket.remoteAddress ||
+    "unknown"
+  );
+}
+
+function assertCertificateRequestRateLimit(req) {
+  const now = Date.now();
+  const ip = getClientIp(req);
+  const current = certificateRequestRateLimit.get(ip);
+
+  if (!current || current.resetAt <= now) {
+    certificateRequestRateLimit.set(ip, {
+      count: 1,
+      resetAt: now + CERTIFICATE_REQUEST_RATE_LIMIT_WINDOW_MS,
+    });
+    return;
+  }
+
+  if (current.count >= CERTIFICATE_REQUEST_RATE_LIMIT_MAX) {
+    throw createHttpError("Muitas solicitacoes em pouco tempo. Tente novamente mais tarde.", 429);
+  }
+
+  current.count += 1;
+  certificateRequestRateLimit.set(ip, current);
+}
+
+function normalizeCertificateRequestPayload(body = {}) {
+  const payload = {
+    studentName: cleanText(body.studentName ?? body.nome, 160),
+    cpf: normalizeCpf(body.cpf),
+    certificateReceived: cleanText(body.certificateReceived ?? body.certificadoRecebido, 80),
+    courseName: cleanText(body.courseName ?? body.curso, 180),
+    completionPeriod: cleanText(body.completionPeriod ?? body.data, 80),
+  };
+
+  if (!payload.studentName) throw createHttpError("Informe seu nome.", 400);
+  if (payload.cpf.length !== 11) throw createHttpError("Informe um CPF valido com 11 digitos.", 400);
+  if (!payload.certificateReceived) throw createHttpError("Informe se ja recebeu o certificado.", 400);
+  if (!payload.courseName) throw createHttpError("Informe o curso concluido.", 400);
+  if (!payload.completionPeriod) throw createHttpError("Informe a data ou periodo de conclusao.", 400);
+
+  return payload;
+}
+
+function buildCertificateInclusionMessage(payload) {
+  return [
+    "Ola, sou aluno(a) e gostaria de solicitar a inclusao do meu certificado no site faesde.com.br.",
+    "",
+    `Nome: ${payload.studentName}`,
+    `CPF: ${formatCpf(payload.cpf)}`,
+    `Ja recebeu o certificado digital ou fisico?: ${payload.certificateReceived}`,
+    `Curso concluido: ${payload.courseName}`,
+    `Data/periodo informado: ${payload.completionPeriod}`,
+    "",
+    "Solicito a inclusao e validacao do certificado na area publica: https://faesde.com.br/certificados",
+    "Link do painel para atendimento interno: https://faesde.com.br/admin",
+  ].join("\n");
+}
+
+function buildCertificateRequestRedirectUrl(message) {
+  const url = new URL(CERTIFICATE_MESSAGE_BASE_URL);
+  url.searchParams.set("text", message);
+  return url.toString();
+}
+
+async function saveCertificateInclusionRequest(payload, message, emailResult) {
+  try {
+    const { anonKey } = getSupabaseConfig();
+    await supabaseRest(anonKey, "certificate_inclusion_requests", {
+      method: "POST",
+      headers: { Prefer: "return=minimal" },
+      body: JSON.stringify({
+        student_name: payload.studentName,
+        cpf: payload.cpf,
+        certificate_received: payload.certificateReceived,
+        course_name: payload.courseName,
+        completion_period: payload.completionPeriod,
+        message,
+        email_sent: Boolean(emailResult.emailSent),
+        email_error: emailResult.emailError || null,
+      }),
+    });
+    return { saved: true, error: null };
+  } catch (error) {
+    return { saved: false, error: error.message || "Nao foi possivel registrar a solicitacao no banco." };
+  }
 }
 
 async function upsertOAuthSettings(context, provider, payload) {
@@ -3202,6 +3543,7 @@ async function buildOAuthStatus(req, context) {
       redirectUri: `${getRequestOrigin(req)}/admin/conexoes/oauth/callback`,
       providers: oauth,
     },
+    email: await buildEmailStatus(context),
     sql: {
       enabled: true,
       message: "Tabelas OAuth usadas apenas para guardar conexoes admin.",
@@ -3240,6 +3582,118 @@ async function buildPublicSyncStatus() {
       message: "Conexoes OAuth ficam protegidas pelo login admin.",
     },
   };
+}
+
+async function handleEmailApi(req, res, url, context) {
+  if (req.method === "GET" && url.pathname === "/api/email/settings") {
+    return jsonResponse(res, 200, {
+      ok: true,
+      email: await buildEmailStatus(context),
+    });
+  }
+
+  if (req.method === "POST" && url.pathname === "/api/email/settings") {
+    const body = await readJsonBody(req);
+    const existing = getRuntimeEmailSettings() || (await getEmailSettingsFromDb(context.accessToken).catch(() => null)) || {};
+    const settings = normalizeEmailSettings(body, existing);
+    settings.updatedAt = new Date().toISOString();
+
+    if (settings.isActive) {
+      if (!settings.host) throw createHttpError("Informe o host SMTP.", 400);
+      if (!settings.fromEmail && !settings.username) throw createHttpError("Informe o e-mail remetente.", 400);
+      if (!settings.recipientEmail) throw createHttpError("Informe o e-mail de destino.", 400);
+      if (settings.username && !settings.password) {
+        throw createHttpError("Informe a senha SMTP ou desative a autenticacao removendo o usuario.", 400);
+      }
+    }
+
+    writeRuntimeEmailSettings(settings);
+
+    let dbSaved = false;
+    let dbError = null;
+    try {
+      await upsertEmailSettingsToDb(context, settings);
+      dbSaved = true;
+    } catch (error) {
+      dbError = error.message || "Nao foi possivel salvar SMTP no banco.";
+    }
+
+    return jsonResponse(res, 200, {
+      ok: true,
+      message: dbSaved
+        ? "SMTP salvo no painel e no banco."
+        : "SMTP salvo no servidor. A migration de e-mail pode ser aplicada depois para redundancia.",
+      dbSaved,
+      dbError,
+      email: await buildEmailStatus(context),
+    });
+  }
+
+  if (req.method === "POST" && url.pathname === "/api/email/test") {
+    const settings = await getActiveEmailSettings(context);
+    if (!settings) throw createHttpError("Configure e ative o SMTP antes de enviar teste.", 400);
+
+    await sendEmailMessage(settings, {
+      subject: "Teste de e-mail FAESDE",
+      text: [
+        "Teste de configuracao SMTP do painel FAESDE.",
+        "",
+        `Enviado em: ${new Date().toLocaleString("pt-BR", { timeZone: "America/Sao_Paulo" })}`,
+        "Se voce recebeu esta mensagem, as solicitacoes de inclusao de certificados poderao ser enviadas automaticamente.",
+      ].join("\n"),
+    });
+
+    return jsonResponse(res, 200, {
+      ok: true,
+      message: `E-mail de teste enviado para ${settings.recipientEmail}.`,
+      email: await buildEmailStatus(context),
+    });
+  }
+
+  return null;
+}
+
+async function handleCertificateInclusionRequestApi(req, res) {
+  if (req.method !== "POST") {
+    res.setHeader("Allow", "POST");
+    return jsonResponse(res, 405, { ok: false, message: "Metodo nao permitido." });
+  }
+
+  assertCertificateRequestRateLimit(req);
+  const payload = normalizeCertificateRequestPayload(await readJsonBody(req));
+  const message = buildCertificateInclusionMessage(payload);
+  const redirectUrl = buildCertificateRequestRedirectUrl(message);
+  const emailResult = { emailSent: false, emailError: null };
+  const settings = await getActiveEmailSettings();
+
+  if (settings) {
+    try {
+      await sendEmailMessage(settings, {
+        subject: `Solicitacao de inclusao de certificado - ${payload.studentName}`,
+        text: message,
+      });
+      emailResult.emailSent = true;
+    } catch (error) {
+      emailResult.emailError = error.message || "Falha ao enviar e-mail.";
+    }
+  } else {
+    emailResult.emailError = "SMTP nao configurado.";
+  }
+
+  const saveResult = await saveCertificateInclusionRequest(payload, message, emailResult);
+
+  return jsonResponse(res, 200, {
+    ok: true,
+    message: emailResult.emailSent
+      ? "Solicitacao enviada por e-mail. Voce sera redirecionado para enviar a mensagem tambem."
+      : "Solicitacao preparada. Voce sera redirecionado para enviar a mensagem.",
+    request: payload,
+    requestText: message,
+    redirectUrl,
+    ...emailResult,
+    saved: saveResult.saved,
+    saveError: saveResult.error,
+  });
 }
 
 async function handleOAuthApi(req, res, url) {
@@ -3373,6 +3827,10 @@ async function handleApi(req, res, url) {
   }
 
   try {
+    if (url.pathname === "/api/certificate-inclusion-request") {
+      return await handleCertificateInclusionRequestApi(req, res);
+    }
+
     if (url.pathname.startsWith("/api/oauth/")) {
       const handled = await handleOAuthApi(req, res, url);
       if (handled !== null) return handled;
@@ -3392,6 +3850,11 @@ async function handleApi(req, res, url) {
     }
 
     const context = await requireAdmin(req);
+
+    if (url.pathname.startsWith("/api/email/")) {
+      const handled = await handleEmailApi(req, res, url, context);
+      if (handled !== null) return handled;
+    }
 
     if (req.method === "GET" && url.pathname === "/api/sync/history") {
       const history = await listGithubSyncHistory(context);

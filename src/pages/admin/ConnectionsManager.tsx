@@ -13,9 +13,11 @@ import {
   KeyRound,
   Loader2,
   LogOut,
+  Mail,
   Play,
   RefreshCw,
   Save,
+  Send,
   Server,
   Settings2,
   ShieldCheck,
@@ -28,6 +30,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Input } from "@/components/ui/input.tsx";
 import { Label } from "@/components/ui/label.tsx";
 import { Progress } from "@/components/ui/progress.tsx";
+import { Switch } from "@/components/ui/switch.tsx";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs.tsx";
 import { Textarea } from "@/components/ui/textarea.tsx";
 import { useToast } from "@/hooks/use-toast.ts";
@@ -87,6 +90,24 @@ interface OAuthProviderStatus {
   defaultScopes: string[];
 }
 
+interface EmailStatus {
+  configured: boolean;
+  source: "panel" | "database" | "environment" | "not_configured";
+  host: string;
+  port: number;
+  secure: boolean;
+  username: string;
+  hasPassword: boolean;
+  fromName: string;
+  fromEmail: string;
+  recipientEmail: string;
+  replyTo: string;
+  isActive: boolean;
+  updatedAt: string | null;
+  dbError?: string | null;
+  message: string;
+}
+
 interface ApiStatus {
   ok: boolean;
   serverTime: string;
@@ -104,6 +125,7 @@ interface ApiStatus {
     redirectUri: string;
     providers: Record<ProviderKey, OAuthProviderStatus>;
   };
+  email?: EmailStatus;
   sql: {
     enabled: boolean;
     message: string;
@@ -162,6 +184,19 @@ interface SettingsDraft {
   redirectUri: string;
 }
 
+interface EmailDraft {
+  host: string;
+  port: string;
+  secure: boolean;
+  username: string;
+  password: string;
+  fromName: string;
+  fromEmail: string;
+  recipientEmail: string;
+  replyTo: string;
+  isActive: boolean;
+}
+
 const PROVIDER_META: Record<
   ProviderKey,
   { icon: typeof Cloud; title: string; description: string; appLabel: string; appUrl: string }
@@ -216,6 +251,19 @@ const DEFAULT_DRAFTS: Record<ProviderKey, SettingsDraft> = {
     scopes: DEFAULT_SCOPES.github.join("\n"),
     redirectUri: "",
   },
+};
+
+const DEFAULT_EMAIL_DRAFT: EmailDraft = {
+  host: "",
+  port: "587",
+  secure: false,
+  username: "",
+  password: "",
+  fromName: "FAESDE",
+  fromEmail: "",
+  recipientEmail: "secretaria@faesde.com",
+  replyTo: "",
+  isActive: false,
 };
 
 const FALLBACK_STATUS: ApiStatus = {
@@ -298,6 +346,22 @@ const FALLBACK_STATUS: ApiStatus = {
         defaultScopes: DEFAULT_SCOPES.github,
       },
     },
+  },
+  email: {
+    configured: false,
+    source: "not_configured",
+    host: "",
+    port: 587,
+    secure: false,
+    username: "",
+    hasPassword: false,
+    fromName: "FAESDE",
+    fromEmail: "",
+    recipientEmail: "secretaria@faesde.com",
+    replyTo: "",
+    isActive: false,
+    updatedAt: null,
+    message: "Cadastre o SMTP para enviar e-mail automatico.",
   },
   sql: {
     enabled: true,
@@ -389,6 +453,23 @@ function draftFromStatus(
   };
 }
 
+function draftFromEmailStatus(status?: EmailStatus, currentDraft: EmailDraft = DEFAULT_EMAIL_DRAFT): EmailDraft {
+  if (!status) return currentDraft;
+
+  return {
+    host: status.host || currentDraft.host,
+    port: String(status.port || currentDraft.port || "587"),
+    secure: Boolean(status.secure),
+    username: status.username || currentDraft.username,
+    password: "",
+    fromName: status.fromName || currentDraft.fromName || "FAESDE",
+    fromEmail: status.fromEmail || currentDraft.fromEmail,
+    recipientEmail: status.recipientEmail || currentDraft.recipientEmail || "secretaria@faesde.com",
+    replyTo: status.replyTo || currentDraft.replyTo,
+    isActive: Boolean(status.isActive),
+  };
+}
+
 interface ConnectionsManagerProps {
   embedded?: boolean;
 }
@@ -406,6 +487,9 @@ const ConnectionsManager = ({ embedded = false }: ConnectionsManagerProps) => {
   const [syncHistory, setSyncHistory] = useState<SyncHistoryEntry[]>([]);
   const [activeTab, setActiveTab] = useState<TabKey>("providers");
   const [settingsDrafts, setSettingsDrafts] = useState<Record<ProviderKey, SettingsDraft>>(DEFAULT_DRAFTS);
+  const [emailDraft, setEmailDraft] = useState<EmailDraft>(DEFAULT_EMAIL_DRAFT);
+  const [savingEmail, setSavingEmail] = useState(false);
+  const [testingEmail, setTestingEmail] = useState(false);
   const [handlingCallback, setHandlingCallback] = useState(false);
   const [autoSyncMessage, setAutoSyncMessage] = useState("Aguardando conexoes.");
   const [autoSyncStarted, setAutoSyncStarted] = useState(false);
@@ -475,6 +559,7 @@ const ConnectionsManager = ({ embedded = false }: ConnectionsManagerProps) => {
     const status = await fetchWithSession<ApiStatus>("/api/oauth/status", { method: "GET" });
     setApiStatus(status);
     setSettingsDrafts((current) => draftFromStatus(status, current));
+    setEmailDraft((current) => draftFromEmailStatus(status.email, current));
   };
 
   const loadSyncHistory = async () => {
@@ -498,6 +583,7 @@ const ConnectionsManager = ({ embedded = false }: ConnectionsManagerProps) => {
       };
       setApiStatus(fallback);
       setSettingsDrafts((current) => draftFromStatus(fallback, current));
+      setEmailDraft((current) => draftFromEmailStatus(fallback.email, current));
       setApiError(error instanceof Error ? error.message : "Nao foi possivel acessar a API de sync.");
     } finally {
       setLoading(false);
@@ -551,6 +637,7 @@ const ConnectionsManager = ({ embedded = false }: ConnectionsManagerProps) => {
         );
         setApiStatus(result.status);
         setSettingsDrafts((current) => draftFromStatus(result.status, current));
+        setEmailDraft((current) => draftFromEmailStatus(result.status.email, current));
         toast({ title: "Conta conectada", description: result.provider.message });
         navigate(result.returnTo || "/admin/configuracoes?tab=conexoes", { replace: true });
       } catch (callbackError) {
@@ -587,6 +674,7 @@ const ConnectionsManager = ({ embedded = false }: ConnectionsManagerProps) => {
 
       setApiStatus(result.status);
       setSettingsDrafts((current) => draftFromStatus(result.status, current));
+      setEmailDraft((current) => draftFromEmailStatus(result.status.email, current));
       toast({ title: "OAuth salvo", description: result.message });
     } catch (error) {
       toast({
@@ -675,6 +763,7 @@ const ConnectionsManager = ({ embedded = false }: ConnectionsManagerProps) => {
       });
       setApiStatus(result.status);
       setSettingsDrafts((current) => draftFromStatus(result.status, current));
+      setEmailDraft((current) => draftFromEmailStatus(result.status.email, current));
       toast({ title: "Conta desconectada", description: result.message });
     } catch (error) {
       toast({
@@ -767,6 +856,59 @@ const ConnectionsManager = ({ embedded = false }: ConnectionsManagerProps) => {
         [field]: value,
       },
     }));
+  };
+
+  const updateEmailDraft = (field: keyof EmailDraft, value: string | boolean) => {
+    setEmailDraft((current) => ({
+      ...current,
+      [field]: value,
+    }));
+  };
+
+  const saveEmailSettings = async () => {
+    setSavingEmail(true);
+    try {
+      const result = await fetchWithSession<{ message: string; email: EmailStatus }>("/api/email/settings", {
+        method: "POST",
+        body: JSON.stringify({
+          ...emailDraft,
+          port: Number(emailDraft.port) || (emailDraft.secure ? 465 : 587),
+        }),
+      });
+
+      setApiStatus((current) => (current ? { ...current, email: result.email } : current));
+      setEmailDraft((current) => draftFromEmailStatus(result.email, current));
+      toast({ title: "SMTP salvo", description: result.message });
+    } catch (error) {
+      toast({
+        title: "Erro ao salvar SMTP",
+        description: error instanceof Error ? error.message : "Falha inesperada.",
+        variant: "destructive",
+      });
+    } finally {
+      setSavingEmail(false);
+    }
+  };
+
+  const testEmailSettings = async () => {
+    setTestingEmail(true);
+    try {
+      const result = await fetchWithSession<{ message: string; email: EmailStatus }>("/api/email/test", {
+        method: "POST",
+      });
+
+      setApiStatus((current) => (current ? { ...current, email: result.email } : current));
+      setEmailDraft((current) => draftFromEmailStatus(result.email, current));
+      toast({ title: "Teste enviado", description: result.message });
+    } catch (error) {
+      toast({
+        title: "Erro no teste SMTP",
+        description: error instanceof Error ? error.message : "Falha inesperada.",
+        variant: "destructive",
+      });
+    } finally {
+      setTestingEmail(false);
+    }
   };
 
   const copyRedirectUri = async () => {
@@ -1128,6 +1270,152 @@ const ConnectionsManager = ({ embedded = false }: ConnectionsManagerProps) => {
                 <Copy className="mr-2 h-4 w-4" />
                 Copiar
               </Button>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center justify-between gap-3">
+                <span className="flex items-center gap-2">
+                  <Mail className="h-5 w-5 text-primary" />
+                  Servidor de e-mail SMTP
+                </span>
+                <Badge variant={apiStatus?.email?.configured ? "default" : "secondary"}>
+                  {apiStatus?.email?.configured ? "Configurado" : "Pendente"}
+                </Badge>
+              </CardTitle>
+              <CardDescription>
+                Usado para enviar para secretaria@faesde.com as solicitacoes publicas de inclusao de certificados.
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <Alert>
+                <Mail className="h-4 w-4" />
+                <AlertDescription>
+                  {apiStatus?.email?.message || "Configure SMTP para ativar o envio automatico de e-mail."}
+                  {apiStatus?.email?.dbError ? ` Banco: ${apiStatus.email.dbError}` : ""}
+                </AlertDescription>
+              </Alert>
+
+              <div className="grid gap-4 md:grid-cols-[1fr_8rem_9rem]">
+                <div className="space-y-2">
+                  <Label htmlFor="smtp-host">Host SMTP</Label>
+                  <Input
+                    id="smtp-host"
+                    value={emailDraft.host}
+                    onChange={(event) => updateEmailDraft("host", event.target.value)}
+                    placeholder="smtp.seudominio.com"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="smtp-port">Porta</Label>
+                  <Input
+                    id="smtp-port"
+                    value={emailDraft.port}
+                    onChange={(event) => updateEmailDraft("port", event.target.value.replace(/\D/g, "").slice(0, 5))}
+                    inputMode="numeric"
+                    placeholder="587"
+                  />
+                </div>
+                <div className="flex items-end gap-3 rounded-lg border p-3">
+                  <Switch
+                    id="smtp-secure"
+                    checked={emailDraft.secure}
+                    onCheckedChange={(checked) => updateEmailDraft("secure", checked)}
+                  />
+                  <Label htmlFor="smtp-secure" className="leading-tight">
+                    SSL/TLS direto
+                  </Label>
+                </div>
+              </div>
+
+              <div className="grid gap-4 md:grid-cols-2">
+                <div className="space-y-2">
+                  <Label htmlFor="smtp-username">Usuario SMTP</Label>
+                  <Input
+                    id="smtp-username"
+                    value={emailDraft.username}
+                    onChange={(event) => updateEmailDraft("username", event.target.value)}
+                    placeholder="usuario ou e-mail"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="smtp-password">Senha SMTP</Label>
+                  <Input
+                    id="smtp-password"
+                    type="password"
+                    value={emailDraft.password}
+                    onChange={(event) => updateEmailDraft("password", event.target.value)}
+                    placeholder={apiStatus?.email?.hasPassword ? "Ja salva. Preencha so para trocar." : "Senha ou app password"}
+                  />
+                </div>
+              </div>
+
+              <div className="grid gap-4 md:grid-cols-2">
+                <div className="space-y-2">
+                  <Label htmlFor="smtp-from-name">Nome do remetente</Label>
+                  <Input
+                    id="smtp-from-name"
+                    value={emailDraft.fromName}
+                    onChange={(event) => updateEmailDraft("fromName", event.target.value)}
+                    placeholder="FAESDE"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="smtp-from-email">E-mail remetente</Label>
+                  <Input
+                    id="smtp-from-email"
+                    value={emailDraft.fromEmail}
+                    onChange={(event) => updateEmailDraft("fromEmail", event.target.value)}
+                    placeholder="secretaria@faesde.com"
+                  />
+                </div>
+              </div>
+
+              <div className="grid gap-4 md:grid-cols-2">
+                <div className="space-y-2">
+                  <Label htmlFor="smtp-recipient">Destino das solicitacoes</Label>
+                  <Input
+                    id="smtp-recipient"
+                    value={emailDraft.recipientEmail}
+                    onChange={(event) => updateEmailDraft("recipientEmail", event.target.value)}
+                    placeholder="secretaria@faesde.com"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="smtp-reply-to">Responder para</Label>
+                  <Input
+                    id="smtp-reply-to"
+                    value={emailDraft.replyTo}
+                    onChange={(event) => updateEmailDraft("replyTo", event.target.value)}
+                    placeholder="Opcional"
+                  />
+                </div>
+              </div>
+
+              <div className="flex flex-col gap-3 rounded-lg border p-3 sm:flex-row sm:items-center sm:justify-between">
+                <div>
+                  <p className="text-sm font-medium">Ativar envio automatico</p>
+                  <p className="text-xs text-muted-foreground">
+                    Quando desativado, o aluno ainda sera levado para a mensagem pronta.
+                  </p>
+                </div>
+                <Switch
+                  checked={emailDraft.isActive}
+                  onCheckedChange={(checked) => updateEmailDraft("isActive", checked)}
+                />
+              </div>
+
+              <div className="grid gap-2 sm:grid-cols-2">
+                <Button onClick={saveEmailSettings} disabled={savingEmail || testingEmail}>
+                  {savingEmail ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <Save className="mr-2 h-4 w-4" />}
+                  Salvar SMTP
+                </Button>
+                <Button variant="outline" onClick={testEmailSettings} disabled={savingEmail || testingEmail || !apiStatus?.email?.configured}>
+                  {testingEmail ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <Send className="mr-2 h-4 w-4" />}
+                  Enviar teste
+                </Button>
+              </div>
             </CardContent>
           </Card>
 

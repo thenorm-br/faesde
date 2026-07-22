@@ -1,6 +1,6 @@
 import { FormEvent, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
-import { Award, Barcode, Download, ExternalLink, FileText, Loader2, Search, ShieldCheck } from "lucide-react";
+import { Award, Barcode, Download, ExternalLink, FileText, Loader2, Search, Send, ShieldCheck } from "lucide-react";
 import Header from "@/components/Header.tsx";
 import Footer from "@/components/Footer.tsx";
 import { supabase } from "@/integrations/supabase/client.ts";
@@ -9,6 +9,8 @@ import { Input } from "@/components/ui/input.tsx";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card.tsx";
 import { Badge } from "@/components/ui/badge.tsx";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert.tsx";
+import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog.tsx";
+import { Label } from "@/components/ui/label.tsx";
 import { formatFileSize, getCertificateFilePublicUrl } from "@/lib/certificateFiles.ts";
 
 type CertificateSourceType = "generated" | "external_pdf";
@@ -27,12 +29,62 @@ interface CertificateSearchResult {
   external_file_size: number | null;
 }
 
+interface CertificateRequestForm {
+  studentName: string;
+  cpf: string;
+  certificateReceived: string;
+  courseName: string;
+  completionPeriod: string;
+}
+
 const normalizeCode = (value: string) => value.replace(/\D/g, "").slice(0, 24);
+const normalizeCpf = (value: string) => value.replace(/\D/g, "").slice(0, 11);
+
+const formatCpf = (value: string) => {
+  const digits = normalizeCpf(value);
+  if (digits.length !== 11) return digits;
+  return digits.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, "$1.$2.$3-$4");
+};
 
 const formatDate = (date: string) => {
   const [year, month, day] = date.split("-");
   return `${day}/${month}/${year}`;
 };
+
+const CERTIFICATE_RECEIVED_OPTIONS = [
+  "Sim, certificado digital",
+  "Sim, certificado fisico",
+  "Sim, digital e fisico",
+  "Ainda nao recebi",
+  "Nao lembro",
+];
+
+const COMPLETION_PERIOD_OPTIONS = ["2026", "2025", "2024", "2023", "Mais de 3 anos", "Nao lembro"];
+
+const EMPTY_REQUEST_FORM: CertificateRequestForm = {
+  studentName: "",
+  cpf: "",
+  certificateReceived: "",
+  courseName: "",
+  completionPeriod: "",
+};
+
+const buildCertificateRequestMessage = (form: CertificateRequestForm) =>
+  [
+    "Ola, sou aluno(a) e gostaria de solicitar a inclusao do meu certificado no site faesde.com.br.",
+    "",
+    `Nome: ${form.studentName.trim()}`,
+    `CPF: ${formatCpf(form.cpf)}`,
+    `Ja recebeu o certificado digital ou fisico?: ${form.certificateReceived}`,
+    `Curso concluido: ${form.courseName.trim()}`,
+    `Data/periodo informado: ${form.completionPeriod}`,
+    "",
+    "Solicito a inclusao e validacao do certificado na area publica: https://faesde.com.br/certificados",
+    "Link do painel para atendimento interno: https://faesde.com.br/admin",
+  ].join("\n");
+
+const buildFallbackRedirectUrl = (form: CertificateRequestForm) =>
+  `https://mensagem.faesde.com.br/send?text=${encodeURIComponent(buildCertificateRequestMessage(form))}`;
 
 const CertificadosConsulta = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -40,6 +92,74 @@ const CertificadosConsulta = () => {
   const [result, setResult] = useState<CertificateSearchResult | null>(null);
   const [notFound, setNotFound] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [requestOpen, setRequestOpen] = useState(false);
+  const [requestStep, setRequestStep] = useState(0);
+  const [requestForm, setRequestForm] = useState<CertificateRequestForm>(EMPTY_REQUEST_FORM);
+  const [requestSubmitting, setRequestSubmitting] = useState(false);
+  const [requestError, setRequestError] = useState<string | null>(null);
+
+  const updateRequestForm = (field: keyof CertificateRequestForm, value: string) => {
+    setRequestForm((current) => ({
+      ...current,
+      [field]: field === "cpf" ? normalizeCpf(value) : value,
+    }));
+    setRequestError(null);
+  };
+
+  const currentStepIsValid = () => {
+    if (requestStep === 0) return requestForm.studentName.trim().length >= 3;
+    if (requestStep === 1) return requestForm.cpf.length === 11;
+    if (requestStep === 2) return Boolean(requestForm.certificateReceived);
+    if (requestStep === 3) return requestForm.courseName.trim().length >= 3;
+    if (requestStep === 4) return Boolean(requestForm.completionPeriod);
+    return true;
+  };
+
+  const openRequestDialog = () => {
+    setRequestForm(EMPTY_REQUEST_FORM);
+    setRequestStep(0);
+    setRequestError(null);
+    setRequestOpen(true);
+  };
+
+  const goToNextRequestStep = () => {
+    if (!currentStepIsValid()) {
+      setRequestError("Preencha esta informacao para continuar.");
+      return;
+    }
+    setRequestError(null);
+    setRequestStep((step) => Math.min(step + 1, 4));
+  };
+
+  const submitCertificateRequest = async () => {
+    if (!currentStepIsValid()) {
+      setRequestError("Preencha esta informacao para continuar.");
+      return;
+    }
+
+    setRequestSubmitting(true);
+    setRequestError(null);
+
+    try {
+      const response = await fetch("/api/certificate-inclusion-request", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(requestForm),
+      });
+      const data = await response.json().catch(() => ({}));
+      const redirectUrl = data.redirectUrl || buildFallbackRedirectUrl(requestForm);
+
+      if (!response.ok) {
+        throw new Error(data.message || "Nao foi possivel preparar a solicitacao.");
+      }
+
+      window.location.href = redirectUrl;
+    } catch {
+      window.location.href = buildFallbackRedirectUrl(requestForm);
+    } finally {
+      setRequestSubmitting(false);
+    }
+  };
 
   const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
@@ -115,6 +235,16 @@ const CertificadosConsulta = () => {
                     Consultar certificado
                   </Button>
                 </form>
+                <div className="mt-5 rounded-xl border bg-muted/40 p-4">
+                  <p className="text-sm font-semibold">Seu certificado ainda nao aparece?</p>
+                  <p className="mt-1 text-sm text-muted-foreground">
+                    Solicite a inclusao no website. A secretaria recebe os dados e voce tambem envia a mensagem pronta.
+                  </p>
+                  <Button type="button" variant="outline" className="mt-3 w-full" onClick={openRequestDialog}>
+                    <Send className="mr-2 h-4 w-4" />
+                    Solicitar inclusao do certificado no website
+                  </Button>
+                </div>
               </CardContent>
             </Card>
           </div>
@@ -208,6 +338,131 @@ const CertificadosConsulta = () => {
           )}
         </section>
       </main>
+      <Dialog open={requestOpen} onOpenChange={setRequestOpen}>
+        <DialogContent className="sm:max-w-xl">
+          <DialogHeader>
+            <DialogTitle>Solicitar inclusao do certificado</DialogTitle>
+            <DialogDescription>
+              Responda as perguntas abaixo. No final vamos preparar a solicitacao para a secretaria.
+            </DialogDescription>
+          </DialogHeader>
+
+          <div className="space-y-5">
+            <div className="flex items-center gap-2">
+              {[0, 1, 2, 3, 4].map((step) => (
+                <span
+                  key={step}
+                  className={`h-2 flex-1 rounded-full ${step <= requestStep ? "bg-primary" : "bg-muted"}`}
+                />
+              ))}
+            </div>
+
+            {requestStep === 0 && (
+              <div className="space-y-2">
+                <Label htmlFor="request-student-name">Qual seu nome?</Label>
+                <Input
+                  id="request-student-name"
+                  value={requestForm.studentName}
+                  onChange={(event) => updateRequestForm("studentName", event.target.value)}
+                  placeholder="Digite seu nome completo"
+                  autoFocus
+                />
+              </div>
+            )}
+
+            {requestStep === 1 && (
+              <div className="space-y-2">
+                <Label htmlFor="request-cpf">CPF</Label>
+                <Input
+                  id="request-cpf"
+                  value={formatCpf(requestForm.cpf)}
+                  onChange={(event) => updateRequestForm("cpf", event.target.value)}
+                  inputMode="numeric"
+                  maxLength={14}
+                  placeholder="000.000.000-00"
+                  autoFocus
+                />
+              </div>
+            )}
+
+            {requestStep === 2 && (
+              <div className="space-y-3">
+                <Label>Voce ja recebeu o certificado digital ou fisico?</Label>
+                <div className="grid gap-2">
+                  {CERTIFICATE_RECEIVED_OPTIONS.map((option) => (
+                    <Button
+                      key={option}
+                      type="button"
+                      variant={requestForm.certificateReceived === option ? "default" : "outline"}
+                      className="justify-start"
+                      onClick={() => updateRequestForm("certificateReceived", option)}
+                    >
+                      {option}
+                    </Button>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {requestStep === 3 && (
+              <div className="space-y-2">
+                <Label htmlFor="request-course">Nome do curso concluido</Label>
+                <Input
+                  id="request-course"
+                  value={requestForm.courseName}
+                  onChange={(event) => updateRequestForm("courseName", event.target.value)}
+                  placeholder="Ex: Tecnico em Seguranca do Trabalho"
+                  autoFocus
+                />
+              </div>
+            )}
+
+            {requestStep === 4 && (
+              <div className="space-y-3">
+                <Label>Data de conclusao</Label>
+                <div className="grid grid-cols-2 gap-2">
+                  {COMPLETION_PERIOD_OPTIONS.map((option) => (
+                    <Button
+                      key={option}
+                      type="button"
+                      variant={requestForm.completionPeriod === option ? "default" : "outline"}
+                      onClick={() => updateRequestForm("completionPeriod", option)}
+                    >
+                      {option}
+                    </Button>
+                  ))}
+                </div>
+                <p className="text-xs text-muted-foreground">
+                  Se lembrar uma data exata, a secretaria pode ajustar depois no atendimento.
+                </p>
+              </div>
+            )}
+
+            {requestError && <p className="rounded-md bg-destructive/10 p-3 text-sm text-destructive">{requestError}</p>}
+          </div>
+
+          <DialogFooter className="gap-2 sm:justify-between">
+            <Button
+              type="button"
+              variant="outline"
+              onClick={() => (requestStep === 0 ? setRequestOpen(false) : setRequestStep((step) => step - 1))}
+              disabled={requestSubmitting}
+            >
+              {requestStep === 0 ? "Cancelar" : "Voltar"}
+            </Button>
+            {requestStep < 4 ? (
+              <Button type="button" onClick={goToNextRequestStep}>
+                Continuar
+              </Button>
+            ) : (
+              <Button type="button" onClick={submitCertificateRequest} disabled={requestSubmitting}>
+                {requestSubmitting ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <Send className="mr-2 h-4 w-4" />}
+                Enviar solicitacao
+              </Button>
+            )}
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
       <Footer />
     </div>
   );
