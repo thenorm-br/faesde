@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-22T01:20:34.753Z",
+  "generatedAt": "2026-07-22T01:29:23.457Z",
   "source": {
     "provider": "google_drive",
     "rootFolderId": "1jYFYbdJdJHT-f7BpzFX9t1mQLD6xwgbd",
@@ -16,7 +16,7 @@
   "stats": {
     "folders": 1005,
     "files": 2750,
-    "bytes": 14500858646,
+    "bytes": 14500858425,
     "githubEligibleFiles": 2680,
     "driveOnlyFiles": 70,
     "htmlFiles": 815,
@@ -36,10 +36,10 @@
       "path": "00 - Apostilas faltantes/tecnico-eletrotecnica-conferencia-pdf-website.txt",
       "driveFileId": "1be1QcSYNSHqhMFTvj5ZWSnB6vGmUnG9O",
       "mimeType": "text/plain",
-      "size": 255,
+      "size": 34,
       "extension": "txt",
-      "modifiedTime": "2026-07-22T01:10:31.809Z",
-      "md5Checksum": "d0bb05bb8a8a5eb8de0f78b108391d46",
+      "modifiedTime": "2026-07-22T01:24:07.718Z",
+      "md5Checksum": "6c0f1b5652f34d6f725eefb800d6d706",
       "webContentLink": "https://drive.google.com/uc?id=1be1QcSYNSHqhMFTvj5ZWSnB6vGmUnG9O&export=download",
       "webViewLink": "https://drive.google.com/file/d/1be1QcSYNSHqhMFTvj5ZWSnB6vGmUnG9O/view?usp=drivesdk",
       "storageTarget": "github_cache",
@@ -25242,9 +25242,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1QOG0ktNMIol192Jt0W1jizVRmHGZoEHO&export=download",
       "webViewLink": "https://drive.google.com/file/d/1QOG0ktNMIol192Jt0W1jizVRmHGZoEHO/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Instalações Elétricas de Média e Alta Tensão/scorm.onilearning.com.br/conteudo/componenteeaac.html"
     },
     {
       "type": "file",
@@ -25258,9 +25258,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1E-lRWeVU6BsXOF-MBSKaSxZFblMtdDL2&export=download",
       "webViewLink": "https://drive.google.com/file/d/1E-lRWeVU6BsXOF-MBSKaSxZFblMtdDL2/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Instalações Elétricas de Média e Alta Tensão/scorm.onilearning.com.br/conteudo/componente09df.html"
     },
     {
       "type": "file",
@@ -25274,9 +25274,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1hzLHKUOH8eztDf3Lh04NTL_sl_D6s9MD&export=download",
       "webViewLink": "https://drive.google.com/file/d/1hzLHKUOH8eztDf3Lh04NTL_sl_D6s9MD/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Instalações Elétricas de Média e Alta Tensão/scorm.onilearning.com.br/conteudo/componented94c.html"
     },
     {
       "type": "file",
@@ -25290,9 +25290,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1h5NJG0Eat2-eFMmD3iGV4auQx-1kb-Zc&export=download",
       "webViewLink": "https://drive.google.com/file/d/1h5NJG0Eat2-eFMmD3iGV4auQx-1kb-Zc/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Instalações Elétricas de Média e Alta Tensão/scorm.onilearning.com.br/conteudo/componented0e3.html"
     },
     {
       "type": "file",
@@ -25306,9 +25306,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1e_8zwJTA7Ui-EyqHqDe_ooHR7EC3XDod&export=download",
       "webViewLink": "https://drive.google.com/file/d/1e_8zwJTA7Ui-EyqHqDe_ooHR7EC3XDod/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Instalações Elétricas de Média e Alta Tensão/scorm.onilearning.com.br/conteudo/slidecdbe.pdf"
     },
     {
       "type": "file",
@@ -25322,9 +25322,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1NJxKldZLmlxtvwy0tPBPWh8X35KOdXfH&export=download",
       "webViewLink": "https://drive.google.com/file/d/1NJxKldZLmlxtvwy0tPBPWh8X35KOdXfH/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Instalações Elétricas de Média e Alta Tensão/scorm.onilearning.com.br/conteudo/componentea9d5.html"
     },
     {
       "type": "file",
@@ -25338,9 +25338,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1Oreuyo43HzdBQjelvy3qkIVSCSll1lxc&export=download",
       "webViewLink": "https://drive.google.com/file/d/1Oreuyo43HzdBQjelvy3qkIVSCSll1lxc/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Instalações Elétricas de Média e Alta Tensão/scorm.onilearning.com.br/conteudo/componenteb63c.html"
     },
     {
       "type": "file",
@@ -25354,9 +25354,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1aUsPxoDrPReYIMfSfPR_RJmOJMoEMpop&export=download",
       "webViewLink": "https://drive.google.com/file/d/1aUsPxoDrPReYIMfSfPR_RJmOJMoEMpop/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Instalações Elétricas de Média e Alta Tensão/scorm.onilearning.com.br/conteudo/ebook5938.pdf"
     },
     {
       "type": "file",
@@ -25370,9 +25370,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1eu6L1Aky-72U2puXPuW-eoPRO1GKoxUu&export=download",
       "webViewLink": "https://drive.google.com/file/d/1eu6L1Aky-72U2puXPuW-eoPRO1GKoxUu/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Instalações Elétricas de Média e Alta Tensão/scorm.onilearning.com.br/conteudo/componente8197.html"
     },
     {
       "type": "file",
@@ -25386,9 +25386,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1uZLXlloYQnFtlhtsP4WkkOkbijVTjtrI&export=download",
       "webViewLink": "https://drive.google.com/file/d/1uZLXlloYQnFtlhtsP4WkkOkbijVTjtrI/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Instalações Elétricas de Média e Alta Tensão/scorm.onilearning.com.br/conteudo/slide41e9.pdf"
     },
     {
       "type": "file",
@@ -25402,9 +25402,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1lX67Q7bD_DPYRK8g_BXc4oErGg9b3kRa&export=download",
       "webViewLink": "https://drive.google.com/file/d/1lX67Q7bD_DPYRK8g_BXc4oErGg9b3kRa/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Instalações Elétricas de Média e Alta Tensão/scorm.onilearning.com.br/conteudo/slide3261.pdf"
     },
     {
       "type": "file",
@@ -25418,9 +25418,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1flwcks55yspfwiVzdpJo7DoOqVDL2DQZ&export=download",
       "webViewLink": "https://drive.google.com/file/d/1flwcks55yspfwiVzdpJo7DoOqVDL2DQZ/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Instalações Elétricas de Média e Alta Tensão/scorm.onilearning.com.br/conteudo/componente5fd9.html"
     },
     {
       "type": "file",
@@ -25434,9 +25434,9 @@
       "webContentLink": "https://drive.google.com/uc?id=17kyWdoM7b67rOLOHwJFC4w7VpVmoYgzm&export=download",
       "webViewLink": "https://drive.google.com/file/d/17kyWdoM7b67rOLOHwJFC4w7VpVmoYgzm/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Instalações Elétricas de Média e Alta Tensão/scorm.onilearning.com.br/conteudo/componentee61e.html"
     },
     {
       "type": "file",
@@ -25450,9 +25450,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1tVtCz5UZxCTKONAfEKH3Q9PX1AlG54Rz&export=download",
       "webViewLink": "https://drive.google.com/file/d/1tVtCz5UZxCTKONAfEKH3Q9PX1AlG54Rz/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Instalações Elétricas de Média e Alta Tensão/scorm.onilearning.com.br/conteudo/componente4b36.html"
     },
     {
       "type": "file",
@@ -25466,9 +25466,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1O1V605-lNXBStxtjunPVEGYarNXeVeJZ&export=download",
       "webViewLink": "https://drive.google.com/file/d/1O1V605-lNXBStxtjunPVEGYarNXeVeJZ/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Instalações Elétricas de Média e Alta Tensão/scorm.onilearning.com.br/conteudo/POST.html"
     },
     {
       "type": "file",
@@ -25482,9 +25482,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1eYMud7CUmDSIP2sEUabG1fbcGdFxm-uq&export=download",
       "webViewLink": "https://drive.google.com/file/d/1eYMud7CUmDSIP2sEUabG1fbcGdFxm-uq/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Instalações Elétricas de Média e Alta Tensão/scorm.onilearning.com.br/conteudo/componentebd52.html"
     },
     {
       "type": "file",
@@ -25498,9 +25498,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1oZ2xGPe7hmvK1QFnjho_0WZRVbpvG5ii&export=download",
       "webViewLink": "https://drive.google.com/file/d/1oZ2xGPe7hmvK1QFnjho_0WZRVbpvG5ii/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Instalações Elétricas de Média e Alta Tensão/scorm.onilearning.com.br/conteudo/componente22fa.html"
     },
     {
       "type": "file",
@@ -25514,9 +25514,9 @@
       "webContentLink": "https://drive.google.com/uc?id=15f7FqPH-d6KZpsddsmf9rWhD8toxOhH9&export=download",
       "webViewLink": "https://drive.google.com/file/d/15f7FqPH-d6KZpsddsmf9rWhD8toxOhH9/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Instalações Elétricas de Média e Alta Tensão/scorm.onilearning.com.br/conteudo/slide82cc.pdf"
     },
     {
       "type": "file",
@@ -25530,9 +25530,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1XCiJelp3nzlyC7UkYEeVVjrsWdvMWp0l&export=download",
       "webViewLink": "https://drive.google.com/file/d/1XCiJelp3nzlyC7UkYEeVVjrsWdvMWp0l/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Instalações Elétricas de Média e Alta Tensão/scorm.onilearning.com.br/conteudo/ebooka1ac.pdf"
     },
     {
       "type": "file",
@@ -25546,9 +25546,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1jnvJcW3yD_kTPGGOPOXjJinR-PFCwfxG&export=download",
       "webViewLink": "https://drive.google.com/file/d/1jnvJcW3yD_kTPGGOPOXjJinR-PFCwfxG/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Instalações Elétricas de Média e Alta Tensão/scorm.onilearning.com.br/conteudo/slide70b8.pdf"
     },
     {
       "type": "file",
@@ -25562,9 +25562,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1Hl7_08Dx0Cdi1QwZvGuKU55o4wkUF-VG&export=download",
       "webViewLink": "https://drive.google.com/file/d/1Hl7_08Dx0Cdi1QwZvGuKU55o4wkUF-VG/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Instalações Elétricas de Média e Alta Tensão/scorm.onilearning.com.br/conteudo/scripts.html"
     },
     {
       "type": "file",
@@ -25578,9 +25578,9 @@
       "webContentLink": "https://drive.google.com/uc?id=13c0-9sL4mM9vqcOrhduJVXlp_U65gT58&export=download",
       "webViewLink": "https://drive.google.com/file/d/13c0-9sL4mM9vqcOrhduJVXlp_U65gT58/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Instalações Elétricas de Média e Alta Tensão/scorm.onilearning.com.br/conteudo/componentebecd.html"
     },
     {
       "type": "file",
@@ -25594,9 +25594,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1eW1A9w3inbAeY9QIlAFfHpotVGRDi-nV&export=download",
       "webViewLink": "https://drive.google.com/file/d/1eW1A9w3inbAeY9QIlAFfHpotVGRDi-nV/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Instalações Elétricas de Média e Alta Tensão/scorm.onilearning.com.br/conteudo/componenteb5e8.html"
     },
     {
       "type": "file",
@@ -25610,9 +25610,9 @@
       "webContentLink": "https://drive.google.com/uc?id=17sMUv7m6UjUWIxYJ1NGFrlJACREneC5b&export=download",
       "webViewLink": "https://drive.google.com/file/d/17sMUv7m6UjUWIxYJ1NGFrlJACREneC5b/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Instalações Elétricas de Média e Alta Tensão/scorm.onilearning.com.br/conteudo/componente21f4.html"
     },
     {
       "type": "file",
@@ -25626,9 +25626,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1MzsploN5vpZa7N7hRguuAEpdX8VNvLn5&export=download",
       "webViewLink": "https://drive.google.com/file/d/1MzsploN5vpZa7N7hRguuAEpdX8VNvLn5/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Instalações Elétricas de Média e Alta Tensão/scorm.onilearning.com.br/conteudo/componenteac9d.html"
     },
     {
       "type": "file",
@@ -25642,9 +25642,9 @@
       "webContentLink": "https://drive.google.com/uc?id=14qVi5yS4kdgiaxBIG4sSSXz0PSJ_Kppx&export=download",
       "webViewLink": "https://drive.google.com/file/d/14qVi5yS4kdgiaxBIG4sSSXz0PSJ_Kppx/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Instalações Elétricas de Média e Alta Tensão/scorm.onilearning.com.br/conteudo/componente3375.html"
     },
     {
       "type": "file",
@@ -25658,9 +25658,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1KcV06A4XVvUN4aZtJ75PCzzvkiM2YlBs&export=download",
       "webViewLink": "https://drive.google.com/file/d/1KcV06A4XVvUN4aZtJ75PCzzvkiM2YlBs/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Instalações Elétricas de Média e Alta Tensão/scorm.onilearning.com.br/conteudo/componente3333.html"
     },
     {
       "type": "file",
@@ -25674,9 +25674,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1-lpgFhI7whzU7usF79yzEbirEsimY20K&export=download",
       "webViewLink": "https://drive.google.com/file/d/1-lpgFhI7whzU7usF79yzEbirEsimY20K/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Instalações Elétricas de Média e Alta Tensão/scorm.onilearning.com.br/conteudo/componente0f62.html"
     },
     {
       "type": "file",
@@ -25690,9 +25690,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1Ym0_Yzqdyof4Qq94Hjn6DNPqLFKH55it&export=download",
       "webViewLink": "https://drive.google.com/file/d/1Ym0_Yzqdyof4Qq94Hjn6DNPqLFKH55it/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Instalações Elétricas de Média e Alta Tensão/scorm.onilearning.com.br/conteudo/ebook32ff.pdf"
     },
     {
       "type": "file",
@@ -25706,9 +25706,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1mHM9Tsm7XHfCXRpRCAt-CUED-c2bhhhO&export=download",
       "webViewLink": "https://drive.google.com/file/d/1mHM9Tsm7XHfCXRpRCAt-CUED-c2bhhhO/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Instalações Elétricas de Média e Alta Tensão/scorm.onilearning.com.br/conteudo/componente597c.html"
     },
     {
       "type": "file",
@@ -25722,9 +25722,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1UmjtZcnKUhUguA5qowQBAUJcuLgoauHu&export=download",
       "webViewLink": "https://drive.google.com/file/d/1UmjtZcnKUhUguA5qowQBAUJcuLgoauHu/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Instalações Elétricas de Média e Alta Tensão/scorm.onilearning.com.br/conteudo/componente9401.html"
     },
     {
       "type": "file",
@@ -25738,9 +25738,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1YLC_eIq5SN2fHY7qE5VvtTGtd6sUJTAd&export=download",
       "webViewLink": "https://drive.google.com/file/d/1YLC_eIq5SN2fHY7qE5VvtTGtd6sUJTAd/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Instalações Elétricas de Média e Alta Tensão/scorm.onilearning.com.br/conteudo/componente211c.html"
     },
     {
       "type": "file",
@@ -25754,9 +25754,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1ps4ZeKpTDglfYIjMNG9MjAq8zkEZ9lLO&export=download",
       "webViewLink": "https://drive.google.com/file/d/1ps4ZeKpTDglfYIjMNG9MjAq8zkEZ9lLO/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Instalações Elétricas de Média e Alta Tensão/scorm.onilearning.com.br/conteudo/chat_pdf_onitutor_moni.html"
     },
     {
       "type": "file",
@@ -25770,9 +25770,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1B00iI0nAO-Mrd_eEGk5AMj1nRyzWn3Ig&export=download",
       "webViewLink": "https://drive.google.com/file/d/1B00iI0nAO-Mrd_eEGk5AMj1nRyzWn3Ig/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Instalações Elétricas de Média e Alta Tensão/scorm.onilearning.com.br/conteudo/componenteb5af.html"
     },
     {
       "type": "file",
@@ -25786,9 +25786,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1zR1iSzsXSvXLgx4otiN0_bM-0nCl32-Q&export=download",
       "webViewLink": "https://drive.google.com/file/d/1zR1iSzsXSvXLgx4otiN0_bM-0nCl32-Q/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Instalações Elétricas de Média e Alta Tensão/scorm.onilearning.com.br/conteudo/componente11bc.html"
     },
     {
       "type": "file",
@@ -25802,9 +25802,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1NScKuOMJDLZrXpX-IAij6PwsxprK4pBb&export=download",
       "webViewLink": "https://drive.google.com/file/d/1NScKuOMJDLZrXpX-IAij6PwsxprK4pBb/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Instalações Elétricas de Média e Alta Tensão/scorm.onilearning.com.br/conteudo/componenteeacd.html"
     },
     {
       "type": "file",
@@ -25818,9 +25818,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1cfYb6nW8xTFlO4r4jjPfxl1n34PfCBqf&export=download",
       "webViewLink": "https://drive.google.com/file/d/1cfYb6nW8xTFlO4r4jjPfxl1n34PfCBqf/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Instalações Elétricas de Média e Alta Tensão/scorm.onilearning.com.br/conteudo/componente5559.html"
     },
     {
       "type": "file",
@@ -25834,9 +25834,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1LVIBUo5uvphoVhZE-LYlA7PNZy1CHrPB&export=download",
       "webViewLink": "https://drive.google.com/file/d/1LVIBUo5uvphoVhZE-LYlA7PNZy1CHrPB/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Instalações Elétricas de Média e Alta Tensão/scorm.onilearning.com.br/conteudo/componentecb07.html"
     },
     {
       "type": "file",
@@ -25850,9 +25850,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1N3NFH5O3WrSfKOxZncuvv2CJYNdURspo&export=download",
       "webViewLink": "https://drive.google.com/file/d/1N3NFH5O3WrSfKOxZncuvv2CJYNdURspo/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Instalações Elétricas de Média e Alta Tensão/scorm.onilearning.com.br/conteudo/componentef195.html"
     },
     {
       "type": "file",
@@ -25866,9 +25866,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1h3SwtUW77aOL5IpAgY1j_iVBeCYepOIx&export=download",
       "webViewLink": "https://drive.google.com/file/d/1h3SwtUW77aOL5IpAgY1j_iVBeCYepOIx/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Instalações Elétricas de Média e Alta Tensão/scorm.onilearning.com.br/conteudo/componente4cdc.html"
     },
     {
       "type": "file",
@@ -25882,9 +25882,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1FIcKoqSElT7WkEXpccm5IajdIDy4bzFq&export=download",
       "webViewLink": "https://drive.google.com/file/d/1FIcKoqSElT7WkEXpccm5IajdIDy4bzFq/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Instalações Elétricas de Média e Alta Tensão/scorm.onilearning.com.br/conteudo/slide4c54.pdf"
     },
     {
       "type": "folder",
@@ -25919,9 +25919,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1h-yHste7TMQAmwQhCiUGNEKSYAqNJuDy&export=download",
       "webViewLink": "https://drive.google.com/file/d/1h-yHste7TMQAmwQhCiUGNEKSYAqNJuDy/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Instalações Elétricas de Média e Alta Tensão/plugin.handtalk.me/web/latest/handtalk.min.js"
     },
     {
       "type": "file",
@@ -25935,9 +25935,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1_bMgHCpJACBYdBxhlhM4nA_Ln70eMRyq&export=download",
       "webViewLink": "https://drive.google.com/file/d/1_bMgHCpJACBYdBxhlhM4nA_Ln70eMRyq/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Instalações Elétricas de Média e Alta Tensão/plugin.handtalk.me/web/latest/handtalk.min.js.z"
     },
     {
       "type": "folder",
@@ -25958,9 +25958,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1cqxn7i06OSfUQuEPAwUUXr5LVLNRm8GG&export=download",
       "webViewLink": "https://drive.google.com/file/d/1cqxn7i06OSfUQuEPAwUUXr5LVLNRm8GG/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Instalações Elétricas de Média e Alta Tensão/hts-cache/readme.txt"
     },
     {
       "type": "file",
@@ -25974,9 +25974,9 @@
       "webContentLink": "https://drive.google.com/uc?id=129G05y3cqYvaJ157BMmEH2X0f1r4_0Vp&export=download",
       "webViewLink": "https://drive.google.com/file/d/129G05y3cqYvaJ157BMmEH2X0f1r4_0Vp/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Instalações Elétricas de Média e Alta Tensão/hts-cache/winprofile.ini"
     },
     {
       "type": "file",
@@ -25990,9 +25990,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1Kb91okSoL6Iwj0X6ep2uD7xLDJXqpXTy&export=download",
       "webViewLink": "https://drive.google.com/file/d/1Kb91okSoL6Iwj0X6ep2uD7xLDJXqpXTy/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Instalações Elétricas de Média e Alta Tensão/hts-cache/new.zip"
     },
     {
       "type": "file",
@@ -26006,9 +26006,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1sE1T_QaFlvA8GW55NezCZBYhzjB6ItW_&export=download",
       "webViewLink": "https://drive.google.com/file/d/1sE1T_QaFlvA8GW55NezCZBYhzjB6ItW_/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Instalações Elétricas de Média e Alta Tensão/hts-cache/new.txt"
     },
     {
       "type": "file",
@@ -26022,9 +26022,9 @@
       "webContentLink": "https://drive.google.com/uc?id=13PCx9JGSZuyhLhWLN_dMgMpepmbfty0z&export=download",
       "webViewLink": "https://drive.google.com/file/d/13PCx9JGSZuyhLhWLN_dMgMpepmbfty0z/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Instalações Elétricas de Média e Alta Tensão/hts-cache/new.lst"
     },
     {
       "type": "folder",
@@ -26045,9 +26045,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1XAhRNhlz4VPBUeRsN4N2TkhPGUcpISwh&export=download",
       "webViewLink": "https://drive.google.com/file/d/1XAhRNhlz4VPBUeRsN4N2TkhPGUcpISwh/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Instalações Elétricas de Média e Alta Tensão/code.jquery.com/jquery-3.2.1.min.js.z"
     },
     {
       "type": "file",
@@ -26061,9 +26061,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1jlkpUiCRZg0V6p85hQuSNz8bl6fO6Tuf&export=download",
       "webViewLink": "https://drive.google.com/file/d/1jlkpUiCRZg0V6p85hQuSNz8bl6fO6Tuf/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Instalações Elétricas de Média e Alta Tensão/code.jquery.com/jquery-3.2.1.min.js"
     },
     {
       "type": "folder",
@@ -26119,9 +26119,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1hUZLLFjKaK-TFW82bHKyecCm7wpR-r5i&export=download",
       "webViewLink": "https://drive.google.com/file/d/1hUZLLFjKaK-TFW82bHKyecCm7wpR-r5i/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Instalações Elétricas de Média e Alta Tensão/cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"
     },
     {
       "type": "folder",
@@ -26142,9 +26142,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1gsUVIcc4-c1RCi-IGB_uj-EDVzC_qi2l&export=download",
       "webViewLink": "https://drive.google.com/file/d/1gsUVIcc4-c1RCi-IGB_uj-EDVzC_qi2l/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Instalações Elétricas de Média e Alta Tensão/cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/duotone/style.css"
     },
     {
       "type": "folder",
@@ -26165,9 +26165,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1BLgy6JkNbc4vlRn4-Rik1Th1gL6qPOat&export=download",
       "webViewLink": "https://drive.google.com/file/d/1BLgy6JkNbc4vlRn4-Rik1Th1gL6qPOat/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Instalações Elétricas de Média e Alta Tensão/cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css"
     },
     {
       "type": "folder",
@@ -26188,9 +26188,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1-0tAp7IJdh6qFPrpZIixmT8BW8aDnfkY&export=download",
       "webViewLink": "https://drive.google.com/file/d/1-0tAp7IJdh6qFPrpZIixmT8BW8aDnfkY/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Instalações Elétricas de Média e Alta Tensão/cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/bold/style.css"
     },
     {
       "type": "folder",
@@ -26218,9 +26218,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1GyFeyabPfWODqI8KA_hAuk6VynO9I-tw&export=download",
       "webViewLink": "https://drive.google.com/file/d/1GyFeyabPfWODqI8KA_hAuk6VynO9I-tw/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Instalações Elétricas de Média e Alta Tensão/cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
     },
     {
       "type": "folder",
@@ -26269,9 +26269,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1lgZizEu8JnIg1UA1_VO4RQfyMvlOg-od&export=download",
       "webViewLink": "https://drive.google.com/file/d/1lgZizEu8JnIg1UA1_VO4RQfyMvlOg-od/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Instalações Elétricas de Média e Alta Tensão/cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js.z"
     },
     {
       "type": "file",
@@ -26285,9 +26285,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1VYf6VDNHWEvQ0qPzPjiFSnM8_muPRvJK&export=download",
       "webViewLink": "https://drive.google.com/file/d/1VYf6VDNHWEvQ0qPzPjiFSnM8_muPRvJK/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Instalações Elétricas de Média e Alta Tensão/cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
     },
     {
       "type": "folder",
@@ -26315,9 +26315,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1SjDKP0NU9leQhkJGr08SkKdJRRSN-HUT&export=download",
       "webViewLink": "https://drive.google.com/file/d/1SjDKP0NU9leQhkJGr08SkKdJRRSN-HUT/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Instalações Elétricas de Média e Alta Tensão/cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"
     },
     {
       "type": "file",
@@ -26331,9 +26331,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1PdUDQkBAa_7-pAx7io9b-sOs3TeChmoC&export=download",
       "webViewLink": "https://drive.google.com/file/d/1PdUDQkBAa_7-pAx7io9b-sOs3TeChmoC/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Instalações Elétricas de Média e Alta Tensão/cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js.z"
     },
     {
       "type": "folder",
@@ -26361,9 +26361,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1avYiDY8AjGtgUIgcZ5yHEZ1G_1vV6XVR&export=download",
       "webViewLink": "https://drive.google.com/file/d/1avYiDY8AjGtgUIgcZ5yHEZ1G_1vV6XVR/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Instalações Elétricas de Média e Alta Tensão/cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js.z"
     },
     {
       "type": "file",
@@ -26377,9 +26377,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1X-S0-zmUM9Al6aGS06dXQkj11hHctIpc&export=download",
       "webViewLink": "https://drive.google.com/file/d/1X-S0-zmUM9Al6aGS06dXQkj11hHctIpc/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Instalações Elétricas de Média e Alta Tensão/cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
     },
     {
       "type": "folder",
@@ -26400,9 +26400,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1TGqBC91pcZi3fN0YaFB_uuyZGugT36Q_&export=download",
       "webViewLink": "https://drive.google.com/file/d/1TGqBC91pcZi3fN0YaFB_uuyZGugT36Q_/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Instalações Elétricas de Média e Alta Tensão/api-externa360.onilearning.com.br/exemplo-mapa.jpg"
     },
     {
       "type": "file",
@@ -26416,9 +26416,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1DFYkEG7zUzUpin5oMZVS03tCO9Lf1HFZ&export=download",
       "webViewLink": "https://drive.google.com/file/d/1DFYkEG7zUzUpin5oMZVS03tCO9Lf1HFZ/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Instalações Elétricas de Média e Alta Tensão/index.html"
     },
     {
       "type": "file",
@@ -26432,9 +26432,9 @@
       "webContentLink": "https://drive.google.com/uc?id=10PROuKuGXpJLrGIQB2BchATUti0zxPAL&export=download",
       "webViewLink": "https://drive.google.com/file/d/10PROuKuGXpJLrGIQB2BchATUti0zxPAL/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Instalações Elétricas de Média e Alta Tensão/hts-log.txt"
     },
     {
       "type": "file",
@@ -26448,9 +26448,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1mJkZyhScTJ4EpPZSVpjOIFAov6C8Hxoq&export=download",
       "webViewLink": "https://drive.google.com/file/d/1mJkZyhScTJ4EpPZSVpjOIFAov6C8Hxoq/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Instalações Elétricas de Média e Alta Tensão/backblue.gif"
     },
     {
       "type": "file",
@@ -26464,9 +26464,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1UCXk6X8nRLRLL4vZdz4YqW_9sLdLmRZO&export=download",
       "webViewLink": "https://drive.google.com/file/d/1UCXk6X8nRLRLL4vZdz4YqW_9sLdLmRZO/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Instalações Elétricas de Média e Alta Tensão/cookies.txt"
     },
     {
       "type": "file",
@@ -26480,9 +26480,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1x6rSxK_p9unXt5wyZ78iS9JEp6GNxt-v&export=download",
       "webViewLink": "https://drive.google.com/file/d/1x6rSxK_p9unXt5wyZ78iS9JEp6GNxt-v/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Instalações Elétricas de Média e Alta Tensão/fade.gif"
     },
     {
       "type": "folder",
@@ -26524,9 +26524,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1JTez9jHjXehiuBGCDDxCXnr0oB3-djpJ&export=download",
       "webViewLink": "https://drive.google.com/file/d/1JTez9jHjXehiuBGCDDxCXnr0oB3-djpJ/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Ensaios de Máquinas Elétricas/plugin.handtalk.me/web/latest/handtalk.min.js.z"
     },
     {
       "type": "file",
@@ -26540,9 +26540,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1YIOR6cuce9vjMNfqND9PxRoe51PqCg7w&export=download",
       "webViewLink": "https://drive.google.com/file/d/1YIOR6cuce9vjMNfqND9PxRoe51PqCg7w/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Ensaios de Máquinas Elétricas/plugin.handtalk.me/web/latest/handtalk.min.js"
     },
     {
       "type": "folder",
@@ -26591,9 +26591,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1FE_lxOb4_9CWcWz8gA-NqW7t-EYCy8KD&export=download",
       "webViewLink": "https://drive.google.com/file/d/1FE_lxOb4_9CWcWz8gA-NqW7t-EYCy8KD/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Ensaios de Máquinas Elétricas/scorm.onilearning.com.br/trilha/assets/pdf/web/viewer.css"
     },
     {
       "type": "file",
@@ -26607,9 +26607,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1CWg6psquQkOu86kKi7pwjY7rfncevg7P&export=download",
       "webViewLink": "https://drive.google.com/file/d/1CWg6psquQkOu86kKi7pwjY7rfncevg7P/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Ensaios de Máquinas Elétricas/scorm.onilearning.com.br/trilha/assets/pdf/web/viewer.js.z"
     },
     {
       "type": "file",
@@ -26623,9 +26623,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1tVvMYFDQQStwEv1lLy3iEtXAw9qSrEwd&export=download",
       "webViewLink": "https://drive.google.com/file/d/1tVvMYFDQQStwEv1lLy3iEtXAw9qSrEwd/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Ensaios de Máquinas Elétricas/scorm.onilearning.com.br/trilha/assets/pdf/web/viewer.js"
     },
     {
       "type": "folder",
@@ -26646,9 +26646,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1MXl4bpUzuu0DLc6HqpE3f-3_HO6V8aIU&export=download",
       "webViewLink": "https://drive.google.com/file/d/1MXl4bpUzuu0DLc6HqpE3f-3_HO6V8aIU/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Ensaios de Máquinas Elétricas/scorm.onilearning.com.br/trilha/assets/pdf/build/pdf.js"
     },
     {
       "type": "file",
@@ -26662,9 +26662,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1EB9mGL7w8TVqrX_dRZVHDcJq1bX9obxH&export=download",
       "webViewLink": "https://drive.google.com/file/d/1EB9mGL7w8TVqrX_dRZVHDcJq1bX9obxH/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Ensaios de Máquinas Elétricas/scorm.onilearning.com.br/trilha/assets/pdf/build/pdf.js.z"
     },
     {
       "type": "folder",
@@ -26713,9 +26713,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1LVB0FIiM83pawsYWPqR1xzY8GvQBtubh&export=download",
       "webViewLink": "https://drive.google.com/file/d/1LVB0FIiM83pawsYWPqR1xzY8GvQBtubh/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Ensaios de Máquinas Elétricas/scorm.onilearning.com.br/conteudo/novo_scorm/scorm-padrao/padrao/js/main.js"
     },
     {
       "type": "file",
@@ -26729,9 +26729,9 @@
       "webContentLink": "https://drive.google.com/uc?id=10C4HT5zrEgN9DcgCikqV5ssw1LT6JIf-&export=download",
       "webViewLink": "https://drive.google.com/file/d/10C4HT5zrEgN9DcgCikqV5ssw1LT6JIf-/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Ensaios de Máquinas Elétricas/scorm.onilearning.com.br/conteudo/novo_scorm/scorm-padrao/padrao/js/bootstrap.min.js.z"
     },
     {
       "type": "file",
@@ -26745,9 +26745,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1jVbEsIz7g-d-p8IOLUGDMO9pNVu6OpPp&export=download",
       "webViewLink": "https://drive.google.com/file/d/1jVbEsIz7g-d-p8IOLUGDMO9pNVu6OpPp/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Ensaios de Máquinas Elétricas/scorm.onilearning.com.br/conteudo/novo_scorm/scorm-padrao/padrao/js/bootstrap.min.js"
     },
     {
       "type": "folder",
@@ -26768,9 +26768,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1qwkmrW0_QMIorneVjslYCsJkaXZ1x03K&export=download",
       "webViewLink": "https://drive.google.com/file/d/1qwkmrW0_QMIorneVjslYCsJkaXZ1x03K/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Ensaios de Máquinas Elétricas/scorm.onilearning.com.br/conteudo/novo_scorm/scorm-padrao/padrao/contents/background_computador2.jpg"
     },
     {
       "type": "folder",
@@ -26791,9 +26791,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1F9nG_oGiw5ozDxiQHvJwdgvd4ebHVqFo&export=download",
       "webViewLink": "https://drive.google.com/file/d/1F9nG_oGiw5ozDxiQHvJwdgvd4ebHVqFo/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Ensaios de Máquinas Elétricas/scorm.onilearning.com.br/conteudo/novo_scorm/scorm-padrao/padrao/images/banner-trilha.jpg"
     },
     {
       "type": "folder",
@@ -26814,9 +26814,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1fz3Td6aAkty0NWuwcYpF9zHI8Exu8urL&export=download",
       "webViewLink": "https://drive.google.com/file/d/1fz3Td6aAkty0NWuwcYpF9zHI8Exu8urL/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Ensaios de Máquinas Elétricas/scorm.onilearning.com.br/conteudo/novo_scorm/scorm-padrao/padrao/css/bootstrap-grid.min.css"
     },
     {
       "type": "file",
@@ -26830,9 +26830,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1j0QlCTqhoVA-ulF3tOZDqZ9zYBGWY1gy&export=download",
       "webViewLink": "https://drive.google.com/file/d/1j0QlCTqhoVA-ulF3tOZDqZ9zYBGWY1gy/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Ensaios de Máquinas Elétricas/scorm.onilearning.com.br/conteudo/novo_scorm/scorm-padrao/padrao/css/main.css"
     },
     {
       "type": "file",
@@ -26846,9 +26846,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1Vj01npUY0YiS0wylTZg7zWv14p5RJsMw&export=download",
       "webViewLink": "https://drive.google.com/file/d/1Vj01npUY0YiS0wylTZg7zWv14p5RJsMw/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Ensaios de Máquinas Elétricas/scorm.onilearning.com.br/conteudo/novo_scorm/scorm-padrao/padrao/css/bootstrap-grid.min.css.z"
     },
     {
       "type": "file",
@@ -26862,9 +26862,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1BNAL3qKQkdytcYCdR3LFFMlAPjvGgkoS&export=download",
       "webViewLink": "https://drive.google.com/file/d/1BNAL3qKQkdytcYCdR3LFFMlAPjvGgkoS/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Ensaios de Máquinas Elétricas/scorm.onilearning.com.br/conteudo/novo_scorm/scorm-padrao/padrao/css/main.css.z"
     },
     {
       "type": "file",
@@ -26878,9 +26878,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1ue8hF5O-Kxq7xOqj_1es-kQfISc4q2iR&export=download",
       "webViewLink": "https://drive.google.com/file/d/1ue8hF5O-Kxq7xOqj_1es-kQfISc4q2iR/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Ensaios de Máquinas Elétricas/scorm.onilearning.com.br/conteudo/novo_scorm/scorm-padrao/padrao/css/materialize.min.css"
     },
     {
       "type": "folder",
@@ -26901,9 +26901,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1epkmi4-D2j4N5FencsqfwecTuelL5Djl&export=download",
       "webViewLink": "https://drive.google.com/file/d/1epkmi4-D2j4N5FencsqfwecTuelL5Djl/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Ensaios de Máquinas Elétricas/scorm.onilearning.com.br/conteudo/locale/locale.html"
     },
     {
       "type": "folder",
@@ -26924,9 +26924,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1h8Ke9KL2PI7bFYA5K0WgczvVQGc9HkW1&export=download",
       "webViewLink": "https://drive.google.com/file/d/1h8Ke9KL2PI7bFYA5K0WgczvVQGc9HkW1/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Ensaios de Máquinas Elétricas/scorm.onilearning.com.br/conteudo/chatpdf/moni_onepage.html"
     },
     {
       "type": "file",
@@ -26940,9 +26940,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1G02I-URqo04lealocUkpELGqw0UH3EOu&export=download",
       "webViewLink": "https://drive.google.com/file/d/1G02I-URqo04lealocUkpELGqw0UH3EOu/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Ensaios de Máquinas Elétricas/scorm.onilearning.com.br/conteudo/chatpdf/baixarConversaMoni.html"
     },
     {
       "type": "file",
@@ -26956,9 +26956,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1Myxoawl4RPZLc8gTYB8BaPBzHPbkEMzK&export=download",
       "webViewLink": "https://drive.google.com/file/d/1Myxoawl4RPZLc8gTYB8BaPBzHPbkEMzK/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Ensaios de Máquinas Elétricas/scorm.onilearning.com.br/conteudo/chatpdf/audioQuestion_moni92bd.json"
     },
     {
       "type": "folder",
@@ -26986,9 +26986,9 @@
       "webContentLink": "https://drive.google.com/uc?id=15drONLGM-CwfKcDem0xxgri1mzjXoHFG&export=download",
       "webViewLink": "https://drive.google.com/file/d/15drONLGM-CwfKcDem0xxgri1mzjXoHFG/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Ensaios de Máquinas Elétricas/scorm.onilearning.com.br/conteudo/assets/js/novaTrilha.js.z"
     },
     {
       "type": "file",
@@ -27002,9 +27002,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1FxlrMPbzpFAW2RzKjM1fAmbFDQJothzV&export=download",
       "webViewLink": "https://drive.google.com/file/d/1FxlrMPbzpFAW2RzKjM1fAmbFDQJothzV/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Ensaios de Máquinas Elétricas/scorm.onilearning.com.br/conteudo/assets/js/acess_scripts.js.z"
     },
     {
       "type": "file",
@@ -27018,9 +27018,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1J2VNEuoBPO2ozbYQ_uJF_8PsWiznsU_L&export=download",
       "webViewLink": "https://drive.google.com/file/d/1J2VNEuoBPO2ozbYQ_uJF_8PsWiznsU_L/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Ensaios de Máquinas Elétricas/scorm.onilearning.com.br/conteudo/assets/js/acess_scripts.js"
     },
     {
       "type": "file",
@@ -27034,9 +27034,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1mzX8Zu9ZrNEvE8IPk1SoYkQiPdk8K5cN&export=download",
       "webViewLink": "https://drive.google.com/file/d/1mzX8Zu9ZrNEvE8IPk1SoYkQiPdk8K5cN/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Ensaios de Máquinas Elétricas/scorm.onilearning.com.br/conteudo/assets/js/novaTrilha.js"
     },
     {
       "type": "folder",
@@ -27057,9 +27057,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1glpR5swzRazKBV1kM_XMnWHVXyiTtqIO&export=download",
       "webViewLink": "https://drive.google.com/file/d/1glpR5swzRazKBV1kM_XMnWHVXyiTtqIO/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Ensaios de Máquinas Elétricas/scorm.onilearning.com.br/conteudo/assets/css/novaTrilha.css"
     },
     {
       "type": "file",
@@ -27073,9 +27073,9 @@
       "webContentLink": "https://drive.google.com/uc?id=14fHvv2yk-SkiSh7K_XeKmUbfrbYQgW-k&export=download",
       "webViewLink": "https://drive.google.com/file/d/14fHvv2yk-SkiSh7K_XeKmUbfrbYQgW-k/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Ensaios de Máquinas Elétricas/scorm.onilearning.com.br/conteudo/assets/css/reset.css"
     },
     {
       "type": "file",
@@ -27089,9 +27089,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1WMk5RZ9iWnt5n80IGghQfbfU8_biM1hM&export=download",
       "webViewLink": "https://drive.google.com/file/d/1WMk5RZ9iWnt5n80IGghQfbfU8_biM1hM/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Ensaios de Máquinas Elétricas/scorm.onilearning.com.br/conteudo/assets/css/novaTrilha.css.z"
     },
     {
       "type": "file",
@@ -27105,9 +27105,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1nbSccVo7QzJwobFZeMrgSJEMXcoFavP4&export=download",
       "webViewLink": "https://drive.google.com/file/d/1nbSccVo7QzJwobFZeMrgSJEMXcoFavP4/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Ensaios de Máquinas Elétricas/scorm.onilearning.com.br/conteudo/assets/css/acess_bar.css"
     },
     {
       "type": "file",
@@ -27121,9 +27121,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1fy43JXKnNLGVVdf7vowxk_DaST3e15YS&export=download",
       "webViewLink": "https://drive.google.com/file/d/1fy43JXKnNLGVVdf7vowxk_DaST3e15YS/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Ensaios de Máquinas Elétricas/scorm.onilearning.com.br/conteudo/assets/css/acess_contrast.css"
     },
     {
       "type": "folder",
@@ -27158,9 +27158,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1ax5DW7wlVx0ExA0rySWpsiUVySuI2h85&export=download",
       "webViewLink": "https://drive.google.com/file/d/1ax5DW7wlVx0ExA0rySWpsiUVySuI2h85/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Ensaios de Máquinas Elétricas/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-3/icone-9.png"
     },
     {
       "type": "file",
@@ -27174,9 +27174,9 @@
       "webContentLink": "https://drive.google.com/uc?id=10qSwvl8Fn2OJdHoKDgV2xTFJjT-bmqOV&export=download",
       "webViewLink": "https://drive.google.com/file/d/10qSwvl8Fn2OJdHoKDgV2xTFJjT-bmqOV/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Ensaios de Máquinas Elétricas/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-3/icone-2.png"
     },
     {
       "type": "file",
@@ -27190,9 +27190,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1CPgYHHPGeEhte3hV1JWHCOVJ6FS4x51y&export=download",
       "webViewLink": "https://drive.google.com/file/d/1CPgYHHPGeEhte3hV1JWHCOVJ6FS4x51y/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Ensaios de Máquinas Elétricas/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-3/icone-5.png"
     },
     {
       "type": "file",
@@ -27206,9 +27206,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1jjE0-rbfTLlMVxV54WqHKIyvHBx549on&export=download",
       "webViewLink": "https://drive.google.com/file/d/1jjE0-rbfTLlMVxV54WqHKIyvHBx549on/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Ensaios de Máquinas Elétricas/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-3/icone-7.png"
     },
     {
       "type": "file",
@@ -27222,9 +27222,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1NY_gGJIa-mRTo8fVYe-o_mEbdYjv89X2&export=download",
       "webViewLink": "https://drive.google.com/file/d/1NY_gGJIa-mRTo8fVYe-o_mEbdYjv89X2/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Ensaios de Máquinas Elétricas/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-3/icone-12.png"
     },
     {
       "type": "file",
@@ -27238,9 +27238,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1RLNBMMeBx6ng1gMy76qt-l25Lb3oVrri&export=download",
       "webViewLink": "https://drive.google.com/file/d/1RLNBMMeBx6ng1gMy76qt-l25Lb3oVrri/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Ensaios de Máquinas Elétricas/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-3/icone-11.png"
     },
     {
       "type": "file",
@@ -27254,9 +27254,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1QzWfnvfRScSxt_l6rsMlNl_Qm39Sp0WJ&export=download",
       "webViewLink": "https://drive.google.com/file/d/1QzWfnvfRScSxt_l6rsMlNl_Qm39Sp0WJ/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Ensaios de Máquinas Elétricas/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-3/icone-6.png"
     },
     {
       "type": "file",
@@ -27270,9 +27270,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1Vl15NuydW6lkkDFJFMWC7NnlCNACg3xM&export=download",
       "webViewLink": "https://drive.google.com/file/d/1Vl15NuydW6lkkDFJFMWC7NnlCNACg3xM/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Ensaios de Máquinas Elétricas/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-3/icone-1.png"
     },
     {
       "type": "file",
@@ -27286,9 +27286,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1Fm_zASXDNhQflBRWpd-ERT-dqkaatKTZ&export=download",
       "webViewLink": "https://drive.google.com/file/d/1Fm_zASXDNhQflBRWpd-ERT-dqkaatKTZ/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Ensaios de Máquinas Elétricas/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-3/icone-10.png"
     },
     {
       "type": "file",
@@ -27302,9 +27302,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1W3Tb0erKfszp6V6d7UF_eV8PueXfh2Lf&export=download",
       "webViewLink": "https://drive.google.com/file/d/1W3Tb0erKfszp6V6d7UF_eV8PueXfh2Lf/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Ensaios de Máquinas Elétricas/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-3/icone-8.png"
     },
     {
       "type": "file",
@@ -27318,9 +27318,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1Z_WJAsqRBC-sFjUSo-VRkxZFI-RHTCda&export=download",
       "webViewLink": "https://drive.google.com/file/d/1Z_WJAsqRBC-sFjUSo-VRkxZFI-RHTCda/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Ensaios de Máquinas Elétricas/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-3/icone-3.png"
     },
     {
       "type": "file",
@@ -27334,9 +27334,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1DWRW6wXoE3cjt0kfmONDF3dM2XGrcQaj&export=download",
       "webViewLink": "https://drive.google.com/file/d/1DWRW6wXoE3cjt0kfmONDF3dM2XGrcQaj/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Ensaios de Máquinas Elétricas/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-3/icone-4.png"
     },
     {
       "type": "file",
@@ -27350,9 +27350,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1YcemUyllN9h_g21h1PnnbpK4mOg30NyW&export=download",
       "webViewLink": "https://drive.google.com/file/d/1YcemUyllN9h_g21h1PnnbpK4mOg30NyW/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Ensaios de Máquinas Elétricas/scorm.onilearning.com.br/conteudo/assets/img/ONIfavicon-96x96.png"
     },
     {
       "type": "file",
@@ -27366,9 +27366,9 @@
       "webContentLink": "https://drive.google.com/uc?id=19e0xHDCNQVj1_Vzy1HEKQT9cabsHDTo9&export=download",
       "webViewLink": "https://drive.google.com/file/d/19e0xHDCNQVj1_Vzy1HEKQT9cabsHDTo9/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Ensaios de Máquinas Elétricas/scorm.onilearning.com.br/conteudo/assets/img/lang_US.svg"
     },
     {
       "type": "file",
@@ -27382,9 +27382,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1_3XhpCc6X6dHVb-6nkMhIQK-j42YXMp7&export=download",
       "webViewLink": "https://drive.google.com/file/d/1_3XhpCc6X6dHVb-6nkMhIQK-j42YXMp7/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Ensaios de Máquinas Elétricas/scorm.onilearning.com.br/conteudo/assets/img/pdf.svg"
     },
     {
       "type": "file",
@@ -27398,9 +27398,9 @@
       "webContentLink": "https://drive.google.com/uc?id=12Gr-lShb06bkQa__0bwTuwO_40Yo9VHs&export=download",
       "webViewLink": "https://drive.google.com/file/d/12Gr-lShb06bkQa__0bwTuwO_40Yo9VHs/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Ensaios de Máquinas Elétricas/scorm.onilearning.com.br/conteudo/assets/img/lang_ES.svg"
     },
     {
       "type": "file",
@@ -27414,9 +27414,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1G_afPcS7W3sHnfNxagLN51Hk62ta31FJ&export=download",
       "webViewLink": "https://drive.google.com/file/d/1G_afPcS7W3sHnfNxagLN51Hk62ta31FJ/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Ensaios de Máquinas Elétricas/scorm.onilearning.com.br/conteudo/assets/img/lang_ES.svg.z"
     },
     {
       "type": "file",
@@ -27430,9 +27430,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1UGlCTJegl5C-Y1rn6ApBJy_5bY41-8Wv&export=download",
       "webViewLink": "https://drive.google.com/file/d/1UGlCTJegl5C-Y1rn6ApBJy_5bY41-8Wv/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Ensaios de Máquinas Elétricas/scorm.onilearning.com.br/conteudo/assets/img/lang_BR.svg"
     },
     {
       "type": "file",
@@ -27446,9 +27446,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1MBd2-aQ01fQUyNQ0kNO8dlIttmmvU3ce&export=download",
       "webViewLink": "https://drive.google.com/file/d/1MBd2-aQ01fQUyNQ0kNO8dlIttmmvU3ce/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Ensaios de Máquinas Elétricas/scorm.onilearning.com.br/conteudo/ebook1a1c.pdf"
     },
     {
       "type": "file",
@@ -27462,9 +27462,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1RlR1jsyLeAzrtYjaA45Pe47WvRbXCNX7&export=download",
       "webViewLink": "https://drive.google.com/file/d/1RlR1jsyLeAzrtYjaA45Pe47WvRbXCNX7/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Ensaios de Máquinas Elétricas/scorm.onilearning.com.br/conteudo/componente8c25.html"
     },
     {
       "type": "file",
@@ -27478,9 +27478,9 @@
       "webContentLink": "https://drive.google.com/uc?id=19SdOT-f_nfozckgzVfYF8olYdHUbioEB&export=download",
       "webViewLink": "https://drive.google.com/file/d/19SdOT-f_nfozckgzVfYF8olYdHUbioEB/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Ensaios de Máquinas Elétricas/scorm.onilearning.com.br/conteudo/ebook59de.pdf"
     },
     {
       "type": "file",
@@ -27494,9 +27494,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1QPXkXudZc8cw_teqoSdDojlmfyxycjnT&export=download",
       "webViewLink": "https://drive.google.com/file/d/1QPXkXudZc8cw_teqoSdDojlmfyxycjnT/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Ensaios de Máquinas Elétricas/scorm.onilearning.com.br/conteudo/componente67cb.html"
     },
     {
       "type": "file",
@@ -27510,9 +27510,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1TUMEqBqZJUJOuWrUxPrfsYdjmFtFMiRg&export=download",
       "webViewLink": "https://drive.google.com/file/d/1TUMEqBqZJUJOuWrUxPrfsYdjmFtFMiRg/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Ensaios de Máquinas Elétricas/scorm.onilearning.com.br/conteudo/componentea247.html"
     },
     {
       "type": "file",
@@ -27526,9 +27526,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1J642dhQQwksAXJh6fGJQWmIGBZOb1N2A&export=download",
       "webViewLink": "https://drive.google.com/file/d/1J642dhQQwksAXJh6fGJQWmIGBZOb1N2A/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Ensaios de Máquinas Elétricas/scorm.onilearning.com.br/conteudo/componente0a5c.html"
     },
     {
       "type": "file",
@@ -27542,9 +27542,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1p_gnRNiI_AHDnfgEF5F7bdNTGRE78GUL&export=download",
       "webViewLink": "https://drive.google.com/file/d/1p_gnRNiI_AHDnfgEF5F7bdNTGRE78GUL/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Ensaios de Máquinas Elétricas/scorm.onilearning.com.br/conteudo/componente5313.html"
     },
     {
       "type": "file",
@@ -27558,9 +27558,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1uZmbO41Ab9ks6zVtI9IQRgj-WcR6thk3&export=download",
       "webViewLink": "https://drive.google.com/file/d/1uZmbO41Ab9ks6zVtI9IQRgj-WcR6thk3/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Ensaios de Máquinas Elétricas/scorm.onilearning.com.br/conteudo/slide291b.pdf"
     },
     {
       "type": "file",
@@ -27574,9 +27574,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1o3VfZ6BcKr8vpamdNno0kFC6s9P4YpwW&export=download",
       "webViewLink": "https://drive.google.com/file/d/1o3VfZ6BcKr8vpamdNno0kFC6s9P4YpwW/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Ensaios de Máquinas Elétricas/scorm.onilearning.com.br/conteudo/componentedef8.html"
     },
     {
       "type": "file",
@@ -27590,9 +27590,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1Lzm0Qvj-ZWO4frZvbG5xy7XaQInvo9GI&export=download",
       "webViewLink": "https://drive.google.com/file/d/1Lzm0Qvj-ZWO4frZvbG5xy7XaQInvo9GI/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Ensaios de Máquinas Elétricas/scorm.onilearning.com.br/conteudo/ebook5e55.pdf"
     },
     {
       "type": "file",
@@ -27606,9 +27606,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1KY2UcGSicGSM3JyffoHdgtdxTeLx7Fkx&export=download",
       "webViewLink": "https://drive.google.com/file/d/1KY2UcGSicGSM3JyffoHdgtdxTeLx7Fkx/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Ensaios de Máquinas Elétricas/scorm.onilearning.com.br/conteudo/componente8ef5.html"
     },
     {
       "type": "file",
@@ -27622,9 +27622,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1Oh5bM-Dbu0SAwizOVK9Pr68vrwBGX5e_&export=download",
       "webViewLink": "https://drive.google.com/file/d/1Oh5bM-Dbu0SAwizOVK9Pr68vrwBGX5e_/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Ensaios de Máquinas Elétricas/scorm.onilearning.com.br/conteudo/componente4dd1.html"
     },
     {
       "type": "file",
@@ -27638,9 +27638,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1pIjHGG5qNfeglQ0UOt5iJtc-XnyDBOLs&export=download",
       "webViewLink": "https://drive.google.com/file/d/1pIjHGG5qNfeglQ0UOt5iJtc-XnyDBOLs/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Ensaios de Máquinas Elétricas/scorm.onilearning.com.br/conteudo/slideaed8.pdf"
     },
     {
       "type": "file",
@@ -27654,9 +27654,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1wCLZVkwxCYE-osvynLIBQUYTDsxq9IRH&export=download",
       "webViewLink": "https://drive.google.com/file/d/1wCLZVkwxCYE-osvynLIBQUYTDsxq9IRH/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Ensaios de Máquinas Elétricas/scorm.onilearning.com.br/conteudo/componented7d9.html"
     },
     {
       "type": "file",
@@ -27670,9 +27670,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1CT7XQU_4NEE_4MsZ-v3kmW1JPADWBJ3o&export=download",
       "webViewLink": "https://drive.google.com/file/d/1CT7XQU_4NEE_4MsZ-v3kmW1JPADWBJ3o/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Ensaios de Máquinas Elétricas/scorm.onilearning.com.br/conteudo/componente59d4.html"
     },
     {
       "type": "file",
@@ -27686,9 +27686,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1h3U6b19rMqmgWVcyqN5xtrK_ZDiR93pf&export=download",
       "webViewLink": "https://drive.google.com/file/d/1h3U6b19rMqmgWVcyqN5xtrK_ZDiR93pf/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Ensaios de Máquinas Elétricas/scorm.onilearning.com.br/conteudo/componentefcc1.html"
     },
     {
       "type": "file",
@@ -27702,9 +27702,9 @@
       "webContentLink": "https://drive.google.com/uc?id=17OdaSThOZXYXfElWLpY9G8ia-iXpbIzN&export=download",
       "webViewLink": "https://drive.google.com/file/d/17OdaSThOZXYXfElWLpY9G8ia-iXpbIzN/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Ensaios de Máquinas Elétricas/scorm.onilearning.com.br/conteudo/componente11ce.html"
     },
     {
       "type": "file",
@@ -27718,9 +27718,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1ck54O8SJM5_e5Rzvxz-RN9B4pN0lyC-v&export=download",
       "webViewLink": "https://drive.google.com/file/d/1ck54O8SJM5_e5Rzvxz-RN9B4pN0lyC-v/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Ensaios de Máquinas Elétricas/scorm.onilearning.com.br/conteudo/componented0c1.html"
     },
     {
       "type": "file",
@@ -27734,9 +27734,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1TOaE5dsDLae3y4nOHzQ-uvSrEkw-7zH_&export=download",
       "webViewLink": "https://drive.google.com/file/d/1TOaE5dsDLae3y4nOHzQ-uvSrEkw-7zH_/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Ensaios de Máquinas Elétricas/scorm.onilearning.com.br/conteudo/componente031a.html"
     },
     {
       "type": "file",
@@ -27750,9 +27750,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1SgBnwaWAEhTf70hQgfinb6kkjG6DD1J7&export=download",
       "webViewLink": "https://drive.google.com/file/d/1SgBnwaWAEhTf70hQgfinb6kkjG6DD1J7/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Ensaios de Máquinas Elétricas/scorm.onilearning.com.br/conteudo/componentea5e2.html"
     },
     {
       "type": "file",
@@ -27766,9 +27766,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1PxBch3dzFIyBJiZoyO6NeNIfkQukNnC3&export=download",
       "webViewLink": "https://drive.google.com/file/d/1PxBch3dzFIyBJiZoyO6NeNIfkQukNnC3/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Ensaios de Máquinas Elétricas/scorm.onilearning.com.br/conteudo/componente77ad.html"
     },
     {
       "type": "file",
@@ -27782,9 +27782,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1roadHMKmoYKAMWfk1PSWuk3p6-2xNGyP&export=download",
       "webViewLink": "https://drive.google.com/file/d/1roadHMKmoYKAMWfk1PSWuk3p6-2xNGyP/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Ensaios de Máquinas Elétricas/scorm.onilearning.com.br/conteudo/scripts.html"
     },
     {
       "type": "file",
@@ -27798,9 +27798,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1Q4rDRandmtt0Y851xuG63WLLsqsHqDdZ&export=download",
       "webViewLink": "https://drive.google.com/file/d/1Q4rDRandmtt0Y851xuG63WLLsqsHqDdZ/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Ensaios de Máquinas Elétricas/scorm.onilearning.com.br/conteudo/componente5d92.html"
     },
     {
       "type": "file",
@@ -27814,9 +27814,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1CQIh2LPfMAyy3fW1tye441tvkZI_28cs&export=download",
       "webViewLink": "https://drive.google.com/file/d/1CQIh2LPfMAyy3fW1tye441tvkZI_28cs/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Ensaios de Máquinas Elétricas/scorm.onilearning.com.br/conteudo/ebookfe33.pdf"
     },
     {
       "type": "file",
@@ -27830,9 +27830,9 @@
       "webContentLink": "https://drive.google.com/uc?id=16uV6V9815nx9xdEHnE7mgAG0CU73Sk6s&export=download",
       "webViewLink": "https://drive.google.com/file/d/16uV6V9815nx9xdEHnE7mgAG0CU73Sk6s/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Ensaios de Máquinas Elétricas/scorm.onilearning.com.br/conteudo/slideee6e.pdf"
     },
     {
       "type": "file",
@@ -27846,9 +27846,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1wuPP1afUv1mU2sb5FdnemrVyHfi7Eige&export=download",
       "webViewLink": "https://drive.google.com/file/d/1wuPP1afUv1mU2sb5FdnemrVyHfi7Eige/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Ensaios de Máquinas Elétricas/scorm.onilearning.com.br/conteudo/componente646b.html"
     },
     {
       "type": "file",
@@ -27862,9 +27862,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1-8CjKItgVXVKPvR30ONpLCEt59bzeT10&export=download",
       "webViewLink": "https://drive.google.com/file/d/1-8CjKItgVXVKPvR30ONpLCEt59bzeT10/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Ensaios de Máquinas Elétricas/scorm.onilearning.com.br/conteudo/componente5858.html"
     },
     {
       "type": "file",
@@ -27878,9 +27878,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1A-hrwnAX2s_bDoORY7AvVUMHfb_6U16y&export=download",
       "webViewLink": "https://drive.google.com/file/d/1A-hrwnAX2s_bDoORY7AvVUMHfb_6U16y/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Ensaios de Máquinas Elétricas/scorm.onilearning.com.br/conteudo/slide3373.pdf"
     },
     {
       "type": "file",
@@ -27894,9 +27894,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1pPYqhU_EagGVPcosPd-mRIvtx52_Y-cL&export=download",
       "webViewLink": "https://drive.google.com/file/d/1pPYqhU_EagGVPcosPd-mRIvtx52_Y-cL/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Ensaios de Máquinas Elétricas/scorm.onilearning.com.br/conteudo/componente289b.html"
     },
     {
       "type": "file",
@@ -27910,9 +27910,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1wZrqD5HRGq_GixwPfgp0yjjQq3YsV7gp&export=download",
       "webViewLink": "https://drive.google.com/file/d/1wZrqD5HRGq_GixwPfgp0yjjQq3YsV7gp/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Ensaios de Máquinas Elétricas/scorm.onilearning.com.br/conteudo/slide3bdd.pdf"
     },
     {
       "type": "file",
@@ -27926,9 +27926,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1Fd1amnAlUUf-I0LSK5agkY_FkmAIUPUq&export=download",
       "webViewLink": "https://drive.google.com/file/d/1Fd1amnAlUUf-I0LSK5agkY_FkmAIUPUq/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Ensaios de Máquinas Elétricas/scorm.onilearning.com.br/conteudo/componentea8c0.html"
     },
     {
       "type": "file",
@@ -27942,9 +27942,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1qA8qQYZEzxt6N_iJdEllGU91nywyEbLS&export=download",
       "webViewLink": "https://drive.google.com/file/d/1qA8qQYZEzxt6N_iJdEllGU91nywyEbLS/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Ensaios de Máquinas Elétricas/scorm.onilearning.com.br/conteudo/chat_pdf_onitutor_moni.html"
     },
     {
       "type": "file",
@@ -27958,9 +27958,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1r1qbqwK3PEP5JGxpEIin3OdfDCJIm9cx&export=download",
       "webViewLink": "https://drive.google.com/file/d/1r1qbqwK3PEP5JGxpEIin3OdfDCJIm9cx/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Ensaios de Máquinas Elétricas/scorm.onilearning.com.br/conteudo/componente6c6f.html"
     },
     {
       "type": "file",
@@ -27974,9 +27974,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1UrRV65exTIDxZ1K4Zc2lMjGTIfSdq9ko&export=download",
       "webViewLink": "https://drive.google.com/file/d/1UrRV65exTIDxZ1K4Zc2lMjGTIfSdq9ko/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:34:02.235Z",
+      "publicPath": "/eadplataforma/Ensaios de Máquinas Elétricas/scorm.onilearning.com.br/conteudo/componente72e1.html"
     },
     {
       "type": "file",
@@ -50922,7 +50922,7 @@
   ],
   "sync": {
     "mode": "drive_to_github_files",
-    "syncedAt": "2026-07-22T01:24:48.257Z",
+    "syncedAt": "2026-07-22T01:34:02.235Z",
     "batchSize": 150,
     "batchLimit": 150
   }
