@@ -60,6 +60,7 @@ const Footer = () => {
               <li><a href="#" className="hover:text-primary-foreground transition-colors">Sobre a FAESDE</a></li>
               <li><a href="#" className="hover:text-primary-foreground transition-colors">Como funciona</a></li>
               <li><Link to="/faq" className="hover:text-primary-foreground transition-colors">Perguntas frequentes</Link></li>
+              <li><Link to="/certificados" className="hover:text-primary-foreground transition-colors">Consultar certificados</Link></li>
               <li><a href="#" className="hover:text-primary-foreground transition-colors">Política de privacidade</a></li>
               <li><a href="#" className="hover:text-primary-foreground transition-colors">Termos de uso</a></li>
             </ul>

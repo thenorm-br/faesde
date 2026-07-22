@@ -48,11 +48,16 @@ export type Database = {
           course_slug: string | null
           cpf: string | null
           created_at: string
+          external_file_mime_type: string | null
+          external_file_name: string | null
+          external_file_path: string | null
+          external_file_size: number | null
           hours: number
           id: string
           institution: string | null
           is_active: boolean
           page_number: string | null
+          source_type: string
           student_name: string
           updated_at: string
         }
@@ -65,11 +70,16 @@ export type Database = {
           course_slug?: string | null
           cpf?: string | null
           created_at?: string
+          external_file_mime_type?: string | null
+          external_file_name?: string | null
+          external_file_path?: string | null
+          external_file_size?: number | null
           hours?: number
           id?: string
           institution?: string | null
           is_active?: boolean
           page_number?: string | null
+          source_type?: string
           student_name: string
           updated_at?: string
         }
@@ -82,11 +92,16 @@ export type Database = {
           course_slug?: string | null
           cpf?: string | null
           created_at?: string
+          external_file_mime_type?: string | null
+          external_file_name?: string | null
+          external_file_path?: string | null
+          external_file_size?: number | null
           hours?: number
           id?: string
           institution?: string | null
           is_active?: boolean
           page_number?: string | null
+          source_type?: string
           student_name?: string
           updated_at?: string
         }

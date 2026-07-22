@@ -18,6 +18,7 @@ const SettingsHubPage = lazy(() => import("./pages/admin/SettingsHubPage.tsx"));
 const FilesManager = lazy(() => import("./pages/admin/FilesManager.tsx"));
 const ConnectionsManager = lazy(() => import("./pages/admin/ConnectionsManager.tsx"));
 const CertificatesManager = lazy(() => import("./pages/admin/CertificatesManager.tsx"));
+const CertificadosConsulta = lazy(() => import("./pages/CertificadosConsulta.tsx"));
 const CertificadoPublico = lazy(() => import("./pages/CertificadoPublico.tsx"));
 const NotFound = lazy(() => import("./pages/NotFound.tsx"));
 
@@ -53,6 +54,7 @@ const App = () => (
             <Route path="/cursos" element={<Cursos />} />
             <Route path="/cursos/:categorySlug" element={<Cursos />} />
             <Route path="/curso/:id" element={<CursoDetalhe />} />
+            <Route path="/certificados" element={<CertificadosConsulta />} />
             <Route path="/certificados/:code" element={<CertificadoPublico />} />
             <Route path="/admin/login" element={<AdminLogin />} />
             <Route path="/admin" element={<AdminLayout />}>

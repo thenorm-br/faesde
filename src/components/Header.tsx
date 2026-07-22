@@ -80,6 +80,12 @@ const Header = () => {
           >
             FAQ
           </Link>
+          <Link
+            to="/certificados"
+            className="rounded-lg px-4 py-2 text-sm font-medium text-primary-foreground/80 transition-colors hover:bg-primary-foreground/10 hover:text-primary-foreground"
+          >
+            Certificados
+          </Link>
         </div>
 
         {/* Search Bar - Desktop */}
@@ -174,6 +180,13 @@ const Header = () => {
               onClick={() => setIsMenuOpen(false)}
             >
               FAQ
+            </Link>
+            <Link
+              to="/certificados"
+              className="rounded-lg px-4 py-2.5 text-sm font-medium text-primary-foreground/80 transition-colors hover:bg-primary-foreground/10 hover:text-primary-foreground"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Certificados
             </Link>
             <Button 
               onClick={() => {

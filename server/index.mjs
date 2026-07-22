@@ -1990,11 +1990,23 @@ function buildSeoForRoute(url, courses) {
     };
   }
 
-  if (path.startsWith("/admin") || path.startsWith("/certificados")) {
+  if (path.startsWith("/admin")) {
     return {
       ...base,
       title: "Área Restrita | FAESDE",
       description: "Área restrita FAESDE.",
+      robots: "noindex,nofollow",
+      canonical: absoluteUrl(path),
+      jsonLd: "",
+    };
+  }
+
+  if (path.startsWith("/certificados")) {
+    return {
+      ...base,
+      title: "Consulta de Certificados | FAESDE",
+      description:
+        "Consulte a autenticidade de certificados pelo codigo publico e acesse documentos disponibilizados pela FAESDE.",
       robots: "noindex,nofollow",
       canonical: absoluteUrl(path),
       jsonLd: "",
