@@ -1,0 +1,91 @@
+﻿Unidade 1
+Eletricidade I
+
+Eletrônica Básica
+
+Instrumentação (EWB)
+
+Instrumentação Eletrônica - Multímetro
+
+Instrumentação Eletrônica - Osciloscópio
+
+Introdução ao Autocad 2D
+
+Multisim 13 Fundamentos
+
+Unidade 2
+Nivelamento de Física
+
+Nivelamento de Matemática
+
+Princípios de Eletromagnetismo
+
+Princípios de Eletrônica Analógica
+
+Microprocessadores
+
+Unidade 3
+Multisim Avançado - Técnicas de Simulação
+
+Leitura e Interpretação de Diagramas Eletrônicos
+
+Introdução à Mesa Eletrônica
+
+Eletricidade II
+
+Eletricidade III
+
+Eletrônica Digital
+
+Eletrônica Analógica
+
+Unidade 4
+Instrumentação e Automação Industrial
+
+Algoritmos e Programação
+
+Lógica de Programação
+
+CLP - Controladores Lógicos Programáveis
+
+CLP Fundamentos
+
+Projeto Prático em Automação Industrial I
+
+Programação CNC para Torneamento e Fresamento
+
+Eletrônica Digital Fundamentos
+
+Eletrônica Industrial
+
+Automação Industrial
+
+Unidade 5
+Fundamentos de Automação Industrial
+
+Eletrônica Industrial - Princípios Básicos
+
+Circuitos de Interface e Relógios Digitais
+
+Projeto Prático em Automação Industrial II
+
+Eletrônica Industrial Avançada
+
+Acionamentos Elétricos
+
+Unidade 6
+Instrumentação
+
+Sensores Elétricos e Eletrônicos
+
+Sistemas Microcontrolados
+
+Instalações Elétricas Industriais
+
+Sistemas hidráulicos e pneumáticos
+
+Projeto Prático em Automação Industrial III
+
+Trabalho de Conclusão de Curso em Automação Industrial
+
+OBS.: Todas as unidades têm Laboratório de Instalações Elétricas.

@@ -1,0 +1,34 @@
+﻿M?dulo 1
+Introdução à EaD
+
+Empreendedorismo
+
+Desenho Técnico
+
+Ferramental de Mecânica - ts
+
+Máquinas Mecânicas - ts
+
+Mecânica Técnica - ts
+
+Usinagem e Conformação Mecânica - ts
+
+Fundamentos da Mecânica Clássica e Quântica - ts
+
+Interpretação de Desenhos Técnicos - ts
+
+
+M?dulo 2
+Prevenção e Controle de Risco em Máquinas, Equipamentos e Instalações
+
+Máquinas Elétricas - ts
+
+Equipamentos e Instalações Industriais - ts
+
+Organização e Gestão do Trabalho Industrial - ts
+
+Controle de Qualidade Industrial - ts
+
+Orçamentos e Custos Industriais - ts
+
+Projetos de Automação Industrial - ts

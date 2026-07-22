@@ -1,0 +1,46 @@
+ Módulo 1
+ Lógica Matemática
+
+ Interpretação de Desenhos Técnicos
+
+ Organização e Gestão do Trabalho Industrial
+
+ Controle de Qualidade Industrial
+
+ Equipamentos e Instalações Industriais
+
+ Orçamentos e Custos Industriais
+
+ Química Geral
+
+ Química Inorgânica
+
+ Técnicas de Laboratório
+
+ Segurança e Meio Ambiente
+
+ Módulo 2
+ Projetos de Automação Industrial
+
+ Eletrônica Industrial
+
+ Comandos Eletroeletrônicos
+
+ Segurança em Instalações Elétricas
+
+ Projetos Elétricos
+
+ Química Orgânica
+
+ Físico-Química
+
+ Operações Unitárias
+
+ Análise Química Qualitativa
+
+ Análise Química Quantitativa
+
+ Instrumentação Industrial
+
+ Tratamento de Água e Efluentes
+

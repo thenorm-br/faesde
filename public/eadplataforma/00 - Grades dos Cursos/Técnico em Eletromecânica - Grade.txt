@@ -1,0 +1,38 @@
+﻿M?dulo 1
+Introdução à EaD
+
+Fundamentos da Mecânica Clássica e Quântica
+
+Eletricidade Básica
+
+Lógica Matemática
+
+Eletrônica Analógica
+
+Eletrônica Digital
+
+Eletrônica industrial
+
+Legislação e Ética aplicada ao setor elétrico
+
+Mecânica Automotiva
+
+
+M?dulo 2
+Eletroeletrônica Automotiva
+
+Desenho Técnico Mecânico em CAD
+
+Ferramental de Mecânica
+
+Ferramentas da Qualidade na Eletromecânica
+
+Lógica de Programação
+
+Projetos elétricos
+
+Projetos Mecânicos
+
+Proteção de Máquinas e Equipamentos
+
+Proteção de Sistemas Elétricos

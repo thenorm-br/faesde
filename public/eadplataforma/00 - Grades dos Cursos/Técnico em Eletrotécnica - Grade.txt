@@ -1,0 +1,36 @@
+﻿M?dulo 1
+Introdução à EaD
+
+Empreendedorismo
+
+Legislação e Ética Aplicada ao Setor Elétrico - ts
+
+Segurança em Instalações Elétricas - ts
+
+Eletricidade I - ts
+
+Projetos Elétricos - ts
+
+Interpretação de Desenhos Técnicos - ts
+
+Eletrônica Digital - ts
+
+Comandos Eletroeletrônicos - ts
+
+
+M?dulo 2
+Análise de Circuitos Eletroeletrônicos - ts
+
+Lógica Matemática - ts
+
+Instalações Elétricas de Baixa Tensão- ts
+
+Instalações Elétricas de Média e Alta Tensão - ts
+
+Construção e Animação de Cenários e Objetos 2D e 3D - ts
+
+Eletrônica Industrial - ts
+
+Ensaios de Máquinas Elétricas - ts
+
+Máquinas Elétricas - ts
