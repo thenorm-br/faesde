@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-22T02:40:54.410Z",
+  "generatedAt": "2026-07-22T02:49:07.642Z",
   "source": {
     "provider": "google_drive",
     "rootFolderId": "1jYFYbdJdJHT-f7BpzFX9t1mQLD6xwgbd",
@@ -15,9 +15,9 @@
   "publicBasePath": "/eadplataforma",
   "stats": {
     "folders": 1005,
-    "files": 2764,
-    "bytes": 14500875504,
-    "githubEligibleFiles": 2694,
+    "files": 2754,
+    "bytes": 14500873366,
+    "githubEligibleFiles": 2684,
     "driveOnlyFiles": 70,
     "htmlFiles": 815,
     "videos": 59,
@@ -30,6 +30,22 @@
       "driveFileId": "1wK578HGDC6v6W7JiGqyxSKHxdJ2rhjFr",
       "modifiedTime": "2026-07-21T23:52:52.416Z",
       "githubCached": false
+    },
+    {
+      "type": "file",
+      "path": "00 - Apostilas faltantes/conteudo-geral-alfabetico.txt",
+      "driveFileId": "1Kaq2olNIP3N7ZmmDGgS5vfzuNh39Wgeg",
+      "mimeType": "text/plain",
+      "size": 5775,
+      "extension": "txt",
+      "modifiedTime": "2026-07-22T02:43:50.383Z",
+      "md5Checksum": "836503cd9c95bdb86f436dfa55773839",
+      "webContentLink": "https://drive.google.com/uc?id=1Kaq2olNIP3N7ZmmDGgS5vfzuNh39Wgeg&export=download",
+      "webViewLink": "https://drive.google.com/file/d/1Kaq2olNIP3N7ZmmDGgS5vfzuNh39Wgeg/view?usp=drivesdk",
+      "storageTarget": "github_cache",
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/00 - Apostilas faltantes/conteudo-geral-alfabetico.txt"
     },
     {
       "type": "file",
@@ -41946,9 +41962,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1F1AHQSg_ucQchnUi6H9EIsKAGpcsW6iS&export=download",
       "webViewLink": "https://drive.google.com/file/d/1F1AHQSg_ucQchnUi6H9EIsKAGpcsW6iS/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/trilha/assets/pdf/web/images/secondaryToolbarButton-spreadEven.svg"
     },
     {
       "type": "file",
@@ -41962,9 +41978,9 @@
       "webContentLink": "https://drive.google.com/uc?id=12S9MbmVubvzHB3QFj6iw5b5r_8yY93uT&export=download",
       "webViewLink": "https://drive.google.com/file/d/12S9MbmVubvzHB3QFj6iw5b5r_8yY93uT/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/trilha/assets/pdf/web/images/treeitem-expanded.svg"
     },
     {
       "type": "file",
@@ -41978,9 +41994,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1LNeg6ZeYE7W2Nn1Kb8vX5zPD44kwxcrZ&export=download",
       "webViewLink": "https://drive.google.com/file/d/1LNeg6ZeYE7W2Nn1Kb8vX5zPD44kwxcrZ/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/trilha/assets/pdf/web/images/secondaryToolbarButton-rotateCw.svg"
     },
     {
       "type": "file",
@@ -41994,9 +42010,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1WEI1d27_vIQ_9ck6UVJS96xUdNjGO-Sh&export=download",
       "webViewLink": "https://drive.google.com/file/d/1WEI1d27_vIQ_9ck6UVJS96xUdNjGO-Sh/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/trilha/assets/pdf/web/images/secondaryToolbarButton-scrollPage.svg"
     },
     {
       "type": "file",
@@ -42010,9 +42026,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1UohbomXxyGmo2sL7JwdM-yzwAAibBXpX&export=download",
       "webViewLink": "https://drive.google.com/file/d/1UohbomXxyGmo2sL7JwdM-yzwAAibBXpX/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/trilha/assets/pdf/web/images/cursor-editorInk.svg"
     },
     {
       "type": "file",
@@ -42026,9 +42042,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1gvhdkbWD3DRY4_LID8O_RcUbLOyXejkg&export=download",
       "webViewLink": "https://drive.google.com/file/d/1gvhdkbWD3DRY4_LID8O_RcUbLOyXejkg/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/trilha/assets/pdf/web/images/secondaryToolbarButton-documentProperties.svg"
     },
     {
       "type": "file",
@@ -42042,9 +42058,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1Pm_Y8l9INs21VhUiHrkqqEEhTzM7B1Dt&export=download",
       "webViewLink": "https://drive.google.com/file/d/1Pm_Y8l9INs21VhUiHrkqqEEhTzM7B1Dt/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/trilha/assets/pdf/web/images/toolbarButton-download.svg"
     },
     {
       "type": "file",
@@ -42058,9 +42074,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1neietFy17ftQMsItFssQpq-6rDxMO8FM&export=download",
       "webViewLink": "https://drive.google.com/file/d/1neietFy17ftQMsItFssQpq-6rDxMO8FM/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/trilha/assets/pdf/web/images/loading-icon.gif"
     },
     {
       "type": "file",
@@ -42074,9 +42090,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1kMIT1tQmAR6XB9ID67YuQXNmAVTLcdpx&export=download",
       "webViewLink": "https://drive.google.com/file/d/1kMIT1tQmAR6XB9ID67YuQXNmAVTLcdpx/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/trilha/assets/pdf/web/images/toolbarButton-currentOutlineItem.svg"
     },
     {
       "type": "file",
@@ -42090,9 +42106,9 @@
       "webContentLink": "https://drive.google.com/uc?id=10HyvpbhDfWbLpe_1lJmlcJC8LzXES0EI&export=download",
       "webViewLink": "https://drive.google.com/file/d/10HyvpbhDfWbLpe_1lJmlcJC8LzXES0EI/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/trilha/assets/pdf/web/images/toolbarButton-menuArrow.svg"
     },
     {
       "type": "file",
@@ -42106,9 +42122,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1p2bfPK7deGCEpcQiVc1xm2wJJftLhk5v&export=download",
       "webViewLink": "https://drive.google.com/file/d/1p2bfPK7deGCEpcQiVc1xm2wJJftLhk5v/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/trilha/assets/pdf/web/images/toolbarButton-pageUp.svg"
     },
     {
       "type": "file",
@@ -42122,9 +42138,9 @@
       "webContentLink": "https://drive.google.com/uc?id=17d2uXGCTJLPA3uhqDKDjw6b7jQWcEg7l&export=download",
       "webViewLink": "https://drive.google.com/file/d/17d2uXGCTJLPA3uhqDKDjw6b7jQWcEg7l/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/trilha/assets/pdf/web/viewer.css"
     },
     {
       "type": "file",
@@ -42138,9 +42154,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1f_CFab5vGiuUCMddD7mNSbNkNAjHsf2i&export=download",
       "webViewLink": "https://drive.google.com/file/d/1f_CFab5vGiuUCMddD7mNSbNkNAjHsf2i/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/trilha/assets/pdf/web/viewer.js"
     },
     {
       "type": "folder",
@@ -42161,9 +42177,9 @@
       "webContentLink": "https://drive.google.com/uc?id=16-N7AFj_q-n0Gfn_MwQFPrK_ol1elNZQ&export=download",
       "webViewLink": "https://drive.google.com/file/d/16-N7AFj_q-n0Gfn_MwQFPrK_ol1elNZQ/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/trilha/assets/pdf/build/pdf.js"
     },
     {
       "type": "folder",
@@ -42191,9 +42207,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1PbXNseg4BvQkMwr_ZtgWOpnCwiZjTNlO&export=download",
       "webViewLink": "https://drive.google.com/file/d/1PbXNseg4BvQkMwr_ZtgWOpnCwiZjTNlO/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/conteudo/locale/locale.html"
     },
     {
       "type": "folder",
@@ -42235,9 +42251,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1O53BWR9_Ac-zAEZZIxxfcrb3XzPV5Vy2&export=download",
       "webViewLink": "https://drive.google.com/file/d/1O53BWR9_Ac-zAEZZIxxfcrb3XzPV5Vy2/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/conteudo/novo_scorm/scorm-padrao/padrao/css/bootstrap-grid.min.css"
     },
     {
       "type": "file",
@@ -42251,9 +42267,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1gfHnc9-jV3necYWkOQNUWsaDXdHbPzgE&export=download",
       "webViewLink": "https://drive.google.com/file/d/1gfHnc9-jV3necYWkOQNUWsaDXdHbPzgE/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/conteudo/novo_scorm/scorm-padrao/padrao/css/bootstrap-grid.min.css.z"
     },
     {
       "type": "file",
@@ -42267,9 +42283,9 @@
       "webContentLink": "https://drive.google.com/uc?id=15vEl2al-cjNyc9MKKSd7ggAqeOBzbCR_&export=download",
       "webViewLink": "https://drive.google.com/file/d/15vEl2al-cjNyc9MKKSd7ggAqeOBzbCR_/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/conteudo/novo_scorm/scorm-padrao/padrao/css/main.css"
     },
     {
       "type": "file",
@@ -42283,9 +42299,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1Cu2XOY0EPlwzJKjm1dKDTihx4cPN_rPz&export=download",
       "webViewLink": "https://drive.google.com/file/d/1Cu2XOY0EPlwzJKjm1dKDTihx4cPN_rPz/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/conteudo/novo_scorm/scorm-padrao/padrao/css/main.css.z"
     },
     {
       "type": "file",
@@ -42299,9 +42315,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1R7OiA48ilGN7bWOZCWAoTjw1EY7kwz22&export=download",
       "webViewLink": "https://drive.google.com/file/d/1R7OiA48ilGN7bWOZCWAoTjw1EY7kwz22/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/conteudo/novo_scorm/scorm-padrao/padrao/css/materialize.min.css"
     },
     {
       "type": "folder",
@@ -42322,9 +42338,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1fr1-Q5UH2t1PTCaw0K589qkcsiRObEvm&export=download",
       "webViewLink": "https://drive.google.com/file/d/1fr1-Q5UH2t1PTCaw0K589qkcsiRObEvm/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/conteudo/novo_scorm/scorm-padrao/padrao/js/main.js"
     },
     {
       "type": "file",
@@ -42338,9 +42354,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1BPuQXWMalUL6V9R-TJVZ1ZeVU36H3gLp&export=download",
       "webViewLink": "https://drive.google.com/file/d/1BPuQXWMalUL6V9R-TJVZ1ZeVU36H3gLp/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/conteudo/novo_scorm/scorm-padrao/padrao/js/bootstrap.min.js"
     },
     {
       "type": "file",
@@ -42354,9 +42370,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1yanmfuPTcDAzWigq8JrjX2xSRT2j67Ty&export=download",
       "webViewLink": "https://drive.google.com/file/d/1yanmfuPTcDAzWigq8JrjX2xSRT2j67Ty/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/conteudo/novo_scorm/scorm-padrao/padrao/js/bootstrap.min.js.z"
     },
     {
       "type": "folder",
@@ -42377,9 +42393,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1CV-SZd8WphBn32TU2zPbjPRYpq3N1icV&export=download",
       "webViewLink": "https://drive.google.com/file/d/1CV-SZd8WphBn32TU2zPbjPRYpq3N1icV/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/conteudo/novo_scorm/scorm-padrao/padrao/images/banner-trilha.jpg"
     },
     {
       "type": "folder",
@@ -42400,9 +42416,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1VNKx4wvn7jvpbsgxwhUmY-iBMJODR-7L&export=download",
       "webViewLink": "https://drive.google.com/file/d/1VNKx4wvn7jvpbsgxwhUmY-iBMJODR-7L/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/conteudo/novo_scorm/scorm-padrao/padrao/contents/background_computador2.jpg"
     },
     {
       "type": "folder",
@@ -42430,9 +42446,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1OueE2yVGx7Pd6V_uHgwGUx5MgKcvhwdg&export=download",
       "webViewLink": "https://drive.google.com/file/d/1OueE2yVGx7Pd6V_uHgwGUx5MgKcvhwdg/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/conteudo/assets/js/acess_scripts.js"
     },
     {
       "type": "file",
@@ -42446,9 +42462,9 @@
       "webContentLink": "https://drive.google.com/uc?id=11JrRJWTo9t7FnzSfNzfMpIRFUlDdGIhW&export=download",
       "webViewLink": "https://drive.google.com/file/d/11JrRJWTo9t7FnzSfNzfMpIRFUlDdGIhW/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/conteudo/assets/js/novaTrilha.js"
     },
     {
       "type": "folder",
@@ -42469,9 +42485,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1qqmt4_X5ia3Ww1uoc2TUOAmi430FOz_e&export=download",
       "webViewLink": "https://drive.google.com/file/d/1qqmt4_X5ia3Ww1uoc2TUOAmi430FOz_e/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/conteudo/assets/css/reset.css"
     },
     {
       "type": "file",
@@ -42485,9 +42501,9 @@
       "webContentLink": "https://drive.google.com/uc?id=18ApJtqlNbOwxJlNzY5BlujibP78toQCz&export=download",
       "webViewLink": "https://drive.google.com/file/d/18ApJtqlNbOwxJlNzY5BlujibP78toQCz/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/conteudo/assets/css/acess_bar.css"
     },
     {
       "type": "file",
@@ -42501,9 +42517,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1vMmSG9sTs-1jc6PlPTEmhj3-com0yxxk&export=download",
       "webViewLink": "https://drive.google.com/file/d/1vMmSG9sTs-1jc6PlPTEmhj3-com0yxxk/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/conteudo/assets/css/novaTrilha.css"
     },
     {
       "type": "file",
@@ -42517,9 +42533,9 @@
       "webContentLink": "https://drive.google.com/uc?id=17T_GcPcoxmC0XdBZAmugwLsnGRuiFC8Q&export=download",
       "webViewLink": "https://drive.google.com/file/d/17T_GcPcoxmC0XdBZAmugwLsnGRuiFC8Q/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/conteudo/assets/css/acess_contrast.css"
     },
     {
       "type": "folder",
@@ -42554,9 +42570,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1eqzCaCgc0MB-hLRuOuI8TiluF_Q2yN18&export=download",
       "webViewLink": "https://drive.google.com/file/d/1eqzCaCgc0MB-hLRuOuI8TiluF_Q2yN18/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-3/icone-6.png"
     },
     {
       "type": "file",
@@ -42570,9 +42586,9 @@
       "webContentLink": "https://drive.google.com/uc?id=11eWrJE8lQGkJ3NnFQuxCcYdSBSkACpE1&export=download",
       "webViewLink": "https://drive.google.com/file/d/11eWrJE8lQGkJ3NnFQuxCcYdSBSkACpE1/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-3/icone-1.png"
     },
     {
       "type": "file",
@@ -42586,9 +42602,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1psrU13PKU0XX0TuGxKaRV5NKvVZmK3jH&export=download",
       "webViewLink": "https://drive.google.com/file/d/1psrU13PKU0XX0TuGxKaRV5NKvVZmK3jH/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-3/icone-8.png"
     },
     {
       "type": "file",
@@ -42602,9 +42618,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1R4z_3gBYJEE2173_o5krwpfsSV-49BcU&export=download",
       "webViewLink": "https://drive.google.com/file/d/1R4z_3gBYJEE2173_o5krwpfsSV-49BcU/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-3/icone-11.png"
     },
     {
       "type": "file",
@@ -42618,9 +42634,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1bGjk-ByQcMVlcdxeS8sFM8U2K7vFoW3s&export=download",
       "webViewLink": "https://drive.google.com/file/d/1bGjk-ByQcMVlcdxeS8sFM8U2K7vFoW3s/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-3/icone-3.png"
     },
     {
       "type": "file",
@@ -42634,9 +42650,9 @@
       "webContentLink": "https://drive.google.com/uc?id=12KGWS8jb1rRYM8e0LeEnQ09OmbmQJQ0d&export=download",
       "webViewLink": "https://drive.google.com/file/d/12KGWS8jb1rRYM8e0LeEnQ09OmbmQJQ0d/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-3/icone-10.png"
     },
     {
       "type": "file",
@@ -42650,9 +42666,9 @@
       "webContentLink": "https://drive.google.com/uc?id=12W2x5JIILlThH_ppJqImKvCH8l8W7bQF&export=download",
       "webViewLink": "https://drive.google.com/file/d/12W2x5JIILlThH_ppJqImKvCH8l8W7bQF/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-3/icone-2.png"
     },
     {
       "type": "file",
@@ -42666,9 +42682,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1pp_U3Bf8AOmLBigEwLMpEUXAF-_ig-si&export=download",
       "webViewLink": "https://drive.google.com/file/d/1pp_U3Bf8AOmLBigEwLMpEUXAF-_ig-si/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-3/icone-7.png"
     },
     {
       "type": "file",
@@ -42682,9 +42698,9 @@
       "webContentLink": "https://drive.google.com/uc?id=17Qi2w6d_-SCgrUej9tTP8cCAw-9K6eaK&export=download",
       "webViewLink": "https://drive.google.com/file/d/17Qi2w6d_-SCgrUej9tTP8cCAw-9K6eaK/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-3/icone-5.png"
     },
     {
       "type": "file",
@@ -42698,9 +42714,9 @@
       "webContentLink": "https://drive.google.com/uc?id=10FOlItksz4ZCZHW5BrTZG26alK7y73xP&export=download",
       "webViewLink": "https://drive.google.com/file/d/10FOlItksz4ZCZHW5BrTZG26alK7y73xP/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-3/icone-12.png"
     },
     {
       "type": "file",
@@ -42714,9 +42730,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1CArwgmT3beyNWnCwaHrmGojUZpLjFkJT&export=download",
       "webViewLink": "https://drive.google.com/file/d/1CArwgmT3beyNWnCwaHrmGojUZpLjFkJT/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-3/icone-9.png"
     },
     {
       "type": "file",
@@ -42730,9 +42746,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1qtMZq5hA1LkMPM-vXnDTz3waq2kAYhMZ&export=download",
       "webViewLink": "https://drive.google.com/file/d/1qtMZq5hA1LkMPM-vXnDTz3waq2kAYhMZ/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-3/icone-4.png"
     },
     {
       "type": "file",
@@ -42746,9 +42762,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1RSdbyOQNsE5JJwhPo-G66LNeZ3DP71kd&export=download",
       "webViewLink": "https://drive.google.com/file/d/1RSdbyOQNsE5JJwhPo-G66LNeZ3DP71kd/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/conteudo/assets/img/pdf.svg"
     },
     {
       "type": "file",
@@ -42762,9 +42778,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1mV1rY4yP815MyQNzvN9ls8IGlf4cL6Tu&export=download",
       "webViewLink": "https://drive.google.com/file/d/1mV1rY4yP815MyQNzvN9ls8IGlf4cL6Tu/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/conteudo/assets/img/lang_US.svg"
     },
     {
       "type": "file",
@@ -42778,9 +42794,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1I5tIxsJxqJgRv--Y46tlIuCpFnZUwDbb&export=download",
       "webViewLink": "https://drive.google.com/file/d/1I5tIxsJxqJgRv--Y46tlIuCpFnZUwDbb/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/conteudo/assets/img/lang_BR.svg"
     },
     {
       "type": "file",
@@ -42794,9 +42810,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1as4D5f5HAkBkWBiFBQz-9UYvM9XsPUD6&export=download",
       "webViewLink": "https://drive.google.com/file/d/1as4D5f5HAkBkWBiFBQz-9UYvM9XsPUD6/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/conteudo/assets/img/ONIfavicon-96x96.png"
     },
     {
       "type": "file",
@@ -42810,9 +42826,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1LZnID_To_0V2T5h3Tk5iQXzvw-RtoJau&export=download",
       "webViewLink": "https://drive.google.com/file/d/1LZnID_To_0V2T5h3Tk5iQXzvw-RtoJau/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/conteudo/assets/img/lang_ES.svg"
     },
     {
       "type": "folder",
@@ -42833,9 +42849,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1ljFOeKh0r0UmzlZwVKAnK2bUoPIvC5ee&export=download",
       "webViewLink": "https://drive.google.com/file/d/1ljFOeKh0r0UmzlZwVKAnK2bUoPIvC5ee/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/conteudo/chatpdf/HISTORICO.pdf"
     },
     {
       "type": "file",
@@ -42849,9 +42865,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1b1y8JBD0wN_CcnenHhon9c4s6Ca3CZ9g&export=download",
       "webViewLink": "https://drive.google.com/file/d/1b1y8JBD0wN_CcnenHhon9c4s6Ca3CZ9g/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/conteudo/chatpdf/audioQuestion_moni92bd.json"
     },
     {
       "type": "file",
@@ -42865,9 +42881,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1y1k5h8hOCSocAnLQ4Gi9SjL40MdocGdV&export=download",
       "webViewLink": "https://drive.google.com/file/d/1y1k5h8hOCSocAnLQ4Gi9SjL40MdocGdV/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/conteudo/chatpdf/moni_onepage.html"
     },
     {
       "type": "file",
@@ -42881,9 +42897,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1dLi8ZGfDGbOhCV_Igig3whDZvNIyEqJP&export=download",
       "webViewLink": "https://drive.google.com/file/d/1dLi8ZGfDGbOhCV_Igig3whDZvNIyEqJP/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/conteudo/slide75dd.pdf"
     },
     {
       "type": "file",
@@ -42897,9 +42913,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1QDCpqZ49zkMcBi3eNvRHfDfFNiwOacW9&export=download",
       "webViewLink": "https://drive.google.com/file/d/1QDCpqZ49zkMcBi3eNvRHfDfFNiwOacW9/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/conteudo/slide4303.pdf"
     },
     {
       "type": "file",
@@ -42913,9 +42929,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1RLBHEf00BwRN2GGe8xcS8fSF5AQAFcWG&export=download",
       "webViewLink": "https://drive.google.com/file/d/1RLBHEf00BwRN2GGe8xcS8fSF5AQAFcWG/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/conteudo/componented384.html"
     },
     {
       "type": "file",
@@ -42929,9 +42945,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1cfZDK2bAOyImm1wVv6yM9R7lIm-24mcE&export=download",
       "webViewLink": "https://drive.google.com/file/d/1cfZDK2bAOyImm1wVv6yM9R7lIm-24mcE/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/conteudo/componente961a.html"
     },
     {
       "type": "file",
@@ -42945,9 +42961,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1FCjQeucTAybQRaKy_Jemf_0h1uEMRqPR&export=download",
       "webViewLink": "https://drive.google.com/file/d/1FCjQeucTAybQRaKy_Jemf_0h1uEMRqPR/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/conteudo/slided962.pdf"
     },
     {
       "type": "file",
@@ -42961,9 +42977,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1768MKwqq5b_pVDWpXrVjvUbHhB-sL73W&export=download",
       "webViewLink": "https://drive.google.com/file/d/1768MKwqq5b_pVDWpXrVjvUbHhB-sL73W/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/conteudo/slide1053.pdf"
     },
     {
       "type": "file",
@@ -42977,9 +42993,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1uHNJHyGD8Pu42g7venqL4tqKXpOJoB-R&export=download",
       "webViewLink": "https://drive.google.com/file/d/1uHNJHyGD8Pu42g7venqL4tqKXpOJoB-R/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/conteudo/componentebf74.html"
     },
     {
       "type": "file",
@@ -42993,9 +43009,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1q_jpiiW8VE3IRFLDYjBQH5uVIBvPXU5l&export=download",
       "webViewLink": "https://drive.google.com/file/d/1q_jpiiW8VE3IRFLDYjBQH5uVIBvPXU5l/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/conteudo/componente7a6a.html"
     },
     {
       "type": "file",
@@ -43009,9 +43025,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1JI0c1nZD6Ysz0C7T6Mafls9_eP1XjmEv&export=download",
       "webViewLink": "https://drive.google.com/file/d/1JI0c1nZD6Ysz0C7T6Mafls9_eP1XjmEv/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/conteudo/componenteb3ad.html"
     },
     {
       "type": "file",
@@ -43025,9 +43041,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1N_UQ1xeU9Cpvm9MPZwIJm49tI-kY6-Zh&export=download",
       "webViewLink": "https://drive.google.com/file/d/1N_UQ1xeU9Cpvm9MPZwIJm49tI-kY6-Zh/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/conteudo/componentea219.html"
     },
     {
       "type": "file",
@@ -43041,9 +43057,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1tWPhQ-xs-xLWx-ZWhdolJ32zXDKgxr--&export=download",
       "webViewLink": "https://drive.google.com/file/d/1tWPhQ-xs-xLWx-ZWhdolJ32zXDKgxr--/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/conteudo/componente8052.html"
     },
     {
       "type": "file",
@@ -43057,9 +43073,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1rlDZoRe_0n2TX4XKzKL-kLLe6Wj3jSpI&export=download",
       "webViewLink": "https://drive.google.com/file/d/1rlDZoRe_0n2TX4XKzKL-kLLe6Wj3jSpI/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/conteudo/componentef12a.html"
     },
     {
       "type": "file",
@@ -43073,9 +43089,9 @@
       "webContentLink": "https://drive.google.com/uc?id=18M-VolZQgroiUde5i8b8rW2khbwr32ZB&export=download",
       "webViewLink": "https://drive.google.com/file/d/18M-VolZQgroiUde5i8b8rW2khbwr32ZB/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/conteudo/slideadbf.pdf"
     },
     {
       "type": "file",
@@ -43089,9 +43105,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1iMSDwDSkxh-RCIB7s6zqnFHUC8U9dKRg&export=download",
       "webViewLink": "https://drive.google.com/file/d/1iMSDwDSkxh-RCIB7s6zqnFHUC8U9dKRg/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/conteudo/componentea8b1.html"
     },
     {
       "type": "file",
@@ -43105,9 +43121,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1IhkmVb6j2dQMe1RllWFCMAtfTIEfgtTZ&export=download",
       "webViewLink": "https://drive.google.com/file/d/1IhkmVb6j2dQMe1RllWFCMAtfTIEfgtTZ/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/conteudo/componenteddfa.html"
     },
     {
       "type": "file",
@@ -43121,9 +43137,9 @@
       "webContentLink": "https://drive.google.com/uc?id=14oqjZVUO3GUol7Q-6TOxPwjSx4TapUtf&export=download",
       "webViewLink": "https://drive.google.com/file/d/14oqjZVUO3GUol7Q-6TOxPwjSx4TapUtf/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/conteudo/componentef996.html"
     },
     {
       "type": "file",
@@ -43137,9 +43153,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1QnDknmCvhkeU8_a3xYrDFisNNV6m9wA6&export=download",
       "webViewLink": "https://drive.google.com/file/d/1QnDknmCvhkeU8_a3xYrDFisNNV6m9wA6/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/conteudo/componentecd54.html"
     },
     {
       "type": "file",
@@ -43153,9 +43169,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1SM1Q3Xn8jkiPfCKuUSq-VAzKG0bnfoHE&export=download",
       "webViewLink": "https://drive.google.com/file/d/1SM1Q3Xn8jkiPfCKuUSq-VAzKG0bnfoHE/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/conteudo/componenteff99.html"
     },
     {
       "type": "file",
@@ -43169,9 +43185,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1xI-_7mR70yeEpmX4FUNXSeP7dkI5BXoj&export=download",
       "webViewLink": "https://drive.google.com/file/d/1xI-_7mR70yeEpmX4FUNXSeP7dkI5BXoj/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/conteudo/componentedd9a.html"
     },
     {
       "type": "file",
@@ -43185,9 +43201,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1bvWc5bXZ3zOwkSLE_j9RmdHDOVnL_-3O&export=download",
       "webViewLink": "https://drive.google.com/file/d/1bvWc5bXZ3zOwkSLE_j9RmdHDOVnL_-3O/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/conteudo/ebook62d7.pdf"
     },
     {
       "type": "file",
@@ -43201,9 +43217,9 @@
       "webContentLink": "https://drive.google.com/uc?id=17C1Rg2elb2ydGmveNh38j9jHjSjoYVC1&export=download",
       "webViewLink": "https://drive.google.com/file/d/17C1Rg2elb2ydGmveNh38j9jHjSjoYVC1/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/conteudo/slidee36e.pdf"
     },
     {
       "type": "file",
@@ -43217,9 +43233,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1rh2HI8YApW_mX_2CTxKhBZMpzx-e6C9w&export=download",
       "webViewLink": "https://drive.google.com/file/d/1rh2HI8YApW_mX_2CTxKhBZMpzx-e6C9w/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/conteudo/componentee360.html"
     },
     {
       "type": "file",
@@ -43233,9 +43249,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1HO3xFPGTZlhfbCoHbXoZn6r6JLHvl7Xf&export=download",
       "webViewLink": "https://drive.google.com/file/d/1HO3xFPGTZlhfbCoHbXoZn6r6JLHvl7Xf/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/conteudo/componente9be8.html"
     },
     {
       "type": "file",
@@ -43249,9 +43265,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1cD2G8zsxl9oF9xEKFY-VIMC2cTfY1r5n&export=download",
       "webViewLink": "https://drive.google.com/file/d/1cD2G8zsxl9oF9xEKFY-VIMC2cTfY1r5n/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/conteudo/componentefb4f.html"
     },
     {
       "type": "file",
@@ -43265,9 +43281,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1SOrQZC4lRo0_ty9rT5aXiiu9h2cJaPz4&export=download",
       "webViewLink": "https://drive.google.com/file/d/1SOrQZC4lRo0_ty9rT5aXiiu9h2cJaPz4/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/conteudo/componentedbb2.html"
     },
     {
       "type": "file",
@@ -43281,9 +43297,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1Etns7jSLrwQqCEizRWPwi5zfNzaixB6u&export=download",
       "webViewLink": "https://drive.google.com/file/d/1Etns7jSLrwQqCEizRWPwi5zfNzaixB6u/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/conteudo/ebook198b.pdf"
     },
     {
       "type": "file",
@@ -43297,9 +43313,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1YORSA3bn2FoknFm5v-bX9BgUmglG5RET&export=download",
       "webViewLink": "https://drive.google.com/file/d/1YORSA3bn2FoknFm5v-bX9BgUmglG5RET/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/conteudo/ebookce4f.pdf"
     },
     {
       "type": "file",
@@ -43313,9 +43329,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1X36gB_Z2AzSqyvMav2JkdW462fUsbGEE&export=download",
       "webViewLink": "https://drive.google.com/file/d/1X36gB_Z2AzSqyvMav2JkdW462fUsbGEE/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/conteudo/ebook6fcb.pdf"
     },
     {
       "type": "file",
@@ -43329,9 +43345,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1Ri8opHoSGIJbUMGqYMdEBHvrD0daHOLg&export=download",
       "webViewLink": "https://drive.google.com/file/d/1Ri8opHoSGIJbUMGqYMdEBHvrD0daHOLg/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/conteudo/componenteb59a.html"
     },
     {
       "type": "file",
@@ -43345,9 +43361,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1y_3-jx_ysNeIjwneJGmXV5j77teZXjFK&export=download",
       "webViewLink": "https://drive.google.com/file/d/1y_3-jx_ysNeIjwneJGmXV5j77teZXjFK/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/conteudo/scripts.html"
     },
     {
       "type": "file",
@@ -43361,9 +43377,9 @@
       "webContentLink": "https://drive.google.com/uc?id=10c2gE4cHLXSBs3GSxPB12Ss3QUvupqsP&export=download",
       "webViewLink": "https://drive.google.com/file/d/10c2gE4cHLXSBs3GSxPB12Ss3QUvupqsP/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/conteudo/slided832.pdf"
     },
     {
       "type": "file",
@@ -43377,9 +43393,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1yg8dqXQLGd5eVpjnuJ_QIOV-SkjxHQE6&export=download",
       "webViewLink": "https://drive.google.com/file/d/1yg8dqXQLGd5eVpjnuJ_QIOV-SkjxHQE6/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/conteudo/slided280.pdf"
     },
     {
       "type": "file",
@@ -43393,9 +43409,9 @@
       "webContentLink": "https://drive.google.com/uc?id=15mH_i8tFz6CDON8x_B7UM7WfaTR9Mwap&export=download",
       "webViewLink": "https://drive.google.com/file/d/15mH_i8tFz6CDON8x_B7UM7WfaTR9Mwap/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/conteudo/componente9101.html"
     },
     {
       "type": "file",
@@ -43409,9 +43425,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1LcWECfrbh0GZBJT6Li_EeWrDhgUvLdXC&export=download",
       "webViewLink": "https://drive.google.com/file/d/1LcWECfrbh0GZBJT6Li_EeWrDhgUvLdXC/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/conteudo/componentecbb4.html"
     },
     {
       "type": "file",
@@ -43425,9 +43441,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1BU6NYr__F5LVyH6cjmy4Ny0zSxhCNUBn&export=download",
       "webViewLink": "https://drive.google.com/file/d/1BU6NYr__F5LVyH6cjmy4Ny0zSxhCNUBn/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/conteudo/componenteb86b.html"
     },
     {
       "type": "file",
@@ -43441,9 +43457,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1j9mVCiedavS-ThehZb6JZIiPlAEiOXsy&export=download",
       "webViewLink": "https://drive.google.com/file/d/1j9mVCiedavS-ThehZb6JZIiPlAEiOXsy/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/conteudo/componented986.html"
     },
     {
       "type": "file",
@@ -43457,9 +43473,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1dK1bxejst5LfmzO93Waj6RttyU7TCTjy&export=download",
       "webViewLink": "https://drive.google.com/file/d/1dK1bxejst5LfmzO93Waj6RttyU7TCTjy/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/conteudo/componente32b8.html"
     },
     {
       "type": "file",
@@ -43473,9 +43489,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1-Qu7JLgZQ_OUJ82lyn4byo1g3PPr-kEg&export=download",
       "webViewLink": "https://drive.google.com/file/d/1-Qu7JLgZQ_OUJ82lyn4byo1g3PPr-kEg/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/conteudo/POST.html"
     },
     {
       "type": "file",
@@ -43489,9 +43505,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1B-8y-a8yGPsO7Z7yILR9itydXN3Ywq0Y&export=download",
       "webViewLink": "https://drive.google.com/file/d/1B-8y-a8yGPsO7Z7yILR9itydXN3Ywq0Y/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/conteudo/audio.html"
     },
     {
       "type": "file",
@@ -43505,9 +43521,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1np676GAD6CHpS_RA0UCrfpDJoGXTpCR8&export=download",
       "webViewLink": "https://drive.google.com/file/d/1np676GAD6CHpS_RA0UCrfpDJoGXTpCR8/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/conteudo/componente4fbb.html"
     },
     {
       "type": "file",
@@ -43521,9 +43537,9 @@
       "webContentLink": "https://drive.google.com/uc?id=16Wrb0ATX57luy8JNQG5pkkeT3Z2YKt-R&export=download",
       "webViewLink": "https://drive.google.com/file/d/16Wrb0ATX57luy8JNQG5pkkeT3Z2YKt-R/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/conteudo/componente0105.html"
     },
     {
       "type": "file",
@@ -43537,9 +43553,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1Fke6gIX-o4KGzIiQQo1CJHq1zGd6e9Dy&export=download",
       "webViewLink": "https://drive.google.com/file/d/1Fke6gIX-o4KGzIiQQo1CJHq1zGd6e9Dy/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/conteudo/componente44d5.html"
     },
     {
       "type": "file",
@@ -43553,9 +43569,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1qBHaRlgsnKPtdt4kiOmkfAvD98lMaCwh&export=download",
       "webViewLink": "https://drive.google.com/file/d/1qBHaRlgsnKPtdt4kiOmkfAvD98lMaCwh/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/conteudo/componente671b.html"
     },
     {
       "type": "file",
@@ -43569,9 +43585,9 @@
       "webContentLink": "https://drive.google.com/uc?id=19tVvS3bZltqDA7jpG7JSBbPc2TeSRpxC&export=download",
       "webViewLink": "https://drive.google.com/file/d/19tVvS3bZltqDA7jpG7JSBbPc2TeSRpxC/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/conteudo/componente1d14.html"
     },
     {
       "type": "file",
@@ -43585,9 +43601,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1QrprnxaJ4BVZnJixvZbtvCRFizjSD0jV&export=download",
       "webViewLink": "https://drive.google.com/file/d/1QrprnxaJ4BVZnJixvZbtvCRFizjSD0jV/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/conteudo/chat_pdf_onitutor_moni.html"
     },
     {
       "type": "file",
@@ -43601,9 +43617,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1vbS9i6Ge0P64GrenlcX-schCvJsc6ReM&export=download",
       "webViewLink": "https://drive.google.com/file/d/1vbS9i6Ge0P64GrenlcX-schCvJsc6ReM/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/conteudo/componente4bfc.html"
     },
     {
       "type": "file",
@@ -43617,9 +43633,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1PKr4WEbhtmqd_S_AcxezSHM_viS7EICf&export=download",
       "webViewLink": "https://drive.google.com/file/d/1PKr4WEbhtmqd_S_AcxezSHM_viS7EICf/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/conteudo/componente11db.html"
     },
     {
       "type": "file",
@@ -43633,9 +43649,9 @@
       "webContentLink": "https://drive.google.com/uc?id=10LnxQOpyVJVwuafws_4qW6DwhnoVb1ly&export=download",
       "webViewLink": "https://drive.google.com/file/d/10LnxQOpyVJVwuafws_4qW6DwhnoVb1ly/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/conteudo/componente2346.html"
     },
     {
       "type": "file",
@@ -43649,9 +43665,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1crUxwranWjhuXEmcQCn8nimqbduGqB33&export=download",
       "webViewLink": "https://drive.google.com/file/d/1crUxwranWjhuXEmcQCn8nimqbduGqB33/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/conteudo/componente4498.html"
     },
     {
       "type": "folder",
@@ -43672,9 +43688,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1fS5k2iXwYUSlOFthlNHS-yC9TgoAtPtF&export=download",
       "webViewLink": "https://drive.google.com/file/d/1fS5k2iXwYUSlOFthlNHS-yC9TgoAtPtF/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/code.jquery.com/jquery-3.2.1.min.js"
     },
     {
       "type": "file",
@@ -43688,9 +43704,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1kpSWKXMpVpIGH1d4OehMBwlMUY2pppRs&export=download",
       "webViewLink": "https://drive.google.com/file/d/1kpSWKXMpVpIGH1d4OehMBwlMUY2pppRs/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/code.jquery.com/jquery-3.2.1.min.js.z"
     },
     {
       "type": "folder",
@@ -43725,9 +43741,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1xT4h1gKYZqgKnHvyj9ziv5Pzy0W4i28O&export=download",
       "webViewLink": "https://drive.google.com/file/d/1xT4h1gKYZqgKnHvyj9ziv5Pzy0W4i28O/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/plugin.handtalk.me/web/latest/handtalk.min.js.z"
     },
     {
       "type": "file",
@@ -43741,9 +43757,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1K5IBT1NM9YKqRvDtx-Qw_D7IBedPLaSz&export=download",
       "webViewLink": "https://drive.google.com/file/d/1K5IBT1NM9YKqRvDtx-Qw_D7IBedPLaSz/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/plugin.handtalk.me/web/latest/handtalk.min.js"
     },
     {
       "type": "folder",
@@ -43764,9 +43780,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1lmvPsh9JpgyLfDrndGocGXGqkVZf-hJC&export=download",
       "webViewLink": "https://drive.google.com/file/d/1lmvPsh9JpgyLfDrndGocGXGqkVZf-hJC/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/hts-cache/readme.txt"
     },
     {
       "type": "file",
@@ -43780,9 +43796,9 @@
       "webContentLink": "https://drive.google.com/uc?id=14WGYOP4kHSJCTi8BfEhqUKtCAJVg3qqU&export=download",
       "webViewLink": "https://drive.google.com/file/d/14WGYOP4kHSJCTi8BfEhqUKtCAJVg3qqU/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/hts-cache/new.zip"
     },
     {
       "type": "file",
@@ -43796,9 +43812,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1Z6CXfkVGcZhcvmsFTJr62NOK3wjifVy5&export=download",
       "webViewLink": "https://drive.google.com/file/d/1Z6CXfkVGcZhcvmsFTJr62NOK3wjifVy5/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/hts-cache/new.lst"
     },
     {
       "type": "file",
@@ -43812,9 +43828,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1qgCEoCDKThLvTYStSxXFdABeZEh8-Z__&export=download",
       "webViewLink": "https://drive.google.com/file/d/1qgCEoCDKThLvTYStSxXFdABeZEh8-Z__/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/hts-cache/new.txt"
     },
     {
       "type": "file",
@@ -43828,9 +43844,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1CAbE7A6gsoA21mcJ690n4aNlbP5TtXPk&export=download",
       "webViewLink": "https://drive.google.com/file/d/1CAbE7A6gsoA21mcJ690n4aNlbP5TtXPk/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/hts-cache/winprofile.ini"
     },
     {
       "type": "folder",
@@ -43879,9 +43895,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1ChXB8rdeJTeF-q1zEoZ6N1_0FqvVo2sA&export=download",
       "webViewLink": "https://drive.google.com/file/d/1ChXB8rdeJTeF-q1zEoZ6N1_0FqvVo2sA/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
     },
     {
       "type": "file",
@@ -43895,9 +43911,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1J5aQVlvmSQIiMweMDh2fD3pCAnxbFlVg&export=download",
       "webViewLink": "https://drive.google.com/file/d/1J5aQVlvmSQIiMweMDh2fD3pCAnxbFlVg/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js.z"
     },
     {
       "type": "folder",
@@ -43925,9 +43941,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1zQNcF4E2gHuqlQ4F5iyCrHhRaRfaut0e&export=download",
       "webViewLink": "https://drive.google.com/file/d/1zQNcF4E2gHuqlQ4F5iyCrHhRaRfaut0e/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js.z"
     },
     {
       "type": "file",
@@ -43941,9 +43957,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1gr6A6v9b2z6FSqH6ndUaIZH-7cbxq7-U&export=download",
       "webViewLink": "https://drive.google.com/file/d/1gr6A6v9b2z6FSqH6ndUaIZH-7cbxq7-U/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
     },
     {
       "type": "folder",
@@ -43971,9 +43987,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1dJlC4Ng2hXIWQ0bfo-tCPVl3vJG3jBOa&export=download",
       "webViewLink": "https://drive.google.com/file/d/1dJlC4Ng2hXIWQ0bfo-tCPVl3vJG3jBOa/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js.z"
     },
     {
       "type": "file",
@@ -43987,9 +44003,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1RoLeufwz0YJszX8yLOSDniKJNQFcjhfp&export=download",
       "webViewLink": "https://drive.google.com/file/d/1RoLeufwz0YJszX8yLOSDniKJNQFcjhfp/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"
     },
     {
       "type": "folder",
@@ -44045,9 +44061,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1d6ybewVqDkzrFU7fxsxFnFN82-9kxb3t&export=download",
       "webViewLink": "https://drive.google.com/file/d/1d6ybewVqDkzrFU7fxsxFnFN82-9kxb3t/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"
     },
     {
       "type": "folder",
@@ -44068,9 +44084,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1iRgxL2K5mXacCRZlkrmg1xtpIUJ2CXFi&export=download",
       "webViewLink": "https://drive.google.com/file/d/1iRgxL2K5mXacCRZlkrmg1xtpIUJ2CXFi/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css"
     },
     {
       "type": "folder",
@@ -44091,9 +44107,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1OKy5xIig_0z-2UCpamK_Wu4EfU8AUioa&export=download",
       "webViewLink": "https://drive.google.com/file/d/1OKy5xIig_0z-2UCpamK_Wu4EfU8AUioa/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/bold/style.css"
     },
     {
       "type": "folder",
@@ -44121,9 +44137,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1C6pCJXcV1xGm31f7TBEIC6G9tg9bkMdL&export=download",
       "webViewLink": "https://drive.google.com/file/d/1C6pCJXcV1xGm31f7TBEIC6G9tg9bkMdL/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
     },
     {
       "type": "folder",
@@ -44144,9 +44160,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1p1N5YpRSNdSbXHSUo6KV-1VPpMO9yfnQ&export=download",
       "webViewLink": "https://drive.google.com/file/d/1p1N5YpRSNdSbXHSUo6KV-1VPpMO9yfnQ/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/api-externa360.onilearning.com.br/exemplo-mapa.jpg"
     },
     {
       "type": "file",
@@ -44160,9 +44176,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1S_arHzvZiI11c4XGyVz26Iv9EwlwCJwc&export=download",
       "webViewLink": "https://drive.google.com/file/d/1S_arHzvZiI11c4XGyVz26Iv9EwlwCJwc/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/backblue.gif"
     },
     {
       "type": "file",
@@ -44176,9 +44192,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1135XwAcrnhAcG9RiqKbGbn_TD-mRhWkP&export=download",
       "webViewLink": "https://drive.google.com/file/d/1135XwAcrnhAcG9RiqKbGbn_TD-mRhWkP/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/index.html"
     },
     {
       "type": "file",
@@ -44192,9 +44208,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1t7nTwUnZYQogWDRHullPYFYFrQKGwl-z&export=download",
       "webViewLink": "https://drive.google.com/file/d/1t7nTwUnZYQogWDRHullPYFYFrQKGwl-z/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/fade.gif"
     },
     {
       "type": "file",
@@ -44208,9 +44224,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1gUoqf84fDezAZJxVlyR14ia-ma6H4LAN&export=download",
       "webViewLink": "https://drive.google.com/file/d/1gUoqf84fDezAZJxVlyR14ia-ma6H4LAN/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/hts-log.txt"
     },
     {
       "type": "file",
@@ -44224,9 +44240,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1qf4c01S8PY10_4BwO7HOY8hGhQ1Rx0q1&export=download",
       "webViewLink": "https://drive.google.com/file/d/1qf4c01S8PY10_4BwO7HOY8hGhQ1Rx0q1/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/cookies.txt"
     },
     {
       "type": "folder",
@@ -44254,9 +44270,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1oJZmKXT5ztQzGBxySeRoj7clF2GyBI2e&export=download",
       "webViewLink": "https://drive.google.com/file/d/1oJZmKXT5ztQzGBxySeRoj7clF2GyBI2e/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Comandos Eletroeletrônicos/hts-cache/readme.txt"
     },
     {
       "type": "file",
@@ -44270,9 +44286,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1deojPPv4150HV_Ruqu1bqrQ11xL7DZUT&export=download",
       "webViewLink": "https://drive.google.com/file/d/1deojPPv4150HV_Ruqu1bqrQ11xL7DZUT/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Comandos Eletroeletrônicos/hts-cache/new.zip"
     },
     {
       "type": "file",
@@ -44286,9 +44302,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1xRqupYLyzTGMdgQOrbxybR8Sc-_ZSOiH&export=download",
       "webViewLink": "https://drive.google.com/file/d/1xRqupYLyzTGMdgQOrbxybR8Sc-_ZSOiH/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Comandos Eletroeletrônicos/hts-cache/new.lst"
     },
     {
       "type": "file",
@@ -44302,9 +44318,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1yiwfKH0FCTke7hyC0hx5jjrJzadnt_KP&export=download",
       "webViewLink": "https://drive.google.com/file/d/1yiwfKH0FCTke7hyC0hx5jjrJzadnt_KP/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Comandos Eletroeletrônicos/hts-cache/new.txt"
     },
     {
       "type": "file",
@@ -44318,9 +44334,9 @@
       "webContentLink": "https://drive.google.com/uc?id=115gZosi7lStQh69iPPznIVeYU2AtypH7&export=download",
       "webViewLink": "https://drive.google.com/file/d/115gZosi7lStQh69iPPznIVeYU2AtypH7/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Comandos Eletroeletrônicos/hts-cache/winprofile.ini"
     },
     {
       "type": "folder",
@@ -44355,9 +44371,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1svOZ1jrmSIjIpWTwpRW-YtUtBKGYeVDG&export=download",
       "webViewLink": "https://drive.google.com/file/d/1svOZ1jrmSIjIpWTwpRW-YtUtBKGYeVDG/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Comandos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/chatpdf/HISTORICO.pdf"
     },
     {
       "type": "file",
@@ -44371,9 +44387,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1Ft63jYik1NCJn3JUJQ2O2JQx6wcPVoIh&export=download",
       "webViewLink": "https://drive.google.com/file/d/1Ft63jYik1NCJn3JUJQ2O2JQx6wcPVoIh/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Comandos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/chatpdf/FunPerguntapdf.html"
     },
     {
       "type": "file",
@@ -44387,9 +44403,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1gWjftRMr4RkFyr3pz-qjkIX_I3Uqy7ay&export=download",
       "webViewLink": "https://drive.google.com/file/d/1gWjftRMr4RkFyr3pz-qjkIX_I3Uqy7ay/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Comandos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/chatpdf/audioQuestion92bd.html"
     },
     {
       "type": "file",
@@ -44403,9 +44419,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1WRhp_KUzKUgjH3bb3-uGJ7UMRDSiaHGV&export=download",
       "webViewLink": "https://drive.google.com/file/d/1WRhp_KUzKUgjH3bb3-uGJ7UMRDSiaHGV/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Comandos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/chatpdf/carregarConversas.html"
     },
     {
       "type": "folder",
@@ -44433,9 +44449,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1CH1ooi97BvcszbJvvxt7pZQmQnvyC2rY&export=download",
       "webViewLink": "https://drive.google.com/file/d/1CH1ooi97BvcszbJvvxt7pZQmQnvyC2rY/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Comandos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/assets/js/acess_scripts.js"
     },
     {
       "type": "file",
@@ -44449,9 +44465,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1EL7nLAezm_wm4TGGscKy5onD8nWyTZv8&export=download",
       "webViewLink": "https://drive.google.com/file/d/1EL7nLAezm_wm4TGGscKy5onD8nWyTZv8/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Comandos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/assets/js/novaTrilha.js.z"
     },
     {
       "type": "file",
@@ -44465,9 +44481,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1fitp6X9xzN13nJRwiurjn0El2Kn7Jn9F&export=download",
       "webViewLink": "https://drive.google.com/file/d/1fitp6X9xzN13nJRwiurjn0El2Kn7Jn9F/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Comandos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/assets/js/novaTrilha.js"
     },
     {
       "type": "file",
@@ -44481,9 +44497,9 @@
       "webContentLink": "https://drive.google.com/uc?id=18NTZvxmx5er9HCZP7zy3UMZ4PIzXu2mE&export=download",
       "webViewLink": "https://drive.google.com/file/d/18NTZvxmx5er9HCZP7zy3UMZ4PIzXu2mE/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Comandos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/assets/js/acess_scripts.js.z"
     },
     {
       "type": "folder",
@@ -44504,9 +44520,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1OkOIdCzo5J4t1n5SjHWfgmRj0nWAs8nu&export=download",
       "webViewLink": "https://drive.google.com/file/d/1OkOIdCzo5J4t1n5SjHWfgmRj0nWAs8nu/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Comandos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/assets/css/novaTrilha.css.z"
     },
     {
       "type": "file",
@@ -44520,9 +44536,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1RlKHWl1md_9YeY9wDGzTPR3aBmOi9-cs&export=download",
       "webViewLink": "https://drive.google.com/file/d/1RlKHWl1md_9YeY9wDGzTPR3aBmOi9-cs/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Comandos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/assets/css/acess_contrast.css"
     },
     {
       "type": "file",
@@ -44536,9 +44552,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1TQ8bNugmQjBAerPQ87N02m2U7AlauQdC&export=download",
       "webViewLink": "https://drive.google.com/file/d/1TQ8bNugmQjBAerPQ87N02m2U7AlauQdC/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Comandos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/assets/css/acess_bar.css"
     },
     {
       "type": "file",
@@ -44552,9 +44568,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1C-27_rzfXoDnnCXtWmvz8wikAcuw-UlT&export=download",
       "webViewLink": "https://drive.google.com/file/d/1C-27_rzfXoDnnCXtWmvz8wikAcuw-UlT/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Comandos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/assets/css/novaTrilha.css"
     },
     {
       "type": "file",
@@ -44568,9 +44584,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1kwUNOOTiEmp2ELsxa7Z77RekRRlYxZ0o&export=download",
       "webViewLink": "https://drive.google.com/file/d/1kwUNOOTiEmp2ELsxa7Z77RekRRlYxZ0o/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Comandos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/assets/css/reset.css"
     },
     {
       "type": "folder",
@@ -44605,9 +44621,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1L-Ni8u-pJfMrcHJeg2cP6o8NH8H8NckI&export=download",
       "webViewLink": "https://drive.google.com/file/d/1L-Ni8u-pJfMrcHJeg2cP6o8NH8H8NckI/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Comandos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-2/icone-2.png"
     },
     {
       "type": "file",
@@ -44621,9 +44637,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1Qfy0c6xL0Lj4qfzOaGOoq5G9EY-k49_r&export=download",
       "webViewLink": "https://drive.google.com/file/d/1Qfy0c6xL0Lj4qfzOaGOoq5G9EY-k49_r/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Comandos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-2/icone-6.png"
     },
     {
       "type": "file",
@@ -44637,9 +44653,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1NdSeSP-QFtzajcfMJinC1MGqqlSdxSbw&export=download",
       "webViewLink": "https://drive.google.com/file/d/1NdSeSP-QFtzajcfMJinC1MGqqlSdxSbw/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Comandos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-2/icone-12.png"
     },
     {
       "type": "file",
@@ -44653,9 +44669,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1x8Np0hmIKI0hdz2myCv6tSz3tKK4mC3b&export=download",
       "webViewLink": "https://drive.google.com/file/d/1x8Np0hmIKI0hdz2myCv6tSz3tKK4mC3b/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Comandos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-2/icone-11.png"
     },
     {
       "type": "file",
@@ -44669,9 +44685,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1Ux5-Jlcu6RXTmu4JpRjCOpZFB8q8Xh7d&export=download",
       "webViewLink": "https://drive.google.com/file/d/1Ux5-Jlcu6RXTmu4JpRjCOpZFB8q8Xh7d/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Comandos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-2/icone-4.png"
     },
     {
       "type": "file",
@@ -44685,9 +44701,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1S3x4VMEfx49ap7CkB4ADrMOVkZ9XxXH1&export=download",
       "webViewLink": "https://drive.google.com/file/d/1S3x4VMEfx49ap7CkB4ADrMOVkZ9XxXH1/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:53:17.835Z",
+      "publicPath": "/eadplataforma/Comandos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-2/icone-5.png"
     },
     {
       "type": "file",
@@ -49752,182 +49768,6 @@
       "githubCached": false
     },
     {
-      "type": "file",
-      "path": "00 - Grades dos Cursos/Técnico em Meio Ambiente - Grade.txt",
-      "driveFileId": "1e5gRp7oI_SGWnOP9Z3W2CJQCKceEPJSb",
-      "mimeType": "text/plain",
-      "size": 623,
-      "extension": "txt",
-      "modifiedTime": "2026-07-20T18:57:06.000Z",
-      "md5Checksum": "b58b1432cd6b1578e00e7ddbd38e11e9",
-      "webContentLink": "https://drive.google.com/uc?id=1e5gRp7oI_SGWnOP9Z3W2CJQCKceEPJSb&export=download",
-      "webViewLink": "https://drive.google.com/file/d/1e5gRp7oI_SGWnOP9Z3W2CJQCKceEPJSb/view?usp=drivesdk",
-      "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
-    },
-    {
-      "type": "file",
-      "path": "00 - Grades dos Cursos/Técnico em Mecânica - Grade.txt",
-      "driveFileId": "1pTK7YK2Lo4kXnl0JhhqvnrXNvyKOeUrg",
-      "mimeType": "text/plain",
-      "size": 597,
-      "extension": "txt",
-      "modifiedTime": "2026-07-07T19:35:16.040Z",
-      "md5Checksum": "a417c39463a0d2b366ba720b22615381",
-      "webContentLink": "https://drive.google.com/uc?id=1pTK7YK2Lo4kXnl0JhhqvnrXNvyKOeUrg&export=download",
-      "webViewLink": "https://drive.google.com/file/d/1pTK7YK2Lo4kXnl0JhhqvnrXNvyKOeUrg/view?usp=drivesdk",
-      "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
-    },
-    {
-      "type": "file",
-      "path": "00 - Grades dos Cursos/Técnico em Logística - Grade.txt",
-      "driveFileId": "17kMnpIB5bEff6Q3vSuqNBDV5rJ7Q5UKY",
-      "mimeType": "text/plain",
-      "size": 551,
-      "extension": "txt",
-      "modifiedTime": "2026-07-07T19:35:16.025Z",
-      "md5Checksum": "50e8f075f8f32f986baa7719fe7135c1",
-      "webContentLink": "https://drive.google.com/uc?id=17kMnpIB5bEff6Q3vSuqNBDV5rJ7Q5UKY&export=download",
-      "webViewLink": "https://drive.google.com/file/d/17kMnpIB5bEff6Q3vSuqNBDV5rJ7Q5UKY/view?usp=drivesdk",
-      "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
-    },
-    {
-      "type": "file",
-      "path": "00 - Grades dos Cursos/Técnico em Automação - Grade.txt",
-      "driveFileId": "1RWnFxl-pbKd6o-O91QMc_8cZJgq2smVN",
-      "mimeType": "text/plain",
-      "size": 1622,
-      "extension": "txt",
-      "modifiedTime": "2026-07-07T19:34:09.000Z",
-      "md5Checksum": "b53e57005d6cd750f3748da2409e45f6",
-      "webContentLink": "https://drive.google.com/uc?id=1RWnFxl-pbKd6o-O91QMc_8cZJgq2smVN&export=download",
-      "webViewLink": "https://drive.google.com/file/d/1RWnFxl-pbKd6o-O91QMc_8cZJgq2smVN/view?usp=drivesdk",
-      "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
-    },
-    {
-      "type": "file",
-      "path": "00 - Grades dos Cursos/Técnico em Transações Imobiliárias - Grade.txt",
-      "driveFileId": "1DQOzvk9HUlfpSh_2gHxSH8DghC3Cu45H",
-      "mimeType": "text/plain",
-      "size": 550,
-      "extension": "txt",
-      "modifiedTime": "2026-07-07T18:56:46.000Z",
-      "md5Checksum": "b2f913a355c01b9dfc832a3f2c9657be",
-      "webContentLink": "https://drive.google.com/uc?id=1DQOzvk9HUlfpSh_2gHxSH8DghC3Cu45H&export=download",
-      "webViewLink": "https://drive.google.com/file/d/1DQOzvk9HUlfpSh_2gHxSH8DghC3Cu45H/view?usp=drivesdk",
-      "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
-    },
-    {
-      "type": "file",
-      "path": "00 - Grades dos Cursos/Técnico em Segurança do Trabalho - Grade.txt",
-      "driveFileId": "1LDzZkTPtrWPOn3W9elk0xHcnNeO9RMlK",
-      "mimeType": "text/plain",
-      "size": 885,
-      "extension": "txt",
-      "modifiedTime": "2026-07-07T18:56:46.000Z",
-      "md5Checksum": "6b79d7a0dab64bb77c9078b50598a982",
-      "webContentLink": "https://drive.google.com/uc?id=1LDzZkTPtrWPOn3W9elk0xHcnNeO9RMlK&export=download",
-      "webViewLink": "https://drive.google.com/file/d/1LDzZkTPtrWPOn3W9elk0xHcnNeO9RMlK/view?usp=drivesdk",
-      "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
-    },
-    {
-      "type": "file",
-      "path": "00 - Grades dos Cursos/Técnico em Eletrotécnica - Grade.txt",
-      "driveFileId": "1E0LYq1xgjEbDDOlvOYiCiBt3X0s1DEac",
-      "mimeType": "text/plain",
-      "size": 609,
-      "extension": "txt",
-      "modifiedTime": "2026-07-07T18:56:46.000Z",
-      "md5Checksum": "df8b8b2dcb738159d22fb6fdd8f803f0",
-      "webContentLink": "https://drive.google.com/uc?id=1E0LYq1xgjEbDDOlvOYiCiBt3X0s1DEac&export=download",
-      "webViewLink": "https://drive.google.com/file/d/1E0LYq1xgjEbDDOlvOYiCiBt3X0s1DEac/view?usp=drivesdk",
-      "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
-    },
-    {
-      "type": "file",
-      "path": "00 - Grades dos Cursos/Técnico em Mineração - Grade.txt",
-      "driveFileId": "1w0ZMQpl7VUz593xe3ZWsOtN2ibXgAB6n",
-      "mimeType": "text/plain",
-      "size": 642,
-      "extension": "txt",
-      "modifiedTime": "2026-07-07T18:56:46.000Z",
-      "md5Checksum": "af1f032936251734744c01280d5fc26c",
-      "webContentLink": "https://drive.google.com/uc?id=1w0ZMQpl7VUz593xe3ZWsOtN2ibXgAB6n&export=download",
-      "webViewLink": "https://drive.google.com/file/d/1w0ZMQpl7VUz593xe3ZWsOtN2ibXgAB6n/view?usp=drivesdk",
-      "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
-    },
-    {
-      "type": "file",
-      "path": "00 - Grades dos Cursos/Técnico em Eletromecânica - Grade.txt",
-      "driveFileId": "1bacDcCjzaWUKpl-tyoTYTt2DgL-foJmq",
-      "mimeType": "text/plain",
-      "size": 594,
-      "extension": "txt",
-      "modifiedTime": "2026-07-07T18:56:46.000Z",
-      "md5Checksum": "9172cd832e63a6b9ee4efb7b1693efef",
-      "webContentLink": "https://drive.google.com/uc?id=1bacDcCjzaWUKpl-tyoTYTt2DgL-foJmq&export=download",
-      "webViewLink": "https://drive.google.com/file/d/1bacDcCjzaWUKpl-tyoTYTt2DgL-foJmq/view?usp=drivesdk",
-      "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
-    },
-    {
-      "type": "file",
-      "path": "00 - Grades dos Cursos/Técnico em Refrigeração e Climatização - Grade.txt",
-      "driveFileId": "18Gy4ZZ-qj9SIkyRlR6ayby2TEQ9k2LQl",
-      "mimeType": "text/plain",
-      "size": 502,
-      "extension": "txt",
-      "modifiedTime": "2026-07-07T18:56:46.000Z",
-      "md5Checksum": "aad5d14cb24a90ee720d97210d8936af",
-      "webContentLink": "https://drive.google.com/uc?id=18Gy4ZZ-qj9SIkyRlR6ayby2TEQ9k2LQl&export=download",
-      "webViewLink": "https://drive.google.com/file/d/18Gy4ZZ-qj9SIkyRlR6ayby2TEQ9k2LQl/view?usp=drivesdk",
-      "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
-    },
-    {
-      "type": "file",
-      "path": "00 - Grades dos Cursos/Técnico em Química - Grade.txt",
-      "driveFileId": "18vWsz9nZEVvOQQ9kRpxsN2bGbga6xij3",
-      "mimeType": "text/plain",
-      "size": 738,
-      "extension": "txt",
-      "modifiedTime": "2026-06-17T18:40:57.547Z",
-      "md5Checksum": "4893cd8aa978f7fc76cdd203de1e7128",
-      "webContentLink": "https://drive.google.com/uc?id=18vWsz9nZEVvOQQ9kRpxsN2bGbga6xij3&export=download",
-      "webViewLink": "https://drive.google.com/file/d/18vWsz9nZEVvOQQ9kRpxsN2bGbga6xij3/view?usp=drivesdk",
-      "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
-    },
-    {
       "type": "folder",
       "path": "Aulas - Lógica Matemática - Unidade 4",
       "driveFileId": "1U9hF4oeRtQF9wfpJLsgZh5TTYythPy1e",
@@ -51146,7 +50986,7 @@
   ],
   "sync": {
     "mode": "drive_to_github_files",
-    "syncedAt": "2026-07-22T02:44:44.982Z",
+    "syncedAt": "2026-07-22T02:53:17.835Z",
     "batchSize": 150,
     "batchLimit": 150
   }
