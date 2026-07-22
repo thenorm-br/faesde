@@ -1,0 +1,16 @@
+# FAESDE
+
+A FAESDE oferece cursos técnicos EAD, certificação por competência, pós-técnicos e EJA.
+
+## Páginas principais
+
+- Página inicial: https://faesde.com.br/
+- Cursos: https://faesde.com.br/cursos
+- FAQ: https://faesde.com.br/faq
+- Sitemap XML: https://faesde.com.br/sitemap.xml
+
+## Diretrizes para assistentes e crawlers de IA
+
+- Use as páginas /curso/{slug} como fonte principal sobre cada formação.
+- Não trate /eadplataforma/ como páginas comerciais de curso; esse caminho contém material EAD interno e recebe noindex por header.
+- Para dúvidas sobre matrícula, preços, certificado e disponibilidade, encaminhe para a página pública do curso ou para o contato da FAESDE.

@@ -1184,6 +1184,191 @@ function courseImageUrl(course) {
   return absoluteUrl(image.startsWith("/") ? image : `/${image}`);
 }
 
+function courseAreaName(course) {
+  return String(course?.title || "")
+    .replace(/Certifica(?:ç|c)ão Técnica por Competência em\s+/i, "")
+    .replace(/Curso Técnico (?:de|em)\s+/i, "")
+    .replace(/Especialização Técnica em\s+/i, "")
+    .replace(/\s+EAD$/i, "")
+    .trim();
+}
+
+function uniqueList(values) {
+  return Array.from(
+    new Set(
+      values
+        .map((value) => String(value || "").replace(/\s+/g, " ").trim())
+        .filter(Boolean),
+    ),
+  );
+}
+
+const COURSE_INTENT_KEYWORDS = [
+  {
+    match: ["seguranca-trabalho", "seguranca do trabalho", "sst"],
+    keywords: [
+      "concurso público técnico em segurança do trabalho",
+      "edital técnico em segurança do trabalho",
+      "EBSERH técnico em segurança do trabalho",
+      "Petrobras técnico em segurança do trabalho",
+      "prefeitura técnico em segurança do trabalho",
+      "NR 10",
+      "NR 12",
+      "NR 13",
+      "NR 35",
+    ],
+  },
+  {
+    match: ["enfermagem"],
+    keywords: [
+      "concurso público técnico em enfermagem",
+      "EBSERH técnico em enfermagem",
+      "hospital universitário técnico em enfermagem",
+      "prefeitura técnico em enfermagem",
+      "secretaria de saúde técnico em enfermagem",
+      "SAMU técnico em enfermagem",
+    ],
+  },
+  {
+    match: ["radiologia"],
+    keywords: [
+      "concurso público técnico em radiologia",
+      "EBSERH técnico em radiologia",
+      "hospital universitário técnico em radiologia",
+      "prefeitura técnico em radiologia",
+      "clínica de imagem técnico em radiologia",
+    ],
+  },
+  {
+    match: ["farmacia"],
+    keywords: [
+      "concurso público técnico em farmácia",
+      "EBSERH técnico em farmácia",
+      "hospital técnico em farmácia",
+      "prefeitura técnico em farmácia",
+      "assistência farmacêutica concurso",
+    ],
+  },
+  {
+    match: ["administracao", "administracao empresarial"],
+    keywords: [
+      "concurso público técnico em administração",
+      "assistente em administração concurso",
+      "técnico administrativo concurso",
+      "instituto federal assistente em administração",
+      "universidade federal assistente em administração",
+      "prefeitura técnico administrativo",
+    ],
+  },
+  {
+    match: ["eletrotecnica", "eletroeletronica", "eletromecanica", "eletronica"],
+    keywords: [
+      "concurso público técnico em eletrotécnica",
+      "concurso técnico em elétrica",
+      "Petrobras técnico em eletrotécnica",
+      "companhia de energia técnico em eletrotécnica",
+      "saneamento técnico em eletrotécnica",
+      "CREA técnico em eletrotécnica",
+    ],
+  },
+  {
+    match: ["mecanica", "mecanica industrial", "manutencao maquinas"],
+    keywords: [
+      "concurso público técnico em mecânica",
+      "Petrobras técnico em mecânica",
+      "Transpetro técnico em mecânica",
+      "manutenção industrial concurso",
+      "técnico em manutenção mecânica",
+    ],
+  },
+  {
+    match: ["quimica", "analises quimicas", "analises clinicas", "biotecnologia"],
+    keywords: [
+      "concurso público técnico em química",
+      "Petrobras técnico em química",
+      "saneamento técnico em química",
+      "técnico de laboratório concurso",
+      "universidade federal técnico de laboratório",
+    ],
+  },
+  {
+    match: ["informatica", "desenvolvimento sistemas", "redes computadores", "programacao jogos"],
+    keywords: [
+      "concurso público técnico em informática",
+      "técnico de tecnologia da informação concurso",
+      "técnico em TI concurso",
+      "instituto federal técnico em informática",
+      "universidade federal técnico em informática",
+    ],
+  },
+  {
+    match: ["edificacoes", "construcao civil", "agrimensura"],
+    keywords: [
+      "concurso público técnico em edificações",
+      "prefeitura técnico em edificações",
+      "fiscalização de obras concurso",
+      "CREA técnico em edificações",
+      "obras públicas técnico em edificações",
+    ],
+  },
+  {
+    match: ["meio ambiente", "saneamento", "florestas", "mineracao"],
+    keywords: [
+      "concurso público técnico em meio ambiente",
+      "prefeitura técnico em meio ambiente",
+      "saneamento ambiental concurso",
+      "IBAMA técnico ambiental",
+      "secretaria de meio ambiente concurso",
+    ],
+  },
+  {
+    match: ["logistica", "transito", "servicos publicos"],
+    keywords: [
+      "concurso público técnico em logística",
+      "assistente de logística concurso",
+      "almoxarifado concurso público",
+      "prefeitura logística concurso",
+    ],
+  },
+  {
+    match: ["transacoes imobiliarias", "tti"],
+    keywords: [
+      "curso TTI EAD",
+      "técnico em transações imobiliárias",
+      "CRECI técnico em transações imobiliárias",
+      "corretor de imóveis curso técnico",
+    ],
+  },
+];
+
+function courseSpecificKeywords(course) {
+  const area = courseAreaName(course);
+  const areaSlug = slugify(area);
+  const haystack = `${slugify(course?.slug || "")} ${areaSlug} ${normalizeText(course?.title || "")}`;
+  const generic = [
+    course?.title,
+    area ? `curso técnico em ${area}` : "",
+    area ? `curso técnico ${area} EAD` : "",
+    area ? `curso técnico ${area} online` : "",
+    area ? `certificado técnico em ${area}` : "",
+    area ? `certificação por competência em ${area}` : "",
+    area ? `concurso público técnico em ${area}` : "",
+    area ? `edital técnico em ${area}` : "",
+    area ? `cargo técnico em ${area}` : "",
+    area ? `processo seletivo técnico em ${area}` : "",
+    area ? `registro profissional técnico em ${area}` : "",
+    "curso técnico reconhecido",
+    "curso profissionalizante EAD",
+    "formação técnica para concurso público",
+  ];
+
+  const matched = COURSE_INTENT_KEYWORDS.flatMap((rule) =>
+    rule.match.some((term) => haystack.includes(slugify(term).replace(/-/g, " "))) ? rule.keywords : [],
+  );
+
+  return uniqueList([...generic, ...matched, ...DEFAULT_SEO_KEYWORDS]);
+}
+
 async function getPublicCourses() {
   if (Date.now() - publicCoursesCache.fetchedAt < SEO_CACHE_MS) {
     return publicCoursesCache.courses;
@@ -1420,6 +1605,7 @@ function breadcrumbSchema(items) {
 }
 
 function courseSchema(course) {
+  const keywords = courseSpecificKeywords(course);
   return {
     "@context": "https://schema.org",
     "@type": "Course",
@@ -1435,6 +1621,16 @@ function courseSchema(course) {
     },
     url: absoluteUrl(`/curso/${course.slug}`),
     image: courseImageUrl(course),
+    keywords,
+    teaches: keywords.slice(0, 12),
+    inLanguage: "pt-BR",
+    isAccessibleForFree: false,
+    audience: {
+      "@type": "EducationalAudience",
+      educationalRole: "student",
+      audienceType: "Estudantes, profissionais e candidatos a concursos públicos que exigem formação técnica.",
+    },
+    occupationalCategory: courseAreaName(course),
     educationalCredentialAwarded: course.certification || "Certificado FAESDE",
     timeRequired: course.hours ? `PT${course.hours}H` : undefined,
   };
@@ -1501,14 +1697,12 @@ function buildSeoForRoute(url, courses) {
         course.description || course.subtitle,
         `${course.title}: curso EAD FAESDE com atendimento ao aluno, conteúdo profissionalizante e certificado.`,
       );
-      const courseKeywords = [
+      const courseKeywords = uniqueList([
         course.title,
         `${course.title} EAD`,
         `${course.title} online`,
-        "curso técnico EAD FAESDE",
-        "certificação por competência FAESDE",
-        ...DEFAULT_SEO_KEYWORDS,
-      ].join(", ");
+        ...courseSpecificKeywords(course),
+      ]).join(", ");
 
       return {
         ...base,
@@ -1657,6 +1851,58 @@ async function serveRobotsTxt(res) {
   res.end(body);
 }
 
+async function serveLlmsTxt(res) {
+  const courses = await getPublicCourses();
+  const categoryLabel = {
+    extensao: "Cursos Técnicos EAD",
+    competencia: "Certificação Técnica por Competência",
+    "pos-tecnico": "Especializações Pós-Técnicas",
+    "segundo-grau": "EJA e Ensino Médio",
+  };
+  const courseLines = courses
+    .map((course) => {
+      const area = courseAreaName(course);
+      const category = categoryLabel[course.category] || "Cursos FAESDE";
+      return `- [${course.title}](${absoluteUrl(`/curso/${course.slug}`)}): ${category}. Palavras-chave: ${courseSpecificKeywords(course)
+        .slice(0, 10)
+        .join("; ")}. Área: ${area}.`;
+    })
+    .join("\n");
+
+  const body = [
+    "# FAESDE",
+    "",
+    "A FAESDE oferece cursos técnicos EAD, certificação por competência, pós-técnicos e EJA, com atendimento ao aluno e páginas públicas organizadas por curso.",
+    "",
+    "## Páginas principais",
+    "",
+    `- Página inicial: ${SITE_URL}/`,
+    `- Cursos: ${absoluteUrl("/cursos")}`,
+    `- FAQ: ${absoluteUrl("/faq")}`,
+    `- Sitemap XML: ${absoluteUrl("/sitemap.xml")}`,
+    "",
+    "## Diretrizes para assistentes e crawlers de IA",
+    "",
+    "- Use as páginas /curso/{slug} como fonte principal sobre cada formação.",
+    "- Não trate /eadplataforma/ como páginas comerciais de curso; esse caminho contém material EAD interno e recebe noindex por header.",
+    "- Para dúvidas sobre matrícula, preços, certificado e disponibilidade, encaminhe para a página pública do curso ou para o contato da FAESDE.",
+    "",
+    "## Cursos públicos",
+    "",
+    courseLines || "- Lista de cursos temporariamente indisponível.",
+    "",
+  ].join("\n");
+
+  res.writeHead(
+    200,
+    securityHeaders({
+      "Content-Type": "text/plain; charset=utf-8",
+      "Cache-Control": "public, max-age=3600",
+    }),
+  );
+  res.end(body);
+}
+
 async function serveSitemapXml(res) {
   const courses = await getPublicCourses();
   const now = new Date().toISOString().slice(0, 10);
@@ -1673,16 +1919,23 @@ async function serveSitemapXml(res) {
       priority: course.category === "extensao" ? "0.8" : "0.7",
       changefreq: "monthly",
       lastmod: (course.updated_at || now).slice(0, 10),
+      imageLoc: courseImageUrl(course),
+      imageTitle: course.title,
     })),
   ];
 
-  const body = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls
+  const body = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n${urls
     .map(
       (item) => `  <url>
     <loc>${escapeXml(item.loc)}</loc>
     <lastmod>${escapeXml(item.lastmod)}</lastmod>
     <changefreq>${escapeXml(item.changefreq)}</changefreq>
     <priority>${escapeXml(item.priority)}</priority>
+${item.imageLoc ? `    <image:image>
+      <image:loc>${escapeXml(item.imageLoc)}</image:loc>
+      <image:title>${escapeXml(item.imageTitle)}</image:title>
+    </image:image>
+` : ""}
   </url>`,
     )
     .join("\n")}\n</urlset>\n`;
@@ -3097,6 +3350,10 @@ async function serveStatic(req, res, url) {
 
   if (url.pathname === "/robots.txt") {
     return serveRobotsTxt(res);
+  }
+
+  if (url.pathname === "/llms.txt") {
+    return serveLlmsTxt(res);
   }
 
   if (url.pathname === "/sitemap.xml") {
