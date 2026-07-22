@@ -1566,6 +1566,18 @@ function categoryRedirectFromSlug(slug) {
 async function getLegacyRedirect(url) {
   const path = canonicalPath(url.pathname);
   if (path === "/index.html") return { destination: "/", reason: "canonical-home" };
+
+  if (
+    path === "/admin" ||
+    path.startsWith("/admin/") ||
+    path === "/certificados" ||
+    path.startsWith("/certificados/") ||
+    path === PUBLIC_BASE_PATH ||
+    path.startsWith(`${PUBLIC_BASE_PATH}/`)
+  ) {
+    return null;
+  }
+
   if (LEGACY_COMMERCE_PATHS.has(path)) return { destination: "/cursos", reason: "legacy-commerce" };
 
   if (path === "/cursos" && url.searchParams.has("categoria")) {
