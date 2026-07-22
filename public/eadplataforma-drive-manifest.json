@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-22T01:03:57.251Z",
+  "generatedAt": "2026-07-22T01:12:51.135Z",
   "source": {
     "provider": "google_drive",
     "rootFolderId": "1jYFYbdJdJHT-f7BpzFX9t1mQLD6xwgbd",
@@ -15,9 +15,9 @@
   "publicBasePath": "/eadplataforma",
   "stats": {
     "folders": 1005,
-    "files": 2748,
-    "bytes": 14500851544,
-    "githubEligibleFiles": 2678,
+    "files": 2750,
+    "bytes": 14500859296,
+    "githubEligibleFiles": 2680,
     "driveOnlyFiles": 70,
     "htmlFiles": 815,
     "videos": 59,
@@ -30,6 +30,38 @@
       "driveFileId": "1wK578HGDC6v6W7JiGqyxSKHxdJ2rhjFr",
       "modifiedTime": "2026-07-21T23:52:52.416Z",
       "githubCached": false
+    },
+    {
+      "type": "file",
+      "path": "00 - Apostilas faltantes/tecnico-eletrotecnica-conferencia-pdf-website.txt",
+      "driveFileId": "1be1QcSYNSHqhMFTvj5ZWSnB6vGmUnG9O",
+      "mimeType": "text/plain",
+      "size": 588,
+      "extension": "txt",
+      "modifiedTime": "2026-07-22T01:08:18.525Z",
+      "md5Checksum": "4b6362b321ce4cc2a4a7ff5623e8c419",
+      "webContentLink": "https://drive.google.com/uc?id=1be1QcSYNSHqhMFTvj5ZWSnB6vGmUnG9O&export=download",
+      "webViewLink": "https://drive.google.com/file/d/1be1QcSYNSHqhMFTvj5ZWSnB6vGmUnG9O/view?usp=drivesdk",
+      "storageTarget": "github_cache",
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/00 - Apostilas faltantes/tecnico-eletrotecnica-conferencia-pdf-website.txt"
+    },
+    {
+      "type": "file",
+      "path": "00 - Apostilas faltantes/tecnico-eletrotecnica-videos.txt",
+      "driveFileId": "1vaDUcmdXyUtIsTS7hK7-j9y8f66viFtc",
+      "mimeType": "text/plain",
+      "size": 7164,
+      "extension": "txt",
+      "modifiedTime": "2026-07-22T01:08:15.959Z",
+      "md5Checksum": "bc4a0c0e5a4f11dc6a13896b18cae3a4",
+      "webContentLink": "https://drive.google.com/uc?id=1vaDUcmdXyUtIsTS7hK7-j9y8f66viFtc&export=download",
+      "webViewLink": "https://drive.google.com/file/d/1vaDUcmdXyUtIsTS7hK7-j9y8f66viFtc/view?usp=drivesdk",
+      "storageTarget": "github_cache",
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/00 - Apostilas faltantes/tecnico-eletrotecnica-videos.txt"
     },
     {
       "type": "folder",
@@ -19676,9 +19708,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1vWdzCES_NzGqFA-txkQ_SISwQjIv_4gv&export=download",
       "webViewLink": "https://drive.google.com/file/d/1vWdzCES_NzGqFA-txkQ_SISwQjIv_4gv/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"
     },
     {
       "type": "file",
@@ -19692,9 +19724,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1orEwEVPaE-53MGUpiYrULs9z6d9dUzXN&export=download",
       "webViewLink": "https://drive.google.com/file/d/1orEwEVPaE-53MGUpiYrULs9z6d9dUzXN/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js.z"
     },
     {
       "type": "folder",
@@ -19722,9 +19754,9 @@
       "webContentLink": "https://drive.google.com/uc?id=15UiMRbi5GHL874IRI5F6KfF8uhPbtO1A&export=download",
       "webViewLink": "https://drive.google.com/file/d/15UiMRbi5GHL874IRI5F6KfF8uhPbtO1A/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
     },
     {
       "type": "file",
@@ -19738,9 +19770,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1TgvDxl2u_5LCedURWrc_9ypvMFdHh2pe&export=download",
       "webViewLink": "https://drive.google.com/file/d/1TgvDxl2u_5LCedURWrc_9ypvMFdHh2pe/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js.z"
     },
     {
       "type": "folder",
@@ -19768,9 +19800,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1X6g7M93qMTWj7OGWWvMgW7WK_sWe5gdP&export=download",
       "webViewLink": "https://drive.google.com/file/d/1X6g7M93qMTWj7OGWWvMgW7WK_sWe5gdP/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
     },
     {
       "type": "file",
@@ -19784,9 +19816,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1DuvgdTog8TqiJ5xnavnO5SjDNBm0wCLE&export=download",
       "webViewLink": "https://drive.google.com/file/d/1DuvgdTog8TqiJ5xnavnO5SjDNBm0wCLE/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js.z"
     },
     {
       "type": "folder",
@@ -19807,9 +19839,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1rpiSzvz1GGsgn-3YlSGauSG3RVN9KUWF&export=download",
       "webViewLink": "https://drive.google.com/file/d/1rpiSzvz1GGsgn-3YlSGauSG3RVN9KUWF/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/api-externa360.onilearning.com.br/exemplo-mapa.jpg"
     },
     {
       "type": "folder",
@@ -19851,9 +19883,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1PUC_Z9mlOjwvCfqC5nYhvcSK8XYXsTw-&export=download",
       "webViewLink": "https://drive.google.com/file/d/1PUC_Z9mlOjwvCfqC5nYhvcSK8XYXsTw-/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
     },
     {
       "type": "folder",
@@ -19895,9 +19927,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1OuYPx7oHpIHR2U9wnTO96GIYu9zYIW1y&export=download",
       "webViewLink": "https://drive.google.com/file/d/1OuYPx7oHpIHR2U9wnTO96GIYu9zYIW1y/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/bold/style.css"
     },
     {
       "type": "folder",
@@ -19918,9 +19950,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1jiJbn4PtYTlOyiG5N6QHJxV-3vFmRik5&export=download",
       "webViewLink": "https://drive.google.com/file/d/1jiJbn4PtYTlOyiG5N6QHJxV-3vFmRik5/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css"
     },
     {
       "type": "folder",
@@ -19941,9 +19973,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1_eKsViovp2LlqbKXjVN6l305f7k7qov7&export=download",
       "webViewLink": "https://drive.google.com/file/d/1_eKsViovp2LlqbKXjVN6l305f7k7qov7/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"
     },
     {
       "type": "folder",
@@ -19964,9 +19996,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1FWm317PCaRZmYKJ4ZtoQ04rZH23hrlnE&export=download",
       "webViewLink": "https://drive.google.com/file/d/1FWm317PCaRZmYKJ4ZtoQ04rZH23hrlnE/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/code.jquery.com/jquery-3.2.1.min.js.z"
     },
     {
       "type": "file",
@@ -19980,9 +20012,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1RhnuMfZEHufT9J9r5IEZmEIX5rPAfATo&export=download",
       "webViewLink": "https://drive.google.com/file/d/1RhnuMfZEHufT9J9r5IEZmEIX5rPAfATo/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/code.jquery.com/jquery-3.2.1.min.js"
     },
     {
       "type": "folder",
@@ -20017,9 +20049,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1OhFbUb5l7llrtmOZFxgxYleWxopReq0N&export=download",
       "webViewLink": "https://drive.google.com/file/d/1OhFbUb5l7llrtmOZFxgxYleWxopReq0N/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/locale/locale.html"
     },
     {
       "type": "folder",
@@ -20061,9 +20093,9 @@
       "webContentLink": "https://drive.google.com/uc?id=17LEsU9XbK7PY344XPaxW4BxGwEbCty79&export=download",
       "webViewLink": "https://drive.google.com/file/d/17LEsU9XbK7PY344XPaxW4BxGwEbCty79/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/novo_scorm/scorm-padrao/padrao/css/bootstrap-grid.min.css"
     },
     {
       "type": "file",
@@ -20077,9 +20109,9 @@
       "webContentLink": "https://drive.google.com/uc?id=18J0BYdLskcm90cO4pAX0y1L3VGz_SIC1&export=download",
       "webViewLink": "https://drive.google.com/file/d/18J0BYdLskcm90cO4pAX0y1L3VGz_SIC1/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/novo_scorm/scorm-padrao/padrao/css/main.css"
     },
     {
       "type": "file",
@@ -20093,9 +20125,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1JRkQI9Cu7hOuf3YlJn8JvlIPXKbtdwQk&export=download",
       "webViewLink": "https://drive.google.com/file/d/1JRkQI9Cu7hOuf3YlJn8JvlIPXKbtdwQk/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/novo_scorm/scorm-padrao/padrao/css/materialize.min.css"
     },
     {
       "type": "folder",
@@ -20116,9 +20148,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1VNCyxRH6iCneICnRqYNdsaKwupPwljsR&export=download",
       "webViewLink": "https://drive.google.com/file/d/1VNCyxRH6iCneICnRqYNdsaKwupPwljsR/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/novo_scorm/scorm-padrao/padrao/images/banner-trilha.jpg"
     },
     {
       "type": "folder",
@@ -20146,9 +20178,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1lHHyTIDvSACpxw9jxY-iLIl6ro9y-kMe&export=download",
       "webViewLink": "https://drive.google.com/file/d/1lHHyTIDvSACpxw9jxY-iLIl6ro9y-kMe/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/novo_scorm/scorm-padrao/padrao/fonts/roboto/Roboto-Regular.woff2"
     },
     {
       "type": "file",
@@ -20162,9 +20194,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1P3TAPa8eEQbAgIXWB8nzBVL2pwa_9m-w&export=download",
       "webViewLink": "https://drive.google.com/file/d/1P3TAPa8eEQbAgIXWB8nzBVL2pwa_9m-w/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/novo_scorm/scorm-padrao/padrao/fonts/roboto/Roboto-Light.woff2"
     },
     {
       "type": "file",
@@ -20178,9 +20210,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1NbH5yxIBFKeVquYTfrUu4C_tnMDuV2k5&export=download",
       "webViewLink": "https://drive.google.com/file/d/1NbH5yxIBFKeVquYTfrUu4C_tnMDuV2k5/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/novo_scorm/scorm-padrao/padrao/fonts/roboto/Roboto-Light.woff"
     },
     {
       "type": "file",
@@ -20194,9 +20226,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1iIm-wXzfeHoAoBlA_fqfwC-QH7s_rnv0&export=download",
       "webViewLink": "https://drive.google.com/file/d/1iIm-wXzfeHoAoBlA_fqfwC-QH7s_rnv0/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/novo_scorm/scorm-padrao/padrao/fonts/roboto/Roboto-Bold.woff"
     },
     {
       "type": "file",
@@ -20210,9 +20242,9 @@
       "webContentLink": "https://drive.google.com/uc?id=17r3nBr4-W-ARlHksC8k96ovZiAB2mwD8&export=download",
       "webViewLink": "https://drive.google.com/file/d/17r3nBr4-W-ARlHksC8k96ovZiAB2mwD8/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/novo_scorm/scorm-padrao/padrao/fonts/roboto/Roboto-Thin.woff2"
     },
     {
       "type": "file",
@@ -20226,9 +20258,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1iZ9GVJg6mkBIGhYf4-iUvLfICr2f5OlQ&export=download",
       "webViewLink": "https://drive.google.com/file/d/1iZ9GVJg6mkBIGhYf4-iUvLfICr2f5OlQ/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/novo_scorm/scorm-padrao/padrao/fonts/roboto/Roboto-Thin.woff"
     },
     {
       "type": "file",
@@ -20242,9 +20274,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1NW5bDkgzPNQ75RVcKzNk8w0ltUfqAw11&export=download",
       "webViewLink": "https://drive.google.com/file/d/1NW5bDkgzPNQ75RVcKzNk8w0ltUfqAw11/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/novo_scorm/scorm-padrao/padrao/fonts/roboto/Roboto-Bold.woff2"
     },
     {
       "type": "file",
@@ -20258,9 +20290,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1HWY5NM5_iCy1GZ8KW-rHjGYRI463odpo&export=download",
       "webViewLink": "https://drive.google.com/file/d/1HWY5NM5_iCy1GZ8KW-rHjGYRI463odpo/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/novo_scorm/scorm-padrao/padrao/fonts/roboto/Roboto-Regular.woff"
     },
     {
       "type": "file",
@@ -20274,9 +20306,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1HWo9Q7sBe1nYkgiRN1Utki3ZjtSBm2K9&export=download",
       "webViewLink": "https://drive.google.com/file/d/1HWo9Q7sBe1nYkgiRN1Utki3ZjtSBm2K9/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/novo_scorm/scorm-padrao/padrao/fonts/roboto/Roboto-Medium.woff2"
     },
     {
       "type": "file",
@@ -20290,9 +20322,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1wPQPWTDcrlUS1lgDpAASBZc8XCg_pet4&export=download",
       "webViewLink": "https://drive.google.com/file/d/1wPQPWTDcrlUS1lgDpAASBZc8XCg_pet4/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/novo_scorm/scorm-padrao/padrao/fonts/roboto/Roboto-Medium.woff"
     },
     {
       "type": "folder",
@@ -20313,9 +20345,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1Zwk8tTxoQS5yYpqNERdtRGPRjGvnqa8a&export=download",
       "webViewLink": "https://drive.google.com/file/d/1Zwk8tTxoQS5yYpqNERdtRGPRjGvnqa8a/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/novo_scorm/scorm-padrao/padrao/js/main.js"
     },
     {
       "type": "file",
@@ -20329,9 +20361,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1rWHPNVXGmI5CiNtCcXYZWqFpqZhinTFh&export=download",
       "webViewLink": "https://drive.google.com/file/d/1rWHPNVXGmI5CiNtCcXYZWqFpqZhinTFh/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/novo_scorm/scorm-padrao/padrao/js/bootstrap.min.js"
     },
     {
       "type": "folder",
@@ -20352,9 +20384,9 @@
       "webContentLink": "https://drive.google.com/uc?id=12dMp5jH1uMXBzCM4UN7SahEUr1cRkP0j&export=download",
       "webViewLink": "https://drive.google.com/file/d/12dMp5jH1uMXBzCM4UN7SahEUr1cRkP0j/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/novo_scorm/scorm-padrao/padrao/contents/background_computador2.jpg"
     },
     {
       "type": "folder",
@@ -20375,9 +20407,9 @@
       "webContentLink": "https://drive.google.com/uc?id=19iyztrkzTHV1M8h1k9yhvf8GkgXSfeUp&export=download",
       "webViewLink": "https://drive.google.com/file/d/19iyztrkzTHV1M8h1k9yhvf8GkgXSfeUp/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/chatpdf/audioQuestion92bd.html"
     },
     {
       "type": "file",
@@ -20391,9 +20423,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1SIarxRfCWucwjH_s6mcidOG_heO6AiLI&export=download",
       "webViewLink": "https://drive.google.com/file/d/1SIarxRfCWucwjH_s6mcidOG_heO6AiLI/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/chatpdf/HISTORICO.pdf"
     },
     {
       "type": "file",
@@ -20407,9 +20439,9 @@
       "webContentLink": "https://drive.google.com/uc?id=14N5bEP02Kuf2HMv52HqiUztIj10qIF_n&export=download",
       "webViewLink": "https://drive.google.com/file/d/14N5bEP02Kuf2HMv52HqiUztIj10qIF_n/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/chatpdf/carregarConversas.html"
     },
     {
       "type": "file",
@@ -20423,9 +20455,9 @@
       "webContentLink": "https://drive.google.com/uc?id=11U8onnoXJCWv5HOKwS5ZRM8R_sF62dll&export=download",
       "webViewLink": "https://drive.google.com/file/d/11U8onnoXJCWv5HOKwS5ZRM8R_sF62dll/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/chatpdf/FunPerguntapdf.html"
     },
     {
       "type": "folder",
@@ -20453,9 +20485,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1wqHN8u18XF_ZEujjb9SnxXTENXMlmSyE&export=download",
       "webViewLink": "https://drive.google.com/file/d/1wqHN8u18XF_ZEujjb9SnxXTENXMlmSyE/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/assets/css/acess_bar.css"
     },
     {
       "type": "file",
@@ -20469,9 +20501,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1qH2YZ4ZdazQOtuoL45NC4k6PmgwioK5t&export=download",
       "webViewLink": "https://drive.google.com/file/d/1qH2YZ4ZdazQOtuoL45NC4k6PmgwioK5t/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/assets/css/novaTrilha.css"
     },
     {
       "type": "file",
@@ -20485,9 +20517,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1jjXQr1eOQJGzPULq8lDnIWaItq_2R7nu&export=download",
       "webViewLink": "https://drive.google.com/file/d/1jjXQr1eOQJGzPULq8lDnIWaItq_2R7nu/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/assets/css/acess_contrast.css"
     },
     {
       "type": "file",
@@ -20501,9 +20533,9 @@
       "webContentLink": "https://drive.google.com/uc?id=19CGATePXmoA2emxKl3R70IzHo8effyf3&export=download",
       "webViewLink": "https://drive.google.com/file/d/19CGATePXmoA2emxKl3R70IzHo8effyf3/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/assets/css/reset.css"
     },
     {
       "type": "folder",
@@ -20524,9 +20556,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1A79avsEjQm5heZ_3yx3od-xvDroO_zio&export=download",
       "webViewLink": "https://drive.google.com/file/d/1A79avsEjQm5heZ_3yx3od-xvDroO_zio/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/assets/js/novaTrilha.js"
     },
     {
       "type": "file",
@@ -20540,9 +20572,9 @@
       "webContentLink": "https://drive.google.com/uc?id=16Um8Lwtz6Ave7twz5vJT0XJda0xTKgIk&export=download",
       "webViewLink": "https://drive.google.com/file/d/16Um8Lwtz6Ave7twz5vJT0XJda0xTKgIk/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/assets/js/acess_scripts.js"
     },
     {
       "type": "folder",
@@ -20577,9 +20609,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1lwzPgveeH_hG_sDZiN3I_RBKa2xB7eU6&export=download",
       "webViewLink": "https://drive.google.com/file/d/1lwzPgveeH_hG_sDZiN3I_RBKa2xB7eU6/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-3/icone-4.png"
     },
     {
       "type": "file",
@@ -20593,9 +20625,9 @@
       "webContentLink": "https://drive.google.com/uc?id=18jG6eoTWArZf5ZLZvnMTqJN1E7Zh3FY3&export=download",
       "webViewLink": "https://drive.google.com/file/d/18jG6eoTWArZf5ZLZvnMTqJN1E7Zh3FY3/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-3/icone-10.png"
     },
     {
       "type": "file",
@@ -20609,9 +20641,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1D0QC-C3hPn9HHHbKeIfG8CAXXipYHPZ3&export=download",
       "webViewLink": "https://drive.google.com/file/d/1D0QC-C3hPn9HHHbKeIfG8CAXXipYHPZ3/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-3/icone-2.png"
     },
     {
       "type": "file",
@@ -20625,9 +20657,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1RdsxqfCKbSdiRZuvZO-gGSqXpRgHBXX9&export=download",
       "webViewLink": "https://drive.google.com/file/d/1RdsxqfCKbSdiRZuvZO-gGSqXpRgHBXX9/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-3/icone-5.png"
     },
     {
       "type": "file",
@@ -20641,9 +20673,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1Nby72ZYI9WUa6Mq0yMKwwfGC4zE7rcVR&export=download",
       "webViewLink": "https://drive.google.com/file/d/1Nby72ZYI9WUa6Mq0yMKwwfGC4zE7rcVR/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-3/icone-1.png"
     },
     {
       "type": "file",
@@ -20657,9 +20689,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1HIvhapNgqkSrRHD1bGfK6ruY8r9YYzAR&export=download",
       "webViewLink": "https://drive.google.com/file/d/1HIvhapNgqkSrRHD1bGfK6ruY8r9YYzAR/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-3/icone-12.png"
     },
     {
       "type": "file",
@@ -20673,9 +20705,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1o85uWxMh8LCNa2bjQ4zNaeSlbViJF-1F&export=download",
       "webViewLink": "https://drive.google.com/file/d/1o85uWxMh8LCNa2bjQ4zNaeSlbViJF-1F/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-3/icone-9.png"
     },
     {
       "type": "file",
@@ -20689,9 +20721,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1turQ-V-Zek1rnYs5TBIB_snst3Ua-dyB&export=download",
       "webViewLink": "https://drive.google.com/file/d/1turQ-V-Zek1rnYs5TBIB_snst3Ua-dyB/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-3/icone-7.png"
     },
     {
       "type": "file",
@@ -20705,9 +20737,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1_PsSRppNVsghDmItFVzfjvYmKZKwOS1y&export=download",
       "webViewLink": "https://drive.google.com/file/d/1_PsSRppNVsghDmItFVzfjvYmKZKwOS1y/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-3/icone-8.png"
     },
     {
       "type": "file",
@@ -20721,9 +20753,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1962KGl4MHjfJRz4IVVzoxC1iByZrVYjo&export=download",
       "webViewLink": "https://drive.google.com/file/d/1962KGl4MHjfJRz4IVVzoxC1iByZrVYjo/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-3/icone-11.png"
     },
     {
       "type": "file",
@@ -20737,9 +20769,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1LP0W06y-jt5BpZRIxjotJH1ZrjjEc1Di&export=download",
       "webViewLink": "https://drive.google.com/file/d/1LP0W06y-jt5BpZRIxjotJH1ZrjjEc1Di/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-3/icone-6.png"
     },
     {
       "type": "file",
@@ -20753,9 +20785,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1jqmQpGUt7G9RoY77HblDBC4bKK6n78OZ&export=download",
       "webViewLink": "https://drive.google.com/file/d/1jqmQpGUt7G9RoY77HblDBC4bKK6n78OZ/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-3/icone-3.png"
     },
     {
       "type": "file",
@@ -20769,9 +20801,9 @@
       "webContentLink": "https://drive.google.com/uc?id=17N9lye07KC3xkXYoFMvS9XtH-XbGPBaZ&export=download",
       "webViewLink": "https://drive.google.com/file/d/17N9lye07KC3xkXYoFMvS9XtH-XbGPBaZ/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/assets/img/ONIfavicon-96x96.png"
     },
     {
       "type": "file",
@@ -20785,9 +20817,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1aQL7UT2yvDg2wqkxgUkHJxu25htwDOT8&export=download",
       "webViewLink": "https://drive.google.com/file/d/1aQL7UT2yvDg2wqkxgUkHJxu25htwDOT8/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/assets/img/lang_US.svg"
     },
     {
       "type": "file",
@@ -20801,9 +20833,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1SHttB5CgoZjbMsvVi9ySlCiuBegfWH2D&export=download",
       "webViewLink": "https://drive.google.com/file/d/1SHttB5CgoZjbMsvVi9ySlCiuBegfWH2D/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/assets/img/lang_BR.svg"
     },
     {
       "type": "file",
@@ -20817,9 +20849,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1umOAcVylQmJVrv6vnqT7JShfO7KkT4TM&export=download",
       "webViewLink": "https://drive.google.com/file/d/1umOAcVylQmJVrv6vnqT7JShfO7KkT4TM/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/assets/img/lang_ES.svg"
     },
     {
       "type": "file",
@@ -20833,9 +20865,9 @@
       "webContentLink": "https://drive.google.com/uc?id=18-kzoxvxBhX7k-TfIHCq5Vrk2KxM4Oyv&export=download",
       "webViewLink": "https://drive.google.com/file/d/18-kzoxvxBhX7k-TfIHCq5Vrk2KxM4Oyv/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/assets/img/pdf.svg"
     },
     {
       "type": "file",
@@ -20849,9 +20881,9 @@
       "webContentLink": "https://drive.google.com/uc?id=15JR9TldaQIkJnU87b1Q02k5pcqtzgxAT&export=download",
       "webViewLink": "https://drive.google.com/file/d/15JR9TldaQIkJnU87b1Q02k5pcqtzgxAT/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/slidef124.pdf"
     },
     {
       "type": "file",
@@ -20865,9 +20897,9 @@
       "webContentLink": "https://drive.google.com/uc?id=112jNynCNA3BKNnZ-dm68JFh9pqvqxsIV&export=download",
       "webViewLink": "https://drive.google.com/file/d/112jNynCNA3BKNnZ-dm68JFh9pqvqxsIV/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/slide958b.pdf"
     },
     {
       "type": "file",
@@ -20881,9 +20913,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1UW7qe_o4jyjTb8AbOzfWRvJ3jR4yMBTM&export=download",
       "webViewLink": "https://drive.google.com/file/d/1UW7qe_o4jyjTb8AbOzfWRvJ3jR4yMBTM/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/slide0922.pdf"
     },
     {
       "type": "file",
@@ -20897,9 +20929,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1wHf3hL16amSQ33GMvIL1UU4rnVsFq07_&export=download",
       "webViewLink": "https://drive.google.com/file/d/1wHf3hL16amSQ33GMvIL1UU4rnVsFq07_/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/slide9c7c.pdf"
     },
     {
       "type": "file",
@@ -20913,9 +20945,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1RWYJ_mlBAdeusMQhKYrvvmnbc-2ISsc_&export=download",
       "webViewLink": "https://drive.google.com/file/d/1RWYJ_mlBAdeusMQhKYrvvmnbc-2ISsc_/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/componente6726.html"
     },
     {
       "type": "file",
@@ -20929,9 +20961,9 @@
       "webContentLink": "https://drive.google.com/uc?id=13lyJFpLzzNNCSd4pY7wnvWu9Py3VQN41&export=download",
       "webViewLink": "https://drive.google.com/file/d/13lyJFpLzzNNCSd4pY7wnvWu9Py3VQN41/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/componente95a7.html"
     },
     {
       "type": "file",
@@ -20945,9 +20977,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1sw1eDlYEzy_KoxUvQepA_k-RGG7dWD1i&export=download",
       "webViewLink": "https://drive.google.com/file/d/1sw1eDlYEzy_KoxUvQepA_k-RGG7dWD1i/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/arquivo-pdf3716.pdf"
     },
     {
       "type": "file",
@@ -20961,9 +20993,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1W7ZfLonxFGSR5P-ZxgViDQCIJAhvW9aW&export=download",
       "webViewLink": "https://drive.google.com/file/d/1W7ZfLonxFGSR5P-ZxgViDQCIJAhvW9aW/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/componentebdac.html"
     },
     {
       "type": "file",
@@ -20977,9 +21009,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1oxHuF9a8eblz9TvaT_FOdmbIhMiwYG10&export=download",
       "webViewLink": "https://drive.google.com/file/d/1oxHuF9a8eblz9TvaT_FOdmbIhMiwYG10/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/componentef599.html"
     },
     {
       "type": "file",
@@ -20993,9 +21025,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1gli2K7Bub9ZAFJdT6zHXt3MsgMGwSOP6&export=download",
       "webViewLink": "https://drive.google.com/file/d/1gli2K7Bub9ZAFJdT6zHXt3MsgMGwSOP6/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/componente5840.html"
     },
     {
       "type": "file",
@@ -21009,9 +21041,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1T6-C29Yma9VhyA78j5pH-3tiJX7dWRix&export=download",
       "webViewLink": "https://drive.google.com/file/d/1T6-C29Yma9VhyA78j5pH-3tiJX7dWRix/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/arquivo-pdf651a.pdf"
     },
     {
       "type": "file",
@@ -21025,9 +21057,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1WXkW9T93uyZ-0ofQBSYhPCj78rncsoZH&export=download",
       "webViewLink": "https://drive.google.com/file/d/1WXkW9T93uyZ-0ofQBSYhPCj78rncsoZH/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/componente69c3.html"
     },
     {
       "type": "file",
@@ -21041,9 +21073,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1R8O2OW22K5NVat8HyRFT62Fk-mYQ8ljz&export=download",
       "webViewLink": "https://drive.google.com/file/d/1R8O2OW22K5NVat8HyRFT62Fk-mYQ8ljz/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/componente18d9.html"
     },
     {
       "type": "file",
@@ -21057,9 +21089,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1z2_zGKCL_IyqvDH5iemMZwC4lYLLJCci&export=download",
       "webViewLink": "https://drive.google.com/file/d/1z2_zGKCL_IyqvDH5iemMZwC4lYLLJCci/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/componente9ffa.html"
     },
     {
       "type": "file",
@@ -21073,9 +21105,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1wKMvvNA0VjSrnF3VKJ7pi6e67OSCDxND&export=download",
       "webViewLink": "https://drive.google.com/file/d/1wKMvvNA0VjSrnF3VKJ7pi6e67OSCDxND/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/ebook6309.pdf"
     },
     {
       "type": "file",
@@ -21089,9 +21121,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1xfYqfJ5OZ4UV7Jg0ZS3UsS0YrQZW59_R&export=download",
       "webViewLink": "https://drive.google.com/file/d/1xfYqfJ5OZ4UV7Jg0ZS3UsS0YrQZW59_R/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/fa5f564ba09c72dfc9f1a0bdd59ed8a64b80.pdf"
     },
     {
       "type": "file",
@@ -21105,9 +21137,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1mcl4PprgDEG3-CEOjKzy_a99iPK4Kgnv&export=download",
       "webViewLink": "https://drive.google.com/file/d/1mcl4PprgDEG3-CEOjKzy_a99iPK4Kgnv/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/componented6db.html"
     },
     {
       "type": "file",
@@ -21121,9 +21153,9 @@
       "webContentLink": "https://drive.google.com/uc?id=14XWNVXrSjlsWWs8xVDhF4CbkXaWU9Ldg&export=download",
       "webViewLink": "https://drive.google.com/file/d/14XWNVXrSjlsWWs8xVDhF4CbkXaWU9Ldg/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/componenteee18.html"
     },
     {
       "type": "file",
@@ -21137,9 +21169,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1fTrLADCk0AAS6aTEpvTQv1rnrGO582RJ&export=download",
       "webViewLink": "https://drive.google.com/file/d/1fTrLADCk0AAS6aTEpvTQv1rnrGO582RJ/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/componente1fff.html"
     },
     {
       "type": "file",
@@ -21153,9 +21185,9 @@
       "webContentLink": "https://drive.google.com/uc?id=18zWeG7zqshQ9Noa8ELihwIhbdb1AHFS1&export=download",
       "webViewLink": "https://drive.google.com/file/d/18zWeG7zqshQ9Noa8ELihwIhbdb1AHFS1/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/ebookea27.pdf"
     },
     {
       "type": "file",
@@ -21169,9 +21201,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1TQlQ2wh0P8WRQl5oI6RRnfCbpBnqXEgR&export=download",
       "webViewLink": "https://drive.google.com/file/d/1TQlQ2wh0P8WRQl5oI6RRnfCbpBnqXEgR/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/componentefc48.html"
     },
     {
       "type": "file",
@@ -21185,9 +21217,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1IeHuGYYXz_PrC4O2h2yBnsWcxaHyDL2Z&export=download",
       "webViewLink": "https://drive.google.com/file/d/1IeHuGYYXz_PrC4O2h2yBnsWcxaHyDL2Z/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/componente791d.html"
     },
     {
       "type": "file",
@@ -21201,9 +21233,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1fUWgQbevq3iyf1pLaB9pRVrJkr6h0UEB&export=download",
       "webViewLink": "https://drive.google.com/file/d/1fUWgQbevq3iyf1pLaB9pRVrJkr6h0UEB/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/componentebdc6.html"
     },
     {
       "type": "file",
@@ -21217,9 +21249,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1IJoem8aGexaKMxMa-0N2jUoPt9LyHHVG&export=download",
       "webViewLink": "https://drive.google.com/file/d/1IJoem8aGexaKMxMa-0N2jUoPt9LyHHVG/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/componenteed24.html"
     },
     {
       "type": "file",
@@ -21233,9 +21265,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1_QsLARICdQXzPCDagzRztw1uPTFk3LRn&export=download",
       "webViewLink": "https://drive.google.com/file/d/1_QsLARICdQXzPCDagzRztw1uPTFk3LRn/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/arquivo-pdf780a.pdf"
     },
     {
       "type": "file",
@@ -21249,9 +21281,9 @@
       "webContentLink": "https://drive.google.com/uc?id=16MW9bOhn3ZsRUSP9Fj8JUMb_oOtW3kC_&export=download",
       "webViewLink": "https://drive.google.com/file/d/16MW9bOhn3ZsRUSP9Fj8JUMb_oOtW3kC_/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/componente23c7.html"
     },
     {
       "type": "file",
@@ -21265,9 +21297,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1S41INvBkypI5jtc-qNKbUwQFI5Gda3zq&export=download",
       "webViewLink": "https://drive.google.com/file/d/1S41INvBkypI5jtc-qNKbUwQFI5Gda3zq/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/cb5d72fbba87832444419501b36c5061e8a6.pdf"
     },
     {
       "type": "file",
@@ -21281,9 +21313,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1sbzQbnxzbm22tGUV41Eod29ucReOub8P&export=download",
       "webViewLink": "https://drive.google.com/file/d/1sbzQbnxzbm22tGUV41Eod29ucReOub8P/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/componente20fc.html"
     },
     {
       "type": "file",
@@ -21297,9 +21329,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1YYMqVTzT6N1B15yB9gguyrn5LWZFoHfB&export=download",
       "webViewLink": "https://drive.google.com/file/d/1YYMqVTzT6N1B15yB9gguyrn5LWZFoHfB/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/ebc1bc70ac10bcf4047b96ff7b2f6a8ed0bf.pdf"
     },
     {
       "type": "file",
@@ -21313,9 +21345,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1mGRQFeVtXjBY8xSOHIfp9X1IQ3KIEYd-&export=download",
       "webViewLink": "https://drive.google.com/file/d/1mGRQFeVtXjBY8xSOHIfp9X1IQ3KIEYd-/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/componente7ac6.html"
     },
     {
       "type": "file",
@@ -21329,9 +21361,9 @@
       "webContentLink": "https://drive.google.com/uc?id=12KNn9agZNbIfhGReftaQSZFIgQi82s7J&export=download",
       "webViewLink": "https://drive.google.com/file/d/12KNn9agZNbIfhGReftaQSZFIgQi82s7J/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/POST.html"
     },
     {
       "type": "file",
@@ -21345,9 +21377,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1MEEm4ez-iR57cowxD9EDL88s9XYPth0-&export=download",
       "webViewLink": "https://drive.google.com/file/d/1MEEm4ez-iR57cowxD9EDL88s9XYPth0-/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/componentead89.html"
     },
     {
       "type": "file",
@@ -21361,9 +21393,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1RURkkYCXmQo7P5asAcpZuRW9E2gl-us1&export=download",
       "webViewLink": "https://drive.google.com/file/d/1RURkkYCXmQo7P5asAcpZuRW9E2gl-us1/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/componentec33b.html"
     },
     {
       "type": "file",
@@ -21377,9 +21409,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1rJI1aAHw5-NPO-1OEuzE-rn2Brn_g8j_&export=download",
       "webViewLink": "https://drive.google.com/file/d/1rJI1aAHw5-NPO-1OEuzE-rn2Brn_g8j_/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/componente1ea7.html"
     },
     {
       "type": "file",
@@ -21393,9 +21425,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1T8BEFcsrlHUdE5duDxIBcHmd-CcXrKO8&export=download",
       "webViewLink": "https://drive.google.com/file/d/1T8BEFcsrlHUdE5duDxIBcHmd-CcXrKO8/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/componenteea11.html"
     },
     {
       "type": "file",
@@ -21409,9 +21441,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1q4IxdZ90QKI9dmQe8Kx7GRM6bAIq4twg&export=download",
       "webViewLink": "https://drive.google.com/file/d/1q4IxdZ90QKI9dmQe8Kx7GRM6bAIq4twg/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/702c8675d5a57bc7417281513c95a959db28.pdf"
     },
     {
       "type": "file",
@@ -21425,9 +21457,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1qU1ZN4bO3eId6U36CXhwDJ_HZnUSyev9&export=download",
       "webViewLink": "https://drive.google.com/file/d/1qU1ZN4bO3eId6U36CXhwDJ_HZnUSyev9/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/ebook05e1.pdf"
     },
     {
       "type": "file",
@@ -21441,9 +21473,9 @@
       "webContentLink": "https://drive.google.com/uc?id=13RBaEC8XOcxVm2ZuXu2GSE2a9a3x9uhN&export=download",
       "webViewLink": "https://drive.google.com/file/d/13RBaEC8XOcxVm2ZuXu2GSE2a9a3x9uhN/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/componente572e.html"
     },
     {
       "type": "file",
@@ -21457,9 +21489,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1qv1NedE0pBZPRbPBOKvSM8V2oyqHbkjz&export=download",
       "webViewLink": "https://drive.google.com/file/d/1qv1NedE0pBZPRbPBOKvSM8V2oyqHbkjz/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/componentecc13.html"
     },
     {
       "type": "file",
@@ -21473,9 +21505,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1E6lzXl0ojDrpmpF3YnXBaYLNaSsIbH61&export=download",
       "webViewLink": "https://drive.google.com/file/d/1E6lzXl0ojDrpmpF3YnXBaYLNaSsIbH61/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/chat_pdf_onitutor.html"
     },
     {
       "type": "file",
@@ -21489,9 +21521,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1sTgdTHJqe8PjmN35_e5dibhV_XavkBHd&export=download",
       "webViewLink": "https://drive.google.com/file/d/1sTgdTHJqe8PjmN35_e5dibhV_XavkBHd/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/componente6f71.html"
     },
     {
       "type": "file",
@@ -21505,9 +21537,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1ePud9SkIgD3ZZQTZxd1x42N4ogppob3f&export=download",
       "webViewLink": "https://drive.google.com/file/d/1ePud9SkIgD3ZZQTZxd1x42N4ogppob3f/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/arquivo-pdf044f.pdf"
     },
     {
       "type": "file",
@@ -21521,9 +21553,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1lUQxA6hF4ZQMPKv5702mDmBlrX6kq_In&export=download",
       "webViewLink": "https://drive.google.com/file/d/1lUQxA6hF4ZQMPKv5702mDmBlrX6kq_In/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/ebookafeb.pdf"
     },
     {
       "type": "file",
@@ -21537,9 +21569,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1LJ4--LJA3AdQnPdLhdVMyHXbWLX8nx2m&export=download",
       "webViewLink": "https://drive.google.com/file/d/1LJ4--LJA3AdQnPdLhdVMyHXbWLX8nx2m/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/componente5bc1.html"
     },
     {
       "type": "file",
@@ -21553,9 +21585,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1KC7JE4JqsB_J-GlsN8oMSMduxEu9BKAM&export=download",
       "webViewLink": "https://drive.google.com/file/d/1KC7JE4JqsB_J-GlsN8oMSMduxEu9BKAM/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/componenteef80.html"
     },
     {
       "type": "file",
@@ -21569,9 +21601,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1gdxi1kvekpQJg-0ayM-t3nj83D39oB6g&export=download",
       "webViewLink": "https://drive.google.com/file/d/1gdxi1kvekpQJg-0ayM-t3nj83D39oB6g/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/scripts.html"
     },
     {
       "type": "file",
@@ -21585,9 +21617,9 @@
       "webContentLink": "https://drive.google.com/uc?id=16k9_g6ACNPF1c-OSGRr09HVoSKYf_CEO&export=download",
       "webViewLink": "https://drive.google.com/file/d/16k9_g6ACNPF1c-OSGRr09HVoSKYf_CEO/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/componente012b.html"
     },
     {
       "type": "file",
@@ -21601,9 +21633,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1WBwnYefwbaVv2YxOZ9VwajCIfMNLTYWC&export=download",
       "webViewLink": "https://drive.google.com/file/d/1WBwnYefwbaVv2YxOZ9VwajCIfMNLTYWC/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/componentec542.html"
     },
     {
       "type": "file",
@@ -21617,9 +21649,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1bv-_SwRJTmjwhxlHvcSP_9M_4RD93vtS&export=download",
       "webViewLink": "https://drive.google.com/file/d/1bv-_SwRJTmjwhxlHvcSP_9M_4RD93vtS/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/componente7813.html"
     },
     {
       "type": "file",
@@ -21633,9 +21665,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1MaubNlZWklU1zHurqag-LtMvyupn4jvj&export=download",
       "webViewLink": "https://drive.google.com/file/d/1MaubNlZWklU1zHurqag-LtMvyupn4jvj/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/componentec3dc.html"
     },
     {
       "type": "file",
@@ -21649,9 +21681,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1Eclyd2UFgNV1c_5zaJ-adaHJpn8XKAD8&export=download",
       "webViewLink": "https://drive.google.com/file/d/1Eclyd2UFgNV1c_5zaJ-adaHJpn8XKAD8/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/componente14d4.html"
     },
     {
       "type": "file",
@@ -21665,9 +21697,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1yUxFEp2uqXRUJdV-7OTdzOYq1-yPwJIG&export=download",
       "webViewLink": "https://drive.google.com/file/d/1yUxFEp2uqXRUJdV-7OTdzOYq1-yPwJIG/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/conteudo/componentece30.html"
     },
     {
       "type": "folder",
@@ -21709,9 +21741,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1J9cjZ1tB_7E3s9rHQ4RyGE5wpBGL8NlL&export=download",
       "webViewLink": "https://drive.google.com/file/d/1J9cjZ1tB_7E3s9rHQ4RyGE5wpBGL8NlL/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/trilha/assets/pdf/web/viewer.js"
     },
     {
       "type": "file",
@@ -21725,9 +21757,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1teqmvgPy-gssrPEl8vSVmjP9DFyPGZhO&export=download",
       "webViewLink": "https://drive.google.com/file/d/1teqmvgPy-gssrPEl8vSVmjP9DFyPGZhO/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/trilha/assets/pdf/web/viewer.css"
     },
     {
       "type": "folder",
@@ -21748,9 +21780,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1yyJfnPhyBaNOxndDq3WG8pCjx1WGzVR-&export=download",
       "webViewLink": "https://drive.google.com/file/d/1yyJfnPhyBaNOxndDq3WG8pCjx1WGzVR-/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/scorm.onilearning.com.br/trilha/assets/pdf/build/pdf.js"
     },
     {
       "type": "folder",
@@ -21785,9 +21817,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1bkaod7VFTYeBm-o_nW7XY5GvDBxTvbb4&export=download",
       "webViewLink": "https://drive.google.com/file/d/1bkaod7VFTYeBm-o_nW7XY5GvDBxTvbb4/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/plugin.handtalk.me/web/latest/handtalk.min.js.z"
     },
     {
       "type": "file",
@@ -21801,9 +21833,9 @@
       "webContentLink": "https://drive.google.com/uc?id=14Y8oKyJ63hLhWgrUlcNf3RU4NaBS9vxy&export=download",
       "webViewLink": "https://drive.google.com/file/d/14Y8oKyJ63hLhWgrUlcNf3RU4NaBS9vxy/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/plugin.handtalk.me/web/latest/handtalk.min.js"
     },
     {
       "type": "file",
@@ -21817,9 +21849,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1P98Tq_3Ne3p9H_uZX5cqwuybxxknvyaB&export=download",
       "webViewLink": "https://drive.google.com/file/d/1P98Tq_3Ne3p9H_uZX5cqwuybxxknvyaB/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/hts-log.txt"
     },
     {
       "type": "file",
@@ -21833,9 +21865,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1oxvT69fX1HZ-D8iYnkJ2YTEk0Pir-BvN&export=download",
       "webViewLink": "https://drive.google.com/file/d/1oxvT69fX1HZ-D8iYnkJ2YTEk0Pir-BvN/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/fade.gif"
     },
     {
       "type": "file",
@@ -21849,9 +21881,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1PbCMOWtfIU9MDH6s-I3gAyKENFfFTvo-&export=download",
       "webViewLink": "https://drive.google.com/file/d/1PbCMOWtfIU9MDH6s-I3gAyKENFfFTvo-/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/index.html"
     },
     {
       "type": "file",
@@ -21865,9 +21897,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1jYtsG2e3EiG1iBPnd6mFKAC7jel0JlOz&export=download",
       "webViewLink": "https://drive.google.com/file/d/1jYtsG2e3EiG1iBPnd6mFKAC7jel0JlOz/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/backblue.gif"
     },
     {
       "type": "file",
@@ -21881,9 +21913,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1bOGtQkwgbzaFC2ZGGTYVp5aG40HGJO5k&export=download",
       "webViewLink": "https://drive.google.com/file/d/1bOGtQkwgbzaFC2ZGGTYVp5aG40HGJO5k/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Interpretação de Desenhos Técnicos/cookies.txt"
     },
     {
       "type": "folder",
@@ -21911,9 +21943,9 @@
       "webContentLink": "https://drive.google.com/uc?id=13NR8mrK4NNUDyar2Yj1fiocy-JqUCIq_&export=download",
       "webViewLink": "https://drive.google.com/file/d/13NR8mrK4NNUDyar2Yj1fiocy-JqUCIq_/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Eletrônica Digital/hts-cache/winprofile.ini"
     },
     {
       "type": "file",
@@ -21927,9 +21959,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1frhb4IlKk0C-HgWzc27a0wdOd0dRqL_5&export=download",
       "webViewLink": "https://drive.google.com/file/d/1frhb4IlKk0C-HgWzc27a0wdOd0dRqL_5/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Eletrônica Digital/hts-cache/new.lst"
     },
     {
       "type": "file",
@@ -21943,9 +21975,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1DVdI8LL_TLrNdbc07wG0XKpzFUCiOlol&export=download",
       "webViewLink": "https://drive.google.com/file/d/1DVdI8LL_TLrNdbc07wG0XKpzFUCiOlol/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Eletrônica Digital/hts-cache/new.txt"
     },
     {
       "type": "file",
@@ -21959,9 +21991,9 @@
       "webContentLink": "https://drive.google.com/uc?id=18lKfxptBsjhYLaroAcfNK7xhJSf1Pfzx&export=download",
       "webViewLink": "https://drive.google.com/file/d/18lKfxptBsjhYLaroAcfNK7xhJSf1Pfzx/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Eletrônica Digital/hts-cache/new.zip"
     },
     {
       "type": "file",
@@ -21975,9 +22007,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1qEE6Pxd8-91S64mi1UkBSitr-SscZR4S&export=download",
       "webViewLink": "https://drive.google.com/file/d/1qEE6Pxd8-91S64mi1UkBSitr-SscZR4S/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Eletrônica Digital/hts-cache/readme.txt"
     },
     {
       "type": "folder",
@@ -22012,9 +22044,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1z9TlvH79YcXuHS6xyWDuHUewe3uWidhW&export=download",
       "webViewLink": "https://drive.google.com/file/d/1z9TlvH79YcXuHS6xyWDuHUewe3uWidhW/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Eletrônica Digital/plugin.handtalk.me/web/latest/handtalk.min.js"
     },
     {
       "type": "file",
@@ -22028,9 +22060,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1sKyFX9dpv-b4ZAB3ls0-gnf8ca-t7Zpb&export=download",
       "webViewLink": "https://drive.google.com/file/d/1sKyFX9dpv-b4ZAB3ls0-gnf8ca-t7Zpb/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Eletrônica Digital/plugin.handtalk.me/web/latest/handtalk.min.js.z"
     },
     {
       "type": "folder",
@@ -22065,9 +22097,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1TC6Ct2WHHNh0Ii6K65UcDeeD3wOYsS0A&export=download",
       "webViewLink": "https://drive.google.com/file/d/1TC6Ct2WHHNh0Ii6K65UcDeeD3wOYsS0A/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Eletrônica Digital/scorm.onilearning.com.br/conteudo/locale/locale.html"
     },
     {
       "type": "folder",
@@ -22095,9 +22127,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1Zcw-tekAHLJZVrtYmoKFdoDPMvWsV78C&export=download",
       "webViewLink": "https://drive.google.com/file/d/1Zcw-tekAHLJZVrtYmoKFdoDPMvWsV78C/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Eletrônica Digital/scorm.onilearning.com.br/conteudo/assets/js/acess_scripts.js"
     },
     {
       "type": "file",
@@ -22111,9 +22143,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1L3is_xq2GQ9iT6AiNRr1XzL0NB25F4gz&export=download",
       "webViewLink": "https://drive.google.com/file/d/1L3is_xq2GQ9iT6AiNRr1XzL0NB25F4gz/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Eletrônica Digital/scorm.onilearning.com.br/conteudo/assets/js/novaTrilha.js.z"
     },
     {
       "type": "file",
@@ -22127,9 +22159,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1GWz6yg3w6Yp-DhMcSGAo-Qv8lIod6S6s&export=download",
       "webViewLink": "https://drive.google.com/file/d/1GWz6yg3w6Yp-DhMcSGAo-Qv8lIod6S6s/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Eletrônica Digital/scorm.onilearning.com.br/conteudo/assets/js/acess_scripts.js.z"
     },
     {
       "type": "file",
@@ -22143,9 +22175,9 @@
       "webContentLink": "https://drive.google.com/uc?id=15cKXfFZp4uH79R65DevN4IMe5yHKMifS&export=download",
       "webViewLink": "https://drive.google.com/file/d/15cKXfFZp4uH79R65DevN4IMe5yHKMifS/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Eletrônica Digital/scorm.onilearning.com.br/conteudo/assets/js/novaTrilha.js"
     },
     {
       "type": "folder",
@@ -22166,9 +22198,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1V6cNhlLmmvwwJvVx6Mlrg1d4HVuHLJgH&export=download",
       "webViewLink": "https://drive.google.com/file/d/1V6cNhlLmmvwwJvVx6Mlrg1d4HVuHLJgH/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Eletrônica Digital/scorm.onilearning.com.br/conteudo/assets/css/novaTrilha.css"
     },
     {
       "type": "file",
@@ -22182,9 +22214,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1cVv2iIwrYpn4rGWiIl9UJLXUJPX_LW1n&export=download",
       "webViewLink": "https://drive.google.com/file/d/1cVv2iIwrYpn4rGWiIl9UJLXUJPX_LW1n/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Eletrônica Digital/scorm.onilearning.com.br/conteudo/assets/css/reset.css"
     },
     {
       "type": "file",
@@ -22198,9 +22230,9 @@
       "webContentLink": "https://drive.google.com/uc?id=15IbqTna18JzNKnWZo89lMLcp3VBEaFPg&export=download",
       "webViewLink": "https://drive.google.com/file/d/15IbqTna18JzNKnWZo89lMLcp3VBEaFPg/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Eletrônica Digital/scorm.onilearning.com.br/conteudo/assets/css/novaTrilha.css.z"
     },
     {
       "type": "file",
@@ -22214,9 +22246,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1DDmp1xoIrtRWBB2zMguXif1h-autQUff&export=download",
       "webViewLink": "https://drive.google.com/file/d/1DDmp1xoIrtRWBB2zMguXif1h-autQUff/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Eletrônica Digital/scorm.onilearning.com.br/conteudo/assets/css/acess_contrast.css"
     },
     {
       "type": "file",
@@ -22230,9 +22262,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1zh56Necn1IyQAtfhq-GT1UXWQsrUOvfq&export=download",
       "webViewLink": "https://drive.google.com/file/d/1zh56Necn1IyQAtfhq-GT1UXWQsrUOvfq/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Eletrônica Digital/scorm.onilearning.com.br/conteudo/assets/css/acess_bar.css"
     },
     {
       "type": "folder",
@@ -22267,9 +22299,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1iqhxMmAfSINrcf8y5dSzVqWu3YBJ8gKw&export=download",
       "webViewLink": "https://drive.google.com/file/d/1iqhxMmAfSINrcf8y5dSzVqWu3YBJ8gKw/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Eletrônica Digital/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-3/icone-9.png"
     },
     {
       "type": "file",
@@ -22283,9 +22315,9 @@
       "webContentLink": "https://drive.google.com/uc?id=18XgGlP_WkfqrlEBbVYeUVEF2ec5hnicf&export=download",
       "webViewLink": "https://drive.google.com/file/d/18XgGlP_WkfqrlEBbVYeUVEF2ec5hnicf/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Eletrônica Digital/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-3/icone-1.png"
     },
     {
       "type": "file",
@@ -22299,9 +22331,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1jn6oyBa7EyXxUJhCUF2dDtjfo3ICswaA&export=download",
       "webViewLink": "https://drive.google.com/file/d/1jn6oyBa7EyXxUJhCUF2dDtjfo3ICswaA/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Eletrônica Digital/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-3/icone-8.png"
     },
     {
       "type": "file",
@@ -22315,9 +22347,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1S66eBia2v-5G9jaN6zUkOViVNsYM5gG4&export=download",
       "webViewLink": "https://drive.google.com/file/d/1S66eBia2v-5G9jaN6zUkOViVNsYM5gG4/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Eletrônica Digital/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-3/icone-7.png"
     },
     {
       "type": "file",
@@ -22331,9 +22363,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1GpGG-aZP20buYK7wyRjwkFElO3KJLt1R&export=download",
       "webViewLink": "https://drive.google.com/file/d/1GpGG-aZP20buYK7wyRjwkFElO3KJLt1R/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Eletrônica Digital/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-3/icone-3.png"
     },
     {
       "type": "file",
@@ -22347,9 +22379,9 @@
       "webContentLink": "https://drive.google.com/uc?id=12hJ8ZAoafdzOhJ24i9_29oZQH8uI-JJ4&export=download",
       "webViewLink": "https://drive.google.com/file/d/12hJ8ZAoafdzOhJ24i9_29oZQH8uI-JJ4/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Eletrônica Digital/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-3/icone-2.png"
     },
     {
       "type": "file",
@@ -22363,9 +22395,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1zUQohy3Pp9dq4Xd8gMa6Gc6yrDRxZE1_&export=download",
       "webViewLink": "https://drive.google.com/file/d/1zUQohy3Pp9dq4Xd8gMa6Gc6yrDRxZE1_/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Eletrônica Digital/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-3/icone-11.png"
     },
     {
       "type": "file",
@@ -22379,9 +22411,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1uC_5c_AMUJujcxhF6o7PvhzX2wliF3OS&export=download",
       "webViewLink": "https://drive.google.com/file/d/1uC_5c_AMUJujcxhF6o7PvhzX2wliF3OS/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Eletrônica Digital/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-3/icone-4.png"
     },
     {
       "type": "file",
@@ -22395,9 +22427,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1ckwkjDNWjZQfkGpGd72ti26XrIj8jnGx&export=download",
       "webViewLink": "https://drive.google.com/file/d/1ckwkjDNWjZQfkGpGd72ti26XrIj8jnGx/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Eletrônica Digital/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-3/icone-12.png"
     },
     {
       "type": "file",
@@ -22411,9 +22443,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1Qdm3toLpk0cWu_Br01hvniRPl6xuaJCF&export=download",
       "webViewLink": "https://drive.google.com/file/d/1Qdm3toLpk0cWu_Br01hvniRPl6xuaJCF/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Eletrônica Digital/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-3/icone-5.png"
     },
     {
       "type": "file",
@@ -22427,9 +22459,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1FycSi6a67vgOmGMGxK18jE5pKUf-_qfK&export=download",
       "webViewLink": "https://drive.google.com/file/d/1FycSi6a67vgOmGMGxK18jE5pKUf-_qfK/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T01:17:15.643Z",
+      "publicPath": "/eadplataforma/Eletrônica Digital/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-3/icone-10.png"
     },
     {
       "type": "file",
@@ -50890,7 +50922,7 @@
   ],
   "sync": {
     "mode": "drive_to_github_files",
-    "syncedAt": "2026-07-22T01:08:01.709Z",
+    "syncedAt": "2026-07-22T01:17:15.643Z",
     "batchSize": 150,
     "batchLimit": 150
   }
