@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { ArrowRightLeft, FolderOpen, Loader2, Plus, RefreshCw, Save, Search } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import { ArrowRightLeft, FolderOpen, Loader2, Pencil, Plus, RefreshCw, Save, Search } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client.ts";
 import { Badge } from "@/components/ui/badge.tsx";
 import { Button } from "@/components/ui/button.tsx";
@@ -36,7 +37,11 @@ interface CategorySummary {
 
 const defaultCategorySlugs = DEFAULT_COURSE_CATEGORIES.map((category) => category.slug);
 
-const CategoriesManager = () => {
+interface CategoriesManagerProps {
+  embedded?: boolean;
+}
+
+const CategoriesManager = ({ embedded = false }: CategoriesManagerProps) => {
   const [courses, setCourses] = useState<CourseRow[]>([]);
   const [loading, setLoading] = useState(true);
   const [savingAction, setSavingAction] = useState<string | null>(null);
@@ -46,6 +51,7 @@ const CategoriesManager = () => {
   const [newCategoryName, setNewCategoryName] = useState("");
   const [courseSearch, setCourseSearch] = useState("");
   const [selectedCourseIds, setSelectedCourseIds] = useState<string[]>([]);
+  const navigate = useNavigate();
   const { toast } = useToast();
 
   const fetchCourses = useCallback(async () => {
@@ -259,8 +265,8 @@ const CategoriesManager = () => {
     <div className="space-y-6">
       <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
         <div>
-          <h2 className="text-2xl font-bold text-foreground">Categorias</h2>
-          <p className="mt-1 text-sm text-muted-foreground">
+          {!embedded && <h2 className="text-2xl font-bold text-foreground">Categorias</h2>}
+          <p className={`${embedded ? "" : "mt-1"} text-sm text-muted-foreground`}>
             Organize as abas e secoes do catalogo a partir das categorias salvas nos cursos.
           </p>
         </div>
@@ -339,11 +345,12 @@ const CategoriesManager = () => {
               <div className="rounded-xl border border-border">
                 <Table>
                   <TableHeader>
-                    <TableRow>
-                      <TableHead>Curso</TableHead>
-                      <TableHead className="hidden sm:table-cell">Status</TableHead>
-                      <TableHead className="w-56">Categoria</TableHead>
-                    </TableRow>
+                      <TableRow>
+                        <TableHead>Curso</TableHead>
+                        <TableHead className="hidden sm:table-cell">Status</TableHead>
+                        <TableHead className="w-56">Categoria</TableHead>
+                        <TableHead className="w-12 text-right">Editar</TableHead>
+                      </TableRow>
                   </TableHeader>
                   <TableBody>
                     {(selectedSummary?.courses || []).map((course) => (
@@ -371,11 +378,21 @@ const CategoriesManager = () => {
                             ))}
                           </select>
                         </TableCell>
+                        <TableCell className="text-right">
+                          <Button
+                            variant="ghost"
+                            size="icon"
+                            onClick={() => navigate(`/admin/cursos?tab=cursos&edit=${course.id}`)}
+                            title="Editar curso"
+                          >
+                            <Pencil className="h-4 w-4" />
+                          </Button>
+                        </TableCell>
                       </TableRow>
                     ))}
                     {selectedSummary?.courses.length === 0 && (
                       <TableRow>
-                        <TableCell colSpan={3} className="py-8 text-center text-muted-foreground">
+                        <TableCell colSpan={4} className="py-8 text-center text-muted-foreground">
                           Nenhum curso usando esta categoria ainda.
                         </TableCell>
                       </TableRow>

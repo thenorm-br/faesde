@@ -1,4 +1,5 @@
 import { useState, useEffect, useMemo, useRef } from "react";
+import { useSearchParams } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client.ts";
 import { Button } from "@/components/ui/button.tsx";
 import { Input } from "@/components/ui/input.tsx";
@@ -143,7 +144,11 @@ const FIELD_LABELS: Record<string, string> = {
   youtube_video_id: "YouTube ID", is_active: "Ativo", about_course: "Sobre o curso",
 };
 
-const CoursesManager = () => {
+interface CoursesManagerProps {
+  embedded?: boolean;
+}
+
+const CoursesManager = ({ embedded = false }: CoursesManagerProps) => {
   const [courses, setCourses] = useState<Course[]>([]);
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState("");
@@ -155,9 +160,26 @@ const CoursesManager = () => {
   const [auditOpen, setAuditOpen] = useState(false);
   const [auditEntries, setAuditEntries] = useState<AuditEntry[]>([]);
   const [auditLoading, setAuditLoading] = useState(false);
+  const [searchParams, setSearchParams] = useSearchParams();
   const { toast } = useToast();
 
   useEffect(() => { fetchCourses(); }, []);
+
+  useEffect(() => {
+    const editId = searchParams.get("edit");
+    if (!editId || courses.length === 0 || isDialogOpen) return;
+
+    const course = courses.find((item) => item.id === editId);
+    if (!course) return;
+
+    setEditingCourse({ ...course });
+    setOriginalCourse({ ...course });
+    setIsDialogOpen(true);
+
+    const next = new URLSearchParams(searchParams);
+    next.delete("edit");
+    setSearchParams(next, { replace: true });
+  }, [courses, isDialogOpen, searchParams, setSearchParams]);
 
   const fetchCourses = async () => {
     const { data, error } = await supabase.from("courses").select("*").order("title");
@@ -317,7 +339,7 @@ const CoursesManager = () => {
   return (
     <TooltipProvider>
       <div className="space-y-6">
-        <h2 className="text-2xl font-bold text-foreground">Gerenciar Cursos</h2>
+        {!embedded && <h2 className="text-2xl font-bold text-foreground">Gerenciar Cursos</h2>}
 
         {/* Actions bar */}
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">

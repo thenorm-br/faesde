@@ -10,12 +10,10 @@ import CursoDetalhe from "./pages/CursoDetalhe.tsx";
 import AdminLogin from "./pages/AdminLogin.tsx";
 import AdminLayout from "./components/admin/AdminLayout.tsx";
 import Dashboard from "./pages/admin/Dashboard.tsx";
-import CoursesManager from "./pages/admin/CoursesManager.tsx";
-import CategoriesManager from "./pages/admin/CategoriesManager.tsx";
-import ThemesManager from "./pages/admin/ThemesManager.tsx";
+import CoursesHubPage from "./pages/admin/CoursesHubPage.tsx";
+import SettingsHubPage from "./pages/admin/SettingsHubPage.tsx";
 import FilesManager from "./pages/admin/FilesManager.tsx";
 import ConnectionsManager from "./pages/admin/ConnectionsManager.tsx";
-import SettingsPage from "./pages/admin/SettingsPage.tsx";
 import CertificatesManager from "./pages/admin/CertificatesManager.tsx";
 import CertificadoPublico from "./pages/CertificadoPublico.tsx";
 import NotFound from "./pages/NotFound.tsx";
@@ -37,13 +35,13 @@ const App = () => (
           <Route path="/admin/login" element={<AdminLogin />} />
           <Route path="/admin" element={<AdminLayout />}>
             <Route index element={<Dashboard />} />
-            <Route path="cursos" element={<CoursesManager />} />
-            <Route path="categorias" element={<CategoriesManager />} />
-            <Route path="temas" element={<ThemesManager />} />
+            <Route path="cursos" element={<CoursesHubPage />} />
+            <Route path="categorias" element={<Navigate to="/admin/cursos?tab=categorias" replace />} />
+            <Route path="temas" element={<Navigate to="/admin/configuracoes?tab=temas" replace />} />
             <Route path="arquivos" element={<FilesManager />} />
-            <Route path="conexoes" element={<ConnectionsManager />} />
+            <Route path="conexoes" element={<Navigate to="/admin/configuracoes?tab=conexoes" replace />} />
             <Route path="conexoes/oauth/callback" element={<ConnectionsManager />} />
-            <Route path="configuracoes" element={<SettingsPage />} />
+            <Route path="configuracoes" element={<SettingsHubPage />} />
             <Route path="certificados" element={<CertificatesManager />} />
           </Route>
           {/* Redirect old admin routes */}

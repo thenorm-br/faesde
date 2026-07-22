@@ -6,7 +6,11 @@ import { Label } from "@/components/ui/label.tsx";
 import { useToast } from "@/hooks/use-toast.ts";
 import { Settings } from "lucide-react";
 
-const SettingsPage = () => {
+interface SettingsPageProps {
+  embedded?: boolean;
+}
+
+const SettingsPage = ({ embedded = false }: SettingsPageProps) => {
   const [newPassword, setNewPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [loading, setLoading] = useState(false);
@@ -35,7 +39,7 @@ const SettingsPage = () => {
 
   return (
     <div className="space-y-6">
-      <h2 className="text-2xl font-bold text-foreground">Configurações</h2>
+      {!embedded && <h2 className="text-2xl font-bold text-foreground">Configurações</h2>}
 
       <div className="max-w-md rounded-xl bg-card p-6 shadow-sm border border-border space-y-4">
         <div className="flex items-center gap-2 text-foreground">

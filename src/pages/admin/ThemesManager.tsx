@@ -118,7 +118,11 @@ const getStyleLabel = (value: string) => STYLE_OPTIONS.find((style) => style.val
 const getPreviewClass = (value: string) =>
   STYLE_OPTIONS.find((style) => style.value === value)?.previewClass || STYLE_OPTIONS[0].previewClass;
 
-const ThemesManager = () => {
+interface ThemesManagerProps {
+  embedded?: boolean;
+}
+
+const ThemesManager = ({ embedded = false }: ThemesManagerProps) => {
   const [themes, setThemes] = useState<PromotionalTheme[]>([]);
   const [loading, setLoading] = useState(true);
   const [savingAction, setSavingAction] = useState<string | null>(null);
@@ -302,7 +306,7 @@ const ThemesManager = () => {
     <div className="space-y-6">
       <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
         <div>
-          <h2 className="text-2xl font-bold text-foreground">Temas Promocionais</h2>
+          {!embedded && <h2 className="text-2xl font-bold text-foreground">Temas Promocionais</h2>}
           <p className="mt-1 text-sm text-muted-foreground">
             Configure banners, cupons, descontos e agendamentos mensais do site.
           </p>

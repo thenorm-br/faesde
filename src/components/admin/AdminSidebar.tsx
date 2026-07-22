@@ -1,13 +1,10 @@
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client.ts";
 import {
   LayoutDashboard,
   GraduationCap,
-  FolderOpen,
-  Palette,
   FolderTree,
   Award,
-  Cloud,
   Settings,
   LogOut,
 } from "lucide-react";
@@ -29,11 +26,8 @@ import { Button } from "@/components/ui/button.tsx";
 const menuItems = [
   { title: "Dashboard", url: "/admin", icon: LayoutDashboard },
   { title: "Cursos", url: "/admin/cursos", icon: GraduationCap },
-  { title: "Categorias", url: "/admin/categorias", icon: FolderOpen },
-  { title: "Temas", url: "/admin/temas", icon: Palette },
   { title: "Certificados", url: "/admin/certificados", icon: Award },
   { title: "Arquivos EAD", url: "/admin/arquivos", icon: FolderTree },
-  { title: "Conexoes", url: "/admin/conexoes", icon: Cloud },
   { title: "Configurações", url: "/admin/configuracoes", icon: Settings },
 ];
 
@@ -41,7 +35,6 @@ const AdminSidebar = () => {
   const { state } = useSidebar();
   const collapsed = state === "collapsed";
   const navigate = useNavigate();
-  const location = useLocation();
 
   const handleLogout = async () => {
     await supabase.auth.signOut();

@@ -389,7 +389,11 @@ function draftFromStatus(
   };
 }
 
-const ConnectionsManager = () => {
+interface ConnectionsManagerProps {
+  embedded?: boolean;
+}
+
+const ConnectionsManager = ({ embedded = false }: ConnectionsManagerProps) => {
   const [apiStatus, setApiStatus] = useState<ApiStatus | null>(null);
   const [indexData, setIndexData] = useState<IndexFile | null>(null);
   const [loading, setLoading] = useState(true);
@@ -529,7 +533,7 @@ const ConnectionsManager = () => {
         description: params.get("error_description") || error,
         variant: "destructive",
       });
-      navigate("/admin/conexoes", { replace: true });
+      navigate("/admin/configuracoes?tab=conexoes", { replace: true });
       return;
     }
 
@@ -548,14 +552,14 @@ const ConnectionsManager = () => {
         setApiStatus(result.status);
         setSettingsDrafts((current) => draftFromStatus(result.status, current));
         toast({ title: "Conta conectada", description: result.provider.message });
-        navigate(result.returnTo || "/admin/conexoes", { replace: true });
+        navigate(result.returnTo || "/admin/configuracoes?tab=conexoes", { replace: true });
       } catch (callbackError) {
         toast({
           title: "Erro ao concluir conexao",
           description: callbackError instanceof Error ? callbackError.message : "Falha inesperada.",
           variant: "destructive",
         });
-        navigate("/admin/conexoes", { replace: true });
+        navigate("/admin/configuracoes?tab=conexoes", { replace: true });
       } finally {
         setHandlingCallback(false);
       }
@@ -610,7 +614,7 @@ const ConnectionsManager = () => {
     try {
       const result = await fetchWithSession<{ authorizationUrl: string }>("/api/oauth/start", {
         method: "POST",
-        body: JSON.stringify({ provider, returnTo: "/admin/conexoes" }),
+        body: JSON.stringify({ provider, returnTo: "/admin/configuracoes?tab=conexoes" }),
       });
       window.location.assign(result.authorizationUrl);
     } catch (error) {
@@ -789,7 +793,7 @@ const ConnectionsManager = () => {
     <div className="space-y-6">
       <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
         <div>
-          <h2 className="text-2xl font-bold text-foreground">Conexoes</h2>
+          {!embedded && <h2 className="text-2xl font-bold text-foreground">Conexoes</h2>}
           <p className="text-sm text-muted-foreground mt-1">
             Conecte Google Drive e GitHub pelo painel para sincronizar a EADPlataforma.
           </p>

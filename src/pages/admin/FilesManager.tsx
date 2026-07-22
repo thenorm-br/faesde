@@ -19,6 +19,7 @@ import {
   Upload,
 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client.ts";
+import { useSearchParams } from "react-router-dom";
 import { Alert, AlertDescription } from "@/components/ui/alert.tsx";
 import { Badge } from "@/components/ui/badge.tsx";
 import { Button } from "@/components/ui/button.tsx";
@@ -122,6 +123,15 @@ interface TotalStats {
 }
 
 const BASE_URL = "/eadplataforma";
+
+function normalizeRelativePath(path: string) {
+  return String(path || "")
+    .replace(/\\/g, "/")
+    .split("/")
+    .map((part) => part.trim())
+    .filter((part) => part && part !== "." && part !== "..")
+    .join("/");
+}
 
 async function fetchWithAdminSession<T>(path: string, options: RequestInit = {}): Promise<T> {
   const {
@@ -346,7 +356,8 @@ const FilesManager = () => {
   const [driveManifest, setDriveManifest] = useState<DriveManifest | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [currentPath, setCurrentPath] = useState<string>("");
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [currentPath, setCurrentPath] = useState<string>(() => normalizeRelativePath(searchParams.get("p") || ""));
   const [search, setSearch] = useState("");
   const [liveSource, setLiveSource] = useState<"static" | "github">("static");
   const [liveLoading, setLiveLoading] = useState(false);
@@ -362,6 +373,18 @@ const FilesManager = () => {
   const syncRunningRef = useRef(false);
   const cacheRunningRef = useRef(false);
   const uploadInputRef = useRef<HTMLInputElement | null>(null);
+
+  const navigateToPath = (path: string, options: { replace?: boolean } = {}) => {
+    const normalizedPath = normalizeRelativePath(path);
+    const next = new URLSearchParams(searchParams);
+    if (normalizedPath) {
+      next.set("p", normalizedPath);
+    } else {
+      next.delete("p");
+    }
+    setCurrentPath(normalizedPath);
+    setSearchParams(next, { replace: options.replace });
+  };
 
   const loadLiveManifest = async (silent = false) => {
     if (!silent) setLiveLoading(true);
@@ -555,6 +578,11 @@ const FilesManager = () => {
       window.clearInterval(liveTimer);
     };
   }, []);
+
+  useEffect(() => {
+    const pathFromUrl = normalizeRelativePath(searchParams.get("p") || "");
+    setCurrentPath(pathFromUrl);
+  }, [searchParams]);
 
   const driveItemsByPath = useMemo(() => {
     return new Map((driveManifest?.items || []).map((item) => [item.path, item]));
@@ -832,7 +860,7 @@ const FilesManager = () => {
 
       {!searchResults && (
         <div className="flex flex-wrap items-center gap-1 text-sm">
-          <Button variant="ghost" size="sm" onClick={() => setCurrentPath("")} className="h-7 px-2">
+          <Button variant="ghost" size="sm" onClick={() => navigateToPath("")} className="h-7 px-2">
             <Home className="mr-1 h-3.5 w-3.5" />
             eadplataforma
           </Button>
@@ -842,7 +870,7 @@ const FilesManager = () => {
               <Button
                 variant="ghost"
                 size="sm"
-                onClick={() => setCurrentPath(breadcrumb.path)}
+                onClick={() => navigateToPath(breadcrumb.path)}
                 className="h-7 px-2"
               >
                 {breadcrumb.name}
@@ -874,12 +902,12 @@ const FilesManager = () => {
                 const stats = countContents(node);
                 return (
                   <li key={node.path} className="flex items-center gap-2 px-4 py-3 transition-colors hover:bg-muted/50">
-                    <button
-                      onClick={() => {
+                    <div
+                      onDoubleClick={() => {
                         setSearch("");
-                        setCurrentPath(node.path);
+                        navigateToPath(node.path);
                       }}
-                      className="flex min-w-0 flex-1 items-center gap-3 text-left"
+                      className="flex min-w-0 flex-1 select-text items-center gap-3 text-left"
                     >
                       <Folder className="h-5 w-5 shrink-0 text-primary" />
                       <div className="min-w-0 flex-1">
@@ -895,8 +923,18 @@ const FilesManager = () => {
                         </div>
                         <div>Mais recente {formatRelativeDate(stats.latestModifiedAt)}</div>
                       </div>
-                      <ChevronRight className="h-4 w-4 shrink-0 text-muted-foreground" />
-                    </button>
+                    </div>
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      onClick={() => {
+                        setSearch("");
+                        navigateToPath(node.path);
+                      }}
+                      title="Abrir pasta"
+                    >
+                      <ChevronRight className="h-4 w-4" />
+                    </Button>
                     <Button
                       variant="ghost"
                       size="sm"
@@ -934,7 +972,7 @@ const FilesManager = () => {
               return (
                 <li key={node.path} className="flex items-center gap-3 px-4 py-3 transition-colors hover:bg-muted/50">
                   <Icon className="h-5 w-5 shrink-0 text-muted-foreground" />
-                  <div className="min-w-0 flex-1">
+                  <div className="min-w-0 flex-1 select-text">
                     <div className="truncate text-foreground">{node.name}</div>
                     {searchResults && <div className="truncate text-xs text-muted-foreground">{node.path}</div>}
                     <div className="text-xs text-muted-foreground">
