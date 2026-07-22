@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-22T02:12:13.215Z",
+  "generatedAt": "2026-07-22T02:21:11.420Z",
   "source": {
     "provider": "google_drive",
     "rootFolderId": "1jYFYbdJdJHT-f7BpzFX9t1mQLD6xwgbd",
@@ -33791,9 +33791,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1DR6yaDzqiMkygJuVa96t0L0i8mrD7W1-&export=download",
       "webViewLink": "https://drive.google.com/file/d/1DR6yaDzqiMkygJuVa96t0L0i8mrD7W1-/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/novo_scorm/scorm-padrao/padrao/css/materialize.min.css"
     },
     {
       "type": "folder",
@@ -33814,9 +33814,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1DIhX21wg9Zr7DWa9h0nCfHycJl4OC4yB&export=download",
       "webViewLink": "https://drive.google.com/file/d/1DIhX21wg9Zr7DWa9h0nCfHycJl4OC4yB/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/novo_scorm/scorm-padrao/padrao/contents/background_computador2.jpg"
     },
     {
       "type": "folder",
@@ -33837,9 +33837,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1U5os6-526shBKBQHnGUZFVPZTFmhTfa2&export=download",
       "webViewLink": "https://drive.google.com/file/d/1U5os6-526shBKBQHnGUZFVPZTFmhTfa2/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/novo_scorm/scorm-padrao/padrao/images/banner-trilha.jpg"
     },
     {
       "type": "folder",
@@ -33860,9 +33860,9 @@
       "webContentLink": "https://drive.google.com/uc?id=11A5SxB5W26gjwh_Q60rOy7zKKHFNrwBG&export=download",
       "webViewLink": "https://drive.google.com/file/d/11A5SxB5W26gjwh_Q60rOy7zKKHFNrwBG/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/locale/locale.html"
     },
     {
       "type": "folder",
@@ -33883,9 +33883,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1EYbX8g7m6akQRXEMMwSvhQaTr2Ae0VJ4&export=download",
       "webViewLink": "https://drive.google.com/file/d/1EYbX8g7m6akQRXEMMwSvhQaTr2Ae0VJ4/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/chatpdf/baixarConversaMoni.html"
     },
     {
       "type": "file",
@@ -33899,9 +33899,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1SYZwEHfgubSuAJ0Fei8ne6E_mePY9CBJ&export=download",
       "webViewLink": "https://drive.google.com/file/d/1SYZwEHfgubSuAJ0Fei8ne6E_mePY9CBJ/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/chatpdf/audioQuestion_moni92bd.json"
     },
     {
       "type": "file",
@@ -33915,9 +33915,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1SMzabAF0upTfC6i7N0kFiSCihDdW1doV&export=download",
       "webViewLink": "https://drive.google.com/file/d/1SMzabAF0upTfC6i7N0kFiSCihDdW1doV/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/chatpdf/moni_onepage.html"
     },
     {
       "type": "folder",
@@ -33945,9 +33945,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1POb3Q4fO7etzAQSUobVYWltVOAdl468y&export=download",
       "webViewLink": "https://drive.google.com/file/d/1POb3Q4fO7etzAQSUobVYWltVOAdl468y/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/assets/css/acess_bar.css"
     },
     {
       "type": "file",
@@ -33961,9 +33961,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1pFVWiASBxf1TqjL3P60bqRJ2S2eN_qih&export=download",
       "webViewLink": "https://drive.google.com/file/d/1pFVWiASBxf1TqjL3P60bqRJ2S2eN_qih/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/assets/css/novaTrilha.css"
     },
     {
       "type": "file",
@@ -33977,9 +33977,9 @@
       "webContentLink": "https://drive.google.com/uc?id=10EcyvbK-bz0laMKovRJL30a8vkKAE4PJ&export=download",
       "webViewLink": "https://drive.google.com/file/d/10EcyvbK-bz0laMKovRJL30a8vkKAE4PJ/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/assets/css/acess_contrast.css"
     },
     {
       "type": "file",
@@ -33993,9 +33993,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1EwroyGqOrL0XbHsOYSLOFi_-wuKCFL_j&export=download",
       "webViewLink": "https://drive.google.com/file/d/1EwroyGqOrL0XbHsOYSLOFi_-wuKCFL_j/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/assets/css/novaTrilha.css.z"
     },
     {
       "type": "file",
@@ -34009,9 +34009,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1HD_RRfrRijBkNZAvnltHXvtiJJRxinpc&export=download",
       "webViewLink": "https://drive.google.com/file/d/1HD_RRfrRijBkNZAvnltHXvtiJJRxinpc/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/assets/css/reset.css"
     },
     {
       "type": "folder",
@@ -34046,9 +34046,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1khtam6UhGN5Wmrelz0pRsGUdSkx7yo74&export=download",
       "webViewLink": "https://drive.google.com/file/d/1khtam6UhGN5Wmrelz0pRsGUdSkx7yo74/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-1/icone-12.png"
     },
     {
       "type": "file",
@@ -34062,9 +34062,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1emg7rlcuNDQ0Hs-IU--spV2eFfKdoB4K&export=download",
       "webViewLink": "https://drive.google.com/file/d/1emg7rlcuNDQ0Hs-IU--spV2eFfKdoB4K/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-1/icone-9.png"
     },
     {
       "type": "file",
@@ -34078,9 +34078,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1NEKfCN3Kfpq8Xx6MeRztt83x6W8XrrUl&export=download",
       "webViewLink": "https://drive.google.com/file/d/1NEKfCN3Kfpq8Xx6MeRztt83x6W8XrrUl/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-1/icone-1.png"
     },
     {
       "type": "file",
@@ -34094,9 +34094,9 @@
       "webContentLink": "https://drive.google.com/uc?id=18wY2kKxfYusoS_vP3Dmo-dmTDbH6FpHO&export=download",
       "webViewLink": "https://drive.google.com/file/d/18wY2kKxfYusoS_vP3Dmo-dmTDbH6FpHO/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-1/icone-11.png"
     },
     {
       "type": "file",
@@ -34110,9 +34110,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1kC9uBMdEyk5wmvIunHUHte8uZbJ4VCgu&export=download",
       "webViewLink": "https://drive.google.com/file/d/1kC9uBMdEyk5wmvIunHUHte8uZbJ4VCgu/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-1/icone-3.png"
     },
     {
       "type": "file",
@@ -34126,9 +34126,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1glbp0HiDcko9SJ0iBRpmGgx9yAQ1cNZa&export=download",
       "webViewLink": "https://drive.google.com/file/d/1glbp0HiDcko9SJ0iBRpmGgx9yAQ1cNZa/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-1/icone-7.png"
     },
     {
       "type": "file",
@@ -34142,9 +34142,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1jGNXBqYRXSA6yJAmlkW9-3GWWG_4bdEq&export=download",
       "webViewLink": "https://drive.google.com/file/d/1jGNXBqYRXSA6yJAmlkW9-3GWWG_4bdEq/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-1/icone-6.png"
     },
     {
       "type": "file",
@@ -34158,9 +34158,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1QkN40dECoql-eX6eh4-lT3CJPwkUq2OH&export=download",
       "webViewLink": "https://drive.google.com/file/d/1QkN40dECoql-eX6eh4-lT3CJPwkUq2OH/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-1/icone-8.png"
     },
     {
       "type": "file",
@@ -34174,9 +34174,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1KpoGUoZNnFHy8TWot5tgIqTL5D1SM873&export=download",
       "webViewLink": "https://drive.google.com/file/d/1KpoGUoZNnFHy8TWot5tgIqTL5D1SM873/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-1/icone-5.png"
     },
     {
       "type": "file",
@@ -34190,9 +34190,9 @@
       "webContentLink": "https://drive.google.com/uc?id=13cYsNZCRf2d4CbcUpZQOqNCgKfs8UFTC&export=download",
       "webViewLink": "https://drive.google.com/file/d/13cYsNZCRf2d4CbcUpZQOqNCgKfs8UFTC/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-1/icone-4.png"
     },
     {
       "type": "file",
@@ -34206,9 +34206,9 @@
       "webContentLink": "https://drive.google.com/uc?id=13AtAm9ytrbsUjtIJkbw_18lLoPxDHdp0&export=download",
       "webViewLink": "https://drive.google.com/file/d/13AtAm9ytrbsUjtIJkbw_18lLoPxDHdp0/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-1/icone-10.png"
     },
     {
       "type": "file",
@@ -34222,9 +34222,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1HpGg4fM5XggVos9-bwacQ96RRNC2UIXI&export=download",
       "webViewLink": "https://drive.google.com/file/d/1HpGg4fM5XggVos9-bwacQ96RRNC2UIXI/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-1/icone-2.png"
     },
     {
       "type": "file",
@@ -34238,9 +34238,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1AcW1GPQXVDUOsOjMmTcz0Fjb-IuH4qa1&export=download",
       "webViewLink": "https://drive.google.com/file/d/1AcW1GPQXVDUOsOjMmTcz0Fjb-IuH4qa1/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/assets/img/lang_BR.svg"
     },
     {
       "type": "file",
@@ -34254,9 +34254,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1UUsXwv07iHwzmYJ3eVpwZD0k2X4CIgxA&export=download",
       "webViewLink": "https://drive.google.com/file/d/1UUsXwv07iHwzmYJ3eVpwZD0k2X4CIgxA/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/assets/img/lang_US.svg"
     },
     {
       "type": "file",
@@ -34270,9 +34270,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1k9O5YUemoG6fEK3VJDNhvCKz_FXRW4Mr&export=download",
       "webViewLink": "https://drive.google.com/file/d/1k9O5YUemoG6fEK3VJDNhvCKz_FXRW4Mr/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/assets/img/lang_ES.svg"
     },
     {
       "type": "file",
@@ -34286,9 +34286,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1cxlGQRkI7CwBoSHSG4rn64McSWBRGnQc&export=download",
       "webViewLink": "https://drive.google.com/file/d/1cxlGQRkI7CwBoSHSG4rn64McSWBRGnQc/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/assets/img/ONIfavicon-96x96.png"
     },
     {
       "type": "file",
@@ -34302,9 +34302,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1ZhJLNyc5xw0ZSi-y3kagiQr6MQq89yKR&export=download",
       "webViewLink": "https://drive.google.com/file/d/1ZhJLNyc5xw0ZSi-y3kagiQr6MQq89yKR/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/assets/img/pdf.svg"
     },
     {
       "type": "folder",
@@ -34325,9 +34325,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1gj6x-d0SNybwkUl_jAzBQtdl2Ga8vuk2&export=download",
       "webViewLink": "https://drive.google.com/file/d/1gj6x-d0SNybwkUl_jAzBQtdl2Ga8vuk2/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/assets/js/acess_scripts.js.z"
     },
     {
       "type": "file",
@@ -34341,9 +34341,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1cwIZV-8dUfqOp35mYK2qXklTFQEQfKqt&export=download",
       "webViewLink": "https://drive.google.com/file/d/1cwIZV-8dUfqOp35mYK2qXklTFQEQfKqt/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/assets/js/acess_scripts.js"
     },
     {
       "type": "file",
@@ -34357,9 +34357,9 @@
       "webContentLink": "https://drive.google.com/uc?id=17EBHSiKMDJ5L9SDiJDpvcNl6dm8zngrp&export=download",
       "webViewLink": "https://drive.google.com/file/d/17EBHSiKMDJ5L9SDiJDpvcNl6dm8zngrp/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/assets/js/novaTrilha.js"
     },
     {
       "type": "file",
@@ -34373,9 +34373,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1bYEh9WkxvVc5IyxLNX3YuOGmJdI5I9g_&export=download",
       "webViewLink": "https://drive.google.com/file/d/1bYEh9WkxvVc5IyxLNX3YuOGmJdI5I9g_/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/slide07c1.pdf"
     },
     {
       "type": "file",
@@ -34389,9 +34389,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1e0KrchDI6Gf02OQGnvSzQFq_haIPVNNd&export=download",
       "webViewLink": "https://drive.google.com/file/d/1e0KrchDI6Gf02OQGnvSzQFq_haIPVNNd/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/scripts.html"
     },
     {
       "type": "file",
@@ -34405,9 +34405,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1fb8vvQXUq8_wb2qTPdhqQaj2O_z7TXFF&export=download",
       "webViewLink": "https://drive.google.com/file/d/1fb8vvQXUq8_wb2qTPdhqQaj2O_z7TXFF/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/ebookbdb5.pdf"
     },
     {
       "type": "file",
@@ -34421,9 +34421,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1UQBxcbdzcn650iLabOsdJWCFt0pVpTnu&export=download",
       "webViewLink": "https://drive.google.com/file/d/1UQBxcbdzcn650iLabOsdJWCFt0pVpTnu/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/ebookd64f.pdf"
     },
     {
       "type": "file",
@@ -34437,9 +34437,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1GNaYNczsIiRzVTtdK2n2wH97elf-RphY&export=download",
       "webViewLink": "https://drive.google.com/file/d/1GNaYNczsIiRzVTtdK2n2wH97elf-RphY/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/ebook4a4a.pdf"
     },
     {
       "type": "file",
@@ -34453,9 +34453,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1N5phjYRaeH4KfyQKeKxKDuXLuWir0Bka&export=download",
       "webViewLink": "https://drive.google.com/file/d/1N5phjYRaeH4KfyQKeKxKDuXLuWir0Bka/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/slidec78b.pdf"
     },
     {
       "type": "file",
@@ -34469,9 +34469,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1fC-fno7YU7e0tPEJCkFYIbagENSjS9gW&export=download",
       "webViewLink": "https://drive.google.com/file/d/1fC-fno7YU7e0tPEJCkFYIbagENSjS9gW/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/slide2e5a.pdf"
     },
     {
       "type": "file",
@@ -34485,9 +34485,9 @@
       "webContentLink": "https://drive.google.com/uc?id=12h2ZNzuDsntWe3wq3QmAHajhYIJbnRfp&export=download",
       "webViewLink": "https://drive.google.com/file/d/12h2ZNzuDsntWe3wq3QmAHajhYIJbnRfp/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/slide738b.pdf"
     },
     {
       "type": "file",
@@ -34501,9 +34501,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1ygNE-_nvh5-sWA25d1b2ITW1xRAxobZ8&export=download",
       "webViewLink": "https://drive.google.com/file/d/1ygNE-_nvh5-sWA25d1b2ITW1xRAxobZ8/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/ebook3c2a.pdf"
     },
     {
       "type": "file",
@@ -34517,9 +34517,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1z95qPqMTHd4c086xijI0q2Gbw537FY5y&export=download",
       "webViewLink": "https://drive.google.com/file/d/1z95qPqMTHd4c086xijI0q2Gbw537FY5y/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/slide38b6.pdf"
     },
     {
       "type": "file",
@@ -34533,9 +34533,9 @@
       "webContentLink": "https://drive.google.com/uc?id=18Oy9H78Sy0XTHg12L64ZScNyxhtqlRd5&export=download",
       "webViewLink": "https://drive.google.com/file/d/18Oy9H78Sy0XTHg12L64ZScNyxhtqlRd5/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/ebook71bd.pdf"
     },
     {
       "type": "file",
@@ -34549,9 +34549,9 @@
       "webContentLink": "https://drive.google.com/uc?id=19fi9cXgoXN9ox4oUxcwSr_iE_WNiMb5a&export=download",
       "webViewLink": "https://drive.google.com/file/d/19fi9cXgoXN9ox4oUxcwSr_iE_WNiMb5a/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/slide70ec.pdf"
     },
     {
       "type": "file",
@@ -34565,9 +34565,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1P82VCOqzzCLx0xGJHj4WhsgrDk2JJnXo&export=download",
       "webViewLink": "https://drive.google.com/file/d/1P82VCOqzzCLx0xGJHj4WhsgrDk2JJnXo/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/componente8b5b.html"
     },
     {
       "type": "file",
@@ -34581,9 +34581,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1TYRyqHp7kpWTN2XlecpVlM1PB8_PixI0&export=download",
       "webViewLink": "https://drive.google.com/file/d/1TYRyqHp7kpWTN2XlecpVlM1PB8_PixI0/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/componentedce2.html"
     },
     {
       "type": "file",
@@ -34597,9 +34597,9 @@
       "webContentLink": "https://drive.google.com/uc?id=12W0IbWepGCSESGbp7O1aTNEofbGRdsmX&export=download",
       "webViewLink": "https://drive.google.com/file/d/12W0IbWepGCSESGbp7O1aTNEofbGRdsmX/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/componenteadda.html"
     },
     {
       "type": "file",
@@ -34613,9 +34613,9 @@
       "webContentLink": "https://drive.google.com/uc?id=11HnnqgWoq1PFBdeXjCdGJpnhwXcQWCsj&export=download",
       "webViewLink": "https://drive.google.com/file/d/11HnnqgWoq1PFBdeXjCdGJpnhwXcQWCsj/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/componente0ac9.html"
     },
     {
       "type": "file",
@@ -34629,9 +34629,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1Qmk4SeL62sA_CQCHKh3w4gvLfGWwmOkS&export=download",
       "webViewLink": "https://drive.google.com/file/d/1Qmk4SeL62sA_CQCHKh3w4gvLfGWwmOkS/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/componente1ba2.html"
     },
     {
       "type": "file",
@@ -34645,9 +34645,9 @@
       "webContentLink": "https://drive.google.com/uc?id=168CO2YoAq4tPZuNWDbK-yPz2QWQYF4AY&export=download",
       "webViewLink": "https://drive.google.com/file/d/168CO2YoAq4tPZuNWDbK-yPz2QWQYF4AY/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/componented093.html"
     },
     {
       "type": "file",
@@ -34661,9 +34661,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1--ZRf5e5zye6BwaxS8Xias4RJGyfUdAk&export=download",
       "webViewLink": "https://drive.google.com/file/d/1--ZRf5e5zye6BwaxS8Xias4RJGyfUdAk/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/componente1d59.html"
     },
     {
       "type": "file",
@@ -34677,9 +34677,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1jycBNnZdNtpUfqmlvsaQjsuRp0zh0LUg&export=download",
       "webViewLink": "https://drive.google.com/file/d/1jycBNnZdNtpUfqmlvsaQjsuRp0zh0LUg/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/componenteef59.html"
     },
     {
       "type": "file",
@@ -34693,9 +34693,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1TJpj4p0uV9wx0Hd3DkmB0URA6z_5hKM0&export=download",
       "webViewLink": "https://drive.google.com/file/d/1TJpj4p0uV9wx0Hd3DkmB0URA6z_5hKM0/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/audio.html"
     },
     {
       "type": "file",
@@ -34709,9 +34709,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1ILhMJA4ljUsWEiBetKn1AuRmI1ispv_4&export=download",
       "webViewLink": "https://drive.google.com/file/d/1ILhMJA4ljUsWEiBetKn1AuRmI1ispv_4/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/chat_pdf_onitutor_moni.html"
     },
     {
       "type": "file",
@@ -34725,9 +34725,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1f2bNLB9nkxbbJ1S1tsnJnO_1uy3pyytn&export=download",
       "webViewLink": "https://drive.google.com/file/d/1f2bNLB9nkxbbJ1S1tsnJnO_1uy3pyytn/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/componente476b.html"
     },
     {
       "type": "file",
@@ -34741,9 +34741,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1HCKofzbdxMnvmicm1dyMcezeSiav8wHm&export=download",
       "webViewLink": "https://drive.google.com/file/d/1HCKofzbdxMnvmicm1dyMcezeSiav8wHm/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/componente1d3a.html"
     },
     {
       "type": "file",
@@ -34757,9 +34757,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1PFAkakPwSIri9yR4aWp-ex3BB0smsxaZ&export=download",
       "webViewLink": "https://drive.google.com/file/d/1PFAkakPwSIri9yR4aWp-ex3BB0smsxaZ/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/componente3a1b.html"
     },
     {
       "type": "file",
@@ -34773,9 +34773,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1GV1s338vrZbceF2bAXPY0FhPw_jexpgi&export=download",
       "webViewLink": "https://drive.google.com/file/d/1GV1s338vrZbceF2bAXPY0FhPw_jexpgi/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/ebook39de.pdf"
     },
     {
       "type": "file",
@@ -34789,9 +34789,9 @@
       "webContentLink": "https://drive.google.com/uc?id=15NLEPwNI-Eqr8XMY_XLEdwUrEq7l4uT0&export=download",
       "webViewLink": "https://drive.google.com/file/d/15NLEPwNI-Eqr8XMY_XLEdwUrEq7l4uT0/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/componenteca4c.html"
     },
     {
       "type": "file",
@@ -34805,9 +34805,9 @@
       "webContentLink": "https://drive.google.com/uc?id=15dZx1p_pbTmXnx0m2tw3g1-ohzC3l9Vc&export=download",
       "webViewLink": "https://drive.google.com/file/d/15dZx1p_pbTmXnx0m2tw3g1-ohzC3l9Vc/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/componentea3e4.html"
     },
     {
       "type": "file",
@@ -34821,9 +34821,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1R0lrCbA3qIzgKAhFg6S_2_MrKjwnnuQk&export=download",
       "webViewLink": "https://drive.google.com/file/d/1R0lrCbA3qIzgKAhFg6S_2_MrKjwnnuQk/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/componentec7d2.html"
     },
     {
       "type": "file",
@@ -34837,9 +34837,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1USt_3d4d41lhDEBsGdM-XTVcYwH_5ft-&export=download",
       "webViewLink": "https://drive.google.com/file/d/1USt_3d4d41lhDEBsGdM-XTVcYwH_5ft-/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/componente4660.html"
     },
     {
       "type": "file",
@@ -34853,9 +34853,9 @@
       "webContentLink": "https://drive.google.com/uc?id=187KPkXw6QZuGNYmvDdrZWi6KPQWwtZvM&export=download",
       "webViewLink": "https://drive.google.com/file/d/187KPkXw6QZuGNYmvDdrZWi6KPQWwtZvM/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/componented139.html"
     },
     {
       "type": "file",
@@ -34869,9 +34869,9 @@
       "webContentLink": "https://drive.google.com/uc?id=11tYjAqzZhF1aLX2I0T43pN6_i62GpGKA&export=download",
       "webViewLink": "https://drive.google.com/file/d/11tYjAqzZhF1aLX2I0T43pN6_i62GpGKA/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/componentea150.html"
     },
     {
       "type": "file",
@@ -34885,9 +34885,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1O0W38v4d8-0kAVbWuI4eJze24uUGSSI3&export=download",
       "webViewLink": "https://drive.google.com/file/d/1O0W38v4d8-0kAVbWuI4eJze24uUGSSI3/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/componente1ed3.html"
     },
     {
       "type": "file",
@@ -34901,9 +34901,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1M02v0ViXYwr26NZalSSdk_o0Zb15KCnN&export=download",
       "webViewLink": "https://drive.google.com/file/d/1M02v0ViXYwr26NZalSSdk_o0Zb15KCnN/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/componente4b8c.html"
     },
     {
       "type": "file",
@@ -34917,9 +34917,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1qEiXX140g54zu_dsdqkxQ4eviKcFrsfV&export=download",
       "webViewLink": "https://drive.google.com/file/d/1qEiXX140g54zu_dsdqkxQ4eviKcFrsfV/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/componente6ebf.html"
     },
     {
       "type": "file",
@@ -34933,9 +34933,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1FfssjTMjnh65Y1YMN0CyjTqzhO-0h0Jx&export=download",
       "webViewLink": "https://drive.google.com/file/d/1FfssjTMjnh65Y1YMN0CyjTqzhO-0h0Jx/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/componented221.html"
     },
     {
       "type": "file",
@@ -34949,9 +34949,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1LYpza9imesNBEnnXCmlJZ-pfkdKoT15q&export=download",
       "webViewLink": "https://drive.google.com/file/d/1LYpza9imesNBEnnXCmlJZ-pfkdKoT15q/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/componente276c.html"
     },
     {
       "type": "file",
@@ -34965,9 +34965,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1PYCt8s8DcpaEuFkC_NH3KBlc2MT4kV66&export=download",
       "webViewLink": "https://drive.google.com/file/d/1PYCt8s8DcpaEuFkC_NH3KBlc2MT4kV66/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/componentef12b.html"
     },
     {
       "type": "file",
@@ -34981,9 +34981,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1IAg6HJtGHpQm4VACPjMigqUncUbDGgbF&export=download",
       "webViewLink": "https://drive.google.com/file/d/1IAg6HJtGHpQm4VACPjMigqUncUbDGgbF/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/componentedc0c.html"
     },
     {
       "type": "file",
@@ -34997,9 +34997,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1B-iIvF0VWvj9NyFZV79bD8iKPBk6lih_&export=download",
       "webViewLink": "https://drive.google.com/file/d/1B-iIvF0VWvj9NyFZV79bD8iKPBk6lih_/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/componente7d29.html"
     },
     {
       "type": "file",
@@ -35013,9 +35013,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1gsda3usjKkKWUYcf49iT0NEbNdXXelAv&export=download",
       "webViewLink": "https://drive.google.com/file/d/1gsda3usjKkKWUYcf49iT0NEbNdXXelAv/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/POST.html"
     },
     {
       "type": "file",
@@ -35029,9 +35029,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1dQhBdv56rsgt78dPeE7P5P3YDYgtn7AJ&export=download",
       "webViewLink": "https://drive.google.com/file/d/1dQhBdv56rsgt78dPeE7P5P3YDYgtn7AJ/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/componente6ccc.php"
     },
     {
       "type": "file",
@@ -35045,9 +35045,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1cQBHoMnxqIiv7UWCiBeg0P3YxxFiLJsI&export=download",
       "webViewLink": "https://drive.google.com/file/d/1cQBHoMnxqIiv7UWCiBeg0P3YxxFiLJsI/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/componente590a.html"
     },
     {
       "type": "file",
@@ -35061,9 +35061,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1GSoLu4GtZJAiF5-n923BrGHHZbhi-bsg&export=download",
       "webViewLink": "https://drive.google.com/file/d/1GSoLu4GtZJAiF5-n923BrGHHZbhi-bsg/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/componentefb09.html"
     },
     {
       "type": "file",
@@ -35077,9 +35077,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1xloUicsLSYx0tdkAF7QgtTzWuehP0FTo&export=download",
       "webViewLink": "https://drive.google.com/file/d/1xloUicsLSYx0tdkAF7QgtTzWuehP0FTo/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/componente7061.html"
     },
     {
       "type": "file",
@@ -35093,9 +35093,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1NDdLIwxswQhvdWcOlDehA2ivZOzetTw4&export=download",
       "webViewLink": "https://drive.google.com/file/d/1NDdLIwxswQhvdWcOlDehA2ivZOzetTw4/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/componente783d.html"
     },
     {
       "type": "file",
@@ -35109,9 +35109,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1NGt7eiBRf6g8KufiZlYqZoQJrTiRsTd7&export=download",
       "webViewLink": "https://drive.google.com/file/d/1NGt7eiBRf6g8KufiZlYqZoQJrTiRsTd7/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/componente4a0c.html"
     },
     {
       "type": "file",
@@ -35125,9 +35125,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1Gel8nwO5Rr2APMy_bngOmeIFCaZ-toqN&export=download",
       "webViewLink": "https://drive.google.com/file/d/1Gel8nwO5Rr2APMy_bngOmeIFCaZ-toqN/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/componented16b.html"
     },
     {
       "type": "file",
@@ -35141,9 +35141,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1e2EdbWy5KpKMfUQC9O4FsyN9in3WBKMt&export=download",
       "webViewLink": "https://drive.google.com/file/d/1e2EdbWy5KpKMfUQC9O4FsyN9in3WBKMt/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/scorm.onilearning.com.br/conteudo/componente48e8.html"
     },
     {
       "type": "folder",
@@ -35164,9 +35164,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1v9shEvgxK1tnSaGcqTIu8N8fbaAO49_C&export=download",
       "webViewLink": "https://drive.google.com/file/d/1v9shEvgxK1tnSaGcqTIu8N8fbaAO49_C/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/hts-cache/winprofile.ini"
     },
     {
       "type": "file",
@@ -35180,9 +35180,9 @@
       "webContentLink": "https://drive.google.com/uc?id=16Nlr_4RrkJq-9JqiyFKptOySL6z4b0BN&export=download",
       "webViewLink": "https://drive.google.com/file/d/16Nlr_4RrkJq-9JqiyFKptOySL6z4b0BN/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/hts-cache/new.zip"
     },
     {
       "type": "file",
@@ -35196,9 +35196,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1qhI8487le7-gToOyCnDy-G5MMuNsXlBv&export=download",
       "webViewLink": "https://drive.google.com/file/d/1qhI8487le7-gToOyCnDy-G5MMuNsXlBv/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/hts-cache/new.txt"
     },
     {
       "type": "file",
@@ -35212,9 +35212,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1-zpDx7Uxz3XgYY_WoAZKpMb4ipdeJf1j&export=download",
       "webViewLink": "https://drive.google.com/file/d/1-zpDx7Uxz3XgYY_WoAZKpMb4ipdeJf1j/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/hts-cache/readme.txt"
     },
     {
       "type": "file",
@@ -35228,9 +35228,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1_2wIsFr4DfGhy6hMu68qCtCXeXGZgOxB&export=download",
       "webViewLink": "https://drive.google.com/file/d/1_2wIsFr4DfGhy6hMu68qCtCXeXGZgOxB/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/hts-cache/new.lst"
     },
     {
       "type": "folder",
@@ -35286,9 +35286,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1G97Y_erBXg8tP3HS-0TrCX48M-HzguWR&export=download",
       "webViewLink": "https://drive.google.com/file/d/1G97Y_erBXg8tP3HS-0TrCX48M-HzguWR/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css"
     },
     {
       "type": "folder",
@@ -35309,9 +35309,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1kFv3zTwRBLcW_M3dR2-m4hzcq2yejMuS&export=download",
       "webViewLink": "https://drive.google.com/file/d/1kFv3zTwRBLcW_M3dR2-m4hzcq2yejMuS/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"
     },
     {
       "type": "folder",
@@ -35332,9 +35332,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1ri48jWUuvok-hXv3zHRJ1nKPMTVNFupf&export=download",
       "webViewLink": "https://drive.google.com/file/d/1ri48jWUuvok-hXv3zHRJ1nKPMTVNFupf/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/bold/style.css"
     },
     {
       "type": "folder",
@@ -35355,9 +35355,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1SgzaNArczBR43jBt3UXAS65XLaX2XuRp&export=download",
       "webViewLink": "https://drive.google.com/file/d/1SgzaNArczBR43jBt3UXAS65XLaX2XuRp/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/duotone/style.css"
     },
     {
       "type": "folder",
@@ -35385,9 +35385,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1K3393fIbeoNf0uPmoJtklvr42DsmyPTt&export=download",
       "webViewLink": "https://drive.google.com/file/d/1K3393fIbeoNf0uPmoJtklvr42DsmyPTt/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
     },
     {
       "type": "folder",
@@ -35408,9 +35408,9 @@
       "webContentLink": "https://drive.google.com/uc?id=104y3liirqlK7a58WirKOlqYZK7kcKyEt&export=download",
       "webViewLink": "https://drive.google.com/file/d/104y3liirqlK7a58WirKOlqYZK7kcKyEt/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/code.jquery.com/jquery-3.2.1.min.js.z"
     },
     {
       "type": "file",
@@ -35424,9 +35424,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1p-EQD5WvQuilNF4c8u1QDBnrsEl6sIwG&export=download",
       "webViewLink": "https://drive.google.com/file/d/1p-EQD5WvQuilNF4c8u1QDBnrsEl6sIwG/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/code.jquery.com/jquery-3.2.1.min.js"
     },
     {
       "type": "folder",
@@ -35475,9 +35475,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1gQ96LKB0aB8oCIyfZVSHBOhgwuLzbOHp&export=download",
       "webViewLink": "https://drive.google.com/file/d/1gQ96LKB0aB8oCIyfZVSHBOhgwuLzbOHp/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"
     },
     {
       "type": "file",
@@ -35491,9 +35491,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1PrysEmlP6lY6HbGEd_rdwmbFf33-341Z&export=download",
       "webViewLink": "https://drive.google.com/file/d/1PrysEmlP6lY6HbGEd_rdwmbFf33-341Z/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js.z"
     },
     {
       "type": "folder",
@@ -35521,9 +35521,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1O-BSMwXlZ4RpRjpyxrLi-qgfOJJMVDtX&export=download",
       "webViewLink": "https://drive.google.com/file/d/1O-BSMwXlZ4RpRjpyxrLi-qgfOJJMVDtX/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
     },
     {
       "type": "file",
@@ -35537,9 +35537,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1WkF0eux5l37AHWs_dkL2W94EV3sEV1lD&export=download",
       "webViewLink": "https://drive.google.com/file/d/1WkF0eux5l37AHWs_dkL2W94EV3sEV1lD/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js.z"
     },
     {
       "type": "folder",
@@ -35567,9 +35567,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1zdchNZDOHtot8_bZcqH03hQwd16Bv-n-&export=download",
       "webViewLink": "https://drive.google.com/file/d/1zdchNZDOHtot8_bZcqH03hQwd16Bv-n-/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js.z"
     },
     {
       "type": "file",
@@ -35583,9 +35583,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1WuPqb2OsgNvoqv91aXk1Ff-qK0AUwxpt&export=download",
       "webViewLink": "https://drive.google.com/file/d/1WuPqb2OsgNvoqv91aXk1Ff-qK0AUwxpt/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
     },
     {
       "type": "folder",
@@ -35606,9 +35606,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1pHNKaQt5ZHLvE2S8KGaKBbZDw8Fy0FYc&export=download",
       "webViewLink": "https://drive.google.com/file/d/1pHNKaQt5ZHLvE2S8KGaKBbZDw8Fy0FYc/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/api-externa360.onilearning.com.br/exemplo-mapa.jpg"
     },
     {
       "type": "file",
@@ -35622,9 +35622,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1K7XErT4D5Xq2FpKys6rzAvk8z23vqqr9&export=download",
       "webViewLink": "https://drive.google.com/file/d/1K7XErT4D5Xq2FpKys6rzAvk8z23vqqr9/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/backblue.gif"
     },
     {
       "type": "file",
@@ -35638,9 +35638,9 @@
       "webContentLink": "https://drive.google.com/uc?id=11BxeBV0hJLXxr9zr1aW_6EP0yMsZl6tK&export=download",
       "webViewLink": "https://drive.google.com/file/d/11BxeBV0hJLXxr9zr1aW_6EP0yMsZl6tK/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/fade.gif"
     },
     {
       "type": "file",
@@ -35654,9 +35654,9 @@
       "webContentLink": "https://drive.google.com/uc?id=15f9MwvE8sNYHSB4ww-v-KaE4KLu7obMN&export=download",
       "webViewLink": "https://drive.google.com/file/d/15f9MwvE8sNYHSB4ww-v-KaE4KLu7obMN/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/index.html"
     },
     {
       "type": "file",
@@ -35670,9 +35670,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1zoe94QxwwZC6g_4bQhwcImlmTwyIXUiJ&export=download",
       "webViewLink": "https://drive.google.com/file/d/1zoe94QxwwZC6g_4bQhwcImlmTwyIXUiJ/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/cookies.txt"
     },
     {
       "type": "file",
@@ -35686,9 +35686,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1fAdxGREalU_LsSlDeVRWrNXukJ1IDUDb&export=download",
       "webViewLink": "https://drive.google.com/file/d/1fAdxGREalU_LsSlDeVRWrNXukJ1IDUDb/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Análise de Circuitos Eletroeletrônicos/hts-log.txt"
     },
     {
       "type": "folder",
@@ -35751,9 +35751,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1sIz9QSbc9v_3zhIOkCJBn3xDTecUXNQf&export=download",
       "webViewLink": "https://drive.google.com/file/d/1sIz9QSbc9v_3zhIOkCJBn3xDTecUXNQf/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Eletricidade I/scorm.onilearning.com.br/conteudo/novo_scorm/scorm-padrao/padrao/images/banner-trilha.jpg"
     },
     {
       "type": "folder",
@@ -35774,9 +35774,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1rmdKj2EqVn8OJ5eAJrf3giTKYJAZWPuZ&export=download",
       "webViewLink": "https://drive.google.com/file/d/1rmdKj2EqVn8OJ5eAJrf3giTKYJAZWPuZ/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Eletricidade I/scorm.onilearning.com.br/conteudo/novo_scorm/scorm-padrao/padrao/js/main.js"
     },
     {
       "type": "file",
@@ -35790,9 +35790,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1hG9m02e-jjQIOPL1vLHObUapPcUtSYLR&export=download",
       "webViewLink": "https://drive.google.com/file/d/1hG9m02e-jjQIOPL1vLHObUapPcUtSYLR/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Eletricidade I/scorm.onilearning.com.br/conteudo/novo_scorm/scorm-padrao/padrao/js/bootstrap.min.js"
     },
     {
       "type": "folder",
@@ -35820,9 +35820,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1l1SpucCd5c0fj9ms4t4R1cSgm2o9eluS&export=download",
       "webViewLink": "https://drive.google.com/file/d/1l1SpucCd5c0fj9ms4t4R1cSgm2o9eluS/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Eletricidade I/scorm.onilearning.com.br/conteudo/novo_scorm/scorm-padrao/padrao/fonts/roboto/Roboto-Thin.woff2"
     },
     {
       "type": "file",
@@ -35836,9 +35836,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1HJyxkX39N2aJ-pfKMEpogo52SmMxz9Sl&export=download",
       "webViewLink": "https://drive.google.com/file/d/1HJyxkX39N2aJ-pfKMEpogo52SmMxz9Sl/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Eletricidade I/scorm.onilearning.com.br/conteudo/novo_scorm/scorm-padrao/padrao/fonts/roboto/Roboto-Medium.woff"
     },
     {
       "type": "file",
@@ -35852,9 +35852,9 @@
       "webContentLink": "https://drive.google.com/uc?id=136OC3zlwrD9pCg8DW7tJ75oewnwdx3FP&export=download",
       "webViewLink": "https://drive.google.com/file/d/136OC3zlwrD9pCg8DW7tJ75oewnwdx3FP/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Eletricidade I/scorm.onilearning.com.br/conteudo/novo_scorm/scorm-padrao/padrao/fonts/roboto/Roboto-Thin.woff"
     },
     {
       "type": "file",
@@ -35868,9 +35868,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1aKGgBiUyeRwMW5meiISFAn_R8jbHSYlG&export=download",
       "webViewLink": "https://drive.google.com/file/d/1aKGgBiUyeRwMW5meiISFAn_R8jbHSYlG/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Eletricidade I/scorm.onilearning.com.br/conteudo/novo_scorm/scorm-padrao/padrao/fonts/roboto/Roboto-Regular.woff2"
     },
     {
       "type": "file",
@@ -35884,9 +35884,9 @@
       "webContentLink": "https://drive.google.com/uc?id=11_8wcJWVuTFN60AZQ6ZO8pTcevQyBF0G&export=download",
       "webViewLink": "https://drive.google.com/file/d/11_8wcJWVuTFN60AZQ6ZO8pTcevQyBF0G/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Eletricidade I/scorm.onilearning.com.br/conteudo/novo_scorm/scorm-padrao/padrao/fonts/roboto/Roboto-Regular.woff"
     },
     {
       "type": "file",
@@ -35900,9 +35900,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1MbGn6L3gcApe2AQb_vu109e8kUfK0o2j&export=download",
       "webViewLink": "https://drive.google.com/file/d/1MbGn6L3gcApe2AQb_vu109e8kUfK0o2j/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Eletricidade I/scorm.onilearning.com.br/conteudo/novo_scorm/scorm-padrao/padrao/fonts/roboto/Roboto-Medium.woff2"
     },
     {
       "type": "file",
@@ -35916,9 +35916,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1kdWjGkirw4YABSGdkQuOZSDimYam2jpF&export=download",
       "webViewLink": "https://drive.google.com/file/d/1kdWjGkirw4YABSGdkQuOZSDimYam2jpF/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Eletricidade I/scorm.onilearning.com.br/conteudo/novo_scorm/scorm-padrao/padrao/fonts/roboto/Roboto-Light.woff"
     },
     {
       "type": "file",
@@ -35932,9 +35932,9 @@
       "webContentLink": "https://drive.google.com/uc?id=12EUZzxmoHYNVcWbc75ZJL5Ztd3Q67iVC&export=download",
       "webViewLink": "https://drive.google.com/file/d/12EUZzxmoHYNVcWbc75ZJL5Ztd3Q67iVC/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Eletricidade I/scorm.onilearning.com.br/conteudo/novo_scorm/scorm-padrao/padrao/fonts/roboto/Roboto-Bold.woff"
     },
     {
       "type": "file",
@@ -35948,9 +35948,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1R2mk1hWk6jfuO6piwy-m-lQP4MIvGTBu&export=download",
       "webViewLink": "https://drive.google.com/file/d/1R2mk1hWk6jfuO6piwy-m-lQP4MIvGTBu/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Eletricidade I/scorm.onilearning.com.br/conteudo/novo_scorm/scorm-padrao/padrao/fonts/roboto/Roboto-Bold.woff2"
     },
     {
       "type": "file",
@@ -35964,9 +35964,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1s03dtviHf8O0XPx3baEDFW4MzMULYBRo&export=download",
       "webViewLink": "https://drive.google.com/file/d/1s03dtviHf8O0XPx3baEDFW4MzMULYBRo/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Eletricidade I/scorm.onilearning.com.br/conteudo/novo_scorm/scorm-padrao/padrao/fonts/roboto/Roboto-Light.woff2"
     },
     {
       "type": "folder",
@@ -35987,9 +35987,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1ECzJeSeA4bLqAq-99plsduXqAK0XiyJL&export=download",
       "webViewLink": "https://drive.google.com/file/d/1ECzJeSeA4bLqAq-99plsduXqAK0XiyJL/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Eletricidade I/scorm.onilearning.com.br/conteudo/novo_scorm/scorm-padrao/padrao/contents/background_computador2.jpg"
     },
     {
       "type": "folder",
@@ -36010,9 +36010,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1t18yWR1qriWMHgzjTouCs1AhgoEvurnq&export=download",
       "webViewLink": "https://drive.google.com/file/d/1t18yWR1qriWMHgzjTouCs1AhgoEvurnq/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Eletricidade I/scorm.onilearning.com.br/conteudo/novo_scorm/scorm-padrao/padrao/css/bootstrap-grid.min.css"
     },
     {
       "type": "file",
@@ -36026,9 +36026,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1gJf_PuCeKnYYVONO7XciSQJ5bVPrLpZF&export=download",
       "webViewLink": "https://drive.google.com/file/d/1gJf_PuCeKnYYVONO7XciSQJ5bVPrLpZF/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Eletricidade I/scorm.onilearning.com.br/conteudo/novo_scorm/scorm-padrao/padrao/css/main.css"
     },
     {
       "type": "file",
@@ -36042,9 +36042,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1mZPmyQCH5ju07K9X2NCf7P9IpwK_KAkR&export=download",
       "webViewLink": "https://drive.google.com/file/d/1mZPmyQCH5ju07K9X2NCf7P9IpwK_KAkR/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Eletricidade I/scorm.onilearning.com.br/conteudo/novo_scorm/scorm-padrao/padrao/css/materialize.min.css"
     },
     {
       "type": "folder",
@@ -36065,9 +36065,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1JMqdCtaY3O4AwU3A60_f79_Yoq7o0BFv&export=download",
       "webViewLink": "https://drive.google.com/file/d/1JMqdCtaY3O4AwU3A60_f79_Yoq7o0BFv/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Eletricidade I/scorm.onilearning.com.br/conteudo/locale/locale.html"
     },
     {
       "type": "folder",
@@ -36088,9 +36088,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1OXP5LnJUGFoCE8bi-hMkivmmC1aedqUj&export=download",
       "webViewLink": "https://drive.google.com/file/d/1OXP5LnJUGFoCE8bi-hMkivmmC1aedqUj/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Eletricidade I/scorm.onilearning.com.br/conteudo/chatpdf/carregarConversas.html"
     },
     {
       "type": "file",
@@ -36104,9 +36104,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1Sfa7msRQRQNagMA8YsVE5K9fSJcPk4LB&export=download",
       "webViewLink": "https://drive.google.com/file/d/1Sfa7msRQRQNagMA8YsVE5K9fSJcPk4LB/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Eletricidade I/scorm.onilearning.com.br/conteudo/chatpdf/HISTORICO.pdf"
     },
     {
       "type": "file",
@@ -36120,9 +36120,9 @@
       "webContentLink": "https://drive.google.com/uc?id=18jMASKTgZDFgDy1wBG_bMsSwjgm54Hf2&export=download",
       "webViewLink": "https://drive.google.com/file/d/18jMASKTgZDFgDy1wBG_bMsSwjgm54Hf2/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Eletricidade I/scorm.onilearning.com.br/conteudo/chatpdf/audioQuestion92bd.html"
     },
     {
       "type": "file",
@@ -36136,9 +36136,9 @@
       "webContentLink": "https://drive.google.com/uc?id=15-A1_ntcmKQ8dSw5jxe1-_IUbrlAvQ_X&export=download",
       "webViewLink": "https://drive.google.com/file/d/15-A1_ntcmKQ8dSw5jxe1-_IUbrlAvQ_X/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Eletricidade I/scorm.onilearning.com.br/conteudo/chatpdf/FunPerguntapdf.html"
     },
     {
       "type": "folder",
@@ -36166,9 +36166,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1Ajm5zdTNI7u80XmvQikIL1Aw9pDbqRCG&export=download",
       "webViewLink": "https://drive.google.com/file/d/1Ajm5zdTNI7u80XmvQikIL1Aw9pDbqRCG/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Eletricidade I/scorm.onilearning.com.br/conteudo/assets/css/reset.css"
     },
     {
       "type": "file",
@@ -36182,9 +36182,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1VLFTDOo1lpGylMrcrnOFdTm9hoqEjzZL&export=download",
       "webViewLink": "https://drive.google.com/file/d/1VLFTDOo1lpGylMrcrnOFdTm9hoqEjzZL/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Eletricidade I/scorm.onilearning.com.br/conteudo/assets/css/acess_bar.css"
     },
     {
       "type": "file",
@@ -36198,9 +36198,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1qHykxRr-1bkzSZ83dZe7IZknjd3O5DLF&export=download",
       "webViewLink": "https://drive.google.com/file/d/1qHykxRr-1bkzSZ83dZe7IZknjd3O5DLF/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Eletricidade I/scorm.onilearning.com.br/conteudo/assets/css/novaTrilha.css"
     },
     {
       "type": "file",
@@ -36214,9 +36214,9 @@
       "webContentLink": "https://drive.google.com/uc?id=19T5YmZHBIiyxi6m-o0oq1UDJwGMlE8dM&export=download",
       "webViewLink": "https://drive.google.com/file/d/19T5YmZHBIiyxi6m-o0oq1UDJwGMlE8dM/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Eletricidade I/scorm.onilearning.com.br/conteudo/assets/css/acess_contrast.css"
     },
     {
       "type": "folder",
@@ -36237,9 +36237,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1qQptMAA5rnPhF8odHXEG9UFh8Z2agBGn&export=download",
       "webViewLink": "https://drive.google.com/file/d/1qQptMAA5rnPhF8odHXEG9UFh8Z2agBGn/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Eletricidade I/scorm.onilearning.com.br/conteudo/assets/js/acess_scripts.js"
     },
     {
       "type": "file",
@@ -36253,9 +36253,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1_tOYZlgRzJl0dTEJJa1P1IvhUwYLviIb&export=download",
       "webViewLink": "https://drive.google.com/file/d/1_tOYZlgRzJl0dTEJJa1P1IvhUwYLviIb/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Eletricidade I/scorm.onilearning.com.br/conteudo/assets/js/novaTrilha.js"
     },
     {
       "type": "folder",
@@ -36290,9 +36290,9 @@
       "webContentLink": "https://drive.google.com/uc?id=13G8Xtxiioqj3uPl67hjLrww2CTa_Aswz&export=download",
       "webViewLink": "https://drive.google.com/file/d/13G8Xtxiioqj3uPl67hjLrww2CTa_Aswz/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Eletricidade I/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-3/icone-10.png"
     },
     {
       "type": "file",
@@ -36306,9 +36306,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1zAfM-EgQleMHC8Q-eLtLFpgwLDLZqZqn&export=download",
       "webViewLink": "https://drive.google.com/file/d/1zAfM-EgQleMHC8Q-eLtLFpgwLDLZqZqn/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Eletricidade I/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-3/icone-1.png"
     },
     {
       "type": "file",
@@ -36322,9 +36322,9 @@
       "webContentLink": "https://drive.google.com/uc?id=16FcsLUqj9LMeJrLAruPBLb3JXBZWkkzu&export=download",
       "webViewLink": "https://drive.google.com/file/d/16FcsLUqj9LMeJrLAruPBLb3JXBZWkkzu/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Eletricidade I/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-3/icone-5.png"
     },
     {
       "type": "file",
@@ -36338,9 +36338,9 @@
       "webContentLink": "https://drive.google.com/uc?id=13nWnm2HJtDZKdjWBu5y4waD3fKOk06P6&export=download",
       "webViewLink": "https://drive.google.com/file/d/13nWnm2HJtDZKdjWBu5y4waD3fKOk06P6/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Eletricidade I/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-3/icone-12.png"
     },
     {
       "type": "file",
@@ -36354,9 +36354,9 @@
       "webContentLink": "https://drive.google.com/uc?id=11zjAc9ImynKjNcmU7_3w2iSKb2GIWmyF&export=download",
       "webViewLink": "https://drive.google.com/file/d/11zjAc9ImynKjNcmU7_3w2iSKb2GIWmyF/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Eletricidade I/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-3/icone-6.png"
     },
     {
       "type": "file",
@@ -36370,9 +36370,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1AcjNbcwGsSjvmLyP0qAlo94M5MthkTfv&export=download",
       "webViewLink": "https://drive.google.com/file/d/1AcjNbcwGsSjvmLyP0qAlo94M5MthkTfv/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Eletricidade I/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-3/icone-2.png"
     },
     {
       "type": "file",
@@ -36386,9 +36386,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1poykhC79niyw4CdeC21xgH6ULdiEtKln&export=download",
       "webViewLink": "https://drive.google.com/file/d/1poykhC79niyw4CdeC21xgH6ULdiEtKln/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Eletricidade I/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-3/icone-9.png"
     },
     {
       "type": "file",
@@ -36402,9 +36402,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1q_E0D6AEVrntwiDf-DjANaeghsDbke1k&export=download",
       "webViewLink": "https://drive.google.com/file/d/1q_E0D6AEVrntwiDf-DjANaeghsDbke1k/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Eletricidade I/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-3/icone-7.png"
     },
     {
       "type": "file",
@@ -36418,9 +36418,9 @@
       "webContentLink": "https://drive.google.com/uc?id=17ftwoMN9MsI7wtVnDbdkNo9IEfjd9Eyd&export=download",
       "webViewLink": "https://drive.google.com/file/d/17ftwoMN9MsI7wtVnDbdkNo9IEfjd9Eyd/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Eletricidade I/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-3/icone-4.png"
     },
     {
       "type": "file",
@@ -36434,9 +36434,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1LqvHyoQLgZ8TBIOwPfJGFQBv2CYNLp_G&export=download",
       "webViewLink": "https://drive.google.com/file/d/1LqvHyoQLgZ8TBIOwPfJGFQBv2CYNLp_G/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Eletricidade I/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-3/icone-8.png"
     },
     {
       "type": "file",
@@ -36450,9 +36450,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1MC2vDH-YZ8kocVyE8n2BE2U7Fr65xoDM&export=download",
       "webViewLink": "https://drive.google.com/file/d/1MC2vDH-YZ8kocVyE8n2BE2U7Fr65xoDM/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Eletricidade I/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-3/icone-3.png"
     },
     {
       "type": "file",
@@ -36466,9 +36466,9 @@
       "webContentLink": "https://drive.google.com/uc?id=17inxJP_4GF_gKayqA_OZnCerZ1KJY9mZ&export=download",
       "webViewLink": "https://drive.google.com/file/d/17inxJP_4GF_gKayqA_OZnCerZ1KJY9mZ/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Eletricidade I/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-3/icone-11.png"
     },
     {
       "type": "file",
@@ -36482,9 +36482,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1KeeOAJJONdWfI81tfEztJkTH5jEZ7vQP&export=download",
       "webViewLink": "https://drive.google.com/file/d/1KeeOAJJONdWfI81tfEztJkTH5jEZ7vQP/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Eletricidade I/scorm.onilearning.com.br/conteudo/assets/img/pdf.svg"
     },
     {
       "type": "file",
@@ -36498,9 +36498,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1TRI3ppGqrSPrR1MbFCSfQLauXu1sqvGl&export=download",
       "webViewLink": "https://drive.google.com/file/d/1TRI3ppGqrSPrR1MbFCSfQLauXu1sqvGl/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Eletricidade I/scorm.onilearning.com.br/conteudo/assets/img/lang_BR.svg"
     },
     {
       "type": "file",
@@ -36514,9 +36514,9 @@
       "webContentLink": "https://drive.google.com/uc?id=18OXsLkq9YZArZxPygnBdwShCDwDLQoyv&export=download",
       "webViewLink": "https://drive.google.com/file/d/18OXsLkq9YZArZxPygnBdwShCDwDLQoyv/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Eletricidade I/scorm.onilearning.com.br/conteudo/assets/img/lang_US.svg"
     },
     {
       "type": "file",
@@ -36530,9 +36530,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1XiXbA5RrIdkUUvu2e60--vpqAjrToQT7&export=download",
       "webViewLink": "https://drive.google.com/file/d/1XiXbA5RrIdkUUvu2e60--vpqAjrToQT7/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Eletricidade I/scorm.onilearning.com.br/conteudo/assets/img/ONIfavicon-96x96.png"
     },
     {
       "type": "file",
@@ -36546,9 +36546,9 @@
       "webContentLink": "https://drive.google.com/uc?id=11UpMuMvmiXK3Gep276TqYBkt2K6XVNp0&export=download",
       "webViewLink": "https://drive.google.com/file/d/11UpMuMvmiXK3Gep276TqYBkt2K6XVNp0/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:24:59.531Z",
+      "publicPath": "/eadplataforma/Eletricidade I/scorm.onilearning.com.br/conteudo/assets/img/lang_ES.svg"
     },
     {
       "type": "file",
@@ -50922,7 +50922,7 @@
   ],
   "sync": {
     "mode": "drive_to_github_files",
-    "syncedAt": "2026-07-22T02:17:00.706Z",
+    "syncedAt": "2026-07-22T02:24:59.531Z",
     "batchSize": 150,
     "batchLimit": 150
   }
