@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useActiveTheme } from "@/hooks/useActiveTheme.ts";
+import { trackLeadIntent } from "@/lib/analytics.ts";
 
 const HeroBanner = () => {
   const { theme, loading } = useActiveTheme();
@@ -169,6 +170,7 @@ const HeroBanner = () => {
 
             <a
               href="#contato"
+              onClick={() => trackLeadIntent("home_banner_cta_click", undefined, "home_hero")}
               className="mt-2 inline-flex animate-fade-up items-center gap-2 rounded-xl bg-ecid-yellow px-8 py-4 text-lg font-bold text-ecid-navy shadow-xl transition-all hover:scale-105 hover:bg-primary-foreground hover:shadow-2xl"
               style={{ animationDelay: "0.35s" }}
             >

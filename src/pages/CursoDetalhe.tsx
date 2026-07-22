@@ -9,8 +9,8 @@ import Footer from "@/components/Footer.tsx";
 import WhatsAppButton from "@/components/WhatsAppButton.tsx";
 import { useState, useEffect } from "react";
 import { supabase } from "@/integrations/supabase/client.ts";
-import type { Json } from "@/integrations/supabase/types.ts";
 import { getCourseCategoryLabel } from "@/lib/courseCategories.ts";
+import { trackCourseView, trackLeadIntent } from "@/lib/analytics.ts";
 
 interface CourseModule {
   name: string;
@@ -25,6 +25,40 @@ interface AccessItem {
 interface FaqItem {
   question: string;
   answer: string;
+}
+
+interface CourseDetail {
+  slug: string;
+  title: string;
+  subtitle?: string | null;
+  description?: string | null;
+  category: string;
+  image_url?: string | null;
+  banner_image_url?: string | null;
+  original_price?: string | null;
+  promo_price?: string | null;
+  installment?: string | null;
+  hours?: number | null;
+  duration_range?: string | null;
+  certification?: string | null;
+  rating?: number | null;
+  about_course?: string | null;
+  how_it_works?: string[] | null;
+  registration_portaria?: string | null;
+  registration_parecer?: string | null;
+  registration_approved_date?: string | null;
+  registration_register_with?: string | null;
+  profession?: string | null;
+  market?: string | null;
+  methodology_materials?: string[] | null;
+  methodology_services?: string[] | null;
+  methodology_response_time?: string | null;
+  requirements?: string[] | null;
+  tutoring?: string | null;
+  tutor_attributes?: string[] | null;
+  modules?: CourseModule[] | null;
+  access_items?: AccessItem[] | null;
+  faq?: FaqItem[] | null;
 }
 
 const StarRating = ({ rating }: { rating: number }) => {
@@ -43,7 +77,7 @@ const StarRating = ({ rating }: { rating: number }) => {
 
 const CursoDetalhe = () => {
   const { id } = useParams();
-  const [course, setCourse] = useState<any>(null);
+  const [course, setCourse] = useState<CourseDetail | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -55,27 +89,23 @@ const CursoDetalhe = () => {
         .eq("slug", id)
         .limit(1);
       if (data && data.length > 0) {
-        setCourse(data[0]);
+        setCourse(data[0] as unknown as CourseDetail);
       }
       setLoading(false);
     };
     fetchCourse();
   }, [id]);
 
-  const modules: CourseModule[] = course?.modules
-    ? (course.modules as any[]).map((m: any) => ({
-        name: m.name || "",
-        subjects: Array.isArray(m.subjects) ? m.subjects : [],
+  const modules: CourseModule[] = Array.isArray(course?.modules)
+    ? course.modules.map((module) => ({
+        name: module.name || "",
+        subjects: Array.isArray(module.subjects) ? module.subjects : [],
       }))
     : [];
 
-  const accessItems: AccessItem[] = course?.access_items
-    ? (course.access_items as any[])
-    : [];
+  const accessItems: AccessItem[] = Array.isArray(course?.access_items) ? course.access_items : [];
 
-  const faqItems: FaqItem[] = course?.faq
-    ? (course.faq as any[])
-    : [];
+  const faqItems: FaqItem[] = Array.isArray(course?.faq) ? course.faq : [];
 
   const [formData, setFormData] = useState({
     email: "",
@@ -98,6 +128,11 @@ const CursoDetalhe = () => {
         mensagem: `Olá! Gostaria de me matricular no curso: ${course.title}`,
       }));
     }
+  }, [course]);
+
+  useEffect(() => {
+    if (!course) return;
+    trackCourseView(course);
   }, [course]);
 
   const formatPhone = (value: string) => {
@@ -141,10 +176,14 @@ const CursoDetalhe = () => {
     });
     if (!emailValid || !nameValid || !phoneValid) {
       e.preventDefault();
+      trackLeadIntent("matricula_form_invalid", course, "course_detail_form");
+      return;
     }
+    trackLeadIntent("matricula_form_submit", course, "course_detail_form");
   };
 
   const scrollToForm = () => {
+    trackLeadIntent("matricula_cta_click", course, "course_detail_sticky_card");
     document.getElementById("matricula-form")?.scrollIntoView({ behavior: "smooth" });
   };
 
@@ -718,7 +757,7 @@ const CursoDetalhe = () => {
       </section>
 
       <Footer />
-      <WhatsAppButton />
+      <WhatsAppButton course={course} location="course_detail_floating" />
     </div>
   );
 };

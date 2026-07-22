@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip.tsx";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { Suspense, lazy, useEffect } from "react";
+import { trackPageView } from "@/lib/analytics.ts";
 
 const Index = lazy(() => import("./pages/Index.tsx"));
 const FAQ = lazy(() => import("./pages/FAQ.tsx"));
@@ -28,21 +29,11 @@ const RouteFallback = () => (
   </div>
 );
 
-declare global {
-  interface Window {
-    gtag?: (...args: unknown[]) => void;
-  }
-}
-
 const AnalyticsPageView = () => {
   const location = useLocation();
 
   useEffect(() => {
-    window.gtag?.("event", "page_view", {
-      page_path: `${location.pathname}${location.search}`,
-      page_location: window.location.href,
-      page_title: document.title,
-    });
+    trackPageView(`${location.pathname}${location.search}`, document.title);
   }, [location.pathname, location.search]);
 
   return null;

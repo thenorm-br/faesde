@@ -9,6 +9,7 @@ import {
   getCourseCardLabel,
   type CourseCategoryMeta,
 } from "@/lib/courseCategories.ts";
+import { trackCourseSelect } from "@/lib/analytics.ts";
 
 interface Course {
   id: string;
@@ -25,7 +26,7 @@ interface Course {
   certification: string | null;
 }
 
-const CourseCard = ({ course }: { course: Course }) => {
+const CourseCard = ({ course, listName }: { course: Course; listName: string }) => {
   const getShortTitle = (fullTitle: string) => {
     return fullTitle
       .replace("Curso Técnico de ", "")
@@ -37,7 +38,7 @@ const CourseCard = ({ course }: { course: Course }) => {
   };
 
   return (
-    <Link to={`/curso/${course.slug}`} className="block">
+    <Link to={`/curso/${course.slug}`} className="block" onClick={() => trackCourseSelect(course, listName)}>
       <article className="group card-hover flex h-full flex-col overflow-hidden rounded-2xl bg-card shadow-card transition-all hover:shadow-lg">
         <div className="relative aspect-[16/10] overflow-hidden">
           <img
@@ -196,7 +197,7 @@ const CoursesSection = () => {
 
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
               {group.courses.slice(0, 5).map((course) => (
-                <CourseCard key={course.id} course={course} />
+                <CourseCard key={course.id} course={course} listName={`Home - ${group.meta.label}`} />
               ))}
             </div>
 

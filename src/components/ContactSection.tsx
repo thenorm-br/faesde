@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Phone, Mail, MapPin, Clock, Send, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button.tsx";
 import { Input } from "@/components/ui/input.tsx";
+import { trackLeadIntent } from "@/lib/analytics.ts";
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -90,7 +91,10 @@ const ContactSection = () => {
     
     if (!emailValid || !nameValid || !phoneValid) {
       e.preventDefault();
+      trackLeadIntent("contact_form_invalid", undefined, "contact_section_form");
+      return;
     }
+    trackLeadIntent("contact_form_submit", undefined, "contact_section_form");
   };
 
   return (
@@ -237,6 +241,7 @@ const ContactSection = () => {
               href="https://mensagem.faesde.com.br/"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackLeadIntent("whatsapp_click", undefined, "contact_section")}
               className="block rounded-2xl bg-green-600 p-6 text-primary-foreground transition-transform hover:scale-[1.02]"
             >
               <div className="flex items-center gap-4">

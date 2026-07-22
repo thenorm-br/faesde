@@ -16,6 +16,7 @@ import {
   getCourseCardLabel,
   getCourseCategoryMeta,
 } from "@/lib/courseCategories.ts";
+import { trackCourseCategoryView, trackCourseSearch, trackCourseSelect } from "@/lib/analytics.ts";
 
 interface Course {
   id: string;
@@ -29,7 +30,7 @@ interface Course {
   category: string;
 }
 
-const CourseCard = ({ course }: { course: Course }) => {
+const CourseCard = ({ course, listName }: { course: Course; listName: string }) => {
   const getShortTitle = (fullTitle: string) => {
     return fullTitle
       .replace("Curso Técnico de ", "")
@@ -41,7 +42,7 @@ const CourseCard = ({ course }: { course: Course }) => {
   };
 
   return (
-    <Link to={`/curso/${course.slug}`}>
+    <Link to={`/curso/${course.slug}`} onClick={() => trackCourseSelect(course, listName)}>
       <article className="group card-hover flex flex-col overflow-hidden rounded-2xl bg-card shadow-card">
         <div className="relative aspect-[16/10] overflow-hidden">
           <img
@@ -181,6 +182,23 @@ const Cursos = () => {
   const relatedKeywords = useMemo(() => getRelatedKeywords(searchTerm), [searchTerm]);
   const activeCategoryMeta = activeTab === "todos" ? null : getCourseCategoryMeta(activeTab);
 
+  useEffect(() => {
+    if (loading) return;
+    trackCourseCategoryView(activeTab, activeCategoryMeta?.label || "Todos os cursos", filteredCourses.length);
+  }, [activeTab, activeCategoryMeta?.label, filteredCourses.length, loading]);
+
+  useEffect(() => {
+    if (loading) return;
+    const term = deferredSearchTerm.trim();
+    if (term.length < 2) return;
+
+    const timer = window.setTimeout(() => {
+      trackCourseSearch(term, filteredCourses.length, activeTab);
+    }, 900);
+
+    return () => window.clearTimeout(timer);
+  }, [activeTab, deferredSearchTerm, filteredCourses.length, loading]);
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -282,7 +300,7 @@ const Cursos = () => {
 
               <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                 {filteredCourses.map((course) => (
-                  <CourseCard key={course.id} course={course} />
+                  <CourseCard key={course.id} course={course} listName={activeCategoryMeta?.label || "Todos os cursos"} />
                 ))}
               </div>
 

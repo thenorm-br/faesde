@@ -1,9 +1,21 @@
-const WhatsAppButton = () => {
+import { trackLeadIntent } from "@/lib/analytics.ts";
+
+interface WhatsAppButtonProps {
+  course?: {
+    slug?: string;
+    title?: string;
+    category?: string;
+  };
+  location?: string;
+}
+
+const WhatsAppButton = ({ course, location = "floating_whatsapp" }: WhatsAppButtonProps) => {
   return (
     <a
       href="https://mensagem.faesde.com.br/"
       target="_blank"
       rel="noopener noreferrer"
+      onClick={() => trackLeadIntent("whatsapp_click", course, location)}
       className="fixed bottom-6 right-6 z-50 flex h-16 w-16 items-center justify-center rounded-full bg-[#25D366] shadow-lg shadow-green-500/30 transition-all hover:scale-110 hover:shadow-xl hover:shadow-green-500/40 animate-[pulse_2s_cubic-bezier(0.4,0,0.6,1)_infinite]"
       aria-label="Fale conosco pelo WhatsApp"
     >
