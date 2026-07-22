@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-22T02:32:27.880Z",
+  "generatedAt": "2026-07-22T02:40:54.410Z",
   "source": {
     "provider": "google_drive",
     "rootFolderId": "1jYFYbdJdJHT-f7BpzFX9t1mQLD6xwgbd",
@@ -39189,9 +39189,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1IAuxq9ub0sSonPr5Y3kGP2w9hoZpm1vE&export=download",
       "webViewLink": "https://drive.google.com/file/d/1IAuxq9ub0sSonPr5Y3kGP2w9hoZpm1vE/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/plugin.handtalk.me/web/latest/handtalk.min.js"
     },
     {
       "type": "file",
@@ -39205,9 +39205,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1djypQy8uIoZ_DhVV4uWi7pu-Q0hIEr1x&export=download",
       "webViewLink": "https://drive.google.com/file/d/1djypQy8uIoZ_DhVV4uWi7pu-Q0hIEr1x/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/plugin.handtalk.me/web/latest/handtalk.min.js.z"
     },
     {
       "type": "folder",
@@ -39256,9 +39256,9 @@
       "webContentLink": "https://drive.google.com/uc?id=16cJD5MqfkaSj19Jr8TBUkwjTjo1TeaRm&export=download",
       "webViewLink": "https://drive.google.com/file/d/16cJD5MqfkaSj19Jr8TBUkwjTjo1TeaRm/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/trilha/assets/pdf/web/viewer.js.z"
     },
     {
       "type": "file",
@@ -39272,9 +39272,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1HeyXcektIchbBqJS6lcc9TutQGb8uLlR&export=download",
       "webViewLink": "https://drive.google.com/file/d/1HeyXcektIchbBqJS6lcc9TutQGb8uLlR/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/trilha/assets/pdf/web/viewer.js"
     },
     {
       "type": "file",
@@ -39288,9 +39288,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1pC2T4rLY1xmy_RB73o3JQMcbYXs0HR2Y&export=download",
       "webViewLink": "https://drive.google.com/file/d/1pC2T4rLY1xmy_RB73o3JQMcbYXs0HR2Y/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/trilha/assets/pdf/web/viewer.css"
     },
     {
       "type": "folder",
@@ -39311,9 +39311,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1jLaXy4xWh5YKCo3uIh0Px1YiwLY93epl&export=download",
       "webViewLink": "https://drive.google.com/file/d/1jLaXy4xWh5YKCo3uIh0Px1YiwLY93epl/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/trilha/assets/pdf/build/pdf.js.z"
     },
     {
       "type": "file",
@@ -39327,9 +39327,9 @@
       "webContentLink": "https://drive.google.com/uc?id=131oVmRdI5DPJLmgHXYPbyvuHe8ggQYm-&export=download",
       "webViewLink": "https://drive.google.com/file/d/131oVmRdI5DPJLmgHXYPbyvuHe8ggQYm-/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/trilha/assets/pdf/build/pdf.js"
     },
     {
       "type": "folder",
@@ -39378,9 +39378,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1vcttBBSEhCMSDqraQAFAXrOGz8d9O4Af&export=download",
       "webViewLink": "https://drive.google.com/file/d/1vcttBBSEhCMSDqraQAFAXrOGz8d9O4Af/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/novo_scorm/scorm-padrao/padrao/js/main.js"
     },
     {
       "type": "file",
@@ -39394,9 +39394,9 @@
       "webContentLink": "https://drive.google.com/uc?id=120F9b3_0Tgk-8SnhizaZyUCTV0cf0lJ7&export=download",
       "webViewLink": "https://drive.google.com/file/d/120F9b3_0Tgk-8SnhizaZyUCTV0cf0lJ7/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/novo_scorm/scorm-padrao/padrao/js/bootstrap.min.js.z"
     },
     {
       "type": "file",
@@ -39410,9 +39410,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1ZUcFxEU7eh0vMMVHdPZvGWbYAvgt70sy&export=download",
       "webViewLink": "https://drive.google.com/file/d/1ZUcFxEU7eh0vMMVHdPZvGWbYAvgt70sy/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/novo_scorm/scorm-padrao/padrao/js/bootstrap.min.js"
     },
     {
       "type": "folder",
@@ -39433,9 +39433,9 @@
       "webContentLink": "https://drive.google.com/uc?id=14MGCk4ehHx5KEODivGNGkSyEKXRs3r70&export=download",
       "webViewLink": "https://drive.google.com/file/d/14MGCk4ehHx5KEODivGNGkSyEKXRs3r70/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/novo_scorm/scorm-padrao/padrao/contents/background_computador2.jpg"
     },
     {
       "type": "folder",
@@ -39456,9 +39456,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1AxO5QBB5MMMIJNWGcbl0_nG_Wfl7SksV&export=download",
       "webViewLink": "https://drive.google.com/file/d/1AxO5QBB5MMMIJNWGcbl0_nG_Wfl7SksV/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/novo_scorm/scorm-padrao/padrao/css/materialize.min.css"
     },
     {
       "type": "file",
@@ -39472,9 +39472,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1K2Tfgw9uYkSliUymqQc5GJI8Hsl0jFTa&export=download",
       "webViewLink": "https://drive.google.com/file/d/1K2Tfgw9uYkSliUymqQc5GJI8Hsl0jFTa/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/novo_scorm/scorm-padrao/padrao/css/bootstrap-grid.min.css"
     },
     {
       "type": "file",
@@ -39488,9 +39488,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1e-ga0jv2PmthtV5h0AxRHa-1MMJ1ALf8&export=download",
       "webViewLink": "https://drive.google.com/file/d/1e-ga0jv2PmthtV5h0AxRHa-1MMJ1ALf8/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/novo_scorm/scorm-padrao/padrao/css/bootstrap-grid.min.css.z"
     },
     {
       "type": "file",
@@ -39504,9 +39504,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1sH77rfD5P9wiwo3Z1JzgylkZ6L3Cjvhk&export=download",
       "webViewLink": "https://drive.google.com/file/d/1sH77rfD5P9wiwo3Z1JzgylkZ6L3Cjvhk/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/novo_scorm/scorm-padrao/padrao/css/main.css.z"
     },
     {
       "type": "file",
@@ -39520,9 +39520,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1Pqr1F_j05oJ8m9bAEqchuE0KtpRqQR7f&export=download",
       "webViewLink": "https://drive.google.com/file/d/1Pqr1F_j05oJ8m9bAEqchuE0KtpRqQR7f/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/novo_scorm/scorm-padrao/padrao/css/main.css"
     },
     {
       "type": "folder",
@@ -39543,9 +39543,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1w_6ZWCrM_LGAgaUSzOnI8CxUR_SQJl5M&export=download",
       "webViewLink": "https://drive.google.com/file/d/1w_6ZWCrM_LGAgaUSzOnI8CxUR_SQJl5M/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/novo_scorm/scorm-padrao/padrao/images/banner-trilha.jpg"
     },
     {
       "type": "folder",
@@ -39566,9 +39566,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1QkodIHbUvTyc_Ja2qF-12ef2YHLeN_NM&export=download",
       "webViewLink": "https://drive.google.com/file/d/1QkodIHbUvTyc_Ja2qF-12ef2YHLeN_NM/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/chatpdf/moni_onepage.html"
     },
     {
       "type": "file",
@@ -39582,9 +39582,9 @@
       "webContentLink": "https://drive.google.com/uc?id=10jdfggVcbLGEQ0QCfzkV96n6ZRAfXxGG&export=download",
       "webViewLink": "https://drive.google.com/file/d/10jdfggVcbLGEQ0QCfzkV96n6ZRAfXxGG/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/chatpdf/audioQuestion_moni92bd.json"
     },
     {
       "type": "file",
@@ -39598,9 +39598,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1ESPK2YA6t7IFXQfut7OUSRJcPiX_oKMZ&export=download",
       "webViewLink": "https://drive.google.com/file/d/1ESPK2YA6t7IFXQfut7OUSRJcPiX_oKMZ/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/chatpdf/baixarConversaMoni.html"
     },
     {
       "type": "folder",
@@ -39621,9 +39621,9 @@
       "webContentLink": "https://drive.google.com/uc?id=19-wkDnT49RJuX9jXgflhDDu8hiO87c6_&export=download",
       "webViewLink": "https://drive.google.com/file/d/19-wkDnT49RJuX9jXgflhDDu8hiO87c6_/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/locale/locale.html"
     },
     {
       "type": "folder",
@@ -39651,9 +39651,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1AplnBH9-Q728tKgohEnt8U_5L8IgDJ5E&export=download",
       "webViewLink": "https://drive.google.com/file/d/1AplnBH9-Q728tKgohEnt8U_5L8IgDJ5E/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/assets/js/novaTrilha.js"
     },
     {
       "type": "file",
@@ -39667,9 +39667,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1Vbc6GfTEH0-E36o-Nff4tv0BzGZr0VpG&export=download",
       "webViewLink": "https://drive.google.com/file/d/1Vbc6GfTEH0-E36o-Nff4tv0BzGZr0VpG/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/assets/js/acess_scripts.js.z"
     },
     {
       "type": "file",
@@ -39683,9 +39683,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1shEl5VaIMtsx1ezuWUJ5Bq0WzA0S4xBZ&export=download",
       "webViewLink": "https://drive.google.com/file/d/1shEl5VaIMtsx1ezuWUJ5Bq0WzA0S4xBZ/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/assets/js/novaTrilha.js.z"
     },
     {
       "type": "file",
@@ -39699,9 +39699,9 @@
       "webContentLink": "https://drive.google.com/uc?id=18cBT0Fjw1Zw3jqrHb7iMwoBJeQqwOPHN&export=download",
       "webViewLink": "https://drive.google.com/file/d/18cBT0Fjw1Zw3jqrHb7iMwoBJeQqwOPHN/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/assets/js/acess_scripts.js"
     },
     {
       "type": "folder",
@@ -39736,9 +39736,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1XWNO5e4ZrH7xQ2GGRDmAXvHyqWHkKH2n&export=download",
       "webViewLink": "https://drive.google.com/file/d/1XWNO5e4ZrH7xQ2GGRDmAXvHyqWHkKH2n/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-2/icone-6.png"
     },
     {
       "type": "file",
@@ -39752,9 +39752,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1HdgaGKZB1AxaGcpZnHzUywsWKCFAITg9&export=download",
       "webViewLink": "https://drive.google.com/file/d/1HdgaGKZB1AxaGcpZnHzUywsWKCFAITg9/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-2/icone-3.png"
     },
     {
       "type": "file",
@@ -39768,9 +39768,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1vJT30sM3BiGUqSx6vAHMrh0GZ8s-tiqD&export=download",
       "webViewLink": "https://drive.google.com/file/d/1vJT30sM3BiGUqSx6vAHMrh0GZ8s-tiqD/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-2/icone-12.png"
     },
     {
       "type": "file",
@@ -39784,9 +39784,9 @@
       "webContentLink": "https://drive.google.com/uc?id=17UZANwhKI6baMMmaspxawqw8MykvL1T9&export=download",
       "webViewLink": "https://drive.google.com/file/d/17UZANwhKI6baMMmaspxawqw8MykvL1T9/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-2/icone-1.png"
     },
     {
       "type": "file",
@@ -39800,9 +39800,9 @@
       "webContentLink": "https://drive.google.com/uc?id=14qXYukfTWxvpd0JZjbzYLs8AW49ZZhah&export=download",
       "webViewLink": "https://drive.google.com/file/d/14qXYukfTWxvpd0JZjbzYLs8AW49ZZhah/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-2/icone-8.png"
     },
     {
       "type": "file",
@@ -39816,9 +39816,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1tGy-ZIdUfUG3cjymWtAtmJQgMFbBUmMu&export=download",
       "webViewLink": "https://drive.google.com/file/d/1tGy-ZIdUfUG3cjymWtAtmJQgMFbBUmMu/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-2/icone-5.png"
     },
     {
       "type": "file",
@@ -39832,9 +39832,9 @@
       "webContentLink": "https://drive.google.com/uc?id=17GZo8kue9MFl0PcHt4CERExmbZuzP_3y&export=download",
       "webViewLink": "https://drive.google.com/file/d/17GZo8kue9MFl0PcHt4CERExmbZuzP_3y/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-2/icone-10.png"
     },
     {
       "type": "file",
@@ -39848,9 +39848,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1lSQsklqpHSNgpYc2n-2t4P19N_cZ0uHw&export=download",
       "webViewLink": "https://drive.google.com/file/d/1lSQsklqpHSNgpYc2n-2t4P19N_cZ0uHw/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-2/icone-9.png"
     },
     {
       "type": "file",
@@ -39864,9 +39864,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1g0ksdjPz3VO2y2cEF4nwNkQmRnAABXmj&export=download",
       "webViewLink": "https://drive.google.com/file/d/1g0ksdjPz3VO2y2cEF4nwNkQmRnAABXmj/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-2/icone-11.png"
     },
     {
       "type": "file",
@@ -39880,9 +39880,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1IG1C3BxTntx_hgFFiQH4-oBqqrURSnfy&export=download",
       "webViewLink": "https://drive.google.com/file/d/1IG1C3BxTntx_hgFFiQH4-oBqqrURSnfy/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-2/icone-2.png"
     },
     {
       "type": "file",
@@ -39896,9 +39896,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1PVDoTwSVyCd2vG1Zt-dJ3u-9l4q6a7C2&export=download",
       "webViewLink": "https://drive.google.com/file/d/1PVDoTwSVyCd2vG1Zt-dJ3u-9l4q6a7C2/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-2/icone-7.png"
     },
     {
       "type": "file",
@@ -39912,9 +39912,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1LgNkSV5hVesXpvCBF26fRVnSF1c3JEd2&export=download",
       "webViewLink": "https://drive.google.com/file/d/1LgNkSV5hVesXpvCBF26fRVnSF1c3JEd2/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/assets/img/iconografia/modelo-2/icone-4.png"
     },
     {
       "type": "file",
@@ -39928,9 +39928,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1AukJ89AbM_mcjMWDBFkQvyRT8BmDtoQ7&export=download",
       "webViewLink": "https://drive.google.com/file/d/1AukJ89AbM_mcjMWDBFkQvyRT8BmDtoQ7/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/assets/img/lang_BR.svg"
     },
     {
       "type": "file",
@@ -39944,9 +39944,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1XEKwIbbSi7_lBxo4kGty6xV1Tjt_D6qH&export=download",
       "webViewLink": "https://drive.google.com/file/d/1XEKwIbbSi7_lBxo4kGty6xV1Tjt_D6qH/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/assets/img/lang_ES.svg"
     },
     {
       "type": "file",
@@ -39960,9 +39960,9 @@
       "webContentLink": "https://drive.google.com/uc?id=10QvkRcj0_Z8UGJ_0JhH2aXP8IWaJipR1&export=download",
       "webViewLink": "https://drive.google.com/file/d/10QvkRcj0_Z8UGJ_0JhH2aXP8IWaJipR1/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/assets/img/pdf.svg"
     },
     {
       "type": "file",
@@ -39976,9 +39976,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1cxYD1C5lDtDihSLB6W2P0692b8JZLnCg&export=download",
       "webViewLink": "https://drive.google.com/file/d/1cxYD1C5lDtDihSLB6W2P0692b8JZLnCg/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/assets/img/ONIfavicon-96x96.png"
     },
     {
       "type": "file",
@@ -39992,9 +39992,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1PjauDnDjXJA2T5QJ9KYPWiGPyIO2FW2O&export=download",
       "webViewLink": "https://drive.google.com/file/d/1PjauDnDjXJA2T5QJ9KYPWiGPyIO2FW2O/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/assets/img/lang_US.svg"
     },
     {
       "type": "folder",
@@ -40015,9 +40015,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1sc34BDVg7uaLVMu1Ty-VOs2P3rpwRX2T&export=download",
       "webViewLink": "https://drive.google.com/file/d/1sc34BDVg7uaLVMu1Ty-VOs2P3rpwRX2T/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/assets/css/acess_contrast.css"
     },
     {
       "type": "file",
@@ -40031,9 +40031,9 @@
       "webContentLink": "https://drive.google.com/uc?id=16-mkp8XgT7RcNUIg1zKfBuVCQte87Ngc&export=download",
       "webViewLink": "https://drive.google.com/file/d/16-mkp8XgT7RcNUIg1zKfBuVCQte87Ngc/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/assets/css/novaTrilha.css.z"
     },
     {
       "type": "file",
@@ -40047,9 +40047,9 @@
       "webContentLink": "https://drive.google.com/uc?id=13Xdy8FKmxPXAgCYOmE-UczqBWAIazoVB&export=download",
       "webViewLink": "https://drive.google.com/file/d/13Xdy8FKmxPXAgCYOmE-UczqBWAIazoVB/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/assets/css/novaTrilha.css"
     },
     {
       "type": "file",
@@ -40063,9 +40063,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1KOt2AKkplim0ocHOsWJNaoO_XNXD5TZZ&export=download",
       "webViewLink": "https://drive.google.com/file/d/1KOt2AKkplim0ocHOsWJNaoO_XNXD5TZZ/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/assets/css/acess_bar.css"
     },
     {
       "type": "file",
@@ -40079,9 +40079,9 @@
       "webContentLink": "https://drive.google.com/uc?id=18VzGTGJiw5smLrSD0UpsewnRhHfv0_di&export=download",
       "webViewLink": "https://drive.google.com/file/d/18VzGTGJiw5smLrSD0UpsewnRhHfv0_di/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/assets/css/reset.css"
     },
     {
       "type": "file",
@@ -40095,9 +40095,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1Lo4VitPx1ndRjddxh59rj4ff_VH7ODq0&export=download",
       "webViewLink": "https://drive.google.com/file/d/1Lo4VitPx1ndRjddxh59rj4ff_VH7ODq0/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/componente70c0.html"
     },
     {
       "type": "file",
@@ -40111,9 +40111,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1LzwPMQvUGXQ4WDHyouVoZaiKxxfzS6yg&export=download",
       "webViewLink": "https://drive.google.com/file/d/1LzwPMQvUGXQ4WDHyouVoZaiKxxfzS6yg/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/componente3a29.html"
     },
     {
       "type": "file",
@@ -40127,9 +40127,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1OjII0ZRAsQI_9CPFgBmiQDaJhkjgdtyl&export=download",
       "webViewLink": "https://drive.google.com/file/d/1OjII0ZRAsQI_9CPFgBmiQDaJhkjgdtyl/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/slide0f57.pdf"
     },
     {
       "type": "file",
@@ -40143,9 +40143,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1ils8dLagu6Q9kAJRC2xaZaMud9RSFEvX&export=download",
       "webViewLink": "https://drive.google.com/file/d/1ils8dLagu6Q9kAJRC2xaZaMud9RSFEvX/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/componente4464.html"
     },
     {
       "type": "file",
@@ -40159,9 +40159,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1a2GpaXMvUrKxxaxiItOO8996IHi_Svkv&export=download",
       "webViewLink": "https://drive.google.com/file/d/1a2GpaXMvUrKxxaxiItOO8996IHi_Svkv/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/componente45ac.html"
     },
     {
       "type": "file",
@@ -40175,9 +40175,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1nW6dE5GBIXrETCv4Y49bz4yK7W4Yguni&export=download",
       "webViewLink": "https://drive.google.com/file/d/1nW6dE5GBIXrETCv4Y49bz4yK7W4Yguni/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/componente65b3.html"
     },
     {
       "type": "file",
@@ -40191,9 +40191,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1M540oKxK_5pslog7uihws71aKzzhI0QM&export=download",
       "webViewLink": "https://drive.google.com/file/d/1M540oKxK_5pslog7uihws71aKzzhI0QM/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/componentee3c8.html"
     },
     {
       "type": "file",
@@ -40207,9 +40207,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1ie-ETtF3okX14al5GzPfCT1o_OaEDNoA&export=download",
       "webViewLink": "https://drive.google.com/file/d/1ie-ETtF3okX14al5GzPfCT1o_OaEDNoA/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/scripts.html"
     },
     {
       "type": "file",
@@ -40223,9 +40223,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1yFRfx3N6u8uDXUEgTZIzouIBAxaDea2h&export=download",
       "webViewLink": "https://drive.google.com/file/d/1yFRfx3N6u8uDXUEgTZIzouIBAxaDea2h/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/componente7eee.html"
     },
     {
       "type": "file",
@@ -40239,9 +40239,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1ZLoVTVZ1oIgz5qAQzsWb5JCON5ycPurs&export=download",
       "webViewLink": "https://drive.google.com/file/d/1ZLoVTVZ1oIgz5qAQzsWb5JCON5ycPurs/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/componente17ec.html"
     },
     {
       "type": "file",
@@ -40255,9 +40255,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1S-uchiPGZFmBF2Cmn-ivNvfhRtkUo6B9&export=download",
       "webViewLink": "https://drive.google.com/file/d/1S-uchiPGZFmBF2Cmn-ivNvfhRtkUo6B9/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/componente6e6c.html"
     },
     {
       "type": "file",
@@ -40271,9 +40271,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1Q2cV0y6UCcgjurmas6jvsHWwBcnCeuzw&export=download",
       "webViewLink": "https://drive.google.com/file/d/1Q2cV0y6UCcgjurmas6jvsHWwBcnCeuzw/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/componenteaaf1.html"
     },
     {
       "type": "file",
@@ -40287,9 +40287,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1BoDvdCLxbcji9QeegVgG0cu-q7fCnZ_l&export=download",
       "webViewLink": "https://drive.google.com/file/d/1BoDvdCLxbcji9QeegVgG0cu-q7fCnZ_l/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/componentea88e.html"
     },
     {
       "type": "file",
@@ -40303,9 +40303,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1esh7sCHp0wkI6gLAGyNiyAcO3Dr5qd4y&export=download",
       "webViewLink": "https://drive.google.com/file/d/1esh7sCHp0wkI6gLAGyNiyAcO3Dr5qd4y/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/componente5300.html"
     },
     {
       "type": "file",
@@ -40319,9 +40319,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1Sh7ekXcFeGuJ31v522-7rNlpSwUwWi2N&export=download",
       "webViewLink": "https://drive.google.com/file/d/1Sh7ekXcFeGuJ31v522-7rNlpSwUwWi2N/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/componente3a38.html"
     },
     {
       "type": "file",
@@ -40335,9 +40335,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1GFwwnMwH2gb3m0rlUuw2WaHdHMdraDBG&export=download",
       "webViewLink": "https://drive.google.com/file/d/1GFwwnMwH2gb3m0rlUuw2WaHdHMdraDBG/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/slide6bfe.pdf"
     },
     {
       "type": "file",
@@ -40351,9 +40351,9 @@
       "webContentLink": "https://drive.google.com/uc?id=16zpzH5MgP8EijSy2dUkTN4ForSMwrJgs&export=download",
       "webViewLink": "https://drive.google.com/file/d/16zpzH5MgP8EijSy2dUkTN4ForSMwrJgs/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/componente3271.html"
     },
     {
       "type": "file",
@@ -40367,9 +40367,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1z5_08KDCLW9w1fVxAGLTwtaEvqtnkBJO&export=download",
       "webViewLink": "https://drive.google.com/file/d/1z5_08KDCLW9w1fVxAGLTwtaEvqtnkBJO/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/slide38a0.pdf"
     },
     {
       "type": "file",
@@ -40383,9 +40383,9 @@
       "webContentLink": "https://drive.google.com/uc?id=13_S_7mDR8MRZ7tAmj4kOCwcfCdz5BJQN&export=download",
       "webViewLink": "https://drive.google.com/file/d/13_S_7mDR8MRZ7tAmj4kOCwcfCdz5BJQN/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/componentecd1f.html"
     },
     {
       "type": "file",
@@ -40399,9 +40399,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1W0n2vG3yPCeMbeD81gV7m9yMmyPM3G3H&export=download",
       "webViewLink": "https://drive.google.com/file/d/1W0n2vG3yPCeMbeD81gV7m9yMmyPM3G3H/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/slide0f7e.pdf"
     },
     {
       "type": "file",
@@ -40415,9 +40415,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1aKIS2D_05eeK1636wW6O-gwRWXu3nNYB&export=download",
       "webViewLink": "https://drive.google.com/file/d/1aKIS2D_05eeK1636wW6O-gwRWXu3nNYB/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/componente2fab.html"
     },
     {
       "type": "file",
@@ -40431,9 +40431,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1y4R7HlxCmenUNGJND7z7LwsSniauRjwE&export=download",
       "webViewLink": "https://drive.google.com/file/d/1y4R7HlxCmenUNGJND7z7LwsSniauRjwE/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/ebook8cfb.pdf"
     },
     {
       "type": "file",
@@ -40447,9 +40447,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1tVtnv6PEFcPRoOWRzuxpOK01GjhTYtNg&export=download",
       "webViewLink": "https://drive.google.com/file/d/1tVtnv6PEFcPRoOWRzuxpOK01GjhTYtNg/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/componentef997.html"
     },
     {
       "type": "file",
@@ -40463,9 +40463,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1D68YampkuUdTykYKw3dPshn3ADSTUosy&export=download",
       "webViewLink": "https://drive.google.com/file/d/1D68YampkuUdTykYKw3dPshn3ADSTUosy/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/slide07df.pdf"
     },
     {
       "type": "file",
@@ -40479,9 +40479,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1bUPxPR6PDirvV2nUgLVKcdTxznlbhup5&export=download",
       "webViewLink": "https://drive.google.com/file/d/1bUPxPR6PDirvV2nUgLVKcdTxznlbhup5/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/componente6bdf.html"
     },
     {
       "type": "file",
@@ -40495,9 +40495,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1DL5irCCTYpu4LI17xOHa0TSIuFUnc0xM&export=download",
       "webViewLink": "https://drive.google.com/file/d/1DL5irCCTYpu4LI17xOHa0TSIuFUnc0xM/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/componentef9f7.html"
     },
     {
       "type": "file",
@@ -40511,9 +40511,9 @@
       "webContentLink": "https://drive.google.com/uc?id=13L-_Qb5j2s0kNJtWhHHQzPsc-0bpdB5-&export=download",
       "webViewLink": "https://drive.google.com/file/d/13L-_Qb5j2s0kNJtWhHHQzPsc-0bpdB5-/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/componente752a.html"
     },
     {
       "type": "file",
@@ -40527,9 +40527,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1dbSKgNpUmFdtzbduhXEw-GRVi6CuXScJ&export=download",
       "webViewLink": "https://drive.google.com/file/d/1dbSKgNpUmFdtzbduhXEw-GRVi6CuXScJ/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/componentee498.html"
     },
     {
       "type": "file",
@@ -40543,9 +40543,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1ncCZc8icwgPhCxIwzmc5-l1OqIADRQ_q&export=download",
       "webViewLink": "https://drive.google.com/file/d/1ncCZc8icwgPhCxIwzmc5-l1OqIADRQ_q/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/componente4bb2.html"
     },
     {
       "type": "file",
@@ -40559,9 +40559,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1ce6Q68e3iF0BbuA8OThID-dqgasiLdhS&export=download",
       "webViewLink": "https://drive.google.com/file/d/1ce6Q68e3iF0BbuA8OThID-dqgasiLdhS/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/componente9150.html"
     },
     {
       "type": "file",
@@ -40575,9 +40575,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1Uv2XDB2j1wCeCtR8s73WvTeHybUTF6zu&export=download",
       "webViewLink": "https://drive.google.com/file/d/1Uv2XDB2j1wCeCtR8s73WvTeHybUTF6zu/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/ebook8c4e.pdf"
     },
     {
       "type": "file",
@@ -40591,9 +40591,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1obIt-_qg0yV7EYOyE-rSQ5wVSAwj-2Wv&export=download",
       "webViewLink": "https://drive.google.com/file/d/1obIt-_qg0yV7EYOyE-rSQ5wVSAwj-2Wv/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/ebook936e.pdf"
     },
     {
       "type": "file",
@@ -40607,9 +40607,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1ldLRosxCmZN86XbdcnfMBFRsbE9fDGf0&export=download",
       "webViewLink": "https://drive.google.com/file/d/1ldLRosxCmZN86XbdcnfMBFRsbE9fDGf0/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/componenteff4f.html"
     },
     {
       "type": "file",
@@ -40623,9 +40623,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1yWkPGX1-Ggs_Cc39EvJy17QpCrxq5O2h&export=download",
       "webViewLink": "https://drive.google.com/file/d/1yWkPGX1-Ggs_Cc39EvJy17QpCrxq5O2h/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/slide297d.pdf"
     },
     {
       "type": "file",
@@ -40639,9 +40639,9 @@
       "webContentLink": "https://drive.google.com/uc?id=15DhcOaZB0S1HjbR0Qg0jjCA-J74euxcb&export=download",
       "webViewLink": "https://drive.google.com/file/d/15DhcOaZB0S1HjbR0Qg0jjCA-J74euxcb/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/componenteed45.html"
     },
     {
       "type": "file",
@@ -40655,9 +40655,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1FLl7dz88pFY8ZJVeL_h765WQ4Exjgjje&export=download",
       "webViewLink": "https://drive.google.com/file/d/1FLl7dz88pFY8ZJVeL_h765WQ4Exjgjje/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/slidef53f.pdf"
     },
     {
       "type": "file",
@@ -40671,9 +40671,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1H57Zg78Cvt5nWwtFgiEmm7z3eC2Um-21&export=download",
       "webViewLink": "https://drive.google.com/file/d/1H57Zg78Cvt5nWwtFgiEmm7z3eC2Um-21/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/componente87d3.html"
     },
     {
       "type": "file",
@@ -40687,9 +40687,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1nIEiee7dX27xFSKotmv4fQGSI41JUQuN&export=download",
       "webViewLink": "https://drive.google.com/file/d/1nIEiee7dX27xFSKotmv4fQGSI41JUQuN/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/componente32a2.html"
     },
     {
       "type": "file",
@@ -40703,9 +40703,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1_HzcN-ervKOmNEBZfdYYpspwpCd5Q0Ht&export=download",
       "webViewLink": "https://drive.google.com/file/d/1_HzcN-ervKOmNEBZfdYYpspwpCd5Q0Ht/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/componente4f65.html"
     },
     {
       "type": "file",
@@ -40719,9 +40719,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1F4nEbzgtvFCAUYk6CS_TmXHsVitbLBIC&export=download",
       "webViewLink": "https://drive.google.com/file/d/1F4nEbzgtvFCAUYk6CS_TmXHsVitbLBIC/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/componentef796.html"
     },
     {
       "type": "file",
@@ -40735,9 +40735,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1qVFK7GKSElgATtAj5FqpIdVyoWWt-RlS&export=download",
       "webViewLink": "https://drive.google.com/file/d/1qVFK7GKSElgATtAj5FqpIdVyoWWt-RlS/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/ebooka9d0.pdf"
     },
     {
       "type": "file",
@@ -40751,9 +40751,9 @@
       "webContentLink": "https://drive.google.com/uc?id=14vwkq1ujmMQ0aOe3F3MIFT_eHuxpvZQP&export=download",
       "webViewLink": "https://drive.google.com/file/d/14vwkq1ujmMQ0aOe3F3MIFT_eHuxpvZQP/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/componenteb8ed.html"
     },
     {
       "type": "file",
@@ -40767,9 +40767,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1-pZDiHeV_Q8yjTSFU0Jzye6iOTTHHRQr&export=download",
       "webViewLink": "https://drive.google.com/file/d/1-pZDiHeV_Q8yjTSFU0Jzye6iOTTHHRQr/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/slide4807.pdf"
     },
     {
       "type": "file",
@@ -40783,9 +40783,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1pxuU-NUU1O9zwYaA2kIBtOfexU-k_C_k&export=download",
       "webViewLink": "https://drive.google.com/file/d/1pxuU-NUU1O9zwYaA2kIBtOfexU-k_C_k/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/componente9910.html"
     },
     {
       "type": "file",
@@ -40799,9 +40799,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1X5eboqvLqc6B3RaMLQSl9i0t27iM-yGp&export=download",
       "webViewLink": "https://drive.google.com/file/d/1X5eboqvLqc6B3RaMLQSl9i0t27iM-yGp/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/componente15e6.html"
     },
     {
       "type": "file",
@@ -40815,9 +40815,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1CO2RHiWWSHtyK0Nt7C8pAIj56Y9ofQlF&export=download",
       "webViewLink": "https://drive.google.com/file/d/1CO2RHiWWSHtyK0Nt7C8pAIj56Y9ofQlF/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/audio.html"
     },
     {
       "type": "file",
@@ -40831,9 +40831,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1NVlrtArd9wB9LLF_iLe7OtRfm2pDazuR&export=download",
       "webViewLink": "https://drive.google.com/file/d/1NVlrtArd9wB9LLF_iLe7OtRfm2pDazuR/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/POST.html"
     },
     {
       "type": "file",
@@ -40847,9 +40847,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1R-bhq7AGBkoSf9gGI5xwQDqLH25gu8qf&export=download",
       "webViewLink": "https://drive.google.com/file/d/1R-bhq7AGBkoSf9gGI5xwQDqLH25gu8qf/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/componente09d9.html"
     },
     {
       "type": "file",
@@ -40863,9 +40863,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1Pkko2LlxURAnWbOzr7aBD4czUYidB_BS&export=download",
       "webViewLink": "https://drive.google.com/file/d/1Pkko2LlxURAnWbOzr7aBD4czUYidB_BS/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/scorm.onilearning.com.br/conteudo/chat_pdf_onitutor_moni.html"
     },
     {
       "type": "folder",
@@ -40886,9 +40886,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1RuBRUPbzaA7sGbFNPPFVPNEOAAMUZV5d&export=download",
       "webViewLink": "https://drive.google.com/file/d/1RuBRUPbzaA7sGbFNPPFVPNEOAAMUZV5d/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/hts-cache/new.zip"
     },
     {
       "type": "file",
@@ -40902,9 +40902,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1VXbC-y3PoEKtOVumL_7X6u7uX3jdSyop&export=download",
       "webViewLink": "https://drive.google.com/file/d/1VXbC-y3PoEKtOVumL_7X6u7uX3jdSyop/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/hts-cache/new.txt"
     },
     {
       "type": "file",
@@ -40918,9 +40918,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1zCmJCmUrikRGLD_nVs7ZZrWDktzKouyI&export=download",
       "webViewLink": "https://drive.google.com/file/d/1zCmJCmUrikRGLD_nVs7ZZrWDktzKouyI/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/hts-cache/winprofile.ini"
     },
     {
       "type": "file",
@@ -40934,9 +40934,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1nkCHag-2hR8I-4H3w3hdS6OyBIe4FAu-&export=download",
       "webViewLink": "https://drive.google.com/file/d/1nkCHag-2hR8I-4H3w3hdS6OyBIe4FAu-/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/hts-cache/new.lst"
     },
     {
       "type": "file",
@@ -40950,9 +40950,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1vgbBYNaG_U5RdTttjkLEmMBe-Zd7hyXz&export=download",
       "webViewLink": "https://drive.google.com/file/d/1vgbBYNaG_U5RdTttjkLEmMBe-Zd7hyXz/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/hts-cache/readme.txt"
     },
     {
       "type": "folder",
@@ -41008,9 +41008,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1drHo7fxGOK5_0CWrUxZ2XyCVCjUToe4f&export=download",
       "webViewLink": "https://drive.google.com/file/d/1drHo7fxGOK5_0CWrUxZ2XyCVCjUToe4f/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"
     },
     {
       "type": "folder",
@@ -41031,9 +41031,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1N9HVYwlHLXcYEIGhtGyDlOd1K7VS3iFd&export=download",
       "webViewLink": "https://drive.google.com/file/d/1N9HVYwlHLXcYEIGhtGyDlOd1K7VS3iFd/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/bold/style.css"
     },
     {
       "type": "folder",
@@ -41054,9 +41054,9 @@
       "webContentLink": "https://drive.google.com/uc?id=19yf_nvQz5B4CEsLj8dhOdzEg7ZeEeU_M&export=download",
       "webViewLink": "https://drive.google.com/file/d/19yf_nvQz5B4CEsLj8dhOdzEg7ZeEeU_M/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css"
     },
     {
       "type": "folder",
@@ -41077,9 +41077,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1EDndCZw-te7YWOgwWx1UQpwRFs0w35To&export=download",
       "webViewLink": "https://drive.google.com/file/d/1EDndCZw-te7YWOgwWx1UQpwRFs0w35To/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/duotone/style.css"
     },
     {
       "type": "folder",
@@ -41107,9 +41107,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1QgzCrYUN5sQrIJ1tE53ZwjK8GkHDEZZQ&export=download",
       "webViewLink": "https://drive.google.com/file/d/1QgzCrYUN5sQrIJ1tE53ZwjK8GkHDEZZQ/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
     },
     {
       "type": "folder",
@@ -41158,9 +41158,9 @@
       "webContentLink": "https://drive.google.com/uc?id=13gv-rc0JofyipjDplKUFvwaeVvbhj5lH&export=download",
       "webViewLink": "https://drive.google.com/file/d/13gv-rc0JofyipjDplKUFvwaeVvbhj5lH/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js.z"
     },
     {
       "type": "file",
@@ -41174,9 +41174,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1Cz6pJUk9ptPnJot0ZlA9xpjRKynhBJRO&export=download",
       "webViewLink": "https://drive.google.com/file/d/1Cz6pJUk9ptPnJot0ZlA9xpjRKynhBJRO/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"
     },
     {
       "type": "folder",
@@ -41204,9 +41204,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1ZVpkLxS0uNnoOh0HoRRxgW9943PW_1Fo&export=download",
       "webViewLink": "https://drive.google.com/file/d/1ZVpkLxS0uNnoOh0HoRRxgW9943PW_1Fo/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js.z"
     },
     {
       "type": "file",
@@ -41220,9 +41220,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1KjZIKVpSFd7wN-mkFtzmN_KPGCD_KL85&export=download",
       "webViewLink": "https://drive.google.com/file/d/1KjZIKVpSFd7wN-mkFtzmN_KPGCD_KL85/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
     },
     {
       "type": "folder",
@@ -41250,9 +41250,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1o8NDFQRBTIdtLXU3JqlvHDXfwgAW6ZM-&export=download",
       "webViewLink": "https://drive.google.com/file/d/1o8NDFQRBTIdtLXU3JqlvHDXfwgAW6ZM-/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js.z"
     },
     {
       "type": "file",
@@ -41266,9 +41266,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1o_dfUXT2Jjuxe-8Gc0S7vGGJK4UUKL4T&export=download",
       "webViewLink": "https://drive.google.com/file/d/1o_dfUXT2Jjuxe-8Gc0S7vGGJK4UUKL4T/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
     },
     {
       "type": "folder",
@@ -41289,9 +41289,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1fzUDMz2sncUDcknLuhVcRGH5pM9YndIX&export=download",
       "webViewLink": "https://drive.google.com/file/d/1fzUDMz2sncUDcknLuhVcRGH5pM9YndIX/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/api-externa360.onilearning.com.br/exemplo-mapa.jpg"
     },
     {
       "type": "file",
@@ -41305,9 +41305,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1iatG3wEYyU8oeOCivDFnJnP8-Z9ow2nZ&export=download",
       "webViewLink": "https://drive.google.com/file/d/1iatG3wEYyU8oeOCivDFnJnP8-Z9ow2nZ/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/cookies.txt"
     },
     {
       "type": "file",
@@ -41321,9 +41321,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1nsRjOVFNhPhcDC2pXFuvzveGT-gcP8WX&export=download",
       "webViewLink": "https://drive.google.com/file/d/1nsRjOVFNhPhcDC2pXFuvzveGT-gcP8WX/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/fade.gif"
     },
     {
       "type": "file",
@@ -41337,9 +41337,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1iLr6tXiHpTQ9aRxWXXM8qI0qe7BLweZT&export=download",
       "webViewLink": "https://drive.google.com/file/d/1iLr6tXiHpTQ9aRxWXXM8qI0qe7BLweZT/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/hts-log.txt"
     },
     {
       "type": "file",
@@ -41353,9 +41353,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1KocoJgk9oGGX8eHq7C2Ntd4v9H8_2evX&export=download",
       "webViewLink": "https://drive.google.com/file/d/1KocoJgk9oGGX8eHq7C2Ntd4v9H8_2evX/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/backblue.gif"
     },
     {
       "type": "file",
@@ -41369,9 +41369,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1Lfj7RzdCB0yLylvR9P7FLEH5mN9_Uemc&export=download",
       "webViewLink": "https://drive.google.com/file/d/1Lfj7RzdCB0yLylvR9P7FLEH5mN9_Uemc/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Construção e Animação de Cenários e Objetos 2D e 3D/index.html"
     },
     {
       "type": "folder",
@@ -41434,9 +41434,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1bUgCW8u2ZYbf9QAmjJzuHWVKdg3TMJUk&export=download",
       "webViewLink": "https://drive.google.com/file/d/1bUgCW8u2ZYbf9QAmjJzuHWVKdg3TMJUk/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/trilha/assets/pdf/web/images/toolbarButton-print.svg"
     },
     {
       "type": "file",
@@ -41450,9 +41450,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1rJlUJ0y7nB7686dAr68z3WTSb9pRJnPo&export=download",
       "webViewLink": "https://drive.google.com/file/d/1rJlUJ0y7nB7686dAr68z3WTSb9pRJnPo/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/trilha/assets/pdf/web/images/toolbarButton-viewLayers.svg"
     },
     {
       "type": "file",
@@ -41466,9 +41466,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1r-gPmnNZQf4yE64X4JkEgdoihfDzYVN5&export=download",
       "webViewLink": "https://drive.google.com/file/d/1r-gPmnNZQf4yE64X4JkEgdoihfDzYVN5/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/trilha/assets/pdf/web/images/loading.svg"
     },
     {
       "type": "file",
@@ -41482,9 +41482,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1pBgo8V1A05hOOOdnbX27oYyauPXtlqBt&export=download",
       "webViewLink": "https://drive.google.com/file/d/1pBgo8V1A05hOOOdnbX27oYyauPXtlqBt/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/trilha/assets/pdf/web/images/loading-dark.svg"
     },
     {
       "type": "file",
@@ -41498,9 +41498,9 @@
       "webContentLink": "https://drive.google.com/uc?id=138RdWxGrv7iVI4UrjVZlouWbAVbw1HpX&export=download",
       "webViewLink": "https://drive.google.com/file/d/138RdWxGrv7iVI4UrjVZlouWbAVbw1HpX/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/trilha/assets/pdf/web/images/toolbarButton-pageDown.svg"
     },
     {
       "type": "file",
@@ -41514,9 +41514,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1Q1Ryoyr-n1VOW6VxJ81EQ2IgK6-TBWZG&export=download",
       "webViewLink": "https://drive.google.com/file/d/1Q1Ryoyr-n1VOW6VxJ81EQ2IgK6-TBWZG/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/trilha/assets/pdf/web/images/toolbarButton-editorInk.svg"
     },
     {
       "type": "file",
@@ -41530,9 +41530,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1_9NlhvTiInTT2rnhHvpClSWMAvhlQi6z&export=download",
       "webViewLink": "https://drive.google.com/file/d/1_9NlhvTiInTT2rnhHvpClSWMAvhlQi6z/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/trilha/assets/pdf/web/images/findbarButton-next.svg"
     },
     {
       "type": "file",
@@ -41546,9 +41546,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1C0QSRVV5iGwqHJLvKxAd2w6WgIRyNUyp&export=download",
       "webViewLink": "https://drive.google.com/file/d/1C0QSRVV5iGwqHJLvKxAd2w6WgIRyNUyp/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/trilha/assets/pdf/web/images/findbarButton-previous.svg"
     },
     {
       "type": "file",
@@ -41562,9 +41562,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1G7yrjTFh4scBSAoqWZOL9Bmhxxz9gcjS&export=download",
       "webViewLink": "https://drive.google.com/file/d/1G7yrjTFh4scBSAoqWZOL9Bmhxxz9gcjS/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/trilha/assets/pdf/web/images/toolbarButton-editorFreeText.svg"
     },
     {
       "type": "file",
@@ -41578,9 +41578,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1E_Qoe1Wn_jwS8g918y4LrtFG9uQcqojz&export=download",
       "webViewLink": "https://drive.google.com/file/d/1E_Qoe1Wn_jwS8g918y4LrtFG9uQcqojz/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/trilha/assets/pdf/web/images/cursor-editorFreeText.svg"
     },
     {
       "type": "file",
@@ -41594,9 +41594,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1AHamF7Y6BPqpiQI4V-LQDMPeCKlQAFMH&export=download",
       "webViewLink": "https://drive.google.com/file/d/1AHamF7Y6BPqpiQI4V-LQDMPeCKlQAFMH/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/trilha/assets/pdf/web/images/secondaryToolbarButton-scrollWrapped.svg"
     },
     {
       "type": "file",
@@ -41610,9 +41610,9 @@
       "webContentLink": "https://drive.google.com/uc?id=12EBI-lpcM9pRixvuYcbcLxUJ6LGnV0r0&export=download",
       "webViewLink": "https://drive.google.com/file/d/12EBI-lpcM9pRixvuYcbcLxUJ6LGnV0r0/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/trilha/assets/pdf/web/images/secondaryToolbarButton-rotateCcw.svg"
     },
     {
       "type": "file",
@@ -41626,9 +41626,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1z6YnljYe2uRtOdo29d4bhMT4gZgb8p0h&export=download",
       "webViewLink": "https://drive.google.com/file/d/1z6YnljYe2uRtOdo29d4bhMT4gZgb8p0h/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/trilha/assets/pdf/web/images/toolbarButton-sidebarToggle.svg"
     },
     {
       "type": "file",
@@ -41642,9 +41642,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1iCTLxmgClvk_hfpF_o01r7f8IkyXb7vi&export=download",
       "webViewLink": "https://drive.google.com/file/d/1iCTLxmgClvk_hfpF_o01r7f8IkyXb7vi/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/trilha/assets/pdf/web/images/toolbarButton-presentationMode.svg"
     },
     {
       "type": "file",
@@ -41658,9 +41658,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1w7uzMkjaRFYKTBl1hXt1eIphH28wGk3j&export=download",
       "webViewLink": "https://drive.google.com/file/d/1w7uzMkjaRFYKTBl1hXt1eIphH28wGk3j/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/trilha/assets/pdf/web/images/toolbarButton-zoomOut.svg"
     },
     {
       "type": "file",
@@ -41674,9 +41674,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1vu32pLeHfgYVkmroHRrZ3a5YwqsOZnfZ&export=download",
       "webViewLink": "https://drive.google.com/file/d/1vu32pLeHfgYVkmroHRrZ3a5YwqsOZnfZ/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/trilha/assets/pdf/web/images/toolbarButton-viewAttachments.svg"
     },
     {
       "type": "file",
@@ -41690,9 +41690,9 @@
       "webContentLink": "https://drive.google.com/uc?id=12FJRktpyTUyntGtK5bXs37z6e77XZpUA&export=download",
       "webViewLink": "https://drive.google.com/file/d/12FJRktpyTUyntGtK5bXs37z6e77XZpUA/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/trilha/assets/pdf/web/images/toolbarButton-bookmark.svg"
     },
     {
       "type": "file",
@@ -41706,9 +41706,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1QoGRTKzUXlEvKNkhTd7BiUuPqx5k08dA&export=download",
       "webViewLink": "https://drive.google.com/file/d/1QoGRTKzUXlEvKNkhTd7BiUuPqx5k08dA/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/trilha/assets/pdf/web/images/secondaryToolbarButton-firstPage.svg"
     },
     {
       "type": "file",
@@ -41722,9 +41722,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1rd6V4wnVjfSaLFSez1QdGteCVEAFYBlQ&export=download",
       "webViewLink": "https://drive.google.com/file/d/1rd6V4wnVjfSaLFSez1QdGteCVEAFYBlQ/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/trilha/assets/pdf/web/images/secondaryToolbarButton-spreadNone.svg"
     },
     {
       "type": "file",
@@ -41738,9 +41738,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1BR27WZh9wiWmCCjlCLcTVbuaZwbmF5UW&export=download",
       "webViewLink": "https://drive.google.com/file/d/1BR27WZh9wiWmCCjlCLcTVbuaZwbmF5UW/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/trilha/assets/pdf/web/images/toolbarButton-search.svg"
     },
     {
       "type": "file",
@@ -41754,9 +41754,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1XTAQ3J6tEnODpfIElCPz0oLQYAFY83io&export=download",
       "webViewLink": "https://drive.google.com/file/d/1XTAQ3J6tEnODpfIElCPz0oLQYAFY83io/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/trilha/assets/pdf/web/images/toolbarButton-secondaryToolbarToggle.svg"
     },
     {
       "type": "file",
@@ -41770,9 +41770,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1raEnEKONlp6wiFzwayTRghTLeDhHOw5n&export=download",
       "webViewLink": "https://drive.google.com/file/d/1raEnEKONlp6wiFzwayTRghTLeDhHOw5n/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/trilha/assets/pdf/web/images/secondaryToolbarButton-spreadOdd.svg"
     },
     {
       "type": "file",
@@ -41786,9 +41786,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1M7vwgUEeasSuNAtLchLsbin9R7GndOvP&export=download",
       "webViewLink": "https://drive.google.com/file/d/1M7vwgUEeasSuNAtLchLsbin9R7GndOvP/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/trilha/assets/pdf/web/images/toolbarButton-zoomIn.svg"
     },
     {
       "type": "file",
@@ -41802,9 +41802,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1rTpjySu__gRjJM487pM0H_QA4hJzCg3n&export=download",
       "webViewLink": "https://drive.google.com/file/d/1rTpjySu__gRjJM487pM0H_QA4hJzCg3n/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/trilha/assets/pdf/web/images/secondaryToolbarButton-selectTool.svg"
     },
     {
       "type": "file",
@@ -41818,9 +41818,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1U99WW8K3jjZyzzq4DswfiT59hE0PxHwq&export=download",
       "webViewLink": "https://drive.google.com/file/d/1U99WW8K3jjZyzzq4DswfiT59hE0PxHwq/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/trilha/assets/pdf/web/images/secondaryToolbarButton-lastPage.svg"
     },
     {
       "type": "file",
@@ -41834,9 +41834,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1h4zsXF5fPx-CnqIvc0oS07WJUAqlGXQz&export=download",
       "webViewLink": "https://drive.google.com/file/d/1h4zsXF5fPx-CnqIvc0oS07WJUAqlGXQz/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/trilha/assets/pdf/web/images/secondaryToolbarButton-scrollVertical.svg"
     },
     {
       "type": "file",
@@ -41850,9 +41850,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1UyXChkLayBT6ueGXBzxoHEKqIcMRN98j&export=download",
       "webViewLink": "https://drive.google.com/file/d/1UyXChkLayBT6ueGXBzxoHEKqIcMRN98j/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/trilha/assets/pdf/web/images/toolbarButton-viewThumbnail.svg"
     },
     {
       "type": "file",
@@ -41866,9 +41866,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1NXuZsBDubPO4L5QHdRkvMVzcGh4oAIZP&export=download",
       "webViewLink": "https://drive.google.com/file/d/1NXuZsBDubPO4L5QHdRkvMVzcGh4oAIZP/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/trilha/assets/pdf/web/images/treeitem-collapsed.svg"
     },
     {
       "type": "file",
@@ -41882,9 +41882,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1DBG1GCf4ievwqaJWe7Flp_2kaNJgv_Bp&export=download",
       "webViewLink": "https://drive.google.com/file/d/1DBG1GCf4ievwqaJWe7Flp_2kaNJgv_Bp/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/trilha/assets/pdf/web/images/secondaryToolbarButton-handTool.svg"
     },
     {
       "type": "file",
@@ -41898,9 +41898,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1Ufp614s89ka-1qqXEs4QSIHtXW3mH638&export=download",
       "webViewLink": "https://drive.google.com/file/d/1Ufp614s89ka-1qqXEs4QSIHtXW3mH638/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/trilha/assets/pdf/web/images/toolbarButton-viewOutline.svg"
     },
     {
       "type": "file",
@@ -41914,9 +41914,9 @@
       "webContentLink": "https://drive.google.com/uc?id=16BWLjhbTPJdaL2GcRV3m6ntcUNgBDJHs&export=download",
       "webViewLink": "https://drive.google.com/file/d/16BWLjhbTPJdaL2GcRV3m6ntcUNgBDJHs/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/trilha/assets/pdf/web/images/toolbarButton-openFile.svg"
     },
     {
       "type": "file",
@@ -41930,9 +41930,9 @@
       "webContentLink": "https://drive.google.com/uc?id=1B0MaLJ6hjgFhFRawgx_ItlswW9sx6Ti6&export=download",
       "webViewLink": "https://drive.google.com/file/d/1B0MaLJ6hjgFhFRawgx_ItlswW9sx6Ti6/view?usp=drivesdk",
       "storageTarget": "github_cache",
-      "githubCached": false,
-      "githubCachedAt": null,
-      "publicPath": null
+      "githubCached": true,
+      "githubCachedAt": "2026-07-22T02:44:44.982Z",
+      "publicPath": "/eadplataforma/Máquinas Elétricas/scorm.onilearning.com.br/trilha/assets/pdf/web/images/secondaryToolbarButton-scrollHorizontal.svg"
     },
     {
       "type": "file",
@@ -51146,7 +51146,7 @@
   ],
   "sync": {
     "mode": "drive_to_github_files",
-    "syncedAt": "2026-07-22T02:36:23.007Z",
+    "syncedAt": "2026-07-22T02:44:44.982Z",
     "batchSize": 150,
     "batchLimit": 150
   }
