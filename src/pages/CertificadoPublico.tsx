@@ -17,7 +17,7 @@ import {
 import { Button } from "@/components/ui/button.tsx";
 import { Badge } from "@/components/ui/badge.tsx";
 import { emitCertificatePdf } from "@/lib/certificatePdf.ts";
-import { formatFileSize, getCertificateFilePublicUrl } from "@/lib/certificateFiles.ts";
+import { buildCertificatePdfUrl } from "@/lib/certificateFiles.ts";
 import { toast } from "sonner";
 
 type CertificateSourceType = "generated" | "external_pdf";
@@ -71,7 +71,7 @@ const CertificadoPublico = () => {
   }, [code]);
 
   const isExternal = cert?.source_type === "external_pdf";
-  const externalUrl = cert ? getCertificateFilePublicUrl(cert.external_file_path) : "";
+  const hasExternalPdf = Boolean(cert?.external_file_path);
 
   return (
     <div className="min-h-screen flex flex-col bg-muted/30">
@@ -97,7 +97,7 @@ const CertificadoPublico = () => {
               <div>
                 <div className="mb-3 flex flex-wrap gap-2">
                   <Badge variant={isExternal ? "outline" : "secondary"}>
-                    {isExternal ? "Documento externo" : "Certificado FAESDE"}
+                    {isExternal ? "Documento verificado" : "Certificado FAESDE"}
                   </Badge>
                   <Badge variant="outline">Consulta publica</Badge>
                 </div>
@@ -110,15 +110,15 @@ const CertificadoPublico = () => {
               </div>
 
               {isExternal ? (
-                externalUrl ? (
+                hasExternalPdf ? (
                   <div className="flex flex-wrap gap-2">
                     <Button asChild>
-                      <a href={externalUrl} target="_blank" rel="noopener noreferrer">
+                      <a href={buildCertificatePdfUrl(cert.code)} target="_blank" rel="noopener noreferrer">
                         <ExternalLink className="mr-2 h-4 w-4" /> Abrir PDF
                       </a>
                     </Button>
                     <Button asChild variant="outline">
-                      <a href={externalUrl} target="_blank" rel="noopener noreferrer" download={cert.external_file_name || true}>
+                      <a href={buildCertificatePdfUrl(cert.code, true)}>
                         <Download className="mr-2 h-4 w-4" /> Baixar PDF
                       </a>
                     </Button>
@@ -143,10 +143,12 @@ const CertificadoPublico = () => {
                 <GraduationCap className="h-5 w-5" />
                 Carga horaria: <strong>{cert.hours > 0 ? `${cert.hours} horas` : "Nao informada"}</strong>
               </p>
-              <p className="flex items-center gap-2">
-                <Building2 className="h-5 w-5" />
-                Instituicao: <strong>{cert.institution || "FAESDE"}</strong>
-              </p>
+              {!isExternal && (
+                <p className="flex items-center gap-2">
+                  <Building2 className="h-5 w-5" />
+                  Instituicao: <strong>{cert.institution || "FAESDE"}</strong>
+                </p>
+              )}
               <p className="flex items-center gap-2 md:col-span-2">
                 <Monitor className="h-5 w-5" />
                 Curso:{" "}
@@ -171,8 +173,7 @@ const CertificadoPublico = () => {
                   Documento disponibilizado
                 </h2>
                 <p className="mt-3 leading-relaxed">
-                  Este documento foi emitido por <strong>{cert.institution || "outra instituicao de ensino"}</strong>.
-                  A FAESDE esta disponibilizando a consulta publica e o arquivo PDF associado ao codigo informado.
+                  Este documento esta disponivel para consulta e download por meio do codigo informado.
                 </p>
                 <p className="mt-3 leading-relaxed">
                   Aluno: <strong className="uppercase">{cert.student_name}</strong>
@@ -184,12 +185,6 @@ const CertificadoPublico = () => {
                   Curso/documento: <strong>{cert.course_name}</strong>. Data de conclusao/emissao:{" "}
                   <strong>{formatDate(cert.completion_date)}</strong>.
                 </p>
-                {cert.external_file_name && (
-                  <p className="mt-3 text-sm text-muted-foreground">
-                    Arquivo: <strong>{cert.external_file_name}</strong>
-                    {formatFileSize(cert.external_file_size) && ` (${formatFileSize(cert.external_file_size)})`}
-                  </p>
-                )}
               </div>
             ) : (
               <>

@@ -12,25 +12,45 @@ export const formatFileSize = (size?: number | null) => {
   return `${(size / (1024 * 1024)).toFixed(1).replace(".", ",")} MB`;
 };
 
-export const sanitizeCertificateFileName = (name: string) => {
-  const base = name
+const sanitizeFileNamePart = (value: string, maxLength = 60) =>
+  value
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "")
-    .replace(/[^a-zA-Z0-9._-]+/g, "-")
+    .replace(/&/g, " e ")
+    .replace(/[^a-zA-Z0-9]+/g, "-")
     .replace(/-+/g, "-")
     .replace(/^-|-$/g, "")
-    .toLowerCase();
+    .slice(0, maxLength)
+    .replace(/-$/g, "");
 
-  return base.endsWith(".pdf") ? base : `${base || "certificado"}.pdf`;
+export const buildCertificateDownloadFileName = ({
+  studentName,
+  courseName,
+  code,
+}: {
+  studentName: string;
+  courseName: string;
+  code: string;
+}) => {
+  const names = studentName.trim().split(/\s+/).filter(Boolean);
+  const firstAndLast =
+    names.length > 1 ? `${names[0]}-${names[names.length - 1]}` : names[0] || "Aluno";
+  const student = sanitizeFileNamePart(firstAndLast, 50) || "Aluno";
+  const course = sanitizeFileNamePart(courseName, 70) || "Curso";
+  const safeCode = code.replace(/\D/g, "") || "Sem-Codigo";
+
+  return `Certificado-FAESDE-${student}-${course}-${safeCode}.pdf`;
 };
 
-export const buildCertificateStoragePath = (code: string, fileName: string) => {
+export const buildCertificateStoragePath = (code: string) => {
   const safeCode = code.replace(/\D/g, "") || "sem-codigo";
-  const random = Math.random().toString(36).slice(2, 8);
-  return `${safeCode}/${Date.now()}-${random}-${sanitizeCertificateFileName(fileName)}`;
+  return `${safeCode}.pdf`;
 };
 
 export const getCertificateFilePublicUrl = (path?: string | null) => {
   if (!path) return "";
   return supabase.storage.from(CERTIFICATE_FILES_BUCKET).getPublicUrl(path).data.publicUrl;
 };
+
+export const buildCertificatePdfUrl = (code: string, download = false) =>
+  `/api/certificates/${encodeURIComponent(code)}/pdf${download ? "?download=1" : ""}`;

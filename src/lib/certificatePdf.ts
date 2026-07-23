@@ -1,5 +1,6 @@
 import jsPDF from "jspdf";
 import QRCode from "qrcode";
+import { buildCertificateDownloadFileName } from "@/lib/certificateFiles.ts";
 
 const MESES = [
   "janeiro",
@@ -705,5 +706,11 @@ export async function emitCertificatePdf(c: CertificatePdfData) {
   pdf.addImage(canvasToJpegDataUrl(page1), "JPEG", 0, 0, PW, PH);
   pdf.addPage();
   pdf.addImage(canvasToJpegDataUrl(page2), "JPEG", 0, 0, PW, PH);
-  pdf.save(`certificado-${data.code}.pdf`);
+  pdf.save(
+    buildCertificateDownloadFileName({
+      studentName: data.student_name,
+      courseName: data.course_name,
+      code: data.code,
+    }),
+  );
 }

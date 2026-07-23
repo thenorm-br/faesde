@@ -21,6 +21,7 @@ const RUNTIME_CACHE_ROOT = resolve(process.env.EAD_RUNTIME_CACHE_ROOT || join(pr
 const EMAIL_SETTINGS_FILE = process.env.EMAIL_SETTINGS_FILE || "email-smtp-settings.json";
 const MAX_UPLOAD_MB = Number(process.env.EAD_UPLOAD_MAX_MB || 512);
 const MAX_UPLOAD_BYTES = MAX_UPLOAD_MB * 1024 * 1024;
+const MAX_CERTIFICATE_PDF_BYTES = 20 * 1024 * 1024;
 const SITE_URL = (process.env.PUBLIC_SITE_URL || "https://faesde.com.br").replace(/\/$/, "");
 const CERTIFICATE_REQUEST_RECIPIENT = process.env.CERTIFICATE_REQUEST_RECIPIENT || "secretaria@faesde.com";
 const CERTIFICATE_MESSAGE_BASE_URL =
@@ -413,6 +414,100 @@ async function supabaseRest(accessToken, path, options = {}) {
 
 function encodeFilterValue(value) {
   return encodeURIComponent(String(value));
+}
+
+function sanitizeCertificateFileNamePart(value, maxLength = 60) {
+  return String(value || "")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/&/g, " e ")
+    .replace(/[^a-zA-Z0-9]+/g, "-")
+    .replace(/-+/g, "-")
+    .replace(/^-|-$/g, "")
+    .slice(0, maxLength)
+    .replace(/-$/g, "");
+}
+
+function buildCertificateDownloadFileName(certificate) {
+  const names = String(certificate.student_name || "").trim().split(/\s+/).filter(Boolean);
+  const firstAndLast =
+    names.length > 1 ? `${names[0]}-${names[names.length - 1]}` : names[0] || "Aluno";
+  const student = sanitizeCertificateFileNamePart(firstAndLast, 50) || "Aluno";
+  const course = sanitizeCertificateFileNamePart(certificate.course_name, 70) || "Curso";
+  const code = String(certificate.code || "").replace(/\D/g, "") || "Sem-Codigo";
+
+  return `Certificado-FAESDE-${student}-${course}-${code}.pdf`;
+}
+
+function encodeStorageObjectPath(path) {
+  return String(path || "")
+    .split("/")
+    .filter(Boolean)
+    .map((part) => encodeURIComponent(part))
+    .join("/");
+}
+
+async function handlePublicCertificatePdfApi(req, res, url, code) {
+  if (req.method !== "GET") {
+    res.setHeader("Allow", "GET");
+    return jsonResponse(res, 405, { message: "Metodo nao permitido." });
+  }
+
+  const { supabaseUrl, anonKey } = getSupabaseConfig();
+  const rows = await supabaseRest(
+    anonKey,
+    `certificates?select=code,student_name,course_name,source_type,external_file_path,external_file_mime_type&code=eq.${encodeFilterValue(code)}&is_active=eq.true&limit=1`,
+  );
+  const certificate = Array.isArray(rows) && rows.length > 0 ? rows[0] : null;
+
+  if (
+    !certificate ||
+    certificate.source_type !== "external_pdf" ||
+    !certificate.external_file_path
+  ) {
+    throw createHttpError("PDF do certificado nao encontrado.", 404);
+  }
+
+  const objectPath = encodeStorageObjectPath(certificate.external_file_path);
+  if (!objectPath) throw createHttpError("PDF do certificado nao encontrado.", 404);
+
+  const fileResponse = await fetch(
+    `${supabaseUrl}/storage/v1/object/public/certificate-files/${objectPath}`,
+    {
+      headers: {
+        apikey: anonKey,
+        Authorization: `Bearer ${anonKey}`,
+      },
+    },
+  );
+
+  if (!fileResponse.ok) {
+    throw createHttpError("PDF do certificado nao encontrado.", fileResponse.status === 404 ? 404 : 502);
+  }
+
+  const declaredSize = Number(fileResponse.headers.get("content-length") || 0);
+  if (declaredSize > MAX_CERTIFICATE_PDF_BYTES) {
+    throw createHttpError("O PDF excede o limite permitido.", 413);
+  }
+
+  const file = Buffer.from(await fileResponse.arrayBuffer());
+  if (file.length === 0) throw createHttpError("O PDF do certificado esta vazio.", 502);
+  if (file.length > MAX_CERTIFICATE_PDF_BYTES) {
+    throw createHttpError("O PDF excede o limite permitido.", 413);
+  }
+
+  const fileName = buildCertificateDownloadFileName(certificate);
+  const disposition = url.searchParams.get("download") === "1" ? "attachment" : "inline";
+  res.writeHead(
+    200,
+    securityHeaders({
+      "Content-Type": "application/pdf",
+      "Content-Length": String(file.length),
+      "Content-Disposition": `${disposition}; filename="${fileName}"; filename*=UTF-8''${encodeURIComponent(fileName)}`,
+      "Cache-Control": "private, no-store",
+    }),
+  );
+  res.end(file);
 }
 
 async function requireAdmin(req) {
@@ -3909,6 +4004,11 @@ async function handleApi(req, res, url) {
   }
 
   try {
+    const certificatePdfMatch = url.pathname.match(/^\/api\/certificates\/([0-9]{24})\/pdf$/);
+    if (certificatePdfMatch) {
+      return await handlePublicCertificatePdfApi(req, res, url, certificatePdfMatch[1]);
+    }
+
     if (url.pathname === "/api/certificate-inclusion-request") {
       return await handleCertificateInclusionRequestApi(req, res);
     }

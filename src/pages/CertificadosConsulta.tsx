@@ -12,8 +12,8 @@ import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert.tsx";
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog.tsx";
 import { Label } from "@/components/ui/label.tsx";
 import {
+  buildCertificatePdfUrl,
   formatFileSize,
-  getCertificateFilePublicUrl,
   isPdfFile,
   MAX_CERTIFICATE_FILE_SIZE_BYTES,
 } from "@/lib/certificateFiles.ts";
@@ -231,7 +231,6 @@ const CertificadosConsulta = () => {
   };
 
   const isExternal = result?.source_type === "external_pdf";
-  const externalUrl = result ? getCertificateFilePublicUrl(result.external_file_path) : "";
 
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-b from-background via-muted/30 to-background">
@@ -313,7 +312,7 @@ const CertificadosConsulta = () => {
                     <CardDescription>Consulta feita pelo codigo {result.code}</CardDescription>
                   </div>
                   <Badge variant={isExternal ? "outline" : "secondary"}>
-                    {isExternal ? "PDF externo" : "Certificado FAESDE"}
+                    {isExternal ? "Documento verificado" : "Certificado FAESDE"}
                   </Badge>
                 </div>
               </CardHeader>
@@ -327,7 +326,7 @@ const CertificadosConsulta = () => {
                     <p className="text-xs uppercase tracking-wide text-muted-foreground">Curso</p>
                     <p className="font-semibold">{result.course_name}</p>
                   </div>
-                  <div className="grid gap-3 text-sm text-muted-foreground sm:grid-cols-3">
+                  <div className={`grid gap-3 text-sm text-muted-foreground ${isExternal ? "sm:grid-cols-2" : "sm:grid-cols-3"}`}>
                     <p>
                       <strong className="block text-foreground">Conclusao</strong>
                       {formatDate(result.completion_date)}
@@ -336,17 +335,13 @@ const CertificadosConsulta = () => {
                       <strong className="block text-foreground">Carga horaria</strong>
                       {result.hours > 0 ? `${result.hours} horas` : "Nao informada"}
                     </p>
-                    <p>
-                      <strong className="block text-foreground">Instituicao</strong>
-                      {result.institution || "FAESDE"}
-                    </p>
+                    {!isExternal && (
+                      <p>
+                        <strong className="block text-foreground">Instituicao</strong>
+                        {result.institution || "FAESDE"}
+                      </p>
+                    )}
                   </div>
-                  {isExternal && result.external_file_name && (
-                    <p className="text-sm text-muted-foreground">
-                      Arquivo enviado: <strong>{result.external_file_name}</strong>
-                      {formatFileSize(result.external_file_size) && ` (${formatFileSize(result.external_file_size)})`}
-                    </p>
-                  )}
                 </div>
                 <div className="flex min-w-52 flex-col gap-2">
                   <Button asChild>
@@ -355,9 +350,9 @@ const CertificadosConsulta = () => {
                       Abrir validacao
                     </Link>
                   </Button>
-                  {isExternal && externalUrl && (
+                  {isExternal && result.external_file_path && (
                     <Button asChild variant="outline">
-                      <a href={externalUrl} target="_blank" rel="noopener noreferrer" download={result.external_file_name || true}>
+                      <a href={buildCertificatePdfUrl(result.code, true)}>
                         <Download className="mr-2 h-4 w-4" />
                         Baixar PDF
                       </a>

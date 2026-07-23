@@ -255,11 +255,11 @@ const CertificatesManager = () => {
       };
     }
 
-    const path = buildCertificateStoragePath(form.code, certificateFile.name);
+    const path = buildCertificateStoragePath(form.code);
     const { error } = await supabase.storage
       .from(CERTIFICATE_FILES_BUCKET)
       .upload(path, certificateFile, {
-        upsert: false,
+        upsert: Boolean(editing),
         contentType: certificateFile.type || "application/pdf",
       });
 
@@ -269,7 +269,7 @@ const CertificatesManager = () => {
 
     return {
       path,
-      name: certificateFile.name,
+      name: `${form.code}.pdf`,
       size: certificateFile.size,
       mimeType: certificateFile.type || "application/pdf",
       uploadedPath: path,
@@ -298,6 +298,20 @@ const CertificatesManager = () => {
     let uploadedPath: string | null = null;
 
     try {
+      const { data: existingCode, error: codeCheckError } = await supabase
+        .from("certificates")
+        .select("id")
+        .eq("code", form.code)
+        .limit(1)
+        .maybeSingle();
+
+      if (codeCheckError) {
+        throw new Error(`Nao foi possivel verificar o codigo: ${codeCheckError.message}`);
+      }
+      if (existingCode && existingCode.id !== editing?.id) {
+        throw new Error("Este codigo ja esta cadastrado. Use outro codigo para o certificado.");
+      }
+
       const registry = resolveRegistryNumbers({
         code: form.code,
         student_name: form.student_name,
@@ -342,7 +356,12 @@ const CertificatesManager = () => {
         : await supabase.from("certificates").insert(payload);
 
       if (error) {
-        if (uploadedPath) await supabase.storage.from(CERTIFICATE_FILES_BUCKET).remove([uploadedPath]);
+        if (uploadedPath && uploadedPath !== editing?.external_file_path) {
+          await supabase.storage.from(CERTIFICATE_FILES_BUCKET).remove([uploadedPath]);
+        }
+        if (error.code === "23505") {
+          throw new Error("Este codigo ja esta cadastrado. Use outro codigo para o certificado.");
+        }
         throw new Error(error.message);
       }
 
