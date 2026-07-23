@@ -477,13 +477,13 @@ async function readJsonBody(req) {
   return JSON.parse(Buffer.concat(chunks).toString("utf8"));
 }
 
-async function readRequestBuffer(req, maxBytes = MAX_UPLOAD_BYTES) {
+async function readRequestBuffer(req, maxBytes = MAX_UPLOAD_BYTES, maxMb = MAX_UPLOAD_MB) {
   const chunks = [];
   let size = 0;
 
   for await (const chunk of req) {
     size += chunk.length;
-    if (size > maxBytes) throw createHttpError(`Upload maior que ${MAX_UPLOAD_MB} MB.`, 413);
+    if (size > maxBytes) throw createHttpError(`Upload maior que ${maxMb} MB.`, 413);
     chunks.push(chunk);
   }
 
@@ -500,13 +500,13 @@ function parseContentDisposition(value = "") {
   return result;
 }
 
-async function readMultipartBody(req) {
+async function readMultipartBody(req, maxBytes = MAX_UPLOAD_BYTES, maxMb = MAX_UPLOAD_MB) {
   const contentType = String(req.headers["content-type"] || "");
   const boundaryMatch = contentType.match(/boundary=(?:"([^"]+)"|([^;]+))/i);
   if (!boundaryMatch) throw createHttpError("Formulario de upload invalido.", 400);
 
   const boundary = boundaryMatch[1] || boundaryMatch[2];
-  const raw = (await readRequestBuffer(req)).toString("latin1");
+  const raw = (await readRequestBuffer(req, maxBytes, maxMb)).toString("latin1");
   const parts = raw.split(`--${boundary}`).slice(1, -1);
   const fields = {};
   const files = {};
@@ -848,7 +848,7 @@ async function getActiveEmailSettings(context = null) {
   return isEmailSettingsReady(envSettings) ? envSettings : null;
 }
 
-async function sendEmailMessage(settings, { subject, text, replyTo }) {
+async function sendEmailMessage(settings, { subject, text, replyTo, attachments }) {
   const auth =
     settings.username && settings.password
       ? {
@@ -872,6 +872,7 @@ async function sendEmailMessage(settings, { subject, text, replyTo }) {
     replyTo: replyTo || settings.replyTo || undefined,
     subject,
     text,
+    attachments,
   });
 }
 
@@ -933,6 +934,64 @@ function normalizeCertificateRequestPayload(body = {}) {
   return payload;
 }
 
+function sanitizeUploadFileName(name = "certificado.pdf") {
+  const normalized = String(name)
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-zA-Z0-9._-]+/g, "-")
+    .replace(/-+/g, "-")
+    .replace(/^-|-$/g, "")
+    .toLowerCase();
+  return normalized.endsWith(".pdf") ? normalized : `${normalized || "certificado"}.pdf`;
+}
+
+function validateCertificateRequestFile(file) {
+  if (!file) return null;
+  const isPdf =
+    file.contentType === "application/pdf" ||
+    String(file.filename || "").toLowerCase().endsWith(".pdf");
+  if (!isPdf) throw createHttpError("Envie o certificado em formato PDF.", 400);
+  if (!file.buffer?.length) throw createHttpError("O PDF enviado esta vazio.", 400);
+  if (file.buffer.length > 20 * 1024 * 1024) {
+    throw createHttpError("O PDF deve ter no maximo 20 MB.", 413);
+  }
+  if (file.buffer.subarray(0, 5).toString("ascii") !== "%PDF-") {
+    throw createHttpError("O arquivo enviado nao e um PDF valido.", 400);
+  }
+  return file;
+}
+
+async function uploadCertificateRequestFile(file) {
+  const { supabaseUrl, anonKey } = getSupabaseConfig();
+  const safeName = sanitizeUploadFileName(file.filename);
+  const token = randomBytes(18).toString("hex");
+  const path = `${new Date().toISOString().slice(0, 10)}/${token}-${safeName}`;
+  const encodedPath = path.split("/").map(encodeURIComponent).join("/");
+  const response = await fetch(
+    `${supabaseUrl}/storage/v1/object/certificate-request-files/${encodedPath}`,
+    {
+      method: "POST",
+      headers: {
+        apikey: anonKey,
+        Authorization: `Bearer ${anonKey}`,
+        "Content-Type": "application/pdf",
+        "x-upsert": "false",
+      },
+      body: file.buffer,
+    },
+  );
+  const result = await response.json().catch(() => ({}));
+  if (!response.ok) {
+    throw createHttpError(result.message || result.error || "Falha ao armazenar o PDF.", response.status);
+  }
+  return {
+    path,
+    name: file.filename,
+    size: file.buffer.length,
+    mimeType: "application/pdf",
+  };
+}
+
 function buildCertificateInclusionMessage(payload) {
   return [
     "Ola, sou aluno(a) e gostaria de solicitar a inclusao do meu certificado no site faesde.com.br.",
@@ -954,7 +1013,7 @@ function buildCertificateRequestRedirectUrl(message) {
   return url.toString();
 }
 
-async function saveCertificateInclusionRequest(payload, message, emailResult) {
+async function saveCertificateInclusionRequest(payload, message, emailResult, uploadedFile = null) {
   try {
     const { anonKey } = getSupabaseConfig();
     await supabaseRest(anonKey, "certificate_inclusion_requests", {
@@ -969,6 +1028,10 @@ async function saveCertificateInclusionRequest(payload, message, emailResult) {
         message,
         email_sent: Boolean(emailResult.emailSent),
         email_error: emailResult.emailError || null,
+        document_path: uploadedFile?.path || null,
+        document_name: uploadedFile?.name || null,
+        document_size: uploadedFile?.size || null,
+        document_mime_type: uploadedFile?.mimeType || null,
       }),
     });
     return { saved: true, error: null };
@@ -3660,8 +3723,17 @@ async function handleCertificateInclusionRequestApi(req, res) {
   }
 
   assertCertificateRequestRateLimit(req);
-  const payload = normalizeCertificateRequestPayload(await readJsonBody(req));
+  const contentType = String(req.headers["content-type"] || "");
+  const multipart = contentType.toLowerCase().startsWith("multipart/form-data")
+    ? await readMultipartBody(req, 20 * 1024 * 1024 + 256 * 1024, 20)
+    : null;
+  const payload = normalizeCertificateRequestPayload(multipart?.fields || (await readJsonBody(req)));
+  const requestFile = validateCertificateRequestFile(multipart?.files?.document);
+  const uploadedFile = requestFile ? await uploadCertificateRequestFile(requestFile) : null;
   const message = buildCertificateInclusionMessage(payload);
+  const messageWithDocument = uploadedFile
+    ? `${message}\n\nDocumento anexado: ${uploadedFile.name} (${Math.ceil(uploadedFile.size / 1024)} KB)`
+    : message;
   const redirectUrl = buildCertificateRequestRedirectUrl(message);
   const emailResult = { emailSent: false, emailError: null };
   const settings = await getActiveEmailSettings();
@@ -3670,7 +3742,10 @@ async function handleCertificateInclusionRequestApi(req, res) {
     try {
       await sendEmailMessage(settings, {
         subject: `Solicitacao de inclusao de certificado - ${payload.studentName}`,
-        text: message,
+        text: messageWithDocument,
+        attachments: requestFile
+          ? [{ filename: uploadedFile.name, content: requestFile.buffer, contentType: "application/pdf" }]
+          : undefined,
       });
       emailResult.emailSent = true;
     } catch (error) {
@@ -3680,7 +3755,12 @@ async function handleCertificateInclusionRequestApi(req, res) {
     emailResult.emailError = "SMTP nao configurado.";
   }
 
-  const saveResult = await saveCertificateInclusionRequest(payload, message, emailResult);
+  const saveResult = await saveCertificateInclusionRequest(
+    payload,
+    messageWithDocument,
+    emailResult,
+    uploadedFile,
+  );
 
   return jsonResponse(res, 200, {
     ok: true,
@@ -3693,6 +3773,8 @@ async function handleCertificateInclusionRequestApi(req, res) {
     ...emailResult,
     saved: saveResult.saved,
     saveError: saveResult.error,
+    documentUploaded: Boolean(uploadedFile),
+    documentName: uploadedFile?.name || null,
   });
 }
 

@@ -1,6 +1,6 @@
-import { FormEvent, useState } from "react";
+import { ChangeEvent, FormEvent, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
-import { Award, Barcode, Download, ExternalLink, FileText, Loader2, Search, Send, ShieldCheck } from "lucide-react";
+import { Award, Barcode, Download, ExternalLink, FileText, Loader2, Search, Send, ShieldCheck, Upload } from "lucide-react";
 import Header from "@/components/Header.tsx";
 import Footer from "@/components/Footer.tsx";
 import { supabase } from "@/integrations/supabase/client.ts";
@@ -11,7 +11,12 @@ import { Badge } from "@/components/ui/badge.tsx";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert.tsx";
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog.tsx";
 import { Label } from "@/components/ui/label.tsx";
-import { formatFileSize, getCertificateFilePublicUrl } from "@/lib/certificateFiles.ts";
+import {
+  formatFileSize,
+  getCertificateFilePublicUrl,
+  isPdfFile,
+  MAX_CERTIFICATE_FILE_SIZE_BYTES,
+} from "@/lib/certificateFiles.ts";
 
 type CertificateSourceType = "generated" | "external_pdf";
 
@@ -97,6 +102,7 @@ const CertificadosConsulta = () => {
   const [requestForm, setRequestForm] = useState<CertificateRequestForm>(EMPTY_REQUEST_FORM);
   const [requestSubmitting, setRequestSubmitting] = useState(false);
   const [requestError, setRequestError] = useState<string | null>(null);
+  const [requestFile, setRequestFile] = useState<File | null>(null);
 
   const updateRequestForm = (field: keyof CertificateRequestForm, value: string) => {
     setRequestForm((current) => ({
@@ -119,7 +125,30 @@ const CertificadosConsulta = () => {
     setRequestForm(EMPTY_REQUEST_FORM);
     setRequestStep(0);
     setRequestError(null);
+    setRequestFile(null);
     setRequestOpen(true);
+  };
+
+  const handleRequestFile = (event: ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0] || null;
+    if (!file) {
+      setRequestFile(null);
+      return;
+    }
+    if (!isPdfFile(file)) {
+      event.target.value = "";
+      setRequestFile(null);
+      setRequestError("Envie o certificado em formato PDF.");
+      return;
+    }
+    if (file.size > MAX_CERTIFICATE_FILE_SIZE_BYTES) {
+      event.target.value = "";
+      setRequestFile(null);
+      setRequestError("O PDF deve ter no maximo 20 MB.");
+      return;
+    }
+    setRequestFile(file);
+    setRequestError(null);
   };
 
   const goToNextRequestStep = () => {
@@ -141,10 +170,12 @@ const CertificadosConsulta = () => {
     setRequestError(null);
 
     try {
+      const body = new FormData();
+      Object.entries(requestForm).forEach(([key, value]) => body.append(key, value));
+      if (requestFile) body.append("document", requestFile);
       const response = await fetch("/api/certificate-inclusion-request", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(requestForm),
+        body,
       });
       const data = await response.json().catch(() => ({}));
       const redirectUrl = data.redirectUrl || buildFallbackRedirectUrl(requestForm);
@@ -154,8 +185,16 @@ const CertificadosConsulta = () => {
       }
 
       window.location.href = redirectUrl;
-    } catch {
-      window.location.href = buildFallbackRedirectUrl(requestForm);
+    } catch (error) {
+      if (requestFile) {
+        setRequestError(
+          error instanceof Error
+            ? error.message
+            : "Nao foi possivel enviar o PDF. Tente novamente.",
+        );
+      } else {
+        window.location.href = buildFallbackRedirectUrl(requestForm);
+      }
     } finally {
       setRequestSubmitting(false);
     }
@@ -435,6 +474,27 @@ const CertificadosConsulta = () => {
                 <p className="text-xs text-muted-foreground">
                   Se lembrar uma data exata, a secretaria pode ajustar depois no atendimento.
                 </p>
+                <div className="rounded-lg border bg-muted/30 p-4">
+                  <Label htmlFor="request-certificate-file" className="flex items-center gap-2">
+                    <Upload className="h-4 w-4" />
+                    Anexar certificado em PDF (opcional)
+                  </Label>
+                  <Input
+                    id="request-certificate-file"
+                    type="file"
+                    accept="application/pdf,.pdf"
+                    className="mt-2"
+                    onChange={handleRequestFile}
+                  />
+                  <p className="mt-2 text-xs text-muted-foreground">
+                    Se voce ja tem o arquivo digital, envie-o para agilizar a validacao. Limite: 20 MB.
+                  </p>
+                  {requestFile && (
+                    <p className="mt-2 text-sm">
+                      <strong>{requestFile.name}</strong> ({formatFileSize(requestFile.size)})
+                    </p>
+                  )}
+                </div>
               </div>
             )}
 
