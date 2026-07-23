@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-22T03:20:28.188Z",
+  "generatedAt": "2026-07-23T20:24:08.733Z",
   "source": {
     "provider": "google_drive",
     "rootFolderId": "1jYFYbdJdJHT-f7BpzFX9t1mQLD6xwgbd",
@@ -15,12 +15,12 @@
   "publicBasePath": "/eadplataforma",
   "stats": {
     "folders": 1005,
-    "files": 2765,
-    "bytes": 14500882397,
+    "files": 2769,
+    "bytes": 14636422773,
     "githubEligibleFiles": 2695,
-    "driveOnlyFiles": 70,
+    "driveOnlyFiles": 74,
     "htmlFiles": 815,
-    "videos": 59,
+    "videos": 63,
     "truncated": false
   },
   "items": [
@@ -51109,6 +51109,62 @@
       "githubCached": false
     },
     {
+      "type": "file",
+      "path": "Aulas - Eletrônica Digital - Unidade 3/Aulas - Eletrônica Digital - Unidade 3 Aula 4 - Dispositivos Conversores em Eletrônica Digital.mp4",
+      "driveFileId": "1E_tPeOqP8Q25JR4noA8DJ9a7Jk1gFg66",
+      "mimeType": "video/mp4",
+      "size": 33791020,
+      "extension": "mp4",
+      "modifiedTime": "2026-07-23T18:47:01.008Z",
+      "md5Checksum": "9286648c5d8dc787848d5cf53d858330",
+      "webContentLink": "https://drive.google.com/uc?id=1E_tPeOqP8Q25JR4noA8DJ9a7Jk1gFg66&export=download",
+      "webViewLink": "https://drive.google.com/file/d/1E_tPeOqP8Q25JR4noA8DJ9a7Jk1gFg66/view?usp=drivesdk",
+      "storageTarget": "drive_proxy",
+      "githubCached": false
+    },
+    {
+      "type": "file",
+      "path": "Aulas - Eletrônica Digital - Unidade 3/Aulas - Eletrônica Digital - Unidade 3 Aula 3 - Dispositivos Multiplexadores em Eletrônica Digital.mp4",
+      "driveFileId": "1okxog80uQ-ITulBr2XFOGQ4ZCUs7Nbhs",
+      "mimeType": "video/mp4",
+      "size": 30322716,
+      "extension": "mp4",
+      "modifiedTime": "2026-07-23T18:46:47.701Z",
+      "md5Checksum": "f748e889a663aebf099158573f3e394f",
+      "webContentLink": "https://drive.google.com/uc?id=1okxog80uQ-ITulBr2XFOGQ4ZCUs7Nbhs&export=download",
+      "webViewLink": "https://drive.google.com/file/d/1okxog80uQ-ITulBr2XFOGQ4ZCUs7Nbhs/view?usp=drivesdk",
+      "storageTarget": "drive_proxy",
+      "githubCached": false
+    },
+    {
+      "type": "file",
+      "path": "Aulas - Eletrônica Digital - Unidade 3/Aulas - Eletrônica Digital - Unidade 3 Aula 2 - Dispositivos Registradores em Eletrônica Digital.mp4",
+      "driveFileId": "1fiOlZGYAGj3G57S4LuXWnqjqhU-Xy34_",
+      "mimeType": "video/mp4",
+      "size": 28007136,
+      "extension": "mp4",
+      "modifiedTime": "2026-07-23T18:46:20.145Z",
+      "md5Checksum": "34da3bfd628105eb5074a61a17673bb7",
+      "webContentLink": "https://drive.google.com/uc?id=1fiOlZGYAGj3G57S4LuXWnqjqhU-Xy34_&export=download",
+      "webViewLink": "https://drive.google.com/file/d/1fiOlZGYAGj3G57S4LuXWnqjqhU-Xy34_/view?usp=drivesdk",
+      "storageTarget": "drive_proxy",
+      "githubCached": false
+    },
+    {
+      "type": "file",
+      "path": "Aulas - Eletrônica Digital - Unidade 3/Aulas - Eletrônica Digital - Unidade 3 Aula 1 - Dispositivos Contadores em Eletrônica Digital.mp4",
+      "driveFileId": "1Cr84phIL4mRu0bMToXln19t9gNofic_N",
+      "mimeType": "video/mp4",
+      "size": 43419504,
+      "extension": "mp4",
+      "modifiedTime": "2026-07-23T18:46:05.308Z",
+      "md5Checksum": "d146696518267e5c384a2be752ad38c6",
+      "webContentLink": "https://drive.google.com/uc?id=1Cr84phIL4mRu0bMToXln19t9gNofic_N&export=download",
+      "webViewLink": "https://drive.google.com/file/d/1Cr84phIL4mRu0bMToXln19t9gNofic_N/view?usp=drivesdk",
+      "storageTarget": "drive_proxy",
+      "githubCached": false
+    },
+    {
       "type": "folder",
       "path": "Aulas - Eletrônica Digital",
       "driveFileId": "1UZ1V3W5aXA-qfyoOMAQycHPivT0sBdMQ",
@@ -51162,8 +51218,8 @@
   ],
   "sync": {
     "mode": "drive_to_github_files",
-    "syncedAt": "2026-07-22T03:20:46.068Z",
-    "batchSize": 11,
+    "syncedAt": "2026-07-23T20:24:09.423Z",
+    "batchSize": 0,
     "batchLimit": 150
   }
 }
