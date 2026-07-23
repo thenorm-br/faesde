@@ -42,7 +42,7 @@ interface CertificateRequestForm {
   completionPeriod: string;
 }
 
-const normalizeCode = (value: string) => value.replace(/\D/g, "").slice(0, 24);
+const normalizeSearchTerm = (value: string) => value.replace(/\D/g, "").slice(0, 24);
 const normalizeCpf = (value: string) => value.replace(/\D/g, "").slice(0, 11);
 
 const formatCpf = (value: string) => {
@@ -93,8 +93,11 @@ const buildFallbackRedirectUrl = (form: CertificateRequestForm) =>
 
 const CertificadosConsulta = () => {
   const [searchParams, setSearchParams] = useSearchParams();
-  const [code, setCode] = useState(() => normalizeCode(searchParams.get("codigo") || ""));
-  const [result, setResult] = useState<CertificateSearchResult | null>(null);
+  const [searchTerm, setSearchTerm] = useState(() =>
+    normalizeSearchTerm(searchParams.get("codigo") || ""),
+  );
+  const [results, setResults] = useState<CertificateSearchResult[]>([]);
+  const [searchKind, setSearchKind] = useState<"codigo" | "cpf" | null>(null);
   const [notFound, setNotFound] = useState(false);
   const [loading, setLoading] = useState(false);
   const [requestOpen, setRequestOpen] = useState(false);
@@ -202,35 +205,42 @@ const CertificadosConsulta = () => {
 
   const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
-    const cleanCode = normalizeCode(code);
-    setCode(cleanCode);
-    setResult(null);
+    const cleanTerm = normalizeSearchTerm(searchTerm);
+    const kind = cleanTerm.length === 24 ? "codigo" : cleanTerm.length === 11 ? "cpf" : null;
+    setSearchTerm(cleanTerm);
+    setSearchKind(kind);
+    setResults([]);
     setNotFound(false);
 
-    if (cleanCode.length !== 24) {
+    if (!kind) {
       setNotFound(true);
       return;
     }
 
     setLoading(true);
-    const { data } = await supabase
+    let query = supabase
       .from("certificates")
       .select("*")
-      .eq("code", cleanCode)
       .eq("is_active", true)
-      .maybeSingle();
-    setLoading(false);
-    setSearchParams({ codigo: cleanCode });
+      .order("completion_date", { ascending: false });
 
-    if (!data) {
+    if (kind === "codigo") {
+      query = query.eq("code", cleanTerm);
+    } else {
+      query = query.or(`cpf.eq.${cleanTerm},cpf.ilike.${formatCpf(cleanTerm)}%`);
+    }
+
+    const { data, error } = await query;
+    setLoading(false);
+    setSearchParams(kind === "codigo" ? { codigo: cleanTerm } : {});
+
+    if (error || !data?.length) {
       setNotFound(true);
       return;
     }
 
-    setResult(data as CertificateSearchResult);
+    setResults(data as CertificateSearchResult[]);
   };
-
-  const isExternal = result?.source_type === "external_pdf";
 
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-b from-background via-muted/30 to-background">
@@ -246,8 +256,8 @@ const CertificadosConsulta = () => {
                 Consulte a autenticidade de certificados
               </h1>
               <p className="max-w-2xl text-base text-primary-foreground/75 md:text-lg">
-                Digite o codigo impresso no certificado para verificar os dados do aluno, curso, instituicao emissora
-                e, quando houver, acessar o PDF disponibilizado.
+                Digite o codigo impresso no certificado ou o CPF do aluno para verificar os documentos localizados e,
+                quando houver, acessar o PDF disponibilizado.
               </p>
             </div>
             <Card className="border-primary-foreground/15 bg-white text-foreground shadow-2xl">
@@ -256,16 +266,16 @@ const CertificadosConsulta = () => {
                   <Barcode className="h-5 w-5 text-primary" />
                   Buscar certificado
                 </CardTitle>
-                <CardDescription>Use o codigo de 24 digitos do certificado.</CardDescription>
+                <CardDescription>Use o codigo de 24 digitos ou o CPF de 11 digitos.</CardDescription>
               </CardHeader>
               <CardContent>
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <Input
-                    value={code}
-                    onChange={(event) => setCode(normalizeCode(event.target.value))}
+                    value={searchTerm}
+                    onChange={(event) => setSearchTerm(normalizeSearchTerm(event.target.value))}
                     inputMode="numeric"
                     maxLength={24}
-                    placeholder="Ex: 649499405062496827354396"
+                    placeholder="Codigo do certificado ou CPF"
                     className="font-mono text-base"
                   />
                   <Button type="submit" className="w-full" disabled={loading}>
@@ -294,81 +304,99 @@ const CertificadosConsulta = () => {
               <FileText className="h-4 w-4" />
               <AlertTitle>Certificado nao encontrado</AlertTitle>
               <AlertDescription>
-                Confira se o codigo foi digitado corretamente. Caso o documento tenha sido emitido recentemente, fale
-                com a secretaria da FAESDE.
+                {searchKind
+                  ? `Confira se o ${searchKind === "cpf" ? "CPF" : "codigo"} foi digitado corretamente.`
+                  : "Digite um codigo de 24 digitos ou um CPF de 11 digitos."}{" "}
+                Caso o documento tenha sido emitido recentemente, fale com a secretaria da FAESDE.
               </AlertDescription>
             </Alert>
           )}
 
-          {result && (
-            <Card className="mx-auto max-w-4xl overflow-hidden">
-              <CardHeader className="border-b bg-muted/40">
-                <div className="flex flex-wrap items-start justify-between gap-4">
-                  <div>
-                    <CardTitle className="flex items-center gap-2 text-2xl">
-                      <ShieldCheck className="h-6 w-6 text-primary" />
-                      Certificado localizado
-                    </CardTitle>
-                    <CardDescription>Consulta feita pelo codigo {result.code}</CardDescription>
-                  </div>
-                  <Badge variant={isExternal ? "outline" : "secondary"}>
-                    {isExternal ? "Documento verificado" : "Certificado FAESDE"}
-                  </Badge>
-                </div>
-              </CardHeader>
-              <CardContent className="grid gap-6 p-6 md:grid-cols-[1fr_auto]">
-                <div className="space-y-4">
-                  <div>
-                    <p className="text-xs uppercase tracking-wide text-muted-foreground">Aluno</p>
-                    <p className="text-xl font-bold">{result.student_name}</p>
-                  </div>
-                  <div>
-                    <p className="text-xs uppercase tracking-wide text-muted-foreground">Curso</p>
-                    <p className="font-semibold">{result.course_name}</p>
-                  </div>
-                  <div className={`grid gap-3 text-sm text-muted-foreground ${isExternal ? "sm:grid-cols-2" : "sm:grid-cols-3"}`}>
-                    <p>
-                      <strong className="block text-foreground">Conclusao</strong>
-                      {formatDate(result.completion_date)}
-                    </p>
-                    <p>
-                      <strong className="block text-foreground">Carga horaria</strong>
-                      {result.hours > 0 ? `${result.hours} horas` : "Nao informada"}
-                    </p>
-                    {!isExternal && (
-                      <p>
-                        <strong className="block text-foreground">Instituicao</strong>
-                        {result.institution || "FAESDE"}
-                      </p>
-                    )}
-                  </div>
-                </div>
-                <div className="flex min-w-52 flex-col gap-2">
-                  <Button asChild>
-                    <Link to={`/certificados/${result.code}`}>
-                      <Award className="mr-2 h-4 w-4" />
-                      Abrir validacao
-                    </Link>
-                  </Button>
-                  {isExternal && result.external_file_path && (
-                    <Button asChild variant="outline">
-                      <a href={buildCertificatePdfUrl(result.code, true)}>
-                        <Download className="mr-2 h-4 w-4" />
-                        Baixar PDF
-                      </a>
-                    </Button>
-                  )}
-                  {result.course_slug && (
-                    <Button asChild variant="ghost">
-                      <Link to={`/curso/${result.course_slug}`}>
-                        <ExternalLink className="mr-2 h-4 w-4" />
-                        Ver curso
-                      </Link>
-                    </Button>
-                  )}
-                </div>
-              </CardContent>
-            </Card>
+          {results.length > 0 && (
+            <div className="mx-auto max-w-4xl space-y-6">
+              {searchKind === "cpf" && results.length > 1 && (
+                <p className="text-center text-sm text-muted-foreground">
+                  {results.length} certificados ativos encontrados para o CPF informado.
+                </p>
+              )}
+              {results.map((result) => {
+                const isExternal = result.source_type === "external_pdf";
+                return (
+                  <Card key={result.code} className="overflow-hidden">
+                    <CardHeader className="border-b bg-muted/40">
+                      <div className="flex flex-wrap items-start justify-between gap-4">
+                        <div>
+                          <CardTitle className="flex items-center gap-2 text-2xl">
+                            <ShieldCheck className="h-6 w-6 text-primary" />
+                            Certificado localizado
+                          </CardTitle>
+                          <CardDescription>Codigo do certificado: {result.code}</CardDescription>
+                        </div>
+                        <Badge variant={isExternal ? "outline" : "secondary"}>
+                          {isExternal ? "Documento verificado" : "Certificado FAESDE"}
+                        </Badge>
+                      </div>
+                    </CardHeader>
+                    <CardContent className="grid gap-6 p-6 md:grid-cols-[1fr_auto]">
+                      <div className="space-y-4">
+                        <div>
+                          <p className="text-xs uppercase tracking-wide text-muted-foreground">Aluno</p>
+                          <p className="text-xl font-bold">{result.student_name}</p>
+                        </div>
+                        <div>
+                          <p className="text-xs uppercase tracking-wide text-muted-foreground">Curso</p>
+                          <p className="font-semibold">{result.course_name}</p>
+                        </div>
+                        <div
+                          className={`grid gap-3 text-sm text-muted-foreground ${
+                            isExternal ? "sm:grid-cols-2" : "sm:grid-cols-3"
+                          }`}
+                        >
+                          <p>
+                            <strong className="block text-foreground">Conclusao</strong>
+                            {formatDate(result.completion_date)}
+                          </p>
+                          <p>
+                            <strong className="block text-foreground">Carga horaria</strong>
+                            {result.hours > 0 ? `${result.hours} horas` : "Nao informada"}
+                          </p>
+                          {!isExternal && (
+                            <p>
+                              <strong className="block text-foreground">Instituicao</strong>
+                              {result.institution || "FAESDE"}
+                            </p>
+                          )}
+                        </div>
+                      </div>
+                      <div className="flex min-w-52 flex-col gap-2">
+                        <Button asChild>
+                          <Link to={`/certificados/${result.code}`}>
+                            <Award className="mr-2 h-4 w-4" />
+                            Abrir validacao
+                          </Link>
+                        </Button>
+                        {isExternal && result.external_file_path && (
+                          <Button asChild variant="outline">
+                            <a href={buildCertificatePdfUrl(result.code, true)}>
+                              <Download className="mr-2 h-4 w-4" />
+                              Baixar PDF
+                            </a>
+                          </Button>
+                        )}
+                        {result.course_slug && (
+                          <Button asChild variant="ghost">
+                            <Link to={`/curso/${result.course_slug}`}>
+                              <ExternalLink className="mr-2 h-4 w-4" />
+                              Ver curso
+                            </Link>
+                          </Button>
+                        )}
+                      </div>
+                    </CardContent>
+                  </Card>
+                );
+              })}
+            </div>
           )}
         </section>
       </main>
