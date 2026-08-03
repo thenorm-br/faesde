@@ -18,7 +18,7 @@ export const DEFAULT_COURSE_CATEGORIES: CourseCategoryMeta[] = [
     sectionTitle: "Cursos por Extensão EAD",
     sectionHighlight: "Extensão",
     description: "Cursos livres e de extensão em formato EAD.",
-    order: 10,
+    order: 20,
   },
   {
     slug: "competencia",
@@ -28,7 +28,7 @@ export const DEFAULT_COURSE_CATEGORIES: CourseCategoryMeta[] = [
     sectionTitle: "Certificação por Competência",
     sectionHighlight: "Competência",
     description: "Certificações por competência profissional.",
-    order: 20,
+    order: 10,
   },
   {
     slug: "pos-tecnico",
