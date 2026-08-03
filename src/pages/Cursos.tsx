@@ -166,7 +166,14 @@ const Cursos = () => {
       (c) => activeTab === "todos" || c.category === activeTab
     );
     const q = deferredSearchTerm.trim();
-    if (!q) return byCategory;
+    if (!q) {
+      if (activeTab !== "todos") return byCategory;
+      return [...byCategory].sort(
+        (a, b) =>
+          getCourseCategoryMeta(a.category).order - getCourseCategoryMeta(b.category).order ||
+          a.title.localeCompare(b.title, "pt-BR"),
+      );
+    }
     return byCategory
       .map((c) => ({ c, s: scoreCourse(c, q) }))
       .filter((x) => x.s > 0)
